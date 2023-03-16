@@ -1,4 +1,5 @@
 #!/bin/bash
+# .bashrc
 # Author: Clement Deltel <clement.deltel@proton.me>
 # Source: https://github.com/clement-deltel/dotfiles/.bashrc
 

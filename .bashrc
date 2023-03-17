@@ -269,8 +269,8 @@ alias dpsf='docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Sta
 alias dsp='docker system prune --all'
 
 # Docker Compose file
-alias catdc='cat compose.yaml'
-alias vidc='vim compose.yaml'
+alias catco='cat compose.yaml'
+alias vico='vim compose.yaml'
 
 # Docker Compose CLI
 alias dcd='docker compose down -v'

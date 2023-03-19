@@ -96,6 +96,10 @@ set -o notify       # Alerts the user upon background job termination
 #set -o xtrace      # Prints out command arguments during execution
 set -o vi           # Set vi mode for shell
 
+# User specific environment and startup programs
+export HOME=/home/${USER}
+export PATH=${PATH}:${HOME}/.local/bin:${HOME}/bin
+
 #==============================================================================#
 #               ------- Functions ------                                       #
 #==============================================================================#
@@ -106,16 +110,16 @@ function col {
 }
 
 # Add extension $1 to all files without any extension in the current directory
-function add-ext-fn { find . -type f -not -name "*.*" -exec mv "{}" "{}"."$1" \;; }
+function add-ext { find . -type f -not -name "*.*" -exec mv "{}" "{}"."$1" \;; }
 
 # Create $2 copies of file $1
-function cp-n-fn { EXT="${1##*.}"; FILENAME="${1%.*}"; for i in $(seq 1 "$2"); do cp "$1" "${FILENAME}${i}.${EXT}"; done; }
+function cp-n { EXT="${1##*.}"; FILENAME="${1%.*}"; for i in $(seq 1 "$2"); do cp "$1" "${FILENAME}${i}.${EXT}"; done; }
 
 # Execute $@ command in all the subdirectories
-function exec-subdir-fn { find . -maxdepth 1 -mindepth 1 -type d -execdir echo {} \; -execdir $@ {} \; -execdir echo \;; }
+function exec-sub { find . -maxdepth 1 -mindepth 1 -type d -execdir echo {} \; -execdir $@ {} \; -execdir echo \;; }
 
 # Make directory $1 and then cd inside
-function mkdir-cd-fn { mkdir "$1"; cd "$1" || return; }
+function mkcd { mkdir "$1"; cd "$1" || return; }
 
 
 # Host Info
@@ -180,11 +184,6 @@ function docker-stop-rm-fn { docker stop "$1"; docker rm "$1"; }
 #==============================================================================#
 #               ------- Functions - Aliases --------                           #
 #==============================================================================#
-alias add-ext=add-ext-fn
-alias cp-n=cp-n-fn
-alias exec-sub=exec-subdir-fn
-alias mkcd=mkdir-cd-fn
-
 alias dc=docker-compose-fn
 alias dcru=docker-compose-run-fn
 alias dex=docker-exec-fn
@@ -199,6 +198,7 @@ alias drmid=docker-rm-dangling-images-fn
 alias drmvd=docker-rm-dangling-volumes-fn
 alias drun=docker-run-fn
 alias dsr=docker-stop-rm-fn
+
 #==============================================================================#
 #               ------- Aliases --------                                       #
 #==============================================================================#

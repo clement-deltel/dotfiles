@@ -280,6 +280,11 @@ alias dcr='docker compose restart'
 alias dcsta='docker compose start'
 alias dcsto='docker compose stop'
 
+# Python
+alias venv-create='virtualenv .venv'
+alias venv-on='source .venv/bin/activate'
+alias venv-off='deactivate'
+
 #==============================================================================#
 #               ------- Aliases - Typos --------                               #
 #==============================================================================#

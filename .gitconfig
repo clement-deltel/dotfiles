@@ -59,8 +59,13 @@
 
     # log
     lo = log --oneline
+    lgo = log --graph --oneline
     ll = log --pretty=format:"%C(yellow)%h\\ -%C(magenta)%d\\ %C(reset)%s%C(green)(%ar)%C(blue)\\ [%an]" --decorate
     ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ar]%C(magenta)%d\\ %C(reset)%s%C(blue)\\ [%an]" --decorate
+
+    # remote
+    rv = remote -v
+    rs = remote show
 
     # reset
     r = reset

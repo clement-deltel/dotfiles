@@ -62,6 +62,9 @@ if ($isAdmin)
 function ...  { Set-Location ..\.. }
 function .... { Set-Location ..\..\.. }
 
+# Environment variables
+function env { Get-ChildItem Env:* | Sort-Object Name }
+
 # Look for help online directly
 function helpO { Get-Help $args -online }
 New-Alias -Name "manO" -Value helpO -Option ReadOnly
@@ -111,6 +114,5 @@ function sha256 { Get-FileHash -Algorithm SHA256 $args }
 
 New-Alias -Name "alias" -Value Get-Alias -Description "Gets the aliases for the current session" -Option ReadOnly
 New-Alias -Name "c" -Value Clear-Host -Description "Clears the display in the host program" -Option ReadOnly
-New-Alias -Name "env" -Value Get-ChildItem Env: -Description "List environment variables for the current session" -Option ReadOnly
 New-Alias -Name "ll" -Value Get-ChildItem -Option ReadOnly
 New-Alias -Name "reboot" -Value Restart-Computer -Description "Restarts the operating system on local and remote computers" -Option ReadOnly

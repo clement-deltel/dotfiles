@@ -291,6 +291,7 @@ alias dim='docker images | (sed -u 1q; sort)'
 alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias dpsf='docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}"'
+alias dsdf='docker system df -v'
 alias dsp='docker system prune --all'
 
 # Docker Compose file

@@ -129,6 +129,8 @@ function exec-sub { find . -maxdepth 1 -mindepth 1 -type d -execdir echo {} \; -
 # Make directory $1 and then cd inside
 function mkcd { mkdir "$1"; cd "$1" || return; }
 
+# Base64 decoding
+function dec { echo "$1" | base64 --decode; }
 
 # Host Info
 
@@ -152,6 +154,17 @@ function ii() {
 
 # Online cheatsheet
 function cheatsheet { curl cheat.sh/"$1"; }
+
+#==============================================================================#
+#               ------- Functions - Python ------                              #
+#==============================================================================#
+function venv-vers-install { pyenv install "$1"; }
+function venv-vers-uninstall { pyenv uninstall "$1"; }
+
+function venv-create { pyenv virtualenv "$1" venv-"$1"; }
+function venv-local { pyenv local venv-"$1"; }
+function venv-on { pyenv activate venv-"$1"; }
+function venv-delete { pyenv virtualenv-delete venv-"$1"; }
 
 #==============================================================================#
 #               ------- Functions - Docker ------                              #
@@ -193,19 +206,20 @@ function docker-run-fn { docker run -it "$1" "$2"; }
 function docker-stop-rm-fn { docker stop "$1"; docker rm "$1"; }
 
 #==============================================================================#
-#               ------- Functions - Python ------                              #
+#               ------- Functions - Kubernetes ------                          #
 #==============================================================================#
-function venv-vers-install { pyenv install "$1"; }
-function venv-vers-uninstall { pyenv uninstall "$1"; }
-
-function venv-create { pyenv virtualenv "$1" venv-"$1"; }
-function venv-local { pyenv local venv-"$1"; }
-function venv-on { pyenv activate venv-"$1"; }
-function venv-delete { pyenv virtualenv-delete venv-"$1"; }
+function kubernetes-delete-pod-fn { kubectl delete pod "$1"; }
+function kubernetes-exec-fn { kubectl exec --stdin --tty "$1" -- "${2:-bash}"; }
+function kubernetes-logs-fn { kubectl logs -f "$1"; }
+function kubernetes-port-forward-fn { kubectl port-forward service/"$1" "$2":"$2"; }
+function kubernetes-rollout-fn { kubectl rollout restart deployment "$1" -n default; }
+function kubernetes-secret-json-fn { kubectl get secret "$1" -o jsonpath='{.data}'; }
 
 #==============================================================================#
 #               ------- Functions - Aliases --------                           #
 #==============================================================================#
+
+# Docker
 alias dc=docker-compose-fn
 alias dcru=docker-compose-run-fn
 alias dex=docker-exec-fn
@@ -220,6 +234,14 @@ alias drmid=docker-rm-dangling-images-fn
 alias drmvd=docker-rm-dangling-volumes-fn
 alias drun=docker-run-fn
 alias dsr=docker-stop-rm-fn
+
+#Kubernetes
+alias kdp=kubernetes-delete-pod-fn
+alias kex=kubernetes-exec-fn
+alias kl=kubernetes-logs-fn
+alias kpf=kubernetes-port-forward-fn
+alias kro=kubernetes-rollout-fn
+alias ksj=kubernetes-secret-json-fn
 
 #==============================================================================#
 #               ------- Aliases --------                                       #
@@ -286,6 +308,13 @@ alias tree='tree -Csu'		# nice alternative to 'ls'
 # vim
 alias vimo='vim -o '
 
+# Python - pyenv
+alias venv-help='cat ~/.bashrc | grep venv'
+alias venv-list='pyenv virtualenvs'
+alias venv-off='pyenv deactivate'
+alias venv-rm='rm -rf .python-version'
+alias venv-vers-list='pyenv versions'
+
 # Docker
 alias dim='docker images | (sed -u 1q; sort)'
 alias dps='docker ps'
@@ -308,12 +337,11 @@ alias dcr='docker compose restart'
 alias dcsta='docker compose start'
 alias dcsto='docker compose stop'
 
-# Python - pyenv
-alias venv-help='cat ~/.bashrc | grep venv'
-alias venv-list='pyenv virtualenvs'
-alias venv-off='pyenv deactivate'
-alias venv-rm='rm -rf .python-version'
-alias venv-vers-list='pyenv versions'
+# Kubernetes
+alias kgd='kubectl get deployment'
+alias kgp='kubectl get pods'
+alias kgsec='kubectl get secret'
+alias kgser='kubectl get service'
 
 #==============================================================================#
 #               ------- Aliases - Typos --------                               #

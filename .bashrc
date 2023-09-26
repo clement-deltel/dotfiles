@@ -246,6 +246,9 @@ alias lr='ls -lR'           # recursive ls
 alias ltr='ls -ltr'         # sort by date
 alias lx='ls -lXB'          # sort by extension
 
+# lsof - List open ports
+alias lsop='lsof -i -n -P | grep LISTEN'
+
 # mv
 alias mv='mv -i'
 

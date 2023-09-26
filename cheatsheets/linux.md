@@ -300,7 +300,7 @@ curl -O https://<domain>/<input-file>
 
 - Set output file name
 ```bash
-curl -o <output-file> https://<domain>/l<input-file>
+curl -o <output-file> https://<domain>/<input-file>
 ```
 
 ## 8. Other

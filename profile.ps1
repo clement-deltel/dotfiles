@@ -92,6 +92,21 @@ function sha1   { Get-FileHash -Algorithm SHA1 $args }
 function sha256 { Get-FileHash -Algorithm SHA256 $args }
 
 #==============================================================================#
+#               ------- Functions - Kubernetes ------                          #
+#==============================================================================#
+
+function kdp { kubectl delete pod $args }
+function kex { kubectl exec --stdin --tty $args -- bash }
+function kgd { kubectl get deployment }
+function kgp { kubectl get pods }
+function kgsec { kubectl get secret }
+function kgser { kubectl get service }
+function kl { kubectl logs -f $args }
+function kpf($1, $2) { kubectl port-forward service/${1} ${2}:${2}; }
+function kro { kubectl rollout restart deployment $args -n default; }
+function ksl { kubectl get secret $args -o jsonpath='{.data}'; }
+
+#==============================================================================#
 #               ------- Aliases --------                                       #
 #==============================================================================#
 

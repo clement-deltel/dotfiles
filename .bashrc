@@ -100,6 +100,14 @@ set -o vi           # Set vi mode for shell
 export HOME=/home/${USER}
 export PATH=${PATH}:${HOME}/.local/bin:${HOME}/bin
 
+# Python - pyenv
+# export PYENV_ROOT=${HOME}/.pyenv
+# export PATH=${PATH}:${PYENV_ROOT}/bin
+# if command -v pyenv 1>/dev/null 2>&1; then
+#  eval "$(pyenv init -)"
+# fi
+# eval "$(pyenv virtualenv-init -)"
+
 #==============================================================================#
 #               ------- Functions ------                                       #
 #==============================================================================#
@@ -180,6 +188,17 @@ function docker-rm-dangling-volumes-fn {
 }
 function docker-run-fn { docker run -it "$1" "$2"; }
 function docker-stop-rm-fn { docker stop "$1"; docker rm "$1"; }
+
+#==============================================================================#
+#               ------- Functions - Python ------                              #
+#==============================================================================#
+function venv-vers-install { pyenv install "$1"; }
+function venv-vers-uninstall { pyenv uninstall "$1"; }
+
+function venv-create { pyenv virtualenv "$1" venv-"$1"; }
+function venv-local { pyenv local venv-"$1"; }
+function venv-on { pyenv activate venv-"$1"; }
+function venv-delete { pyenv virtualenv-delete venv-"$1"; }
 
 #==============================================================================#
 #               ------- Functions - Aliases --------                           #
@@ -283,10 +302,11 @@ alias dcr='docker compose restart'
 alias dcsta='docker compose start'
 alias dcsto='docker compose stop'
 
-# Python
-alias venv-create='virtualenv .venv'
-alias venv-on='source .venv/bin/activate'
-alias venv-off='deactivate'
+# Python - pyenv
+alias venv-list='pyenv virtualenvs'
+alias venv-off='pyenv deactivate'
+alias venv-rm='rm -rf .python-version'
+alias venv-vers-list='pyenv versions'
 
 #==============================================================================#
 #               ------- Aliases - Typos --------                               #

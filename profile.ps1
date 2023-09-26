@@ -40,11 +40,11 @@ function prompt
 {
     if ($isAdmin)
     {
-        "[" + (Get-Location) + "] # "
+        "PS [" + (Get-Location) + "] # "
     }
     else
     {
-        "[" + (Get-Location) + "] $ "
+        "PS [" + (Get-Location) + "] $ "
     }
 }
 
@@ -59,7 +59,7 @@ if ($isAdmin)
 #==============================================================================#
 
 # Shortcuts for traversing directories
-function ...  { Set-Location ..\.. }
+function ... { Set-Location ..\.. }
 function .... { Set-Location ..\..\.. }
 
 # Environment variables
@@ -70,16 +70,16 @@ function helpO { Get-Help $args -online }
 New-Alias -Name "manO" -Value helpO -Option ReadOnly
 
 # Start notepad++
-function n      { notepad++ $args }
+function n { notepad++ $args }
 
 # Open file with its default program
 function open { Invoke-Expression $args }
 
 # List all connected users
-function who    { query user /server:$SERVER }
+function who { query user /server:$SERVER }
 
 # Get the location of a program
-function which  {(Get-Command $args).Path }
+function which {(Get-Command $args).Path }
 
 
 # head, tail
@@ -95,7 +95,7 @@ function sha256 { Get-FileHash -Algorithm SHA256 $args }
 #               ------- Aliases --------                                       #
 #==============================================================================#
 
-# Basic Linux commands that are working in PowerShell and for which it is not #
+# Basic Linux commands that are working in PowerShell and for which it is not
 # necessary to create an alias
 
 # cat, cd, clear, cp, curl

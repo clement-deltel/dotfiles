@@ -176,11 +176,10 @@ function docker-image-rm-fn { docker image rm "$1"; }
 function docker-inspect-fn { docker inspect "$1"; }
 function docker-ip-fn {
   echo "IP addresses of all named running containers"
-
   for DOC in $(dnames-fn)
   do
-       IP=$(docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}' "$DOC")
-       OUT+=$DOC'\t'$IP'\n'
+    IP=$(docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}' "$DOC")
+    OUT+=$DOC'\t'$IP'\n'
   done
   echo -e "$OUT" | column -t
   unset OUT
@@ -189,18 +188,18 @@ function docker-logs-fn { docker logs -f "$1"; }
 function docker-names-fn {
 	for ID in $(docker ps | awk '{print $1}' | grep -v 'CONTAINER')
 	do
-    	docker inspect "$ID" | grep Name | head -1 | awk '{print $2}' | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
+    docker inspect "$ID" | grep Name | head -1 | awk '{print $2}' | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
 	done
 }
 function docker-pull-fn { docker pull "$1"; }
 function docker-rm-exited-fn { docker rm "$(docker ps --all -q -f status=exited)"; }
 function docker-rm-dangling-images-fn {
-       IMGS=$(docker images --filter "dangling=true" -q --no-trunc)
-       [[ -n ${IMGS }]] && docker rmi ${IMGS} || echo "no dangling images."
+  IMGS=$(docker images --filter "dangling=true" -q --no-trunc)
+  [[ -n ${IMGS} ]] && docker rmi ${IMGS} || echo "no dangling images."
 }
 function docker-rm-dangling-volumes-fn {
-       VOLS=$(docker volume ls --filter "dangling=true" -q)
-       [[ -n ${VOLS} ]] && docker volume rm ${VOLS} || echo "no dangling volumes."
+  VOLS=$(docker volume ls --filter "dangling=true" -q)
+  [[ -n ${VOLS} ]] && docker volume rm ${VOLS} || echo "no dangling volumes."
 }
 function docker-run-fn { docker run -it "$1" "$2"; }
 function docker-stop-rm-fn { docker stop "$1"; docker rm "$1"; }

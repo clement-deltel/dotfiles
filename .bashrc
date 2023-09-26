@@ -262,7 +262,7 @@ alias tree='tree -Csu'		# nice alternative to 'ls'
 alias vimo='vim -o '
 
 # Docker
-alias dim='docker images'
+alias dim='docker images | (sed -u 1q; sort)'
 alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias dpsf='docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}"'

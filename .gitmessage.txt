@@ -29,3 +29,5 @@
 ######## Issue or Ticket Reference ########
 # - Must reference the issue or ticket
 # Azure DevOps / Gitlab / Bitbucket Issue: 1234
+# Resolves: #12, #34
+# See also: #56, #78

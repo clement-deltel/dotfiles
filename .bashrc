@@ -307,6 +307,7 @@ alias dcsta='docker compose start'
 alias dcsto='docker compose stop'
 
 # Python - pyenv
+alias venv-help='cat ~/.bashrc | grep venv'
 alias venv-list='pyenv virtualenvs'
 alias venv-off='pyenv deactivate'
 alias venv-rm='rm -rf .python-version'

@@ -370,6 +370,7 @@ export KUBE_EDITOR='code --wait'
 
 function kubectl-delete-pod-fn { kubectl delete pod "$1"; }
 function kubectl-decode-secret-fn { kubectl get secret "$1" -o=jsonpath='{.data}' | base64 --decode; echo; }
+function kubectl-describe-deployment-fn { kubectl describe deployment "$1"; }
 function kubectl-edit-deployment-fn { kubectl edit deployment "$1"; }
 function kubectl-exec-fn { kubectl exec --stdin --tty "$1" -- "${2:-bash}"; }
 function kubectl-json-secret-fn { kubectl get secret "$1" -o jsonpath='{.data}'; }
@@ -381,17 +382,20 @@ function kubectl-rollout-restart-deployment-fn { kubectl rollout restart deploym
 source <(kubectl completion bash)
 
 alias kcgc='kubectl config get-contexts'
+alias kdd=kubectl-describe-deployment-fn
 alias kdp=kubectl-delete-pod-fn
 alias kdsec=kubectl-decode-secret-fn
 alias ked=kubectl-edit-deployment-fn
 alias kex=kubectl-exec-fn
 alias kgd='kubectl get deployment'
 alias kgh='kubectl get hpa'
+alias kh='cat ~/.bashrc | grep kubectl'
 alias kgi='kubectl get ingress'
 alias kjsec=kubectl-json-secret-fn
 alias kl=kubectl-logs-fn
 alias kgp='kubectl get pods'
-alias kgsec='kubectl get secret'
 alias kgs='kubectl get service'
+alias kgsec='kubectl get secret'
+alias kgss='kubectl get statefulset'
 alias kpf=kubectl-port-forward-fn
 alias krr=kubectl-rollout-restart-deployment-fn

@@ -339,7 +339,8 @@ alias drmid=docker-rm-dangling-images-fn
 alias drmvd=docker-rm-dangling-volumes-fn
 alias drun=docker-run-fn
 alias dsdf='docker system df -v'
-alias dsp='docker system prune --all'
+alias dsp='docker system prune'
+alias dspa='docker system prune --all'
 alias dsr=docker-stop-rm-fn
 alias dvls='docker volume ls'
 
@@ -371,10 +372,13 @@ export KUBE_EDITOR='code --wait'
 function kubectl-delete-pod-fn { kubectl delete pod "$1"; }
 function kubectl-decode-secret-fn { kubectl get secret "$1" -o=jsonpath='{.data}' | base64 --decode; echo; }
 function kubectl-describe-deployment-fn { kubectl describe deployment "$1"; }
+function kubectl-describe-pod-fn { kubectl describe pod "$1"; }
 function kubectl-edit-deployment-fn { kubectl edit deployment "$1"; }
+function kubectl-edit-secret-fn { kubectl edit secret "$1"; }
 function kubectl-exec-fn { kubectl exec --stdin --tty "$1" -- "${2:-bash}"; }
 function kubectl-json-secret-fn { kubectl get secret "$1" -o jsonpath='{.data}'; }
 function kubectl-logs-fn { kubectl logs -f "$1"; }
+function kubectl-logs-workers-fn { kubectl logs -f -l app.kubernetes.io/name=naos-workflow-manager-worker --max-log-requests "$1"; }
 function kubectl-port-forward-fn { kubectl port-forward service/"$1" "$2":"$2"; }
 function kubectl-rollout-restart-deployment-fn { kubectl rollout restart deployment -n default "$1"; }
 
@@ -383,19 +387,28 @@ source <(kubectl completion bash)
 
 alias kcgc='kubectl config get-contexts'
 alias kdd=kubectl-describe-deployment-fn
-alias kdp=kubectl-delete-pod-fn
+alias kdelp=kubectl-delete-pod-fn
+alias kdp=kubectl-describe-pod-fn
 alias kdsec=kubectl-decode-secret-fn
 alias ked=kubectl-edit-deployment-fn
+alias kesec=kubectl-edit-secret-fn
 alias kex=kubectl-exec-fn
 alias kgd='kubectl get deployment'
 alias kgh='kubectl get hpa'
+alias kgt='kubectl -n kube-system describe secret eks-admin'
 alias kh='cat ~/.bashrc | grep kubectl'
 alias kgi='kubectl get ingress'
 alias kjsec=kubectl-json-secret-fn
 alias kl=kubectl-logs-fn
+alias klw=kubectl-logs-workers-fn
 alias kgp='kubectl get pods'
+alias kgpv='kubectl get persistentvolume'
+alias kgpvc='kubectl get persistentvolumeclaim'
 alias kgs='kubectl get service'
 alias kgsec='kubectl get secret'
 alias kgss='kubectl get statefulset'
 alias kpf=kubectl-port-forward-fn
 alias krr=kubectl-rollout-restart-deployment-fn
+
+#HomeBrew - k9s
+#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

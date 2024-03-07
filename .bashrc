@@ -383,7 +383,7 @@ function kubectl-port-forward-fn { kubectl port-forward service/"$1" "$2":"$2"; 
 function kubectl-rollout-restart-deployment-fn { kubectl rollout restart deployment -n default "$1"; }
 
 # Auto completion
-source <(kubectl completion bash)
+# source <(kubectl completion bash)
 
 alias kcgc='kubectl config get-contexts'
 alias kdd=kubectl-describe-deployment-fn
@@ -411,4 +411,5 @@ alias kpf=kubectl-port-forward-fn
 alias krr=kubectl-rollout-restart-deployment-fn
 
 #HomeBrew - k9s
+# export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
 #eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

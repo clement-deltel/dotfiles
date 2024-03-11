@@ -407,6 +407,7 @@ alias kgpvc='kubectl get persistentvolumeclaim'
 alias kgs='kubectl get service'
 alias kgsec='kubectl get secret'
 alias kgss='kubectl get statefulset'
+alias kp='kubectl proxy'
 alias kpf=kubectl-port-forward-fn
 alias krr=kubectl-rollout-restart-deployment-fn
 

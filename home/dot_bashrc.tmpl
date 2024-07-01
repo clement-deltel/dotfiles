@@ -1,7 +1,7 @@
 #!/bin/bash
 # .bashrc
 # Author: Clement Deltel <clement.deltel@proton.me>
-# Source: https://github.com/clement-deltel/dotfiles/dot_bashrc.tmpl
+# Source: https://github.com/clement-deltel/dotfiles/home/dot_bashrc.tmpl
 
 #==============================================================================#
 #               ------- Colors ------                                          #
@@ -274,7 +274,7 @@ alias :q='exit'
 #               ------- Functions & Aliases - Python ------                    #
 #==============================================================================#
 # pyenv
-{{- if eq .machine "laptop-pro-wsl" }}
+{{- if eq .machine "work-linux" }}
 export PYENV_ROOT=${HOME}/.pyenv
 export PATH=${PYENV_ROOT}/bin:${PATH}
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -409,7 +409,7 @@ function kubectl-port-forward-fn { kubectl port-forward service/"$1" "$2":"$2"; 
 function kubectl-rollout-restart-deployment-fn { kubectl rollout restart deployment -n default "$1"; }
 
 # Auto completion
-{{- if eq .machine "laptop-pro-wsl" }}
+{{- if eq .machine "work-linux" }}
 source <(kubectl completion bash)
 {{- else }}
 # source <(kubectl completion bash)
@@ -442,7 +442,7 @@ alias kpf=kubectl-port-forward-fn
 alias krr=kubectl-rollout-restart-deployment-fn
 
 #HomeBrew - k9s
-{{- if eq .machine "laptop-pro-wsl" }}
+{{- if eq .machine "work-linux" }}
 export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{- else }}
@@ -450,6 +450,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{- end }}
 
-{{ if eq .machine "laptop-pro-wsl" -}}
+{{ if eq .machine "work-linux" -}}
 {{ .product }}
 {{- end }}

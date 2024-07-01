@@ -1,6 +1,6 @@
 # .zshrc
 # Author: Clement Deltel <clement.deltel@proton.me>
-# Source: https://github.com/clement-deltel/dotfiles/dot_zshrc.tmpl
+# Source: https://github.com/clement-deltel/dotfiles/home/dot_zshrc.tmpl
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -285,7 +285,7 @@ alias :q='exit'
 #               ------- Functions & Aliases - Python ------                    #
 #==============================================================================#
 # pyenv
-{{- if eq .machine "laptop-pro-wsl" }}
+{{- if eq .machine "work-linux" }}
 export PYENV_ROOT=${HOME}/.pyenv
 export PATH=${PYENV_ROOT}/bin:${PATH}
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -446,7 +446,7 @@ alias kpf=kubectl-port-forward-fn
 alias krr=kubectl-rollout-restart-deployment-fn
 
 #HomeBrew - k9s
-{{- if eq .machine "laptop-pro-wsl" }}
+{{- if eq .machine "work-linux" }}
 export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{- else }}
@@ -454,6 +454,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{- end }}
 
-{{ if eq .machine "laptop-pro-wsl" -}}
+{{ if eq .machine "work-linux" -}}
 {{ .product }}
 {{- end }}

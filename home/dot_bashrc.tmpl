@@ -468,3 +468,21 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{ if eq .machine "work-linux" -}}
 {{ .product }}
 {{- end }}
+
+#==============================================================================#
+#               ------- Functions & Aliases - Terraform ------                 #
+#==============================================================================#
+function terraform-fn { terraform "$@"; }
+function terraform-state-fn { terraform state "$@"; }
+
+# CLI
+alias tf=terraform-fn
+alias tfa='terraform apply'
+alias tfaa='terraform apply --auto-approve'
+alias tfd='terraform destroy'
+alias tfi='terraform init'
+alias tfo='terraform output'
+alias tfp='terraform plan'
+alias tfs=terraform-state-fn
+alias tfsh='terraform show'
+alias tfv='terraform validate'

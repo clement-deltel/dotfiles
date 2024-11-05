@@ -392,45 +392,50 @@ export KUBE_EDITOR='code --wait'
 # Auto completion
 source <(kubectl completion bash)
 
-function kubectl-decode-secret-fn { kubectl get secret "$1" -o=jsonpath='{.data}' | base64 --decode; echo; }
-function kubectl-delete-pod-fn { kubectl delete pod "$1"; }
-function kubectl-describe-deployment-fn { kubectl describe deployment "$1"; }
-function kubectl-describe-pod-fn { kubectl describe pod "$1"; }
-function kubectl-edit-deployment-fn { kubectl edit deployment "$1"; }
-function kubectl-edit-secret-fn { kubectl edit secret "$1"; }
-function kubectl-exec-fn { kubectl exec --stdin --tty "$1" -- "${2:-bash}"; }
-function kubectl-fn { kubectl "$@"; }
-function kubectl-json-secret-fn { kubectl get secret "$1" -o jsonpath='{.data}'; }
-function kubectl-logs-fn { kubectl logs -f "$1"; }
-function kubectl-port-forward-fn { kubectl port-forward service/"$1" "$2":"$2"; }
-function kubectl-rollout-restart-deployment-fn { kubectl rollout restart deployment -n default "$1"; }
+# When using below aliases, print kubectl command and then execute it
+function kctl() { echo "+ kubectl $@" && command kubectl $@ }
 
-alias k=kubectl-fn
-alias kcgc='kubectl config get-contexts'
-alias kdd=kubectl-describe-deployment-fn
-alias kdelp=kubectl-delete-pod-fn
-alias kdp=kubectl-describe-pod-fn
-alias kdsec=kubectl-decode-secret-fn
-alias ked=kubectl-edit-deployment-fn
-alias kesec=kubectl-edit-secret-fn
-alias kex=kubectl-exec-fn
-alias kgd='kubectl get deployment'
-alias kgh='kubectl get hpa'
-alias kgi='kubectl get ingress'
-alias kgp='kubectl get pods'
-alias kgpv='kubectl get persistentvolume'
-alias kgpvc='kubectl get persistentvolumeclaim'
-alias kgs='kubectl get service'
-alias kgsec='kubectl get secret'
-alias kgss='kubectl get statefulset'
-alias kgt='kubectl -n kube-system describe secret eks-admin'
-alias kh='cat ~/.zshrc | grep kubectl'
-alias kjsec=kubectl-json-secret-fn
-alias kl=kubectl-logs-fn
-alias klw=kubectl-logs-workers-fn
-alias kp='kubectl proxy'
-alias kpf=kubectl-port-forward-fn
-alias krr=kubectl-rollout-restart-deployment-fn
+# Add aliases collection from https://github.com/ahmetb/kubectl-aliases
+[ ! -f ~/.kube/aliases.sh ] && curl -fsSL "https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases" > ~/.kube/aliases.sh && sed -i -e 's/kubectl/kctl/g' ~/.kube/aliases.sh
+source ~/.kube/aliases.sh
+
+function kctl-decode-secret-fn { kctl get secret "$1" -o=jsonpath='{.data}' | base64 --decode; echo; }
+function kctl-delete-pod-fn { kctl delete pod "$1"; }
+function kctl-describe-deployment-fn { kctl describe deployment "$1"; }
+function kctl-describe-pod-fn { kctl describe pod "$1"; }
+function kctl-edit-deployment-fn { kctl edit deployment "$1"; }
+function kctl-edit-secret-fn { kctl edit secret "$1"; }
+function kctl-get-secret-json-fn { kctl get secret "$1" -o jsonpath='{.data}'; }
+function kctl-logs-fn { kctl logs -f "$1"; }
+function kctl-port-forward-fn { kctl port-forward service/"$1" "$2":"$2"; }
+function kctl-rollout-restart-deployment-fn { kctl rollout restart deployment "$2"; }
+
+alias kdd=kctl-describe-deployment-fn
+alias kdecs=kctl-decode-secret-fn
+alias kdp=kctl-describe-pod-fn
+alias ked=kctl-edit-deployment-fn
+alias kes=kctl-edit-secret-fn
+alias kgc='kctl config get-contexts'
+alias kgd='kctl get deployment'
+alias kgh='kctl get hpa'
+alias kgi='kctl get ingress'
+alias kgnr='kubectl get nodes --no-headers | awk "{print \$1}" | xargs -I {} sh -c "echo {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo "'
+alias kgp='kctl get pods'
+alias kgpv='kctl get persistentvolume'
+alias kgpvc='kctl get persistentvolumeclaim'
+alias kgs='kctl get secret'
+alias kgser='kctl get service'
+alias kgsj=kctl-json-secret-fn
+alias kgss='kctl get statefulset'
+alias kgt='kctl --namespace kube-system describe secret eks-admin'
+alias kh='cat ~/.zshrc | grep kctl'
+alias kl=kctl-logs-fn
+alias kn='kctl config set-context --current --namespace'
+alias kp='kctl proxy'
+alias kpf=kctl-port-forward-fn
+alias krmfailed='kctl delete pods --field-selector=status.phase=Failed'
+alias krmp=kctl-delete-pod-fn
+alias krr=kctl-rollout-restart-deployment-fn
 
 # homebrew - k9s
 {{- if eq .machine "work-linux" }}

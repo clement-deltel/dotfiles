@@ -135,27 +135,6 @@ export HOME=/home/${USER}
 export PATH=${PATH}:${HOME}/.local/bin:${HOME}/bin
 
 #==============================================================================#
-#               ------- chezmoi --------                                       #
-#==============================================================================#
-export EDITOR='code --wait'
-
-function chezmoi-fn { chezmoi "$@"; }
-function chezmoi-edit-fn { chezmoi edit "$1"; }
-function chezmoi-add-fn { chezmoi add "$1"; }
-function chezmoi-add-template-fn { chezmoi add --template "$1"; }
-
-alias cm=chezmoi-fn
-alias cma='chezmoi apply'
-alias cmab='chezmoi apply && source ~/.bashrc'
-alias cmad=chezmoi-add-fn
-alias cmadt=chezmoi-add-template-fn
-alias cmcd='chezmoi cd'
-alias cmd='chezmoi diff'
-alias cme=chezmoi-edit-fn
-alias cmo='code ~/.local/share/chezmoi'
-alias cmtoml='code ~/.config/chezmoi/chezmoi.toml'
-
-#==============================================================================#
 #               ------- Functions ------                                       #
 #==============================================================================#
 
@@ -229,6 +208,12 @@ alias du-sort='du -sh * | sort -h'
 # env
 alias env='clear && env | sort'
 
+# exa
+# if [ -x "$(command -v exa)" ]; then
+#     alias ls="exa"
+#     alias la="exa --long --all --group"
+# fi
+
 # grep
 alias grep='grep --color=auto'
 
@@ -264,6 +249,11 @@ alias tree='tree -Csu'		# nice alternative to 'ls'
 alias vimo='vim -o '
 
 #==============================================================================#
+#               ------- Aliases - AWS --------                                 #
+#==============================================================================#
+alias awslog='aws sso login'
+
+#==============================================================================#
 #               ------- Aliases - Typos --------                               #
 #==============================================================================#
 alias :q='exit'
@@ -277,57 +267,31 @@ alias srb='source ~/.bashrc'
 alias cab='cat ~/.bashrc'
 
 #==============================================================================#
-#               ------- Aliases - AWS --------                                 #
+#               ------- Functions & Aliases - Chezmoi ------                   #
 #==============================================================================#
-alias awslog='aws sso login'
+export EDITOR='code --wait'
 
-#==============================================================================#
-#               ------- Functions & Aliases - Python ------                    #
-#==============================================================================#
-# pyenv
-{{- if eq .machine "work-linux" }}
-export PYENV_ROOT=${HOME}/.pyenv
-export PATH=${PYENV_ROOT}/bin:${PATH}
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
-fi
-eval "$(pyenv virtualenv-init -)"
-{{- else }}
-# export PYENV_ROOT=${HOME}/.pyenv
-# export PATH=${PATH}:${PYENV_ROOT}/bin
-# if command -v pyenv 1>/dev/null 2>&1; then
-#  eval "$(pyenv init -)"
-# fi
-# eval "$(pyenv virtualenv-init -)"
-{{- end }}
+function chezmoi-add-fn { chezmoi add "$1"; }
+function chezmoi-add-template-fn { chezmoi add --template "$1"; }
+function chezmoi-edit-fn { chezmoi edit "$1"; }
+function chezmoi-fn { chezmoi "$@"; }
 
-function venv-create-fn { pyenv virtualenv "$1" "$2"; }
-function venv-set-local-fn { pyenv local "$1"; }
-function venv-activate { pyenv activate "$1"; }
-function venv-delete-fn { pyenv virtualenv-delete "$1"; }
-
-# pip
-alias pipfr='pip freeze --all > requirements.txt'
-alias pipir='pip install -r requirements.txt'
-
-# pyenv
-alias pyh='cat ~/.bashrc | grep py'
-alias pyl='pyenv versions'
-alias pys='pyenv shell'
-alias pysu='pyenv shell --unset'
-alias pyv='pyenv version'
-
-# pyenv virtualenvs
-alias vc=venv-create-fn
-alias vl='pyenv virtualenvs'
-alias vloc=venv-set-local-fn
-alias voff='pyenv deactivate'
-alias vrm=venv-delete-fn
+alias cm=chezmoi-fn
+alias cma='chezmoi apply'
+alias cmad=chezmoi-add-fn
+alias cmadt=chezmoi-add-template-fn
+alias cmaz='chezmoi apply && source ~/.zshrc'
+alias cmcd='chezmoi cd'
+alias cmd='chezmoi diff'
+alias cme=chezmoi-edit-fn
+alias cmo='code ~/.local/share/chezmoi'
+alias cmtoml='code ~/.config/chezmoi/chezmoi.toml'
 
 #==============================================================================#
 #               ------- Functions & Aliases - Docker ------                    #
 #==============================================================================#
 function docker-exec-fn { docker exec -it "$1" "${2:-bash}"; }
+function docker-fn { docker "$@"; }
 function docker-image-rm-fn { docker image rm "$1"; }
 function docker-image-rm-dangling-fn {
     IMGS=$(docker images --filter "dangling=true" -q --no-trunc)
@@ -362,13 +326,14 @@ function docker-volume-rm-dangling-fn {
     [[ -n ${VOLS} ]] && docker volume rm ${VOLS} || echo "no dangling volumes."
 }
 
+alias d=docker-fn
 alias dcrme=docker-rm-exited-fn
 alias dex=docker-exec-fn
 alias di=docker-inspect-fn
 alias dim='docker images | (sed -u 1q; sort)'
+alias dip=docker-ip-fn
 alias dirm=docker-image-rm-fn
 alias dirmd=docker-image-rm-dangling-fn
-alias dip=docker-ip-fn
 alias dl=docker-logs-fn
 alias dnames=docker-names-fn
 alias dnls='docker network ls'
@@ -399,37 +364,41 @@ alias vico='vim compose.yaml'
 # CLI
 alias dc=docker-compose-fn
 alias dcd='docker compose down -v'
-alias dcru=docker-compose-run-fn
-alias dcu='docker compose up -d'
-alias dcub='docker compose up -d --build'
 alias dcr='docker compose restart'
+alias dcru=docker-compose-run-fn
 alias dcsta='docker compose start'
 alias dcsto='docker compose stop'
+alias dcu='docker compose up -d'
+alias dcub='docker compose up -d --build'
+
+#==============================================================================#
+#               ------- Functions & Aliases - Go ------                        #
+#==============================================================================#
+export GOPATH=/home/ubuntu/go
+export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
 
 #==============================================================================#
 #               ------- Functions & Aliases - Kubernetes ------                #
 #==============================================================================#
 export KUBE_EDITOR='code --wait'
 
-function kubectl-delete-pod-fn { kubectl delete pod "$1"; }
+# Auto completion
+source <(kubectl completion bash)
+
 function kubectl-decode-secret-fn { kubectl get secret "$1" -o=jsonpath='{.data}' | base64 --decode; echo; }
+function kubectl-delete-pod-fn { kubectl delete pod "$1"; }
 function kubectl-describe-deployment-fn { kubectl describe deployment "$1"; }
 function kubectl-describe-pod-fn { kubectl describe pod "$1"; }
 function kubectl-edit-deployment-fn { kubectl edit deployment "$1"; }
 function kubectl-edit-secret-fn { kubectl edit secret "$1"; }
 function kubectl-exec-fn { kubectl exec --stdin --tty "$1" -- "${2:-bash}"; }
+function kubectl-fn { kubectl "$@"; }
 function kubectl-json-secret-fn { kubectl get secret "$1" -o jsonpath='{.data}'; }
 function kubectl-logs-fn { kubectl logs -f "$1"; }
 function kubectl-port-forward-fn { kubectl port-forward service/"$1" "$2":"$2"; }
 function kubectl-rollout-restart-deployment-fn { kubectl rollout restart deployment -n default "$1"; }
 
-# Auto completion
-{{- if eq .machine "work-linux" }}
-source <(kubectl completion bash)
-{{- else }}
-# source <(kubectl completion bash)
-{{- end }}
-
+alias k=kubectl-fn
 alias kcgc='kubectl config get-contexts'
 alias kdd=kubectl-describe-deployment-fn
 alias kdelp=kubectl-delete-pod-fn
@@ -440,23 +409,23 @@ alias kesec=kubectl-edit-secret-fn
 alias kex=kubectl-exec-fn
 alias kgd='kubectl get deployment'
 alias kgh='kubectl get hpa'
-alias kgt='kubectl -n kube-system describe secret eks-admin'
-alias kh='cat ~/.bashrc | grep kubectl'
 alias kgi='kubectl get ingress'
-alias kjsec=kubectl-json-secret-fn
-alias kl=kubectl-logs-fn
-alias klw=kubectl-logs-workers-fn
 alias kgp='kubectl get pods'
 alias kgpv='kubectl get persistentvolume'
 alias kgpvc='kubectl get persistentvolumeclaim'
 alias kgs='kubectl get service'
 alias kgsec='kubectl get secret'
 alias kgss='kubectl get statefulset'
+alias kgt='kubectl -n kube-system describe secret eks-admin'
+alias kh='cat ~/.zshrc | grep kubectl'
+alias kjsec=kubectl-json-secret-fn
+alias kl=kubectl-logs-fn
+alias klw=kubectl-logs-workers-fn
 alias kp='kubectl proxy'
 alias kpf=kubectl-port-forward-fn
 alias krr=kubectl-rollout-restart-deployment-fn
 
-#HomeBrew - k9s
+# homebrew - k9s
 {{- if eq .machine "work-linux" }}
 export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -468,6 +437,54 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{ if eq .machine "work-linux" -}}
 {{ .product }}
 {{- end }}
+
+#==============================================================================#
+#               ------- Functions & Aliases - Pulumi ------                    #
+#==============================================================================#
+export PATH=${PATH}:/${HOME}/.pulumi/bin
+
+#==============================================================================#
+#               ------- Functions & Aliases - Python ------                    #
+#==============================================================================#
+# pyenv
+{{- if eq .machine "work-linux" }}
+export PYENV_ROOT=${HOME}/.pyenv
+export PATH=${PYENV_ROOT}/bin:${PATH}
+if command -v pyenv 1>/dev/null 2>&1; then
+ eval "$(pyenv init -)"
+fi
+eval "$(pyenv virtualenv-init -)"
+{{- else }}
+# export PYENV_ROOT=${HOME}/.pyenv
+# export PATH=${PATH}:${PYENV_ROOT}/bin
+# if command -v pyenv 1>/dev/null 2>&1; then
+#  eval "$(pyenv init -)"
+# fi
+# eval "$(pyenv virtualenv-init -)"
+{{- end }}
+
+function venv-activate { pyenv activate "$1"; }
+function venv-create-fn { pyenv virtualenv "$1" "$2"; }
+function venv-delete-fn { pyenv virtualenv-delete "$1"; }
+function venv-set-local-fn { pyenv local "$1"; }
+
+# pip
+alias pipfr='pip freeze --all > requirements.txt'
+alias pipir='pip install -r requirements.txt'
+
+# pyenv
+alias pyh='cat ~/.zshrc | grep py'
+alias pyl='pyenv versions'
+alias pys='pyenv shell'
+alias pysu='pyenv shell --unset'
+alias pyv='pyenv version'
+
+# pyenv virtualenvs
+alias vc=venv-create-fn
+alias vl='pyenv virtualenvs'
+alias vloc=venv-set-local-fn
+alias voff='pyenv deactivate'
+alias vrm=venv-delete-fn
 
 #==============================================================================#
 #               ------- Functions & Aliases - Terraform ------                 #

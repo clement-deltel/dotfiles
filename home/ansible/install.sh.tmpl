@@ -1,0 +1,11 @@
+#!/bin/bash
+
+{{- if eq .chezmoi.os.id "ubuntu" }}
+sudo apt update -y && sudo apt upgrade -y
+sudo apt install -y software-properties-common
+sudo add-apt-repository -y --update ppa:ansible/ansible
+sudo apt update -y
+sudo apt install -y ansible
+
+ansible-playbook ubuntu.yml --tags init --ask-become-pass
+{{- end }}

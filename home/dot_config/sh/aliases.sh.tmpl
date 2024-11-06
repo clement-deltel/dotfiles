@@ -100,7 +100,6 @@ alias cm=chezmoi-fn
 alias cma='chezmoi apply'
 alias cmad=chezmoi-add-fn
 alias cmadt=chezmoi-add-template-fn
-alias cmaz='chezmoi apply && source ~/.zshrc'
 alias cmcd='chezmoi cd'
 alias cmd='chezmoi diff'
 alias cme=chezmoi-edit-fn
@@ -221,6 +220,7 @@ alias tfs=terraform-state-fn
 alias tfsh='terraform show'
 alias tfv='terraform validate'
 
+{{- if eq .shell "zsh" }}
 #==============================================================================#
 #               ------- Zsh --------                                           #
 #==============================================================================#
@@ -228,5 +228,19 @@ alias viz='vi ~/.zshrc'
 alias srz='source ~/.zshrc'
 alias caz='cat ~/.zshrc'
 
+# chezmoi
+alias cmaz='chezmoi apply && source ~/.zshrc'
+
 # plugins
 alias lsp='ls -l ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/'
+{{- else}}
+#==============================================================================#
+#               ------- Bash --------                                          #
+#==============================================================================#
+alias vib='vi ~/.bashrc'
+alias srb='source ~/.bashrc'
+alias cab='cat ~/.bashrc'
+
+# chezmoi
+alias cmab='chezmoi apply && source ~/.bashrc'
+{{- end }}

@@ -124,331 +124,48 @@ source $ZSH/oh-my-zsh.sh
 # zsh-autosuggestions
 
 #==============================================================================#
-#               ------- Functions ------                                       #
+#               ------- Source --------                                        #
 #==============================================================================#
+# Add aliases collection from https://github.com/ahmetb/kubectl-aliases
+[ ! -f ~/.kube/aliases.sh ] && curl -fsSL "https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases" > ~/.kube/aliases.sh && sed -i -e 's/kubectl/kctl/g' ~/.kube/aliases.sh
 
-# Print only column x of output
-function col {
-  awk -v col="$1" '{print $col}'
+source_if_exists (){ if test -r "$1"; then source "$1"; fi; }
+
+source_if_exists ${HOME}/.config/zsh/aliases.sh
+source_if_exists ${HOME}/.config/zsh/completions.sh
+source_if_exists ${HOME}/.config/zsh/functions.sh
+source_if_exists ${HOME}/.kube/aliases.sh
+
+precmd (){
+  source ${HOME}/.config/zsh/aliases.sh
+  source ${HOME}/.config/zsh/functions.sh
 }
 
-# Add extension $1 to all files without any extension in the current directory
-function add-ext { find . -type f -not -name "*.*" -exec mv "{}" "{}"."$1" \;; }
-
-# Create $2 copies of file $1
-function cp-n { EXT="${1##*.}"; FILENAME="${1%.*}"; for i in $(seq 1 "$2"); do cp "$1" "${FILENAME}${i}.${EXT}"; done; }
-
-# Execute $@ command in all the subdirectories
-function exec-sub { find . -maxdepth 1 -mindepth 1 -type d -execdir echo {} \; -execdir $@ {} \; -execdir echo \;; }
-
-# Make directory $1 and then cd inside
-function mkcd { mkdir "$1"; cd "$1" || return; }
-
-# Base64 decoding
-function dec { echo "$1" | base64 --decode; }
-
-# Host Info
-
-# IP adresses
-function my-ip(){
-  MY_IP=$(/sbin/ifconfig eth0 | awk '/inet/ { print $2 }' | sed -e s/addr://)
-}
-
-# Full summary
-function ii() {
-  echo -e "\nYou are logged on ${RED}$(hostname)"
-  echo -e "\nAdditionnal information:$NC" ; uname -a
-  echo -e "\n${RED}Users logged on:$NC" ; w -h
-  echo -e "\n${RED}Current date:$NC" ; date
-  echo -e "\n${RED}Machine stats:$NC" ; uptime
-  echo -e "\n${RED}Memory stats:$NC" ; free
-  my-ip 2>&- ;
-  echo -e "\n${RED}Local IP Address:$NC" ; echo "${MY_IP:-"Not connected"}"
-  echo
-}
-
-# Online cheatsheet
-function cheatsheet { curl cheat.sh/"$1"; }
-
 #==============================================================================#
-#               ------- Aliases --------                                       #
-#==============================================================================#
-
-# Global
-alias c='clear'
-alias cls='clear'
-alias d='date'
-alias k='kill'
-alias q='exit'
-alias t='time'
-
-# cd
-alias home='cd ~'
-alias ..='cd ..'
-alias ...='cd ..; cd ..'
-alias ....='cd ..; cd ..; cd ..'
-
-# cp
-alias cp='cp -i'
-
-# du
-alias du-sort='du -sh * | sort -h'
-
-# env
-alias env='clear && env | sort'
-
-# exa
-# if [ -x "$(command -v exa)" ]; then
-#     alias ls="exa"
-#     alias la="exa --long --all --group"
-# fi
-
-# grep
-alias grep='grep --color=auto'
-
-# history
-alias h='clear && history | tail -50'
-
-# ls
-alias ll='ls -l --color=auto'
-alias la='ls -Al --color=auto'
-alias lah='ls -Ahl --color=auto'
-alias lk='ls -lSr'          # sort by size
-alias lr='ls -lR'           # recursive ls
-alias ltr='ls -ltr'         # sort by date
-alias lx='ls -lXB'          # sort by extension
-
-# lsof - List open ports
-alias lsop='lsof -i -n -P | grep LISTEN'
-
-# mv
-alias mv='mv -i'
-
-# rm
-alias rm='rm -i'
-
-# su
-alias root='sudo su -'
-alias doc='sudo su - docker'
-
-# tree
-alias tree='tree -Csu'		# nice alternative to 'ls'
-
-# vim
-alias vimo='vim -o '
-
-#==============================================================================#
-#               ------- Aliases - AWS --------                                 #
-#==============================================================================#
-alias awslog='aws sso login'
-
-#==============================================================================#
-#               ------- Aliases - Typos --------                               #
-#==============================================================================#
-alias :q='exit'
-
-#==============================================================================#
-#               ------- Aliases - Zsh --------                                 #
+#               ------- Zsh --------                                           #
 #==============================================================================#
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# zshrc
-alias viz='vi ~/.zshrc'
-alias srz='source ~/.zshrc'
-alias caz='cat ~/.zshrc'
-
-# plugins
-alias lsp='ls -l ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/'
-
-# colorls
-if [ -x "$(command -v colorls)" ]; then
-    alias ls="colorls"
-    alias la="colorls -al"
-fi
-
 #==============================================================================#
-#               ------- Functions & Aliases - Chezmoi ------                   #
+#               ------- Chezmoi ------                                         #
 #==============================================================================#
 export EDITOR='code --wait'
 
-function chezmoi-add-fn { chezmoi add "$1"; }
-function chezmoi-add-template-fn { chezmoi add --template "$1"; }
-function chezmoi-edit-fn { chezmoi edit "$1"; }
-function chezmoi-fn { chezmoi "$@"; }
-
-alias cm=chezmoi-fn
-alias cma='chezmoi apply'
-alias cmad=chezmoi-add-fn
-alias cmadt=chezmoi-add-template-fn
-alias cmaz='chezmoi apply && source ~/.zshrc'
-alias cmcd='chezmoi cd'
-alias cmd='chezmoi diff'
-alias cme=chezmoi-edit-fn
-alias cmo='code ~/.local/share/chezmoi'
-alias cmtoml='code ~/.config/chezmoi/chezmoi.toml'
-
 #==============================================================================#
-#               ------- Functions & Aliases - Docker ------                    #
+#               ------- Go ------                                              #
 #==============================================================================#
-function docker-exec-fn { docker exec -it "$1" "${2:-bash}"; }
-function docker-fn { docker "$@"; }
-function docker-image-rm-fn { docker image rm "$1"; }
-function docker-image-rm-dangling-fn {
-    IMGS=$(docker images --filter "dangling=true" -q --no-trunc)
-    [[ -n ${IMGS} ]] && docker rmi ${IMGS} || echo "no dangling images."
-}
-function docker-inspect-fn { docker inspect "$1"; }
-function docker-ip-fn {
-  echo "IP addresses of all named running containers"
-  for DOC in $(docker-names-fn)
-  do
-    IP=$(docker inspect --format='{{ "{{" }}range .NetworkSettings.Networks{{ "}}" }}{{ "{{" }}.IPAddress{{ "}}" }} {{ "{{" }}end{{ "}}" }}' "$DOC")
-    OUT+=$DOC'\t'$IP'\n'
-  done
-  echo -e "$OUT" | column -t
-  unset OUT
-}
-function docker-logs-fn { docker logs -f "$1"; }
-function docker-names-fn {
-	for ID in $(docker ps | awk '{print $1}' | grep -v 'CONTAINER')
-	do
-    docker inspect "$ID" | grep Name | head -1 | awk '{print $2}' | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
-	done
-}
-function docker-network-rm-fn { docker network rm "$1"; }
-function docker-pull-fn { docker pull "$1"; }
-function docker-rm-exited-fn { docker rm "$(docker ps --all -q -f status=exited)"; }
-function docker-run-fn { docker run -it "$1" "$2"; }
-function docker-stop-rm-fn { docker stop "$1"; docker rm "$1"; }
-function docker-volume-rm-fn { docker volume rm "$1"; }
-function docker-volume-rm-dangling-fn {
-    VOLS=$(docker volume ls --filter "dangling=true" -q)
-    [[ -n ${VOLS} ]] && docker volume rm ${VOLS} || echo "no dangling volumes."
-}
-
-alias d=docker-fn
-alias dcrme=docker-rm-exited-fn
-alias dex=docker-exec-fn
-alias di=docker-inspect-fn
-alias dim='docker images | (sed -u 1q; sort)'
-alias dip=docker-ip-fn
-alias dirm=docker-image-rm-fn
-alias dirmd=docker-image-rm-dangling-fn
-alias dl=docker-logs-fn
-alias dnames=docker-names-fn
-alias dnls='docker network ls'
-alias dnrm=docker-network-rm-fn
-alias dps='docker ps'
-alias dpsa='docker ps -a'
-alias dpsf='docker ps -a --format "table {{ "{{" }}.ID{{ "}}" }}\t{{ "{{" }}.Image{{ "}}" }}\t{{ "{{" }}.Names{{ "}}" }}\t{{ "{{" }}.Status{{ "}}" }}"'
-alias dpu=docker-pull-fn
-alias drun=docker-run-fn
-alias dsdf='docker system df -v'
-alias dsp='docker system prune'
-alias dspa='docker system prune --all'
-alias dsr=docker-stop-rm-fn
-alias dvls='docker volume ls'
-alias dvrm=docker-volume-rm-fn
-alias dvrmd=docker-volume-rm-dangling-fn
-
-#==============================================================================#
-#               ------- Functions & Aliases - Docker Compose ------            #
-#==============================================================================#
-function docker-compose-fn { docker compose "$@"; }
-function docker-compose-run-fn { docker compose run "$@"; }
-
-# Compose file
-alias catco='cat compose.yaml'
-alias vico='vim compose.yaml'
-
-# CLI
-alias dc=docker-compose-fn
-alias dcd='docker compose down -v'
-alias dcr='docker compose restart'
-alias dcru=docker-compose-run-fn
-alias dcsta='docker compose start'
-alias dcsto='docker compose stop'
-alias dcu='docker compose up -d'
-alias dcub='docker compose up -d --build'
-
-#==============================================================================#
-#               ------- Functions & Aliases - Go ------                        #
-#==============================================================================#
-export GOPATH=/home/ubuntu/go
+export GOPATH=/home/${USER}/go
 export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
 
 #==============================================================================#
-#               ------- Functions & Aliases - Helm ------                      #
-#==============================================================================#
-
-# Auto completion
-{{- if eq .machine "work-linux" }}
-source <(helm completion zsh)
-{{- else }}
-# source <(helm completion zsh)
-{{- end }}
-
-#==============================================================================#
-#               ------- Functions & Aliases - Kubernetes ------                #
+#               ------- Kubernetes ------                                      #
 #==============================================================================#
 export KUBE_EDITOR='code --wait'
 
-# Auto completion
-{{- if eq .machine "work-linux" }}
-source <(kubectl completion zsh)
-{{- else }}
-# source <(kubectl completion zsh)
-{{- end }}
-
-# When using below aliases, print kubectl command and then execute it
-function kctl() { echo "+ kubectl $@" && command kubectl $@ }
-
-# Add aliases collection from https://github.com/ahmetb/kubectl-aliases
-[ ! -f ~/.kube/aliases.sh ] && curl -fsSL "https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases" > ~/.kube/aliases.sh && sed -i -e 's/kubectl/kctl/g' ~/.kube/aliases.sh
-source ~/.kube/aliases.sh
-
-function kctl-decode-secret-fn { kctl get secret "$1" -o=jsonpath='{.data}' | base64 --decode; echo; }
-function kctl-delete-pod-fn { kctl delete pod "$1"; }
-function kctl-describe-deployment-fn { kctl describe deployment "$1"; }
-function kctl-describe-pod-fn { kctl describe pod "$1"; }
-function kctl-edit-deployment-fn { kctl edit deployment "$1"; }
-function kctl-edit-secret-fn { kctl edit secret "$1"; }
-function kctl-get-secret-json-fn { kctl get secret "$1" -o jsonpath='{.data}'; }
-function kctl-logs-fn { kctl logs -f "$1"; }
-function kctl-port-forward-fn { kctl port-forward service/"$1" "$2":"$2"; }
-function kctl-rollout-restart-deployment-fn { kctl rollout restart deployment "$2"; }
-
-alias kdd=kctl-describe-deployment-fn
-alias kdecs=kctl-decode-secret-fn
-alias kdp=kctl-describe-pod-fn
-alias ked=kctl-edit-deployment-fn
-alias kes=kctl-edit-secret-fn
-alias kgc='kctl config get-contexts'
-alias kgd='kctl get deployment'
-alias kgh='kctl get hpa'
-alias kgi='kctl get ingress'
-alias kgnr='kubectl get nodes --no-headers | awk "{print \$1}" | xargs -I {} sh -c "echo {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo "'
-alias kgp='kctl get pods'
-alias kgpv='kctl get persistentvolume'
-alias kgpvc='kctl get persistentvolumeclaim'
-alias kgs='kctl get secret'
-alias kgser='kctl get service'
-alias kgsj=kctl-json-secret-fn
-alias kgss='kctl get statefulset'
-alias kgt='kctl --namespace kube-system describe secret eks-admin'
-alias kh='cat ~/.zshrc | grep kctl'
-alias kl=kctl-logs-fn
-alias kn='kctl config set-context --current --namespace'
-alias kp='kctl proxy'
-alias kpf=kctl-port-forward-fn
-alias krmfailed='kctl delete pods --field-selector=status.phase=Failed'
-alias krmp=kctl-delete-pod-fn
-alias krr=kctl-rollout-restart-deployment-fn
-
 # homebrew - k9s
-{{- if eq .machine "work-linux" }}
+{{- if eq .machine "work" }}
 export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{- else }}
@@ -456,20 +173,16 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{- end }}
 
-{{ if eq .machine "work-linux" -}}
-{{ .product }}
-{{- end }}
-
 #==============================================================================#
-#               ------- Functions & Aliases - Pulumi ------                    #
+#               ------- Pulumi ------                                          #
 #==============================================================================#
 export PATH=${PATH}:/${HOME}/.pulumi/bin
 
 #==============================================================================#
-#               ------- Functions & Aliases - Python ------                    #
+#               ------- Python ------                                          #
 #==============================================================================#
 # pyenv
-{{- if eq .machine "work-linux" }}
+{{- if eq .machine "work" }}
 export PYENV_ROOT=${HOME}/.pyenv
 export PATH=${PYENV_ROOT}/bin:${PATH}
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -484,44 +197,3 @@ eval "$(pyenv virtualenv-init -)"
 # fi
 # eval "$(pyenv virtualenv-init -)"
 {{- end }}
-
-function venv-activate { pyenv activate "$1"; }
-function venv-create-fn { pyenv virtualenv "$1" "$2"; }
-function venv-delete-fn { pyenv virtualenv-delete "$1"; }
-function venv-set-local-fn { pyenv local "$1"; }
-
-# pip
-alias pipfr='pip freeze --all > requirements.txt'
-alias pipir='pip install -r requirements.txt'
-
-# pyenv
-alias pyh='cat ~/.zshrc | grep py'
-alias pyl='pyenv versions'
-alias pys='pyenv shell'
-alias pysu='pyenv shell --unset'
-alias pyv='pyenv version'
-
-# pyenv virtualenvs
-alias vc=venv-create-fn
-alias vl='pyenv virtualenvs'
-alias vloc=venv-set-local-fn
-alias voff='pyenv deactivate'
-alias vrm=venv-delete-fn
-
-#==============================================================================#
-#               ------- Functions & Aliases - Terraform ------                 #
-#==============================================================================#
-function terraform-fn { terraform "$@"; }
-function terraform-state-fn { terraform state "$@"; }
-
-# CLI
-alias tf=terraform-fn
-alias tfa='terraform apply'
-alias tfaa='terraform apply --auto-approve'
-alias tfd='terraform destroy'
-alias tfi='terraform init'
-alias tfo='terraform output'
-alias tfp='terraform plan'
-alias tfs=terraform-state-fn
-alias tfsh='terraform show'
-alias tfv='terraform validate'

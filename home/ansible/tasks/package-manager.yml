@@ -1,40 +1,43 @@
-- name: Manage packages
+- name: Package Manager
   tags: [ init, update ]
   become: true
+  vars:
+    ubuntu:
+      - build-essential
+      - curl
+      - git
+      - vim # text editor of choice
+      - zip
+
   block:
   # apt update -y
-  - name: Update cache
+  - name: Package Manager - Update cache
     apt:
       update_cache: true
 
+  - name: Package Manager - List of packages
+    debug:
+      msg: "packages: {{ ubuntu }}"
+
   # apt install -y
-  - name: Install/update packages
+  - name: Package Manager - Install/update packages
     apt:
-      package:
-        name: "{{ item }}"
-        state: latest
-      loop: "{{ packages }}"
-      vars:
-        packages:
-          - build-essential
-          - curl
-          - git
-          - vim
-          - zip
+      name: "{{ ubuntu }}"
+      state: latest
 
   # apt remove -y
-  # - name: Remove packages
+  # - name: Package Manager - Remove packages
   #   apt:
-  #     pkg:
+  #     name:
   #       -
   #     state: absent
 
   # apt autoclean
-  - name: Cleans the local repository of retrieved package files that can no longer be downloaded
+  - name: Package Manager - Cleans the local repository of package files that can no longer be downloaded
     apt:
       autoclean: true
 
   # apt autoremove
-  - name: Remove unused dependency packages
+  - name: Package Manager - Remove unused dependencies
     apt:
       autoremove: true

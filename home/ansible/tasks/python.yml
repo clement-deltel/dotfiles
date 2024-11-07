@@ -1,0 +1,56 @@
+- name: Python
+  become: true
+  hosts: all
+  vars:
+    packages:
+      - python3
+      - python3-pip
+
+  tasks:
+  # Python
+  - name: Python - List of packages
+    tags: [init, update]
+    debug:
+      msg: "packages: {{ packages }}"
+
+  - name: Python - Install
+    tags: init
+    apt:
+      name: "{{ packages }}"
+      state: present
+      update_cache: true
+
+  - name: Python - Upgrade
+    tags: update
+    apt:
+      name: "{{ packages }}"
+      state: latest
+      update_cache: true
+
+  # pipx
+  - name: Python - Install pipx
+    tags: init
+    apt:
+      name: pipx
+      state: present
+      update_cache: true
+
+  - name: Python - Upgrade pipx
+    tags: update
+    apt:
+      name: pipx
+      state: latest
+      update_cache: true
+
+  # poetry
+  - name: Python - Install poetry
+    tags: init
+    pipx:
+      name: poetry
+      state: present
+
+  - name: Python - Upgrade poetry
+    tags: update
+    pipx:
+      name: poetry
+      state: latest

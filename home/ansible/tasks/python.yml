@@ -15,14 +15,14 @@
 
   - name: Python - Install
     tags: init
-    apt:
+    ansible.builtin.apt:
       name: "{{ packages }}"
       state: present
       update_cache: true
 
   - name: Python - Upgrade
     tags: update
-    apt:
+    ansible.builtin.apt:
       name: "{{ packages }}"
       state: latest
       update_cache: true
@@ -30,14 +30,14 @@
   # pipx
   - name: Python - Install pipx
     tags: init
-    apt:
+    ansible.builtin.apt:
       name: pipx
       state: present
       update_cache: true
 
   - name: Python - Upgrade pipx
     tags: update
-    apt:
+    ansible.builtin.apt:
       name: pipx
       state: latest
       update_cache: true
@@ -45,12 +45,12 @@
   # poetry
   - name: Python - Install poetry
     tags: init
-    pipx:
+    community.general.pipx:
       name: poetry
       state: present
 
   - name: Python - Upgrade poetry
     tags: update
-    pipx:
+    community.general.pipx:
       name: poetry
       state: latest

@@ -1,10 +1,9 @@
-- name: Configure the machine
-  hosts: localhost
+- name: Configure machine
   gather_facts: true
+  hosts: all
 
-  tasks:
-    #--- Initialization
-    - name: Manage packages
-      include_tasks:
-        file: tasks/package-manager.yml
-      tags: init
+- name: Packages
+  import_playbook: tasks/package-manager.yml
+
+- name: Python
+  import_playbook: tasks/python.yml

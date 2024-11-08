@@ -94,18 +94,47 @@
         state: latest
         update_cache: true
 
+    always:
+    - name: pipx - Confirm version
+      tags: [init, update]
+      ansible.builtin.command:
+        cmd: pipx --version
+      register: pipx_version
+      changed_when: false
+
+    - name: pipx - Show version
+      tags: [init, update]
+      when: pipx_version is defined
+      ansible.builtin.debug:
+        msg: "Installed pipx version: {{ pipx_version.stdout }}"
+
   # poetry
-  - name: poetry
+  - name: Poetry
+    become_user: ubuntu
     block:
 
-    - name: poetry - Install
+    - name: Poetry - Install
       tags: init
       community.general.pipx:
         name: poetry
         state: present
 
-    - name: poetry - Upgrade
+    - name: Poetry - Upgrade
       tags: update
       community.general.pipx:
         name: poetry
         state: latest
+
+    always:
+    - name: Poetry - Confirm version
+      tags: [init, update]
+      ansible.builtin.command:
+        cmd: poetry --version
+      register: poetry_version
+      changed_when: false
+
+    - name: Poetry - Show version
+      tags: [init, update]
+      when: poetry_version is defined
+      ansible.builtin.debug:
+        msg: "Installed Poetry version: {{ poetry_version.stdout }}"

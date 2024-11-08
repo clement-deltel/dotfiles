@@ -11,7 +11,7 @@
     helm_install_url: https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 
   tasks:
-  # Add aliases collection from https://github.com/ahmetb/kubectl-aliases
+  # Aliases collection from https://github.com/ahmetb/kubectl-aliases
   - name: Aliases
     tags: [init, update]
     block:
@@ -36,7 +36,7 @@
         regexp: kubectl
         replace: kctl
 
-  # kubectl
+  # Kubectl
   - name: kubectl
     tags: [init, update]
     block:
@@ -94,7 +94,7 @@
         path: "{{ kubectl_install_tmp }}"
         state: absent
 
-  # helm
+  # Helm
   - name: Helm
     tags: [init, update]
     block:
@@ -122,28 +122,27 @@
         path: "{{ helm_install_tmp }}"
         state: absent
 
-  # homebrew
-  - name: Homebrew
+  # Formulas
+  - name: Formulas
     block:
-
-    - name: Homebrew - Update cache
-      tags: [init, update]
-      community.general.homebrew:
-        update_homebrew: true
 
     - name: Homebrew - List formulas
       tags: [init, update]
       ansible.builtin.debug:
         msg: "Formulas: {{ formulas }}"
 
+    # brew install
     - name: Homebrew - Install formulas
       tags: init
       community.general.homebrew:
         name: "{{ formulas }}"
         state: present
+        update_homebrew: true
 
+    # brew upgrade
     - name: Homebrew - Upgrade formulas
       tags: update
       community.general.homebrew:
         name: "{{ formulas }}"
         state: latest
+        update_homebrew: true

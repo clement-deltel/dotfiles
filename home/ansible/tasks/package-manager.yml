@@ -5,6 +5,7 @@
     packages:
       - build-essential
       - curl
+      - fzf # general-purpose command-line fuzzy finder
       - git
       - htop # resources monitoring
       - net-tools

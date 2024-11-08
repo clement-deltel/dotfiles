@@ -124,9 +124,6 @@ source $ZSH/oh-my-zsh.sh
 #==============================================================================#
 #               ------- Source --------                                        #
 #==============================================================================#
-# Add aliases collection from https://github.com/ahmetb/kubectl-aliases
-[ ! -f ~/.kube/aliases.sh ] && curl -fsSL "https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases" > ~/.kube/aliases.sh && sed -i -e 's/kubectl/kctl/g' ~/.kube/aliases.sh
-
 source_if_exists (){ if test -r "$1"; then source "$1"; fi; }
 
 source_if_exists ${HOME}/.config/sh/aliases.sh

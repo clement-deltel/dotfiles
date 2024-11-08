@@ -157,11 +157,8 @@ export GOPATH=/home/${USER}/go
 export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
 
 #==============================================================================#
-#               ------- Kubernetes ------                                      #
+#               ------- Homebrew ------                                        #
 #==============================================================================#
-export KUBE_EDITOR='code --wait'
-
-# homebrew - k9s
 {{- if eq .machine "work" }}
 export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -169,6 +166,11 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{- end }}
+
+#==============================================================================#
+#               ------- Kubernetes ------                                      #
+#==============================================================================#
+export KUBE_EDITOR='code --wait'
 
 #==============================================================================#
 #               ------- Pulumi ------                                          #

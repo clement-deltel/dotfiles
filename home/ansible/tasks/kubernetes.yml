@@ -71,6 +71,11 @@
   - name: Manage plugins
     block:
 
+    - name: Update cache
+      tags: [init, update]
+      community.general.homebrew:
+        update_homebrew: true
+
     - name: List plugins
       tags: [init, update]
       ansible.builtin.debug:

@@ -5,8 +5,6 @@
     packages:
       - python3
       - python3-pip
-    install_tmp: /tmp/pyenv
-    install_url: https://pyenv.run
 
   tasks:
   # Python

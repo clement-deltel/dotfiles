@@ -129,6 +129,7 @@ set -o notify       # Alerts the user upon background job termination
 set -o vi           # Set vi mode for shell
 
 # User specific environment and startup programs
+export USER=$(whoami)
 export HOME=/home/${USER}
 export PATH=${PATH}:${HOME}/.local/bin:${HOME}/bin
 

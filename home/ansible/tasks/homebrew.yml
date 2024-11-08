@@ -9,13 +9,14 @@
       - git
       - language-pack-en
       - locales
-    install_tmp: "/tmp/homebrew"
-    install_url: "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
+    install_tmp: /tmp/homebrew
+    install_url: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 
   tasks:
+  # dependencies
   - name: List dependencies
     tags: [init, update]
-    debug:
+    ansible.builtin.debug:
       msg: "dependencies: {{ dependencies }}"
 
   - name: Install dependencies
@@ -32,29 +33,30 @@
       state: latest
       update_cache: true
 
-  - name: Create temporary directory
+  # homebrew
+  - name: Manage homebrew
     tags: [init, update]
-    ansible.builtin.file:
-      path: "{{ install_tmp }}"
-      state: directory
-      mode: 0700
+    block:
 
-  - name: Download install script
-    tags: [init, update]
-    ansible.builtin.get_url:
-      url: "{{ install_url }}"
-      dest: "{{ install_tmp }}/install.sh"
-      mode: 0700
+    - name: Create temporary directory
+      ansible.builtin.file:
+        path: "{{ install_tmp }}"
+        state: directory
+        mode: 0700
 
-  - name: Install
-    tags: [init, update]
-    ansible.builtin.command:
-      cmd: /bin/bash -c "{{ install_tmp }}/install.sh"
-    register: install_result
-    changed_when: "install_result.rc == 0"
+    - name: Download install script
+      ansible.builtin.get_url:
+        url: "{{ install_url }}"
+        dest: "{{ install_tmp }}/install.sh"
+        mode: 0700
 
-  - name: Remove temporary directory
-    tags: [init, update]
-    ansible.builtin.file:
-      path: "{{ install_tmp }}"
-      state: absent
+    - name: Install
+      ansible.builtin.command:
+        cmd: /bin/bash -c {{ install_tmp }}/install.sh
+      register: install_result
+      changed_when: install_result.rc == 0
+
+    - name: Remove temporary directory
+      ansible.builtin.file:
+        path: "{{ install_tmp }}"
+        state: absent

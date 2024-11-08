@@ -10,3 +10,6 @@
 
 - name: Python
   import_playbook: tasks/python.yml
+
+- name: Kubernetes
+  import_playbook: tasks/kubernetes.yml

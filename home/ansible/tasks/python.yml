@@ -2,6 +2,11 @@
   hosts: all
   gather_facts: false
   vars:
+    dependencies_pyenv:
+      - libncursesw5-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - zlib1g-dev
     packages:
       - python3
       - python3-pip
@@ -33,6 +38,25 @@
   # pyenv
   - name: pyenv
     block:
+
+    - name: pyenv - List dependencies
+      tags: [init, update]
+      debug:
+        msg: "dependencies: {{ dependencies_pyenv }}"
+
+    - name: pyenv - Install dependencies
+      tags: init
+      ansible.builtin.apt:
+        name: "{{ dependencies_pyenv }}"
+        state: present
+        update_cache: true
+
+    - name: pyenv - Upgrade dependencies
+      tags: update
+      ansible.builtin.apt:
+        name: "{{ dependencies_pyenv }}"
+        state: latest
+        update_cache: true
 
     - name: pyenv - Install
       tags: init

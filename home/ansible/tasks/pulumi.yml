@@ -37,14 +37,12 @@
 
     always:
     - name: Confirm version
-      tags: [init, update]
       ansible.builtin.command:
         cmd: pulumi version
       register: pulumi_version
       changed_when: false
 
     - name: Show version
-      tags: [init, update]
       when: pulumi_version is defined
       ansible.builtin.debug:
         msg: "Installed pulumi version: {{ pulumi_version.stdout }}"

@@ -12,53 +12,53 @@
 
   tasks:
   # apt update -y
-  - name: Package Manager - Update cache
+  - name: Update cache
     tags: [init, update]
     ansible.builtin.apt:
       update_cache: true
 
-  - name: Package Manager - List of packages
+  - name: List packages
     tags: [init, update]
     debug:
       msg: "packages: {{ ubuntu }}"
 
-  - name: Package Manager - Initialization
+  - name: Initialization
     tags: init
     block:
 
     # apt install -y
-    - name: Package Manager - Install packages
+    - name: Install packages
       ansible.builtin.apt:
         name: "{{ ubuntu }}"
         state: present
 
     # apt remove -y
-    # - name: Package Manager - Remove packages
+    # - name: Remove packages
     #   ansible.builtin.apt:
     #     name:
     #       -
     #     state: absent
 
-  - name: Package Manager - Upgrade
+  - name: Upgrade
     tags: update
     block:
 
     # apt upgrade -y
-    - name: Package Manager - Upgrade packages
+    - name: Upgrade packages
       ansible.builtin.apt:
         name: "{{ ubuntu }}"
         state: latest
 
-  - name: Package Manager - Cleaning
+  - name: Cleaning
     tags: clean
     block:
 
     # apt autoclean
-    - name: Package Manager - Cleans the local repository of package files that can no longer be downloaded
+    - name: Cleans the local repository of package files that can no longer be downloaded
       ansible.builtin.apt:
         autoclean: true
 
     # apt autoremove
-    - name: Package Manager - Remove unused dependencies
+    - name: Remove unused dependencies
       ansible.builtin.apt:
         autoremove: true

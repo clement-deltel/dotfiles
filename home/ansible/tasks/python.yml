@@ -9,19 +9,19 @@
 
   tasks:
   # Python
-  - name: Python - List of packages
+  - name: List packages
     tags: [init, update]
     debug:
       msg: "packages: {{ packages }}"
 
-  - name: Python - Install
+  - name: Install
     tags: init
     ansible.builtin.apt:
       name: "{{ packages }}"
       state: present
       update_cache: true
 
-  - name: Python - Upgrade
+  - name: Upgrade
     tags: update
     ansible.builtin.apt:
       name: "{{ packages }}"
@@ -29,14 +29,14 @@
       update_cache: true
 
   # pipx
-  - name: Python - Install pipx
+  - name: Install pipx
     tags: init
     ansible.builtin.apt:
       name: pipx
       state: present
       update_cache: true
 
-  - name: Python - Upgrade pipx
+  - name: Upgrade pipx
     tags: update
     ansible.builtin.apt:
       name: pipx
@@ -44,13 +44,13 @@
       update_cache: true
 
   # poetry
-  - name: Python - Install poetry
+  - name: Install poetry
     tags: init
     community.general.pipx:
       name: poetry
       state: present
 
-  - name: Python - Upgrade poetry
+  - name: Upgrade poetry
     tags: update
     community.general.pipx:
       name: poetry

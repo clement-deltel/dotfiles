@@ -33,24 +33,28 @@
       update_cache: true
 
   - name: Homebrew - Create temporary directory
+    tags: [init, update]
     ansible.builtin.file:
       path: "{{ install_tmp }}"
       state: directory
       mode: 0700
 
   - name: Homebrew - Download install script
+    tags: [init, update]
     ansible.builtin.get_url:
       url: "{{ install_url }}"
       dest: "{{ install_tmp }}/install.sh"
       mode: 0700
 
   - name: Homebrew - Install
+    tags: [init, update]
     ansible.builtin.command:
       cmd: /bin/bash -c "{{ install_tmp }}/install.sh"
     register: install_result
     changed_when: "install_result.rc == 0"
 
   - name: Homebrew - Remove temporary directory
+    tags: [init, update]
     ansible.builtin.file:
       path: "{{ install_tmp }}"
       state: absent

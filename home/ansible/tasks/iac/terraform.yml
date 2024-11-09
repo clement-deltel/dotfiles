@@ -54,7 +54,7 @@
 
     - name: Add apt repository
       ansible.builtin.shell: |
-        echo 'deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main' | sudo tee /etc/apt/sources.list.d/hashicorp.list > /dev/null
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main" | sudo tee /etc/apt/sources.list.d/hashicorp.list > /dev/null
 
   # Packages
   - name: Packages

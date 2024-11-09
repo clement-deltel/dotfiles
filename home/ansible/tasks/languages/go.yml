@@ -22,3 +22,17 @@
         name: golang-go
         state: latest
         update_cache: true
+
+    always:
+    - name: Go - Confirm version
+      tags: [init, update]
+      ansible.builtin.command:
+        cmd: go version
+      register: version
+      changed_when: false
+
+    - name: Go - Show version
+      tags: [init, update]
+      when: version is defined
+      ansible.builtin.debug:
+        msg: "Installed version: {{ version.stdout }}"

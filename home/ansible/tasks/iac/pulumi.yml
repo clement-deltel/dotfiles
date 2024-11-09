@@ -35,14 +35,17 @@
         path: "{{ install_tmp }}"
         state: absent
 
+    # Version
     always:
     - name: Confirm version
+      tags: [init, update]
       ansible.builtin.command:
         cmd: pulumi version
-      register: pulumi_version
+      register: version
       changed_when: false
 
     - name: Show version
-      when: pulumi_version is defined
+      tags: [init, update]
+      when: version is defined
       ansible.builtin.debug:
-        msg: "Installed pulumi version: {{ pulumi_version.stdout }}"
+        msg: "Installed version: {{ version.stdout }}"

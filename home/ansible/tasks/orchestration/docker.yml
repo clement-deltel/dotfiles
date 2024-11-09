@@ -145,24 +145,24 @@
     tags: [init, update]
     block:
 
-    - name: Confirm Docker version
+    - name: Docker - Confirm version
       ansible.builtin.command:
         cmd: docker --version
-      register: docker_version
+      register: version
       changed_when: false
 
-    - name: Show Docker version
-      when: docker_version is defined
+    - name: Docker - Show version
+      when: version is defined
       ansible.builtin.debug:
-        msg: "Installed docker version: {{ docker_version.stdout }}"
+        msg: "Installed version: {{ version.stdout }}"
 
-    - name: Confirm Docker Compose version
+    - name: Docker Compose - Confirm version
       ansible.builtin.command:
         cmd: docker compose version
-      register: docker_compose_version
+      register: version
       changed_when: false
 
-    - name: Show Docker Compose version
-      when: docker_compose_version is defined
+    - name: Docker Compose - Show version
+      when: version is defined
       ansible.builtin.debug:
-        msg: "Installed docker compose version: {{ docker_compose_version.stdout }}"
+        msg: "Installed version: {{ version.stdout }}"

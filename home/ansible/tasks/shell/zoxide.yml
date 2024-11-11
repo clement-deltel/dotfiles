@@ -39,10 +39,10 @@
     - name: Confirm version
       ansible.builtin.command:
         cmd: zoxide --version
-      register: zoxide_version
+      register: version
       changed_when: false
 
     - name: Show version
-      when: zoxide_version is defined
+      when: version is defined
       ansible.builtin.debug:
-        msg: "Installed zoxide version: {{ zoxide_version.stdout }}"
+        msg: "Installed version: {{ version.stdout }}"

@@ -28,7 +28,7 @@
 
     - name: List packages
       tags: [init, update]
-      debug:
+      ansible.builtin.debug:
         msg: "packages: {{ packages }}"
 
     # sudo apt install -y

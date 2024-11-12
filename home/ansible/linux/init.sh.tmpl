@@ -1,0 +1,14 @@
+#!/bin/bash
+
+title "Install Ansible"
+{{- if eq .chezmoi.osRelease.id "ubuntu" }}
+sudo apt update -y && sudo apt install -y software-properties-common
+sudo add-apt-repository -y --update ppa:ansible/ansible
+sudo apt install -y ansible
+{{- end }}
+
+title "Run Ansible Playbooks"
+{{- if eq .chezmoi.osRelease.id "ubuntu" }}
+ansible-playbook --become --connection local --inventory "localhost," --tags init ${HOME}/ansible/linux/ubuntu.yml
+ansible-playbook --become --connection local --inventory "localhost," --tags clean ${HOME}/ansible/linux/ubuntu.yml
+{{- end }}

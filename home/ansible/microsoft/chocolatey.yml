@@ -83,29 +83,6 @@
     #     package_params: "/DockerGroup:docker /StartService"
     #     state: latest
 
-  # Git
-  - name: Git
-    block:
-
-    # choco install -y git git.install
-    - name: Install Git
-      tags: init
-      chocolatey.chocolatey.win_chocolatey:
-        name:
-          - git
-          - git.install
-        package_params: "/NoAutoCrlf /WindowsTerminal /DefaultBranchName:main"
-        state: present
-
-    # choco upgrade -y git git.install
-    - name: Upgrade Git
-      tags: update
-      chocolatey.chocolatey.win_chocolatey:
-        name:
-          - git
-          - git.install
-        state: latest
-
   # Visual Studio Code
   - name: Visual Studio Code
     block:
@@ -151,6 +128,29 @@
   #         - vscodium
   #         - vscodium.install
   #       state: latest
+
+  # Git
+  - name: Git
+    block:
+
+    # choco install -y git git.install
+    - name: Install Git
+      tags: init
+      chocolatey.chocolatey.win_chocolatey:
+        name:
+          - git
+          - git.install
+        package_params: "/NoAutoCrlf /WindowsTerminal /DefaultBranchName:main /Editor:VisualStudioCode"
+        state: present
+
+    # choco upgrade -y git git.install
+    - name: Upgrade Git
+      tags: update
+      chocolatey.chocolatey.win_chocolatey:
+        name:
+          - git
+          - git.install
+        state: latest
 
   # Configuration
   - name: Configuration

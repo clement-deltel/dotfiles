@@ -1,0 +1,22 @@
+- name: Features
+  hosts: all
+  gather_facts: false
+  vars:
+    features:
+      - Containers
+      - Microsoft-Hyper-V
+
+  tasks:
+  # Features
+  - name: Features
+    tags: init
+    block:
+
+    - name: List features
+      ansible.builtin.debug:
+        msg: "features: {{ features }}"
+
+    - name: Install features
+      ansible.windows.win_feature:
+        name: "{{ features }}"
+        state: present

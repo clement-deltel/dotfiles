@@ -4,14 +4,17 @@
 #               ------- General ------                                         #
 #==============================================================================#
 
-# Print only column x of output
-function col { awk -v col="$1" '{print $col}'; }
-
 # Add extension $1 to all files without any extension in the current directory
 function add-ext { find . -type f -not -name "*.*" -exec mv "{}" "{}"."$1" \;; }
 
+# Print only column x of output
+function col { awk -v col="$1" '{print $col}'; }
+
 # Create $2 copies of file $1
 function cp-n { EXT="${1##*.}"; FILENAME="${1%.*}"; for i in $(seq 1 "$2"); do cp "$1" "${FILENAME}${i}.${EXT}"; done; }
+
+# Base64 decoding
+function dec { echo "$1" | base64 --decode; }
 
 # Execute $@ command in all the subdirectories
 function exec-sub { find . -maxdepth 1 -mindepth 1 -type d -execdir echo {} \; -execdir $@ {} \; -execdir echo \;; }
@@ -19,8 +22,8 @@ function exec-sub { find . -maxdepth 1 -mindepth 1 -type d -execdir echo {} \; -
 # Make directory $1 and then cd inside
 function mkcd { mkdir "$1"; cd "$1" || return; }
 
-# Base64 decoding
-function dec { echo "$1" | base64 --decode; }
+# Bold echo
+function title { COLOR='\033[1;37m'; NC='\033[0m'; printf "\n${COLOR}$1${NC}\n"; }
 
 # Host Info
 

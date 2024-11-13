@@ -74,6 +74,7 @@ If( $tag -eq "init" )
 
   # Git
   Write-Host "Installing Git..."
+  winget uninstall --exact --id Git.Git
   choco install git git.install --yes --params="/NoAutoCrlf /WindowsTerminal /DefaultBranchName:main /Editor:VisualStudioCode"
   Write-Host "Git successfully installed"
 

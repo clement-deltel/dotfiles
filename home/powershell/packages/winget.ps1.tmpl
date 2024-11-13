@@ -37,7 +37,6 @@ If( $tag -eq "init" )
   {{- if eq .machine "personal" }}
   # Netflix
   winget install --exact --id=9WZDNCRFJ3TJ --interactive --source=msstore
-
   {{- else if eq .machine "work" }}
   # PDF Merger & Splitter
   winget install --exact --id=9P4TCNS9H432 --interactive --source=msstore
@@ -51,8 +50,8 @@ Else If( $tag -eq "update" )
   {{- if eq .machine "personal" }}
   # Netflix
   winget upgrade --exact --id=9WZDNCRFJ3TJ --interactive --source=msstore
-
   {{- else if eq .machine "work" }}
   # PDF Merger & Splitter
   winget upgrade --exact --id=9P4TCNS9H432 --interactive --source=msstore
+  {{- end }}
 }

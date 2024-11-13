@@ -19,7 +19,7 @@ ENV TZ=${TZ}
 # Install pre-requisites packages
 RUN apt update && apt install -y curl git tzdata sudo
 
-# Create group, user, and grant sudo poermissions without password
+# Create group, user, and grant sudo permissions without password
 RUN groupadd --gid ${ID} ${USER} && \
     useradd --create-home --gid ${ID} --home /home/${USER} --shell /bin/bash --uid ${ID} ${USER} &&\
     adduser ${USER} sudo && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers

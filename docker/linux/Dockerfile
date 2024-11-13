@@ -26,7 +26,7 @@ RUN groupadd --gid ${ID} ${USER} && \
 WORKDIR /home/${USER}
 
 COPY --chown=${USER} chezmoi.toml.example ./.config/chezmoi/chezmoi.toml
-COPY --chown=${USER} install.sh ./install.sh
+COPY --chown=${USER} docker/linux/install.sh ./install.sh
 RUN chmod +x ./install.sh
 
 USER ${USER}

@@ -17,7 +17,7 @@ ENV GITHUB_USERNAME=${GITHUB_USERNAME}
 ENV TZ=${TZ}
 
 # Install pre-requisites packages
-RUN apt update && apt install -y curl git tzdata sudo
+RUN apt update -y && apt install -y curl git tzdata sudo
 
 # Create group, user, and grant sudo permissions without password
 RUN groupadd --gid ${ID} ${USER} && \

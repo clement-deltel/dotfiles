@@ -26,10 +26,11 @@ ENV TZ=${TZ}
 RUN apt update -y && apt install -y curl git jq libsecret-1-0 sudo tzdata unzip
 
 # Install Bitwarden CLI
-WORKDIR /usr/local/bin
 RUN export VERSION=$(curl -H "Accept: application/vnd.github+json" https://api.github.com/repos/bitwarden/clients/releases | jq  -r 'sort_by(.published_at) | reverse | .[].name | select( index("CLI") )' | sed "s:.*CLI v::" | head -n 1) &&\
     curl -LO "https://github.com/bitwarden/clients/releases/download/cli-v{$VERSION}/bw-linux-{$VERSION}.zip" &&\
-    unzip *.zip && chmod +x ./bw
+    unzip -d /usr/local/bin bw-linux-*.zip &&\
+    chmod +x /usr/local/bin/bw &&\
+    rm -f bw-linux-*.zip
 
 # Configure Bitwarden CLI
 RUN bw config server ${BW_SERVER} &&\

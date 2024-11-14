@@ -1,0 +1,78 @@
+- name: AWS
+  hosts: all
+  gather_facts: true
+  vars:
+    dependencies:
+      - firefox
+      - xdg-utils # Enable starting a browser to run aws sso login
+      - zip
+  vars_files:
+    - vars/main.yml
+
+  tasks:
+  # Dependencies
+  - name: Dependencies
+    block:
+
+    - name: List dependencies
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "dependencies: {{ dependencies }}"
+
+    # sudo apt update -y && sudo apt install -y
+    - name: Install dependencies
+      tags: init
+      ansible.builtin.apt:
+        name: "{{ dependencies }}"
+        state: present
+        update_cache: true
+
+    # sudo apt update -y && sudo apt upgrade -y
+    - name: Upgrade dependencies
+      tags: update
+      ansible.builtin.apt:
+        name: "{{ dependencies }}"
+        state: latest
+        update_cache: true
+
+  # Install AWS CLI
+  - name: Install AWS CLI
+    tags: [init, update]
+    block:
+
+    # https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+    - name: Download the installer
+      ansible.builtin.unarchive:
+        src: "https://awscli.amazonaws.com/awscli-exe-linux-{{ ansible_architecture }}.zip"
+        dest: "/tmp"
+        remote_src: true
+        creates: "/tmp/aws"
+        mode: 0755
+
+    - name: Install
+      ansible.builtin.command:
+      args:
+        cmd: "/tmp/aws/install"
+        creates: /usr/local/bin/aws
+
+    - name: Delete installation directory
+      ansible.builtin.file:
+        path: /tmp/aws
+        state: absent
+
+  # Configure AWS CLI
+  - name: Configure AWS CLI
+    tags: init
+    ansible.builtin.shell: aws configure set {{ item.key }} {{ item.value }} --profile {{ aws_profile }}
+    no_log: True
+    with_dict:
+      aws_access_key_id: "{{ aws_access_key }}"
+      aws_secret_access_key: "{{ aws_secret_key }}"
+      region: "{{ aws_region }}"
+      format: "{{ aws_format }}"
+      sso_session: "{{ aws_sso_session }}"
+      sso_account_id: "{{ aws_sso_account_id }}"
+      sso_role_name: "{{ aws_sso_role_name }}"
+      sso_start_url: "{{ aws_sso_start_url }}"
+      sso_region: "{{ aws_sso_region }}"
+      sso_registration_scopes: "{{ aws_sso_registration_scopes }}"

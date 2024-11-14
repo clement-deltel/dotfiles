@@ -8,6 +8,8 @@
       - fzf # general-purpose command-line fuzzy finder
       - git
       - htop # resources monitoring
+      - jq # command-line JSON processor
+      - libsecret-1-0 # Bitwarden CLI requirement
       - net-tools
       - pwgen # random password generator
       - software-properties-common

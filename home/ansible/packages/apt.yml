@@ -16,6 +16,7 @@
       - tzdata # timezone
       - unzip
       - vim # text editor of choice
+      - xclip # CLI clipboard utility
       - zip
 
   tasks:

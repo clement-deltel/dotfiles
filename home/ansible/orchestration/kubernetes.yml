@@ -1,7 +1,6 @@
 - name: Kubernetes
   hosts: all
   gather_facts: false
-  become: true
   vars:
     formulas:
       - k9s

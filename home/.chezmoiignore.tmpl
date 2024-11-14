@@ -6,10 +6,10 @@
 powershell/
 profile.ps1
 # Shell
-{{ if ne .shell "zsh" }}
+{{ if ne .chezmoi.data.shell "zsh" }}
 .p10k.zsh
 .zshrc
-{{ else if ne .shell "bash" }}
+{{ else if ne .chezmoi.data.shell "bash" }}
 .bash_profile
 .bashrc
 {{ end }}

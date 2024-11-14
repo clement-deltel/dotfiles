@@ -3,9 +3,9 @@
 #==============================================================================#
 #               ------- Chezmoi ------                                         #
 #==============================================================================#
-{{- if eq .shell "zsh" }}
+{{- if eq .chezmoi.data.shell "zsh" }}
 source <(chezmoi completion zsh)
-{{- else if eq .shell "bash" }}
+{{- else if eq .chezmoi.data.shell "bash" }}
 source <(chezmoi completion bash)
 {{- end }}
 {{- end }}
@@ -13,9 +13,9 @@ source <(chezmoi completion bash)
 #==============================================================================#
 #               ------- Helm ------                                            #
 #==============================================================================#
-{{- if eq .shell "zsh" }}
+{{- if eq .chezmoi.data.shell "zsh" }}
 source <(helm completion zsh)
-{{- else if eq .shell "bash" }}
+{{- else if eq .chezmoi.data.shell "bash" }}
 source <(helm completion bash)
 {{- end }}
 {{- end }}
@@ -23,9 +23,9 @@ source <(helm completion bash)
 #==============================================================================#
 #               ------- Kubernetes ------                                      #
 #==============================================================================#
-{{- if eq .shell "zsh" }}
+{{- if eq .chezmoi.data.shell "zsh" }}
 source <(kubectl completion zsh)
-{{- else if eq .shell "bash" }}
+{{- else if eq .chezmoi.data.shell "bash" }}
 source <(kubectl completion bash)
 {{- end }}
 {{- end }}
@@ -33,9 +33,9 @@ source <(kubectl completion bash)
 #==============================================================================#
 #               ------- Poetry ------                                          #
 #==============================================================================#
-# {{- if eq .shell "zsh" }}
+# {{- if eq .chezmoi.data.shell "zsh" }}
 # source <(poetry completions zsh)
-# {{- else if eq .shell "bash" }}
+# {{- else if eq .chezmoi.data.shell "bash" }}
 # # source <(poetry completions bash)
 # {{- end }}
 # {{- end }}

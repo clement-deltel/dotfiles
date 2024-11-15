@@ -2,7 +2,15 @@
 
 Personal dotfiles managed with [chezmoi][1].
 
-## Linux
+## Pre-requisites
+
+I store the below sensitive configuration in my Vaultwarden instance:
+
+ - chezmoi toml configuration file: notes of the item named "chezmoi"
+ - private ssh key: attachment of the item named "SSH Key"
+ - aws cli configuration: custom fields of the item with the id "223277e3-498b-4d3c-9c0b-fe80e0e83d7b"
+
+## Install on Linux
 
 ### Ubuntu
 
@@ -23,8 +31,9 @@ sh -c "$(curl -fsLS get.chezmoi.io)"
 
 2. Export required environment variables:
 ```bash
-# Fill the blanks with your API credentials and password
+# Update with your server address
 export BW_SERVER="https://bw.domain.com"
+# Fill the blanks with your API credentials and password
 export BW_CLIENTID=""
 export BW_CLIENTSECRET=""
 export BW_PASSWORD=''

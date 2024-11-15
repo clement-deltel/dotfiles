@@ -94,6 +94,11 @@ alias doc='sudo su - docker'
 alias awslog='aws sso login'
 
 #==============================================================================#
+#               ------- Bitwarden CLI ------                                   #
+#==============================================================================#
+alias bwl='bw lock'
+
+#==============================================================================#
 #               ------- Chezmoi ------                                         #
 #==============================================================================#
 alias cm=chezmoi-fn
@@ -101,10 +106,14 @@ alias cma='chezmoi apply'
 alias cmad=chezmoi-add-fn
 alias cmadt=chezmoi-add-template-fn
 alias cmcd='chezmoi cd'
-alias cmd='chezmoi diff'
+alias cmd='chezmoi data'
+alias cmdi='chezmoi diff'
 alias cme=chezmoi-edit-fn
+alias cmed='chezmoi edit-config'
+alias cmi='chezmoi ignored'
+alias cmm=chezmoi-merge-fn
 alias cmo='code ~/.local/share/chezmoi'
-alias cmtoml='code ~/.config/chezmoi/chezmoi.toml'
+alias cmtoml='chezmoi edit-config'
 alias cmu='chezmoi update'
 
 #==============================================================================#

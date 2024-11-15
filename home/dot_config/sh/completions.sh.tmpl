@@ -8,7 +8,6 @@ source <(chezmoi completion zsh)
 {{- else if eq .shell "bash" }}
 source <(chezmoi completion bash)
 {{- end }}
-{{- end }}
 
 #==============================================================================#
 #               ------- Helm ------                                            #
@@ -17,7 +16,6 @@ source <(chezmoi completion bash)
 source <(helm completion zsh)
 {{- else if eq .shell "bash" }}
 source <(helm completion bash)
-{{- end }}
 {{- end }}
 
 #==============================================================================#
@@ -28,7 +26,6 @@ source <(kubectl completion zsh)
 {{- else if eq .shell "bash" }}
 source <(kubectl completion bash)
 {{- end }}
-{{- end }}
 
 #==============================================================================#
 #               ------- Poetry ------                                          #
@@ -37,5 +34,4 @@ source <(kubectl completion bash)
 # source <(poetry completions zsh)
 # {{- else if eq .shell "bash" }}
 # # source <(poetry completions bash)
-# {{- end }}
 # {{- end }}

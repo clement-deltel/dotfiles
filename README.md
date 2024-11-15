@@ -31,11 +31,12 @@ export BW_PASSWORD=''
 export GITHUB_USERNAME=clement-deltel
 ```
 
-3. Get chezmoi configuration file from Bitwarden and initialize the dotfiles
+3. Get chezmoi configuration file from Bitwarden:
 ```bash
 bw config server ${BW_SERVER}
 bw login --apikey
 export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
+mkdir -p ~/.config/chezmoi
 bw get notes chezmoi > ~/.config/chezmoi/chezmoi.toml
 bw lock
 ```

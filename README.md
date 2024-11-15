@@ -61,31 +61,32 @@ bw lock
 6. Ansible playbooks automatically install and configure the tools listed below:
     - Package Managers
       - apt
-        - [fzf][2]
-        - [htop][3]
+        - [exa][2]
+        - [fzf][3]
+        - [htop][4]
         - pwgen
-        - [vim][4]
-        - [xclip][5]
-      - [homebrew][6]
+        - [vim][5]
+        - [xclip][6]
+      - [homebrew][7]
     - Shell
       - zsh
-      - [zoxide][7]
+      - [zoxide][8]
     - Languages
       - Go
       - Python
-        - [pipx][8]
-        - [poetry][9]
-        - [pyenv][10]
+        - [pipx][9]
+        - [poetry][10]
+        - [pyenv][11]
     - Orchestration
       - Docker
       - Kubernetes
-        - [helm][11]
-        - [kubectl][12]
-        - [k9s][13]
-        - [stern][14]
+        - [helm][12]
+        - [kubectl][13]
+        - [k9s][14]
+        - [stern][15]
     - Infrastructure as Code
-      - [Pulumi][15]
-      - [Terraform][16]
+      - [Pulumi][16]
+      - [Terraform][17]
     - Cloud
       - AWS CLI
 
@@ -130,18 +131,19 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
    - zsh-autosuggestions
 
 [1]:https://www.chezmoi.io
-[2]:https://github.com/junegunn/fzf
-[3]:https://github.com/htop-dev/htop
-[4]:https://github.com/vim/vim
-[5]:https://github.com/astrand/xclip
-[6]:https://github.com/Homebrew/brew
-[7]:https://github.com/ajeetdsouza/zoxide
-[8]:https://github.com/pypa/pipx
-[9]:https://github.com/python-poetry/poetry
-[10]:https://github.com/pyenv/pyenv
-[11]:https://github.com/helm/helm
-[12]:https://github.com/kubernetes/kubectl
-[13]:https://github.com/derailed/k9s
-[14]:https://github.com/stern/stern
-[15]:https://github.com/pulumi/pulumi
-[16]:https://github.com/hashicorp/terraform
+[2]:https://github.com/ogham/exa
+[3]:https://github.com/junegunn/fzf
+[4]:https://github.com/htop-dev/htop
+[5]:https://github.com/vim/vim
+[6]:https://github.com/astrand/xclip
+[7]:https://github.com/Homebrew/brew
+[8]:https://github.com/ajeetdsouza/zoxide
+[9]:https://github.com/pypa/pipx
+[10]:https://github.com/python-poetry/poetry
+[11]:https://github.com/pyenv/pyenv
+[12]:https://github.com/helm/helm
+[13]:https://github.com/kubernetes/kubectl
+[14]:https://github.com/derailed/k9s
+[15]:https://github.com/stern/stern
+[16]:https://github.com/pulumi/pulumi
+[17]:https://github.com/hashicorp/terraform

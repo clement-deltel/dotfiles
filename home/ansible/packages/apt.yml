@@ -5,6 +5,7 @@
     packages:
       - build-essential
       - curl
+      - exa # modern replacement for 'ls'.
       - fzf # general-purpose command-line fuzzy finder
       - git
       - htop # resources monitoring

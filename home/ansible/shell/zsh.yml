@@ -35,7 +35,7 @@
         update_cache: true
 
   # Shell
-  - name: Shell - Set zsh as default
+  - name: Set zsh as default shell
     tags: init
     ansible.builtin.user:
       name: ubuntu
@@ -48,6 +48,6 @@
     ansible.builtin.uri:
       method: GET
       url: "{{ antigen_url }}"
-      follow_redirects: safe
       dest: "/usr/local/bin/antigen.zsh"
+      follow_redirects: safe
       mode: 0755

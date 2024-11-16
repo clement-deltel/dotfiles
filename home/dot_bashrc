@@ -122,7 +122,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-set -o ignoreeof    # Shell doesnt quit upon reading the end of file.
+set -o ignoreeof    # Shell doesn't quit upon reading the end of file
 #set -o noclobber   # Prevents overwriting existing regular files
 set -o notify       # Alerts the user upon background job termination
 #set -o xtrace      # Prints out command arguments during execution

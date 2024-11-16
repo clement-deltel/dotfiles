@@ -5,9 +5,9 @@
     formulas:
       - k9s
       - stern
-    kubectl_install_tmp: /tmp/kubernetes
     helm_install_tmp: /tmp/helm
     helm_install_url: https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+    kubectl_install_tmp: /tmp/kubernetes
 
   tasks:
   # Aliases collection from https://github.com/ahmetb/kubectl-aliases

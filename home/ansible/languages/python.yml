@@ -2,6 +2,9 @@
   hosts: all
   gather_facts: false
   vars:
+    packages:
+      - python3
+      - python3-pip
     pyenv_dependencies:
       - libncursesw5-dev
       - libreadline-dev
@@ -10,9 +13,6 @@
     pyenv_formulas:
       - pyenv
       - pyenv-virtualenv
-    packages:
-      - python3
-      - python3-pip
 
   tasks:
   # Packages

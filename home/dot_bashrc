@@ -131,7 +131,6 @@ set -o vi           # Set vi mode for shell
 # User specific environment and startup programs
 export USER=$(whoami)
 export HOME=/home/${USER}
-export PATH=${PATH}:${HOME}/.local/bin:${HOME}/bin
 
 #==============================================================================#
 #               ------- Source --------                                        #
@@ -149,9 +148,10 @@ source_if_exists ${HOME}/.kube/aliases.sh
 
 # Chezmoi
 export EDITOR='code --wait'
+export PATH=${PATH}:${HOME}/.local/bin
 
 # Go
-export GOPATH=/home/${USER}/go
+export GOPATH=${HOME}/go
 export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
 
 # Homebrew
@@ -162,7 +162,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export KUBE_EDITOR='code --wait'
 
 # Pulumi
-export PATH=${PATH}:/${HOME}/.pulumi/bin
+export PATH=${PATH}:${HOME}/.pulumi/bin
 
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then

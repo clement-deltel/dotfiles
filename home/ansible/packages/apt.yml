@@ -3,6 +3,7 @@
   gather_facts: false
   vars:
     packages:
+      - bash-completion
       - build-essential
       - curl
       - exa # modern replacement for 'ls'.

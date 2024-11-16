@@ -1,13 +1,18 @@
 #!/bin/bash
 
-# Chezmoi
+# Configuration Management - Chezmoi
 source <(chezmoi completion bash)
 
-# Helm
-source <(helm completion bash)
+# Infrastructure as code
+source <(terraform -install-autocomplete)
 
-# Kubernetes
+# Language - Python
+source <(poetry completions bash)
+
+# Orchestration
+source <(docker completion bash)
+source <(helm completion bash)
 source <(kubectl completion bash)
 
-# Poetry
-source <(poetry completions bash)
+# Version Control
+source /usr/share/bash-completion/completions/git

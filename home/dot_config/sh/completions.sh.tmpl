@@ -30,8 +30,9 @@ source <(kubectl completion bash)
 #==============================================================================#
 #               ------- Poetry ------                                          #
 #==============================================================================#
-# {{- if eq .shell "zsh" }}
-# source <(poetry completions zsh)
-# {{- else if eq .shell "bash" }}
-# # source <(poetry completions bash)
-# {{- end }}
+{{- if eq .shell "zsh" }}
+# mkdir $ZSH_CUSTOM/plugins/poetry
+# poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
+{{- else if eq .shell "bash" }}
+source <(poetry completions bash)
+{{- end }}

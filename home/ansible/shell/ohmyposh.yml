@@ -34,3 +34,15 @@
       ansible.builtin.file:
         path: "{{ install_tmp }}"
         state: absent
+
+    always:
+    - name: Confirm version
+      ansible.builtin.command:
+        cmd: oh-my-posh version
+      register: version
+      changed_when: false
+
+    - name: Show version
+      when: version is defined
+      ansible.builtin.debug:
+        msg: "Installed version: {{ version.stdout }}"

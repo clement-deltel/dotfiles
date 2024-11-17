@@ -73,20 +73,20 @@ function bitwarden-login-fn {
   # Prompt for the Bitwarden client id and secret securely
   echo -n "Enter your Bitwarden client ID: "
   read -s BW_CLIENTID
+  echo
   echo -n "Enter your Bitwarden client secret: "
   read -s BW_CLIENTSECRET
   echo
   # Run the login command
   bw login --apikey
-  # Check if the command succeeded
-  if [ $? -eq 0 ]; then
-    echo "Successful login"
-  else
-    echo "Login failed. Please check your credentials or Bitwarden setup."
-  fi
   # Unset the API credentials variables for security
   unset BW_CLIENTID
   unset BW_CLIENTSECRET
+}
+
+function bitwarden-open-fn {
+  bitwarden-login-fn
+  bitwarden-create-session-fn
 }
 
 #==============================================================================#

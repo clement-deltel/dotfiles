@@ -1,6 +1,6 @@
 - name: Kubernetes
   hosts: all
-  gather_facts: false
+  gather_facts: true
   vars:
     formulas:
       - k9s
@@ -8,6 +8,8 @@
     helm_install_tmp: /tmp/helm
     helm_install_url: https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
     kubectl_install_tmp: /tmp/kubernetes
+  vars_files:
+    - ../vars/main.yml
 
   tasks:
   # Aliases collection from https://github.com/ahmetb/kubectl-aliases
@@ -54,7 +56,7 @@
 
     - name: kubectl - Download
       ansible.builtin.get_url:
-        url: https://dl.k8s.io/release/{{ version.content }}/bin/linux/amd64/kubectl
+        url: https://dl.k8s.io/release/{{ version.content }}/bin/{{ ansible_system | lower }}/{{ deb_architecture[ansible_architecture] }}/kubectl
         dest: "{{ kubectl_install_tmp }}/kubectl"
 
     - name: kubectl - Get checksum
@@ -64,7 +66,7 @@
 
     - name: kubectl - Download control checksum
       ansible.builtin.get_url:
-        url: https://dl.k8s.io/release/{{ version.content }}/bin/linux/amd64/kubectl.sha256
+        url: https://dl.k8s.io/release/{{ version.content }}/bin/{{ ansible_system | lower }}/{{ deb_architecture[ansible_architecture] }}/kubectl.sha256
         dest: "{{ kubectl_install_tmp }}/kubectl.sha256"
 
     - name: kubectl - Get control checksum

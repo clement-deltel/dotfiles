@@ -1,6 +1,6 @@
 - name: Bitwarden CLI
   hosts: all
-  gather_facts: false
+  gather_facts: true
   vars:
     dependencies:
       - curl
@@ -62,7 +62,7 @@
 
     - name: Install
       ansible.builtin.unarchive:
-            src: "https://github.com/bitwarden/clients/releases/download/cli-v{{ bitwarden_cli_version }}/bw-linux-{{ bitwarden_cli_version }}.zip"
+            src: "https://github.com/bitwarden/clients/releases/download/cli-v{{ bitwarden_cli_version }}/bw-{{ ansible_system | lower }}-{{ bitwarden_cli_version }}.zip"
             dest: "/usr/local/bin"
             remote_src: true
             mode: 0755

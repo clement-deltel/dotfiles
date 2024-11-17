@@ -172,8 +172,10 @@ function venv-create-fn { pyenv virtualenv "$1" "$2"; }
 function venv-delete-fn { pyenv virtualenv-delete "$1"; }
 function venv-set-local-fn { pyenv local "$1"; }
 
+{{- if eq .shell "bash" }}
 #==============================================================================#
 #               ------- Terraform ------                                       #
 #==============================================================================#
 function terraform-fn { terraform "$@"; }
 function terraform-state-fn { terraform state "$@"; }
+{{- end }}

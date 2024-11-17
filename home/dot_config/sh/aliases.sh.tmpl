@@ -229,6 +229,7 @@ alias vloc=venv-set-local-fn
 alias voff='pyenv deactivate'
 alias vrm=venv-delete-fn
 
+{{- if eq .shell "bash" }}
 #==============================================================================#
 #               ------- Terraform ------                                       #
 #==============================================================================#
@@ -242,6 +243,7 @@ alias tfp='terraform plan'
 alias tfs=terraform-state-fn
 alias tfsh='terraform show'
 alias tfv='terraform validate'
+{{- end }}
 
 {{- if eq .shell "zsh" }}
 #==============================================================================#

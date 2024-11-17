@@ -9,10 +9,18 @@
   import_playbook: packages/homebrew.yml
 
 # Shell
+- name: Eza
+  import_playbook: shell/eza.yml
+- name: Oh My Posh
+  import_playbook: shell/ohmyposh.yml
 - name: Zoxide
   import_playbook: shell/zoxide.yml
 - name: Zsh
   import_playbook: shell/zsh.yml
+
+# Security
+- name: Bitwarden CLI
+  import_playbook: security/bw.yml
 
 # Languages
 - name: Go

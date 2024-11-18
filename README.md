@@ -84,6 +84,7 @@ bw lock
       - Kubernetes
         - [helm](https://github.com/helm/helm)
         - [kubectl](https://github.com/kubernetes/kubectl)
+        - [kubectx](https://github.com/ahmetb/kubectx)
         - [k9s](https://github.com/derailed/k9s)
         - [stern](https://github.com/stern/stern)
     - Infrastructure as Code

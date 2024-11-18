@@ -3,6 +3,7 @@
   gather_facts: true
   vars:
     formulas:
+      - kubectx
       - k9s
       - stern
     helm_install_tmp: /tmp/helm

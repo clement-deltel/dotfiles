@@ -121,7 +121,7 @@ Zsh is my default shell. Here is the list of plugins:
     - [ansible](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ansible)
     - [chezmoi](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/chezmoi)
   - Distro-related
-    - [debian](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/debian)
+    - [ubuntu](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ubuntu)
   - Infrastructure as Code
     - [terraform](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/terraform)
   - Languages
@@ -136,6 +136,7 @@ Zsh is my default shell. Here is the list of plugins:
     - [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages)
     - [colorize](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize)
     - [command-not-found](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found)
+    - [safe-paste](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/safe-paste)
   - Orchestration
     - [docker](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker)
     - [docker-compose](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker-compose)
@@ -146,6 +147,7 @@ Zsh is my default shell. Here is the list of plugins:
     - [eza](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/eza)
     - [fzf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf)
     - [history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history)
+    - [sudo](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo)
     - [zoxide](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zoxide)
   - Version Control
     - [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)

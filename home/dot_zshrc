@@ -13,7 +13,7 @@ export HOME=/home/${USER}
 #               ------- Fuzzy Finder (fzf) --------                            #
 #==============================================================================#
 export FZF_BASE=/usr/bin/fzf
-export FZF_DEFAULT_COMMAND='fd'
+export FZF_DEFAULT_COMMAND='fzf'
 
 DISABLE_FZF_AUTO_COMPLETION="false"
 DISABLE_FZF_KEY_BINDINGS="false"
@@ -49,7 +49,7 @@ antigen bundle ansible
 antigen bundle chezmoi
 
 # Distro-related
-antigen bundle debian
+antigen bundle ubuntu
 
 # Infrastructure as Code
 antigen bundle terraform
@@ -68,6 +68,7 @@ antigen bundle brew
 antigen bundle colored-man-pages
 # antigen bundle colorize #TODO install Chroma
 antigen bundle command-not-found
+antigen bundle safe-paste
 
 # Orchestration
 antigen bundle docker
@@ -80,11 +81,15 @@ antigen bundle cp
 antigen bundle eza
 antigen bundle fzf
 antigen bundle history
+antigen bundle sudo
 antigen bundle zoxide
 
 # Version Control
 antigen bundle git
 antigen bundle pre-commit
+
+# Other
+antigen bundle vscode
 
 # Load bundles from external repos
 antigen bundle zsh-users/zsh-completions

@@ -167,8 +167,6 @@ Here is a list of tools that could be interesting and further enhance the stack:
 
 - AI
   - https://github.com/di-sukharev/opencommit
-- Log
-  - https://github.com/tstack/lnav
 - Infrastructure as Code
   - https://github.com/tenable/terrascan
 - Shell

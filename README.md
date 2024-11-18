@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal dotfiles managed with [chezmoi][https://www.chezmoi.io].
+Personal dotfiles managed with [chezmoi](https://www.chezmoi.io).
 
 ## Pre-requisites
 
@@ -61,34 +61,34 @@ bw lock
 6. Ansible playbooks automatically install and configure the tools listed below:
     - Package Managers
       - apt
-        - [fzf][https://github.com/junegunn/fzf]
-        - [htop][https://github.com/htop-dev/htop]
-        - [jq][https://github.com/jqlang/jq]
+        - [fzf](https://github.com/junegunn/fzf)
+        - [htop](https://github.com/htop-dev/htop)
+        - [jq](https://github.com/jqlang/jq)
         - pwgen
-        - [vim][https://github.com/vim/vim]
-        - [xclip][https://github.com/astrand/xclip]
-      - [homebrew][https://github.com/Homebrew/brew]
+        - [vim](https://github.com/vim/vim)
+        - [xclip](https://github.com/astrand/xclip)
+      - [homebrew](https://github.com/Homebrew/brew)
     - Shell
-      - [eza][https://github.com/eza-community/eza]
-      - [Oh My Posh][https://github.com/jandedobbeleer/oh-my-posh]
+      - [eza](https://github.com/eza-community/eza)
+      - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh)
       - zsh
-      - [zoxide][https://github.com/ajeetdsouza/zoxide]
+      - [zoxide](https://github.com/ajeetdsouza/zoxide)
     - Languages
       - Go
       - Python
-        - [pipx][https://github.com/pypa/pipx]
-        - [poetry][https://github.com/python-poetry/poetry]
-        - [pyenv][https://github.com/pyenv/pyenv]
+        - [pipx](https://github.com/pypa/pipx)
+        - [poetry](https://github.com/python-poetry/poetry)
+        - [pyenv](https://github.com/pyenv/pyenv)
     - Orchestration
       - Docker
       - Kubernetes
-        - [helm][https://github.com/helm/helm]
-        - [kubectl][https://github.com/kubernetes/kubectl]
-        - [k9s][https://github.com/derailed/k9s]
-        - [stern][https://github.com/stern/stern]
+        - [helm](https://github.com/helm/helm)
+        - [kubectl](https://github.com/kubernetes/kubectl)
+        - [k9s](https://github.com/derailed/k9s)
+        - [stern](https://github.com/stern/stern)
     - Infrastructure as Code
-      - [Pulumi][https://github.com/pulumi/pulumi]
-      - [Terraform][https://github.com/hashicorp/terraform]
+      - [Pulumi](https://github.com/pulumi/pulumi)
+      - [Terraform](https://github.com/hashicorp/terraform)
     - Cloud
       - AWS CLI
 
@@ -112,48 +112,50 @@ Zsh is my default shell. Here is the list of plugins:
 
 - **oh-my-zsh repository**
   - Aliases
-    - [aliases][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aliases]
-    - [alias-finder][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/alias-finder]
-    - [common-aliases][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases]
+    - [aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aliases)
+    - [alias-finder](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/alias-finder)
+    - [common-aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases)
   - Cloud
-    - [aws][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws]
+    - [aws](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws)
   - Configuration Management
-    - [ansible][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ansible]
-    - [chezmoi][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/chezmoi]
+    - [ansible](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ansible)
+    - [chezmoi](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/chezmoi)
   - Distro-related
-    - [debian][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/debian]
+    - [debian](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/debian)
   - Infrastructure as Code
-    - [terraform][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/terraform]
+    - [terraform](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/terraform)
   - Languages
     - Go
-      - [golang][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/golang]
+      - [golang](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/golang)
     - Python
-      - [pip][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pip]
-      - [poetry][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/poetry]
+      - [pip](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pip)
+      - [poetry](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/poetry)
   - Packages
-    - [brew][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/brew]
+    - [brew](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/brew)
   - Productivity
-    - [colored-man-pages][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages]
-    - [colorize][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize]
-    - [command-not-found][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found]
+    - [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages)
+    - [colorize](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize)
+    - [command-not-found](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found)
   - Orchestration
-    - [docker][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker]
-    - [docker-compose][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker-compose]
-    - [helm][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/helm]
-    - [kubectl][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl]
+    - [docker](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker)
+    - [docker-compose](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker-compose)
+    - [helm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/helm)
+    - [kubectl](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl)
   - Shell
-    - [cp][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cp]
-    - [eza][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/eza]
-    - [fzf][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf]
-    - [history][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history]
-    - [zoxide][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zoxide]
+    - [cp](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cp)
+    - [eza](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/eza)
+    - [fzf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf)
+    - [history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history)
+    - [zoxide](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zoxide)
   - Version Control
-    - [git][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git]
-    - [pre-commit][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pre-commit]
+    - [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
+    - [pre-commit](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pre-commit)
+  - Other
+    - [vscode](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode)
 - **zsh-users repository**
-  - [zsh-completions][https://github.com/zsh-users/zsh-completions]
-  - [zsh-autosuggestions][https://github.com/zsh-users/zsh-autosuggestions]
-  - [zsh-syntax-highlighting][https://github.com/zsh-users/zsh-syntax-highlighting]
+  - [zsh-completions](https://github.com/zsh-users/zsh-completions)
+  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
 Here is my theme: robbyrussell
 

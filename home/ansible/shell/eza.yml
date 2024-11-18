@@ -47,9 +47,11 @@
         mode: 0755
 
     - name: Download GPG apt key
-      ansible.builtin.get_url:
+      ansible.builtin.uri:
+        method: GET
         url: https://raw.githubusercontent.com/eza-community/eza/main/deb.asc
         dest: /tmp/deb.asc
+        follow_redirects: safe
         mode: 0644
 
     - name: Import GPG key

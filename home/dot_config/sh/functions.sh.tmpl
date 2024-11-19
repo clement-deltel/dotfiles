@@ -23,7 +23,7 @@ function exec-sub { find . -maxdepth 1 -mindepth 1 -type d -execdir echo {} \; -
 function mkcd { mkdir "$1"; cd "$1" || return; }
 
 # Bold echo
-function title { COLOR='\033[1;37m'; NC='\033[0m'; printf "\n${COLOR}$1${NC}\n"; }
+function title { COLOR='\033[1;37m'; NC='\033[0m'; echo "\n${COLOR}$1${NC}\n"; }
 
 # Host Info
 

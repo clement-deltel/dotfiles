@@ -92,7 +92,7 @@
 
     - name: Import GPG key
       ansible.builtin.command:
-        cmd: gpg --dearmor -o /etc/apt/keyrings/docker.gpg /tmp/docker.gpg
+        cmd: gpg --dearmor --output /etc/apt/keyrings/docker.gpg --yes /tmp/docker.gpg
 
     - name: Add apt repository
       ansible.builtin.apt_repository:

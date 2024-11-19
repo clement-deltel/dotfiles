@@ -56,7 +56,7 @@
 
     - name: Import GPG key
       ansible.builtin.command:
-        cmd: gpg --dearmor -o /etc/apt/keyrings/gierens.gpg /tmp/deb.asc
+        cmd: gpg --dearmor --output /etc/apt/keyrings/gierens.gpg --yes /tmp/deb.asc
 
     - name: Add apt repository
       ansible.builtin.apt_repository:

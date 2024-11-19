@@ -152,6 +152,9 @@ export KUBE_EDITOR='code --wait'
 # Pulumi
 export PATH=${PATH}:~/.pulumi/bin
 
+# Zoxide
+eval "$(zoxide init zsh)"
+
 #==============================================================================#
 #               ------- Personal Aliases & Functions --------                  #
 #==============================================================================#

@@ -133,6 +133,12 @@ export USER=$(whoami)
 export HOME=/home/${USER}
 
 #==============================================================================#
+#               ------- Homebrew --------                                      #
+#==============================================================================#
+export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+#==============================================================================#
 #               ------- Pyenv --------                                         #
 #==============================================================================#
 # pyenv
@@ -152,10 +158,6 @@ export EDITOR='code --wait'
 # Go
 export GOPATH=~/go
 export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
-
-# Homebrew
-export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Kubernetes
 export KUBE_EDITOR='code --wait'

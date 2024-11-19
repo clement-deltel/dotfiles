@@ -40,7 +40,7 @@
     always:
     - name: Confirm version
       ansible.builtin.command:
-        cmd: oh-my-posh version
+        cmd: ~/.local/bin/oh-my-posh version
       register: version
       changed_when: false
 

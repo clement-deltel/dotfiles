@@ -40,7 +40,7 @@
     always:
     - name: Confirm version
       ansible.builtin.command:
-        cmd: zoxide --version
+        cmd: ~/.local/bin/zoxide --version
       register: version
       changed_when: false
 

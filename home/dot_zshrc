@@ -10,28 +10,42 @@ export USER=$(whoami)
 export HOME=/home/${USER}
 
 #==============================================================================#
-#               ------- Homebrew --------                                      #
+#               ------- Environment ------                                     #
 #==============================================================================#
-export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH=${PATH}:~/.local/bin
 
-#==============================================================================#
-#               ------- Fuzzy Finder (fzf) --------                            #
-#==============================================================================#
+# Chezmoi
+export EDITOR='code --wait'
+
+# fzf
 export FZF_BASE=/usr/bin/fzf
 export FZF_DEFAULT_COMMAND='fzf'
 
 DISABLE_FZF_AUTO_COMPLETION="false"
 DISABLE_FZF_KEY_BINDINGS="false"
 
-#==============================================================================#
-#               ------- Pyenv --------                                         #
-#==============================================================================#
+# Go
+export GOPATH=~/go
+export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
+
+# Homebrew
+export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Kubernetes
+export KUBE_EDITOR='code --wait'
+
+# Pulumi
+export PATH=${PATH}:~/.pulumi/bin
+
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
  eval "$(pyenv init -)"
 fi
 eval "$(pyenv virtualenv-init -)"
+
+# Zoxide
+eval "$(zoxide init zsh --cmd cd)"
 
 #==============================================================================#
 #               ------- Antigen --------                                       #
@@ -133,27 +147,6 @@ zstyle ':omz:plugins:eza' 'icons' yes
 zstyle ':omz:plugins:eza' 'size-prefix' si # binary,none
 # zstyle ':omz:plugins:eza' 'time-style' $TIME_STYLE
 zstyle ':omz:plugins:eza' 'hyperlink' no
-
-#==============================================================================#
-#               ------- Environment ------                                     #
-#==============================================================================#
-export PATH=${PATH}:~/.local/bin
-
-# Chezmoi
-export EDITOR='code --wait'
-
-# Go
-export GOPATH=~/go
-export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
-
-# Kubernetes
-export KUBE_EDITOR='code --wait'
-
-# Pulumi
-export PATH=${PATH}:~/.pulumi/bin
-
-# Zoxide
-eval "$(zoxide init zsh)"
 
 #==============================================================================#
 #               ------- Personal Aliases & Functions --------                  #

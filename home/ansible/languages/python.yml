@@ -142,7 +142,7 @@
     - name: Commitizen - Confirm version
       tags: [init, update]
       ansible.builtin.command:
-        cmd: cz version
+        cmd: ~/.local/bin/cz version
       register: version
       changed_when: false
 
@@ -175,7 +175,7 @@
     - name: Poetry - Confirm version
       tags: [init, update]
       ansible.builtin.command:
-        cmd: poetry --version
+        cmd: ~/.local/bin/poetry --version
       register: version
       changed_when: false
 

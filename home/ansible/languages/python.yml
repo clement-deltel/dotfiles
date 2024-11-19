@@ -119,6 +119,39 @@
       ansible.builtin.debug:
         msg: "Installed version: {{ version.stdout }}"
 
+  # Commitizen
+  - name: commitizen
+    become_user: ubuntu
+    block:
+
+    # pipx install commitizen
+    - name: Commitizen - Install
+      tags: init
+      community.general.pipx:
+        name: commitizen
+        state: present
+
+    # pipx upgrade commitizen
+    - name: Commitizen - Upgrade
+      tags: update
+      community.general.pipx:
+        name: commitizen
+        state: latest
+
+    always:
+    - name: Commitizen - Confirm version
+      tags: [init, update]
+      ansible.builtin.command:
+        cmd: cz version
+      register: version
+      changed_when: false
+
+    - name: Commitizen - Show version
+      tags: [init, update]
+      when: version is defined
+      ansible.builtin.debug:
+        msg: "Installed version: {{ version.stdout }}"
+
   # Poetry
   - name: Poetry
     become_user: ubuntu

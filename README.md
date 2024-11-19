@@ -77,6 +77,7 @@ bw lock
       - Go
       - Python
         - [pipx](https://github.com/pypa/pipx)
+        - [commitizen](https://github.com/commitizen-tools/commitizen)
         - [poetry](https://github.com/python-poetry/poetry)
         - [pyenv](https://github.com/pyenv/pyenv)
     - Orchestration

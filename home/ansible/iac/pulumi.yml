@@ -42,7 +42,7 @@
     - name: Confirm version
       tags: [init, update]
       ansible.builtin.command:
-        cmd: ~/.local/bin/pulumi version
+        cmd: ~/.pulumi/bin/pulumi version
       register: version
       changed_when: false
 

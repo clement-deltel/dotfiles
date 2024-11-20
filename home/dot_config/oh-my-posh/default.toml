@@ -62,7 +62,7 @@ version = 3
     trailing_diamond = ""
     foreground = "p:black"
     background = "p:yellow"
-    template = " {{ if .SSHSession }} {{ end }}{{ .UserName }} "
+    template = "{{ if .SSHSession }} {{ end }}{{ .UserName }} "
 
   # Path
   [[blocks.segments]]
@@ -71,14 +71,13 @@ version = 3
     powerline_symbol = ""
     foreground = "p:white"
     background = "p:orange"
-    template = " {{ path .Path .Location }} "
+    template = "{{ path .Path .Location }} "
 
     [blocks.segments.properties]
       folder_separator_icon = "/"
       home_icon = ""
       folder_icon = " "
       style = "full"
-      max_depth = "1"
 
       [blocks.segments.properties.mapped_locations]
       "~/ansible" = "󱂚"
@@ -179,7 +178,7 @@ version = 3
     style = "plain"
     foreground = "p:white"
     background = "p:purple_ubuntu"
-    template = "{{ .Name }}"
+    template = " {{ .Name }}"
 
 #==============================================================================#
 #               ------- Left Newline --------                                  #

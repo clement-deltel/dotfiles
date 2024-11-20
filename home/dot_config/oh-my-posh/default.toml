@@ -71,12 +71,10 @@ version = 3
     powerline_symbol = ""
     foreground = "p:white"
     background = "p:orange"
-    template = "{{ path .Path .Location }} "
+    template = "{{ if eq .Path ~ }}{{ else }} {{ end }}{{ path .Path .Location }} "
 
     [blocks.segments.properties]
       folder_separator_icon = "/"
-      home_icon = ""
-      folder_icon = " "
       style = "full"
 
       [blocks.segments.properties.mapped_locations]

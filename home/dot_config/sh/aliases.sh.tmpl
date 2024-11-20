@@ -31,7 +31,7 @@ alias grep='grep --color=auto'
 
 # history
 alias h='clear && history | tail -50'
-alias muc="history | awk '{print $2}' | sort | uniq -c | sort -nr | head -10"
+alias muc='history | awk "{print $2}" | sort | uniq -c | sort -nr | head -10'
 
 # lsof - list open ports
 alias lsop='lsof -i -n -P | grep LISTEN'

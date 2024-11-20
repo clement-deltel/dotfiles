@@ -3,6 +3,7 @@
   gather_facts: true
   vars:
     formulas:
+      - helmfile
       - kubectx
       - k9s
       - stern

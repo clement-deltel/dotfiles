@@ -2,6 +2,9 @@ console_title_template = "{{ .Shell }} in {{ .Folder }}"
 version = 3
 final_space = true
 
+#==============================================================================#
+#               ------- Color Palette --------                                 #
+#==============================================================================#
 [palette]
   black = "#000000"
   blue = "#5D94E9"
@@ -22,7 +25,6 @@ final_space = true
 #==============================================================================#
 #               ------- Prompts --------                                       #
 #==============================================================================#
-
 [secondary_prompt]
   template = "<p:yellow,transparent></><,p:yellow> > </><p:yellow,transparent></> "
   foreground = "p:black"
@@ -240,7 +242,3 @@ final_space = true
   [tooltips.properties]
     display_error = true
     parse_kubeconfig = true
-
-# Inspiration
-# https://ohmyposh.dev/docs/themes#atomic
-# https://ohmyposh.dev/docs/themes#clean-detailed

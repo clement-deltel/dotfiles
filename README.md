@@ -104,6 +104,7 @@ export BW_PASSWORD=''
 export GITHUB_USERNAME=clement-deltel
 
 # Docker build and then run
+# Use option --progress=plain to see steps in more details
 docker build --build-arg BW_SERVER --build-arg BW_CLIENTID --build-arg BW_CLIENTSECRET --build-arg BW_PASSWORD --build-arg GITHUB_USERNAME --file docker/linux/Dockerfile --tag dotfiles docker/linux/
 docker run --interactive --name dotfiles --tty --rm dotfiles
 ```

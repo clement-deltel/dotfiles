@@ -19,6 +19,9 @@ final_space = true
   yellow = "#ECAF3A"
   yellow_python = "#F9CF45"
 
+#==============================================================================#
+#               ------- Prompts --------                                       #
+#==============================================================================#
 
 [secondary_prompt]
   template = "<p:yellow,transparent></><,p:yellow> > </><p:yellow,transparent></> "
@@ -238,3 +241,6 @@ final_space = true
     display_error = true
     parse_kubeconfig = true
 
+# Inspiration
+# https://ohmyposh.dev/docs/themes#atomic
+# https://ohmyposh.dev/docs/themes#clean-detailed

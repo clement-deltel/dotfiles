@@ -71,7 +71,7 @@ version = 3
     powerline_symbol = ""
     foreground = "p:white"
     background = "p:orange"
-    template = '{{ if eq .PWD "~" }}{{ else }} {{ end }}{{ path .Path .Location }} '
+    template = '{{ if eq .PWD "~" }}{{ else }} {{ end }} {{ path .Path .Location }} '
 
     [blocks.segments.properties]
       folder_separator_icon = "/"

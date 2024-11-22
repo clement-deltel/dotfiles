@@ -7,29 +7,14 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io).
 I store the below sensitive configuration in my Vaultwarden instance:
 
  - chezmoi toml configuration file: notes of the item named "chezmoi"
- - private ssh key: attachment of the item named "SSH Key"
+ - private ssh keys: attachments of the item named "SSH Keys"
  - aws cli configuration: custom fields of the item with the id "223277e3-498b-4d3c-9c0b-fe80e0e83d7b"
 
 ## Install on Linux
 
 ### Ubuntu
 
-1. Install dependencies, Bitwarden CLI and finally chezmoi:
-```bash
-# Dependencies
-sudo apt update -y
-sudo apt install -y curl git jq libsecret-1-0 unzip
-# Bitwarden CLI
-export BW_VERSION=$(curl -H "Accept: application/vnd.github+json" https://api.github.com/repos/bitwarden/clients/releases | jq  -r 'sort_by(.published_at) | reverse | .[].name | select( index("CLI") )' | sed "s:.*CLI v::" | head -n 1)
-curl -L --remote-name "https://github.com/bitwarden/clients/releases/download/cli-v${BW_VERSION}/bw-linux-${BW_VERSION}.zip"
-sudo unzip -d /usr/local/bin bw-linux-*.zip
-sudo chmod +x /usr/local/bin/bw
-rm -f bw-linux-*.zip
-# chezmoi
-sh -c "$(curl -fsLS get.chezmoi.io)"
-```
-
-2. Export required environment variables:
+1. Export required environment variables:
 ```bash
 # Update with your server address
 export BW_SERVER="https://bw.domain.com"
@@ -40,25 +25,14 @@ export BW_PASSWORD=''
 export GITHUB_USERNAME=clement-deltel
 ```
 
-3. Get chezmoi configuration file from Bitwarden:
+2. Install dependencies and run installation script:
 ```bash
-bw config server ${BW_SERVER}
-bw login --apikey
-export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
-mkdir -p ~/.config/chezmoi
-bw get notes chezmoi > ~/.config/chezmoi/chezmoi.toml
-bw lock
+sudo apt update -y && sudo apt install -y curl
+curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/main/docker/linux/install.sh
 ```
 
-4. Initialize the dotfiles:
-```bash
-export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
-chezmoi init --apply ${GITHUB_USERNAME}
-bw lock
-```
-
-5. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.
-6. Ansible playbooks automatically install and configure the tools listed below:
+3. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.
+4. Ansible playbooks automatically install and configure the tools listed below:
     - Package Managers
       - apt
         - [bat](https://github.com/sharkdp/bat)

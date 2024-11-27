@@ -45,6 +45,8 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
       - [homebrew](https://github.com/Homebrew/brew)
         - [lnav](https://github.com/tstack/lnav)
         - [tldr](https://github.com/tldr-pages/tlrc)
+      - [npm](https://github.com/npm/cli)
+        - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm)
     - Shell
       - [eza](https://github.com/eza-community/eza)
       - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh)
@@ -52,6 +54,8 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
       - [zoxide](https://github.com/ajeetdsouza/zoxide)
     - Languages
       - Go
+      - JavaScript
+        - [nodejs](https://github.com/nodejs/node)
       - Python
         - [pipx](https://github.com/pypa/pipx)
         - [commitizen](https://github.com/commitizen-tools/commitizen)
@@ -108,11 +112,14 @@ Zsh is my default shell. Here is the list of plugins:
   - Languages
     - Go
       - [golang](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/golang)
+    - JavaScript
+      - [node](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/node)
     - Python
       - [pip](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pip)
       - [poetry](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/poetry)
   - Packages
     - [brew](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/brew)
+    - [npm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/npm)
   - Productivity
     - [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages)
     - [colorize](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize)

@@ -1,0 +1,106 @@
+- name: Git
+  hosts: all
+  gather_facts: false
+  vars:
+    dependencies:
+      - git
+    install_tmp: /tmp/git
+    install_url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
+    packages:
+      - git-lfs
+
+  tasks:
+  # Dependencies
+  - name: Dependencies
+    block:
+
+    - name: List dependencies
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "dependencies: {{ dependencies }}"
+
+    # sudo apt update -y && sudo apt install -y
+    - name: Install dependencies
+      tags: init
+      ansible.builtin.apt:
+        name: "{{ dependencies }}"
+        state: present
+        update_cache: true
+
+    # sudo apt update -y && sudo apt upgrade -y
+    - name: Upgrade dependencies
+      tags: update
+      ansible.builtin.apt:
+        name: "{{ dependencies }}"
+        state: latest
+        update_cache: true
+
+  # Repository
+  - name: Repository
+    tags: init
+    block:
+
+    - name: Create temporary directory
+      ansible.builtin.file:
+        path: "{{ install_tmp }}"
+        state: directory
+        mode: 0700
+
+    - name: Download repository script
+      ansible.builtin.uri:
+        method: GET
+        url: "{{ install_url }}"
+        dest: "{{ install_tmp }}/script.deb.sh"
+        follow_redirects: safe
+        mode: 0700
+
+    - name: Add apt repository
+      ansible.builtin.command:
+        cmd: /bin/bash -c {{ install_tmp }}/script.deb.sh
+      register: install_result
+      changed_when: install_result.rc == 0
+
+    - name: Remove temporary directory
+      ansible.builtin.file:
+        path: "{{ install_tmp }}"
+        state: absent
+
+  # Packages
+  - name: Packages
+    block:
+
+    - name: List packages
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "packages: {{ packages }}"
+
+    # sudo apt update -y && sudo apt install -y
+    - name: Install packages
+      tags: init
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: true
+
+    # sudo apt update -y && sudo apt upgrade -y
+    - name: Upgrade packages
+      tags: update
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: latest
+        update_cache: true
+
+    # Version
+    always:
+    - name: Confirm version
+      tags: [init, update]
+      ansible.builtin.command:
+        cmd: git-lfs version
+      register: version
+      changed_when: false
+
+    - name: Show version
+      tags: [init, update]
+      when: version is defined
+      ansible.builtin.debug:
+        msg: "Installed version: {{ version.stdout }}"

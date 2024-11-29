@@ -18,6 +18,10 @@
 - name: Zoxide
   import_playbook: shell/zoxide.yml
 
+# VCS
+- name: Git
+  import_playbook: vcs/git.yml
+
 # Security
 - name: Bitwarden CLI
   import_playbook: security/bw.yml

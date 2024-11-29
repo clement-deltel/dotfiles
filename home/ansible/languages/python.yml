@@ -5,6 +5,8 @@
     packages:
       - python3
       - python3-pip
+    pip_packages:
+      - Pygments
     pyenv_dependencies:
       - libncursesw5-dev
       - libreadline-dev
@@ -39,6 +41,30 @@
         name: "{{ packages }}"
         state: latest
         update_cache: true
+
+  # PyPI Packages
+  - name: PyPI Packages
+    block:
+
+    - name: List packages
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "PyPI packages: {{ pip_packages }}"
+
+    # pip install
+    - name: PyPI - Install packages
+      tags: init
+      ansible.builtin.pip:
+        name: "{{ pip_packages }}"
+        state: present
+
+    # pip install --upgrade
+    - name: PyPI - Upgrade packages
+      tags: update
+      ansible.builtin.pip:
+        name: "{{ pip_packages }}"
+        state: latest
+
 
   # Pyenv - Dependencies
   - name: Pyenv - Dependencies

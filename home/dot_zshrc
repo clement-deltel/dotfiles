@@ -90,7 +90,7 @@ antigen bundle npm
 
 # Productivity
 antigen bundle colored-man-pages
-# antigen bundle colorize #TODO install Chroma
+antigen bundle colorize
 antigen bundle command-not-found
 antigen bundle safe-paste
 

@@ -60,6 +60,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
       - JavaScript
         - [nodejs](https://github.com/nodejs/node)
       - Python
+        - [Pygments](https://github.com/pygments/pygments)
         - [pipx](https://github.com/pypa/pipx)
         - [commitizen](https://github.com/commitizen-tools/commitizen)
         - [poetry](https://github.com/python-poetry/poetry)

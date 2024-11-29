@@ -142,6 +142,7 @@ Zsh is my default shell. Here is the list of plugins:
     - [zoxide](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zoxide)
   - Version Control
     - [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
+    - [git-lfs](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-lfs)
     - [pre-commit](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pre-commit)
   - Other
     - [vscode](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode)

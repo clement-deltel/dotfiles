@@ -45,6 +45,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
       - [homebrew](https://github.com/Homebrew/brew)
         - [lnav](https://github.com/tstack/lnav)
         - [tldr](https://github.com/tldr-pages/tlrc)
+        - [Trivy](https://github.com/aquasecurity/trivy)
       - [npm](https://github.com/npm/cli)
         - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm)
     - Shell

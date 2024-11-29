@@ -8,7 +8,7 @@
       - build-essential
       - curl
       - fzf # general-purpose command-line fuzzy finder
-      - git
+      - git # Gold standard version control system
       - htop # resources monitoring
       - jq # command-line JSON processor
       - libsecret-1-0 # Bitwarden CLI requirement

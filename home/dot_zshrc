@@ -1,3 +1,4 @@
+#!/bin/zsh
 # .zshrc
 
 # set a fancy prompt (non-color, unless we know we "want" color)
@@ -5,17 +6,9 @@ case "$TERM" in
   xterm-color|*-256color) color_prompt=yes;;
 esac
 
-# User specific environment and startup programs
-export USER=$(whoami)
-export HOME=/home/${USER}
-
 #==============================================================================#
 #               ------- Environment ------                                     #
 #==============================================================================#
-export PATH=${PATH}:~/.local/bin
-
-# Chezmoi
-export EDITOR='code --wait'
 
 # fzf
 export FZF_BASE=/usr/bin/fzf
@@ -23,26 +16,6 @@ export FZF_DEFAULT_COMMAND='fzf'
 
 DISABLE_FZF_AUTO_COMPLETION="false"
 DISABLE_FZF_KEY_BINDINGS="false"
-
-# Go
-export GOPATH=~/go
-export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
-
-# Homebrew
-export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-# Kubernetes
-export KUBE_EDITOR='code --wait'
-
-# Pulumi
-export PATH=${PATH}:~/.pulumi/bin
-
-# pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
-fi
-eval "$(pyenv virtualenv-init -)"
 
 # Zoxide
 eval "$(zoxide init zsh --cmd cd)"

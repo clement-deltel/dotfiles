@@ -1,0 +1,31 @@
+#!/bin/zsh
+# .zshenv
+
+# User specific environment and startup programs
+export USER=$(whoami)
+export HOME=/home/${USER}
+
+#==============================================================================#
+#               ------- Environment ------                                     #
+#==============================================================================#
+export PATH=${PATH}:~/.local/bin
+
+export EDITOR='code --wait'
+export KUBE_EDITOR='code --wait'
+
+# Go
+export GOPATH=~/go
+export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
+
+# Homebrew
+export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Pulumi
+export PATH=${PATH}:~/.pulumi/bin
+
+# pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+ eval "$(pyenv init -)"
+fi
+eval "$(pyenv virtualenv-init -)"

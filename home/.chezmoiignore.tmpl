@@ -8,6 +8,7 @@ profile.ps1
 # Shell
 {{ if ne .shell "zsh" }}
 .p10k.zsh
+.zshenv
 .zshrc
 {{ else if ne .shell "bash" }}
 .config/sh/completions.sh
@@ -24,5 +25,6 @@ ansible/
 .bashrc
 .p10k.zsh
 .vimrc
+.zshenv
 .zshrc
 {{ end }}

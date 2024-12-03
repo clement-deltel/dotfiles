@@ -170,34 +170,53 @@ Here is my theme: robbyrussell
 
 Here is a list of tools that could be interesting and further enhance the stack:
 
-- AI
-  - https://github.com/di-sukharev/opencommit
-- Infrastructure as Code
-  - https://github.com/tenable/terrascan
-- Shell
-  - Commands
-    - btop: https://github.com/aristocratos/btop
-    - du: https://github.com/bootandy/dust
-    - entr: https://github.com/clibs/entr
-    - find: https://github.com/sharkdp/fd
-    - midnight commander: https://github.com/MidnightCommander/mc
-    - ripgrep: https://github.com/BurntSushi/ripgrep
-    - thefuck: https://github.com/nvbn/thefuck
-  - System Info:
-    - fastfetch: https://github.com/fastfetch-cli/fastfetch
-    - nerdfetch: https://github.com/ThatOneCalculator/NerdFetch
-    - macchina: https://github.com/Macchina-CLI/macchina
-  - Tools
-    - Autocomplete: https://github.com/withfig/autocomplete
-    - Cheat: https://github.com/cheat/cheat
-    - Clipboard: https://github.com/Slackadays/Clipboard
-    - cmatrix: https://github.com/abishekvashok/cmatrix
-- Version Control
-  - https://mergiraf.org
-  - https://difftastic.wilfred.me.uk
-  - https://github.com/initialcommit-com/git-sim
-  - https://github.com/carloscuesta/gitmoji-cli
-  - https://github.com/gruntwork-io/git-xargs
-  - https://github.com/lindell/multi-gitter
-  - https://github.com/conventional-changelog/commitlint
-  - https://github.com/dandavison/delta
+- **Artificial Intelligence (AI)**
+  - [OpenCommit](https://github.com/di-sukharev/opencommit): generate commit messages by an LLM in 1 sec
+  - [Private GPT](https://github.com/zylon-ai/private-gpt): interact with your documents using the power of GPT, 100% privately, no data leaks
+- **Containers**
+  - [Clair](https://github.com/quay/clair): vulnerability static analysis for containers
+  - [Docker Bench](https://github.com/docker/docker-bench-security): script that checks for dozens of common best-practices around deploying Docker containers in production
+  - [dozzle](https://github.com/amir20/dozzle): realtime log viewer for docker containers
+  - [lazydocker](https://github.com/jesseduffield/lazydocker)
+  - [skopeo](https://github.com/containers/skopeo): work with remote images registries - retrieving information, images, signing content
+- **Infrastructure as Code (IaC)**
+  - [terrascan](https://github.com/tenable/terrascan): detect compliance and security violations across Infrastructure as Code to mitigate risk before provisioning cloud native infrastructure
+- **Integrated Development Environment (IDE)**
+  - [Cursor](https://github.com/getcursor/cursor)
+  - [Zed](https://github.com/zed-industries/zed)
+- **Shell**
+  - **Commands**
+    - [ag](https://github.com/ggreer/the_silver_searcher)
+    - [btop](https://github.com/aristocratos/btop)
+    - [du](https://github.com/bootandy/dust)
+    - [entr](https://github.com/clibs/entr)
+    - [find](https://github.com/sharkdp/fd)
+    - [midnight commander](https://github.com/MidnightCommander/mc)
+    - [ripgrep](https://github.com/BurntSushi/ripgrep)
+    - [thefuck](https://github.com/nvbn/thefuck)
+  - **System Info**
+    - [fastfetch](https://github.com/fastfetch-cli/fastfetch)
+    - [nerdfetch](https://github.com/ThatOneCalculator/NerdFetch)
+    - [macchina](https://github.com/Macchina-CLI/macchina)
+    - [sampler](https://github.com/sqshq/sampler)
+  - **Tools**
+    - [Autocomplete](https://github.com/withfig/autocomplete)
+    - [Cheat](https://github.com/cheat/cheat)
+    - [Clipboard](https://github.com/Slackadays/Clipboard)
+    - [cmatrix](https://github.com/abishekvashok/cmatrix)
+    - [Espanso](https://github.com/espanso/espanso)
+    - [pmd](https://github.com/pmd/pmd): extensible multilanguage static code analyzer
+  - **zsh**
+    - [zsh-auto-notify](https://github.com/MichaelAquilina/zsh-auto-notify)
+- **Version Control**
+  - [commitlint](https://github.com/conventional-changelog/commitlint)
+  - [delta](https://github.com/dandavison/delta)
+  - [difftastic](https://difftastic.wilfred.me.uk)
+  - [git-bug](https://github.com/git-bug/git-bug)
+  - [git-plan](https://github.com/rorybyrne/git-plan)
+  - [git-sim](https://github.com/initialcommit-com/git-sim)
+  - [git-xargs](https://github.com/gruntwork-io/git-xargs)
+  - [gitflow](https://github.com/nvie/gitflow)
+  - [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli)
+  - [mergiraf](https://mergiraf.org)
+  - [multi-gitter](https://github.com/lindell/multi-gitter)

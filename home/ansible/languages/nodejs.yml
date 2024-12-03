@@ -9,7 +9,7 @@
       - gnupg
     node_major: 20
     npm_packages:
-      - '@bitnami/readme-generator-for-helm'
+      - "@bitnami/readme-generator-for-helm"
     packages:
       - nodejs
   vars_files:
@@ -121,7 +121,7 @@
     - name: Install NPM packages
       tags: init
       community.general.npm:
-        name: "{{ npm_packages }}"
+        name: "{{ npm_packages | join(' ') }}"
         global: true
         state: present
 
@@ -129,6 +129,6 @@
     - name: Upgrade packages
       tags: update
       community.general.npm:
-        name: "{{ npm_packages }}"
+        name: "{{ npm_packages | join(' ') }}"
         global: true
         state: latest

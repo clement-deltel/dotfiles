@@ -12,7 +12,6 @@
       - "@bitnami/readme-generator-for-helm"
     packages:
       - nodejs
-      - npm
   vars_files:
     - ../vars/main.yml
 

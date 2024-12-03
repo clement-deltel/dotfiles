@@ -20,6 +20,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV GITHUB_USERNAME=${GITHUB_USERNAME}
 ENV TZ=${TZ}
 
+# Install dependencies
+RUN apt update -y && apt install -y curl sudo tzdata
+
 # Create group, user, and grant sudo permissions without password
 RUN groupadd --gid ${ID} ${USER} && \
     useradd --create-home --gid ${ID} --home /home/${USER} --shell /bin/bash --uid ${ID} ${USER} &&\
@@ -29,8 +32,7 @@ WORKDIR /home/${USER}
 COPY --chown=${USER} ./install.sh ./install.sh
 USER ${USER}
 
-# Install dependencies and run installation script
-RUN sudo apt update -y && sudo apt install -y curl tzdata &&\
-    chmod +x ./install.sh && ./install.sh
+# Run installation script
+RUN chmod +x ./install.sh && ./install.sh
 
 ENTRYPOINT ["/bin/zsh"]

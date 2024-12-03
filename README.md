@@ -65,6 +65,8 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
     - Version Control System (VCS)
       - Git
         - [git-lfs](https://github.com/git-lfs/git-lfs)
+    - Security
+      - [Bitwarden CLI](https://bitwarden.com/help/cli/)
     - Languages
       - Go
       - JavaScript

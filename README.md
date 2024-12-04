@@ -59,6 +59,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
       - [npm](https://github.com/npm/cli)
         - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm)
     - Shell
+      - [antidote](https://github.com/mattmc3/antidote)
       - [eza](https://github.com/eza-community/eza)
       - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh)
       - zsh

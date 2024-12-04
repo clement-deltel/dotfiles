@@ -41,25 +41,15 @@
       name: ubuntu
       shell: /bin/zsh
 
-  # Package Manager - Antigen
-  # curl -L git.io/antigen > /usr/local/bin/antigen.zsh
-  - name: Antigen
+  # Package Manager - Antidote
+  # git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/antidote
+  - name: Antidote
+    become_user: ubuntu
     block:
 
     - name: Install
       tags: [init, update]
-      ansible.builtin.uri:
-        method: GET
-        url: "{{ antigen_url }}"
-        dest: "/usr/local/bin/antigen.zsh"
-        follow_redirects: safe
-        mode: 0755
-
-    - name: Create oh-my-zsh completions directory
-      tags: init
-      ansible.builtin.file:
-        path: /home/ubuntu/.antigen/bundles/robbyrussell/oh-my-zsh/cache/completions
-        state: directory
-        mode: 0755
-        owner: ubuntu
-        group: ubuntu
+      ansible.builtin.git:
+        repo: https://github.com/mattmc3/antidote.git
+        dest: /home/ubuntu/.local
+        depth: 1

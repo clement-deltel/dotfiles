@@ -111,6 +111,7 @@
         state: directory
         mode: 0700
 
+    # curl https://pyenv.run | bash
     - name: Download install script
       ansible.builtin.uri:
         method: GET

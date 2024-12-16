@@ -18,6 +18,7 @@
         state: directory
         mode: 0700
 
+    # curl -fsSL https://get.pulumi.com | sh
     - name: Download install script
       ansible.builtin.uri:
         method: GET

@@ -1,3 +1,4 @@
+# https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 - name: AWS
   hosts: all
   gather_facts: true
@@ -40,7 +41,8 @@
     tags: [init, update]
     block:
 
-    # https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+    # curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    # unzip awscliv2.zip
     - name: Download the installer
       ansible.builtin.unarchive:
         src: "https://awscli.amazonaws.com/awscli-exe-{{ ansible_system | lower }}-{{ ansible_architecture }}.zip"
@@ -49,6 +51,7 @@
         creates: "/tmp/aws"
         mode: 0755
 
+    # sudo ./aws/install
     - name: Install
       ansible.builtin.command:
       args:

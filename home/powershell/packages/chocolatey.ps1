@@ -7,7 +7,7 @@
 .PARAMETER machine
   Name of the machine.
 .PARAMETER tag
-  Specify behavior of the script. Possible values: init, update
+  Specify behavior of the script. Possible values: init, update, backup
 .INPUTS
   None
 .OUTPUTS
@@ -91,11 +91,11 @@ Else If( $tag -eq "update" )
   # Update
   choco upgrade all --yes
 }
-
-# Backup config
-choco export -y --include-version-numbers --output-file-path="$PackagesConfig"
-Remove-Item "$ChocolateyRootConfig/$machine.config.backup"
-
+Else If( $tag -eq "backup" )
+{
+  choco export -y --include-version-numbers --output-file-path="$PackagesConfig"
+  Remove-Item "$ChocolateyRootConfig/$machine.config.backup"
+}
 
 # Windows Features
 If( $tag -eq "init" )

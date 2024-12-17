@@ -54,6 +54,7 @@ alias vimo='vim -o'
 #               ------- ls --------                                            #
 #==============================================================================#
 
+{{- if eq .shell "bash" }}
 # colorls
 if [ -x "$(command -v colorls)" ]; then
     alias ls="colorls --color=auto"
@@ -61,7 +62,6 @@ else
     alias ls="ls --color=auto"
 fi
 
-{{- if eq .shell "bash" }}
 # ls - list
 alias ll='ls -l'
 # ls - do not ignore entries starting with '.', do not list '.' and '..'

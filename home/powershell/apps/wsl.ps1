@@ -60,7 +60,7 @@ Else If( $tag -eq "backup" )
   wsl --export $distribution $tarFilePath
 
   # Compress the tar file
-  $gzipFilePath = "$tarFilePath.gzip"
+  $gzipFilePath = "$tarFilePath.gz"
   & 7z a -mx6 -tgzip $gzipFilePath $tarFilePath
 
   # Upload the tar file to AWS S3 bucket using AWS CLI

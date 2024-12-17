@@ -26,32 +26,49 @@
 #------------------------------[Declarations]---------------------------
 $tag = args[0]
 
+$appleDevicesId = "9NP83LWLPZ9K"
+$netflixId = "9WZDNCRFJ3TJ"
+$pdfMergerId = "9P4TCNS9H432"
+$trelloId = "XPDNKNDN77T0DP"
+
 #------------------------------[Execution]------------------------------
 
 # Apps
 If( $tag -eq "init" )
 {
-  # Rainmeter
-  winget install Rainmeter --override "/S /AUTOSTARTUP=1 /RESTART=1"
+  winget install Rainmeter.Rainmeter --interactive --override "/S /AUTOSTARTUP=1 /RESTART=1"
 
   {{- if eq .machine "personal" }}
-  # Netflix
-  winget install --exact --id=9WZDNCRFJ3TJ --interactive --source=msstore
+  winget install --exact --id $netflixId --interactive --source msstore
+
   {{- else if eq .machine "work" }}
-  # PDF Merger & Splitter
-  winget install --exact --id=9P4TCNS9H432 --interactive --source=msstore
+  winget install Flameshot.Flameshot --interactive
+  winget install Google.IAPDesktop --interactive
+  winget install Microsoft.Sysinternals --interactive
+  winget install Obsidian.Obsidian --interactive
+  winget install Wacom.WacomTabletDriver --interactive
+
+  winget install --exact --id $appleDevicesId --interactive --source msstore
+  winget install --exact --id $pdfMergerId --interactive --source msstore
+  winget install --exact --id $trelloId --interactive --source msstore
   {{- end }}
 }
 Else If( $tag -eq "update" )
 {
-  # Rainmeter
-  winget upgrade Rainmeter
+  winget upgrade Rainmeter.Rainmeter --interactive
 
   {{- if eq .machine "personal" }}
-  # Netflix
-  winget upgrade --exact --id=9WZDNCRFJ3TJ --interactive --source=msstore
+  winget upgrade --exact --id $netflixId --interactive --source msstore
+  
   {{- else if eq .machine "work" }}
-  # PDF Merger & Splitter
-  winget upgrade --exact --id=9P4TCNS9H432 --interactive --source=msstore
+  winget upgrade Flameshot.Flameshot --interactive
+  winget upgrade Google.IAPDesktop --interactive
+  winget upgrade Microsoft.Sysinternals --interactive
+  winget upgrade Obsidian.Obsidian --interactive
+  winget upgrade Wacom.WacomTabletDriver --interactive
+
+  winget upgrade --exact --id $appleDevicesId --interactive --source msstore
+  winget upgrade --exact --id $pdfMergerId --interactive --source msstore
+  winget upgrade --exact --id $trelloId --interactive --source msstore
   {{- end }}
 }

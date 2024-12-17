@@ -9,6 +9,8 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io).
   - [Ubuntu](#ubuntu)
   - [Shell](#shell)
 - [Future enhancements](#future-enhancements)
+  - [Linux](#linux-1)
+  - [Windows](#windows)
 
 ## Pre-requisites
 
@@ -169,6 +171,8 @@ Here is my theme: robbyrussell
 
 ## Future enhancements
 
+### Linux
+
 Here is a list of tools that could be interesting and further enhance the stack:
 
 - **Artificial Intelligence (AI)**
@@ -226,3 +230,16 @@ Here is a list of tools that could be interesting and further enhance the stack:
   - [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli)
   - [mergiraf](https://mergiraf.org)
   - [multi-gitter](https://github.com/lindell/multi-gitter)
+
+### Windows
+
+Here is a list of softwares that could be interesting to integrate into the stack:
+
+- Potentially through Chocolatey:
+  - FortiClient VPN
+- Independently:
+  - Backblaze
+  - ESET antivirus solution
+  - Office 365
+  - Oracle SQL Developer (Chocolatey package outdated)
+  - OracleXE

@@ -199,6 +199,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
    - Outlook Signatures
    - Windows Explorer - Quick Access
    - Windows Start Menu
+   - Windows Subsystem for Linux (WSL)
    - Windows Taskbar
 
 If you want to test this setup, you need to have Docker installed and then you can run the commands below:

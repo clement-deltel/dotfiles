@@ -8,6 +8,7 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io).
 - [Linux](#linux)
   - [Ubuntu](#ubuntu)
   - [Shell](#shell)
+- [Microsoft Windows](#microsoft-windows)
 - [Future enhancements](#future-enhancements)
   - [Linux](#linux-1)
   - [Windows](#windows)
@@ -20,6 +21,8 @@ I store the below sensitive configuration in my Vaultwarden instance:
  - **private ssh keys**: attachments of the item named "SSH Keys"
  - **kubeconfig file**: notes of the item named "kubeconfig"
  - **aws cli configuration**: custom fields of the item with the id "223277e3-498b-4d3c-9c0b-fe80e0e83d7b"
+
+I store the sensitive files for my Windows machine in an AWS S3 bucket.
 
 ## Linux
 
@@ -168,6 +171,52 @@ Zsh is my default shell. Here is the list of plugins:
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
 Here is my theme: robbyrussell
+
+## Microsoft Windows
+
+1. Export required environment variables:
+```bash
+# Update with your server address
+$Env:BW_SERVER="https://bw.domain.com"
+# Fill the blanks with your API credentials and password
+$Env:BW_CLIENTID=""
+$Env:BW_CLIENTSECRET=""
+$Env:BW_PASSWORD=''
+$Env:GITHUB_USERNAME=clement-deltel
+```
+
+2. Run installation script:
+```ps1
+curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/main/docker/microsoft/install.sh
+```
+
+3. After pulling and configuring the dotfiles, chezmoi run several powershell scripts, executing the steps below:
+   - [Chocolatey](https://docs.chocolatey.org/en-us/)
+   - [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
+
+4. chezmoi also restore some files from backups stored in AWS S3:
+   - Google Chrome
+   - Outlook Signatures
+   - Windows Explorer - Quick Access
+   - Windows Start Menu
+   - Windows Taskbar
+
+If you want to test this setup, you need to have Docker installed and then you can run the commands below:
+```bash
+# Set build args
+$Env:BW_SERVER="https://bw.domain.com"
+$Env:BW_CLIENTID=""
+$Env:BW_CLIENTSECRET=""
+$Env:BW_PASSWORD=''
+$Env:GITHUB_USERNAME=clement-deltel
+
+# Docker build and then run
+# Use option --progress=plain to see steps in more details
+docker build --build-arg BW_SERVER --build-arg BW_CLIENTID --build-arg BW_CLIENTSECRET --build-arg BW_PASSWORD --build-arg GITHUB_USERNAME --file docker/microsoft/Dockerfile --tag dotfiles docker/microsoft/
+docker run --interactive --name dotfiles --tty --rm dotfiles
+
+docker run --interactive --name dotfiles --tty --rm mcr.microsoft.com/windows/nanoserver:ltsc2022 powershell
+```
 
 ## Future enhancements
 

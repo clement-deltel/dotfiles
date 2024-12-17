@@ -20,8 +20,17 @@
   ./init.ps1
 #>
 
+#------------------------------[Declarations]---------------------------
+$machine = "{{ .machine }}"
+
 #------------------------------[Execution]------------------------------
 
 # Packages
-packages/chocolatey.ps1 init
-packages/winget.ps1 init
+packages/chocolatey.ps1 init $machine
+packages/winget.ps1 init $machine
+
+# Outlook
+outlook/signatures.ps1 init $machine
+
+# Windows
+windows/explorer.ps1 init $machine

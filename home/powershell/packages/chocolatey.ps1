@@ -4,6 +4,8 @@
   Install Chocolatey and packages.
 .DESCRIPTION
   Run the different steps to install Chocolatey on the machine. Then, install all the packages listed in the configuration.
+.PARAMETER machine
+  Name of the machine.
 .PARAMETER tag
   Specify behavior of the script. Possible values: init, update
 .INPUTS
@@ -17,15 +19,15 @@
   Purpose/Change: Initial script development
 
 .EXAMPLE
-  ./packages/chocolatey.ps1 init
-  ./packages/chocolatey.ps1 update
+  ./packages/chocolatey.ps1 init work
+  ./packages/chocolatey.ps1 update work
 #>
 
 #------------------------------[Declarations]---------------------------
 $tag = args[0]
+$machine = args[1]
 
 $ChocolateyRootConfig = "$HOME/.config/chocolatey"
-$machine = "{{ .machine }}"
 
 $PackagesConfig = "$ChocolateyRootConfig/$machine.config"
 $excludedPackages = @("vscode", "vscode.install", "vscodium", "vscodium.install", "git", "docker-engine")

@@ -79,7 +79,6 @@ function who { query user /server:$SERVER }
 # Get the location of a program
 function which {(Get-Command $args).Path }
 
-
 # head, tail
 function head([int]$n) { Select-Object -first $n }
 function tail([int]$n) { Select-Object -last $n }
@@ -88,6 +87,15 @@ function tail([int]$n) { Select-Object -last $n }
 function md5    { Get-FileHash -Algorithm MD5 $args }
 function sha1   { Get-FileHash -Algorithm SHA1 $args }
 function sha256 { Get-FileHash -Algorithm SHA256 $args }
+
+function watch {
+    $interval = 5  # Interval in seconds
+    while ($true) {
+        Clear-Host
+        &$args
+        Start-Sleep -Seconds $interval
+    }
+}
 
 #==============================================================================#
 #               ------- Functions - Kubernetes ------                          #

@@ -73,9 +73,8 @@
     with_dict:
       region: "{{ aws_region }}"
       format: "{{ aws_format }}"
-      sso_session: "{{ aws_sso_session }}"
       sso_account_id: "{{ aws_sso_account_id }}"
-      sso_role_name: "{{ aws_sso_role_name }}"
-      sso_start_url: "{{ aws_sso_start_url }}"
       sso_region: "{{ aws_sso_region }}"
       sso_registration_scopes: "{{ aws_sso_registration_scopes }}"
+      sso_role_name: "{{ aws_sso_role_name }}"
+      sso_start_url: "{{ aws_sso_start_url }}"

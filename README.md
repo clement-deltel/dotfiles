@@ -42,7 +42,7 @@ export GITHUB_USERNAME=clement-deltel
 2. Install dependencies and run installation script:
 ```bash
 sudo apt update -y && sudo apt install -y curl
-curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/main/docker/linux/install.sh
+curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/main/docker/linux/install.sh | bash
 ```
 
 3. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.
@@ -187,7 +187,7 @@ $Env:GITHUB_USERNAME=clement-deltel
 
 2. Run installation script:
 ```ps1
-curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/main/docker/microsoft/install.sh
+curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/main/docker/microsoft/install.sh | powershell
 ```
 
 3. After pulling and configuring the dotfiles, chezmoi run several powershell scripts, executing the steps below:

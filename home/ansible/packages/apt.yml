@@ -11,6 +11,7 @@
       - git # Gold standard version control system
       - htop # resources monitoring
       - jq # command-line JSON processor
+      - libpq-dev # library to develop with PostgreSQL
       - man-db # man pages
       - net-tools
       - pwgen # random password generator

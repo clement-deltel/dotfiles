@@ -45,6 +45,7 @@
   # Homebrew
   - name: Homebrew
     tags: [init, update]
+    become_user: ubuntu
     block:
 
     - name: Create temporary directory
@@ -74,6 +75,7 @@
 
   # Formulas
   - name: Formulas
+    become_user: ubuntu
     block:
 
     - name: List formulas

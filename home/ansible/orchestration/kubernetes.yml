@@ -165,6 +165,7 @@
 
   # Formulas
   - name: Formulas
+    become_user: ubuntu
     block:
 
     - name: Homebrew - List formulas

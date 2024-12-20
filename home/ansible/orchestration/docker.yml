@@ -82,6 +82,7 @@
         state: directory
         mode: 0755
 
+    # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
     - name: Download GPG apt key
       ansible.builtin.uri:
         method: GET

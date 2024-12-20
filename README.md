@@ -41,7 +41,7 @@ export GITHUB_USERNAME=clement-deltel
 
 2. Install dependencies and run installation script:
 ```bash
-sudo apt update -y && sudo apt install -y curl python-is-python3
+sudo apt update -y && sudo apt install -y curl
 curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/main/docker/linux/install.sh | bash
 ```
 

@@ -1,8 +1,6 @@
 - name: Configure machine
   hosts: all
   gather_facts: false
-  vars_files:
-    - ./vars/main.yml
 
 # Packages
 - name: APT

@@ -62,6 +62,7 @@
 
   # Configure AWS CLI
   - name: Configure AWS CLI
+    become_user: ubuntu
     tags: init
     ansible.builtin.shell: aws configure set {{ item.key }} {{ item.value }} --profile {{ aws_profile }}
     no_log: True

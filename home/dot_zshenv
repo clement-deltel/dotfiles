@@ -8,28 +8,28 @@ export HOME=/home/${USER}
 #==============================================================================#
 #               ------- Environment ------                                     #
 #==============================================================================#
-export PATH=${PATH}:~/.local/bin
+export PATH=~/.local/bin:${PATH}
 
 export EDITOR='code --wait'
 export KUBE_EDITOR='code --wait'
 
 # Go
 export GOPATH=~/go
-export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
+export PATH=/usr/local/go/bin:${GOPATH}/bin:${PATH}
 
 # Homebrew
-export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
+export PATH=/home/linuxbrew/.linuxbrew/bin:${PATH}
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # NodeJS
-export PATH=${PATH}:${HOME}/node_modules/.bin
+export PATH=${HOME}/node_modules/.bin:${PATH}
 
 # Pulumi
-export PATH=${PATH}:~/.pulumi/bin
+export PATH=~/.pulumi/bin:${PATH}
 
 # pyenv
 export PYENV_ROOT=${HOME}/.pyenv
-export PATH=${PATH}:${PYENV_ROOT}/bin
+export PATH=${PYENV_ROOT}/bin:${PATH}
 if command -v pyenv 1>/dev/null 2>&1; then
  eval "$(pyenv init -)"
 fi

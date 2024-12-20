@@ -45,6 +45,7 @@
         state: directory
         mode: 0755
 
+    # wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
     - name: Download GPG apt key
       ansible.builtin.uri:
         method: GET

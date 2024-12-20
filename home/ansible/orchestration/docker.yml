@@ -100,6 +100,11 @@
       ansible.builtin.apt_repository:
         repo: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/{{ ansible_system | lower }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable
 
+    - name: Remove GPG temporary key
+      ansible.builtin.file:
+        path: /tmp/docker.gpg
+        state: absent
+
   # Packages
   - name: Packages
     block:

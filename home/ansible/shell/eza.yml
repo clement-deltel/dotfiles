@@ -63,6 +63,11 @@
       ansible.builtin.apt_repository:
         repo: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main
 
+    - name: Remove GPG temporary key
+      ansible.builtin.file:
+        path: /tmp/deb.asc
+        state: absent
+
   # Packages
   - name: Packages
     block:

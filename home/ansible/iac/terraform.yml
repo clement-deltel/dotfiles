@@ -57,6 +57,7 @@
       ansible.builtin.command:
         cmd: gpg --dearmor --output /etc/apt/keyrings/hashicorp-archive-keyring.gpg --yes /tmp/terraform.gpg
 
+    # echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list > /dev/null
     - name: Add apt repository
       ansible.builtin.apt_repository:
         repo: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main

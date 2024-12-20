@@ -58,6 +58,7 @@
       ansible.builtin.command:
         cmd: gpg --dearmor --output /etc/apt/keyrings/gierens.gpg --yes /tmp/deb.asc
 
+    # echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/gierens.gpg] stable main" | sudo tee /etc/apt/sources.list.d/gierens.list > /dev/null
     - name: Add apt repository
       ansible.builtin.apt_repository:
         repo: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main

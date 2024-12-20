@@ -1,0 +1,91 @@
+- name: Terraform
+  hosts: all
+  gather_facts: true
+  become: true
+  vars:
+    dependencies:
+      - gnupg
+      - software-properties-common
+
+  tasks:
+  # Dependencies
+  - name: Dependencies
+    block:
+
+    - name: List dependencies
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "dependencies: {{ dependencies }}"
+
+    - name: Install dependencies
+      tags: init
+      ansible.builtin.apt:
+        name: "{{ dependencies }}"
+        state: present
+        update_cache: true
+
+    - name: Upgrade dependencies
+      tags: update
+      ansible.builtin.apt:
+        name: "{{ dependencies }}"
+        state: latest
+        update_cache: true
+
+  # Repository
+  - name: Repository
+    tags: init
+    block:
+
+    - name: Create /etc/apt/keyrings directory
+      ansible.builtin.file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: 0755
+
+    - name: Download GPG apt key
+      ansible.builtin.get_url:
+        url: https://apt.releases.hashicorp.com/gpg
+        dest: /tmp/terraform.gpg
+        mode: 0644
+
+    - name: Import GPG key
+      ansible.builtin.command:
+        cmd: gpg --dearmor -o /etc/apt/keyrings/hashicorp-archive-keyring.gpg /tmp/terraform.gpg
+
+    - name: Add apt repository
+      ansible.builtin.shell: |
+        echo 'deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main' | sudo tee /etc/apt/sources.list.d/hashicorp.list > /dev/null
+
+  # Packages
+  - name: Packages
+    block:
+
+    - name: Install
+      tags: init
+      ansible.builtin.apt:
+        name: terraform
+        state: present
+        update_cache: true
+
+    - name: Upgrade
+      tags: update
+      ansible.builtin.apt:
+        name: terraform
+        state: latest
+        update_cache: true
+
+  # Version
+  - name: Version
+    tags: [init, update]
+    block:
+
+    - name: Confirm version
+      ansible.builtin.command:
+        cmd: terraform --version
+      register: terraform_version
+      changed_when: false
+
+    - name: Show version
+      when: terraform_version is defined
+      ansible.builtin.debug:
+        msg: "Installed terraform version: {{ terraform_version.stdout }}"

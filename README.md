@@ -152,16 +152,22 @@ Here is a list of tools that could be interesting and further enhance the stack:
   - https://github.com/tenable/terrascan
 - Shell
   - Commands
+    - btop: https://github.com/aristocratos/btop
     - du: https://github.com/bootandy/dust
     - entr: https://github.com/clibs/entr
     - find: https://github.com/sharkdp/fd
     - midnight commander: https://github.com/MidnightCommander/mc
     - ripgrep: https://github.com/BurntSushi/ripgrep
     - thefuck: https://github.com/nvbn/thefuck
+  - System Info:
+    - fastfetch: https://github.com/fastfetch-cli/fastfetch
+    - nerdfetch: https://github.com/ThatOneCalculator/NerdFetch
+    - macchina: https://github.com/Macchina-CLI/macchina
   - Tools
     - Autocomplete: https://github.com/withfig/autocomplete
     - Cheat: https://github.com/cheat/cheat
     - Clipboard: https://github.com/Slackadays/Clipboard
+    - cmatrix: https://github.com/abishekvashok/cmatrix
 - Version Control
   - https://mergiraf.org
   - https://difftastic.wilfred.me.uk

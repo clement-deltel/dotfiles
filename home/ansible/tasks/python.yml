@@ -1,57 +1,85 @@
 - name: Python
   hosts: all
   gather_facts: false
-  become: true
   vars:
     packages:
       - python3
       - python3-pip
+    install_tmp: /tmp/pyenv
+    install_url: https://pyenv.run
 
   tasks:
   # Python
-  - name: List packages
-    tags: [init, update]
-    debug:
-      msg: "packages: {{ packages }}"
+  - name: Python
+    block:
 
-  - name: Install
-    tags: init
-    ansible.builtin.apt:
-      name: "{{ packages }}"
-      state: present
-      update_cache: true
+    - name: List packages
+      tags: [init, update]
+      debug:
+        msg: "packages: {{ packages }}"
 
-  - name: Upgrade
-    tags: update
-    ansible.builtin.apt:
-      name: "{{ packages }}"
-      state: latest
-      update_cache: true
+    - name: Install
+      tags: init
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: true
+
+    - name: Upgrade
+      tags: update
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: latest
+        update_cache: true
+
+  # pyenv
+  - name: pyenv
+    block:
+
+    - name: pyenv - Install
+      tags: init
+      community.general.homebrew:
+        name: pyenv
+        state: present
+        update_homebrew: true
+
+    - name: pyenv - Upgrade
+      tags: update
+      community.general.homebrew:
+        name: pyenv
+        state: latest
+        update_homebrew: true
 
   # pipx
-  - name: Install pipx
-    tags: init
-    ansible.builtin.apt:
-      name: pipx
-      state: present
-      update_cache: true
+  - name: pipx
+    block:
 
-  - name: Upgrade pipx
-    tags: update
-    ansible.builtin.apt:
-      name: pipx
-      state: latest
-      update_cache: true
+    - name: pipx - Install
+      tags: init
+      ansible.builtin.apt:
+        name: pipx
+        state: present
+        update_cache: true
+
+    - name: pipx - Upgrade
+      tags: update
+      ansible.builtin.apt:
+        name: pipx
+        state: latest
+        update_cache: true
 
   # poetry
-  - name: Install poetry
-    tags: init
-    community.general.pipx:
-      name: poetry
-      state: present
+  - name: poetry
+    block:
 
-  - name: Upgrade poetry
-    tags: update
-    community.general.pipx:
-      name: poetry
-      state: latest
+    - name: poetry - Install
+      tags: init
+      community.general.pipx:
+        name: poetry
+        state: present
+
+    - name: poetry - Upgrade
+      tags: update
+      community.general.pipx:
+        name: poetry
+        state: latest

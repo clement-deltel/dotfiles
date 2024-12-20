@@ -13,7 +13,7 @@
       - docker-buildx-plugin
       - docker-compose-plugin
   vars_files:
-    - vars/main.yml
+    - ../vars/main.yml
 
   tasks:
   # Users

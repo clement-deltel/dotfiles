@@ -7,7 +7,7 @@
       - xdg-utils # Enable starting a browser to run aws sso login
       - zip
   vars_files:
-    - vars/main.yml
+    - ../vars/main.yml
 
   tasks:
   # Dependencies

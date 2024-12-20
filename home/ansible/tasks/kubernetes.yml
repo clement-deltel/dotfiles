@@ -1,0 +1,88 @@
+- name: Kubernetes
+  hosts: all
+  gather_facts: false
+  become: true
+  vars:
+    install_tmp: /tmp/kubernetes
+    plugins:
+      - derailed/k9s/k9s
+      - stern
+
+  tasks:
+  # kubectl
+  - name: Manage kubectl
+    tags: [init, update]
+    block:
+
+    - name: Create temporary directory
+      ansible.builtin.file:
+        path: "{{ install_tmp }}"
+        state: directory
+        mode: 0700
+
+    - name: Get latest kubectl version
+      ansible.builtin.uri:
+        url: https://dl.k8s.io/release/stable.txt
+        return_content: yes
+      register: version
+
+    - name: Download kubectl
+      ansible.builtin.get_url:
+        url: https://dl.k8s.io/release/{{ version.content }}/bin/linux/amd64/kubectl
+        dest: "{{ install_tmp }}/kubectl"
+
+    - name: Get kubectl checksum
+      ansible.builtin.shell: # using shell to support "|"
+        cmd: sha256sum {{ install_tmp }}/kubectl | cut -d " " -f1
+      register: checksum
+
+    - name: Download control checksum
+      ansible.builtin.get_url:
+        url: https://dl.k8s.io/release/{{ version.content }}/bin/linux/amd64/kubectl.sha256
+        dest: "{{ install_tmp }}/kubectl.sha256"
+
+    - name: Get control checksum
+      ansible.builtin.command:
+        cmd: cat {{ install_tmp }}/kubectl.sha256
+      register: control_checksum
+
+    - name: Verify checksum
+      ansible.builtin.assert:
+        that:
+          - checksum.stdout == control_checksum.stdout
+        fail_msg: "checksum verification failed"
+        success_msg: "checksum verified"
+
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: "{{ install_tmp }}/kubectl"
+        dest: "/usr/bin/kubectl"
+        owner: root
+        group: root
+        mode: 0755
+
+    - name: Remove temporary directory
+      ansible.builtin.file:
+        path: "{{ install_tmp }}"
+        state: absent
+
+  # homebrew
+  - name: Manage plugins
+    block:
+
+    - name: List plugins
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "Plugins: {{ plugins }}"
+
+    - name: Install plugins
+      tags: init
+      community.general.homebrew:
+        name: "{{ plugins }}"
+        state: present
+
+    - name: Upgrade plugins
+      tags: update
+      community.general.homebrew:
+        name: "{{ plugins }}"
+        state: latest

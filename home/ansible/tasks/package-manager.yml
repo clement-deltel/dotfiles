@@ -39,15 +39,12 @@
     #       -
     #     state: absent
 
-  - name: Upgrade
+  # apt upgrade -y
+  - name: Upgrade packages
     tags: update
-    block:
-
-    # apt upgrade -y
-    - name: Upgrade packages
-      ansible.builtin.apt:
-        name: "{{ ubuntu }}"
-        state: latest
+    ansible.builtin.apt:
+      name: "{{ ubuntu }}"
+      state: latest
 
   - name: Cleaning
     tags: clean

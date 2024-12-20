@@ -62,7 +62,7 @@ version = 3
     trailing_diamond = ""
     foreground = "p:black"
     background = "p:yellow"
-    template = "{{ if .SSHSession }} {{ end }}{{ .UserName }} "
+    template = " {{ if .SSHSession }} {{ end }}{{ .UserName }} "
 
   # Path
   [[blocks.segments]]
@@ -176,7 +176,7 @@ version = 3
     style = "plain"
     foreground = "p:white"
     background = "p:purple_ubuntu"
-    template = " {{ .Name }}"
+    template = " {{ .Name }} "
 
 #==============================================================================#
 #               ------- Left Newline --------                                  #

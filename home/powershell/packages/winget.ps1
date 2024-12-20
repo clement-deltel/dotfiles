@@ -37,7 +37,7 @@ $trelloId = "XPDNKNDN77T0DP"
 # Apps
 If( $tag -eq "init" )
 {
-  winget install Rainmeter.Rainmeter --interactive --override "/S /AUTOSTARTUP=1 /RESTART=1"
+  winget install --exact --id Rainmeter.Rainmeter --interactive --override "/S /AUTOSTARTUP=1 /RESTART=1"
 
   If( $machine -eq "personal" )
   {
@@ -45,11 +45,11 @@ If( $tag -eq "init" )
   }
   Else If( $machine -eq "work" )
   {
-    winget install Flameshot.Flameshot --interactive
-    winget install Google.IAPDesktop --interactive
-    winget install Microsoft.Sysinternals --interactive
-    winget install Obsidian.Obsidian --interactive
-    winget install Wacom.WacomTabletDriver --interactive
+    winget install --exact --id Flameshot.Flameshot --interactive
+    winget install --exact --id Google.IAPDesktop --interactive
+    winget install --exact --id Microsoft.Sysinternals --interactive
+    winget install --exact --id Obsidian.Obsidian --interactive
+    winget install --exact --id Wacom.WacomTabletDriver --interactive
 
     winget install --exact --id $appleDevicesId --interactive --source msstore
     winget install --exact --id $pdfMergerId --interactive --source msstore
@@ -58,7 +58,7 @@ If( $tag -eq "init" )
 }
 Else If( $tag -eq "update" )
 {
-  winget upgrade Rainmeter.Rainmeter --interactive
+  winget upgrade --exact --id Rainmeter.Rainmeter --interactive
 
   If( $machine -eq "personal" )
   {
@@ -66,13 +66,13 @@ Else If( $tag -eq "update" )
   }
   Else If( $machine -eq "work" )
   {
-    winget upgrade twpayne.chezmoi --interactive
-    
-    winget upgrade Flameshot.Flameshot --interactive
-    winget upgrade Google.IAPDesktop --interactive
-    winget upgrade Microsoft.Sysinternals --interactive
-    winget upgrade Obsidian.Obsidian --interactive
-    winget upgrade Wacom.WacomTabletDriver --interactive
+    winget upgrade --exact --id twpayne.chezmoi --interactive
+
+    winget upgrade --exact --id Flameshot.Flameshot --interactive
+    winget upgrade --exact --id Google.IAPDesktop --interactive
+    winget upgrade --exact --id Microsoft.Sysinternals --interactive
+    winget upgrade --exact --id Obsidian.Obsidian --interactive
+    winget upgrade --exact --id Wacom.WacomTabletDriver --interactive
 
     winget upgrade --exact --id $appleDevicesId --interactive --source msstore
     winget upgrade --exact --id $pdfMergerId --interactive --source msstore

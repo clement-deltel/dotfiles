@@ -29,8 +29,12 @@ $machine = "{{ .machine }}"
 packages/chocolatey.ps1 init $machine
 packages/winget.ps1 init $machine
 
-# Outlook
-outlook/signatures.ps1 init $machine
-
 # Windows
 windows/explorer.ps1 init $machine
+windows/outlook_signatures.ps1 init $machine
+windows/start_menu.ps1 init $machine
+windows/taskbar.ps1 init $machine
+
+# Apps
+windows/chrome.ps1 init $machine
+windows/wsl.ps1 init $machine

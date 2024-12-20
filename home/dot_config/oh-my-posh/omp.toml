@@ -114,18 +114,35 @@ final_space = true
       fetch_virtual_env = true
 
   [[blocks.segments]]
-    template = "in <p:blue><b>{{ .Name }}</b></> "
-    foreground = "p:white"
-    background = "transparent"
-    type = "shell"
-    style = "plain"
+  type = "executiontime"
+  style = "diamond"
+  leading_diamond = ""
+  foreground = "p:green"
+  background = "#2c315a"
+  template = "<#fefefe></> {{ .FormattedMs }}"
+
+    [blocks.segments.properties]
+      always_enabled = true
+      threshold = 500
+      style = "austin"
 
   [[blocks.segments]]
-    template = "at <p:blue><b>{{ .CurrentDate | date "15:04:05" }}</b></>"
-    foreground = "p:white"
-    background = "transparent"
     type = "time"
     style = "plain"
+    foreground = "p:green"
+    background = "#2c315a"
+    template = "<#fefefe></> {{ .CurrentDate | date .Format }}"
+
+      [blocks.segments.properties]
+      time_format = "15:04"
+
+  [[blocks.segments]]
+    type = "shell"
+    style = "diamond"
+    leading_diamond = ""
+    foreground = "p:white"
+    background = "p:purple_ubuntu"
+    template = "{{ .Name }}"
 
 #==============================================================================#
 #               ------- Tooltips --------                                      #

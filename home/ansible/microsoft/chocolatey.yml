@@ -157,6 +157,11 @@
     tags: [init, update]
     block:
 
+    - name: Make directory $HOME/.config/chocolatey/
+      ansible.windows.win_file:
+        path: $HOME/.config/chocolatey/
+        state: directory
+
     - name: Update configuration
       ansible.windows.win_powershell:
       script: |
@@ -165,11 +170,11 @@
 
     - name: Remove configuration backup
       ansible.windows.win_file module:
-        path: "$HOME/.config/chocolatey/packages.config.backup"
+        path: $HOME/.config/chocolatey/packages.config.backup
         state: absent
 
     - name: Fetch configuration
       ansible.builtin.fetch module:
-        src: "$HOME/.config/chocolatey/packages.config"
-        dest: "$HOME/.config/chocolatey/"
+        src: $HOME/.config/chocolatey/packages.config
+        dest: $HOME/.config/chocolatey/
         flat: true

@@ -56,6 +56,7 @@ function bitwarden-create-session-fn {
   echo -n "Enter your Bitwarden password: "
   read -s BW_PASSWORD
   echo
+  export BW_PASSWORD
   # Run the unlock command and set BW_SESSION
   BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
   # Check if the command succeeded
@@ -77,6 +78,8 @@ function bitwarden-login-fn {
   echo -n "Enter your Bitwarden client secret: "
   read -s BW_CLIENTSECRET
   echo
+  export BW_CLIENTID
+  export BW_CLIENTSECRET
   # Run the login command
   bw login --apikey
   # Unset the API credentials variables for security

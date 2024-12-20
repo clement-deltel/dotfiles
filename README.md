@@ -52,6 +52,9 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
       - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh)
       - zsh
       - [zoxide](https://github.com/ajeetdsouza/zoxide)
+    - Version Control System (VCS)
+      - Git
+        - [git-lfs](https://github.com/git-lfs/git-lfs)
     - Languages
       - Go
       - JavaScript
@@ -70,7 +73,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
         - [kubectx](https://github.com/ahmetb/kubectx)
         - [k9s](https://github.com/derailed/k9s)
         - [stern](https://github.com/stern/stern)
-    - Infrastructure as Code
+    - Infrastructure as Code (IaC)
       - [Pulumi](https://github.com/pulumi/pulumi)
       - [Terraform](https://github.com/hashicorp/terraform)
     - Cloud

@@ -1,0 +1,37 @@
+- name: Configure machine
+  hosts: all
+  gather_facts: false
+
+# Packages
+- name: APT
+  import_playbook: packages/apt.yml
+- name: Homebrew
+  import_playbook: packages/homebrew.yml
+
+# Shell
+- name: Zoxide
+  import_playbook: shell/zoxide.yml
+- name: Zsh
+  import_playbook: shell/zsh.yml
+
+# Languages
+- name: Go
+  import_playbook: languages/go.yml
+- name: Python
+  import_playbook: languages/python.yml
+
+# Orchestration
+- name: Docker
+  import_playbook: orchestration/docker.yml
+- name: Kubernetes
+  import_playbook: orchestration/kubernetes.yml
+
+# Infrastructure as Code - IAC
+- name: Pulumi
+  import_playbook: iac/pulumi.yml
+- name: Terraform
+  import_playbook: iac/terraform.yml
+
+# Cloud
+- name: AWS
+  import_playbook: cloud/aws.yml

@@ -1,4 +1,4 @@
-- name: Run package manager
+- name: Manage packages
   tags: [ init, update ]
   become: true
   block:
@@ -8,17 +8,22 @@
       update_cache: true
 
   # apt install -y
-  - name: Install/update a list of packages
+  - name: Install/update packages
     apt:
-      pkg:
-        - build-essential
-        - curl
-        - git
-        - zsh
-      state: latest
+      package:
+        name: "{{ item }}"
+        state: latest
+      loop: "{{ packages }}"
+      vars:
+        packages:
+          - build-essential
+          - curl
+          - git
+          - vim
+          - zip
 
   # apt remove -y
-  # - name: Remove a list of packages
+  # - name: Remove packages
   #   apt:
   #     pkg:
   #       -

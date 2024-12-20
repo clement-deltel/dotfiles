@@ -153,7 +153,6 @@ Zsh is my default shell. Here is the list of plugins:
     - [fzf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf)
     - [history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history)
     - [sudo](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo)
-    - [zoxide](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zoxide)
   - Version Control
     - [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
     - [git-lfs](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-lfs)

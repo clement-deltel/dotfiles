@@ -28,84 +28,10 @@ DISABLE_FZF_KEY_BINDINGS="false"
 eval "$(zoxide init zsh --cmd cd)"
 
 #==============================================================================#
-#               ------- Antigen --------                                       #
+#               ------- Antidote --------                                      #
 #==============================================================================#
-source /usr/local/bin/antigen.zsh
-
-# Load oh-my-zsh library
-antigen use oh-my-zsh
-
-# Load bundles from the default repo (oh-my-zsh)
-# Aliases
-antigen bundle aliases
-antigen bundle alias-finder
-antigen bundle common-aliases
-
-# Cloud
-antigen bundle aws
-
-# Configuration Management
-antigen bundle ansible
-antigen bundle chezmoi
-
-# Distro-related
-antigen bundle ubuntu
-
-# Infrastructure as Code
-antigen bundle terraform
-
-# Languages - Go
-antigen bundle golang
-
-# Languages - JavaScript
-antigen bundle node
-
-# Languages - Python
-antigen bundle pip
-antigen bundle poetry
-
-# Packages
-antigen bundle brew
-antigen bundle npm
-
-# Productivity
-antigen bundle colored-man-pages
-antigen bundle colorize
-antigen bundle command-not-found
-antigen bundle safe-paste
-
-# Orchestration
-antigen bundle docker
-antigen bundle docker-compose
-antigen bundle helm
-antigen bundle kubectl
-
-# Shell
-antigen bundle cp
-antigen bundle eza
-antigen bundle fzf
-antigen bundle history
-antigen bundle sudo
-antigen bundle zoxide
-
-# Version Control System
-antigen bundle git
-antigen bundle git-lfs
-antigen bundle pre-commit
-
-# Other
-antigen bundle vscode
-
-# Load bundles from external repos
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# Select theme
-antigen theme robbyrussell
-
-# Tell Antigen that you're done
-antigen apply
+source ${HOME}/.local/antidote/antidote.zsh
+antidote load ${HOME}/.config/zsh/plugins.txt
 
 #==============================================================================#
 #               ------- Alias-Finder ------                                    #

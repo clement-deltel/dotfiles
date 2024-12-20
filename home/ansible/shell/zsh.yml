@@ -47,7 +47,7 @@
     become_user: ubuntu
     block:
 
-    - name: Install
+    - name: Antidote - Install
       tags: [init, update]
       ansible.builtin.git:
         repo: https://github.com/mattmc3/antidote.git

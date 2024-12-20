@@ -192,7 +192,7 @@ version = 3
     foreground = "magenta"
     background = "transparent"
     foreground_templates = ["{{ if gt .Code 0 }}red{{ end }}"]
-    template = "❯"
+    template = "❯ "
 
 #==============================================================================#
 #               ------- Tooltips --------                                      #

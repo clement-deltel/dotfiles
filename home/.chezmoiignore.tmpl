@@ -1,5 +1,12 @@
 {{ if eq .chezmoi.os "linux" }}
 profile.ps1
+{{ if ne .shell "zsh" }}
+.p10k.zsh
+.zshrc
+{{ else if ne .shell "bash" }}
+.bash_profile
+.bashrc
+{{ end }}
 {{ end }}
 
 {{ if eq .chezmoi.os "windows" }}

@@ -1,5 +1,7 @@
+# Platform
 {{ if eq .chezmoi.os "linux" }}
 profile.ps1
+# Shell
 {{ if ne .shell "zsh" }}
 .p10k.zsh
 .zshrc
@@ -9,7 +11,10 @@ profile.ps1
 {{ end }}
 {{ end }}
 
+# Platform
 {{ if eq .chezmoi.os "windows" }}
+ansible
+.config/sh
 .bash_profile
 .bashrc
 .p10k.zsh

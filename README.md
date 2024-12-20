@@ -188,17 +188,22 @@ Here is a list of tools that could be interesting and further enhance the stack:
 - **Shell**
   - **Commands**
     - [ag](https://github.com/ggreer/the_silver_searcher)
+    - [atuin](https://github.com/atuinsh/atuin): magical shell history
     - [btop](https://github.com/aristocratos/btop)
-    - [du](https://github.com/bootandy/dust)
+    - [dust](https://github.com/bootandy/dust): a more intuitive version of du in rust
     - [entr](https://github.com/clibs/entr)
     - [find](https://github.com/sharkdp/fd)
     - [midnight commander](https://github.com/MidnightCommander/mc)
     - [ripgrep](https://github.com/BurntSushi/ripgrep)
     - [thefuck](https://github.com/nvbn/thefuck)
+  - **Multiplexer**
+    - [tmux](https://github.com/tmux/tmux)
+    - [zellij](https://github.com/zellij-org/zellij)
   - **System Info**
     - [fastfetch](https://github.com/fastfetch-cli/fastfetch)
     - [nerdfetch](https://github.com/ThatOneCalculator/NerdFetch)
     - [macchina](https://github.com/Macchina-CLI/macchina)
+    - [powertop](https://github.com/fenrus75/powertop)
     - [sampler](https://github.com/sqshq/sampler)
   - **Tools**
     - [Autocomplete](https://github.com/withfig/autocomplete)

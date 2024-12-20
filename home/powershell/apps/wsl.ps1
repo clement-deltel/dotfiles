@@ -59,9 +59,14 @@ Else If( $tag -eq "backup" )
   # Export the distribution to a tar file
   wsl --export $distribution $tarFilePath
 
-  # Upload the tar file to AWS S3 bucket using AWS CLI
-  aws s3 cp $tarFilePath s3://machine-$machine --profile personal
+  # Compress the tar file
+  $gzipFilePath = "$tarFilePath.gzip"
+  & 7z a -mx6 -tgzip $gzipFilePath $tarFilePath
 
-  # Clean up the local backup directory by removing the tar file
+  # Upload the tar file to AWS S3 bucket using AWS CLI
+  aws s3 cp $gzipFilePath s3://machine-$machine --profile personal
+
+  # Clean up the local backup directory by removing the tar and the gzip files
   Remove-Item $tarFilePath
+  Remove-Item $gzipFilePath
 }

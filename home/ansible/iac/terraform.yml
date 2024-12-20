@@ -1,7 +1,6 @@
 - name: Terraform
   hosts: all
   gather_facts: true
-  become: true
   vars:
     dependencies:
       - gnupg

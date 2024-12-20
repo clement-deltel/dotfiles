@@ -167,6 +167,9 @@ function kctl-rollout-restart-deployment-fn { kctl rollout restart deployment "$
 #==============================================================================#
 #               ------- Python ------                                          #
 #==============================================================================#
+function python-pdb-fn { python -m pdb "$@"; }
+
+# pyenv
 function venv-activate { pyenv activate "$1"; }
 function venv-create-fn { pyenv virtualenv "$1" "$2"; }
 function venv-delete-fn { pyenv virtualenv-delete "$1"; }

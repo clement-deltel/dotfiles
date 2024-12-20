@@ -134,28 +134,67 @@ final_space = true
     type = "time"
     style = "plain"
 
+#==============================================================================#
+#               ------- Tooltips --------                                      #
+#==============================================================================#
+
+# Cloud
 [[tooltips]]
-  leading_diamond = ""
-  trailing_diamond = ""
-  template = "  {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} "
-  foreground = "p:white"
-  background = "p:orange"
+  tips = ["aws","terraform"]
   type = "aws"
   style = "diamond"
-  tips = ["aws"]
-
+  leading_diamond = ""
+  trailing_diamond = ""
+  foreground = "p:white"
+  background = "p:orange_aws"
+  template = " {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} "
   [tooltips.properties]
     display_default = true
 
 [[tooltips]]
-  leading_diamond = ""
-  trailing_diamond = ""
-  template = "  {{ .Name }} "
-  foreground = "p:white"
-  background = "p:blue"
+  tips = ["az", "terraform"]
   type = "az"
   style = "diamond"
-  tips = ["az"]
-
+  leading_diamond = ""
+  trailing_diamond = ""
+  foreground = "p:white"
+  background = "p:blue_azure"
+  template = "  {{ .Name }} "
   [tooltips.properties]
     display_default = true
+
+# Orchestration
+[[tooltips]]
+  tips = [ "docker", "d" ]
+  type = "docker"
+  style = "diamond"
+  leading_diamond = ""
+  trailing_diamond = ""
+  foreground = "p:white"
+  background = "p:blue_docker"
+  template = "  {{ .Context }} "
+
+[[tooltips]]
+  type = "helm"
+  style = "diamond"
+  leading_diamond = ""
+  trailing_diamond = ""
+  foreground = "p:white"
+  background = "p:blue_helm"
+  template = " {{ .Version }} "
+  [tooltips.properties]
+    display_mode = "always"
+
+[[tooltips]]
+  tips = [ "kubectl", "k" ]
+  type = "kubectl"
+  style = "diamond"
+  leading_diamond = ""
+  trailing_diamond = ""
+  foreground = "p:white"
+  background = "p:blue_kube"
+  template = " ﴱ {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
+  [tooltips.properties]
+    display_error = true
+    parse_kubeconfig = true
+

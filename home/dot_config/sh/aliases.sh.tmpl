@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #==============================================================================#
-#               ------- General --------                                       #
+#               ------- Common --------                                        #
 #==============================================================================#
 alias c='clear'
 alias cls='clear'
@@ -15,8 +15,10 @@ alias ..='cd ..'
 alias ...='cd ..; cd ..'
 alias ....='cd ..; cd ..; cd ..'
 
+{{- if eq .shell "bash" }}
 # cp
 alias cp='cp -i'
+{{- end }}
 
 # du
 alias du-sort='du -sh * | sort -h'
@@ -33,11 +35,13 @@ alias h='clear && history | tail -50'
 # lsof - list open ports
 alias lsop='lsof -i -n -P | grep LISTEN'
 
+{{- if eq .shell "bash" }}
 # mv - prompt before overwrite
 alias mv='mv -i'
 
 # rm - prompt before every removal
 alias rm='rm -i'
+{{- end }}
 
 # tree - nice alternative to 'ls'
 alias tree='tree -Csu'
@@ -56,12 +60,7 @@ else
     alias ls="ls --color=auto"
 fi
 
-# exa
-# if [ -x "$(command -v exa)" ]; then
-#     alias ls="exa"
-#     alias la="exa --long --all --group"
-# fi
-
+{{- if eq .shell "bash" }}
 # ls - list
 alias ll='ls -l'
 # ls - do not ignore entries starting with '.', do not list '.' and '..'
@@ -70,10 +69,11 @@ alias la='ls -Al'
 alias lah='ls -Ahl'
 # ls - recursive ls
 alias lr='ls -lR'
+# ls - sort by date
+alias lrt='ls -ltr'
+{{- end }}
 # ls - sort by size
 alias lk='ls -lSr'
-# ls - sort by date
-alias ltr='ls -ltr'
 # ls - sort by extension
 alias lx='ls -lXB'
 
@@ -135,14 +135,10 @@ alias dex=docker-exec-fn
 alias di=docker-inspect-fn
 alias dim='docker images | (sed -u 1q; sort)'
 alias dip=docker-ip-fn
-alias dirm=docker-image-rm-fn
 alias dirmd=docker-image-rm-dangling-fn
 alias dl=docker-logs-fn
 alias dnames=docker-names-fn
-alias dnls='docker network ls'
 alias dnrm=docker-network-rm-fn
-alias dps='docker ps'
-alias dpsa='docker ps -a'
 alias dpsf='docker ps -a --format "table {{ "{{" }}.ID{{ "}}" }}\t{{ "{{" }}.Image{{ "}}" }}\t{{ "{{" }}.Names{{ "}}" }}\t{{ "{{" }}.Status{{ "}}" }}"'
 alias dpu=docker-pull-fn
 alias drun=docker-run-fn
@@ -150,9 +146,16 @@ alias dsdf='docker system df -v'
 alias dsp='docker system prune'
 alias dspa='docker system prune --all'
 alias dsr=docker-stop-rm-fn
-alias dvls='docker volume ls'
 alias dvrm=docker-volume-rm-fn
 alias dvrmd=docker-volume-rm-dangling-fn
+
+{{- if eq .shell "bash" }}
+alias dirm=docker-image-rm-fn
+alias dnls='docker network ls'
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias dvls='docker volume ls'
+{{- end }}
 
 #==============================================================================#
 #               ------- Docker Compose ------                                  #

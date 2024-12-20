@@ -55,6 +55,7 @@ function chezmoi-add-fn { chezmoi add "$1"; }
 function chezmoi-add-template-fn { chezmoi add --template "$1"; }
 function chezmoi-edit-fn { chezmoi edit "$1"; }
 function chezmoi-fn { chezmoi "$@"; }
+function chezmoi-merge-fn { chezmoi merge "$1"; }
 
 #==============================================================================#
 #               ------- Docker ------                                          #

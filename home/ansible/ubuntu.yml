@@ -2,14 +2,36 @@
   hosts: all
   gather_facts: false
 
-- name: Packages
-  import_playbook: tasks/package-manager.yml
-
+# Packages Managers
+- name: APT
+  import_playbook: tasks/packages/apt.yml
 - name: Homebrew
-  import_playbook: tasks/homebrew.yml
+  import_playbook: tasks/packages/homebrew.yml
 
+# Shell
+- name: Zoxide
+  import_playbook: tasks/shell/zoxide.yml
+- name: Zsh
+  import_playbook: tasks/shell/zsh.yml
+
+# Languages
+- name: Go
+  import_playbook: tasks/languages/go.yml
 - name: Python
-  import_playbook: tasks/python.yml
+  import_playbook: tasks/languages/python.yml
 
+# Orchestration
+- name: Docker
+  import_playbook: tasks/orchestration/docker.yml
 - name: Kubernetes
-  import_playbook: tasks/kubernetes.yml
+  import_playbook: tasks/orchestration/kubernetes.yml
+
+# Infrastructure as Code
+- name: Pulumi
+  import_playbook: tasks/iac/pulumi.yml
+- name: Terraform
+  import_playbook: tasks/liac/terraform.yml
+
+# Cloud
+- name: AWS
+  import_playbook: tasks/cloud/aws.yml

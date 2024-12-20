@@ -1,4 +1,4 @@
-- name: Package Manager
+- name: APT
   hosts: all
   gather_facts: false
   vars:

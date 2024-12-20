@@ -1,0 +1,24 @@
+- name: Go
+  hosts: all
+  gather_facts: false
+
+  tasks:
+  # Packages
+  - name: Packages
+    block:
+
+    # sudo apt update -y && sudo apt install -y golang-go
+    - name: Install
+      tags: init
+      ansible.builtin.apt:
+        name: golang-go
+        state: present
+        update_cache: true
+
+    # sudo apt update -y && sudo apt upgrade -y golang-go
+    - name: Upgrade
+      tags: update
+      ansible.builtin.apt:
+        name: golang-go
+        state: latest
+        update_cache: true

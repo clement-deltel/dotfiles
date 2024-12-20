@@ -13,6 +13,11 @@
     whitespace = blank-at-eol,blank-at-eof,space-before-tab
 [commit]
     template = ~/.gitmessage.txt
+[filter "lfs"]
+    required = true
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process --skip
+	smudge = git-lfs smudge --skip -- %f
 [push]
     default = current
 [pull]

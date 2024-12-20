@@ -112,7 +112,7 @@ Zsh is my default shell. Here is the list of plugins:
 
 - **oh-my-zsh repository**
   - Aliases
-    - [aliases]
+    - [aliases][]
     - [alias-finder][]
     - [common-aliases][]
   - Cloud
@@ -156,6 +156,32 @@ Zsh is my default shell. Here is the list of plugins:
   - [zsh-syntax-highlighting][]
 
 Here is my theme: robbyrussell
+
+## Future enhancements
+
+Here is a list of tools that could be interesting and further enhance the stack:
+
+- AI
+  - https://github.com/di-sukharev/opencommit
+- Log
+  - https://github.com/tstack/lnav
+- Infrastructure as Code
+  - https://github.com/tenable/terrascan
+- Shell
+  - Autocomplete: https://github.com/withfig/autocomplete
+  - cat: https://github.com/sharkdp/bat
+  - Cheat: https://github.com/cheat/cheat
+  - Clipboard: https://github.com/Slackadays/Clipboard
+  - du: https://github.com/bootandy/dust
+  - find: https://github.com/sharkdp/fd
+- Version Control
+  - https://mergiraf.org
+  - https://difftastic.wilfred.me.uk
+  - https://github.com/initialcommit-com/git-sim
+  - https://github.com/carloscuesta/gitmoji-cli
+  - https://github.com/gruntwork-io/git-xargs
+  - https://github.com/lindell/multi-gitter
+  - https://github.com/conventional-changelog/commitlint
 
 [1]:https://www.chezmoi.io
 [2]:https://github.com/junegunn/fzf

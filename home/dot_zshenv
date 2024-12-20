@@ -21,6 +21,9 @@ export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
 export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# NodeJS
+export PATH=${PATH}:${HOME}/node_modules/.bin
+
 # Pulumi
 export PATH=${PATH}:~/.pulumi/bin
 

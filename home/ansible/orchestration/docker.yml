@@ -13,6 +13,8 @@
       - containerd.io
       - docker-buildx-plugin
       - docker-compose-plugin
+  vars_files:
+    - vars/main.yml
 
   tasks:
   # Users
@@ -24,14 +26,14 @@
     - name: Create group
       ansible.builtin.group:
         name: docker
-        gid: 1001
+        gid: "{{ docker_gid }}"
         state: present
 
     # sudo useradd -c "Docker" -g docker -m -d /home/docker -s /bin/bash -u 1001 docker
     - name: Create user
       ansible.builtin.user:
         name: docker
-        uid: 1001
+        uid: "{{ docker_uid }}"
         group: docker
         home: /home/docker
         shell: /bin/bash

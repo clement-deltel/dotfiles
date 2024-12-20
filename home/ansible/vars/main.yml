@@ -12,3 +12,6 @@ aws_sso_role_name: 'LocalAdminAccess'
 aws_sso_session: "{{ (bitwardenFields "item" "Amazon Web Services").sso_session.value }}"
 aws_sso_start_url: "{{ (bitwardenFields "item" "Amazon Web Services").sso_start_url.value }}"
 
+# Docker
+docker_gid: 1001
+docker_uid: 1001

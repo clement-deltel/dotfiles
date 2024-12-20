@@ -46,6 +46,7 @@ USER ${USER}
 RUN bw config server ${BW_SERVER} &&\
     bw login --apikey &&\
     export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw) &&\
+    mkdir -p ~/.config/chezmoi &&\
     bw get notes chezmoi > ~/.config/chezmoi/chezmoi.toml &&\
     ./install.sh
 

@@ -24,11 +24,13 @@
         mode: 0755
 
     - name: Download aliases
-      ansible.builtin.get_url:
+      ansible.builtin.uri:
+        method: GET
         url: https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases
         dest: /home/ubuntu/.kube/aliases.sh
         owner: ubuntu
         group: ubuntu
+        follow_redirects: safe
         mode: 0700
 
     - name : Update aliases
@@ -55,8 +57,10 @@
       register: version
 
     - name: kubectl - Download
-      ansible.builtin.get_url:
+      ansible.builtin.uri:
+        method: GET
         url: https://dl.k8s.io/release/{{ version.content }}/bin/{{ ansible_system | lower }}/{{ deb_architecture[ansible_architecture] }}/kubectl
+        follow_redirects: safe
         dest: "{{ kubectl_install_tmp }}/kubectl"
 
     - name: kubectl - Get checksum
@@ -65,8 +69,10 @@
       register: checksum
 
     - name: kubectl - Download control checksum
-      ansible.builtin.get_url:
+      ansible.builtin.uri:
+        method: GET
         url: https://dl.k8s.io/release/{{ version.content }}/bin/{{ ansible_system | lower }}/{{ deb_architecture[ansible_architecture] }}/kubectl.sha256
+        follow_redirects: safe
         dest: "{{ kubectl_install_tmp }}/kubectl.sha256"
 
     - name: kubectl - Get control checksum
@@ -121,9 +127,11 @@
         mode: 0700
 
     - name: Helm - Download install script
-      ansible.builtin.get_url:
+      ansible.builtin.uri:
+        method: GET
         url: "{{ helm_install_url }}"
         dest: "{{ helm_install_tmp }}/get_helm.sh"
+        follow_redirects: safe
         mode: 0700
 
     - name: Helm - Install

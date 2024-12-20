@@ -19,9 +19,11 @@
         mode: 0700
 
     - name: Download install script
-      ansible.builtin.get_url:
+      ansible.builtin.uri:
+        method: GET
         url: "{{ install_url }}"
         dest: "{{ install_tmp }}/install.sh"
+        follow_redirects: safe
         mode: 0700
 
     - name: Install

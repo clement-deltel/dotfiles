@@ -51,5 +51,5 @@
       tags: [init, update]
       ansible.builtin.git:
         repo: https://github.com/mattmc3/antidote.git
-        dest: /home/ubuntu/.local
+        dest: /home/ubuntu/.local/antidote
         depth: 1

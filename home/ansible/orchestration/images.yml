@@ -1,0 +1,25 @@
+- name: Docker Images
+  hosts: all
+  gather_facts: false
+  vars:
+    images:
+      - fedora:42
+      - mongo:7.0.4
+      - postgres:15.0
+      - rabbitmq:3.12.10-management
+      - redis:7.2.3
+      - ubuntu:22.04
+
+  tasks:
+  # Pull
+  - name: Pull
+    tag: init
+    block:
+
+    - name: Pull default images
+      community.docker.docker_image:
+        name: "{{ images }}"
+        source: pull
+        pull:
+          platform: amd64
+        state: present

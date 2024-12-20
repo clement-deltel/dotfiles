@@ -1,23 +1,54 @@
 # dotfiles
-Personal dotfiles managed with chezmoi.
 
-## Pre-requisites
+Personal dotfiles managed with [chezmoi][1].
 
-To fully enjoy the features offered by those dotfiles, you'll need to install the required packages listed down below:
+## Linux
 
-- docker
-- k9s
-- kubernetes-cli
-- net-tools
-- pyenv
-- python
+### Ubuntu
 
-## Install chezmoi
-
-Set up a new machine with two commands:
+1. Install chezmoi:
 ```bash
+sudo apt update -y
+sudo apt install -y curl git
 sh -c "$(curl -fsLS get.chezmoi.io)"
-chezmoi init --apply $GITHUB_USERNAME
+chezmoi init --apply clement-deltel
+```
+2. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.
+3. Ansible playbooks automatically install and configure the tools listed below:
+    - Package Managers
+      - apt
+        - [fzf][2]
+        - [htop][3]
+        - pwgen
+        - [vim][4]
+      - [homebrew][5]
+    - Shell
+      - zsh
+      - [zoxide][6]
+    - Languages
+      - Go
+      - Python
+        - [pipx][7]
+        - [poetry][8]
+        - [pyenv][9]
+    - Orchestration
+      - Docker
+      - Kubernetes
+        - [helm][10]
+        - [kubectl][11]
+        - [k9s][12]
+        - [stern][13]
+    - Infrastructure as Code
+      - [Pulumi][14]
+      - [Terraform][15]
+    - Cloud
+      - AWS CLI
+
+If you want to test this setup, you need to have Docker installed and then you can run the commands below:
+```bash
+docker build --build-arg GITHUB_USERNAME=clement-deltel --file docker/linux/Dockerfile --tag dotfiles .
+docker run --interactive --name dotfiles --tty --rm dotfiles
+```
 ```
 
 ## Install Zsh
@@ -44,3 +75,19 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
 5. Here is a list of handy plugins:
    - zsh-syntax-highlighting
    - zsh-autosuggestions
+
+[1]:https://www.chezmoi.io
+[2]:https://github.com/junegunn/fzf
+[3]:https://github.com/htop-dev/htop
+[4]:https://github.com/vim/vim
+[5]:https://github.com/Homebrew/brew
+[6]:https://github.com/ajeetdsouza/zoxide
+[7]:https://github.com/pypa/pipx
+[8]:https://github.com/python-poetry/poetry
+[9]:https://github.com/pyenv/pyenv
+[10]:https://github.com/helm/helm
+[11]:https://github.com/kubernetes/kubectl
+[12]:https://github.com/derailed/k9s
+[13]:https://github.com/stern/stern
+[14]:https://github.com/pulumi/pulumi
+[15]:https://github.com/hashicorp/terraform

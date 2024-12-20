@@ -25,6 +25,8 @@
 # Languages
 - name: Go
   import_playbook: languages/go.yml
+- name: JavaScript
+  import_playbook: languages/nodejs.yml
 - name: Python
   import_playbook: languages/python.yml
 

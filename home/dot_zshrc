@@ -77,12 +77,16 @@ antigen bundle terraform
 # Languages - Go
 antigen bundle golang
 
+# Languages - JavaScript
+antigen bundle node
+
 # Languages - Python
 antigen bundle pip
 antigen bundle poetry
 
 # Packages
 antigen bundle brew
+antigen bundle npm
 
 # Productivity
 antigen bundle colored-man-pages

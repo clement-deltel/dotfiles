@@ -13,7 +13,7 @@
     install_url: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 
   tasks:
-  # dependencies
+  # Dependencies
   - name: Dependencies
     block:
 
@@ -22,6 +22,7 @@
       ansible.builtin.debug:
         msg: "dependencies: {{ dependencies }}"
 
+    # sudo apt update -y && sudo apt install -y
     - name: Install dependencies
       tags: init
       ansible.builtin.apt:
@@ -29,6 +30,7 @@
         state: present
         update_cache: true
 
+    # sudo apt update -y && sudo apt upgrade -y
     - name: Upgrade dependencies
       tags: update
       ansible.builtin.apt:
@@ -36,7 +38,7 @@
         state: latest
         update_cache: true
 
-  # homebrew
+  # Homebrew
   - name: Homebrew
     tags: [init, update]
     block:

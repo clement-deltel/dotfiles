@@ -6,7 +6,7 @@
     install_url: https://get.pulumi.com
 
   tasks:
-  # pulumi
+  # Pulumi
   - name: Pulumi
     become_user: ubuntu
     tags: [init, update]

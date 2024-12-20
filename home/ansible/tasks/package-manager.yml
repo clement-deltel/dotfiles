@@ -16,11 +16,11 @@
       - zip
 
   tasks:
-  # apt
-  - name: apt
+  # Packages
+  - name: Packages
     block:
 
-    # apt update -y
+    # sudo apt update -y
     - name: Update cache
       tags: [init, update]
       ansible.builtin.apt:
@@ -31,40 +31,39 @@
       debug:
         msg: "packages: {{ packages }}"
 
-    - name: Initialization
+    # sudo apt install -y
+    - name: Install packages
       tags: init
-      block:
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: present
 
-      # apt install -y
-      - name: Install packages
-        ansible.builtin.apt:
-          name: "{{ packages }}"
-          state: present
+    # sudo apt remove -y
+    # - name: Remove packages
+    #   tags: init
+    #   ansible.builtin.apt:
+    #     name:
+    #       -
+    #     state: absent
 
-      # apt remove -y
-      # - name: Remove packages
-      #   ansible.builtin.apt:
-      #     name:
-      #       -
-      #     state: absent
-
-    # apt upgrade -y
+    # sudo apt upgrade -y
     - name: Upgrade packages
       tags: update
       ansible.builtin.apt:
         name: "{{ packages }}"
         state: latest
 
-    - name: Cleaning
-      tags: clean
-      block:
+  # Cleaning
+  - name: Cleaning
+    tags: clean
+    block:
 
-      # apt autoclean
-      - name: Cleans the local repository of package files that can no longer be downloaded
-        ansible.builtin.apt:
-          autoclean: true
+    # apt autoclean
+    - name: Cleans the local repository of package files that can no longer be downloaded
+      ansible.builtin.apt:
+        autoclean: true
 
-      # apt autoremove
-      - name: Remove unused dependencies
-        ansible.builtin.apt:
-          autoremove: true
+    # apt autoremove
+    - name: Remove unused dependencies
+      ansible.builtin.apt:
+        autoremove: true

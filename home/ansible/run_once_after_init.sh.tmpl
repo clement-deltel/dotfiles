@@ -11,6 +11,6 @@ sudo apt install -y ansible
 echo "Run Ansible Playbooks"
 echo
 {{- if eq .chezmoi.osRelease.id "ubuntu" }}
-ansible-playbook --become --connection local --inventory "localhost," --tags init ~/ansible/ubuntu.yml
-ansible-playbook --become --connection local --inventory "localhost," --tags clean ~/ansible/ubuntu.yml
+ansible-playbook --become --connection local --extra-vars "ansible_python_interpreter=auto_silent" --inventory "localhost," --tags init ~/ansible/ubuntu.yml
+ansible-playbook --become --connection local --extra-vars "ansible_python_interpreter=auto_silent" --inventory "localhost," --tags clean ~/ansible/ubuntu.yml
 {{- end }}

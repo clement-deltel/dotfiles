@@ -66,6 +66,8 @@ Else If( $tag -eq "update" )
   }
   Else If( $machine -eq "work" )
   {
+    winget upgrade twpayne.chezmoi --interactive
+    
     winget upgrade Flameshot.Flameshot --interactive
     winget upgrade Google.IAPDesktop --interactive
     winget upgrade Microsoft.Sysinternals --interactive

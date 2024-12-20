@@ -23,7 +23,7 @@ sh -c "$(curl -fsLS get.chezmoi.io)"
 
 2. Export required environment variables:
 ```bash
-# Fill the blanks with your configuration
+# Fill the blanks with your API credentials and password
 export BW_SERVER="https://bw.domain.com"
 export BW_CLIENTID=""
 export BW_CLIENTSECRET=""

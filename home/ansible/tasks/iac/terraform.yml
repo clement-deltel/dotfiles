@@ -82,10 +82,10 @@
     - name: Confirm version
       ansible.builtin.command:
         cmd: terraform --version
-      register: terraform_version
+      register: version
       changed_when: false
 
     - name: Show version
-      when: terraform_version is defined
+      when: version is defined
       ansible.builtin.debug:
-        msg: "Installed terraform version: {{ terraform_version.stdout }}"
+        msg: "Installed version: {{ version.stdout }}"

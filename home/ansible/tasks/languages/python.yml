@@ -110,14 +110,14 @@
       tags: [init, update]
       ansible.builtin.command:
         cmd: pipx --version
-      register: pipx_version
+      register: version
       changed_when: false
 
     - name: pipx - Show version
       tags: [init, update]
-      when: pipx_version is defined
+      when: version is defined
       ansible.builtin.debug:
-        msg: "Installed pipx version: {{ pipx_version.stdout }}"
+        msg: "Installed version: {{ version.stdout }}"
 
   # Poetry
   - name: Poetry
@@ -143,11 +143,11 @@
       tags: [init, update]
       ansible.builtin.command:
         cmd: poetry --version
-      register: poetry_version
+      register: version
       changed_when: false
 
     - name: Poetry - Show version
       tags: [init, update]
-      when: poetry_version is defined
+      when: version is defined
       ansible.builtin.debug:
-        msg: "Installed Poetry version: {{ poetry_version.stdout }}"
+        msg: "Installed version: {{ version.stdout }}"

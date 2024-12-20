@@ -1,9 +1,12 @@
 - name: Configure machine
-  gather_facts: true
   hosts: all
+  gather_facts: false
 
 - name: Packages
   import_playbook: tasks/package-manager.yml
+
+- name: Homebrew
+  import_playbook: tasks/homebrew.yml
 
 - name: Python
   import_playbook: tasks/python.yml

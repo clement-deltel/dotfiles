@@ -1,6 +1,7 @@
 - name: Package Manager
-  become: true
   hosts: all
+  gather_facts: false
+  become: true
   vars:
     ubuntu:
       - build-essential

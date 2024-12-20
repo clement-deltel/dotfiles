@@ -1,0 +1,56 @@
+- name: Homebrew
+  hosts: all
+  gather_facts: false
+  become: true
+  vars:
+    dependencies:
+      - build-essential
+      - curl
+      - git
+      - language-pack-en
+      - locales
+    install_tmp: "/tmp/homebrew"
+    install_url: "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
+
+  tasks:
+  - name: Homebrew - List of dependencies
+    tags: [init, update]
+    debug:
+      msg: "dependencies: {{ dependencies }}"
+
+  - name: Homebrew - Install dependencies
+    tags: init
+    ansible.builtin.apt:
+      name: "{{ dependencies }}"
+      state: present
+      update_cache: true
+
+  - name: Homebrew - Upgrade dependencies
+    tags: update
+    ansible.builtin.apt:
+      name: "{{ dependencies }}"
+      state: latest
+      update_cache: true
+
+  - name: Homebrew - Create temporary directory
+    ansible.builtin.file:
+      path: "{{ install_tmp }}"
+      state: directory
+      mode: 0700
+
+  - name: Homebrew - Download install script
+    ansible.builtin.get_url:
+      url: "{{ install_url }}"
+      dest: "{{ install_tmp }}/install.sh"
+      mode: 0700
+
+  - name: Homebrew - Install
+    ansible.builtin.command:
+      cmd: /bin/bash -c "{{ install_tmp }}/install.sh"
+    register: install_result
+    changed_when: "install_result.rc == 0"
+
+  - name: Homebrew - Remove temporary directory
+    ansible.builtin.file:
+      path: "{{ install_tmp }}"
+      state: absent

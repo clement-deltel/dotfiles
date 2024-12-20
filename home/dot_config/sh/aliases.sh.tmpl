@@ -181,7 +181,7 @@ alias krmfailed='kctl delete pods --field-selector=status.phase=Failed'
 alias krmp=kctl-delete-pod-fn
 alias krr=kctl-rollout-restart-deployment-fn
 
-{{ if eq .machine "work" -}}
+{{ if eq .chezmoi.data.machine "work" -}}
 {{ .kube_aliases_extra }}
 {{- end }}
 
@@ -221,7 +221,7 @@ alias tfs=terraform-state-fn
 alias tfsh='terraform show'
 alias tfv='terraform validate'
 
-{{- if eq .shell "zsh" }}
+{{- if eq .chezmoi.data.shell "zsh" }}
 #==============================================================================#
 #               ------- Zsh --------                                           #
 #==============================================================================#

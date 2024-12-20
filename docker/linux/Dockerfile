@@ -46,4 +46,4 @@ RUN bw config server ${BW_SERVER} &&\
     chmod +x ./install.sh && ./install.sh &&\
     bw lock
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/zsh"]

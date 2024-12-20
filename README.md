@@ -61,32 +61,34 @@ bw lock
 6. Ansible playbooks automatically install and configure the tools listed below:
     - Package Managers
       - apt
-        - [exa][2]
-        - [fzf][3]
-        - [htop][4]
+        - [fzf][2]
+        - [htop][3]
+        - [jq][4]
         - pwgen
         - [vim][5]
         - [xclip][6]
       - [homebrew][7]
     - Shell
+      - [eza][8]
+      - [Oh My Posh][9]
       - zsh
-      - [zoxide][8]
+      - [zoxide][10]
     - Languages
       - Go
       - Python
-        - [pipx][9]
-        - [poetry][10]
-        - [pyenv][11]
+        - [pipx][11]
+        - [poetry][12]
+        - [pyenv][13]
     - Orchestration
       - Docker
       - Kubernetes
-        - [helm][12]
-        - [kubectl][13]
-        - [k9s][14]
-        - [stern][15]
+        - [helm][14]
+        - [kubectl][15]
+        - [k9s][16]
+        - [stern][17]
     - Infrastructure as Code
-      - [Pulumi][16]
-      - [Terraform][17]
+      - [Pulumi][18]
+      - [Terraform][19]
     - Cloud
       - AWS CLI
 
@@ -103,47 +105,74 @@ export GITHUB_USERNAME=clement-deltel
 docker build --build-arg BW_SERVER --build-arg BW_CLIENTID --build-arg BW_CLIENTSECRET --build-arg BW_PASSWORD --build-arg GITHUB_USERNAME --file docker/linux/Dockerfile --tag dotfiles docker/linux/
 docker run --interactive --name dotfiles --tty --rm dotfiles
 ```
-```
 
-## Install Zsh
+## Shell
 
-Instead of bash it is possible to use the Zsh shell. Here are the steps to set it up:
+Zsh is my default shell. Here is the list of plugins:
 
-1. Update package list and upgrade packages:
-```bash
-sudo apt update -y && sudo apt upgrade -y
-```
+- **oh-my-zsh repository**
+  - Aliases
+    - [aliases]
+    - [alias-finder][]
+    - [common-aliases][]
+  - Cloud
+    - [aws][]
+  - Configuration Management
+    - [ansible][]
+    - [chezmoi][]
+  - Distro-related
+    - [debian][]
+  - Infrastructure as Code
+    - [terraform][]
+  - Languages
+    - Go
+      - [golang][]
+    - Python
+      - [pip][]
+      - [poetry][]
+  - Packages
+    - [brew][]
+  - Productivity
+    - [colored-man-pages][]
+    - [colorize][]
+    - [command-not-found][]
+  - Orchestration
+    - [docker][]
+    - [docker-compose][]
+    - [helm][]
+    - [kubectl][]
+  - Shell
+    - [cp][]
+    - [eza][]
+    - [fzf][]
+    - [history][]
+    - [zoxide][]
+  - Version Control
+    - [git][]
+    - [pre-commit][]
+- **zsh-users repository**
+  - [zsh-completions][]
+  - [zsh-autosuggestions][]
+  - [zsh-syntax-highlighting][]
 
-2. Install dependencies:
-```bash
-sudo apt install -y git wget
-```
-
-3. Install Zsh and oh-my-zsh:
-```bash
-sudo apt install zsh
-sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-```
-
-4. Here is my favorite theme: Powerlevel10k
-5. Here is a list of handy plugins:
-   - zsh-syntax-highlighting
-   - zsh-autosuggestions
+Here is my theme: robbyrussell
 
 [1]:https://www.chezmoi.io
-[2]:https://github.com/ogham/exa
-[3]:https://github.com/junegunn/fzf
-[4]:https://github.com/htop-dev/htop
+[2]:https://github.com/junegunn/fzf
+[3]:https://github.com/htop-dev/htop
+[4]:https://github.com/jqlang/jq
 [5]:https://github.com/vim/vim
 [6]:https://github.com/astrand/xclip
 [7]:https://github.com/Homebrew/brew
-[8]:https://github.com/ajeetdsouza/zoxide
-[9]:https://github.com/pypa/pipx
-[10]:https://github.com/python-poetry/poetry
-[11]:https://github.com/pyenv/pyenv
-[12]:https://github.com/helm/helm
-[13]:https://github.com/kubernetes/kubectl
-[14]:https://github.com/derailed/k9s
-[15]:https://github.com/stern/stern
-[16]:https://github.com/pulumi/pulumi
-[17]:https://github.com/hashicorp/terraform
+[8]:https://github.com/eza-community/eza
+[9]:https://github.com/jandedobbeleer/oh-my-posh
+[10]:https://github.com/ajeetdsouza/zoxide
+[11]:https://github.com/pypa/pipx
+[12]:https://github.com/python-poetry/poetry
+[13]:https://github.com/pyenv/pyenv
+[14]:https://github.com/helm/helm
+[15]:https://github.com/kubernetes/kubectl
+[16]:https://github.com/derailed/k9s
+[17]:https://github.com/stern/stern
+[18]:https://github.com/pulumi/pulumi
+[19]:https://github.com/hashicorp/terraform

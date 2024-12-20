@@ -51,9 +51,6 @@ antigen bundle chezmoi
 # Distro-related
 antigen bundle debian
 
-# FS Jumping
-antigen bundle zoxide
-
 # Infrastructure as Code
 antigen bundle terraform
 

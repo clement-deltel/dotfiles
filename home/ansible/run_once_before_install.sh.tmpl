@@ -6,12 +6,13 @@ title() {
     printf "\n${color}$1${nc}\n"
 }
 
-{{- if eq .chezmoi.osRelease.id "ubuntu" }}
 title "Install Ansible"
+{{- if eq .chezmoi.osRelease.id "ubuntu" }}
 sudo apt update -y && sudo apt install -y software-properties-common
 sudo add-apt-repository -y --update ppa:ansible/ansible
 sudo apt install -y ansible
-
-ansible-playbook --become --connection local --inventory "localhost," --tags init ubuntu.yml
-ansible-playbook --become --connection local --inventory "localhost," --tags clean ubuntu.yml
 {{- end }}
+
+title "Run Ansible Playbooks"
+ansible-playbook --become --connection local --inventory "localhost," --tags init ${HOME}/ansible/ubuntu.yml
+ansible-playbook --become --connection local --inventory "localhost," --tags clean ${HOME}/ansible/ubuntu.yml

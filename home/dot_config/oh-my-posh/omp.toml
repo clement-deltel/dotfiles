@@ -3,15 +3,22 @@ version = 3
 final_space = true
 
 [palette]
-  black = "#262B44"
-  blue = "#5d94e9"
-  blue_docker = "#338bb8"
-  blue_kube = "#4c70e6"
-  green = "#6ac9a4"
-  orange = "#e7772c"
+  black = "#000000"
+  blue = "#5D94E9"
+  blue_azure = "#3C8CD6"
+  blue_docker = "#338BB8"
+  blue_go = "#45AFD7"
+  blue_helm = "#407EA2"
+  blue_kube = "#4C70E6"
+  green = "#6AC9A4"
+  orange = "#E7772C"
+  orange_aws = "#F69D1E"
+  purple_ubuntu = "#3E0442"
   red = "#D81E5B"
-  white = "#E0DEF4"
-  yellow = "#ecaf3a"
+  white = "#FFFFFF"
+  yellow = "#ECAF3A"
+  yellow_python = "#F9CF45"
+
 
 [secondary_prompt]
   template = "<p:yellow,transparent></><,p:yellow> > </><p:yellow,transparent></> "

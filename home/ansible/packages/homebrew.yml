@@ -11,6 +11,7 @@
     formulas:
       - lnav
       - tlrc
+      - tokei
       - trivy
     install_tmp: /tmp/homebrew
     install_url: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh

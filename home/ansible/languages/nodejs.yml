@@ -110,7 +110,6 @@
 
   # NPM Packages
   - name: NPM Packages
-    become_user: ubuntu
     block:
 
     - name: List NPM packages
@@ -123,6 +122,7 @@
       tags: init
       community.general.npm:
         name: "{{ npm_packages }}"
+        global: true
         state: present
 
     # sudo npm install

@@ -1,6 +1,7 @@
 console_title_template = "{{ .Shell }} in {{ .Folder }}"
+final_space = false
+auto_upgrade = true
 version = 3
-final_space = true
 
 #==============================================================================#
 #               ------- Color Palette --------                                 #
@@ -28,14 +29,15 @@ final_space = true
 #               ------- Prompts --------                                       #
 #==============================================================================#
 [secondary_prompt]
-  template = "<p:yellow,transparent></><,p:yellow> > </><p:yellow,transparent></> "
-  foreground = "p:black"
+  foreground = "magenta"
   background = "transparent"
+  template = "❯❯ "
 
 [transient_prompt]
-  template = "<p:yellow,transparent></><,p:yellow> {{ .Folder }} </><p:yellow,transparent></> "
-  foreground = "p:black"
+  foreground = "magenta"
   background = "transparent"
+  foreground_templates = ["{{ if gt .Code 0 }}red{{ end }}"]
+  template = "❯ "
 
 #==============================================================================#
 #               ------- Left --------                                          #
@@ -72,9 +74,10 @@ final_space = true
     template = " {{ path .Path .Location }} "
 
     [blocks.segments.properties]
+      folder_separator_icon = "/"
       home_icon = ""
       folder_icon = " "
-      style = "folder"
+      style = "full"
       max_depth = "1"
 
       [blocks.segments.properties.mapped_locations]
@@ -121,6 +124,7 @@ final_space = true
 #==============================================================================#
 [[blocks]]
   type = "rprompt"
+  overflow = "hide"
 
   # Languages
   [[blocks.segments]]
@@ -156,7 +160,7 @@ final_space = true
 
     [blocks.segments.properties]
       always_enabled = true
-      threshold = 500
+      threshold = 5000
       style = "austin"
 
   [[blocks.segments]]
@@ -176,6 +180,22 @@ final_space = true
     foreground = "p:white"
     background = "p:purple_ubuntu"
     template = "{{ .Name }}"
+
+#==============================================================================#
+#               ------- Left Newline --------                                  #
+#==============================================================================#
+[[blocks]]
+  type = "prompt"
+  alignment = "left"
+  newline = true
+
+  [[blocks.segments]]
+    type = "text"
+    style = "plain"
+    foreground = "magenta"
+    background = "transparent"
+    foreground_templates = ["{{ if gt .Code 0 }}red{{ end }}"]
+    template = "❯"
 
 #==============================================================================#
 #               ------- Tooltips --------                                      #

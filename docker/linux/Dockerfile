@@ -17,7 +17,6 @@ ARG TZ
 
 # Persisted into the built image
 ENV DEBIAN_FRONTEND=noninteractive
-ENV BW_PASSWORD=${BW_PASSWORD}
 ENV GITHUB_USERNAME=${GITHUB_USERNAME}
 ENV TZ=${TZ}
 

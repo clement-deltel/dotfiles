@@ -84,6 +84,7 @@ bw lock
       - Docker
       - Kubernetes
         - [helm](https://github.com/helm/helm)
+        - [helmfile](https://github.com/helmfile/helmfile)
         - [kubectl](https://github.com/kubernetes/kubectl)
         - [kubectx](https://github.com/ahmetb/kubectx)
         - [k9s](https://github.com/derailed/k9s)
@@ -109,7 +110,7 @@ docker build --build-arg BW_SERVER --build-arg BW_CLIENTID --build-arg BW_CLIENT
 docker run --interactive --name dotfiles --tty --rm dotfiles
 ```
 
-## Shell
+### Shell
 
 Zsh is my default shell. Here is the list of plugins:
 

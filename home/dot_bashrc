@@ -133,25 +133,24 @@ export USER=$(whoami)
 export HOME=/home/${USER}
 
 #==============================================================================#
-#               ------- Source --------                                        #
+#               ------- Pyenv --------                                         #
 #==============================================================================#
-source_if_exists (){ if test -r "$1"; then source "$1"; fi; }
+# pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+ eval "$(pyenv init -)"
+fi
+eval "$(pyenv virtualenv-init -)"
 
-source_if_exists ${HOME}/.config/sh/aliases.sh
-source_if_exists ${HOME}/.config/sh/completions.sh
-source_if_exists ${HOME}/.config/sh/functions.sh
-source_if_exists ${HOME}/.kube/aliases.sh
-
 #==============================================================================#
-#               ------- Tools ------                                           #
+#               ------- Environment ------                                     #
 #==============================================================================#
+export PATH=${PATH}:~/.local/bin
 
 # Chezmoi
 export EDITOR='code --wait'
-export PATH=${PATH}:${HOME}/.local/bin
 
 # Go
-export GOPATH=${HOME}/go
+export GOPATH=~/go
 export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
 
 # Homebrew
@@ -162,13 +161,14 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export KUBE_EDITOR='code --wait'
 
 # Pulumi
-export PATH=${PATH}:${HOME}/.pulumi/bin
+export PATH=${PATH}:~/.pulumi/bin
 
-# pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
-fi
-eval "$(pyenv virtualenv-init -)"
+#==============================================================================#
+#               ------- Personal Aliases & Functions --------                  #
+#==============================================================================#
+source_if_exists (){ if test -r "$1"; then source "$1"; fi; }
 
-# Zoxide
-eval "$(zoxide init bash)"
+source_if_exists ~/.config/sh/aliases.sh
+source_if_exists ~/.config/sh/completions.sh
+source_if_exists ~/.config/sh/functions.sh
+source_if_exists ~/.kube/aliases.sh

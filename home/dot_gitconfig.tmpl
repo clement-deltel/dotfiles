@@ -57,6 +57,10 @@
     ci = commit
     cm = commit -m
 
+    # config
+    col = "config --list --show-origin"
+    la = "!git config -l | grep alias | cut -c 7-"
+
     # log
     lo = log --oneline
     lgo = log --graph --oneline
@@ -74,6 +78,3 @@
     rh = reset --hard
     rh1 = reset HEAD^ --hard
     rh2 = reset HEAD^^ --hard
-
-    # list all aliases
-    la = "!git config -l | grep alias | cut -c 7-"

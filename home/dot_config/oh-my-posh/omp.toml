@@ -83,42 +83,35 @@ final_space = true
     [blocks.segments.properties]
       always_enabled = true
 
+#==============================================================================#
+#               ------- Right --------                                         #
+#==============================================================================#
 [[blocks]]
   type = "rprompt"
 
+  # Languages
   [[blocks.segments]]
-    template = " "
-    foreground = "p:green"
-    background = "transparent"
-    type = "node"
-    style = "plain"
-
-    [blocks.segments.properties]
-      display_mode = "files"
-      fetch_package_manager = false
-      home_enabled = false
-
-  [[blocks.segments]]
-    template = " "
-    foreground = "p:blue"
-    background = "transparent"
     type = "go"
     style = "plain"
+    foreground = "p:blue_go"
+    background = "transparent"
+    template = " "
 
     [blocks.segments.properties]
       fetch_version = false
 
   [[blocks.segments]]
-    template = " "
-    foreground = "p:yellow"
-    background = "transparent"
     type = "python"
     style = "plain"
+    foreground = "p:yellow_python"
+    background = "transparent"
+    template = " {{ if .Venv }}{{ .Venv }} "
 
     [blocks.segments.properties]
+      display_default	= true
       display_mode = "files"
       fetch_version = false
-      fetch_virtual_env = false
+      fetch_virtual_env = true
 
   [[blocks.segments]]
     template = "in <p:blue><b>{{ .Name }}</b></> "

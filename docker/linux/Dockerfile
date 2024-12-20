@@ -2,7 +2,7 @@
 FROM ubuntu:22.04
 
 LABEL org.opencontainers.image.authors="Clement Deltel <38040315+clement-deltel@users.noreply.github.com>"
-LABEL org.opencontainers.image.title="dotfiles"
+LABEL org.opencontainers.image.title="dotfiles-ubuntu"
 LABEL org.opencontainers.image.description=""
 
 # Not persisted into the built image
@@ -14,7 +14,7 @@ ARG TZ
 # Persisted into the built image
 ENV DEBIAN_FRONTEND=noninteractive
 ENV GITHUB_USERNAME=${GITHUB_USERNAME}
-ENV TZ=${TZ}password
+ENV TZ=${TZ}
 
 # Install pre-requisites packages
 RUN apt update && apt install -y curl git tzdata sudo

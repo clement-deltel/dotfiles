@@ -182,7 +182,7 @@ alias krmp=kctl-delete-pod-fn
 alias krr=kctl-rollout-restart-deployment-fn
 
 {{ if eq .machine "work" -}}
-{{ .kubernetes_aliases_extra }}
+{{ .kube_aliases_extra }}
 {{- end }}
 
 #==============================================================================#

@@ -335,10 +335,14 @@ alias vrm=venv-delete-fn
 #==============================================================================#
 function docker-exec-fn { docker exec -it "$1" "${2:-bash}"; }
 function docker-image-rm-fn { docker image rm "$1"; }
+function docker-image-rm-dangling-fn {
+    IMGS=$(docker images --filter "dangling=true" -q --no-trunc)
+    [[ -n ${IMGS} ]] && docker rmi ${IMGS} || echo "no dangling images."
+}
 function docker-inspect-fn { docker inspect "$1"; }
 function docker-ip-fn {
   echo "IP addresses of all named running containers"
-  for DOC in $(dnames-fn)
+  for DOC in $(docker-names-fn)
   do
     IP=$(docker inspect --format='{{ "{{" }}range .NetworkSettings.Networks{{ "}}" }}{{ "{{" }}.IPAddress{{ "}}" }} {{ "{{" }}end{{ "}}" }}' "$DOC")
     OUT+=$DOC'\t'$IP'\n'
@@ -353,40 +357,40 @@ function docker-names-fn {
     docker inspect "$ID" | grep Name | head -1 | awk '{print $2}' | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
 	done
 }
+function docker-network-rm-fn { docker network rm "$1"; }
 function docker-pull-fn { docker pull "$1"; }
 function docker-rm-exited-fn { docker rm "$(docker ps --all -q -f status=exited)"; }
-function docker-rm-dangling-images-fn {
-    IMGS=$(docker images --filter "dangling=true" -q --no-trunc)
-    [[ -n ${IMGS} ]] && docker rmi ${IMGS} || echo "no dangling images."
-}
-function docker-rm-dangling-volumes-fn {
+function docker-run-fn { docker run -it "$1" "$2"; }
+function docker-stop-rm-fn { docker stop "$1"; docker rm "$1"; }
+function docker-volume-rm-fn { docker volume rm "$1"; }
+function docker-volume-rm-dangling-fn {
     VOLS=$(docker volume ls --filter "dangling=true" -q)
     [[ -n ${VOLS} ]] && docker volume rm ${VOLS} || echo "no dangling volumes."
 }
-function docker-run-fn { docker run -it "$1" "$2"; }
-function docker-stop-rm-fn { docker stop "$1"; docker rm "$1"; }
 
+alias dcrme=docker-rm-exited-fn
 alias dex=docker-exec-fn
 alias di=docker-inspect-fn
 alias dim='docker images | (sed -u 1q; sort)'
 alias dirm=docker-image-rm-fn
+alias dirmd=docker-image-rm-dangling-fn
 alias dip=docker-ip-fn
 alias dl=docker-logs-fn
 alias dnames=docker-names-fn
 alias dnls='docker network ls'
+alias dnrm=docker-network-rm-fn
 alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias dpsf='docker ps -a --format "table {{ "{{" }}.ID{{ "}}" }}\t{{ "{{" }}.Image{{ "}}" }}\t{{ "{{" }}.Names{{ "}}" }}\t{{ "{{" }}.Status{{ "}}" }}"'
 alias dpu=docker-pull-fn
-alias drmc=docker-rm-exited-fn
-alias drmid=docker-rm-dangling-images-fn
-alias drmvd=docker-rm-dangling-volumes-fn
 alias drun=docker-run-fn
 alias dsdf='docker system df -v'
 alias dsp='docker system prune'
 alias dspa='docker system prune --all'
 alias dsr=docker-stop-rm-fn
 alias dvls='docker volume ls'
+alias dvrm=docker-volume-rm-fn
+alias dvrmd=docker-volume-rm-dangling-fn
 
 #==============================================================================#
 #               ------- Functions & Aliases - Docker Compose ------            #

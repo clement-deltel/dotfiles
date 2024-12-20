@@ -84,7 +84,7 @@
 
     - name: Download GPG apt key
       ansible.builtin.get_url:
-        url: https://download.docker.com/linux/ubuntu/gpg
+        url: https://download.docker.com/{{ ansible_system | lower }}/{{ ansible_distribution | lower }}/gpg
         dest: /tmp/docker.gpg
         mode: 0644
 

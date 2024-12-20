@@ -1,0 +1,36 @@
+- name: Oh My Posh
+  hosts: all
+  gather_facts: false
+  vars:
+    install_tmp: /tmp/ohmyposh
+    install_url: https://ohmyposh.dev/install.sh
+
+  tasks:
+  # Oh My Posh
+  - name: Oh My Posh
+    become_user: ubuntu
+    tags: [init, update]
+    block:
+
+    - name: Create temporary directory
+      ansible.builtin.file:
+        path: "{{ install_tmp }}"
+        state: directory
+        mode: 0700
+
+    - name: Download install script
+      ansible.builtin.get_url:
+        url: "{{ install_url }}"
+        dest: "{{ install_tmp }}/install.sh"
+        mode: 0700
+
+    - name: Install
+      ansible.builtin.command:
+        cmd: /bin/bash {{ install_tmp }}/install.sh -d ~/.local/bin
+      register: install_result
+      changed_when: install_result.rc == 0
+
+    - name: Remove temporary directory
+      ansible.builtin.file:
+        path: "{{ install_tmp }}"
+        state: absent

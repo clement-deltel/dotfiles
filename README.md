@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal dotfiles managed with [chezmoi][1].
+Personal dotfiles managed with [chezmoi][https://www.chezmoi.io].
 
 ## Pre-requisites
 
@@ -61,34 +61,34 @@ bw lock
 6. Ansible playbooks automatically install and configure the tools listed below:
     - Package Managers
       - apt
-        - [fzf][2]
-        - [htop][3]
-        - [jq][4]
+        - [fzf][https://github.com/junegunn/fzf]
+        - [htop][https://github.com/htop-dev/htop]
+        - [jq][https://github.com/jqlang/jq]
         - pwgen
-        - [vim][5]
-        - [xclip][6]
-      - [homebrew][7]
+        - [vim][https://github.com/vim/vim]
+        - [xclip][https://github.com/astrand/xclip]
+      - [homebrew][https://github.com/Homebrew/brew]
     - Shell
-      - [eza][8]
-      - [Oh My Posh][9]
+      - [eza][https://github.com/eza-community/eza]
+      - [Oh My Posh][https://github.com/jandedobbeleer/oh-my-posh]
       - zsh
-      - [zoxide][10]
+      - [zoxide][https://github.com/ajeetdsouza/zoxide]
     - Languages
       - Go
       - Python
-        - [pipx][11]
-        - [poetry][12]
-        - [pyenv][13]
+        - [pipx][https://github.com/pypa/pipx]
+        - [poetry][https://github.com/python-poetry/poetry]
+        - [pyenv][https://github.com/pyenv/pyenv]
     - Orchestration
       - Docker
       - Kubernetes
-        - [helm][14]
-        - [kubectl][15]
-        - [k9s][16]
-        - [stern][17]
+        - [helm][https://github.com/helm/helm]
+        - [kubectl][https://github.com/kubernetes/kubectl]
+        - [k9s][https://github.com/derailed/k9s]
+        - [stern][https://github.com/stern/stern]
     - Infrastructure as Code
-      - [Pulumi][18]
-      - [Terraform][19]
+      - [Pulumi][https://github.com/pulumi/pulumi]
+      - [Terraform][https://github.com/hashicorp/terraform]
     - Cloud
       - AWS CLI
 
@@ -112,48 +112,48 @@ Zsh is my default shell. Here is the list of plugins:
 
 - **oh-my-zsh repository**
   - Aliases
-    - [aliases][]
-    - [alias-finder][]
-    - [common-aliases][]
+    - [aliases][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aliases]
+    - [alias-finder][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/alias-finder]
+    - [common-aliases][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases]
   - Cloud
-    - [aws][]
+    - [aws][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws]
   - Configuration Management
-    - [ansible][]
-    - [chezmoi][]
+    - [ansible][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ansible]
+    - [chezmoi][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/chezmoi]
   - Distro-related
-    - [debian][]
+    - [debian][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/debian]
   - Infrastructure as Code
-    - [terraform][]
+    - [terraform][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/terraform]
   - Languages
     - Go
-      - [golang][]
+      - [golang][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/golang]
     - Python
-      - [pip][]
-      - [poetry][]
+      - [pip][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pip]
+      - [poetry][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/poetry]
   - Packages
-    - [brew][]
+    - [brew][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/brew]
   - Productivity
-    - [colored-man-pages][]
-    - [colorize][]
-    - [command-not-found][]
+    - [colored-man-pages][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages]
+    - [colorize][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize]
+    - [command-not-found][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found]
   - Orchestration
-    - [docker][]
-    - [docker-compose][]
-    - [helm][]
-    - [kubectl][]
+    - [docker][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker]
+    - [docker-compose][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker-compose]
+    - [helm][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/helm]
+    - [kubectl][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl]
   - Shell
-    - [cp][]
-    - [eza][]
-    - [fzf][]
-    - [history][]
-    - [zoxide][]
+    - [cp][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cp]
+    - [eza][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/eza]
+    - [fzf][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf]
+    - [history][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history]
+    - [zoxide][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zoxide]
   - Version Control
-    - [git][]
-    - [pre-commit][]
+    - [git][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git]
+    - [pre-commit][https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pre-commit]
 - **zsh-users repository**
-  - [zsh-completions][]
-  - [zsh-autosuggestions][]
-  - [zsh-syntax-highlighting][]
+  - [zsh-completions][https://github.com/zsh-users/zsh-completions]
+  - [zsh-autosuggestions][https://github.com/zsh-users/zsh-autosuggestions]
+  - [zsh-syntax-highlighting][https://github.com/zsh-users/zsh-syntax-highlighting]
 
 Here is my theme: robbyrussell
 
@@ -182,23 +182,3 @@ Here is a list of tools that could be interesting and further enhance the stack:
   - https://github.com/gruntwork-io/git-xargs
   - https://github.com/lindell/multi-gitter
   - https://github.com/conventional-changelog/commitlint
-
-[1]:https://www.chezmoi.io
-[2]:https://github.com/junegunn/fzf
-[3]:https://github.com/htop-dev/htop
-[4]:https://github.com/jqlang/jq
-[5]:https://github.com/vim/vim
-[6]:https://github.com/astrand/xclip
-[7]:https://github.com/Homebrew/brew
-[8]:https://github.com/eza-community/eza
-[9]:https://github.com/jandedobbeleer/oh-my-posh
-[10]:https://github.com/ajeetdsouza/zoxide
-[11]:https://github.com/pypa/pipx
-[12]:https://github.com/python-poetry/poetry
-[13]:https://github.com/pyenv/pyenv
-[14]:https://github.com/helm/helm
-[15]:https://github.com/kubernetes/kubectl
-[16]:https://github.com/derailed/k9s
-[17]:https://github.com/stern/stern
-[18]:https://github.com/pulumi/pulumi
-[19]:https://github.com/hashicorp/terraform

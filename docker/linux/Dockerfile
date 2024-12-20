@@ -17,9 +17,6 @@ ARG TZ
 
 # Persisted into the built image
 ENV DEBIAN_FRONTEND=noninteractive
-ENV BW_SERVER=${BW_SERVER}
-ENV BW_CLIENTID=${BW_CLIENTID}
-ENV BW_CLIENTSECRET=${BW_CLIENTSECRET}
 ENV BW_PASSWORD=${BW_PASSWORD}
 ENV GITHUB_USERNAME=${GITHUB_USERNAME}
 ENV TZ=${TZ}
@@ -38,8 +35,7 @@ RUN groupadd --gid ${ID} ${USER} && \
     adduser ${USER} sudo && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 WORKDIR /home/${USER}
 
-COPY --chown=${USER} docker/linux/install.sh ./install.sh
-RUN chmod +x ./install.sh
+COPY --chown=${USER} ./install.sh ./install.sh
 USER ${USER}
 
 # Configure Bitwarden CLI and run install
@@ -48,7 +44,7 @@ RUN bw config server ${BW_SERVER} &&\
     export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw) &&\
     mkdir -p ~/.config/chezmoi &&\
     bw get notes chezmoi > ~/.config/chezmoi/chezmoi.toml &&\
-    ./install.sh
+    chmod +x ./install.sh && ./install.sh &&\
+    bw lock
 
 ENTRYPOINT ["/bin/bash"]
-# ENTRYPOINT ["./install.sh"]

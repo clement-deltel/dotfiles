@@ -31,27 +31,34 @@ $distribution = "Ubuntu-22.04"
 $localBackupDirectory = "C:\Temp"
 $location = "C:\wsl"
 $tarFileName = "wsl_ubuntu-22.04.tar"
+$gzipFileName = "$tarFileName.gz"
 
 #------------------------------[Execution]------------------------------
 
 If( $tag -eq "init" )
 {
-  # Build the tar file path
+  # Build the gzip and tar file paths
   $tarFilePath = Join-Path -Path $localBackupDirectory -ChildPath $tarFileName
+  $gzipFilePath = "$tarFilePath.gz"
 
-  # Download the tar file to AWS S3 bucket using AWS CLI
-  aws s3 cp s3://machine-$machine/$tarFileName $tarFilePath --profile personal
+  # Download the file from AWS S3 bucket using AWS CLI
+  aws s3 cp s3://machine-$machine/$gzipFileName $gzipFilePath --profile personal
+
+  # Decompress the gzip file
+  & 7z e $gzipFilePath
 
   # Import the distribution into WSL
   wsl --import $distribution $location $tarFilePath
 
-  # Clean up the local backup directory by removing the tar file
+  # Clean up the local backup directory by removing the files
+  Remove-Item $gzipFilePath
   Remove-Item $tarFilePath
 }
 Else If( $tag -eq "backup" )
 {
-  # Construct the tar file name
+  # Build the gzip and tar file paths
   $tarFilePath = Join-Path -Path $localBackupDirectory -ChildPath $tarFileName
+  $gzipFilePath = "$tarFilePath.gz"
 
   # Terminate the virtual machine associated with the distribution
   wsl --terminate $distribution
@@ -60,13 +67,12 @@ Else If( $tag -eq "backup" )
   wsl --export $distribution $tarFilePath
 
   # Compress the tar file
-  $gzipFilePath = "$tarFilePath.gz"
-  & 7z a -mx6 -tgzip $gzipFilePath $tarFilePath
+  & 7z a -mx5 -tgzip $gzipFilePath $tarFilePath
 
-  # Upload the tar file to AWS S3 bucket using AWS CLI
+  # Upload the file to AWS S3 bucket using AWS CLI
   aws s3 cp $gzipFilePath s3://machine-$machine --profile personal
 
-  # Clean up the local backup directory by removing the tar and the gzip files
-  Remove-Item $tarFilePath
+  # Clean up the local backup directory by removing the files
   Remove-Item $gzipFilePath
+  Remove-Item $tarFilePath
 }

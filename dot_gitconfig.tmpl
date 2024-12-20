@@ -1,0 +1,79 @@
+# .gitconfig
+# Author: Clement Deltel <clement.deltel@proton.me>
+# Source: https://github.com/clement-deltel/dotfiles/dot_gitconfig.tmpl
+
+[user]
+    email = {{ .email }}
+    name = Clement Deltel
+[init]
+	defaultBranch = main
+[core]
+	editor = vim
+    eol = lf
+    pager=less -x4
+    whitespace = blank-at-eol,blank-at-eof,space-before-tab
+[commit]
+    template = ~/.gitmessage.txt
+[push]
+    default = current
+[pull]
+    default = current
+[help]
+    autocorrect = 20
+
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+	current = green bold
+	local = yellow bold
+	remote = red bold
+    upstream = blue bold
+[color "diff"]
+    frag = cyan bold
+	meta = magenta bold
+    new = green bold
+	old = red bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+    branch = green bold
+	changed = yellow bold
+    unmerged = magenta
+	untracked = red bold
+
+[alias]
+    # basic
+    cl = clone
+    co = checkout -b
+    st = status -s
+
+    # branch
+    br = branch
+    bra = branch --all
+
+    # commit
+    ci = commit
+    cm = commit -m
+
+    # log
+    lo = log --oneline
+    lgo = log --graph --oneline
+    ll = log --pretty=format:"%C(yellow)%h\\ -%C(magenta)%d\\ %C(reset)%s%C(green)(%ar)%C(blue)\\ [%an]" --decorate
+    ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ar]%C(magenta)%d\\ %C(reset)%s%C(blue)\\ [%an]" --decorate
+
+    # remote
+    rv = remote -v
+    rs = remote show
+
+    # reset
+    r = reset
+    r1 = reset HEAD^
+    r2 = reset HEAD^^
+    rh = reset --hard
+    rh1 = reset HEAD^ --hard
+    rh2 = reset HEAD^^ --hard
+
+    # list all aliases
+    la = "!git config -l | grep alias | cut -c 7-"

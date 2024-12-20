@@ -123,6 +123,7 @@
     - name: pyenv - Install Python
       ansible.builtin.shell:
         cmd: pyenv install {{ python_version }}
+        executable: /usr/bin/zsh
 
   # Pipx
   - name: Pipx

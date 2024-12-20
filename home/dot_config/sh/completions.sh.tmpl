@@ -4,34 +4,42 @@
 #               ------- Chezmoi ------                                         #
 #==============================================================================#
 {{- if eq .machine "work" }}
+{{- if eq .shell "zsh" }}
 source <(chezmoi completion zsh)
 {{- else }}
-# source <(chezmoi completion zsh)
+source <(chezmoi completion bash)
+{{- end }}
 {{- end }}
 
 #==============================================================================#
 #               ------- Helm ------                                            #
 #==============================================================================#
 {{- if eq .machine "work" }}
+{{- if eq .shell "zsh" }}
 source <(helm completion zsh)
 {{- else }}
-# source <(helm completion zsh)
+source <(helm completion bash)
+{{- end }}
 {{- end }}
 
 #==============================================================================#
 #               ------- Kubernetes ------                                      #
 #==============================================================================#
 {{- if eq .machine "work" }}
+{{- if eq .shell "zsh" }}
 source <(kubectl completion zsh)
 {{- else }}
-# source <(kubectl completion zsh)
+source <(kubectl completion bash)
+{{- end }}
 {{- end }}
 
 #==============================================================================#
 #               ------- Poetry ------                                          #
 #==============================================================================#
 # {{- if eq .machine "work" }}
+# {{- if eq .shell "zsh" }}
 # source <(poetry completions zsh)
 # {{- else }}
-# # source <(poetry completions zsh)
+# # source <(poetry completions bash)
+# {{- end }}
 # {{- end }}

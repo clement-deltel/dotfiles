@@ -131,14 +131,14 @@ source $ZSH/oh-my-zsh.sh
 
 source_if_exists (){ if test -r "$1"; then source "$1"; fi; }
 
-source_if_exists ${HOME}/.config/zsh/aliases.sh
-source_if_exists ${HOME}/.config/zsh/completions.sh
-source_if_exists ${HOME}/.config/zsh/functions.sh
+source_if_exists ${HOME}/.config/sh/aliases.sh
+source_if_exists ${HOME}/.config/sh/completions.sh
+source_if_exists ${HOME}/.config/sh/functions.sh
 source_if_exists ${HOME}/.kube/aliases.sh
 
 precmd (){
-  source ${HOME}/.config/zsh/aliases.sh
-  source ${HOME}/.config/zsh/functions.sh
+  source ${HOME}/.config/sh/aliases.sh
+  source ${HOME}/.config/sh/functions.sh
 }
 
 #==============================================================================#

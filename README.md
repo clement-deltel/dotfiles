@@ -5,7 +5,6 @@ Personal dotfiles managed with chezmoi.
 
 To fully enjoy the features offered by those dotfiles, you'll need to install the required packages listed down below:
 
-- chezmoi
 - docker
 - k9s
 - kubernetes-cli

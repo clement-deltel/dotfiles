@@ -1,0 +1,33 @@
+<type>[optional scope]: <description>
+######## Subject Line (50 characters) ############
+# - Use the imperative mood (imagine the words "This will ...")
+# - Capitalize the first letter
+# - Limit to 50 characters
+# - Do not end the subject line with a period
+# - Type can be
+#    build    (Changes that affect the build system or external dependencies)
+#    chore    (Other changes that don't modify src or test files)
+#    ci       (Changes to the CI configuration files and scripts)
+#    docs     (Documentation only changes)
+#    feat     (A new feature)
+#    fix      (A bug fix)
+#    perf     (A code change that improves performance)
+#    refactor (A code change that neither fixes a bug nor adds a feature)
+#    revert   (Reverts a previous commit)
+#    style    (Changes that do not affect the meaning of the code (white-space,
+#              formatting, missing semi-colons, etc))
+#    test     (Adding missing tests or correcting existing tests)
+
+[optional body]
+######## The Body (72 characters per line) #############################
+# - Separate subject from body with a blank line
+# - Add line breaks so each line is a maximum of 72 characters
+# - Explain the thinking behind the commit
+# - Use the body to explain what and why vs. how
+
+[optional footer(s)]
+######## Issue or Ticket Reference ########
+# - Must reference the issue or ticket
+# Azure DevOps / Gitlab / Bitbucket Issue: 1234
+# Resolves: #12, #34
+# See also: #56, #78

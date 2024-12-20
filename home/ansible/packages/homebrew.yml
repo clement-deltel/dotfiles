@@ -8,6 +8,8 @@
       - git
       - language-pack-en
       - locales
+    formulas:
+      - lnav
     install_tmp: /tmp/homebrew
     install_url: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 
@@ -64,3 +66,28 @@
       ansible.builtin.file:
         path: "{{ install_tmp }}"
         state: absent
+
+  # Formulas
+  - name: Formulas
+    block:
+
+    - name: List formulas
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "Formulas: {{ formulas }}"
+
+    # brew install
+    - name: Install formulas
+      tags: init
+      community.general.homebrew:
+        name: "{{ formulas }}"
+        state: present
+        update_homebrew: true
+
+    # brew upgrade
+    - name: Upgrade formulas
+      tags: update
+      community.general.homebrew:
+        name: "{{ formulas }}"
+        state: latest
+        update_homebrew: true

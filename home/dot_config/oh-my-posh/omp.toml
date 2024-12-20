@@ -141,6 +141,7 @@ final_space = true
   foreground = "p:white"
   background = "p:orange_aws"
   template = " {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} "
+
   [tooltips.properties]
     display_default = true
 
@@ -153,6 +154,7 @@ final_space = true
   foreground = "p:white"
   background = "p:blue_azure"
   template = "  {{ .Name }} "
+
   [tooltips.properties]
     display_default = true
 
@@ -175,6 +177,7 @@ final_space = true
   foreground = "p:white"
   background = "p:blue_helm"
   template = " {{ .Version }} "
+
   [tooltips.properties]
     display_mode = "always"
 
@@ -187,6 +190,7 @@ final_space = true
   foreground = "p:white"
   background = "p:blue_kube"
   template = " ﴱ {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
+
   [tooltips.properties]
     display_error = true
     parse_kubeconfig = true

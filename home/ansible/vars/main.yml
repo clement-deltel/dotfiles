@@ -1,0 +1,14 @@
+# AWS
+aws_profile: default
+aws_access_key: ""
+aws_secret_key: ""
+aws_region: us-east-1
+aws_format: yaml
+
+aws_sso_account_id: "{{ (bitwardenFields "item" "Amazon Web Services").sso_account_id.value }}"
+aws_sso_region: eu-central-1
+aws_sso_registration_scopes: 'sso:account:access'
+aws_sso_role_name: 'LocalAdminAccess'
+aws_sso_session: "{{ (bitwardenFields "item" "Amazon Web Services").sso_session.value }}"
+aws_sso_start_url: "{{ (bitwardenFields "item" "Amazon Web Services").sso_start_url.value }}"
+

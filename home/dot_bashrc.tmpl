@@ -144,51 +144,31 @@ source_if_exists ${HOME}/.config/sh/functions.sh
 source_if_exists ${HOME}/.kube/aliases.sh
 
 #==============================================================================#
-#               ------- Chezmoi ------                                         #
+#               ------- Tools ------                                           #
 #==============================================================================#
+
+# Chezmoi
 export EDITOR='code --wait'
 
-#==============================================================================#
-#               ------- Go ------                                              #
-#==============================================================================#
+# Go
 export GOPATH=/home/${USER}/go
 export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
 
-#==============================================================================#
-#               ------- Homebrew ------                                        #
-#==============================================================================#
-{{- if eq .machine "work" }}
+# Homebrew
 export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-{{- else }}
-# export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
-# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-{{- end }}
 
-#==============================================================================#
-#               ------- Kubernetes ------                                      #
-#==============================================================================#
+# Kubernetes
 export KUBE_EDITOR='code --wait'
 
-#==============================================================================#
-#               ------- Pulumi ------                                          #
-#==============================================================================#
+# Pulumi
 export PATH=${PATH}:/${HOME}/.pulumi/bin
 
-#==============================================================================#
-#               ------- Python ------                                          #
-#==============================================================================#
 # pyenv
-{{- if eq .machine "work" }}
 if command -v pyenv 1>/dev/null 2>&1; then
  eval "$(pyenv init -)"
 fi
 eval "$(pyenv virtualenv-init -)"
-{{- else }}
-# export PYENV_ROOT=${HOME}/.pyenv
-# export PATH=${PATH}:${PYENV_ROOT}/bin
-# if command -v pyenv 1>/dev/null 2>&1; then
-#  eval "$(pyenv init -)"
-# fi
-# eval "$(pyenv virtualenv-init -)"
-{{- end }}
+
+# Zoxide
+eval "$(zoxide init bash)"

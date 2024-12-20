@@ -9,6 +9,7 @@
       - python3-pip
       - python-is-python3
     pip_packages:
+      - markitdown
       - Pygments
     pyenv_dependencies:
       - build-essential

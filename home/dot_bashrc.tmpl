@@ -182,7 +182,7 @@ function dec { echo "$1" | base64 --decode; }
 
 # IP adresses
 function my-ip(){
-  MY_IP=$(/sbin/ifconfig enp0s3 | awk '/inet/ { print $2 } ' | sed -e s/addr://)
+  MY_IP=$(/sbin/ifconfig eth0 | awk '/inet/ { print $2 } ' | sed -e s/addr://)
 }
 
 # Full summary

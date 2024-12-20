@@ -1,0 +1,33 @@
+# .dockerignore
+
+# https://docs.docker.com/engine/reference/builder/#dockerignore-file
+
+#==============================================================================#
+#               ------- Repository ------                                      #
+#==============================================================================#
+
+# Common
+**/.*
+**/*.pdf
+
+# Docker
+# compose.yaml
+.docker*
+docker/
+# Dockerfile
+
+# Git
+.git*
+.pre-commit*
+
+# Markdown
+**/*.md
+# CHANGELOG.md
+# LICENSE.md
+# README.md
+
+# Tests
+test*
+
+# Visual Studio Code
+.vscode*

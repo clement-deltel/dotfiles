@@ -2,7 +2,7 @@
   hosts: all
   gather_facts: false
   vars:
-    antigen_url: git.io/antigen
+    antigen_url: https://git.io/antigen
     dependencies:
       - curl
       - git

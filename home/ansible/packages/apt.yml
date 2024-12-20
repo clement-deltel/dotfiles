@@ -4,6 +4,7 @@
   vars:
     packages:
       - bash-completion
+      - bat
       - build-essential
       - curl
       - fzf # general-purpose command-line fuzzy finder

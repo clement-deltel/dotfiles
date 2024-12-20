@@ -41,7 +41,7 @@
       name: ubuntu
       shell: /bin/zsh
 
-  # Package Manger - Antigen
+  # Package Manager - Antigen
   # curl -L git.io/antigen > /usr/local/bin/antigen.zsh
   - name: Antigen - Install
     tags: [init, update]

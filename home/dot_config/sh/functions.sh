@@ -103,7 +103,7 @@ function docker-compose-run-fn { docker compose run "$@"; }
 #==============================================================================#
 
 # When using aliases, print kubectl command and then execute it
-function kctl() { echo "+ kubectl $@" && command kubectl $@ }
+function kctl() { echo "+ kubectl $@" && command kubectl $@; }
 
 function kctl-decode-secret-fn { kctl get secret "$1" -o=jsonpath='{.data}' | base64 --decode; echo; }
 function kctl-delete-pod-fn { kctl delete pod "$1"; }

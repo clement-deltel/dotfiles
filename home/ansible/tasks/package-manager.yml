@@ -13,7 +13,7 @@
   # apt update -y
   - name: Package Manager - Update cache
     tags: [init, update]
-    apt:
+    ansible.builtin.apt:
       update_cache: true
 
   - name: Package Manager - List of packages
@@ -27,13 +27,13 @@
 
     # apt install -y
     - name: Package Manager - Install packages
-      apt:
+      ansible.builtin.apt:
         name: "{{ ubuntu }}"
         state: present
 
     # apt remove -y
     # - name: Package Manager - Remove packages
-    #   apt:
+    #   ansible.builtin.apt:
     #     name:
     #       -
     #     state: absent
@@ -44,7 +44,7 @@
 
     # apt upgrade -y
     - name: Package Manager - Upgrade packages
-      apt:
+      ansible.builtin.apt:
         name: "{{ ubuntu }}"
         state: latest
 
@@ -54,10 +54,10 @@
 
     # apt autoclean
     - name: Package Manager - Cleans the local repository of package files that can no longer be downloaded
-      apt:
+      ansible.builtin.apt:
         autoclean: true
 
     # apt autoremove
     - name: Package Manager - Remove unused dependencies
-      apt:
+      ansible.builtin.apt:
         autoremove: true

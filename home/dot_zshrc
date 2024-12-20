@@ -31,7 +31,7 @@ eval "$(zoxide init zsh --cmd cd)"
 #               ------- Antidote --------                                      #
 #==============================================================================#
 source ${HOME}/.local/antidote/antidote.zsh
-antidote load ${HOME}/.config/zsh/plugins.zsh
+antidote load ${HOME}/.config/zsh/plugins.txt
 
 #==============================================================================#
 #               ------- Alias-Finder ------                                    #

@@ -53,7 +53,7 @@ version = 3
   trailing_diamond = ""
   foreground = "p:white"
   background = "p:purple_ubuntu"
-  template = "{{.Icon}}"
+  template = "{{.Icon}} "
 
   # Session (with ssh support)
   [[blocks.segments]]
@@ -156,10 +156,10 @@ version = 3
   leading_diamond = ""
   foreground = "p:green"
   background = "#2c315a"
-  template = "<#fefefe></> {{ .FormattedMs }}"
+  template = "<#fefefe></> {{ .FormattedMs }} "
 
     [blocks.segments.properties]
-      always_enabled = true
+      always_enabled = false
       threshold = 5000
       style = "austin"
 
@@ -168,15 +168,14 @@ version = 3
     style = "plain"
     foreground = "p:green"
     background = "#2c315a"
-    template = "<#fefefe></> {{ .CurrentDate | date .Format }}"
+    template = "<#fefefe></> {{ .CurrentDate | date .Format }} "
 
       [blocks.segments.properties]
       time_format = "15:04"
 
   [[blocks.segments]]
     type = "shell"
-    style = "diamond"
-    leading_diamond = ""
+    style = "plain"
     foreground = "p:white"
     background = "p:purple_ubuntu"
     template = "{{ .Name }}"

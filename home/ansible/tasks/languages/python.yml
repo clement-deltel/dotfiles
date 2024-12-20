@@ -21,7 +21,7 @@
 
     - name: List packages
       tags: [init, update]
-      debug:
+      ansible.builtin.debug:
         msg: "packages: {{ packages }}"
 
     # sudo apt update -y && sudo apt install -y
@@ -46,7 +46,7 @@
 
     - name: pyenv - List dependencies
       tags: [init, update]
-      debug:
+      ansible.builtin.debug:
         msg: "dependencies: {{ pyenv_dependencies }}"
 
     # sudo apt update -y && sudo apt install -y

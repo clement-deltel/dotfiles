@@ -9,7 +9,7 @@
       - gnupg
     node_major: 20
     npm_packages:
-      - "@bitnami/readme-generator-for-helm"
+      - \@bitnami/readme-generator-for-helm
     packages:
       - nodejs
   vars_files:

@@ -45,7 +45,7 @@ function install_bitwarden(){
 
   echo "[INFO] Installing Bitwarden CLI ${BW_VERSION}..."
   curl -L --remote-name "https://github.com/bitwarden/clients/releases/download/cli-v${BW_VERSION}/bw-linux-${BW_VERSION}.zip"
-  sudo unzip -d /usr/local/bin bw-linux-*.zip
+  sudo unzip -d /usr/local/bin -o bw-linux-*.zip
   sudo chmod +x /usr/local/bin/bw
   echo "[INFO] Bitwarden CLI successfully installed"
 

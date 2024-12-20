@@ -67,6 +67,25 @@
         path: "{{ install_tmp }}"
         state: absent
 
+  # Add aliases collection from https://github.com/ahmetb/kubectl-aliases
+  - name: Manage aliases
+    tags: [init, update]
+    block:
+
+      - name: Download aliases
+        ansible.builtin.get_url:
+          url: https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases
+          dest: /home/ubuntu/.kube/aliases.sh
+          owner: ubuntu
+          group: ubuntu
+          mode: 700
+
+      - name : Update aliases
+        ansible.builtin.replace:
+          path: /home/ubuntu/.kube/aliases.sh
+          regexp: kubectl
+          replace: kctl
+
   # homebrew
   - name: Manage plugins
     block:

@@ -61,6 +61,7 @@ bw lock
 6. Ansible playbooks automatically install and configure the tools listed below:
     - Package Managers
       - apt
+        - [bat](https://github.com/sharkdp/bat)
         - [fzf](https://github.com/junegunn/fzf)
         - [htop](https://github.com/htop-dev/htop)
         - [jq](https://github.com/jqlang/jq)
@@ -68,6 +69,8 @@ bw lock
         - [vim](https://github.com/vim/vim)
         - [xclip](https://github.com/astrand/xclip)
       - [homebrew](https://github.com/Homebrew/brew)
+        - [lnav](https://github.com/tstack/lnav)
+        - [tldr](https://github.com/tldr-pages/tlrc)
     - Shell
       - [eza](https://github.com/eza-community/eza)
       - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh)
@@ -174,12 +177,17 @@ Here is a list of tools that could be interesting and further enhance the stack:
 - Infrastructure as Code
   - https://github.com/tenable/terrascan
 - Shell
-  - Autocomplete: https://github.com/withfig/autocomplete
-  - cat: https://github.com/sharkdp/bat
-  - Cheat: https://github.com/cheat/cheat
-  - Clipboard: https://github.com/Slackadays/Clipboard
-  - du: https://github.com/bootandy/dust
-  - find: https://github.com/sharkdp/fd
+  - Commands
+    - du: https://github.com/bootandy/dust
+    - entr: https://github.com/clibs/entr
+    - find: https://github.com/sharkdp/fd
+    - midnight commander: https://github.com/MidnightCommander/mc
+    - ripgrep: https://github.com/BurntSushi/ripgrep
+    - thefuck: https://github.com/nvbn/thefuck
+  - Tools
+    - Autocomplete: https://github.com/withfig/autocomplete
+    - Cheat: https://github.com/cheat/cheat
+    - Clipboard: https://github.com/Slackadays/Clipboard
 - Version Control
   - https://mergiraf.org
   - https://difftastic.wilfred.me.uk
@@ -188,3 +196,4 @@ Here is a list of tools that could be interesting and further enhance the stack:
   - https://github.com/gruntwork-io/git-xargs
   - https://github.com/lindell/multi-gitter
   - https://github.com/conventional-changelog/commitlint
+  - https://github.com/dandavison/delta

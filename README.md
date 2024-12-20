@@ -1,6 +1,14 @@
-# dotfiles
+# dotfiles <!-- omit in toc -->
 
 Personal dotfiles managed with [chezmoi](https://www.chezmoi.io).
+
+## Table of Contents <!-- omit in toc -->
+
+- [Pre-requisites](#pre-requisites)
+- [Linux](#linux)
+  - [Ubuntu](#ubuntu)
+  - [Shell](#shell)
+- [Future enhancements](#future-enhancements)
 
 ## Pre-requisites
 
@@ -10,7 +18,7 @@ I store the below sensitive configuration in my Vaultwarden instance:
  - private ssh keys: attachments of the item named "SSH Keys"
  - aws cli configuration: custom fields of the item with the id "223277e3-498b-4d3c-9c0b-fe80e0e83d7b"
 
-## Install on Linux
+## Linux
 
 ### Ubuntu
 

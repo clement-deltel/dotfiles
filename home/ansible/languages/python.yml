@@ -15,6 +15,8 @@
     pyenv_formulas:
       - pyenv
       - pyenv-virtualenv
+  vars_files:
+    - ../vars/main.yml
 
   tasks:
   # Packages
@@ -110,6 +112,17 @@
         name: "{{ pyenv_formulas }}"
         state: latest
         update_homebrew: true
+
+  # Pyenv - Default Python version
+  - name: Pyenv - Default Python version
+    become_user: ubuntu
+    tags: init
+    block:
+
+    # pyenv install
+    - name: pyenv - Install Python
+      ansible.builtin.shell:
+        cmd: pyenv install {{ python_version }}
 
   # Pipx
   - name: Pipx

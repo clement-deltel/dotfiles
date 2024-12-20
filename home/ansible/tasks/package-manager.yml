@@ -1,9 +1,8 @@
 - name: Package Manager
   hosts: all
   gather_facts: false
-  become: true
   vars:
-    ubuntu:
+    packages:
       - build-essential
       - curl
       - git
@@ -11,51 +10,55 @@
       - zip
 
   tasks:
-  # apt update -y
-  - name: Update cache
-    tags: [init, update]
-    ansible.builtin.apt:
-      update_cache: true
-
-  - name: List packages
-    tags: [init, update]
-    debug:
-      msg: "packages: {{ ubuntu }}"
-
-  - name: Initialization
-    tags: init
+  # apt
+  - name: apt
     block:
-
-    # apt install -y
-    - name: Install packages
+    
+    # apt update -y
+    - name: Update cache
+      tags: [init, update]
       ansible.builtin.apt:
-        name: "{{ ubuntu }}"
-        state: present
+        update_cache: true
 
-    # apt remove -y
-    # - name: Remove packages
-    #   ansible.builtin.apt:
-    #     name:
-    #       -
-    #     state: absent
+    - name: List packages
+      tags: [init, update]
+      debug:
+        msg: "packages: {{ packages }}"
 
-  # apt upgrade -y
-  - name: Upgrade packages
-    tags: update
-    ansible.builtin.apt:
-      name: "{{ ubuntu }}"
-      state: latest
+    - name: Initialization
+      tags: init
+      block:
 
-  - name: Cleaning
-    tags: clean
-    block:
+      # apt install -y
+      - name: Install packages
+        ansible.builtin.apt:
+          name: "{{ packages }}"
+          state: present
 
-    # apt autoclean
-    - name: Cleans the local repository of package files that can no longer be downloaded
+      # apt remove -y
+      # - name: Remove packages
+      #   ansible.builtin.apt:
+      #     name:
+      #       -
+      #     state: absent
+
+    # apt upgrade -y
+    - name: Upgrade packages
+      tags: update
       ansible.builtin.apt:
-        autoclean: true
+        name: "{{ packages }}"
+        state: latest
 
-    # apt autoremove
-    - name: Remove unused dependencies
-      ansible.builtin.apt:
-        autoremove: true
+    - name: Cleaning
+      tags: clean
+      block:
+
+      # apt autoclean
+      - name: Cleans the local repository of package files that can no longer be downloaded
+        ansible.builtin.apt:
+          autoclean: true
+
+      # apt autoremove
+      - name: Remove unused dependencies
+        ansible.builtin.apt:
+          autoremove: true

@@ -6,6 +6,9 @@
     formulas:
       - k9s
       - stern
+    kubectl_install_tmp: /tmp/kubernetes
+    helm_install_tmp: /tmp/helm
+    helm_install_url: https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 
   tasks:
   # Add aliases collection from https://github.com/ahmetb/kubectl-aliases
@@ -36,13 +39,11 @@
   # kubectl
   - name: kubectl
     tags: [init, update]
-    vars:
-      install_tmp: /tmp/kubernetes
     block:
 
     - name: kubectl - Create temporary directory
       ansible.builtin.file:
-        path: "{{ install_tmp }}"
+        path: "{{ kubectl_install_tmp }}"
         state: directory
         mode: 0700
 
@@ -55,21 +56,21 @@
     - name: kubectl - Download
       ansible.builtin.get_url:
         url: https://dl.k8s.io/release/{{ version.content }}/bin/linux/amd64/kubectl
-        dest: "{{ install_tmp }}/kubectl"
+        dest: "{{ kubectl_install_tmp }}/kubectl"
 
     - name: kubectl - Get checksum
       ansible.builtin.shell: # using shell to support "|"
-        cmd: sha256sum {{ install_tmp }}/kubectl | cut -d " " -f1
+        cmd: sha256sum {{ kubectl_install_tmp }}/kubectl | cut -d " " -f1
       register: checksum
 
     - name: kubectl - Download control checksum
       ansible.builtin.get_url:
         url: https://dl.k8s.io/release/{{ version.content }}/bin/linux/amd64/kubectl.sha256
-        dest: "{{ install_tmp }}/kubectl.sha256"
+        dest: "{{ kubectl_install_tmp }}/kubectl.sha256"
 
     - name: kubectl - Get control checksum
       ansible.builtin.command:
-        cmd: cat {{ install_tmp }}/kubectl.sha256
+        cmd: cat {{ kubectl_install_tmp }}/kubectl.sha256
       register: control_checksum
 
     - name: kubectl - Verify checksum
@@ -81,7 +82,7 @@
 
     - name: kubectl - Copy file with owner and permissions
       ansible.builtin.copy:
-        src: "{{ install_tmp }}/kubectl"
+        src: "{{ kubectl_install_tmp }}/kubectl"
         dest: "/usr/bin/kubectl"
         remote_src: true
         owner: root
@@ -90,38 +91,35 @@
 
     - name: kubectl - Remove temporary directory
       ansible.builtin.file:
-        path: "{{ install_tmp }}"
+        path: "{{ kubectl_install_tmp }}"
         state: absent
 
   # helm
   - name: Helm
     tags: [init, update]
-    vars:
-      install_tmp: /tmp/helm
-      install_url: https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
     block:
 
     - name: Helm - Create temporary directory
       ansible.builtin.file:
-        path: "{{ install_tmp }}"
+        path: "{{ helm_install_tmp }}"
         state: directory
         mode: 0700
 
     - name: Helm - Download install script
       ansible.builtin.get_url:
-        url: "{{ install_url }}"
-        dest: "{{ install_tmp }}/get_helm.sh"
+        url: "{{ helm_install_url }}"
+        dest: "{{ helm_install_tmp }}/get_helm.sh"
         mode: 0700
 
     - name: Helm - Install
       ansible.builtin.command:
-        cmd: /bin/bash -c {{ install_tmp }}/get_helm.sh
+        cmd: /bin/bash -c {{ helm_install_tmp }}/get_helm.sh
       register: install_result
       changed_when: install_result.rc == 0
 
     - name: Helm - Remove temporary directory
       ansible.builtin.file:
-        path: "{{ install_tmp }}"
+        path: "{{ helm_install_tmp }}"
         state: absent
 
   # homebrew

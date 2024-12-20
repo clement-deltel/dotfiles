@@ -140,7 +140,7 @@ version = 3
     style = "plain"
     foreground = "p:yellow_python"
     background = "transparent"
-    template = " {{ if .Venv }}{{ .Venv }} "
+    template = " {{ if .Venv }}{{ .Venv }}{{ end }} "
 
     [blocks.segments.properties]
       display_default	= true

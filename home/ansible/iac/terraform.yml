@@ -5,6 +5,8 @@
     dependencies:
       - gnupg
       - software-properties-common
+  vars_files:
+    - ../vars/main.yml
 
   tasks:
   # Dependencies
@@ -52,8 +54,8 @@
         cmd: gpg --dearmor -o /etc/apt/keyrings/hashicorp-archive-keyring.gpg /tmp/terraform.gpg
 
     - name: Add apt repository
-      ansible.builtin.shell: |
-        echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main" | sudo tee /etc/apt/sources.list.d/hashicorp.list > /dev/null
+      ansible.builtin.apt_repository:
+        repo: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main
 
   # Packages
   - name: Packages

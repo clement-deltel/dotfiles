@@ -53,7 +53,7 @@
 
     - name: Import GPG key
       ansible.builtin.command:
-        cmd: gpg --dearmor -o /etc/apt/keyrings/hashicorp-archive-keyring.gpg /tmp/terraform.gpg
+        cmd: gpg --dearmor --output /etc/apt/keyrings/hashicorp-archive-keyring.gpg --yes /tmp/terraform.gpg
 
     - name: Add apt repository
       ansible.builtin.apt_repository:

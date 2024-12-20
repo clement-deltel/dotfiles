@@ -108,8 +108,9 @@ antigen bundle history
 antigen bundle sudo
 antigen bundle zoxide
 
-# Version Control
+# Version Control System
 antigen bundle git
+antigen bundle git-lfs
 antigen bundle pre-commit
 
 # Other

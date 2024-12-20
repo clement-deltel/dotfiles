@@ -97,6 +97,7 @@ version = 3
       branch_max_length = 25
       fetch_status = true
       fetch_upstream_icon = true
+      commit_icon = '@'
 
   [[blocks.segments]]
     type = "root"
@@ -156,7 +157,7 @@ version = 3
   leading_diamond = ""
   foreground = "p:green"
   background = "#2c315a"
-  template = "<#fefefe></> {{ .FormattedMs }} "
+  template = "<#fefefe></>  {{ .FormattedMs }} "
 
     [blocks.segments.properties]
       always_enabled = false
@@ -168,7 +169,7 @@ version = 3
     style = "plain"
     foreground = "p:green"
     background = "#2c315a"
-    template = "<#fefefe></> {{ .CurrentDate | date .Format }} "
+    template = "<#fefefe></>  {{ .CurrentDate | date .Format }} "
 
       [blocks.segments.properties]
       time_format = "15:04"

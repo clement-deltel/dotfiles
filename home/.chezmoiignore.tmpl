@@ -1,5 +1,9 @@
 # Platform
 {{ if eq .chezmoi.os "linux" }}
+.config/chocolatey/
+.config/layouts/
+.config/outlook/
+powershell/
 profile.ps1
 # Shell
 {{ if ne .shell "zsh" }}
@@ -13,8 +17,8 @@ profile.ps1
 
 # Platform
 {{ if eq .chezmoi.os "windows" }}
-ansible
-.config/sh
+.config/sh/
+ansible/
 .bash_profile
 .bashrc
 .p10k.zsh

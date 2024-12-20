@@ -1,0 +1,10 @@
+- name: Configure the machine
+  hosts: localhost
+  gather_facts: true
+
+  tasks:
+    #--- Initialization
+    - name: Manage packages
+      include_tasks:
+        file: tasks/package-manager.yml
+      tags: init

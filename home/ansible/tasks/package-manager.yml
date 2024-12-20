@@ -1,0 +1,35 @@
+- name: Run package manager
+  tags: [ init, update ]
+  become: true
+  block:
+  # apt update -y
+  - name: Update cache
+    apt:
+      update_cache: true
+
+  # apt install -y
+  - name: Install/update a list of packages
+    apt:
+      pkg:
+        - build-essential
+        - curl
+        - git
+        - zsh
+      state: latest
+
+  # apt remove -y
+  # - name: Remove a list of packages
+  #   apt:
+  #     pkg:
+  #       -
+  #     state: absent
+
+  # apt autoclean
+  - name: Cleans the local repository of retrieved package files that can no longer be downloaded
+    apt:
+      autoclean: true
+
+  # apt autoremove
+  - name: Remove unused dependency packages
+    apt:
+      autoremove: true

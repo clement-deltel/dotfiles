@@ -24,6 +24,8 @@
         path: "/home/ubuntu/.kube"
         state: directory
         mode: 0755
+        owner: ubuntu
+        group: ubuntu
 
     - name: Download aliases
       ansible.builtin.uri:

@@ -55,26 +55,27 @@ bw lock
         - [htop][3]
         - pwgen
         - [vim][4]
-      - [homebrew][5]
+        - [xclip][5]
+      - [homebrew][6]
     - Shell
       - zsh
-      - [zoxide][6]
+      - [zoxide][7]
     - Languages
       - Go
       - Python
-        - [pipx][7]
-        - [poetry][8]
-        - [pyenv][9]
+        - [pipx][8]
+        - [poetry][9]
+        - [pyenv][10]
     - Orchestration
       - Docker
       - Kubernetes
-        - [helm][10]
-        - [kubectl][11]
-        - [k9s][12]
-        - [stern][13]
+        - [helm][11]
+        - [kubectl][12]
+        - [k9s][13]
+        - [stern][14]
     - Infrastructure as Code
-      - [Pulumi][14]
-      - [Terraform][15]
+      - [Pulumi][15]
+      - [Terraform][16]
     - Cloud
       - AWS CLI
 
@@ -122,14 +123,15 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
 [2]:https://github.com/junegunn/fzf
 [3]:https://github.com/htop-dev/htop
 [4]:https://github.com/vim/vim
-[5]:https://github.com/Homebrew/brew
-[6]:https://github.com/ajeetdsouza/zoxide
-[7]:https://github.com/pypa/pipx
-[8]:https://github.com/python-poetry/poetry
-[9]:https://github.com/pyenv/pyenv
-[10]:https://github.com/helm/helm
-[11]:https://github.com/kubernetes/kubectl
-[12]:https://github.com/derailed/k9s
-[13]:https://github.com/stern/stern
-[14]:https://github.com/pulumi/pulumi
-[15]:https://github.com/hashicorp/terraform
+[5]:https://github.com/astrand/xclip
+[6]:https://github.com/Homebrew/brew
+[7]:https://github.com/ajeetdsouza/zoxide
+[8]:https://github.com/pypa/pipx
+[9]:https://github.com/python-poetry/poetry
+[10]:https://github.com/pyenv/pyenv
+[11]:https://github.com/helm/helm
+[12]:https://github.com/kubernetes/kubectl
+[13]:https://github.com/derailed/k9s
+[14]:https://github.com/stern/stern
+[15]:https://github.com/pulumi/pulumi
+[16]:https://github.com/hashicorp/terraform

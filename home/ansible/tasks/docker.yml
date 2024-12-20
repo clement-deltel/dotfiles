@@ -1,0 +1,168 @@
+- name: Docker
+  hosts: all
+  gather_facts: true
+  become: true
+  vars:
+    dependencies:
+      - ca-certificates
+      - curl
+      - gnupg
+    packages:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
+
+  tasks:
+  # Users
+  - name: Users
+    tags: init
+    block:
+
+    # sudo groupadd -g 1001 docker
+    - name: Create group
+      ansible.builtin.group:
+        name: docker
+        gid: 1001
+        state: present
+
+    # sudo useradd -c "Docker" -g docker -m -d /home/docker -s /bin/bash -u 1001 docker
+    - name: Create user
+      ansible.builtin.user:
+        name: docker
+        uid: 1001
+        group: docker
+        home: /home/docker
+        shell: /bin/bash
+        comment: Docker
+        state: present
+
+    # sudo usermod -a -G docker ubuntu
+    - name: Add ubuntu user to group
+      ansible.builtin.user:
+        name: ubuntu
+        groups: docker
+        append: true
+
+  # Dependencies
+  - name: Dependencies
+    block:
+
+    - name: List dependencies
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "dependencies: {{ dependencies }}"
+
+    # sudo apt update -y && sudo apt install -y
+    - name: Install dependencies
+      tags: init
+      ansible.builtin.apt:
+        name: "{{ dependencies }}"
+        state: present
+        update_cache: true
+
+    # sudo apt update -y && sudo apt upgrade -y
+    - name: Upgrade dependencies
+      tags: update
+      ansible.builtin.apt:
+        name: "{{ dependencies }}"
+        state: latest
+        update_cache: true
+
+  # Repository
+  - name: Repository
+    tags: init
+    block:
+
+    - name: Create /etc/apt/keyrings directory
+      ansible.builtin.file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: 0755
+
+    - name: Download GPG apt key
+      ansible.builtin.get_url:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        dest: /tmp/docker.gpg
+        mode: 0644
+
+    - name: Import GPG key
+      ansible.builtin.command:
+        cmd: gpg --dearmor -o /etc/apt/keyrings/docker.gpg /tmp/docker.gpg
+
+    - name: Add apt repository
+      ansible.builtin.shell: |
+        echo 'deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable' | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+  # Packages
+  - name: Packages
+    block:
+
+    - name: List packages
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "packages: {{ packages }}"
+
+    # sudo apt update -y && sudo apt install -y
+    - name: Install
+      tags: init
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: true
+
+    # sudo apt update -y && sudo apt upgrade -y
+    - name: Upgrade
+      tags: update
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: latest
+        update_cache: true
+
+  # Service
+  - name: Service
+    block:
+
+    # sudo systemctl enable docker && sudo systemctl start docker
+    - name: Enable service
+      tags: init
+      ansible.builtin.systemd:
+        name: docker
+        enabled: yes
+        state: started
+
+    # sudo systemctl restart docker
+    - name: Restart service
+      tags: update
+      ansible.builtin.systemd:
+        name: docker
+        enabled: yes
+        state: restarted
+
+  # Version
+  - name: Version
+    tags: [init, update]
+    block:
+
+    - name: Confirm Docker version
+      ansible.builtin.command:
+        cmd: docker --version
+      register: docker_version
+      changed_when: false
+
+    - name: Show Docker version
+      when: docker_version is defined
+      ansible.builtin.debug:
+        msg: "Installed docker version: {{ docker_version.stdout }}"
+
+    - name: Confirm Docker Compose version
+      ansible.builtin.command:
+        cmd: docker compose version
+      register: docker_compose_version
+      changed_when: false
+
+    - name: Show Docker Compose version
+      when: docker_compose_version is defined
+      ansible.builtin.debug:
+        msg: "Installed docker compose version: {{ docker_compose_version.stdout }}"

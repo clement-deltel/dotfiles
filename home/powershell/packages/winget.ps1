@@ -28,6 +28,7 @@ $tag = args[0]
 $machine = args[1]
 
 $appleDevicesId = "9NP83LWLPZ9K"
+$intelUnisonId = "9PP9GZM2GN26"
 $netflixId = "9WZDNCRFJ3TJ"
 $pdfMergerId = "9P4TCNS9H432"
 $trelloId = "XPDNKNDN77T0DP"
@@ -52,6 +53,7 @@ If( $tag -eq "init" )
     winget install --exact --id Wacom.WacomTabletDriver --interactive
 
     winget install --exact --id $appleDevicesId --interactive --source msstore
+    winget install --exact --id $intelUnisonId --interactive --source msstore
     winget install --exact --id $pdfMergerId --interactive --source msstore
     winget install --exact --id $trelloId --interactive --source msstore
   }
@@ -75,6 +77,7 @@ Else If( $tag -eq "update" )
     winget upgrade --exact --id Wacom.WacomTabletDriver --interactive
 
     winget upgrade --exact --id $appleDevicesId --interactive --source msstore
+    winget upgrade --exact --id $intelUnisonId --interactive --source msstore
     winget upgrade --exact --id $pdfMergerId --interactive --source msstore
     winget upgrade --exact --id $trelloId --interactive --source msstore
   }

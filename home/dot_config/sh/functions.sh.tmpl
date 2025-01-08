@@ -22,6 +22,9 @@ function exec-sub { find . -maxdepth 1 -mindepth 1 -type d -execdir echo {} \; -
 # Make directory $1 and then cd inside
 function mkcd { mkdir "$1"; cd "$1" || return; }
 
+# Tail with continuous monitoring of a given file with syntax highlighting
+function tailc { tail -f "$1" | batcat -l log --paging=never; }
+
 # Host Info
 
 # IP adresses

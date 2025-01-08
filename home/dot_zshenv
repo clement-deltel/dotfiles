@@ -13,6 +13,9 @@ export PATH=~/.local/bin:${PATH}
 export EDITOR='code --wait'
 export KUBE_EDITOR='code --wait'
 
+# Bat
+export BAT_THEME="Visual Studio Dark+"
+
 # Go
 export GOPATH=~/go
 export PATH=/usr/local/go/bin:${GOPATH}/bin:${PATH}

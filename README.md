@@ -57,6 +57,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
         - [vim](https://github.com/vim/vim)
         - [xclip](https://github.com/astrand/xclip)
       - [homebrew](https://github.com/Homebrew/brew)
+        - [btop](https://github.com/aristocratos/btop)
         - [lnav](https://github.com/tstack/lnav)
         - [tldr](https://github.com/tldr-pages/tlrc)
         - [tokei](https://github.com/XAMPPRocky/tokei)
@@ -245,7 +246,6 @@ Here is a list of tools that could be interesting and further enhance the stack:
   - **Commands**
     - [ag](https://github.com/ggreer/the_silver_searcher)
     - [atuin](https://github.com/atuinsh/atuin): magical shell history
-    - [btop](https://github.com/aristocratos/btop)
     - [dust](https://github.com/bootandy/dust): a more intuitive version of du in rust
     - [entr](https://github.com/clibs/entr)
     - [find](https://github.com/sharkdp/fd)

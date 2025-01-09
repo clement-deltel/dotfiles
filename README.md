@@ -290,8 +290,9 @@ Here is a list of softwares that could be interesting to integrate into the stac
 - Potentially through Chocolatey:
   - FortiClient VPN
 - Independently:
-  - Backblaze
+  - [Backblaze](https://www.backblaze.com)
   - ESET antivirus solution
   - Office 365
   - Oracle SQL Developer (Chocolatey package outdated)
   - OracleXE
+  - [Zed Encrypt](https://www.zedencrypt.com)

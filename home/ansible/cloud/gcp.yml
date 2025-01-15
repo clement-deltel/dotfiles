@@ -7,7 +7,9 @@
       - apt-transport-https
       - ca-certificates
       - curl
+      - firefox
       - gnupg
+      - xdg-utils # Enable starting a browser to run gcloud init
     packages:
       - google-cloud-cli
       - google-cloud-cli-gke-gcloud-auth-plugin

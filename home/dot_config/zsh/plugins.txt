@@ -10,6 +10,7 @@ ohmyzsh/ohmyzsh path:plugins/common-aliases
 
 # Cloud
 ohmyzsh/ohmyzsh path:plugins/aws
+ohmyzsh/ohmyzsh path:plugins/gcloud
 
 # Configuration Management
 ohmyzsh/ohmyzsh path:plugins/ansible

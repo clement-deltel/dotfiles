@@ -7,6 +7,7 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io).
 - [Pre-requisites](#pre-requisites)
 - [Linux](#linux)
   - [Ubuntu](#ubuntu)
+  - [Update](#update)
   - [Shell](#shell)
 - [Microsoft Windows](#microsoft-windows)
 - [Future enhancements](#future-enhancements)
@@ -100,7 +101,8 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
       - [Pulumi](https://github.com/pulumi/pulumi)
       - [Terraform](https://github.com/hashicorp/terraform)
     - Cloud
-      - AWS CLI
+      - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+      - [GCP CLI](https://cloud.google.com/sdk/docs/install)
 
 If you want to test this setup, you need to have Docker installed and then you can run the commands below:
 ```bash
@@ -117,6 +119,19 @@ docker build --build-arg BW_SERVER --build-arg BW_CLIENTID --build-arg BW_CLIENT
 docker run --interactive --name dotfiles --tty --rm dotfiles
 ```
 
+### Update
+
+If you want to refresh the configuration after an update on the repository, follow the steps below:
+- Open Bitwarden session
+- Enter your Bitwarden password
+- Run chezmoi update
+- Close Bitwarden session
+```bash
+bws
+cmu
+unset BW_SESSION
+```
+
 ### Shell
 
 Zsh is my default shell. Here is the list of plugins:
@@ -128,6 +143,7 @@ Zsh is my default shell. Here is the list of plugins:
     - [common-aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases)
   - Cloud
     - [aws](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws)
+    - [gcloud](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gcloud)
   - Configuration Management
     - [ansible](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ansible)
     - [chezmoi](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/chezmoi)

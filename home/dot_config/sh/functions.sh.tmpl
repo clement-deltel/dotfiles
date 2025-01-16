@@ -8,7 +8,7 @@
 function add-ext { find . -type f -not -name "*.*" -exec mv "{}" "{}"."$1" \;; }
 
 # Print only column x of output
-function col { awk -v col="$1" '{print $col}'; }
+function col { awk -v col="$1" "{print $col}"; }
 
 # Create $2 copies of file $1
 function cp-n { EXT="${1##*.}"; FILENAME="${1%.*}"; for i in $(seq 1 "$2"); do cp "$1" "${FILENAME}${i}.${EXT}"; done; }
@@ -53,7 +53,7 @@ function cheatsheet { curl cheat.sh/"$1"; }
 #==============================================================================#
 function bitwarden-create-session-fn {
   # Prompt for the Bitwarden password securely
-  echo -n "Enter your Bitwarden password: "
+  echo -n 'Enter your Bitwarden password: '
   read -s BW_PASSWORD
   echo
   export BW_PASSWORD
@@ -62,9 +62,9 @@ function bitwarden-create-session-fn {
   # Check if the command succeeded
   if [ $? -eq 0 ]; then
     export BW_SESSION
-    echo "BW_SESSION set successfully."
+    echo 'BW_SESSION set successfully.'
   else
-    echo "Failed to set BW_SESSION. Please check your password or Bitwarden setup."
+    echo 'Failed to set BW_SESSION. Please check your password or Bitwarden setup.'
   fi
   # Unset the password variable for security
   unset BW_PASSWORD
@@ -72,10 +72,10 @@ function bitwarden-create-session-fn {
 
 function bitwarden-login-fn {
   # Prompt for the Bitwarden client id and secret securely
-  echo -n "Enter your Bitwarden client ID: "
+  echo -n 'Enter your Bitwarden client ID: '
   read -s BW_CLIENTID
   echo
-  echo -n "Enter your Bitwarden client secret: "
+  echo -n 'Enter your Bitwarden client secret: '
   read -s BW_CLIENTSECRET
   echo
   export BW_CLIENTID
@@ -107,12 +107,12 @@ function chezmoi-merge-fn { chezmoi merge "$1"; }
 function docker-exec-fn { docker exec -it "$1" "${2:-bash}"; }
 function docker-fn { docker "$@"; }
 function docker-image-rm-dangling-fn {
-    IMGS=$(docker images --filter "dangling=true" -q --no-trunc)
-    [[ -n ${IMGS} ]] && docker rmi ${IMGS} || echo "no dangling images."
+    IMGS=$(docker images --filter 'dangling=true' -q --no-trunc)
+    [[ -n ${IMGS} ]] && docker rmi ${IMGS} || echo 'no dangling images.'
 }
 function docker-inspect-fn { docker inspect "$1"; }
 function docker-ip-fn {
-  echo "IP addresses of all named running containers"
+  echo 'IP addresses of all named running containers'
   for DOC in $(docker-names-fn)
   do
     IP=$(docker inspect --format='{{ "{{" }}range .NetworkSettings.Networks{{ "}}" }}{{ "{{" }}.IPAddress{{ "}}" }} {{ "{{" }}end{{ "}}" }}' "$DOC")
@@ -123,9 +123,9 @@ function docker-ip-fn {
 }
 function docker-logs-fn { docker logs -f "$1"; }
 function docker-names-fn {
-	for ID in $(docker ps | awk '{print $1}' | grep -v 'CONTAINER')
+	for ID in $(docker ps | awk "{print $1}" | grep -v 'CONTAINER')
 	do
-    docker inspect "$ID" | grep Name | head -1 | awk '{print $2}' | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
+    docker inspect "$ID" | grep Name | head -1 | awk "{print $2}" | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
 	done
 }
 function docker-network-rm-fn { docker network rm "$1"; }
@@ -135,8 +135,8 @@ function docker-run-fn { docker run -it "$1" "$2"; }
 function docker-stop-rm-fn { docker stop "$1"; docker rm "$1"; }
 function docker-volume-rm-fn { docker volume rm "$1"; }
 function docker-volume-rm-dangling-fn {
-    VOLS=$(docker volume ls --filter "dangling=true" -q)
-    [[ -n ${VOLS} ]] && docker volume rm ${VOLS} || echo "no dangling volumes."
+    VOLS=$(docker volume ls --filter 'dangling=true' -q)
+    [[ -n ${VOLS} ]] && docker volume rm ${VOLS} || echo 'no dangling volumes.'
 }
 
 {{- if eq .shell "bash" }}
@@ -156,7 +156,7 @@ function docker-compose-run-fn { docker compose run "$@"; }
 # When using aliases, print kubectl command and then execute it
 function kctl() { echo "+ kubectl $@" && command kubectl "$@"; }
 
-function kctl-decode-secret-fn { kctl get secret "$1" -o=jsonpath='{.data}' | base64 --decode; echo; }
+function kctl-decode-secret-fn { kctl get secret "$1" -o jsonpath='{.data}' | base64 --decode; echo; }
 function kctl-delete-pod-fn { kctl delete pod "$1"; }
 function kctl-describe-deployment-fn { kctl describe deployment "$1"; }
 function kctl-describe-pod-fn { kctl describe pod "$1"; }

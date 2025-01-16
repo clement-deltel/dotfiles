@@ -63,9 +63,9 @@ alias cat='batcat -n --paging=never'
 {{- if eq .shell "bash" }}
 # colorls
 if [ -x "$(command -v colorls)" ]; then
-    alias ls="colorls --color=auto"
+    alias ls='colorls --color=auto'
 else
-    alias ls="ls --color=auto"
+    alias ls='ls --color=auto'
 fi
 
 # ls - list
@@ -98,7 +98,7 @@ alias doc='sudo su - docker'
 #==============================================================================#
 #               ------- Ansible --------                                       #
 #==============================================================================#
-alias af="ansible localhost -m ansible.builtin.setup"
+alias af='ansible localhost -m ansible.builtin.setup'
 
 #==============================================================================#
 #               ------- AWS --------                                           #

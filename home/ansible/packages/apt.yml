@@ -6,16 +6,22 @@
       - bash-completion
       - bat
       - build-essential
+      - cmake
       - curl
       - fzf # general-purpose command-line fuzzy finder
+      - gdal-bin # executable to use GDAL with Python
       - git # Gold standard version control system
       - htop # resources monitoring
       - jq # command-line JSON processor
+      - libgdal-dev # library to use GDAL with Python
       - libpq-dev # library to develop with PostgreSQL
       - man-db # man pages
       - net-tools
+      - nfs-common
+      - ninja-build
       - pwgen # random password generator
       - software-properties-common
+      - ssh
       - tzdata # timezone
       - unzip
       - vim # text editor of choice

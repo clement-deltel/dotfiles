@@ -20,7 +20,7 @@ I store the below sensitive configuration in my Vaultwarden instance:
 
  - **chezmoi toml configuration file**: notes of the item named "chezmoi"
  - **private ssh keys**: attachments of the item named "SSH Keys"
- - **kubeconfig file**: notes of the item named "kubeconfig"
+ - **kubeconfig file**: attachment "kubeconfig" of the item named "chezmoi"
  - **aws cli configuration**: custom fields of the item with the id "223277e3-498b-4d3c-9c0b-fe80e0e83d7b"
 
 I store the sensitive files for my Windows machine in an AWS S3 bucket.

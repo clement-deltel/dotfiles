@@ -18,10 +18,10 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io).
 
 I store the below sensitive configuration in my Vaultwarden instance:
 
- - **chezmoi toml configuration file**: notes of the item named "chezmoi"
- - **private ssh keys**: attachments of the item named "SSH Keys"
- - **kubeconfig file**: attachment "kubeconfig" of the item named "chezmoi"
- - **aws cli configuration**: custom fields of the item with the id "223277e3-498b-4d3c-9c0b-fe80e0e83d7b"
+- **chezmoi toml configuration file**: notes of the item named "chezmoi"
+- **private ssh keys**: attachments of the item named "SSH Keys"
+- **kubeconfig file**: attachment "kubeconfig" of the item named "chezmoi"
+- **aws cli configuration**: custom fields of the item with the id "223277e3-498b-4d3c-9c0b-fe80e0e83d7b"
 
 I store the sensitive files for my Windows machine in an AWS S3 bucket.
 
@@ -30,6 +30,7 @@ I store the sensitive files for my Windows machine in an AWS S3 bucket.
 ### Ubuntu
 
 1. Export required environment variables:
+
 ```bash
 # Update with your server address
 export BW_SERVER="https://bw.domain.com"
@@ -41,6 +42,7 @@ export GITHUB_USERNAME=clement-deltel
 ```
 
 2. Install dependencies and run installation script:
+
 ```bash
 sudo apt update -y && sudo apt install -y curl
 curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/main/docker/linux/install.sh | bash
@@ -105,6 +107,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
       - [GCP CLI](https://cloud.google.com/sdk/docs/install)
 
 If you want to test this setup, you need to have Docker installed and then you can run the commands below:
+
 ```bash
 # Set build args
 export BW_SERVER="https://bw.domain.com"
@@ -122,10 +125,12 @@ docker run --interactive --name dotfiles --tty --rm dotfiles
 ### Update
 
 If you want to refresh the configuration after an update on the repository, follow the steps below:
+
 - Open Bitwarden session
 - Enter your Bitwarden password
 - Run chezmoi update
 - Close Bitwarden session
+
 ```bash
 bws
 cmu
@@ -194,6 +199,7 @@ Here is my theme: robbyrussell
 ## Microsoft Windows
 
 1. Export required environment variables:
+
 ```bash
 # Update with your server address
 $Env:BW_SERVER="https://bw.domain.com"
@@ -205,6 +211,7 @@ $Env:GITHUB_USERNAME=clement-deltel
 ```
 
 2. Run installation script:
+
 ```ps1
 curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/main/docker/microsoft/install.sh | powershell
 ```
@@ -222,6 +229,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
    - Windows Taskbar
 
 If you want to test this setup, you need to have Docker installed and then you can run the commands below:
+
 ```bash
 # Set build args
 $Env:BW_SERVER="https://bw.domain.com"

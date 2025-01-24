@@ -52,27 +52,28 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
 4. Ansible playbooks automatically install and configure the tools listed below:
     - Package Managers
       - apt
-        - [bat](https://github.com/sharkdp/bat)
-        - [fzf](https://github.com/junegunn/fzf)
-        - [htop](https://github.com/htop-dev/htop)
-        - [jq](https://github.com/jqlang/jq)
+        - [bat](https://github.com/sharkdp/bat): cat(1) clone with wings.
+        - [fzf](https://github.com/junegunn/fzf): Command-line fuzzy finder.
+        - [htop](https://github.com/htop-dev/htop): Interactive process viewer.
+        - [jq](https://github.com/jqlang/jq): Command-line JSON processor.
         - pwgen
         - [vim](https://github.com/vim/vim)
-        - [xclip](https://github.com/astrand/xclip)
-      - [homebrew](https://github.com/Homebrew/brew)
-        - [btop](https://github.com/aristocratos/btop)
-        - [lnav](https://github.com/tstack/lnav)
-        - [tldr](https://github.com/tldr-pages/tlrc)
-        - [tokei](https://github.com/XAMPPRocky/tokei)
-        - [Trivy](https://github.com/aquasecurity/trivy)
+        - [xclip](https://github.com/astrand/xclip): Command line interface to the X11 clipboard.
+      - [homebrew](https://github.com/Homebrew/brew): The missing package manager for Linux.
+        - [btop](https://github.com/aristocratos/btop): Monitor of resources.
+        - [grype](https://github.com/anchore/grype): Vulnerability scanner for container images and filesystems.
+        - [lnav](https://github.com/tstack/lnav): Log file navigator.
+        - [tldr](https://github.com/tldr-pages/tlrc): Tldr client written in Rust.
+        - [tokei](https://github.com/XAMPPRocky/tokei): Count your code, quickly.
+        - [Trivy](https://github.com/aquasecurity/trivy): Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more.
       - [npm](https://github.com/npm/cli)
-        - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm)
+        - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm): Auto generate READMEs for Helm Charts.
     - Shell
-      - [antidote](https://github.com/mattmc3/antidote)
-      - [eza](https://github.com/eza-community/eza)
-      - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh)
+      - [antidote](https://github.com/mattmc3/antidote): The cure to slow zsh plugin management.
+      - [eza](https://github.com/eza-community/eza): Modern alternative to ls.
+      - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh): The most customisable and low-latency cross platform/shell prompt renderer.
       - zsh
-      - [zoxide](https://github.com/ajeetdsouza/zoxide)
+      - [zoxide](https://github.com/ajeetdsouza/zoxide): Smarter cd command.
     - Version Control System (VCS)
       - Git
         - [git-lfs](https://github.com/git-lfs/git-lfs)
@@ -84,24 +85,24 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
         - [nodejs](https://github.com/nodejs/node)
       - Python
         - pip
-          - [markitdown](https://github.com/microsoft/markitdown)
-          - [Pygments](https://github.com/pygments/pygments)
+          - [markitdown](https://github.com/microsoft/markitdown): Python tool for converting files and office documents to Markdown.
+          - [Pygments](https://github.com/pygments/pygments): Generic syntax highlighter written in Python.
         - [pipx](https://github.com/pypa/pipx)
-          - [commitizen](https://github.com/commitizen-tools/commitizen)
-          - [poetry](https://github.com/python-poetry/poetry)
-        - [pyenv](https://github.com/pyenv/pyenv)
+          - [commitizen](https://github.com/commitizen-tools/commitizen): Create committing rules for projects, auto bump versions, and auto changelog generation.
+          - [poetry](https://github.com/python-poetry/poetry): Python packaging and dependency management made easy
+        - [pyenv](https://github.com/pyenv/pyenv): Simple Python version management.
     - Orchestration
       - Docker
       - Kubernetes
-        - [helm](https://github.com/helm/helm)
-        - [helmfile](https://github.com/helmfile/helmfile)
+        - [helm](https://github.com/helm/helm): The Kubernetes Package Manager
+        - [helmfile](https://github.com/helmfile/helmfile): Declaratively deploy your Kubernetes manifests, Kustomize configs, and Charts as Helm releases.
         - [kubectl](https://github.com/kubernetes/kubectl)
-        - [kubectx](https://github.com/ahmetb/kubectx)
-        - [k9s](https://github.com/derailed/k9s)
-        - [stern](https://github.com/stern/stern)
+        - [kubectx](https://github.com/ahmetb/kubectx): Faster way to switch between clusters and namespaces in kubectl.
+        - [k9s](https://github.com/derailed/k9s): Kubernetes CLI to manage your clusters in style.
+        - [stern](https://github.com/stern/stern): Multi pod and container log tailing for Kubernetes.
     - Infrastructure as Code (IaC)
-      - [Pulumi](https://github.com/pulumi/pulumi)
-      - [Terraform](https://github.com/hashicorp/terraform)
+      - [Pulumi](https://github.com/pulumi/pulumi): Infrastructure as Code in any programming language.
+      - [Terraform](https://github.com/hashicorp/terraform): Terraform enables you to safely and predictably create, change, and improve infrastructure.
     - Cloud
       - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
       - [GCP CLI](https://cloud.google.com/sdk/docs/install)

@@ -53,27 +53,27 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
     - Package Managers
       - apt
         - [bat](https://github.com/sharkdp/bat): cat(1) clone with wings.
-        - [fzf](https://github.com/junegunn/fzf): Command-line fuzzy finder.
-        - [htop](https://github.com/htop-dev/htop): Interactive process viewer.
-        - [jq](https://github.com/jqlang/jq): Command-line JSON processor.
+        - [fzf](https://github.com/junegunn/fzf): command-line fuzzy finder.
+        - [htop](https://github.com/htop-dev/htop): interactive process viewer.
+        - [jq](https://github.com/jqlang/jq): command-line JSON processor.
         - pwgen
         - [vim](https://github.com/vim/vim)
-        - [xclip](https://github.com/astrand/xclip): Command line interface to the X11 clipboard.
-      - [homebrew](https://github.com/Homebrew/brew): The missing package manager for Linux.
-        - [btop](https://github.com/aristocratos/btop): Monitor of resources.
-        - [grype](https://github.com/anchore/grype): Vulnerability scanner for container images and filesystems.
-        - [lnav](https://github.com/tstack/lnav): Log file navigator.
-        - [tldr](https://github.com/tldr-pages/tlrc): Tldr client written in Rust.
-        - [tokei](https://github.com/XAMPPRocky/tokei): Count your code, quickly.
-        - [Trivy](https://github.com/aquasecurity/trivy): Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more.
+        - [xclip](https://github.com/astrand/xclip): command line interface to the X11 clipboard.
+      - [homebrew](https://github.com/Homebrew/brew): the missing package manager for Linux.
+        - [btop](https://github.com/aristocratos/btop): monitor of resources.
+        - [grype](https://github.com/anchore/grype): vulnerability scanner for container images and filesystems.
+        - [lnav](https://github.com/tstack/lnav): log file navigator.
+        - [tldr](https://github.com/tldr-pages/tlrc): tldr client written in Rust.
+        - [tokei](https://github.com/XAMPPRocky/tokei): count your code, quickly.
+        - [Trivy](https://github.com/aquasecurity/trivy): find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more.
       - [npm](https://github.com/npm/cli)
-        - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm): Auto generate READMEs for Helm Charts.
+        - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm): auto generate READMEs for Helm Charts.
     - Shell
-      - [antidote](https://github.com/mattmc3/antidote): The cure to slow zsh plugin management.
-      - [eza](https://github.com/eza-community/eza): Modern alternative to ls.
-      - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh): The most customisable and low-latency cross platform/shell prompt renderer.
+      - [antidote](https://github.com/mattmc3/antidote): the cure to slow zsh plugin management.
+      - [eza](https://github.com/eza-community/eza): modern alternative to ls.
+      - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh): the most customizable and low-latency cross platform/shell prompt renderer.
       - zsh
-      - [zoxide](https://github.com/ajeetdsouza/zoxide): Smarter cd command.
+      - [zoxide](https://github.com/ajeetdsouza/zoxide): smarter cd command.
     - Version Control System (VCS)
       - Git
         - [git-lfs](https://github.com/git-lfs/git-lfs)
@@ -86,23 +86,23 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
       - Python
         - pip
           - [markitdown](https://github.com/microsoft/markitdown): Python tool for converting files and office documents to Markdown.
-          - [Pygments](https://github.com/pygments/pygments): Generic syntax highlighter written in Python.
+          - [Pygments](https://github.com/pygments/pygments): generic syntax highlighter written in Python.
         - [pipx](https://github.com/pypa/pipx)
-          - [commitizen](https://github.com/commitizen-tools/commitizen): Create committing rules for projects, auto bump versions, and auto changelog generation.
-          - [poetry](https://github.com/python-poetry/poetry): Python packaging and dependency management made easy
-        - [pyenv](https://github.com/pyenv/pyenv): Simple Python version management.
+          - [commitizen](https://github.com/commitizen-tools/commitizen): create committing rules for projects, auto bump versions, and auto changelog generation.
+          - [poetry](https://github.com/python-poetry/poetry): Python packaging and dependency management made easy.
+        - [pyenv](https://github.com/pyenv/pyenv): simple Python version management.
     - Orchestration
       - Docker
       - Kubernetes
-        - [helm](https://github.com/helm/helm): The Kubernetes Package Manager
-        - [helmfile](https://github.com/helmfile/helmfile): Declaratively deploy your Kubernetes manifests, Kustomize configs, and Charts as Helm releases.
+        - [helm](https://github.com/helm/helm): the Kubernetes Package Manager.
+        - [helmfile](https://github.com/helmfile/helmfile): declaratively deploy your Kubernetes manifests, Kustomize configs, and Charts as Helm releases.
         - [kubectl](https://github.com/kubernetes/kubectl)
-        - [kubectx](https://github.com/ahmetb/kubectx): Faster way to switch between clusters and namespaces in kubectl.
-        - [k9s](https://github.com/derailed/k9s): Kubernetes CLI to manage your clusters in style.
-        - [stern](https://github.com/stern/stern): Multi pod and container log tailing for Kubernetes.
+        - [kubectx](https://github.com/ahmetb/kubectx): faster way to switch between clusters and namespaces in kubectl.
+        - [k9s](https://github.com/derailed/k9s): kubernetes CLI to manage your clusters in style.
+        - [stern](https://github.com/stern/stern): multi pod and container log tailing for Kubernetes.
     - Infrastructure as Code (IaC)
-      - [Pulumi](https://github.com/pulumi/pulumi): Infrastructure as Code in any programming language.
-      - [Terraform](https://github.com/hashicorp/terraform): Terraform enables you to safely and predictably create, change, and improve infrastructure.
+      - [Pulumi](https://github.com/pulumi/pulumi): infrastructure as Code in any programming language.
+      - [Terraform](https://github.com/hashicorp/terraform): safely and predictably create, change, and improve infrastructure.
     - Cloud
       - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
       - [GCP CLI](https://cloud.google.com/sdk/docs/install)

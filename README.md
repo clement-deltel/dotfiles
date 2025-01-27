@@ -133,9 +133,7 @@ If you want to refresh the configuration after an update on the repository, foll
 - Close Bitwarden session
 
 ```bash
-bws
-cmu
-unset BW_SESSION
+cmub
 ```
 
 ### Shell

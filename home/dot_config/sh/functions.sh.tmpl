@@ -19,6 +19,9 @@ function dec { echo "$1" | base64 --decode; }
 # Execute $@ command in all the subdirectories
 function exec-sub { find . -maxdepth 1 -mindepth 1 -type d -execdir echo {} \; -execdir $@ {} \; -execdir echo \;; }
 
+# List files with a certain depth
+function lsdp { find . -maxdepth "$1" -ls -path "./.git*" -prune; }
+
 # Make directory $1 and then cd inside
 function mkcd { mkdir "$1"; cd "$1" || return; }
 

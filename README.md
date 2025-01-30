@@ -253,7 +253,6 @@ Here is a list of tools that could be interesting and further enhance the stack:
 
 - **Artificial Intelligence (AI)**
   - [OpenCommit](https://github.com/di-sukharev/opencommit): generate commit messages by an LLM in 1 sec
-  - [Private GPT](https://github.com/zylon-ai/private-gpt): interact with your documents using the power of GPT, 100% privately, no data leaks
 - **Containers**
   - [Clair](https://github.com/quay/clair): vulnerability static analysis for containers
   - [Docker Bench](https://github.com/docker/docker-bench-security): script that checks for dozens of common best-practices around deploying Docker containers in production
@@ -267,14 +266,16 @@ Here is a list of tools that could be interesting and further enhance the stack:
   - [Zed](https://github.com/zed-industries/zed)
 - **Shell**
   - **Commands**
-    - [ag](https://github.com/ggreer/the_silver_searcher)
+    - [ag](https://github.com/ggreer/the_silver_searcher): code-searching tool similar to ack, but faster
     - [atuin](https://github.com/atuinsh/atuin): magical shell history
     - [dust](https://github.com/bootandy/dust): a more intuitive version of du in rust
-    - [entr](https://github.com/clibs/entr)
-    - [find](https://github.com/sharkdp/fd)
+    - [find](https://github.com/sharkdp/fd): simple, fast and user-friendly alternative to 'find'
     - [midnight commander](https://github.com/MidnightCommander/mc)
-    - [ripgrep](https://github.com/BurntSushi/ripgrep)
-    - [thefuck](https://github.com/nvbn/thefuck)
+    - [ripgrep](https://github.com/BurntSushi/ripgrep): recursively searches directories for a regex pattern while respecting your gitignore
+    - [thefuck](https://github.com/nvbn/thefuck): magnificent app which corrects your previous console command
+  - **Files**
+    - [entr](https://github.com/eradman/entr): run arbitrary commands when files change
+    - [yazi](https://github.com/sxyazi/yazi): terminal file manager written in Rust, based on async I/O
   - **Multiplexer**
     - [tmux](https://github.com/tmux/tmux)
     - [zellij](https://github.com/zellij-org/zellij)
@@ -285,11 +286,11 @@ Here is a list of tools that could be interesting and further enhance the stack:
     - [powertop](https://github.com/fenrus75/powertop)
     - [sampler](https://github.com/sqshq/sampler)
   - **Tools**
-    - [Autocomplete](https://github.com/withfig/autocomplete)
-    - [Cheat](https://github.com/cheat/cheat)
-    - [Clipboard](https://github.com/Slackadays/Clipboard)
-    - [cmatrix](https://github.com/abishekvashok/cmatrix)
-    - [Espanso](https://github.com/espanso/espanso)
+    - [Autocomplete](https://github.com/withfig/autocomplete): IDE-style autocomplete for your existing terminal & shell
+    - [Cheat](https://github.com/cheat/cheat): create and view interactive cheatsheets on the command-line
+    - [Clipboard](https://github.com/Slackadays/Clipboard): smart clipboard manager
+    - [cmatrix](https://github.com/abishekvashok/cmatrix): terminal based "The Matrix" like implementation
+    - [Espanso](https://github.com/espanso/espanso): cross-platform Text Expander written in Rust
     - [pmd](https://github.com/pmd/pmd): extensible multilanguage static code analyzer
   - **zsh**
     - [zsh-auto-notify](https://github.com/MichaelAquilina/zsh-auto-notify)

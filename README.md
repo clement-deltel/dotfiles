@@ -62,6 +62,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
       - [homebrew](https://github.com/Homebrew/brew): the missing package manager for Linux.
         - [btop](https://github.com/aristocratos/btop): monitor of resources.
         - [grype](https://github.com/anchore/grype): vulnerability scanner for container images and filesystems.
+        - [lazydocker](https://github.com/jesseduffield/lazydocker): lazier way to manage everything Docker.
         - [lnav](https://github.com/tstack/lnav): log file navigator.
         - [tldr](https://github.com/tldr-pages/tlrc): tldr client written in Rust.
         - [tokei](https://github.com/XAMPPRocky/tokei): count your code, quickly.
@@ -257,7 +258,6 @@ Here is a list of tools that could be interesting and further enhance the stack:
   - [Clair](https://github.com/quay/clair): vulnerability static analysis for containers
   - [Docker Bench](https://github.com/docker/docker-bench-security): script that checks for dozens of common best-practices around deploying Docker containers in production
   - [dozzle](https://github.com/amir20/dozzle): realtime log viewer for docker containers
-  - [lazydocker](https://github.com/jesseduffield/lazydocker)
   - [skopeo](https://github.com/containers/skopeo): work with remote images registries - retrieving information, images, signing content
 - **Infrastructure as Code (IaC)**
   - [terrascan](https://github.com/tenable/terrascan): detect compliance and security violations across Infrastructure as Code to mitigate risk before provisioning cloud native infrastructure

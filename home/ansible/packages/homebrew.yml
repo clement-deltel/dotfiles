@@ -11,6 +11,8 @@
     formulas:
       - btop
       - grype
+      - lazydocker
+      - lazygit
       - lnav
       - tlrc
       - tokei

@@ -63,6 +63,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
         - [btop](https://github.com/aristocratos/btop): monitor of resources.
         - [grype](https://github.com/anchore/grype): vulnerability scanner for container images and filesystems.
         - [lazydocker](https://github.com/jesseduffield/lazydocker): lazier way to manage everything Docker.
+        - [lazygit](https://github.com/jesseduffield/lazygit): simple terminal UI for git commands.
         - [lnav](https://github.com/tstack/lnav): log file navigator.
         - [tldr](https://github.com/tldr-pages/tlrc): tldr client written in Rust.
         - [tokei](https://github.com/XAMPPRocky/tokei): count your code, quickly.

@@ -47,7 +47,7 @@
       register: releases
 
     - name: Extract the latest Bitwarden CLI version
-      set_fact:
+      ansible.builtin.set_fact:
         versions: >-
           {{
             releases.json |

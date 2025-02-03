@@ -3,6 +3,7 @@
   gather_facts: false
   vars:
     packages:
+      - apache2-utils # htpasswd utility
       - bash-completion
       - bat
       - build-essential
@@ -10,7 +11,7 @@
       - curl
       - fzf # general-purpose command-line fuzzy finder
       - gdal-bin # executable to use GDAL with Python
-      - git # Gold standard version control system
+      - git # gold standard version control system
       - htop # resources monitoring
       - jq # command-line JSON processor
       - libbz2-dev # data compression library to develop with Python

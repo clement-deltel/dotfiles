@@ -45,7 +45,7 @@ export GITHUB_USERNAME=clement-deltel
 
 ```bash
 sudo apt update -y && sudo apt install -y curl
-curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/main/docker/linux/install.sh | bash
+curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/heads/main/docker/linux/install.sh | bash
 ```
 
 3. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.

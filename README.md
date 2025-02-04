@@ -56,6 +56,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
         - [fzf](https://github.com/junegunn/fzf): command-line fuzzy finder.
         - [htop](https://github.com/htop-dev/htop): interactive process viewer.
         - [jq](https://github.com/jqlang/jq): command-line JSON processor.
+        - [pdftk](https://www.pdflabs.com/tools/pdftk-server): command-line tool for working with PDFs.
         - pwgen
         - [vim](https://github.com/vim/vim)
         - [xclip](https://github.com/astrand/xclip): command line interface to the X11 clipboard.

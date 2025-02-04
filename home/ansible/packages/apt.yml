@@ -21,6 +21,7 @@
       - net-tools
       - nfs-common
       - ninja-build
+      - pdftk
       - pwgen # random password generator
       - software-properties-common
       - ssh

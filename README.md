@@ -78,6 +78,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
       - [zoxide](https://github.com/ajeetdsouza/zoxide): smarter cd command.
     - Version Control System (VCS)
       - Git
+        - [gitleaks](https://github.com/gitleaks/gitleaks)
         - [git-lfs](https://github.com/git-lfs/git-lfs)
     - Security
       - [Bitwarden CLI](https://bitwarden.com/help/cli/)
@@ -260,7 +261,10 @@ Here is a list of tools that could be interesting and further enhance the stack:
   - [Docker Bench](https://github.com/docker/docker-bench-security): script that checks for dozens of common best-practices around deploying Docker containers in production
   - [dozzle](https://github.com/amir20/dozzle): realtime log viewer for docker containers
   - [skopeo](https://github.com/containers/skopeo): work with remote images registries - retrieving information, images, signing content
+- **Docker**
+  - new commands (require a Docker account and/or subscription): init, debug, compose watch, build cloud, scout
 - **Infrastructure as Code (IaC)**
+  - [sst](https://sst.dev): build full-stack apps on your own infrastructure.
   - [terrascan](https://github.com/tenable/terrascan): detect compliance and security violations across Infrastructure as Code to mitigate risk before provisioning cloud native infrastructure
 - **Integrated Development Environment (IDE)**
   - [Cursor](https://github.com/getcursor/cursor)

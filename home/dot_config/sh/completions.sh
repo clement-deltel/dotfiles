@@ -19,3 +19,4 @@ eval "$(fzf --bash)"
 
 # Version Control
 source /usr/share/bash-completion/completions/git
+eval "$(gitleaks completion bash)"

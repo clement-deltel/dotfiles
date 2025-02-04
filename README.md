@@ -54,6 +54,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
       - apt
         - [bat](https://github.com/sharkdp/bat): cat(1) clone with wings.
         - [fzf](https://github.com/junegunn/fzf): command-line fuzzy finder.
+        - [git-filter-repo](https://github.com/newren/git-filter-repo): quickly rewrite git repository history (filter-branch replacement).
         - [htop](https://github.com/htop-dev/htop): interactive process viewer.
         - [jq](https://github.com/jqlang/jq): command-line JSON processor.
         - [pdftk](https://www.pdflabs.com/tools/pdftk-server): command-line tool for working with PDFs.

@@ -5,6 +5,7 @@
     images:
       - fedora:42
       - mongo:7.0.4
+      - postgis/postgis:15-3.4
       - postgres:15.0
       - rabbitmq:3.12.10-management
       - redis:7.2.3

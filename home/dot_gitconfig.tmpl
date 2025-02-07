@@ -53,6 +53,9 @@
     co = checkout -b
     st = status -s
 
+    # author
+    ua = "!git log --all --raw | grep "^Author: " | sort | uniq -c"
+
     # branch
     br = branch
     bra = branch --all

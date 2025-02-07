@@ -157,6 +157,7 @@ function docker-compose-run-fn { docker compose run "$@"; }
 #               ------- Git ------                                             #
 #==============================================================================#
 function git-update-email { git-filter-repo --email-callback "return email.replace(b'$1', b'$2')" --force; }
+function git-update-name { git-filter-repo --name-callback "return name.replace(b'$1', b'$2')" --force; }
 
 #==============================================================================#
 #               ------- Kubernetes ------                                      #

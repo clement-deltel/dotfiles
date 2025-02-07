@@ -8,7 +8,7 @@ export HOME=/home/${USER}
 #==============================================================================#
 #               ------- Environment ------                                     #
 #==============================================================================#
-export PATH=~/.local/bin:${PATH}
+export PATH=~/.local/bin:~/scripts:${PATH}
 
 export EDITOR='code --wait'
 export KUBE_EDITOR='code --wait'

@@ -62,8 +62,10 @@
     cm = commit -m
 
     # config
-    col = "config --list --show-origin"
-    la = "!git config -l | grep alias | cut -c 7-"
+    cl = "config --list"
+    cls = "config --list --show-origin"
+    cla = "!git config --list | grep alias | cut -c 7-"
+    clu = "!git config --list --show-origin | grep user"
 
     # log
     lo = log --oneline --decorate

@@ -1,4 +1,24 @@
 #!/bin/bash
+
+#==============================================================================#
+#AUTHOR: Clement Deltel
+#DATE: 2025/02/06
+#DESCRIPTION: push code to customer's environment without internal only files.
+#PARAMETERS:
+#  action:
+#    init: initialize the repository with internal files being removed.
+#    update: pull changes from the vendor's version control system when needed.
+#    push: push the changes to the customer's version control server, whether it is the first push or after an update.
+#  vendor-url: url used to create the remote pointing towards the vendor's environment.
+#  customer-url: url used to create the remote pointing towards the customer's environment.
+#  exclude-files: list of files to remove from the repository.
+#  pull-branch: remote branch to pull from the vendor's version control system. Defaults to main.
+#  push-branch: remote branch to push to on the customer's version control system. Defaults to main.
+#  customer-remote: name of the customer's remote in the local repository. Defaults to customer.
+#  work-dir: directory where to run the script. Defaults to current directory.
+#  force: flag used to force a git push.
+#==============================================================================#
+
 set -e
 
 # Configuration

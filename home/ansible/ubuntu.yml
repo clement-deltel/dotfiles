@@ -49,3 +49,5 @@
 # Cloud
 - name: AWS
   import_playbook: cloud/aws.yml
+- name: GCP
+  import_playbook: cloud/gcp.yml

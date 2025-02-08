@@ -28,12 +28,6 @@ DISABLE_FZF_KEY_BINDINGS="false"
 eval "$(zoxide init zsh --cmd cd)"
 
 #==============================================================================#
-#               ------- Antidote --------                                      #
-#==============================================================================#
-source ${HOME}/.local/antidote/antidote.zsh
-antidote load ${HOME}/.config/zsh/plugins.txt
-
-#==============================================================================#
 #               ------- Alias-Finder ------                                    #
 #==============================================================================#
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
@@ -60,18 +54,31 @@ zstyle ':omz:plugins:eza' 'size-prefix' si # binary,none
 zstyle ':omz:plugins:eza' 'hyperlink' no
 
 #==============================================================================#
+#               ------- Antidote --------                                      #
+#==============================================================================#
+source ${HOME}/.local/antidote/antidote.zsh
+antidote load ${HOME}/.config/zsh/plugins.txt
+
+#==============================================================================#
 #               ------- Personal Aliases & Functions --------                  #
 #==============================================================================#
-function source_if_exists (){ if test -r "$1"; then source "$1"; fi; }
+function source-if-exists (){ if test -r "$1"; then source "$1"; fi; }
 
-source_if_exists ~/.config/sh/aliases.sh
-source_if_exists ~/.config/sh/functions.sh
-source_if_exists ~/.kube/aliases.sh
+source-if-exists ~/.config/sh/aliases.sh
+source-if-exists ~/.config/sh/functions.sh
+source-if-exists ~/.kube/aliases.sh
 
-precmd (){
+function load-aliases-and-functions (){
   source ~/.config/sh/aliases.sh
   source ~/.config/sh/functions.sh
 }
+
+precmd_functions+=(load-aliases-and-functions)
+
+#==============================================================================#
+#               ------- Completions --------                                   #
+#==============================================================================#
+eval "$(gitleaks completion zsh)"
 
 #==============================================================================#
 #               ------- Oh My Posh --------                                    #
@@ -79,8 +86,3 @@ precmd (){
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/default.toml)"
 fi
-
-#==============================================================================#
-#               ------- Completions --------                                   #
-#==============================================================================#
-eval "$(gitleaks completion zsh)"

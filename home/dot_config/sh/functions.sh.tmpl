@@ -30,7 +30,7 @@ function tailc { tail -f "$1" | batcat -l log --paging=never; }
 
 # Host Info
 
-# IP adresses
+# IP addresses
 function my-ip (){
   MY_IP=$(/sbin/ifconfig eth0 | awk '/inet/ { print $2 }' | sed -e s/addr://)
 }
@@ -38,7 +38,7 @@ function my-ip (){
 # Full summary
 function ii (){
   echo -e "\nYou are logged on ${RED}$(hostname)"
-  echo -e "\nAdditionnal information:$NC" ; uname -a
+  echo -e "\nAdditional information:$NC" ; uname -a
   echo -e "\n${RED}Users logged on:$NC" ; w -h
   echo -e "\n${RED}Current date:$NC" ; date
   echo -e "\n${RED}Machine stats:$NC" ; uptime
@@ -112,8 +112,8 @@ function chezmoi-update-bitwarden-fn { bitwarden-create-session-fn; chezmoi upda
 function docker-exec-fn { docker exec -it "$1" "${2:-bash}"; }
 function docker-fn { docker "$@"; }
 function docker-image-rm-dangling-fn {
-    IMGS=$(docker images --filter 'dangling=true' -q --no-trunc)
-    [[ -n ${IMGS} ]] && docker rmi ${IMGS} || echo 'no dangling images.'
+    IMAGES=$(docker images --filter 'dangling=true' -q --no-trunc)
+    [[ -n ${IMAGES} ]] && docker rmi ${IMAGES} || echo 'no dangling images.'
 }
 function docker-inspect-fn { docker inspect "$1"; }
 function docker-ip-fn {
@@ -188,6 +188,17 @@ function venv-activate { pyenv activate "$1"; }
 function venv-create-fn { pyenv virtualenv "$1" "$2"; }
 function venv-delete-fn { pyenv virtualenv-delete "$1"; }
 function venv-set-local-fn { pyenv local "$1"; }
+
+function venv-install-fn {
+  pyenv virtualenv "$1" "$2"
+  pyenv local "$2"
+  if [[ $3 = "-r" ]]; then
+    pip install -r requirements.txt
+  else
+    poetry install --no-root
+  fi
+
+  }
 
 {{- if eq .shell "bash" }}
 #==============================================================================#

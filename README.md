@@ -112,6 +112,13 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
       - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
       - [GCP CLI](https://cloud.google.com/sdk/docs/install)
 
+5. Run extra playbooks if needed:
+
+```bash
+# Pull Docker images: fedora, mongodb, postgis, postgres, rabbitmq, redis, ubuntu
+ansible-playbook --become --connection local --inventory "localhost," --tags init ~/ansible/orchestration/images.yml
+```
+
 If you want to test this setup, you need to have Docker installed and then you can run the commands below:
 
 ```bash

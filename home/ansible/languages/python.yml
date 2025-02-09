@@ -72,6 +72,12 @@
         name: "{{ pip_packages }}"
         state: present
 
+    - name: PyPI - Install paramiko with minimum version
+      tags: init
+      ansible.builtin.pip:
+        name: paramiko>3.5.1
+        state: present
+
     # pip install --upgrade
     - name: PyPI - Upgrade packages
       tags: update

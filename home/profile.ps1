@@ -53,6 +53,31 @@ if ($isAdmin)
 }
 
 #==============================================================================#
+#               ------- Aliases --------                                       #
+#==============================================================================#
+# Basic Linux commands that are working in PowerShell and for which it is not
+# necessary to create an alias
+
+# cat, cd, clear, cp, curl
+# del, diff
+# echo
+# h / history
+# kill
+# ls
+# man, mkdir, mv
+# ps, pwd
+# rm
+# set, sleep, sort
+# tee, type
+# wget
+# whoami
+
+New-Alias -Name "alias" -Value Get-Alias -Description "Gets the aliases for the current session" -Option ReadOnly
+New-Alias -Name "c" -Value Clear-Host -Description "Clears the display in the host program" -Option ReadOnly
+New-Alias -Name "ll" -Value Get-ChildItem -Option ReadOnly
+New-Alias -Name "reboot" -Value Restart-Computer -Description "Restarts the operating system on local and remote computers" -Option ReadOnly
+
+#==============================================================================#
 #               ------- Functions ------                                       #
 #==============================================================================#
 
@@ -98,9 +123,34 @@ function watch {
 }
 
 #==============================================================================#
-#               ------- Functions - Kubernetes ------                          #
+#               ------- Chezmoi ------                                         #
 #==============================================================================#
+function cma { chezmoi apply }
+function cmu { chezmoi update --force }
 
+#==============================================================================#
+#               ------- Docker ------                                          #
+#==============================================================================#
+function dim { docker images }
+function dirm { docker image rm $args }
+function dl { docker logs -f $args }
+function dnls { docker network ls }
+function dnrm { docker network rm $args }
+function dps { docker ps }
+function dpsa { docker ps -a }
+function dpsf { docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}" }
+function dvls { docker volume ls }
+function dvrm { docker volume rm $args }
+
+#==============================================================================#
+#               ------- Docker Compose ------                                  #
+#==============================================================================#
+function dcu { docker-compose up -d }
+function dcd { docker-compose down -v }
+
+#==============================================================================#
+#               ------- Kubernetes ------                                      #
+#==============================================================================#
 function kdp { kubectl delete pod $args }
 function kex { kubectl exec --stdin --tty $args -- bash }
 function kgd { kubectl get deployment }
@@ -108,32 +158,24 @@ function kgp { kubectl get pods }
 function kgsec { kubectl get secret }
 function kgser { kubectl get service }
 function kl { kubectl logs -f $args }
-function kpf($1, $2) { kubectl port-forward service/${1} ${2}:${2}; }
-function kro { kubectl rollout restart deployment $args -n default; }
-function ksl { kubectl get secret $args -o jsonpath='{.data}'; }
+function kpf($1, $2) { kubectl port-forward service/${1} ${2}:${2} }
+function kro { kubectl rollout restart deployment $args -n default }
+function ksl { kubectl get secret $args -o jsonpath='{.data}' }
 
 #==============================================================================#
-#               ------- Aliases --------                                       #
+#               ------- Python ------                                          #
 #==============================================================================#
 
-# Basic Linux commands that are working in PowerShell and for which it is not
-# necessary to create an alias
+# pip
+function pipfr { pip freeze --all > requirements.txt }
+function pipir { pip install -r requirements.txt }
 
-# cat, cd, clear, cp, curl
-# del, diff
-# echo
-# h / history
-# kill
-# ls
-# man, mkdir, mv
-# ps, pwd
-# rm
-# set, sleep, sort
-# tee, type
-# wget
-# whoami
+# pyenv virtualenvs
+function vc {
+    $username = $Env:UserName
+    python -m virtualenv --python "C:\Users\$username\.pyenv\pyenv-win\versions\3.11.8\python.exe" $args }
 
-New-Alias -Name "alias" -Value Get-Alias -Description "Gets the aliases for the current session" -Option ReadOnly
-New-Alias -Name "c" -Value Clear-Host -Description "Clears the display in the host program" -Option ReadOnly
-New-Alias -Name "ll" -Value Get-ChildItem -Option ReadOnly
-New-Alias -Name "reboot" -Value Restart-Computer -Description "Restarts the operating system on local and remote computers" -Option ReadOnly
+#==============================================================================#
+#               ------- Visual Studio Code --------                            #
+#==============================================================================#
+function cwo { code *.code-workspace }

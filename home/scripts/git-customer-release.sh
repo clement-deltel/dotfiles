@@ -59,6 +59,10 @@ while [ $# -gt 0 ]; do
         WORK_DIR="${1#*=}"
         shift
         ;;
+        --force)
+        FORCE_PUSH="true"
+        shift
+        ;;
         *)
         echo "Unknown parameter: $1"
         echo "$USAGE"
@@ -78,7 +82,7 @@ fi
 VENDOR_PULL_BRANCH="${VENDOR_PULL_BRANCH:-main}"
 CUSTOMER_PUSH_BRANCH="${CUSTOMER_PUSH_BRANCH:-main}"
 CUSTOMER_REMOTE="${CUSTOMER_REMOTE:-customer}"
-WORK_DIR="${WORK_DIR:.}"
+WORK_DIR="${WORK_DIR:-.}"
 
 # Function to filter out internal files
 filter_internal_files() {
@@ -120,10 +124,10 @@ case "$ACTION" in
     "push")
 		# Disable LFS prior pushing
 		git lfs uninstall
-        if [ "$FORCE_PUSH" = true ]; then
-            git push "$VENDOR_PULL_BRANCH" "$CUSTOMER_REMOTE:$CUSTOMER_PUSH_BRANCH" --force
+        if [[ "$FORCE_PUSH" == "true" ]]; then
+            git push "$CUSTOMER_REMOTE" "$VENDOR_PULL_BRANCH:$CUSTOMER_PUSH_BRANCH" --force
         else
-            git push "$VENDOR_PULL_BRANCH" "$CUSTOMER_REMOTE:$CUSTOMER_PUSH_BRANCH"
+            git push "$CUSTOMER_REMOTE" "$VENDOR_PULL_BRANCH:$CUSTOMER_PUSH_BRANCH"
         fi
 		# Re-enable LFS
 		git lfs install --skip-smudge

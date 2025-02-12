@@ -7,27 +7,38 @@
   - name: Packages
     block:
 
-    # sudo apt update -y && sudo apt install -y golang-go
+    # wget -c https://go.dev/dl/go1.23.6.linux-amd64.tar.gz
+    # sudo tar -C /usr/local/ -xzf go1.23.6.linux-amd64.tar.gz
     - name: Install
-      tags: init
-      ansible.builtin.apt:
-        name: golang-go
-        state: present
-        update_cache: true
+      tags: [init, update]
+      ansible.builtin.unarchive:
+        src: "https://go.dev/dl/go1.23.6.linux-amd64.tar.gz"
+        dest: "/usr/local"
+        remote_src: true
+        mode: 0755
 
-    # sudo apt update -y && sudo apt upgrade -y golang-go
-    - name: Upgrade
-      tags: update
-      ansible.builtin.apt:
-        name: golang-go
-        state: latest
-        update_cache: true
+    # # sudo apt update -y && sudo apt install -y golang-go
+    # - name: Install
+    #   tags: init
+    #   ansible.builtin.apt:
+    #     name: golang-go
+    #     state: present
+    #     update_cache: true
+
+    # # sudo apt update -y && sudo apt upgrade -y golang-go
+    # - name: Upgrade
+    #   tags: update
+    #   ansible.builtin.apt:
+    #     name: golang-go
+    #     state: latest
+    #     update_cache: true
 
     always:
     - name: Go - Confirm version
       tags: [init, update]
       ansible.builtin.command:
-        cmd: go version
+        # cmd: go version
+        cmd: /usr/local/go/bin/go version
       register: version
       changed_when: false
 

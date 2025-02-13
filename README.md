@@ -12,7 +12,7 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io).
 - [Microsoft Windows](#microsoft-windows)
 - [Future enhancements](#future-enhancements)
   - [Linux](#linux-1)
-  - [Windows](#windows)
+  - [Microsoft Windows](#microsoft-windows-1)
 
 ## Pre-requisites
 
@@ -259,25 +259,27 @@ docker run --interactive --name dotfiles --tty --rm mcr.microsoft.com/windows/na
 
 ## Future enhancements
 
-### Linux
+Here is a list of tools that could be interesting and further enhance the stack.
 
-Here is a list of tools that could be interesting and further enhance the stack:
+### Linux
 
 - **Artificial Intelligence (AI)**
   - [OpenCommit](https://github.com/di-sukharev/opencommit): generate commit messages by an LLM in 1 sec
 - **Containers**
-  - [Clair](https://github.com/quay/clair): vulnerability static analysis for containers
   - [Docker Bench](https://github.com/docker/docker-bench-security): script that checks for dozens of common best-practices around deploying Docker containers in production
   - [dozzle](https://github.com/amir20/dozzle): realtime log viewer for docker containers
   - [skopeo](https://github.com/containers/skopeo): work with remote images registries - retrieving information, images, signing content
 - **Docker**
   - new commands (require a Docker account and/or subscription): init, debug, compose watch, build cloud, scout
 - **Infrastructure as Code (IaC)**
-  - [sst](https://sst.dev): build full-stack apps on your own infrastructure.
-  - [terrascan](https://github.com/tenable/terrascan): detect compliance and security violations across Infrastructure as Code to mitigate risk before provisioning cloud native infrastructure
+  - [sst](https://sst.dev): build full-stack apps on your own infrastructure
 - **Integrated Development Environment (IDE)**
   - [Cursor](https://github.com/getcursor/cursor)
   - [Zed](https://github.com/zed-industries/zed)
+- **Security**
+  - [Clair](https://github.com/quay/clair): vulnerability static analysis for containers
+  - [Google OSV](https://github.com/google/osv.dev): Open source vulnerability DB and triage service
+  - [terrascan](https://github.com/tenable/terrascan): detect compliance and security violations across Infrastructure as Code to mitigate risk before provisioning cloud native infrastructure
 - **Shell**
   - **Commands**
     - [ag](https://github.com/ggreer/the_silver_searcher): code-searching tool similar to ack, but faster
@@ -309,28 +311,36 @@ Here is a list of tools that could be interesting and further enhance the stack:
   - **zsh**
     - [zsh-auto-notify](https://github.com/MichaelAquilina/zsh-auto-notify)
 - **Version Control**
-  - [commitlint](https://github.com/conventional-changelog/commitlint)
-  - [delta](https://github.com/dandavison/delta)
+  - [commitlint](https://github.com/conventional-changelog/commitlint): lint commit messages
+  - [delta](https://github.com/dandavison/delta): syntax-highlighting pager for git, diff, grep, and blame output
   - [difftastic](https://difftastic.wilfred.me.uk)
-  - [git-bug](https://github.com/git-bug/git-bug)
-  - [git-plan](https://github.com/rorybyrne/git-plan)
-  - [git-sim](https://github.com/initialcommit-com/git-sim)
-  - [git-xargs](https://github.com/gruntwork-io/git-xargs)
-  - [gitflow](https://github.com/nvie/gitflow)
-  - [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli)
+  - [git-bug](https://github.com/git-bug/git-bug): distributed, offline-first bug tracker embedded in git, with bridges
+  - [git-plan](https://github.com/rorybyrne/git-plan): a better workflow for git
+  - [git-sim](https://github.com/initialcommit-com/git-sim): visually simulate Git operations in your own repos with a single terminal command
+  - [git-xargs](https://github.com/gruntwork-io/git-xargs): command-line tool (CLI) for making updates across multiple Github repositories with a single command
+  - [gitflow](https://github.com/nvie/gitflow): git extensions to provide high-level repository operations for Vincent Driessen's branching model
+  - [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli): gitmoji interactive cli tool for using emojis on commits
   - [mergiraf](https://mergiraf.org)
-  - [multi-gitter](https://github.com/lindell/multi-gitter)
+  - [multi-gitter](https://github.com/lindell/multi-gitter): update multiple repositories in with one command
 
-### Windows
+### Microsoft Windows
 
-Here is a list of softwares that could be interesting to integrate into the stack:
-
-- Potentially through Chocolatey:
-  - FortiClient VPN
+- Through Chocolatey:
+  - cinebench
+  - cpu-z
+  - cpu-z.install
+  - forticlientvpn
+  - gpu-z
+  - msiafterburner
+  - occt
+  - OpenHardwareMonitor
+  - revo-uninstaller
 - Independently:
   - [Backblaze](https://www.backblaze.com)
-  - ESET antivirus solution
+  - [Fan Control](https://getfancontrol.com)
+  - [Hardware Monitor](https://www.cpuid.com/softwares/hwmonitor.html)
   - Office 365
+  - [Open RGB](https://openrgb.org/)
   - Oracle SQL Developer (Chocolatey package outdated)
   - OracleXE
   - [Zed Encrypt](https://www.zedencrypt.com)

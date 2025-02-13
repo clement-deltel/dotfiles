@@ -311,9 +311,13 @@ Here is a list of tools that could be interesting and further enhance the stack.
   - **zsh**
     - [zsh-auto-notify](https://github.com/MichaelAquilina/zsh-auto-notify)
 - **Version Control**
+  - [better commits](https://github.com/Everduin94/better-commits): CLI for creating better commits following the conventional commits specification
   - [commitlint](https://github.com/conventional-changelog/commitlint): lint commit messages
   - [delta](https://github.com/dandavison/delta): syntax-highlighting pager for git, diff, grep, and blame output
   - [difftastic](https://difftastic.wilfred.me.uk)
+  - [gh-dash](https://github.com/dlvhdr/gh-dash): beautiful CLI dashboard for GitHub
+  - [gitbutler](https://github.com/gitbutlerapp/gitbutler): GitButler version control client
+  - [gitu](https://github.com/altsem/gitu): TUI git client inspired by Magit
   - [git-bug](https://github.com/git-bug/git-bug): distributed, offline-first bug tracker embedded in git, with bridges
   - [git-plan](https://github.com/rorybyrne/git-plan): a better workflow for git
   - [git-sim](https://github.com/initialcommit-com/git-sim): visually simulate Git operations in your own repos with a single terminal command

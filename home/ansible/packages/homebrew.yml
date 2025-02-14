@@ -10,7 +10,6 @@
       - locales
     formulas:
       - btop
-      - cloudlens
       - gitleaks
       - grype
       - lazydocker

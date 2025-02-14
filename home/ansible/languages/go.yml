@@ -1,6 +1,9 @@
 - name: Go
   hosts: all
   gather_facts: false
+  vars:
+    go_packages:
+      - sigs.k8s.io/kind@v0.26.0
 
   tasks:
   # Packages
@@ -47,3 +50,18 @@
       when: version is defined
       ansible.builtin.debug:
         msg: "Installed version: {{ version.stdout }}"
+
+  # Go Packages
+  - name: Go Packages
+    block:
+
+    - name: List packages
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "packages: {{ go_packages }}"
+
+    - name: Install
+      tags: [init, update]
+      ansible.builtin.command:
+        cmd: "/usr/local/go/bin/go install {{ item }}"
+      loop: "{{ go_packages }}"

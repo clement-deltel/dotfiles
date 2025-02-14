@@ -87,6 +87,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
       - [Bitwarden CLI](https://bitwarden.com/help/cli/)
     - Languages
       - Go
+        - [kind](https://github.com/kubernetes-sigs/kind/): Kubernetes in Docker - local clusters for testing Kubernetes.
       - JavaScript
         - [nodejs](https://github.com/nodejs/node)
       - Python

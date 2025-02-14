@@ -59,10 +59,12 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
         - [jq](https://github.com/jqlang/jq): command-line JSON processor.
         - [pdftk](https://www.pdflabs.com/tools/pdftk-server): command-line tool for working with PDFs.
         - pwgen
+        - [trippy](https://github.com/fujiapple852/trippy): network diagnostic tool.
         - [vim](https://github.com/vim/vim)
         - [xclip](https://github.com/astrand/xclip): command line interface to the X11 clipboard.
       - [homebrew](https://github.com/Homebrew/brew): the missing package manager for Linux.
         - [btop](https://github.com/aristocratos/btop): monitor of resources.
+        - [cloudlens](https://github.com/one2nc/cloudlens): k9s like CLI for AWS and GCP.
         - [grype](https://github.com/anchore/grype): vulnerability scanner for container images and filesystems.
         - [lazydocker](https://github.com/jesseduffield/lazydocker): lazier way to manage everything Docker.
         - [lazygit](https://github.com/jesseduffield/lazygit): simple terminal UI for git commands.

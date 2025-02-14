@@ -26,13 +26,31 @@
       - pwgen # random password generator
       - software-properties-common
       - ssh
+      - trippy # network diagnostic tool
       - tzdata # timezone
       - unzip
       - vim # text editor of choice
       - xclip # CLI clipboard utility
       - zip
+    repositories:
+      - ppa:fujiapple/trippy
 
   tasks:
+  # Repositories
+  - name: Repositories
+    tags: init
+    block:
+
+    - name: List repositories
+      ansible.builtin.debug:
+        msg: "packages: {{ repositories }}"
+
+    # add-apt-repository
+    - name: Add repositories
+      ansible.builtin.apt_repository:
+        repo: "{{ item }}"
+      loop: "{{ repositories }}"
+
   # Packages
   - name: Packages
     block:

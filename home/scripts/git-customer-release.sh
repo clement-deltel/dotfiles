@@ -15,6 +15,7 @@
 #  pull-branch: remote branch to pull from the vendor's version control system. Defaults to main.
 #  push-branch: remote branch to push to on the customer's version control system. Defaults to main.
 #  customer-remote: name of the customer's remote in the local repository. Defaults to customer.
+#  update-message: commit message to merge updates. Defaults to "Add latest updates from origin".
 #  work-dir: directory where to run the script. Defaults to current directory.
 #  force: flag used to force a git push.
 #==============================================================================#
@@ -22,7 +23,7 @@
 set -e
 
 # Configuration
-USAGE="Usage: $0 --action={init|update|push} [--vendor-url=<repository_url>] [--customer-url=<repository_url>] [--exclude=file1,file2,dir/] [--pull-branch=<branch_name>] [--push-branch=<branch_name>] [--customer-remote=<remote_name>] [--work-dir=<dir_name>] [--force]"
+USAGE="Usage: $0 --action={init|update|push} [--vendor-url=<repository_url>] [--customer-url=<repository_url>] [--exclude=file1,file2,dir/] [--pull-branch=<branch_name>] [--push-branch=<branch_name>] [--customer-remote=<remote_name>] [--update-message=<commit_message>] [--work-dir=<dir_name>] [--force]"
 
 # Parse named arguments
 while [ $# -gt 0 ]; do
@@ -55,6 +56,10 @@ while [ $# -gt 0 ]; do
         CUSTOMER_REMOTE="${1#*=}"
         shift
         ;;
+        --update-message=*)
+        UPDATE_MESSAGE="${1#*=}"
+        shift
+        ;;
 		--work-dir=*)
         WORK_DIR="${1#*=}"
         shift
@@ -82,6 +87,7 @@ fi
 VENDOR_PULL_BRANCH="${VENDOR_PULL_BRANCH:-main}"
 CUSTOMER_PUSH_BRANCH="${CUSTOMER_PUSH_BRANCH:-main}"
 CUSTOMER_REMOTE="${CUSTOMER_REMOTE:-customer}"
+UPDATE_MESSAGE="${UPDATE_MESSAGE:-Add latest updates from origin}"
 WORK_DIR="${WORK_DIR:-.}"
 
 # Function to filter out internal files
@@ -117,6 +123,7 @@ case "$ACTION" in
     "update")
         git checkout "$VENDOR_PULL_BRANCH"
         git pull origin "$VENDOR_PULL_BRANCH" --no-rebase --no-commit
+        git commit -m "$UPDATE_MESSAGE"
         # Filter out internal files
         filter_internal_files
         ;;

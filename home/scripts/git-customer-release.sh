@@ -87,7 +87,7 @@ fi
 VENDOR_PULL_BRANCH="${VENDOR_PULL_BRANCH:-main}"
 CUSTOMER_PUSH_BRANCH="${CUSTOMER_PUSH_BRANCH:-main}"
 CUSTOMER_REMOTE="${CUSTOMER_REMOTE:-customer}"
-UPDATE_MESSAGE="${UPDATE_MESSAGE:-Add latest updates from origin}"
+UPDATE_MESSAGE="${UPDATE_MESSAGE:-chore: add latest updates from origin}"
 WORK_DIR="${WORK_DIR:-.}"
 
 # Function to filter out internal files

@@ -321,7 +321,7 @@ docker run --interactive --name dotfiles --tty --rm mcr.microsoft.com/windows/na
 
 ## Browser extensions
 
-I am still figuring out a way to install them programmatically but here is a list of the browser extensions that I use:
+I am still figuring out a way to install them programmatically but here is a list of browser extensions that I use:
 
 - [Bitwarden Password Manager](https://chromewebstore.google.com/detail/bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb)
 - [Cisco Webex Content Sharing](https://chromewebstore.google.com/detail/cisco-webex-content-shari/ifbdadgbpalmagalacllfaflfakmfkac)

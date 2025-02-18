@@ -88,16 +88,17 @@ Here is a list of tools that could be interesting and further enhance the stack,
 
 ### Enhancements
 
-- Through Chocolatey:
-  - cinebench
-  - cpu-z
-  - cpu-z.install
-  - forticlientvpn
-  - gpu-z
-  - msiafterburner
-  - occt
-  - OpenHardwareMonitor
-  - revo-uninstaller
+- Chocolatey
+  - [Cinebench](https://community.chocolatey.org/packages/cinebench)
+  - [CPU-Z](https://community.chocolatey.org/packages/cpu-z)
+  - [Flow Launcher](https://community.chocolatey.org/packages/flow-launcher)
+  - [FortiClient VPN](https://community.chocolatey.org/packages/forticlientvpn)
+  - [GPU-Z](https://community.chocolatey.org/packages/gpu-z)
+  - [MSI Afterburner](https://community.chocolatey.org/packages/msiafterburner)
+  - [OCCT](https://community.chocolatey.org/packages/occt)
+  - [Open Hardware Monitor](https://community.chocolatey.org/packages/openhardwaremonitor)
+  - [Revo Uninstaller](https://community.chocolatey.org/packages/revo-uninstaller)
+  - [Winaero Tweaker](https://community.chocolatey.org/packages/winaero-tweaker)
 - Independently:
   - [Backblaze](https://www.backblaze.com)
   - [Fan Control](https://getfancontrol.com)
@@ -110,6 +111,8 @@ Here is a list of tools that could be interesting and further enhance the stack,
 
 ### Obsolete
 
-- [Ant Renamer](https://www.antp.be/software/renamer)
-- [PDF Gear](https://www.pdfgear.com/)
-- [PDF Merger & Splitter](https://www.anywaysoft.com/pdf-merger-splitter/index.html)
+- Chocolatey
+  - [Ant Renamer](https://www.antp.be/software/renamer)
+  - [PDF Gear](https://www.pdfgear.com/)
+- Winget
+  - [PDF Merger & Splitter](https://www.anywaysoft.com/pdf-merger-splitter/index.html)

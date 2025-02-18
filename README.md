@@ -10,6 +10,7 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io).
   - [Update](#update)
   - [Shell](#shell)
 - [Microsoft Windows](#microsoft-windows)
+- [Browser extensions](#browser-extensions)
 
 ## Pre-requisites
 
@@ -317,3 +318,19 @@ docker run --interactive --name dotfiles --tty --rm dotfiles
 
 docker run --interactive --name dotfiles --tty --rm mcr.microsoft.com/windows/nanoserver:ltsc2022 powershell
 ```
+
+## Browser extensions
+
+I am still figuring out a way to install them programmatically but here is a list of the browser extensions that I use:
+
+- [Bitwarden Password Manager](https://chromewebstore.google.com/detail/bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb)
+- [Cisco Webex Content Sharing](https://chromewebstore.google.com/detail/cisco-webex-content-shari/ifbdadgbpalmagalacllfaflfakmfkac)
+- [ClearURLs](https://chromewebstore.google.com/detail/clearurls/lckanjgmijmafbedllaakclkaicjfmnk)
+- [daily.dev | The homepage developers deserve](https://chromewebstore.google.com/detail/dailydev-the-homepage-dev/jlmpjdjjbgclbocgajdjefcidcncaied)
+- [Dark Reader](https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)
+- [Ghostery Tracker & Ad Blocker - Privacy AdBlock](https://chromewebstore.google.com/detail/ghostery-tracker-ad-block/mlomiejdfkolichcflejclcbmpeaniij)
+- [Grammarly: AI Writing and Grammar Check App](https://chromewebstore.google.com/detail/grammarly-ai-writing-and/kbfnbcaeplbcioakkpcpgfkobkghlhen)
+- [JSON Lite](https://chromewebstore.google.com/detail/json-lite/acacmjcicejlmjcheoklfdchempahoag)
+- [Keepa - Amazon Price Tracker](https://chromewebstore.google.com/detail/keepa-amazon-price-tracke/neebplgakaahbhdphmkckjjcegoiijjo)
+- [Raindrop.io: all-in-one bookmark manager](https://chromewebstore.google.com/detail/raindropio/ldgfbffkinooeloadekpmfoklnobpien)
+- [uBlock Origin: finally an efficient blocker, easy on CPU and memory.](https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)

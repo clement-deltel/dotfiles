@@ -1,6 +1,6 @@
 # Software <!-- omit in toc -->
 
-Here is a list of tools that could be interesting and further enhance the stack, as well as tools that I no longer use or are obsolete.
+Here is a list of tools that could be interesting and further enhance the stack, as well as tools that I no longer use or which are obsolete.
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -10,6 +10,8 @@ Here is a list of tools that could be interesting and further enhance the stack,
 - [Microsoft Windows](#microsoft-windows)
   - [Enhancements](#enhancements-1)
   - [Obsolete](#obsolete-1)
+- [Browser extensions](#browser-extensions)
+  - [Enhancements](#enhancements-2)
 
 ## Linux
 
@@ -116,3 +118,9 @@ Here is a list of tools that could be interesting and further enhance the stack,
   - [PDF Gear](https://www.pdfgear.com/)
 - Winget
   - [PDF Merger & Splitter](https://www.anywaysoft.com/pdf-merger-splitter/index.html)
+
+## Browser extensions
+
+### Enhancements
+
+- [AIPRM for ChatGPT](https://chromewebstore.google.com/detail/aiprm-for-chatgpt/ojnbohmppadfgpejeebfnmnknjdlckgj)

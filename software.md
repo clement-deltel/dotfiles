@@ -110,4 +110,6 @@ Here is a list of tools that could be interesting and further enhance the stack,
 
 ### Obsolete
 
-- AntRenamer
+- [Ant Renamer](https://www.antp.be/software/renamer)
+- [PDF Gear](https://www.pdfgear.com/)
+- [PDF Merger & Splitter](https://www.anywaysoft.com/pdf-merger-splitter/index.html)

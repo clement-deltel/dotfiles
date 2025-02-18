@@ -232,9 +232,67 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
 
 4. Chocolatey automatically install and configure the tools listed below:
 
-- 7-Zip / 7-Zip Install
+- [7-Zip](http://www.7-zip.org)
+- [AutoHotkey (Portable)](https://www.autohotkey.com)
+- [AWS CLI v2](https://aws.amazon.com/cli)
+- [Bitwarden CLI](https://bitwarden.com)
+- [BleachBit](https://www.bleachbit.org)
+- [Citrix Workspace](https://www.citrix.com/downloads/workspace-app/windows)
+- [DBeaver - Community Edition](https://dbeaver.io)
+- [Docker Engine](https://www.docker.com)
+- [FileZilla](https://filezilla-project.org)
+- [Flameshot](https://flameshot.org)
+- [GIMP](https://www.gimp.org)
+- [Git](https://gitforwindows.org)
+- [Git Credential Manager](https://github.com/git-ecosystem/git-credential-manager)
+- [Google Chrome](https://www.google.com/chrome/browser/)
+- [Google Earth Pro](https://www.google.com/intl/en_uk/earth/versions/#earth-pro)
+- [Insomnia](https://insomnia.rest)
+- [iTunes](https://www.apple.com/itunes)
+- [Java SE (jdk8)](https://www.oracle.com/java/technologies/downloads)
+- [Keepass 2.x](https://keepass.info)
+- [Logi Options+](https://www.logitech.com/en-us/software/logi-options-plus.html)
+- [MongoDB Compass](https://github.com/mongodb-js/compass)
+- [Nilesoft Shell](https://nilesoft.org)
+- [Notepad++](https://notepad-plus-plus.org)
+- [Notion](https://www.notion.so)
+- [Obsidian](https://obsidian.md)
+- [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH)
+- [Opera](https://www.opera.com)
+- [Podman Desktop](https://podman-desktop.io)
+- [PowerToys](https://github.com/microsoft/PowerToys)
+- [PostgreSQL ODBC Driver](https://odbc.postgresql.org)
+- [Pyenv-win](https://github.com/pyenv-win/pyenv-win)
+- [Python](https://www.python.org)
+- [QGIS](https://www.qgis.org)
+- [QuickLook](https://github.com/QL-Win/QuickLook)
+- [Rufus](https://rufus.ie/en)
+- [RustDesk](https://rustdesk.com)
+- [SoundSwitch](https://soundswitch.aaflalo.me)
+- [Spotify](https://open.spotify.com)
+- [Sudo](https://github.com/janhebnes/chocolatey-packages/tree/master/Sudo)
+- [TreeSize Free](https://www.jam-software.com/treesize_free)
+- [VeraCrypt](https://veracrypt.fr/en/Home.html)
+- [VLC Media Player](https://www.videolan.org/vlc)
+- [VMWare Horizon Client](https://www.omnissa.com/products/horizon-8)
+- [Visual Studio Code](https://code.visualstudio.com)
+- [VSCodium](https://vscodium.com)
+- [Cisco Webex Meetings](https://www.webex.com/suite/meetings.html)
+- [Wireguard](https://www.wireguard.com)
+- [Yubico Authenticator](https://developers.yubico.com/yubioath-flutter)
+- [Zoom](https://www.zoom.com)
 
-1. chezmoi also restore some files from backups stored in AWS S3:
+5. Winget automatically install and configure the tools listed below:
+
+- [Apple Devices](https://apps.microsoft.com/detail/9np83lwlpz9k)
+- [IAP Desktop](https://github.com/GoogleCloudPlatform/iap-desktop)
+- [Intel Unison](https://apps.microsoft.com/detail/9pp9gzm2gn26)
+- [Microsoft Sysinternals](https://apps.microsoft.com/detail/9p7knl5rwt25)
+- [Rainmeter](https://www.rainmeter.net)
+- [Trello](https://apps.microsoft.com/detail/9nblggh4xxvw)
+- [Wacom Tablet Driver](https://www.wacom.com/en-us/support/product-support/drivers)
+
+6. chezmoi also restore some files from backups stored in AWS S3:
    - Google Chrome
    - Outlook Signatures
    - Windows Explorer - Quick Access
@@ -244,7 +302,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
 
 If you want to test this setup, you need to have Docker installed and then you can run the commands below:
 
-```bash
+```ps1
 # Set build args
 $Env:BW_SERVER="https://bw.domain.com"
 $Env:BW_CLIENTID=""

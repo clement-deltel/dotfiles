@@ -11,7 +11,7 @@ Here is a list of tools that could be interesting and further enhance the stack,
   - [Enhancements](#enhancements-1)
   - [Obsolete](#obsolete-1)
 - [Browser extensions](#browser-extensions)
-  - [Enhancements](#enhancements-2)
+  - [Not in use](#not-in-use)
 
 ## Linux
 
@@ -91,36 +91,49 @@ Here is a list of tools that could be interesting and further enhance the stack,
 ### Enhancements
 
 - Chocolatey
-  - [Cinebench](https://community.chocolatey.org/packages/cinebench)
-  - [CPU-Z](https://community.chocolatey.org/packages/cpu-z)
-  - [Flow Launcher](https://community.chocolatey.org/packages/flow-launcher)
-  - [FortiClient VPN](https://community.chocolatey.org/packages/forticlientvpn)
-  - [GPU-Z](https://community.chocolatey.org/packages/gpu-z)
-  - [MSI Afterburner](https://community.chocolatey.org/packages/msiafterburner)
-  - [OCCT](https://community.chocolatey.org/packages/occt)
-  - [Open Hardware Monitor](https://community.chocolatey.org/packages/openhardwaremonitor)
-  - [Revo Uninstaller](https://community.chocolatey.org/packages/revo-uninstaller)
-  - [Winaero Tweaker](https://community.chocolatey.org/packages/winaero-tweaker)
+  - **Benchmarking**
+    - [Cinebench](https://community.chocolatey.org/packages/cinebench)
+  - **Hardware Tweaks**
+    - [MSI Afterburner](https://community.chocolatey.org/packages/msiafterburner)
+    - [OCCT](https://community.chocolatey.org/packages/occt)
+  - **Monitoring**
+    - [CPU-Z](https://community.chocolatey.org/packages/cpu-z)
+    - [GPU-Z](https://community.chocolatey.org/packages/gpu-z)
+    - [Open Hardware Monitor](https://community.chocolatey.org/packages/openhardwaremonitor)
+  - **Software Tweaks**
+    - [Flow Launcher](https://community.chocolatey.org/packages/flow-launcher)
+    - [Winaero Tweaker](https://community.chocolatey.org/packages/winaero-tweaker)
+  - **Tools**
+    - [Revo Uninstaller](https://community.chocolatey.org/packages/revo-uninstaller)
+  - **Other**
+    - [FortiClient VPN](https://community.chocolatey.org/packages/forticlientvpn)
 - Independently:
-  - [Backblaze](https://www.backblaze.com)
-  - [Fan Control](https://getfancontrol.com)
-  - [Hardware Monitor](https://www.cpuid.com/softwares/hwmonitor.html)
-  - Office 365
-  - [Open RGB](https://openrgb.org/)
-  - Oracle SQL Developer (Chocolatey package outdated)
-  - OracleXE
-  - [Zed Encrypt](https://www.zedencrypt.com)
+  - **Backup**
+    - [Backblaze](https://www.backblaze.com)
+  - **Databases**
+    - Oracle SQL Developer (Chocolatey package outdated)
+    - OracleXE
+  - **Hardware Tweaks**
+    - [Fan Control](https://getfancontrol.com)
+    - [Open RGB](https://openrgb.org/)
+  - **Monitoring**
+    - [Hardware Monitor](https://www.cpuid.com/softwares/hwmonitor.html)
+  - **Security**
+    - [Zed Encrypt](https://www.zedencrypt.com)
+  - **Other**
+    - Office 365
 
 ### Obsolete
 
 - Chocolatey
-  - [Ant Renamer](https://www.antp.be/software/renamer)
-  - [PDF Gear](https://www.pdfgear.com/)
+  - [Ant Renamer](https://community.chocolatey.org/packages/ant-renamer)
+  - [PDF Gear](https://community.chocolatey.org/packages/pdfgear)
 - Winget
   - [PDF Merger & Splitter](https://www.anywaysoft.com/pdf-merger-splitter/index.html)
 
 ## Browser extensions
 
-### Enhancements
+### Not in use
 
-- [AIPRM for ChatGPT](https://chromewebstore.google.com/detail/aiprm-for-chatgpt/ojnbohmppadfgpejeebfnmnknjdlckgj)
+- **Artificial Intelligence**
+  - [AIPRM for ChatGPT](https://chromewebstore.google.com/detail/aiprm-for-chatgpt/ojnbohmppadfgpejeebfnmnknjdlckgj)

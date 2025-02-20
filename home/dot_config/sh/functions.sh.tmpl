@@ -108,11 +108,11 @@ function bitwarden-open-fn {
 #==============================================================================#
 function chezmoi-add-fn { chezmoi add "$1"; }
 function chezmoi-add-template-fn { chezmoi add --template "$1"; }
-function chezmoi-apply-bitwarden-fn { bitwarden-create-session-fn; chezmoi apply; unset BW_SESSION; }
+function chezmoi-apply-bitwarden-fn { bitwarden-create-session-fn; chezmoi apply --verbose; unset BW_SESSION; }
 function chezmoi-edit-fn { chezmoi edit "$1"; }
 function chezmoi-fn { chezmoi "$@"; }
 function chezmoi-merge-fn { chezmoi merge "$1"; }
-function chezmoi-update-bitwarden-fn { bitwarden-create-session-fn; chezmoi update --force; unset BW_SESSION; }
+function chezmoi-update-bitwarden-fn { bitwarden-create-session-fn; chezmoi update --force --verbose; unset BW_SESSION; }
 
 #==============================================================================#
 #               ------- Docker ------                                          #

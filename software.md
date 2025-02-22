@@ -6,12 +6,14 @@ Here is a list of tools that could be interesting and further enhance the stack,
 
 - [Linux](#linux)
   - [Enhancements](#enhancements)
-  - [Obsolete](#obsolete)
+  - [Not in use](#not-in-use)
 - [Microsoft Windows](#microsoft-windows)
   - [Enhancements](#enhancements-1)
-  - [Obsolete](#obsolete-1)
+  - [Not in use](#not-in-use-1)
 - [Browser extensions](#browser-extensions)
-  - [Not in use](#not-in-use)
+  - [Not in use](#not-in-use-2)
+- [Visual Studio Code extensions](#visual-studio-code-extensions)
+  - [Not in use](#not-in-use-3)
 
 ## Linux
 
@@ -81,10 +83,10 @@ Here is a list of tools that could be interesting and further enhance the stack,
   - [mergiraf](https://mergiraf.org)
   - [multi-gitter](https://github.com/lindell/multi-gitter): update multiple repositories in with one command.
 
-### Obsolete
+### Not in use
 
 - **Cloud**
-  - [Cloudlens](https://github.com/one2nc/cloudlens)
+  - [Cloudlens](https://github.com/one2nc/cloudlens): missing a lot of features, no longer maintained.
 
 ## Microsoft Windows
 
@@ -106,10 +108,9 @@ Here is a list of tools that could be interesting and further enhance the stack,
   - **Tools**
     - [Revo Uninstaller](https://community.chocolatey.org/packages/revo-uninstaller)
   - **Other**
-    - [FortiClient VPN](https://community.chocolatey.org/packages/forticlientvpn)
+    - Beeper
+    - Discord
 - Independently:
-  - **Backup**
-    - [Backblaze](https://www.backblaze.com)
   - **Databases**
     - Oracle SQL Developer (Chocolatey package outdated)
     - OracleXE
@@ -121,19 +122,51 @@ Here is a list of tools that could be interesting and further enhance the stack,
   - **Security**
     - [Zed Encrypt](https://www.zedencrypt.com)
   - **Other**
+    - Minecraft
     - Office 365
 
-### Obsolete
+### Not in use
 
 - Chocolatey
-  - [Ant Renamer](https://community.chocolatey.org/packages/ant-renamer)
-  - [PDF Gear](https://community.chocolatey.org/packages/pdfgear)
+  - [Ant Renamer](https://community.chocolatey.org/packages/ant-renamer): using PowerToys PowerRename instead.
+  - [PDF Gear](https://community.chocolatey.org/packages/pdfgear): too bloated and slow.
 - Winget
-  - [PDF Merger & Splitter](https://www.anywaysoft.com/pdf-merger-splitter/index.html)
+  - [PDF Merger & Splitter](https://www.anywaysoft.com/pdf-merger-splitter/index.html): using pdftk in WSL2 instead.
 
 ## Browser extensions
 
 ### Not in use
 
+- **Ads & Tracking**
+  - [Disconnect](https://chromewebstore.google.com/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo): disconnect tracker protection makes the web more private, secure, and faster.
 - **Artificial Intelligence**
-  - [AIPRM for ChatGPT](https://chromewebstore.google.com/detail/aiprm-for-chatgpt/ojnbohmppadfgpejeebfnmnknjdlckgj)
+  - [AIPRM for ChatGPT](https://chromewebstore.google.com/detail/aiprm-for-chatgpt/ojnbohmppadfgpejeebfnmnknjdlckgj): list of curated prompt templates and advanced features.
+  - [ChatGPT for Google](https://chromewebstore.google.com/detail/chatgpt-for-google/jgjaeacdkonaoafenlfkkkmbaopkbilf): display ChatGPT response alongside search engine results.
+  - [Max Focus](https://chromewebstore.google.com/detail/maxfocus-link-preview-ai/bnacincmbaknlbegecpioobkfgejlojp): preview links directly from your current tab and maintain your concentration.
+  - [ReaderGPT](https://chromewebstore.google.com/detail/readergpt-chatgpt-based-w/ohgodjgnfedgikkgcjdkomkadbfedcjd): generates summary of any readable web page using ChatGPT with just a single click.
+  - [WebChatGPT: ChatGPT with internet access](https://chromewebstore.google.com/detail/webchatgpt-chatgpt-with-i/lpfemeioodjbpieminkklglpmhlngfcn): augment your ChatGPT prompts with relevant web search results through web browsing.
+  - [Wikiwand](https://chromewebstore.google.com/detail/wikiwand-wikipedia-and-be/emffkefkbkpkgpdeeooapgaicgmcbolj): ai-driven wiki aggregator created to enhance user experience on Wikipedia by streamlining knowledge consumption.
+- **Crypto**
+  - [Coinbase Wallet Extension](https://chromewebstore.google.com/detail/coinbase-wallet-extension/hnfanknocfeofbddgcijnmhnfnkdnaad): crypto app in your browser.
+- **Development**
+  - [DevLinks](https://chromewebstore.google.com/detail/dev-links/eogoekcejgaaaodjgbhnlpmccdmboapb): all links a developer would need.
+  - [Fake Filler](https://chromewebstore.google.com/detail/fake-filler/bnjjngeaknajbdcgpfkgnonkmififhfo): a form filler that fills all inputs on a page with fake/dummy data.
+  - [Octotree - GitHub code tree](https://chromewebstore.google.com/detail/octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc): enhances GitHub code review and exploration.
+  - [QuickCode](https://chromewebstore.google.com/detail/quickcode-free-online-pro/nnigpbiaggiephcndokoaongeefpbdcj): curates free online programming courses and serves best courses everyday.
+  - [Vimium](https://chromewebstore.google.com/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb): provides keyboard shortcuts for navigation and control in the spirit of vim.
+  - [Wappalyzer - Technology profiler](https://chromewebstore.google.com/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg): technology profiler that shows you what websites are built with.
+- **Google**
+  - [Google Docs Offline](https://chromewebstore.google.com/detail/google-docs-offline/ghbmnnjooekpmoecnnnilnnbdlolhkhi)
+  - [Google Translate](https://chromewebstore.google.com/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb)
+- **Other**
+  - [Better Viewer](https://chromewebstore.google.com/detail/betterviewer/llcpfkbjgkpmapiidpnohffjmmnhpmpb): makes image viewing faster, easier, and more fun.
+  - [DeepL Translate](https://chromewebstore.google.com/detail/deepl-translate/cofdbpoegempjloogbagkncekinflcnj): translate while you read and write, the world’s most accurate translator.
+  - [Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk): open-source, automated tool for improving the performance, quality, and correctness of your web apps.
+  - [Link Redirect Trace](https://chromewebstore.google.com/detail/link-redirect-trace/nnpljppamoaalgkieeciijbcccohlpoh): redirect path analyzer.
+  - [The Marvelous Suspender](https://chromewebstore.google.com/detail/the-marvellous-suspender/noogafoofpebimajpfpamcfhoaifemoa): make your computer run smoothly by suspending the tabs you aren't using
+  - [uBlacklist](https://chromewebstore.google.com/detail/ublacklist/pncfbmialoiaghdehhbnbhkkgmjanfhe): blocks sites you specify from appearing in Google search results
+  - [WhatFont](https://chromewebstore.google.com/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm): identify fonts on web pages.
+
+## Visual Studio Code extensions
+
+### Not in use

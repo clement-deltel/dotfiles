@@ -5,19 +5,13 @@ Here is a list of tools that could be interesting and further enhance the stack,
 ## Table of Contents <!-- omit in toc -->
 
 - [Linux](#linux)
-  - [Enhancements](#enhancements)
-  - [Not in use](#not-in-use)
 - [Microsoft Windows](#microsoft-windows)
-  - [Enhancements](#enhancements-1)
-  - [Not in use](#not-in-use-1)
 - [Browser extensions](#browser-extensions)
-  - [Not in use](#not-in-use-2)
 - [Visual Studio Code extensions](#visual-studio-code-extensions)
-  - [Not in use](#not-in-use-3)
 
 ## Linux
 
-### Enhancements
+Enhancements:
 
 - **Artificial Intelligence (AI)**
   - [OpenCommit](https://github.com/di-sukharev/opencommit): generate commit messages by an LLM in 1 sec.
@@ -83,14 +77,14 @@ Here is a list of tools that could be interesting and further enhance the stack,
   - [mergiraf](https://mergiraf.org)
   - [multi-gitter](https://github.com/lindell/multi-gitter): update multiple repositories in with one command.
 
-### Not in use
+Not using anymore:
 
 - **Cloud**
   - [Cloudlens](https://github.com/one2nc/cloudlens): missing a lot of features, no longer maintained.
 
 ## Microsoft Windows
 
-### Enhancements
+Enhancements:
 
 - Chocolatey
   - **Benchmarking**
@@ -125,17 +119,19 @@ Here is a list of tools that could be interesting and further enhance the stack,
     - Minecraft
     - Office 365
 
-### Not in use
+Not using anymore:
 
 - Chocolatey
   - [Ant Renamer](https://community.chocolatey.org/packages/ant-renamer): using PowerToys PowerRename instead.
   - [PDF Gear](https://community.chocolatey.org/packages/pdfgear): too bloated and slow.
 - Winget
   - [PDF Merger & Splitter](https://www.anywaysoft.com/pdf-merger-splitter/index.html): using pdftk in WSL2 instead.
+- Other
+  - [Google Chrome Desktop](https://remotedesktop.google.com): using RustDesk instead.
 
 ## Browser extensions
 
-### Not in use
+Not using anymore:
 
 - **Ads & Tracking**
   - [Disconnect](https://chromewebstore.google.com/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo): disconnect tracker protection makes the web more private, secure, and faster.
@@ -169,4 +165,4 @@ Here is a list of tools that could be interesting and further enhance the stack,
 
 ## Visual Studio Code extensions
 
-### Not in use
+Not using anymore:

@@ -301,6 +301,11 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
    - Windows Subsystem for Linux (WSL)
    - Windows Taskbar
 
+7. Finally, there are softwares that require manual effort:
+
+- [Backblaze](https://www.backblaze.com)
+- Logitech Capture
+
 If you want to test this setup, you need to have Docker installed and then you can run the commands below:
 
 ```ps1

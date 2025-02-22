@@ -122,8 +122,8 @@ Enhancements:
 Not using anymore:
 
 - Chocolatey
-  - [Ant Renamer](https://community.chocolatey.org/packages/ant-renamer): using PowerToys PowerRename instead.
-  - [PDF Gear](https://community.chocolatey.org/packages/pdfgear): too bloated and slow.
+  - [Ant Renamer](https://community.chocolatey.org/packages/ant-renamer): make easier the renaming of lots of files and folders by using specified settings. **Reason**: using PowerToys PowerRename instead.
+  - [PDF Gear](https://community.chocolatey.org/packages/pdfgear): read, edit, convert, merge, and sign PDF files across devices, for completely free and without signing up. **Reason**: too bloated and slow.
 - Winget
   - [PDF Merger & Splitter](https://www.anywaysoft.com/pdf-merger-splitter/index.html): using pdftk in WSL2 instead.
 - Other

@@ -15,7 +15,7 @@
 #  pull-branch: remote branch to pull from the vendor's version control system. Defaults to main.
 #  push-branch: remote branch to push to on the customer's version control system. Defaults to main.
 #  customer-remote: name of the customer's remote in the local repository. Defaults to customer.
-#  update-message: commit message to merge updates. Defaults to "Add latest updates from origin".
+#  update-message: commit message to merge updates. Defaults to "chore: add latest updates from origin".
 #  work-dir: directory where to run the script. Defaults to current directory.
 #  force: flag used to force a git push.
 #==============================================================================#

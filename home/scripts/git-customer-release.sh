@@ -94,7 +94,7 @@ WORK_DIR="${WORK_DIR:-.}"
 filter_internal_files() {
     # Create filter spec file
     local filter_file="filter-spec.txt"
-    printf "%s\n" "${EXCLUDED_FILES[@]}" > "$filter_file"
+    echo "$EXCLUDED_FILES" | tr ',' '\n' > "$filter_file"
 
     # Use git filter-repo for more reliable filtering
     git filter-repo \

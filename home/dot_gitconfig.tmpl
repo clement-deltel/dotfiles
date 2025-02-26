@@ -3,27 +3,54 @@
 [user]
     name = {{ .name }}
     email = {{ .email }}
-[init]
-	defaultBranch = main
+
+[branch]
+    sort = -committerdate
+[column]
+    ui = auto
 [core]
 	editor = vim
     eol = lf
+    excludesfile = ~/.gitignore
     filemode = false
+    fsmonitor = true
     pager=less -x4
+    untrackedCache = true
     whitespace = blank-at-eol,blank-at-eof,space-before-tab
 [commit]
     template = ~/.gitmessage.txt
+    verbose = true
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
 [filter "lfs"]
-    required = true
-	clean = git-lfs clean -- %f
+    clean = git-lfs clean -- %f
 	process = git-lfs filter-process --skip
+    required = true
 	smudge = git-lfs smudge --skip -- %f
-[push]
-    default = current
-[pull]
-    default = current
 [help]
     autocorrect = 20
+[init]
+	defaultBranch = main
+[merge]
+    conflictstyle = zdiff3
+[push]
+    autoSetupRemote = true
+    default = current
+    followTags = true
+[pull]
+    default = current
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+[rerere]
+    autoupdate = true
+    enabled = true
+[tag]
+    sort = version:refname
 
 [color]
     branch = auto

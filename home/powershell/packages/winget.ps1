@@ -31,6 +31,7 @@ $appleDevicesId = "9NP83LWLPZ9K"
 $intelUnisonId = "9PP9GZM2GN26"
 $netflixId = "9WZDNCRFJ3TJ"
 $trelloId = "XPDNKNDN77T0DP"
+$winToysId="9P8LTPGCBZXD"
 
 #------------------------------[Execution]------------------------------
 
@@ -52,6 +53,7 @@ If( $tag -eq "init" )
     winget install --exact --id $appleDevicesId --interactive --source msstore
     winget install --exact --id $intelUnisonId --interactive --source msstore
     winget install --exact --id $trelloId --interactive --source msstore
+    winget install --exact --id $winToysId --interactive --source msstore
   }
 }
 Else If( $tag -eq "update" )
@@ -73,5 +75,6 @@ Else If( $tag -eq "update" )
     winget upgrade --exact --id $appleDevicesId --interactive --source msstore
     winget upgrade --exact --id $intelUnisonId --interactive --source msstore
     winget upgrade --exact --id $trelloId --interactive --source msstore
+    winget upgrade --exact --id $winToysId --interactive --source msstore
   }
 }

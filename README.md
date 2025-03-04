@@ -272,7 +272,6 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
 - [SoundSwitch](https://community.chocolatey.org/packages/soundswitch)
 - [Spotify](https://community.chocolatey.org/packages/spotify)
 - [Sudo](https://community.chocolatey.org/packages/sudo)
-- [TreeSize Free](https://community.chocolatey.org/packages/treesizefree)
 - [VeraCrypt](https://community.chocolatey.org/packages/veracrypt)
 - [VLC Media Player](https://community.chocolatey.org/packages/vlc)
 - [VMWare Horizon Client](https://community.chocolatey.org/packages/vmware-horizon-client)
@@ -280,6 +279,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
 - [VSCodium](https://community.chocolatey.org/packages/vscodium)
 - [Cisco Webex Meetings](https://community.chocolatey.org/packages/webex-meetings)
 - [Wireguard](https://community.chocolatey.org/packages/wireguard)
+- [WizTree](https://community.chocolatey.org/packages/wiztree): disk space analyzer utility.
 - [Yubico Authenticator](https://community.chocolatey.org/packages/yubico-authenticator)
 - [Zoom](https://community.chocolatey.org/packages/zoom)
 
@@ -292,6 +292,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
 - [Rainmeter](https://www.rainmeter.net)
 - [Trello](https://apps.microsoft.com/detail/9nblggh4xxvw)
 - [Wacom Tablet Driver](https://www.wacom.com/en-us/support/product-support/drivers)
+- [WinToys](https://apps.microsoft.com/detail/9p8ltpgcbzxd)
 
 6. chezmoi also restore some files from backups stored in AWS S3:
    - Google Chrome

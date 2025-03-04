@@ -88,17 +88,17 @@ Enhancements:
 
 - Chocolatey
   - **Benchmarking**
-    - [Cinebench](https://community.chocolatey.org/packages/cinebench)
+    - [Cinebench](https://community.chocolatey.org/packages/cinebench): real-world cross-platform test suite that evaluates your computer's hardware capabilities.
   - **Hardware Tweaks**
-    - [MSI Afterburner](https://community.chocolatey.org/packages/msiafterburner)
-    - [OCCT](https://community.chocolatey.org/packages/occt)
+    - [MSI Afterburner](https://community.chocolatey.org/packages/msiafterburner): graphics card utility.
+    - [OCCT](https://community.chocolatey.org/packages/occt): stability checking tool.
   - **Monitoring**
-    - [CPU-Z](https://community.chocolatey.org/packages/cpu-z)
-    - [GPU-Z](https://community.chocolatey.org/packages/gpu-z)
+    - [CPU-Z](https://community.chocolatey.org/packages/cpu-z): system profiler (system monitor) application that detects the central processing unit, RAM, motherboard chipset, and other hardware features.
+    - [GPU-Z](https://community.chocolatey.org/packages/gpu-z): utility designed to provide you with all information about your graphics card and GPU.
     - [Open Hardware Monitor](https://community.chocolatey.org/packages/openhardwaremonitor)
   - **Software Tweaks**
-    - [Flow Launcher](https://community.chocolatey.org/packages/flow-launcher)
-    - [Winaero Tweaker](https://community.chocolatey.org/packages/winaero-tweaker)
+    - [Flow Launcher](https://community.chocolatey.org/packages/flow-launcher): Search everything from applications, files, bookmarks, YouTube, Twitter and more.
+    - [Winaero Tweaker](https://community.chocolatey.org/packages/winaero-tweaker): all-in-one application that comes with dozens of options for fine-grained tuning of various Windows settings and features.
   - **Tools**
     - [Revo Uninstaller](https://community.chocolatey.org/packages/revo-uninstaller)
   - **Other**
@@ -124,6 +124,7 @@ Not using anymore:
 - Chocolatey
   - [Ant Renamer](https://community.chocolatey.org/packages/ant-renamer): make easier the renaming of lots of files and folders by using specified settings. **Reason**: using PowerToys PowerRename instead.
   - [PDF Gear](https://community.chocolatey.org/packages/pdfgear): read, edit, convert, merge, and sign PDF files across devices, for completely free and without signing up. **Reason**: too bloated and slow.
+  - [TreeSize Free](https://community.chocolatey.org/packages/treesizefree): tells you where precious disk space has gone. **Reason**: using WizTree instead.
 - Winget
   - [PDF Merger & Splitter](https://www.anywaysoft.com/pdf-merger-splitter/index.html): using pdftk in WSL2 instead.
 - Other

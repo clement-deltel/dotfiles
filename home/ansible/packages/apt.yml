@@ -9,6 +9,7 @@
       - build-essential
       - cmake
       - curl
+      - figlet # display large characters made up of ordinary screen characters
       - fzf # general-purpose command-line fuzzy finder
       - gdal-bin # executable to use GDAL with Python
       - git # gold standard version control system

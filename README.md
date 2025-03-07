@@ -51,12 +51,13 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
     - Package Managers
       - apt
         - [bat](https://github.com/sharkdp/bat): cat(1) clone with wings.
+        - [FIGlet](https://linux.die.net/man/6/figlet): display large characters made up of ordinary screen characters.
         - [fzf](https://github.com/junegunn/fzf): command-line fuzzy finder.
         - [git-filter-repo](https://github.com/newren/git-filter-repo): quickly rewrite git repository history (filter-branch replacement).
         - [htop](https://github.com/htop-dev/htop): interactive process viewer.
         - [jq](https://github.com/jqlang/jq): command-line JSON processor.
         - [pdftk](https://www.pdflabs.com/tools/pdftk-server): command-line tool for working with PDFs.
-        - pwgen
+        - [pwgen](https://linux.die.net/man/1/pwgen): generate pronounceable passwords.
         - [trippy](https://github.com/fujiapple852/trippy): network diagnostic tool.
         - [vim](https://github.com/vim/vim)
         - [xclip](https://github.com/astrand/xclip): command line interface to the X11 clipboard.

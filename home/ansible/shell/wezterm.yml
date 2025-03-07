@@ -1,0 +1,67 @@
+- name: WezTerm
+  hosts: all
+  gather_facts: true
+  vars:
+    packages:
+      - wezterm
+  vars_files:
+    - ../vars/main.yml
+
+  tasks:
+  # Repository
+  - name: Repository
+    tags: init
+    block:
+
+    - name: Create /etc/apt/keyrings directory
+      ansible.builtin.file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: 0755
+
+    - name: Download GPG apt key
+      ansible.builtin.uri:
+        method: GET
+        url: https://apt.fury.io/wez/gpg.key
+        dest: /tmp/wezterm.key
+        follow_redirects: safe
+        mode: 0644
+
+    - name: Import GPG key
+      ansible.builtin.command:
+        cmd: gpg --dearmor --output /etc/apt/keyrings/wezterm-fury.gpg --yes /tmp/wezterm.key
+
+    # echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *" | sudo tee /etc/apt/sources.list.d/wezterm.list > /dev/null
+    - name: Add apt repository
+      ansible.builtin.apt_repository:
+        repo: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *
+
+    - name: Remove GPG temporary key
+      ansible.builtin.file:
+        path: /tmp/wezterm.key
+        state: absent
+
+  # Packages
+  - name: Packages
+    block:
+
+    - name: List packages
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "packages: {{ packages }}"
+
+    # sudo apt update -y && sudo apt install -y
+    - name: Install
+      tags: init
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: true
+
+    # sudo apt update -y && sudo apt upgrade -y
+    - name: Upgrade
+      tags: update
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: latest
+        update_cache: true

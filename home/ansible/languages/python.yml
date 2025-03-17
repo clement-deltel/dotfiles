@@ -13,8 +13,16 @@
       - python3.11-venv
       - python-is-python3
     pip_packages:
+      - aiohttp
+      - asyncer
+      - filetype
+      - gradio
       - markitdown
+      - onnxruntime
+      - pillow
       - Pygments
+      - rembg
+      - watchdog
     pyenv_dependencies:
       - build-essential
       - bzip2

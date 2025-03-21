@@ -121,6 +121,7 @@ case "$ACTION" in
         ;;
 
     "update")
+        git remote -v | grep -w origin || git remote add origin "$VENDOR_URL"
         git checkout "$VENDOR_PULL_BRANCH"
         git pull origin "$VENDOR_PULL_BRANCH" --no-rebase --no-commit
         git commit -m "$UPDATE_MESSAGE"

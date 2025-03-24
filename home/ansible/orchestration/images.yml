@@ -3,10 +3,14 @@
   gather_facts: false
   vars:
     images:
+      - archlinux:base-20250302.0.316047
+      - debian:12.10
       - fedora:42
       - mongo:7.0.4
+      - nixos/nix:2.27.1
       - postgis/postgis:15-3.4
       - postgres:15.0
+      - quay.io/centos/centos:10
       - rabbitmq:3.12.10-management
       - redis:7.2.3
       - ubuntu:22.04

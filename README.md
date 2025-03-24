@@ -6,10 +6,13 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io).
 
 - [Pre-requisites](#pre-requisites)
 - [Linux](#linux)
-  - [Ubuntu](#ubuntu)
-  - [Update](#update)
+  - [Install](#install)
   - [Shell](#shell)
+  - [Update](#update)
+  - [Test](#test)
 - [Microsoft Windows](#microsoft-windows)
+  - [Install](#install-1)
+  - [Test](#test-1)
 - [Browser extensions](#browser-extensions)
 
 ## Pre-requisites
@@ -25,11 +28,13 @@ I store the sensitive files for my Windows machine in an AWS S3 bucket.
 
 ## Linux
 
-### Ubuntu
+### Install
 
 1. Export required environment variables:
 
 ```bash
+# Linux distribution family. Options: arch, debian, nixos, redhat
+export FAMILY="debian"
 # Update with your server address
 export BW_SERVER="https://bw.domain.com"
 # Fill the blanks with your API credentials and password
@@ -43,7 +48,7 @@ export GITHUB_USERNAME=clement-deltel
 
 ```bash
 sudo apt update -y && sudo apt install -y curl
-curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/heads/main/docker/linux/install.sh | bash
+curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/heads/main/docker/linux/${FAMILY}/install.sh | bash
 ```
 
 3. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.
@@ -117,37 +122,8 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
 5. Run extra playbooks if needed:
 
 ```bash
-# Pull Docker images: fedora, mongodb, postgis, postgres, rabbitmq, redis, ubuntu
+# Pull Docker images: archlinux, centos, debian, fedora, mongodb, nixos, postgis, postgres, rabbitmq, redis, ubuntu
 ansible-playbook --become --connection local --inventory "localhost," --tags init ~/ansible/orchestration/images.yml
-```
-
-If you want to test this setup, you need to have Docker installed and then you can run the commands below:
-
-```bash
-# Set build args
-export BW_SERVER="https://bw.domain.com"
-export BW_CLIENTID=""
-export BW_CLIENTSECRET=""
-export BW_PASSWORD=''
-export GITHUB_USERNAME=clement-deltel
-
-# Docker build and then run
-# Use option --progress=plain to see steps in more details
-docker build --build-arg BW_SERVER --build-arg BW_CLIENTID --build-arg BW_CLIENTSECRET --build-arg BW_PASSWORD --build-arg GITHUB_USERNAME --file docker/linux/Dockerfile --tag dotfiles docker/linux/
-docker run --interactive --name dotfiles --tty --rm dotfiles
-```
-
-### Update
-
-If you want to refresh the configuration after an update on the repository, follow the steps below:
-
-- Open Bitwarden session
-- Enter your Bitwarden password
-- Run chezmoi update
-- Close Bitwarden session
-
-```bash
-cmub
 ```
 
 ### Shell
@@ -209,7 +185,85 @@ Zsh is my default shell. Here is the list of plugins:
 
 Here is my theme: robbyrussell
 
+### Update
+
+Follow the steps below to refresh the configuration after an update on the repository:
+
+- Open Bitwarden session
+- Enter your Bitwarden password
+- Run chezmoi update
+- Close Bitwarden session
+
+```bash
+cmub
+```
+
+### Test
+
+Install Docker to test this setup. The following images have been tested so far:
+
+- Debian-like Systems
+  - ubuntu:22.04
+
+Then, build an image:
+
+```bash
+# Set image parameters
+export FAMILY="debian"
+export BASE_IMAGE="ubuntu:22.04"
+export USER="ubuntu"
+# See all options and more details at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+export TIMEZONE="America/New_York"
+
+# Update with your server address
+export BW_SERVER="https://bw.domain.com"
+# Fill the blanks with your API credentials and password
+export BW_CLIENTID=""
+export BW_CLIENTSECRET=""
+export BW_PASSWORD=''
+export GITHUB_USERNAME=clement-deltel
+
+# Docker build and then run
+# Use option --progress=plain to see steps in more details
+docker build --build-arg BASE_IMAGE --build-arg USER --build-arg TIMEZONE --build-arg BW_SERVER --build-arg BW_CLIENTID --build-arg BW_CLIENTSECRET --build-arg BW_PASSWORD --build-arg GITHUB_USERNAME --tag dotfiles --file docker/linux/${FAMILY}/Dockerfile docker/linux/${FAMILY}/
+
+unset FAMILY_PATH
+unset BASE_IMAGE
+unset USER
+unset TIMEZONE
+unset BW_SERVER
+unset BW_CLIENTID
+unset BW_CLIENTSECRET
+unset BW_PASSWORD
+unset GITHUB_USERNAME
+```
+
+And run a container:
+
+```bash
+docker run --interactive --name dotfiles --tty --rm dotfiles
+```
+
+To be tested:
+
+- Debian-like Systems
+  - debian:12:10
+  - ubuntu:24.04
+- RedHat-like Systems
+  - quay.io/centos/centos:10
+  - fedora:42
+- ArchLinux
+  - archlinux:base-20250302.0.316047
+- NixOS
+  - nixos/nix:2.27.1
+
+```bash
+docker run --interactive --name dotfiles --tty --rm <image> bash
+```
+
 ## Microsoft Windows
+
+### Install
 
 1. Export required environment variables:
 
@@ -309,6 +363,8 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
 
 - [Backblaze](https://www.backblaze.com)
 - Logitech Capture
+
+### Test
 
 If you want to test this setup, you need to have Docker installed and then you can run the commands below:
 

@@ -77,7 +77,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
         - [tldr](https://github.com/tldr-pages/tlrc): tldr client written in Rust.
         - [tokei](https://github.com/XAMPPRocky/tokei): count your code, quickly.
         - [Trivy](https://github.com/aquasecurity/trivy): find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more.
-      - [npm](https://github.com/npm/cli)
+      - [npm](https://github.com/npm/cli): node package manager.
         - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm): auto generate READMEs for Helm Charts.
     - Shell
       - [antidote](https://github.com/mattmc3/antidote): the cure to slow zsh plugin management.
@@ -88,20 +88,20 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
       - [zoxide](https://github.com/ajeetdsouza/zoxide): smarter cd command.
     - Version Control System (VCS)
       - Git
-        - [gitleaks](https://github.com/gitleaks/gitleaks)
-        - [git-lfs](https://github.com/git-lfs/git-lfs)
+        - [gitleaks](https://github.com/gitleaks/gitleaks): tool for detecting secrets like passwords, API keys, and tokens in git repos.
+        - [git-lfs](https://github.com/git-lfs/git-lfs): git extension for versioning large files
     - Security
       - [Bitwarden CLI](https://bitwarden.com/help/cli/)
     - Languages
       - Go
         - [kind](https://github.com/kubernetes-sigs/kind/): Kubernetes in Docker - local clusters for testing Kubernetes.
       - JavaScript
-        - [nodejs](https://github.com/nodejs/node)
+        - [nodejs](https://github.com/nodejs/node): cross-platform, open-source JavaScript runtime built on Chrome's V8 JavaScript engine.
       - Python
         - pip
           - [markitdown](https://github.com/microsoft/markitdown): Python tool for converting files and office documents to Markdown.
           - [Pygments](https://github.com/pygments/pygments): generic syntax highlighter written in Python.
-        - [pipx](https://github.com/pypa/pipx)
+        - [pipx](https://github.com/pypa/pipx): install and run Python applications in isolated environments.
           - [commitizen](https://github.com/commitizen-tools/commitizen): create committing rules for projects, auto bump versions, and auto changelog generation.
           - [poetry](https://github.com/python-poetry/poetry): Python packaging and dependency management made easy.
         - [pyenv](https://github.com/pyenv/pyenv): simple Python version management.
@@ -110,9 +110,9 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
       - Kubernetes
         - [helm](https://github.com/helm/helm): the Kubernetes Package Manager.
         - [helmfile](https://github.com/helmfile/helmfile): declaratively deploy your Kubernetes manifests, Kustomize configs, and Charts as Helm releases.
-        - [kubectl](https://github.com/kubernetes/kubectl)
+        - [kubectl](https://github.com/kubernetes/kubectl): Kubernetes command-line interface.
         - [kubectx](https://github.com/ahmetb/kubectx): faster way to switch between clusters and namespaces in kubectl.
-        - [k9s](https://github.com/derailed/k9s): kubernetes CLI to manage your clusters in style.
+        - [k9s](https://github.com/derailed/k9s): Kubernetes CLI to manage your clusters in style.
         - [stern](https://github.com/stern/stern): multi pod and container log tailing for Kubernetes.
     - Infrastructure as Code (IaC)
       - [Pulumi](https://github.com/pulumi/pulumi): infrastructure as Code in any programming language.
@@ -297,31 +297,31 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
 4. Chocolatey automatically install and configure the tools listed below:
 
 - Common
-  - [7-Zip](https://community.chocolatey.org/packages/7zip)
-  - [AutoHotkey (Portable)](https://community.chocolatey.org/packages/autohotkey)
-  - [Bitwarden CLI](https://community.chocolatey.org/packages/bitwarden-cli)
-  - [BleachBit](https://community.chocolatey.org/packages/bleachbit.install)
-  - [Docker Engine](https://community.chocolatey.org/packages/docker-engine)
-  - [FileZilla](https://community.chocolatey.org/packages/filezilla)
-  - [Flameshot](https://community.chocolatey.org/packages/flameshot)
-  - [Git](https://community.chocolatey.org/packages/git)
-  - [Git Credential Manager](https://community.chocolatey.org/packages/git-credentials-manager-for-windows)
-  - [Google Chrome](https://community.chocolatey.org/packages/googlechrome)
-  - [Logi Options+](https://community.chocolatey.org/packages/logioptionsplus)
-  - [Nilesoft Shell](https://community.chocolatey.org/packages/nilesoft-shell)
-  - [Notepad++](https://community.chocolatey.org/packages/notepadplusplus)
-  - [Obsidian](https://community.chocolatey.org/packages/obsidian)
-  - [Win32 OpenSSH](https://community.chocolatey.org/packages/openssh)
-  - [Opera](https://community.chocolatey.org/packages/opera)
+  - [7-Zip](https://community.chocolatey.org/packages/7zip): file archiver with a high compression ratio.
+  - [AutoHotkey (Portable)](https://community.chocolatey.org/packages/autohotkey): macro-creation and automation software utility that allows users to automate repetitive tasks.
+  - [Bitwarden CLI](https://community.chocolatey.org/packages/bitwarden-cli): bitwarden command-line interface.
+  - [BleachBit](https://community.chocolatey.org/packages/bleachbit.install): quickly free disk space, guard privacy, delete cookies, clear internet history, shred temporary files, delete logs, discard junk, and wipes clean thousands of applications.
+  - [Docker Engine](https://community.chocolatey.org/packages/docker-engine): suite of development tools, services, trusted content, and automations, used individually or together, to accelerate the delivery of secure applications.
+  - [FileZilla](https://community.chocolatey.org/packages/filezilla): cross-platform FTP, FTPS and SFTP client.
+  - [Flameshot](https://community.chocolatey.org/packages/flameshot): screenshot software.
+  - [Git](https://community.chocolatey.org/packages/git): native set of tools that bring the full feature set of the git SCM.
+  - [Git Credential Manager](https://community.chocolatey.org/packages/git-credential-manager-for-windows): secure git credential storage.
+  - [Google Chrome](https://community.chocolatey.org/packages/googlechrome): web browser.
+  - [Logi Options+](https://community.chocolatey.org/packages/logioptionsplus): manage and customize your supported mice and keyboards.
+  - [Nilesoft Shell](https://community.chocolatey.org/packages/nilesoft-shell): context menu extender to integrate into Windows File Explorer.
+  - [Notepad++](https://community.chocolatey.org/packages/notepadplusplus): source code editor.
+  - [Obsidian](https://community.chocolatey.org/packages/obsidian): knowledge base that works on top of a local folder of plain text markdown files.
+  - [Win32 OpenSSH](https://community.chocolatey.org/packages/openssh): SSH support for Windows.
+  - [Opera](https://community.chocolatey.org/packages/opera): web browser.
   - [PowerToys](https://community.chocolatey.org/packages/powertoys): set of utilities for power users to tune and streamline their Windows experience for greater productivity.
   - [QuickLook](https://community.chocolatey.org/packages/quicklook): enables very quick preview of file by pressing Space key while highlighting it, without opening its associated application.
   - [RustDesk](https://community.chocolatey.org/packages/rustdesk): remote desktop software, works out of the box, no configuration required.
   - [Spotify](https://community.chocolatey.org/packages/spotify): digital music service that gives you access to millions of songs.
   - [Sudo](https://community.chocolatey.org/packages/sudo): elevate directly from the shell.
-  - [VeraCrypt](https://community.chocolatey.org/packages/veracrypt): disk encryption software for Windows, Mac OSX and Linux.
+  - [VeraCrypt](https://community.chocolatey.org/packages/veracrypt): disk encryption software.
   - [Visual Studio Code](https://community.chocolatey.org/packages/vscode): build and debug modern web and cloud applications.
   - [VLC Media Player](https://community.chocolatey.org/packages/vlc): cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.
-  - [VSCodium](https://community.chocolatey.org/packages/vscodium): community-driven, freely-licensed binary distribution of Microsoft's editor VS Code.
+  - [VSCodium](https://community.chocolatey.org/packages/vscodium): community-driven, freely-licensed binary distribution of Microsoft's editor vs code.
   - [WezTerm](https://community.chocolatey.org/packages/wezterm): GPU-accelerated cross-platform terminal emulator and multiplexer.
   - [WizTree](https://community.chocolatey.org/packages/wiztree): disk space analyzer utility.
 - Perso-specific
@@ -338,7 +338,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
   - [Notion](https://community.chocolatey.org/packages/notion)
   - [Podman Desktop](https://community.chocolatey.org/packages/podman-desktop)
   - [PostgreSQL ODBC Driver](https://community.chocolatey.org/packages/psqlodbc): official PostgreSQL ODBC Driver.
-  - [Pyenv-win](https://community.chocolatey.org/packages/pyenv-win): simple python version management tool.
+  - [Pyenv-win](https://community.chocolatey.org/packages/pyenv-win): simple Python version management tool.
   - [Python](https://community.chocolatey.org/packages/python): programming language that lets you work more quickly and integrate your systems more effectively.
   - [QGIS](https://community.chocolatey.org/packages/qgis): user friendly Open Source Geographic Information System (GIS).
   - [Rufus](https://community.chocolatey.org/packages/rufus): utility that helps format and create bootable USB flash drives, such as USB keys/pendrives, memory sticks, etc.

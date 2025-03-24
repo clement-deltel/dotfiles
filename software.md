@@ -24,8 +24,8 @@ Enhancements:
 - **Infrastructure as Code (IaC)**
   - [sst](https://sst.dev): build full-stack apps on your own infrastructure.
 - **Integrated Development Environment (IDE)**
-  - [Cursor](https://github.com/getcursor/cursor)
-  - [Zed](https://github.com/zed-industries/zed)
+  - [Cursor](https://github.com/getcursor/cursor): AI code editor.
+  - [Zed](https://github.com/zed-industries/zed): high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
 - **Security**
   - [Clair](https://github.com/quay/clair): vulnerability static analysis for containers.
   - [Google OSV](https://github.com/google/osv.dev): Open source vulnerability DB and triage service.

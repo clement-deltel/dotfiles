@@ -64,7 +64,7 @@ configure_bitwarden(){
   echo "[INFO] Opening session to get chezmoi configuration file..."
   export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
   mkdir -p ~/.config/chezmoi
-  bw get notes chezmoi > ~/.config/chezmoi/chezmoi.toml
+  bw get notes chezmoi-${MACHINE} > ~/.config/chezmoi/chezmoi.toml
   bw lock
   echo "[INFO] chezmoi configuration file successfully retrieved"
 }

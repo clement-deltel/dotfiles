@@ -33,6 +33,8 @@ I store the sensitive files for my Windows machine in an AWS S3 bucket.
 1. Export required environment variables:
 
 ```bash
+# Machine configuration. Options: work, perso
+export MACHINE="work"
 # Linux distribution family. Options: arch, debian, nixos, redhat
 export FAMILY="debian"
 # Update with your server address
@@ -126,6 +128,14 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
 ansible-playbook --become --connection local --inventory "localhost," --tags init ~/ansible/orchestration/images.yml
 ```
 
+6. Clean sensitive information:
+
+```bash
+unset BW_CLIENTID
+unset BW_CLIENTSECRET
+unset BW_PASSWORD
+```
+
 ### Shell
 
 Zsh is my default shell. Here is the list of plugins:
@@ -208,10 +218,11 @@ Install Docker to test this setup. The following images have been tested so far:
 Then, build an image:
 
 ```bash
+# Machine configuration. Options: work, perso
+export MACHINE="work"
 # Set image parameters
 export FAMILY="debian"
-export BASE_IMAGE="ubuntu:22.04"
-export USER="ubuntu"
+export IMAGE="ubuntu:22.04"
 # See all options and more details at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 export TIMEZONE="America/New_York"
 
@@ -225,17 +236,11 @@ export GITHUB_USERNAME=clement-deltel
 
 # Docker build and then run
 # Use option --progress=plain to see steps in more details
-docker build --build-arg BASE_IMAGE --build-arg USER --build-arg TIMEZONE --build-arg BW_SERVER --build-arg BW_CLIENTID --build-arg BW_CLIENTSECRET --build-arg BW_PASSWORD --build-arg GITHUB_USERNAME --tag dotfiles --file docker/linux/${FAMILY}/Dockerfile docker/linux/${FAMILY}/
+docker build --build-arg MACHINE --build-arg IMAGE --build-arg TIMEZONE --build-arg BW_SERVER --build-arg BW_CLIENTID --build-arg BW_CLIENTSECRET --build-arg BW_PASSWORD --build-arg GITHUB_USERNAME --tag dotfiles --file docker/linux/${FAMILY}/Dockerfile docker/linux/${FAMILY}/
 
-unset FAMILY_PATH
-unset BASE_IMAGE
-unset USER
-unset TIMEZONE
-unset BW_SERVER
 unset BW_CLIENTID
 unset BW_CLIENTSECRET
 unset BW_PASSWORD
-unset GITHUB_USERNAME
 ```
 
 And run a container:
@@ -268,6 +273,8 @@ docker run --interactive --name dotfiles --tty --rm <image> bash
 1. Export required environment variables:
 
 ```bash
+# Machine configuration. Options: work, perso
+$Env:MACHINE="work"
 # Update with your server address
 $Env:BW_SERVER="https://bw.domain.com"
 # Fill the blanks with your API credentials and password
@@ -364,13 +371,26 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
 - [Backblaze](https://www.backblaze.com)
 - Logitech Capture
 
+8. Clean sensitive information:
+
+```powershell
+$Env:BW_CLIENTID=$null
+$Env:BW_CLIENTSECRET=$null
+$Env:BW_PASSWORD=$null
+```
+
 ### Test
 
-If you want to test this setup, you need to have Docker installed and then you can run the commands below:
+Install Docker to test this setup.
+
+Then, build an image:
 
 ```ps1
-# Set build args
+# Machine configuration. Options: work, perso
+$Env:MACHINE="work"
+# Update with your server address
 $Env:BW_SERVER="https://bw.domain.com"
+# Fill the blanks with your API credentials and password
 $Env:BW_CLIENTID=""
 $Env:BW_CLIENTSECRET=""
 $Env:BW_PASSWORD=''
@@ -378,9 +398,22 @@ $Env:GITHUB_USERNAME=clement-deltel
 
 # Docker build and then run
 # Use option --progress=plain to see steps in more details
-docker build --build-arg BW_SERVER --build-arg BW_CLIENTID --build-arg BW_CLIENTSECRET --build-arg BW_PASSWORD --build-arg GITHUB_USERNAME --file docker/microsoft/Dockerfile --tag dotfiles docker/microsoft/
-docker run --interactive --name dotfiles --tty --rm dotfiles
+docker build --build-arg MACHINE --build-arg BW_SERVER --build-arg BW_CLIENTID --build-arg BW_CLIENTSECRET --build-arg BW_PASSWORD --build-arg GITHUB_USERNAME --file docker/microsoft/Dockerfile --tag dotfiles docker/microsoft/
 
+$Env:BW_CLIENTID=$null
+$Env:BW_CLIENTSECRET=$null
+$Env:BW_PASSWORD=$null
+```
+
+And run a container:
+
+```powershell
+docker run --interactive --name dotfiles --tty --rm dotfiles
+```
+
+To be tested:
+
+```powershell
 docker run --interactive --name dotfiles --tty --rm mcr.microsoft.com/windows/nanoserver:ltsc2022 powershell
 ```
 

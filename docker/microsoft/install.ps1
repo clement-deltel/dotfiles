@@ -37,7 +37,7 @@ Function ConfigureBitwarden{
 
   $BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
   New-Item "C:\Users\$username\.config\chezmoi" -ItemType Directory -ErrorAction SilentlyContinue
-  bw get notes chezmoi > "C:\Users\$username\.config\chezmoi\chezmoi.toml"
+  bw get notes chezmoi-$Env:MACHINE > "C:\Users\$username\.config\chezmoi\chezmoi.toml"
   bw lock
 }
 

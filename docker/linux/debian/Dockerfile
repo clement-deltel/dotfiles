@@ -1,15 +1,16 @@
 # Not persisted into the built image
-ARG BASE_IMAGE="ubuntu:22.04"
+ARG MACHINE="work"
+ARG IMAGE="ubuntu:22.04"
 ARG ID="1000"
-ARG USER="ubuntu"
+ARG USER="linux"
 ARG TIMEZONE="America/New_York"
 
 # Use image passed as argument as a parent image
-FROM ${BASE_IMAGE}
+FROM ${IMAGE}
 
 LABEL org.opencontainers.image.authors="Clement Deltel <38040315+clement-deltel@users.noreply.github.com>"
-LABEL org.opencontainers.image.title="dotfiles-${USER}"
-LABEL org.opencontainers.image.description="dotfiles-${USER}"
+LABEL org.opencontainers.image.title="dotfiles-${IMAGE}"
+LABEL org.opencontainers.image.description="dotfiles-${IMAGE}"
 
 # Not persisted into the built image
 ARG BW_SERVER
@@ -20,8 +21,8 @@ ARG GITHUB_USERNAME
 
 # Persisted into the built image
 ENV DEBIAN_FRONTEND=noninteractive
-ENV GITHUB_USERNAME=${GITHUB_USERNAME}
 ENV TZ=${TIMEZONE}
+ENV GITHUB_USERNAME=${GITHUB_USERNAME}
 
 # Install dependencies
 RUN apt update -y && apt install -y curl sudo tzdata

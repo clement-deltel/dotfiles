@@ -296,58 +296,60 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
 
 4. Chocolatey automatically install and configure the tools listed below:
 
-- [7-Zip](https://community.chocolatey.org/packages/7zip)
-- [AutoHotkey (Portable)](https://community.chocolatey.org/packages/autohotkey)
-- [AWS CLI v2](https://community.chocolatey.org/packages/awscli)
-- [Bitwarden CLI](https://community.chocolatey.org/packages/bitwarden-cli)
-- [BleachBit](https://community.chocolatey.org/packages/bleachbit.install)
-- [Citrix Workspace](https://community.chocolatey.org/packages/citrix-workspace)
-- [DBeaver - Community Edition](https://community.chocolatey.org/packages/dbeaver)
-- [Docker Engine](https://community.chocolatey.org/packages/docker-engine)
-- [FileZilla](https://community.chocolatey.org/packages/filezilla)
-- [Flameshot](https://community.chocolatey.org/packages/flameshot)
-- [GIMP](https://community.chocolatey.org/packages/gimp)
-- [Git](https://community.chocolatey.org/packages/git)
-- [Git Credential Manager](https://community.chocolatey.org/packages/git-credentials-manager-for-windows)
-- [Google Chrome](https://community.chocolatey.org/packages/googlechrome)
-- [Google Earth Pro](https://community.chocolatey.org/packages/googleearthpro)
-- [Insomnia](https://community.chocolatey.org/packages/insomnia-rest-api-client)
-- [iTunes](https://community.chocolatey.org/packages/itunes)
-- [Java SE (jdk8)](https://community.chocolatey.org/packages/jdk8)
-- [Keepass 2.x](https://community.chocolatey.org/packages/keepass)
-- [Logi Options+](https://community.chocolatey.org/packages/logioptionsplus)
-- [MongoDB Compass](https://community.chocolatey.org/packages/mongodb-compass)
-- [Nilesoft Shell](https://community.chocolatey.org/packages/nilesoft-shell)
-- [Notepad++](https://community.chocolatey.org/packages/notepadplusplus)
-- [Notion](https://community.chocolatey.org/packages/notion)
-- [Obsidian](https://community.chocolatey.org/packages/obsidian)
-- [Win32 OpenSSH](https://community.chocolatey.org/packages/openssh)
-- [Opera](https://community.chocolatey.org/packages/opera)
-- [Podman Desktop](https://community.chocolatey.org/packages/podman-desktop):
-- [PowerToys](https://community.chocolatey.org/packages/powertoys): set of utilities for power users to tune and streamline their Windows experience for greater productivity.
-- [PostgreSQL ODBC Driver](https://community.chocolatey.org/packages/psqlodbc): official PostgreSQL ODBC Driver.
-- [Pyenv-win](https://community.chocolatey.org/packages/pyenv-win): simple python version management tool.
-- [Python](https://community.chocolatey.org/packages/python): programming language that lets you work more quickly and integrate your systems more effectively.
-- [QGIS](https://community.chocolatey.org/packages/qgis): user friendly Open Source Geographic Information System (GIS).
-- [QuickLook](https://community.chocolatey.org/packages/quicklook): enables very quick preview of file by pressing Space key while highlighting it, without opening its associated application.
-- [Rufus](https://community.chocolatey.org/packages/rufus): utility that helps format and create bootable USB flash drives, such as USB keys/pendrives, memory sticks, etc.
-- [RustDesk](https://community.chocolatey.org/packages/rustdesk): remote desktop software, works out of the box, no configuration required.
-- [SoundSwitch](https://community.chocolatey.org/packages/soundswitch): switch your playback and recording devices using simple hotkeys.
-- [Spotify](https://community.chocolatey.org/packages/spotify): digital music service that gives you access to millions of songs.
-- [Sudo](https://community.chocolatey.org/packages/sudo): elevate directly from the shell.
-- [VeraCrypt](https://community.chocolatey.org/packages/veracrypt): disk encryption software for Windows, Mac OSX and Linux.
-- [VLC Media Player](https://community.chocolatey.org/packages/vlc): cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.
-- [VMWare Horizon Client](https://community.chocolatey.org/packages/vmware-horizon-client): access your remote desktops and published applications with the best possible user experience on the Local Area Network (LAN) or across a Wide Area Network (WAN).
-- [Visual Studio Code](https://community.chocolatey.org/packages/vscode): build and debug modern web and cloud applications.
-- [VSCodium](https://community.chocolatey.org/packages/vscodium): community-driven, freely-licensed binary distribution of Microsoft's editor VS Code.
-- [Webex Meetings - Cisco](https://community.chocolatey.org/packages/webex-meetings): video conferencing is as simple and seamless as meeting in person.
-- [WezTerm](https://community.chocolatey.org/packages/wezterm): GPU-accelerated cross-platform terminal emulator and multiplexer.
-- [Wireguard](https://community.chocolatey.org/packages/wireguard): extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography.
-- [WizTree](https://community.chocolatey.org/packages/wiztree): disk space analyzer utility.
-- [Yubico Authenticator](https://community.chocolatey.org/packages/yubico-authenticator): store your unique credential on a hardware-backed security key and take it wherever you go from mobile to desktop.
-- [Zoom](https://community.chocolatey.org/packages/zoom): unify cloud video conferencing, simple online meetings, group messaging, and a software-defined conference room solution into one easy-to-use platform.
+- Common
+  - [7-Zip](https://community.chocolatey.org/packages/7zip)
+  - [AutoHotkey (Portable)](https://community.chocolatey.org/packages/autohotkey)
+  - [Bitwarden CLI](https://community.chocolatey.org/packages/bitwarden-cli)
+  - [BleachBit](https://community.chocolatey.org/packages/bleachbit.install)
+  - [Docker Engine](https://community.chocolatey.org/packages/docker-engine)
+  - [FileZilla](https://community.chocolatey.org/packages/filezilla)
+  - [Flameshot](https://community.chocolatey.org/packages/flameshot)
+  - [Git](https://community.chocolatey.org/packages/git)
+  - [Git Credential Manager](https://community.chocolatey.org/packages/git-credentials-manager-for-windows)
+  - [Google Chrome](https://community.chocolatey.org/packages/googlechrome)
+  - [Logi Options+](https://community.chocolatey.org/packages/logioptionsplus)
+  - [Nilesoft Shell](https://community.chocolatey.org/packages/nilesoft-shell)
+  - [Notepad++](https://community.chocolatey.org/packages/notepadplusplus)
+  - [Obsidian](https://community.chocolatey.org/packages/obsidian)
+  - [Win32 OpenSSH](https://community.chocolatey.org/packages/openssh)
+  - [Opera](https://community.chocolatey.org/packages/opera)
+  - [PowerToys](https://community.chocolatey.org/packages/powertoys): set of utilities for power users to tune and streamline their Windows experience for greater productivity.
+  - [QuickLook](https://community.chocolatey.org/packages/quicklook): enables very quick preview of file by pressing Space key while highlighting it, without opening its associated application.
+  - [RustDesk](https://community.chocolatey.org/packages/rustdesk): remote desktop software, works out of the box, no configuration required.
+  - [Spotify](https://community.chocolatey.org/packages/spotify): digital music service that gives you access to millions of songs.
+  - [Sudo](https://community.chocolatey.org/packages/sudo): elevate directly from the shell.
+  - [VeraCrypt](https://community.chocolatey.org/packages/veracrypt): disk encryption software for Windows, Mac OSX and Linux.
+  - [Visual Studio Code](https://community.chocolatey.org/packages/vscode): build and debug modern web and cloud applications.
+  - [VLC Media Player](https://community.chocolatey.org/packages/vlc): cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.
+  - [VSCodium](https://community.chocolatey.org/packages/vscodium): community-driven, freely-licensed binary distribution of Microsoft's editor VS Code.
+  - [WezTerm](https://community.chocolatey.org/packages/wezterm): GPU-accelerated cross-platform terminal emulator and multiplexer.
+  - [WizTree](https://community.chocolatey.org/packages/wiztree): disk space analyzer utility.
+- Perso-specific
+- Work-specific
+  - [AWS CLI v2](https://community.chocolatey.org/packages/awscli)
+  - [Citrix Workspace](https://community.chocolatey.org/packages/citrix-workspace)
+  - [DBeaver - Community Edition](https://community.chocolatey.org/packages/dbeaver)
+  - [GIMP](https://community.chocolatey.org/packages/gimp)
+  - [Google Earth Pro](https://community.chocolatey.org/packages/googleearthpro)
+  - [Insomnia](https://community.chocolatey.org/packages/insomnia-rest-api-client)
+  - [Java SE (jdk8)](https://community.chocolatey.org/packages/jdk8)
+  - [Keepass 2.x](https://community.chocolatey.org/packages/keepass)
+  - [MongoDB Compass](https://community.chocolatey.org/packages/mongodb-compass)
+  - [Notion](https://community.chocolatey.org/packages/notion)
+  - [Podman Desktop](https://community.chocolatey.org/packages/podman-desktop)
+  - [PostgreSQL ODBC Driver](https://community.chocolatey.org/packages/psqlodbc): official PostgreSQL ODBC Driver.
+  - [Pyenv-win](https://community.chocolatey.org/packages/pyenv-win): simple python version management tool.
+  - [Python](https://community.chocolatey.org/packages/python): programming language that lets you work more quickly and integrate your systems more effectively.
+  - [QGIS](https://community.chocolatey.org/packages/qgis): user friendly Open Source Geographic Information System (GIS).
+  - [Rufus](https://community.chocolatey.org/packages/rufus): utility that helps format and create bootable USB flash drives, such as USB keys/pendrives, memory sticks, etc.
+  - [SoundSwitch](https://community.chocolatey.org/packages/soundswitch): switch your playback and recording devices using simple hotkeys.
+  - [VMWare Horizon Client](https://community.chocolatey.org/packages/vmware-horizon-client): access your remote desktops and published applications with the best possible user experience on the Local Area Network (LAN) or across a Wide Area Network (WAN).
+  - [Webex Meetings - Cisco](https://community.chocolatey.org/packages/webex-meetings): video conferencing is as simple and seamless as meeting in person.
+  - [Wireguard](https://community.chocolatey.org/packages/wireguard): extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography.
+  - [Yubico Authenticator](https://community.chocolatey.org/packages/yubico-authenticator): store your unique credential on a hardware-backed security key and take it wherever you go from mobile to desktop.
+  - [Zoom](https://community.chocolatey.org/packages/zoom): unify cloud video conferencing, simple online meetings, group messaging, and a software-defined conference room solution into one easy-to-use platform.
 
-5. Winget automatically install and configure the tools listed below:
+1. Winget automatically install and configure the tools listed below:
 
 - [Apple Devices](https://apps.microsoft.com/detail/9np83lwlpz9k)
 - [IAP Desktop](https://github.com/GoogleCloudPlatform/iap-desktop)

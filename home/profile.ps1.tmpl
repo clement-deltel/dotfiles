@@ -55,8 +55,8 @@ if ($isAdmin)
 #==============================================================================#
 #               ------- Environment ------                                     #
 #==============================================================================#
+$machine={{ .machine }}
 $user=$Env:UserName
-$Env:HOME="C:\Users\$user"
 $Env:XDG_CONFIG_HOME="C:\Users\$user\.config"
 
 #==============================================================================#
@@ -136,6 +136,11 @@ function cma { chezmoi apply }
 function cmu { chezmoi update --force }
 
 #==============================================================================#
+#               ------- Chocolatey ------                                      #
+#==============================================================================#
+function chocob { . $HOME\powershell\packages\chocolatey.ps1 backup $machine }
+
+#==============================================================================#
 #               ------- Docker ------                                          #
 #==============================================================================#
 function dim { docker images }
@@ -179,8 +184,7 @@ function pipir { pip install -r requirements.txt }
 
 # pyenv virtualenvs
 function vc {
-    $username = $Env:UserName
-    python -m virtualenv --python "C:\Users\$username\.pyenv\pyenv-win\versions\3.11.8\python.exe" $args }
+    python -m virtualenv --python "C:\Users\$user\.pyenv\pyenv-win\versions\3.11.8\python.exe" $args }
 
 #==============================================================================#
 #               ------- Visual Studio Code --------                            #

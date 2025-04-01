@@ -9,6 +9,8 @@
       - stern
     helm_install_tmp: /tmp/helm
     helm_install_url: https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+    helm_plugin_urls:
+      - https://github.com/jkroepke/helm-secrets/releases/latest/download/helm-secrets.tar.gz
     kubectl_install_tmp: /tmp/kubernetes
   vars_files:
     - ../vars/main.yml
@@ -162,6 +164,45 @@
       when: version is defined
       ansible.builtin.debug:
         msg: "Installed version: {{ version.stdout }}"
+
+  # Helm Plugins
+  - name: Helm Plugins
+    tags: [init, update]
+    block:
+
+    - name: Get plugins directory path
+      ansible.builtin.command:
+        cmd: helm env HELM_PLUGINS
+      register: plugins_path
+      changed_when: false
+
+    - name: Create plugins directory
+      ansible.builtin.file:
+        path: "{{ plugins_path }}"
+        state: directory
+        mode: 0755
+
+    - name: Download and install plugins
+      ansible.builtin.unarchive:
+        src: "{{ item }}"
+        dest: "{{ plugins_path.stdout }}"
+        remote_src: true
+        mode: 0755
+      loop: "{{ helm_plugin_urls }}"
+
+    always:
+    - name: Confirm installed plugins
+      tags: [init, update]
+      ansible.builtin.command:
+        cmd: helm plugin list
+      register: plugins_list
+      changed_when: false
+
+    - name: Show plugins
+      tags: [init, update]
+      when: plugins_list is defined
+      ansible.builtin.debug:
+        msg: "Installed plugins: {{ plugins_list.stdout }}"
 
   # Formulas
   - name: Formulas

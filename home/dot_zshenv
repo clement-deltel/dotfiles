@@ -11,7 +11,7 @@ export HOME=/home/${USER}
 export PATH=~/.local/bin:~/scripts:${PATH}
 
 export EDITOR='code --wait'
-export KUBE_EDITOR='code --wait'
+export KUBE_EDITOR='vim'
 
 # Bat
 export BAT_THEME="Visual Studio Dark+"

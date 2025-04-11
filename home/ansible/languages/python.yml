@@ -1,40 +1,6 @@
 - name: Python
   hosts: all
   gather_facts: false
-  vars:
-    install_tmp: /tmp/pyenv
-    install_url: https://pyenv.run
-    packages:
-      - python3
-      - python3-docker # used by Ansible modules
-      - python3-pip
-      - python3-venv
-      - python3.11-dev
-      - python3.11-venv
-      - python-is-python3
-    pip_packages:
-      - aiohttp
-      - asyncer
-      - filetype
-      - gradio
-      - markitdown
-      - onnxruntime
-      - pillow
-      - Pygments
-      - rembg
-      - watchdog
-    pyenv_dependencies:
-      - build-essential
-      - bzip2
-      - libffi-dev
-      - libncursesw5-dev
-      - libreadline-dev
-      - libsqlite3-dev
-      - libssl-dev
-      - zlib1g-dev
-    pyenv_formulas:
-      - pyenv
-      - pyenv-virtualenv
   vars_files:
     - ../vars/main.yml
 
@@ -46,13 +12,13 @@
     - name: List packages
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "packages: {{ packages }}"
+        msg: "packages: {{ python_packages }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install
       tags: init
       ansible.builtin.apt:
-        name: "{{ packages }}"
+        name: "{{ python_packages }}"
         state: present
         update_cache: true
 
@@ -60,7 +26,7 @@
     - name: Upgrade
       tags: update
       ansible.builtin.apt:
-        name: "{{ packages }}"
+        name: "{{ python_packages }}"
         state: latest
         update_cache: true
 
@@ -127,7 +93,7 @@
 
     - name: Create temporary directory
       ansible.builtin.file:
-        path: "{{ install_tmp }}"
+        path: "{{ pyenv_install_tmp }}"
         state: directory
         mode: 0700
 
@@ -135,21 +101,21 @@
     - name: Download install script
       ansible.builtin.uri:
         method: GET
-        url: "{{ install_url }}"
-        dest: "{{ install_tmp }}/pyenv.run"
+        url: "{{ pyenv_install_url }}"
+        dest: "{{ pyenv_install_tmp }}/pyenv.run"
         follow_redirects: safe
         mode: 0700
 
     - name: Install
       ansible.builtin.shell:
-        cmd: "{{ install_tmp }}/pyenv.run"
+        cmd: "{{ pyenv_install_tmp }}/pyenv.run"
         executable: /usr/bin/zsh
       register: install_result
       changed_when: install_result.rc == 0
 
     - name: Remove temporary directory
       ansible.builtin.file:
-        path: "{{ install_tmp }}"
+        path: "{{ pyenv_install_tmp }}"
         state: absent
 
   # Pyenv - Default Python version
@@ -161,7 +127,7 @@
     # pyenv install
     - name: pyenv - Install Python
       ansible.builtin.shell:
-        cmd: pyenv install {{ python_version }}
+        cmd: pyenv install {{ pyenv_python_version }}
         executable: /usr/bin/zsh
 
   # Pipx

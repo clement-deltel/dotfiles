@@ -1,9 +1,8 @@
 - name: Pulumi
   hosts: all
   gather_facts: false
-  vars:
-    install_tmp: /tmp/pulumi
-    install_url: https://get.pulumi.com
+  vars_files:
+    - ../vars/main.yml
 
   tasks:
   # Pulumi
@@ -14,7 +13,7 @@
 
     - name: Create temporary directory
       ansible.builtin.file:
-        path: "{{ install_tmp }}"
+        path: "{{ pulumi_install_tmp }}"
         state: directory
         mode: 0700
 
@@ -22,20 +21,20 @@
     - name: Download install script
       ansible.builtin.uri:
         method: GET
-        url: "{{ install_url }}"
-        dest: "{{ install_tmp }}/get.pulumi.com"
+        url: "{{ pulumi_install_url }}"
+        dest: "{{ pulumi_install_tmp }}/get.pulumi.com"
         follow_redirects: safe
         mode: 0700
 
     - name: Install
       ansible.builtin.command:
-        cmd: /bin/sh -c {{ install_tmp }}/get.pulumi.com
+        cmd: /bin/sh -c {{ pulumi_install_tmp }}/get.pulumi.com
       register: install_result
       changed_when: install_result.rc == 0
 
     - name: Remove temporary directory
       ansible.builtin.file:
-        path: "{{ install_tmp }}"
+        path: "{{ pulumi_install_tmp }}"
         state: absent
 
     # Version

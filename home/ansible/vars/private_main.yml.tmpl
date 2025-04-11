@@ -4,8 +4,49 @@
 deb_architecture: { "armv6l": "armhf", "armv7l": "armhf", "aarch64": "arm64", "x86_64": "amd64", "i386": "i386" }
 
 #==============================================================================#
+#               ------- APT ------
+#==============================================================================#
+apt_packages:
+  - apache2-utils   # htpasswd utility
+  - bash-completion
+  - bat
+  - build-essential
+  - cmake
+  - curl
+  - ethtool         # query and change settings such as speed, auto-negotiation and checksum offload
+  - figlet          # display large characters made up of ordinary screen characters
+  - fzf             # general-purpose command-line fuzzy finder
+  - git             # gold standard version control system
+  - git-filter-repo # quickly rewrite git repository history (filter-branch replacement)
+  - htop            # resources monitoring
+  - hwinfo          # probe for hardware
+  - jq              # command-line JSON processor
+  - libpq-dev       # library to develop with PostgreSQL
+  - man-db          # man pages
+  - net-tools
+  - nfs-common
+  - ninja-build
+  - pdftk
+  - pwgen           # random password generator
+  - software-properties-common
+  - ssh
+  - trippy          # network diagnostic tool
+  - tzdata          # timezone
+  - unzip
+  - vim             # text editor of choice
+  - xclip           # CLI clipboard utility
+  - zip
+apt_repositories:
+  - ppa:fujiapple/trippy
+
+#==============================================================================#
 #               ------- AWS ------
 #==============================================================================#
+aws_dependencies:
+  - firefox
+  - xdg-utils       # enable starting a browser to run aws sso login
+  - zip
+
 aws_profile: default
 aws_region: us-east-2
 aws_format: yaml
@@ -17,16 +58,223 @@ aws_sso_role_name: 'LocalAdminAccess'
 aws_sso_start_url: '{{ (bitwardenFields "item" "223277e3-498b-4d3c-9c0b-fe80e0e83d7b").sso_start_url.value }}'
 
 #==============================================================================#
+#               ------- Bitwarden ------
+#==============================================================================#
+bitwarden_dependencies:
+  - curl
+  - jq              # command-line JSON processor
+  - libsecret-1-0
+
+#==============================================================================#
 #               ------- Docker ------
 #==============================================================================#
 docker_gid: 1001
 docker_uid: 1001
 
+docker_dependencies:
+  - ca-certificates
+  - curl
+  - gnupg
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin
+
+docker_images:
+  - archlinux:base-20250302.0.316047
+  - debian:12.10
+  - fedora:42
+  - mongo:7.0.4
+  - nixos/nix:2.27.1
+  - postgis/postgis:15-3.4
+  - postgres:15.0
+  - quay.io/centos/centos:10
+  - rabbitmq:3.12.10-management
+  - redis:7.2.3
+  - ubuntu:22.04
+
+#==============================================================================#
+#               ------- Eza ------
+#==============================================================================#
+eza_dependencies:
+  - gpg
+
+eza_packages:
+  - eza
+
+#==============================================================================#
+#               ------- Git ------
+#==============================================================================#
+git_packages:
+  - git
+
+# git lfs
+git_lfs_install_tmp: /tmp/git
+git_lfs_install_url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
+
+git_lfs_packages:
+  - git-lfs
+
+#==============================================================================#
+#               ------- Go ------
+#==============================================================================#
+go_packages:
+  - sigs.k8s.io/kind@v0.26.0
+
+#==============================================================================#
+#               ------- Google Cloud Platform ------
+#==============================================================================#
+gcp_dependencies:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - firefox
+  - gnupg
+  - xdg-utils # enable starting a browser to run gcloud init
+
+gcp_packages:
+  - google-cloud-cli
+  - google-cloud-cli-gke-gcloud-auth-plugin
+
+#==============================================================================#
+#               ------- Helm ------
+#==============================================================================#
+helm_install_tmp: /tmp/helm
+helm_install_url: https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+helm_plugin_urls:
+  - https://github.com/jkroepke/helm-secrets/releases/latest/download/helm-secrets.tar.gz
+
+#==============================================================================#
+#               ------- Homebrew ------
+#==============================================================================#
+homebrew_dependencies:
+  - build-essential
+  - curl
+  - git # gold standard version control system
+  - language-pack-en
+  - locales
+
+homebrew_formulas:
+  - btop
+  - gitleaks
+  - grype
+  - lazydocker
+  - lazygit
+  - lnav
+  - tlrc
+  - tokei
+  - trivy
+
+homebrew_install_tmp: /tmp/homebrew
+homebrew_install_url: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+
+#==============================================================================#
+#               ------- Kubernetes ------
+#==============================================================================#
+kubernetes_formulas:
+  - helmfile
+  - kubectx
+  - k9s
+  - stern
+kubectl_install_tmp: /tmp/kubernetes
+
+#==============================================================================#
+#               ------- NodeJS ------
+#==============================================================================#
+node_dependencies:
+  - build-essential
+  - ca-certificates
+  - curl
+  - gnupg
+node_major: 20
+node_packages:
+  - nodejs
+npm_packages:
+  - "@bitnami/readme-generator-for-helm"
+
+#==============================================================================#
+#               ------- Oh My Posh ------
+#==============================================================================#
+omp_install_tmp: /tmp/ohmyposh
+omp_install_url: https://ohmyposh.dev/install.sh
+
+#==============================================================================#
+#               ------- Pulumi ------
+#==============================================================================#
+pulumi_install_tmp: /tmp/pulumi
+pulumi_install_url: https://get.pulumi.com
+
 #==============================================================================#
 #               ------- Python ------
 #==============================================================================#
-python_version: 3.11.8
+python_packages:
+  - gdal-bin        # executable to use GDAL with Python
+  - libbz2-dev      # data compression library to develop with Python
+  - libgdal-dev     # library to use GDAL with Python
+  - python3
+  - python3-docker  # used by Ansible modules
+  - python3-pip
+  - python3-venv
+  - python3.11-dev
+  - python3.11-venv
+  - python-is-python3
+
+# pip
+pip_packages:
+  - aiohttp
+  - asyncer
+  - filetype
+  - gradio
+  - markitdown
+  - onnxruntime
+  - pillow
+  - Pygments
+  - rembg
+  - watchdog
+
+# pyenv
+pyenv_dependencies:
+  - build-essential
+  - bzip2
+  - libffi-dev
+  - libncursesw5-dev
+  - libreadline-dev
+  - libsqlite3-dev
+  - libssl-dev
+  - zlib1g-dev
+pyenv_install_tmp: /tmp/pyenv
+pyenv_install_url: https://pyenv.run
+pyenv_python_version: 3.11.8
 
 # uv
 uv_install_tmp: /tmp/uv
 uv_install_url: https://astral.sh/uv/install.sh
+
+#==============================================================================#
+#               ------- Terraform ------
+#==============================================================================#
+terraform_dependencies:
+  - gnupg
+  - software-properties-common
+
+#==============================================================================#
+#               ------- WezTerm ------
+#==============================================================================#
+wezterm_packages:
+  - wezterm
+
+#==============================================================================#
+#               ------- Zoxide ------
+#==============================================================================#
+zoxide_install_tmp: /tmp/zoxide
+zoxide_install_url: https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh
+
+#==============================================================================#
+#               ------- Zsh ------
+#==============================================================================#
+zsh_dependencies:
+  - curl
+  - git
+  - zsh

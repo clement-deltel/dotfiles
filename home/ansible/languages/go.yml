@@ -1,9 +1,8 @@
 - name: Go
   hosts: all
   gather_facts: false
-  vars:
-    go_packages:
-      - sigs.k8s.io/kind@v0.26.0
+  vars_files:
+    - ../vars/main.yml
 
   tasks:
   # Packages

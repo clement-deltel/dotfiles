@@ -1,42 +1,8 @@
 - name: APT
   hosts: all
   gather_facts: false
-  vars:
-    packages:
-      - apache2-utils # htpasswd utility
-      - bash-completion
-      - bat
-      - build-essential
-      - cmake
-      - curl
-      - ethtool # query and change settings such as speed, auto-negotiation and checksum offload
-      - figlet # display large characters made up of ordinary screen characters
-      - fzf # general-purpose command-line fuzzy finder
-      - gdal-bin # executable to use GDAL with Python
-      - git # gold standard version control system
-      - git-filter-repo # Quickly rewrite git repository history (filter-branch replacement)
-      - htop # resources monitoring
-      - hwinfo # probe for hardware
-      - jq # command-line JSON processor
-      - libbz2-dev # data compression library to develop with Python
-      - libgdal-dev # library to use GDAL with Python
-      - libpq-dev # library to develop with PostgreSQL
-      - man-db # man pages
-      - net-tools
-      - nfs-common
-      - ninja-build
-      - pdftk
-      - pwgen # random password generator
-      - software-properties-common
-      - ssh
-      - trippy # network diagnostic tool
-      - tzdata # timezone
-      - unzip
-      - vim # text editor of choice
-      - xclip # CLI clipboard utility
-      - zip
-    repositories:
-      - ppa:fujiapple/trippy
+  vars_files:
+    - ../vars/main.yml
 
   tasks:
   # Repositories
@@ -46,13 +12,13 @@
 
     - name: List repositories
       ansible.builtin.debug:
-        msg: "packages: {{ repositories }}"
+        msg: "packages: {{ apt_repositories }}"
 
     # add-apt-repository
     - name: Add repositories
       ansible.builtin.apt_repository:
         repo: "{{ item }}"
-      loop: "{{ repositories }}"
+      loop: "{{ apt_repositories }}"
 
   # Packages
   - name: Packages
@@ -67,13 +33,13 @@
     - name: List packages
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "packages: {{ packages }}"
+        msg: "packages: {{ apt_packages }}"
 
     # sudo apt install -y
     - name: Install packages
       tags: init
       ansible.builtin.apt:
-        name: "{{ packages }}"
+        name: "{{ apt_packages }}"
         state: present
 
     # sudo apt remove -y
@@ -88,7 +54,7 @@
     - name: Upgrade packages
       tags: update
       ansible.builtin.apt:
-        name: "{{ packages }}"
+        name: "{{ apt_packages }}"
         state: latest
 
   # Cleaning

@@ -1,17 +1,6 @@
 - name: Kubernetes
   hosts: all
   gather_facts: true
-  vars:
-    formulas:
-      - helmfile
-      - kubectx
-      - k9s
-      - stern
-    helm_install_tmp: /tmp/helm
-    helm_install_url: https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-    helm_plugin_urls:
-      - https://github.com/jkroepke/helm-secrets/releases/latest/download/helm-secrets.tar.gz
-    kubectl_install_tmp: /tmp/kubernetes
   vars_files:
     - ../vars/main.yml
 
@@ -212,13 +201,13 @@
     - name: Homebrew - List formulas
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "Formulas: {{ formulas }}"
+        msg: "Formulas: {{ kubernetes_formulas }}"
 
     # brew install
     - name: Homebrew - Install formulas
       tags: init
       community.general.homebrew:
-        name: "{{ formulas }}"
+        name: "{{ kubernetes_formulas }}"
         state: present
         update_homebrew: true
 
@@ -226,6 +215,6 @@
     - name: Homebrew - Upgrade formulas
       tags: update
       community.general.homebrew:
-        name: "{{ formulas }}"
+        name: "{{ kubernetes_formulas }}"
         state: latest
         update_homebrew: true

@@ -1,37 +1,32 @@
 - name: Git
   hosts: all
   gather_facts: false
-  vars:
-    dependencies:
-      - git
-    install_tmp: /tmp/git
-    install_url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
-    packages:
-      - git-lfs
+  vars_files:
+    - ../vars/main.yml
 
   tasks:
-  # Dependencies
-  - name: Dependencies
+  # Packages
+  - name: Packages
     block:
 
-    - name: List dependencies
+    - name: List packages
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "dependencies: {{ dependencies }}"
+        msg: "packages: {{ git_packages }}"
 
     # sudo apt update -y && sudo apt install -y
-    - name: Install dependencies
+    - name: Install packages
       tags: init
       ansible.builtin.apt:
-        name: "{{ dependencies }}"
+        name: "{{ git_packages }}"
         state: present
         update_cache: true
 
     # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade dependencies
+    - name: Upgrade packages
       tags: update
       ansible.builtin.apt:
-        name: "{{ dependencies }}"
+        name: "{{ git_packages }}"
         state: latest
         update_cache: true
 
@@ -42,27 +37,27 @@
 
     - name: Create temporary directory
       ansible.builtin.file:
-        path: "{{ install_tmp }}"
+        path: "{{ git_lfs_install_tmp }}"
         state: directory
         mode: 0700
 
     - name: Download repository script
       ansible.builtin.uri:
         method: GET
-        url: "{{ install_url }}"
-        dest: "{{ install_tmp }}/script.deb.sh"
+        url: "{{ git_lfs_install_url }}"
+        dest: "{{ git_lfs_install_tmp }}/script.deb.sh"
         follow_redirects: safe
         mode: 0700
 
     - name: Add apt repository
       ansible.builtin.command:
-        cmd: /bin/bash -c {{ install_tmp }}/script.deb.sh
+        cmd: /bin/bash -c {{ git_lfs_install_tmp }}/script.deb.sh
       register: install_result
       changed_when: install_result.rc == 0
 
     - name: Remove temporary directory
       ansible.builtin.file:
-        path: "{{ install_tmp }}"
+        path: "{{ git_lfs_install_tmp }}"
         state: absent
 
   # Packages
@@ -72,13 +67,13 @@
     - name: List packages
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "packages: {{ packages }}"
+        msg: "packages: {{ git_lfs_packages }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install packages
       tags: init
       ansible.builtin.apt:
-        name: "{{ packages }}"
+        name: "{{ git_lfs_packages }}"
         state: present
         update_cache: true
 
@@ -86,7 +81,7 @@
     - name: Upgrade packages
       tags: update
       ansible.builtin.apt:
-        name: "{{ packages }}"
+        name: "{{ git_lfs_packages }}"
         state: latest
         update_cache: true
 

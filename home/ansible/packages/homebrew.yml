@@ -1,26 +1,9 @@
 - name: Homebrew
   hosts: all
   gather_facts: false
-  vars:
-    dependencies:
-      - build-essential
-      - curl
-      - git
-      - language-pack-en
-      - locales
-    formulas:
-      - btop
-      - gitleaks
-      - grype
-      - lazydocker
-      - lazygit
-      - lnav
-      - tlrc
-      - tokei
-      - trivy
-    install_tmp: /tmp/homebrew
-    install_url: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
-
+  vars_files:
+    - ../vars/main.yml
+    
   tasks:
   # Dependencies
   - name: Dependencies
@@ -29,13 +12,13 @@
     - name: List dependencies
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "dependencies: {{ dependencies }}"
+        msg: "dependencies: {{ homebrew_dependencies }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install dependencies
       tags: init
       ansible.builtin.apt:
-        name: "{{ dependencies }}"
+        name: "{{ homebrew_dependencies }}"
         state: present
         update_cache: true
 
@@ -43,7 +26,7 @@
     - name: Upgrade dependencies
       tags: update
       ansible.builtin.apt:
-        name: "{{ dependencies }}"
+        name: "{{ homebrew_dependencies }}"
         state: latest
         update_cache: true
 
@@ -55,27 +38,27 @@
 
     - name: Create temporary directory
       ansible.builtin.file:
-        path: "{{ install_tmp }}"
+        path: "{{ homebrew_install_tmp }}"
         state: directory
         mode: 0700
 
     - name: Download install script
       ansible.builtin.uri:
         method: GET
-        url: "{{ install_url }}"
-        dest: "{{ install_tmp }}/install.sh"
+        url: "{{ homebrew_install_url }}"
+        dest: "{{ homebrew_install_tmp }}/install.sh"
         follow_redirects: safe
         mode: 0700
 
     - name: Install
       ansible.builtin.command:
-        cmd: /bin/bash -c {{ install_tmp }}/install.sh
+        cmd: /bin/bash -c {{ homebrew_install_tmp }}/install.sh
       register: install_result
       changed_when: install_result.rc == 0
 
     - name: Remove temporary directory
       ansible.builtin.file:
-        path: "{{ install_tmp }}"
+        path: "{{ homebrew_install_tmp }}"
         state: absent
 
   # Formulas
@@ -86,13 +69,13 @@
     - name: List formulas
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "Formulas: {{ formulas }}"
+        msg: "Formulas: {{ homebrew_formulas }}"
 
     # brew install
     - name: Install formulas
       tags: init
       community.general.homebrew:
-        name: "{{ formulas }}"
+        name: "{{ homebrew_formulas }}"
         state: present
         update_homebrew: true
 
@@ -100,6 +83,6 @@
     - name: Upgrade formulas
       tags: update
       community.general.homebrew:
-        name: "{{ formulas }}"
+        name: "{{ homebrew_formulas }}"
         state: latest
         update_homebrew: true

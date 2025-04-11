@@ -2,17 +2,6 @@
 - name: GCP
   hosts: all
   gather_facts: true
-  vars:
-    dependencies:
-      - apt-transport-https
-      - ca-certificates
-      - curl
-      - firefox
-      - gnupg
-      - xdg-utils # Enable starting a browser to run gcloud init
-    packages:
-      - google-cloud-cli
-      - google-cloud-cli-gke-gcloud-auth-plugin
   vars_files:
     - ../vars/main.yml
 
@@ -24,13 +13,13 @@
     - name: List dependencies
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "dependencies: {{ dependencies }}"
+        msg: "dependencies: {{ gcp_dependencies }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install dependencies
       tags: init
       ansible.builtin.apt:
-        name: "{{ dependencies }}"
+        name: "{{ gcp_dependencies }}"
         state: present
         update_cache: true
 
@@ -38,7 +27,7 @@
     - name: Upgrade dependencies
       tags: update
       ansible.builtin.apt:
-        name: "{{ dependencies }}"
+        name: "{{ gcp_dependencies }}"
         state: latest
         update_cache: true
 
@@ -83,13 +72,13 @@
     - name: List packages
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "packages: {{ packages }}"
+        msg: "packages: {{ gcp_packages }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install
       tags: init
       ansible.builtin.apt:
-        name: "{{ packages }}"
+        name: "{{ gcp_packages }}"
         state: present
         update_cache: true
 
@@ -97,7 +86,7 @@
     - name: Upgrade
       tags: update
       ansible.builtin.apt:
-        name: "{{ packages }}"
+        name: "{{ gcp_packages }}"
         state: latest
         update_cache: true
 

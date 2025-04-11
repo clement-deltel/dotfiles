@@ -1,11 +1,8 @@
 - name: Bitwarden CLI
   hosts: all
   gather_facts: true
-  vars:
-    dependencies:
-      - curl
-      - jq
-      - libsecret-1-0
+  vars_files:
+    - ../vars/main.yml
 
   tasks:
   # Dependencies
@@ -15,13 +12,13 @@
     - name: List dependencies
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "dependencies: {{ dependencies }}"
+        msg: "dependencies: {{ bitwarden_dependencies }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install dependencies
       tags: init
       ansible.builtin.apt:
-        name: "{{ dependencies }}"
+        name: "{{ bitwarden_dependencies }}"
         state: present
         update_cache: true
 
@@ -29,7 +26,7 @@
     - name: Upgrade dependencies
       tags: update
       ansible.builtin.apt:
-        name: "{{ dependencies }}"
+        name: "{{ bitwarden_dependencies }}"
         state: latest
         update_cache: true
 

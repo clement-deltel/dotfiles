@@ -1,10 +1,6 @@
 - name: Terraform
   hosts: all
   gather_facts: true
-  vars:
-    dependencies:
-      - gnupg
-      - software-properties-common
   vars_files:
     - ../vars/main.yml
 
@@ -16,13 +12,13 @@
     - name: List dependencies
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "dependencies: {{ dependencies }}"
+        msg: "dependencies: {{ terraform_dependencies }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install dependencies
       tags: init
       ansible.builtin.apt:
-        name: "{{ dependencies }}"
+        name: "{{ terraform_dependencies }}"
         state: present
         update_cache: true
 
@@ -30,7 +26,7 @@
     - name: Upgrade dependencies
       tags: update
       ansible.builtin.apt:
-        name: "{{ dependencies }}"
+        name: "{{ terraform_dependencies }}"
         state: latest
         update_cache: true
 

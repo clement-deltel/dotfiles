@@ -7,14 +7,14 @@ case "$TERM" in
 esac
 
 #==============================================================================#
-#               ------- History ------                                         #
+#               ------- History ------
 #==============================================================================#
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 HISTSIZE=9999
 
 #==============================================================================#
-#               ------- Environment ------                                     #
+#               ------- Environment ------
 #==============================================================================#
 
 # fzf
@@ -28,7 +28,7 @@ DISABLE_FZF_KEY_BINDINGS="false"
 eval "$(zoxide init zsh --cmd cd)"
 
 #==============================================================================#
-#               ------- Alias-Finder ------                                    #
+#               ------- Alias-Finder ------
 #==============================================================================#
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
 zstyle ':omz:plugins:alias-finder' longer yes # disabled by default
@@ -36,13 +36,13 @@ zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
 zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 
 #==============================================================================#
-#               ------- Docker ------                                          #
+#               ------- Docker ------
 #==============================================================================#
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 #==============================================================================#
-#               ------- Eza ------                                             #
+#               ------- Eza ------
 #==============================================================================#
 zstyle ':omz:plugins:eza' 'dirs-first' yes
 zstyle ':omz:plugins:eza' 'git-status' yes
@@ -54,13 +54,13 @@ zstyle ':omz:plugins:eza' 'size-prefix' si # binary,none
 zstyle ':omz:plugins:eza' 'hyperlink' no
 
 #==============================================================================#
-#               ------- Antidote --------                                      #
+#               ------- Antidote --------
 #==============================================================================#
 source ${HOME}/.local/antidote/antidote.zsh
 antidote load ${HOME}/.config/zsh/plugins.txt
 
 #==============================================================================#
-#               ------- Personal Aliases & Functions --------                  #
+#               ------- Personal Aliases & Functions --------
 #==============================================================================#
 function source-if-exists (){ if test -r "$1"; then source "$1"; fi; }
 
@@ -76,12 +76,12 @@ function load-aliases-and-functions (){
 precmd_functions+=(load-aliases-and-functions)
 
 #==============================================================================#
-#               ------- Completions --------                                   #
+#               ------- Completions --------
 #==============================================================================#
 eval "$(gitleaks completion zsh)"
 
 #==============================================================================#
-#               ------- Oh My Posh --------                                    #
+#               ------- Oh My Posh --------                                    
 #==============================================================================#
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/default.toml)"

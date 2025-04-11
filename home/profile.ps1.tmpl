@@ -1,7 +1,7 @@
 # profile.ps1
 
 #==============================================================================#
-#               ------- Installation ------                                    #
+#               ------- Installation ------
 #==============================================================================#
 
 # Profile can be used for the current user, and all hosts (Console, ISE)
@@ -17,7 +17,7 @@
 # ise $profile.AllUsersAllHosts
 
 #==============================================================================#
-#               ------- Configuration --------                                 #
+#               ------- Configuration --------
 #==============================================================================#
 
 # Find out if the current user identity is elevated (has admin rights)
@@ -53,14 +53,14 @@ if ($isAdmin)
 }
 
 #==============================================================================#
-#               ------- Environment ------                                     #
+#               ------- Environment ------
 #==============================================================================#
 $machine={{ .machine }}
 $user=$Env:UserName
 $Env:XDG_CONFIG_HOME="C:\Users\$user\.config"
 
 #==============================================================================#
-#               ------- Aliases --------                                       #
+#               ------- Aliases --------
 #==============================================================================#
 # Basic Linux commands that are working in PowerShell and for which it is not
 # necessary to create an alias
@@ -85,7 +85,7 @@ New-Alias -Name "ll" -Value Get-ChildItem -Option ReadOnly
 New-Alias -Name "reboot" -Value Restart-Computer -Description "Restarts the operating system on local and remote computers" -Option ReadOnly
 
 #==============================================================================#
-#               ------- Functions ------                                       #
+#               ------- Functions ------
 #==============================================================================#
 
 # Shortcuts for traversing directories
@@ -130,18 +130,18 @@ function watch {
 }
 
 #==============================================================================#
-#               ------- Chezmoi ------                                         #
+#               ------- Chezmoi ------
 #==============================================================================#
 function cma { chezmoi apply }
 function cmu { chezmoi update --force }
 
 #==============================================================================#
-#               ------- Chocolatey ------                                      #
+#               ------- Chocolatey ------
 #==============================================================================#
 function chocob { . $HOME\powershell\packages\chocolatey.ps1 backup $machine }
 
 #==============================================================================#
-#               ------- Docker ------                                          #
+#               ------- Docker ------
 #==============================================================================#
 function dim { docker images }
 function dirm { docker image rm $args }
@@ -155,13 +155,13 @@ function dvls { docker volume ls }
 function dvrm { docker volume rm $args }
 
 #==============================================================================#
-#               ------- Docker Compose ------                                  #
+#               ------- Docker Compose ------
 #==============================================================================#
 function dcu { docker-compose up -d }
 function dcd { docker-compose down -v }
 
 #==============================================================================#
-#               ------- Kubernetes ------                                      #
+#               ------- Kubernetes ------
 #==============================================================================#
 function kdp { kubectl delete pod $args }
 function kex { kubectl exec --stdin --tty $args -- bash }
@@ -175,7 +175,7 @@ function kro { kubectl rollout restart deployment $args -n default }
 function ksl { kubectl get secret $args -o jsonpath='{.data}' }
 
 #==============================================================================#
-#               ------- Python ------                                          #
+#               ------- Python ------
 #==============================================================================#
 
 # pip
@@ -187,6 +187,6 @@ function vc {
     python -m virtualenv --python "C:\Users\$user\.pyenv\pyenv-win\versions\3.11.8\python.exe" $args }
 
 #==============================================================================#
-#               ------- Visual Studio Code --------                            #
+#               ------- Visual Studio Code --------                            
 #==============================================================================#
 function cwo { code *.code-workspace }

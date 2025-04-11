@@ -92,20 +92,20 @@
     cm = commit -m
 
     # config
-    cl = "config --list"
-    cls = "config --list --show-origin"
     cla = "!git config --list | grep alias | cut -c 7-"
+    cli = "config --list"
+    cls = "config --list --show-origin"
     clu = "!git config --list --show-origin | grep user"
 
     # log
-    lo = log --oneline --decorate
     lg = log --graph --abbrev-commit --decorate=no --date=format:'%Y-%m-%d %H:%I:%S' --pretty=format:'%C(03)%>|(15)%h%C(reset) %C(04)%ad%C(reset) %C(green)%<(16,trunc)%an%C(reset) %C(auto)%d%C(reset) %C(bold 0)%>|(1)%s%C(reset)'
-    lgo = log --graph --oneline --decorate
     lga = log --all --graph --abbrev-commit --decorate=no --date=format:'%Y-%m-%d %H:%I:%S' --pretty=format:'%C(03)%>|(15)%h%C(reset) %C(04)%ad%C(reset) %C(green)%<(16,trunc)%an%C(reset) %C(auto)%d%C(reset) %C(bold 0)%>|(1)%s%C(reset)'
+    lgo = log --graph --oneline --decorate
+    lo = log --oneline --decorate
 
     # remote
-    rv = remote -v
     rs = remote show
+    rv = remote -v
 
     # reset
     r = reset
@@ -114,3 +114,6 @@
     rh = reset --hard
     rh1 = reset HEAD^ --hard
     rh2 = reset HEAD^^ --hard
+
+    # zip
+    zip = "!git archive --format=zip HEAD ':!*.gitignore' -o ${PWD##*/}.zip"

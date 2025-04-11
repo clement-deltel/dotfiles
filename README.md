@@ -107,6 +107,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
           - [commitizen](https://github.com/commitizen-tools/commitizen): create committing rules for projects, auto bump versions, and auto changelog generation.
           - [poetry](https://github.com/python-poetry/poetry): Python packaging and dependency management made easy.
         - [pyenv](https://github.com/pyenv/pyenv): simple Python version management.
+        - [uv](https://github.com/astral-sh/uv): Python package and project manager, written in Rust.
     - Orchestration
       - Docker
       - Kubernetes

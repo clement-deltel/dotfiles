@@ -66,17 +66,17 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
         - [hwinfo](https://www.commandlinux.com/man-page/man8/hwinfo.8.html): probe for hardware.
         - [jq](https://github.com/jqlang/jq): command-line JSON processor.
         - [pdftk](https://www.pdflabs.com/tools/pdftk-server): command-line tool for working with PDFs.
-        - [pwgen](https://linux.die.net/man/1/pwgen): generate pronounceable passwords.
+        - [pwgen](https://linux.die.net/man/1/pwgen): random password generator.
         - [trippy](https://github.com/fujiapple852/trippy): network diagnostic tool.
         - [vim](https://github.com/vim/vim)
-        - [xclip](https://github.com/astrand/xclip): command line interface to the X11 clipboard.
+        - [xclip](https://github.com/astrand/xclip): command-line interface to the X11 clipboard.
       - [homebrew](https://github.com/Homebrew/brew): the missing package manager for Linux.
         - [btop](https://github.com/aristocratos/btop): monitor of resources.
         - [grype](https://github.com/anchore/grype): vulnerability scanner for container images and filesystems.
         - [lazydocker](https://github.com/jesseduffield/lazydocker): lazier way to manage everything Docker.
         - [lazygit](https://github.com/jesseduffield/lazygit): simple terminal UI for git commands.
         - [lnav](https://github.com/tstack/lnav): log file navigator.
-        - [tldr](https://github.com/tldr-pages/tlrc): tldr client written in Rust.
+        - [tldr](https://github.com/tldr-pages/tlrc): tldr client, written in Rust.
         - [tokei](https://github.com/XAMPPRocky/tokei): count your code, quickly.
         - [Trivy](https://github.com/aquasecurity/trivy): find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more.
       - [npm](https://github.com/npm/cli): node package manager.
@@ -91,7 +91,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
     - Version Control System (VCS)
       - Git
         - [gitleaks](https://github.com/gitleaks/gitleaks): tool for detecting secrets like passwords, API keys, and tokens in git repos.
-        - [git-lfs](https://github.com/git-lfs/git-lfs): git extension for versioning large files
+        - [git-lfs](https://github.com/git-lfs/git-lfs): git extension for versioning large files.
     - Security
       - [Bitwarden CLI](https://bitwarden.com/help/cli/)
     - Languages

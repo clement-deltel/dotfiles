@@ -9,7 +9,7 @@ deb_architecture: { "armv6l": "armhf", "armv7l": "armhf", "aarch64": "arm64", "x
 apt_packages:
   - apache2-utils   # htpasswd utility
   - bash-completion
-  - bat
+  - bat             # cat(1) clone with wings
   - build-essential
   - cmake
   - curl
@@ -26,7 +26,7 @@ apt_packages:
   - net-tools
   - nfs-common
   - ninja-build
-  - pdftk
+  - pdftk           # command-line tool for working with PDFs
   - pwgen           # random password generator
   - software-properties-common
   - ssh
@@ -34,7 +34,7 @@ apt_packages:
   - tzdata          # timezone
   - unzip
   - vim             # text editor of choice
-  - xclip           # CLI clipboard utility
+  - xclip           # command-line interface to the X11 clipboard
   - zip
 apt_repositories:
   - ppa:fujiapple/trippy
@@ -102,7 +102,7 @@ eza_dependencies:
   - gpg
 
 eza_packages:
-  - eza
+  - eza             # modern alternative to ls
 
 #==============================================================================#
 #               ------- Git ------
@@ -115,7 +115,7 @@ git_lfs_install_tmp: /tmp/git
 git_lfs_install_url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
 
 git_lfs_packages:
-  - git-lfs
+  - git-lfs         # git extension for versioning large files
 
 #==============================================================================#
 #               ------- Go ------
@@ -132,7 +132,7 @@ gcp_dependencies:
   - curl
   - firefox
   - gnupg
-  - xdg-utils # enable starting a browser to run gcloud init
+  - xdg-utils       # enable starting a browser to run gcloud init
 
 gcp_packages:
   - google-cloud-cli
@@ -152,20 +152,20 @@ helm_plugin_urls:
 homebrew_dependencies:
   - build-essential
   - curl
-  - git # gold standard version control system
+  - git             # gold standard version control system
   - language-pack-en
   - locales
 
 homebrew_formulas:
-  - btop
-  - gitleaks
-  - grype
-  - lazydocker
-  - lazygit
-  - lnav
-  - tlrc
-  - tokei
-  - trivy
+  - btop            # monitor of resources
+  - gitleaks        # tool for detecting secrets like passwords, API keys, and tokens in git repos
+  - grype           # vulnerability scanner for container images and filesystems
+  - lazydocker      # lazier way to manage everything Docker
+  - lazygit         # simple terminal UI for git commands
+  - lnav            # log file navigator
+  - tlrc            # tldr client, written in Rust
+  - tokei           # count your code, quickly
+  - trivy           # find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more
 
 homebrew_install_tmp: /tmp/homebrew
 homebrew_install_url: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
@@ -174,10 +174,10 @@ homebrew_install_url: https://raw.githubusercontent.com/Homebrew/install/HEAD/in
 #               ------- Kubernetes ------
 #==============================================================================#
 kubernetes_formulas:
-  - helmfile
-  - kubectx
-  - k9s
-  - stern
+  - helmfile        # declaratively deploy your Kubernetes manifests, Kustomize configs, and Charts as Helm releases
+  - kubectx         # faster way to switch between clusters and namespaces in kubectl
+  - k9s             # Kubernetes CLI to manage your clusters in style
+  - stern           # multi pod and container log tailing for Kubernetes
 kubectl_install_tmp: /tmp/kubernetes
 
 #==============================================================================#
@@ -192,7 +192,7 @@ node_major: 20
 node_packages:
   - nodejs
 npm_packages:
-  - "@bitnami/readme-generator-for-helm"
+  - "@bitnami/readme-generator-for-helm" # auto generate READMEs for Helm Charts
 
 #==============================================================================#
 #               ------- Oh My Posh ------

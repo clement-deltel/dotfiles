@@ -51,3 +51,7 @@
   import_playbook: cloud/aws.yml
 - name: GCP
   import_playbook: cloud/gcp.yml
+
+# System
+- name: NVIDIA
+  import_playbook: system/nvidia.yml

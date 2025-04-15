@@ -1,0 +1,83 @@
+- name: NVIDIA
+  hosts: all
+  gather_facts: false
+  vars_files:
+    - ../vars/main.yml
+
+  tasks:
+  # Repository
+  - name: Repository
+    tags: init
+    block:
+
+    - name: Create /etc/apt/keyrings directory
+      ansible.builtin.file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: 0755
+
+    # wget -O- https://nvidia.github.io/libnvidia-container/gpgkey | gpg --dearmor | sudo tee /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg > /dev/null
+    - name: Download GPG apt key
+      ansible.builtin.uri:
+        method: GET
+        url: https://nvidia.github.io/libnvidia-container/gpgkey
+        dest: /tmp/nvidia-container-toolkit.gpg
+        follow_redirects: safe
+        mode: 0644
+
+    - name: Import GPG key
+      ansible.builtin.command:
+        cmd: gpg --dearmor --output /etc/apt/keyrings/nvidia-container-toolkit-keyring.gpg --yes /tmp/nvidia-container-toolkit.gpg
+
+    # echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list" | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list > /dev/null
+    - name: Add apt repository
+      ansible.builtin.apt_repository:
+        repo: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list
+
+    - name: Remove GPG temporary key
+      ansible.builtin.file:
+        path: /tmp/nvidia-container-toolkit.gpg
+        state: absent
+
+  # Packages
+  - name: Packages
+    block:
+
+    # sudo apt update -y
+    - name: Update cache
+      tags: [init, update]
+      ansible.builtin.apt:
+        update_cache: true
+
+    - name: List packages
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "packages: {{ nvidia_packages }}"
+
+    # sudo apt install -y
+    - name: Install packages
+      tags: init
+      ansible.builtin.apt:
+        name: "{{ nvidia_packages }}"
+        state: present
+
+    # sudo apt upgrade -y
+    - name: Upgrade packages
+      tags: update
+      ansible.builtin.apt:
+        name: "{{ nvidia_packages }}"
+        state: latest
+
+  # Docker Configuration
+  - name: Docker Configuration
+    tag: init
+    block:
+
+    - name: Run toolkit runtime configuration
+      ansible.builtin.command: nvidia-ctk runtime configure --runtime=docker
+
+    - name: Restart Docker service
+      ansible.builtin.systemd:
+        name: docker
+        state: restarted
+        enabled: yes

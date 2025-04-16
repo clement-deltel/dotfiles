@@ -1,0 +1,33 @@
+---
+services:
+  faster-whisper:
+    container_name: faster-whisper
+    cpus: 2
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    image: lscr.io/linuxserver/faster-whisper:2.4.0-gpu
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - WHISPER_BEAM=1 #optional
+      - WHISPER_LANG=en #optional
+      - WHISPER_MODEL=large-v3-int8
+    logging:
+      driver: json-file
+      options:
+        max-file: 3
+        max-size: 5m
+    mem_limit: 16g
+    memswap_limit: 8g
+    ports:
+      - 10300:10300
+    restart: unless-stopped
+    stop_grace_period: 30s
+    volumes:
+      - ./data:/config

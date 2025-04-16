@@ -10,6 +10,7 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io).
   - [Shell](#shell)
   - [Update](#update)
   - [Test](#test)
+  - [Containers](#containers)
 - [Microsoft Windows](#microsoft-windows)
   - [Install](#install-1)
   - [Test](#test-1)
@@ -103,6 +104,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
         - pip
           - [markitdown](https://github.com/microsoft/markitdown): Python tool for converting files and office documents to Markdown.
           - [Pygments](https://github.com/pygments/pygments): generic syntax highlighter written in Python.
+          - [whisper-live](https://github.com/collabora/WhisperLive): nearly-live implementation of OpenAI's Whisper.
         - [pipx](https://github.com/pypa/pipx): install and run Python applications in isolated environments.
           - [commitizen](https://github.com/commitizen-tools/commitizen): create committing rules for projects, auto bump versions, and auto changelog generation.
           - [poetry](https://github.com/python-poetry/poetry): Python packaging and dependency management made easy.
@@ -123,15 +125,12 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
     - Cloud
       - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
       - [GCP CLI](https://cloud.google.com/sdk/docs/install)
+    - System
+      - NVIDIA
+        - [container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/index.html): collection of libraries and utilities enabling users to build and run GPU-accelerated containers.
+        - [cuda-toolkit](https://docs.nvidia.com/cuda/index.html): development environment for creating high performance GPU-accelerated applications.
 
-5. Run extra playbooks if needed:
-
-```bash
-# Pull Docker images: archlinux, centos, debian, fedora, mongodb, nixos, postgis, postgres, rabbitmq, redis, ubuntu
-ansible-playbook --become --connection local --inventory "localhost," --tags init ~/ansible/orchestration/images.yml
-```
-
-6. Clean sensitive information:
+5. Clean sensitive information:
 
 ```bash
 unset BW_CLIENTID
@@ -268,6 +267,19 @@ To be tested:
 ```bash
 docker run --interactive --name dotfiles --tty --rm <image> bash
 ```
+
+### Containers
+
+If needed, run this extra playbook to pull quite handy base images:
+
+```bash
+# Pull Docker images: archlinux, centos, debian, fedora, mongodb, nixos, postgis, postgres, rabbitmq, redis, ubuntu
+ansible-playbook --become --connection local --inventory "localhost," --tags init ~/ansible/orchestration/images.yml
+```
+
+Here is the list of containerized tools that I use:
+
+- [Faster Whisper](https://github.com/SYSTRAN/faster-whisper): faster whisper transcription with ctranslate2. I use more specifically the image provided by linuxserver for which the source code is available [here](https://github.com/linuxserver/docker-faster-whisper).
 
 ## Microsoft Windows
 

@@ -5,8 +5,8 @@
     - ../vars/main.yml
 
   tasks:
-  # Repository
-  - name: Repository
+  # Repository - Container Toolkit
+  - name: Repository - Container Toolkit
     tags: init
     block:
 
@@ -16,7 +16,7 @@
         state: directory
         mode: 0755
 
-    # wget -O- https://nvidia.github.io/libnvidia-container/gpgkey | gpg --dearmor | sudo tee /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg > /dev/null
+    # wget -O- https://nvidia.github.io/libnvidia-container/gpgkey | gpg --dearmor | sudo tee /etc/apt/keyrings/nvidia-container-toolkit-keyring.gpg > /dev/null
     - name: Download GPG apt key
       ansible.builtin.uri:
         method: GET
@@ -29,15 +29,47 @@
       ansible.builtin.command:
         cmd: gpg --dearmor --output /etc/apt/keyrings/nvidia-container-toolkit-keyring.gpg --yes /tmp/nvidia-container-toolkit.gpg
 
-    # echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list" | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list > /dev/null
+    # echo "deb [signed-by=/etc/apt/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/deb/$(dpkg --print-architecture) /" | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list > /dev/null
     - name: Add apt repository
       ansible.builtin.apt_repository:
-        repo: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list
+        repo: deb [signed-by=/etc/apt/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/deb/{{ deb_architecture[ansible_architecture] }} /
 
     - name: Remove GPG temporary key
       ansible.builtin.file:
         path: /tmp/nvidia-container-toolkit.gpg
         state: absent
+
+  # Repository - CUDA Toolkit
+  - name: Repository - CUDA Toolkit
+    tags: init
+    block:
+
+    - name: Download repository pin
+      ansible.builtin.uri:
+        method: GET
+        url: https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
+        dest: /etc/apt/preferences.d/cuda-repository-pin-600
+        follow_redirects: safe
+        mode: 0644
+
+    - name: Download and install repository deb package
+      ansible.builtin.apt:
+        deb: https://developer.download.nvidia.com/compute/cuda/12.8.1/local_installers/cuda-repo-wsl-ubuntu-12-8-local_12.8.1-1_amd64.deb
+        state: present
+
+    - name: Find keyring file
+      ansible.builtin.find:
+        paths: /var/cuda-repo-wsl-ubuntu-12-8-local
+        patterns: "cuda-*-keyring.gpg"
+      register: keyring_file
+
+    - name: Copy keyring to /usr/share/keyrings/
+      ansible.builtin.copy:
+        src: "{{ keyring_file.files[0].path }}"
+        dest: /usr/share/keyrings/
+        remote_src: yes
+        mode: 0644
+      when: keyring_file.files | length > 0
 
   # Packages
   - name: Packages

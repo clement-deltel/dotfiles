@@ -25,6 +25,9 @@ function lsdp { find . -maxdepth "$1" -ls -path "./.git*" -prune; }
 # Make directory $1 and then cd inside
 function mkcd { mkdir "$1"; cd "$1" || return; }
 
+# Replace separator in CSV file from ';' to ','
+function sep { find . -name '*.csv' -exec sed -i 's/;/,/g' {} \;; }
+
 # Tail with continuous monitoring of a given file with syntax highlighting
 function tailc { tail -f "$1" | batcat -l log --paging=never; }
 
@@ -210,7 +213,7 @@ function venv-install-fn {
 
 {{- if eq .shell "bash" }}
 #==============================================================================#
-#               ------- Terraform ------                                       
+#               ------- Terraform ------
 #==============================================================================#
 function terraform-fn { terraform "$@"; }
 function terraform-state-fn { terraform state "$@"; }

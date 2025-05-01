@@ -368,7 +368,6 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
 
 - [Apple Devices](https://apps.microsoft.com/detail/9np83lwlpz9k)
 - [IAP Desktop](https://github.com/GoogleCloudPlatform/iap-desktop)
-- [Intel Unison](https://apps.microsoft.com/detail/9pp9gzm2gn26)
 - [Microsoft Sysinternals](https://apps.microsoft.com/detail/9p7knl5rwt25)
 - [Rainmeter](https://www.rainmeter.net)
 - [Trello](https://apps.microsoft.com/detail/9nblggh4xxvw)

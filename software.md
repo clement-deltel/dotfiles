@@ -136,6 +136,7 @@ Not using anymore:
   - [PDF Gear](https://community.chocolatey.org/packages/pdfgear): read, edit, convert, merge, and sign PDF files across devices, for completely free and without signing up. **Reason**: too bloated and slow.
   - [TreeSize Free](https://community.chocolatey.org/packages/treesizefree): tells you where precious disk space has gone. **Reason**: using WizTree instead.
 - Winget
+  - [Intel Unison](https://apps.microsoft.com/detail/9pp9gzm2gn26): seamlessly connects your PC and mobile devices. **Reason**: being deprecated.
   - [PDF Merger & Splitter](https://www.anywaysoft.com/pdf-merger-splitter/index.html): using pdftk in WSL2 instead.
 - Other
   - [Google Chrome Desktop](https://remotedesktop.google.com): using RustDesk instead.

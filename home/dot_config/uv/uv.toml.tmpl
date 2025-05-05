@@ -7,7 +7,11 @@ compile-bytecode = true
 # extra-index-url = ["https://download.pytorch.org/whl/cpu"]
 
 # Strategy to use when resolving against multiple index URLs
-index-strategy = "unsafe-best-match"
+# Only use results from the first index that returns a match for a given package name
+index-strategy = "first-index"
+# Search for every package name across all indexes, exhausting the versions from the first index before moving on to the next
+# index-strategy = "unsafe-best-match"
+
 # Whether to allow Python downloads.
 python-downloads = "automatic"
 # Mirror URL for downloading managed Python installations
@@ -21,10 +25,12 @@ resolution = "highest"
 
 [[index]]
 name = "pypi"
-url = "https://test.pypi.org/simple"
-default = true
+url = "https://pypi.org/simple"
 
 [[index]]
 name = "azure_devops"
 url = "{{ .ado_url }}"
+# Move to the end of the prioritized list, such that it is given the lowest priority when resolving packages
+# default = true
+# Use exclusively for the dependencies that select it explicitly via [tool.uv.sources]
 # explicit = true

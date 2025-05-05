@@ -1,13 +1,5 @@
 # uv Configuration File
 
-# List of supported environments against which to resolve dependencies
-environments = ["sys_platform == 'linux'"]
-# Whether the project is managed by uv
-managed = true
-# List of required platforms, for packages that lack source distributions
-required-environments = [
-    "sys_platform == 'linux' and platform_machine == 'x86_64'",
-]
 # Compile Python files to bytecode after installation
 compile-bytecode = true
 # Extra URLs of package indexes to use, in addition to --index-url
@@ -25,10 +17,6 @@ python-preference = "managed"
 required-version = ">=0.6.14"
 # Strategy to use when selecting between the different compatible versions for a given package requirement
 resolution = "highest"
-
-[sources]
-pypi = { index = "pypi" }
-azure_devops = { index = "azure_devops" }
 
 [[index]]
 name = "pypi"

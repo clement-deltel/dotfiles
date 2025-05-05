@@ -31,6 +31,7 @@ ohmyzsh/ohmyzsh path:plugins/node
 # Languages - Python
 ohmyzsh/ohmyzsh path:plugins/pip
 ohmyzsh/ohmyzsh path:plugins/poetry
+ohmyzsh/ohmyzsh path:plugins/uv
 
 # Packages
 ohmyzsh/ohmyzsh path:plugins/brew

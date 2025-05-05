@@ -79,7 +79,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
         - [lnav](https://github.com/tstack/lnav): log file navigator.
         - [tldr](https://github.com/tldr-pages/tlrc): tldr client, written in Rust.
         - [tokei](https://github.com/XAMPPRocky/tokei): count your code, quickly.
-        - [Trivy](https://github.com/aquasecurity/trivy): find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more.
+        - [trivy](https://github.com/aquasecurity/trivy): find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more.
       - [npm](https://github.com/npm/cli): node package manager.
         - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm): auto generate READMEs for Helm Charts.
     - Shell
@@ -165,6 +165,7 @@ Zsh is my default shell. Here is the list of plugins:
     - Python
       - [pip](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pip)
       - [poetry](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/poetry)
+      - [uv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/uv)
   - Packages
     - [brew](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/brew)
     - [npm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/npm)

@@ -1,0 +1,41 @@
+# uv Configuration File
+
+# List of supported environments against which to resolve dependencies
+environments = ["sys_platform == 'linux'"]
+# Whether the project is managed by uv
+managed = true
+# List of required platforms, for packages that lack source distributions
+required-environments = [
+    "sys_platform == 'linux' and platform_machine == 'x86_64'",
+]
+# Compile Python files to bytecode after installation
+compile-bytecode = true
+# Extra URLs of package indexes to use, in addition to --index-url
+# extra-index-url = ["https://download.pytorch.org/whl/cpu"]
+
+# Strategy to use when resolving against multiple index URLs
+index-strategy = "unsafe-best-match"
+# Whether to allow Python downloads.
+python-downloads = "automatic"
+# Mirror URL for downloading managed Python installations
+python-install-mirror = "https://github.com/astral-sh/python-build-standalone/releases/download"
+# Whether to prefer using Python installations that are already present on the system, or those that are downloaded and installed by uv
+python-preference = "managed"
+# Enforce a requirement on the version of uv
+required-version = ">=0.6.14"
+# Strategy to use when selecting between the different compatible versions for a given package requirement
+resolution = "highest"
+
+[sources]
+pypi = { index = "pypi" }
+azure_devops = { index = "azure_devops" }
+
+[[index]]
+name = "pypi"
+url = "https://test.pypi.org/simple"
+default = true
+
+[[index]]
+name = "azure_devops"
+url = "{{ .ado_url }}"
+# explicit = true

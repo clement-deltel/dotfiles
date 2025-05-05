@@ -8,6 +8,8 @@ eval "$(terraform -install-autocomplete)"
 
 # Language - Python
 eval "$(poetry completions bash)"
+eval "$(uv generate-shell-completion bash)"
+eval "$(uvx --generate-shell-completion bash)"
 
 # Orchestration
 eval "$(docker completion bash)"

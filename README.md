@@ -78,7 +78,6 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
           - [jq](https://github.com/jqlang/jq) [C/C++]: CLI JSON processor.
           - [ranger](https://github.com/ranger/ranger) [Python]: vim-inspired file manager for the console.
         - **Software Development**
-          - [git-filter-repo](https://github.com/newren/git-filter-repo) [Python]: quickly rewrite git repository history (filter-branch replacement).
           - [ls-lint](https://github.com/loeffel-io/ls-lint) [Go]: directory and filename linter, bring some structure to your project filesystem.
         - **Other**
           - [FIGlet](https://linux.die.net/man/6/figlet): display large characters made up of ordinary screen characters.
@@ -116,6 +115,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
     - Version Control System (VCS)
       - Git
         - [gitleaks](https://github.com/gitleaks/gitleaks) [Go]: tool for detecting secrets like passwords, API keys, and tokens in git repos.
+        - [git-filter-repo](https://github.com/newren/git-filter-repo) [Python]: quickly rewrite git repository history (filter-branch replacement).
         - [git-lfs](https://github.com/git-lfs/git-lfs) [Go]: git extension for versioning large files.
     - Security
       - [Bitwarden CLI](https://bitwarden.com/help/cli/)
@@ -133,7 +133,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
           - [commitizen](https://github.com/commitizen-tools/commitizen): create committing rules for projects, auto bump versions, and auto changelog generation.
           - [poetry](https://github.com/python-poetry/poetry): packaging and dependency management made easy.
         - [pyenv](https://github.com/pyenv/pyenv): simple version management.
-        - [uv](https://github.com/astral-sh/uv): package and project manager, written in Rust.
+        - [uv](https://github.com/astral-sh/uv) [Rust]: package and project manager, written in Rust.
     - Orchestration
       - Docker
       - Kubernetes

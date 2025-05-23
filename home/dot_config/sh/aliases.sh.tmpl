@@ -21,7 +21,8 @@ alias cp='cp -i'
 {{- end }}
 
 # du
-alias du-sort='du -sh * | sort -h'
+alias dus='du -sh * | sort -h'
+unalias duf
 
 # env
 alias env='clear && env | sort'
@@ -293,7 +294,7 @@ alias caz='cat ~/.zshrc'
 alias cmaz='chezmoi apply && source ~/.zshrc'
 {{- else}}
 #==============================================================================#
-#               ------- Bash --------                                          
+#               ------- Bash --------
 #==============================================================================#
 alias vib='vi ~/.bashrc'
 alias srb='source ~/.bashrc'

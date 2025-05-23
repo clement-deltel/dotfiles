@@ -7,35 +7,55 @@ deb_architecture: { "armv6l": "armhf", "armv7l": "armhf", "aarch64": "arm64", "x
 #               ------- APT ------
 #==============================================================================#
 apt_packages:
-  - apache2-utils   # htpasswd utility
-  - bash-completion
-  - bat             # cat(1) clone with wings
-  - build-essential
-  - cmake
-  - curl
-  - ethtool         # query and change settings such as speed, auto-negotiation and checksum offload
-  - figlet          # display large characters made up of ordinary screen characters
-  - fzf             # general-purpose command-line fuzzy finder
-  - git             # gold standard version control system
-  - htop            # resources monitoring
-  - hwinfo          # probe for hardware
-  - jq              # command-line JSON processor
-  - libpq-dev       # library to develop with PostgreSQL
-  - man-db          # man pages
-  - net-tools
-  - nfs-common
-  - ninja-build
-  - pdftk           # command-line tool for working with PDFs
-  - portaudio19-dev # library required for PyAudio
-  - pwgen           # random password generator
-  - software-properties-common
-  - ssh
-  - trippy          # network diagnostic tool
-  - tzdata          # timezone
-  - unzip
-  - vim             # text editor of choice
-  - xclip           # command-line interface to the X11 clipboard
-  - zip
+  # Modern Replacements
+  - bat
+  - duf
+  - ncdu
+  # Monitoring
+  - htop
+  - hwinfo
+  - iotop
+  - progress
+  # Network
+  - ethtool
+  - ipcalc
+  - mtr
+  - net-tools                  #
+  - termshark
+  - trippy
+  - tshark                     #
+  - wireshark-common           # network protocol analyzer libraries
+  # Search
+  - fzf
+  - jq
+  - ranger
+  # Software Development
+  - build-essential            #
+  - cmake                      #
+  - git                        # gold standard version control system
+  - libpq-dev                  # library to develop with PostgreSQL
+  - portaudio19-dev            # library required for PyAudio
+  # Other
+  - figlet
+  - magic-wormhole
+  - moreutils                  # collection of the Unix tools that nobody thought to write long ago
+  - pdftk
+  - pwgen
+  - unp
+  - vim
+  - xclip
+  # Dependencies
+  - apache2-utils              # htpasswd utility
+  - bash-completion            #
+  - curl                       #
+  - man-db                     # man pages
+  - nfs-common                 #
+  - ninja-build                #
+  - software-properties-common #
+  - ssh                        #
+  - tzdata                     # timezone
+  - unzip                      #
+  - zip                        #
 apt_repositories:
   - ppa:fujiapple/trippy
 
@@ -43,9 +63,9 @@ apt_repositories:
 #               ------- AWS ------
 #==============================================================================#
 aws_dependencies:
-  - firefox
-  - xdg-utils       # enable starting a browser to run aws sso login
-  - zip
+  - firefox                    #
+  - xdg-utils                  # enable starting a browser to run aws sso login
+  - zip                        #
 
 aws_profile: default
 aws_region: us-east-2
@@ -61,9 +81,9 @@ aws_sso_start_url: '{{ (bitwardenFields "item" "223277e3-498b-4d3c-9c0b-fe80e0e8
 #               ------- Bitwarden ------
 #==============================================================================#
 bitwarden_dependencies:
-  - curl
-  - jq              # command-line JSON processor
-  - libsecret-1-0
+  - curl                      #
+  - jq
+  - libsecret-1-0             #
 
 #==============================================================================#
 #               ------- Docker ------
@@ -72,9 +92,9 @@ docker_gid: 1001
 docker_uid: 1001
 
 docker_dependencies:
-  - ca-certificates
-  - curl
-  - gnupg
+  - ca-certificates           #
+  - curl                      #
+  - gnupg                     #
 docker_packages:
   - docker-ce
   - docker-ce-cli
@@ -99,24 +119,23 @@ docker_images:
 #               ------- Eza ------
 #==============================================================================#
 eza_dependencies:
-  - gpg
-
+  - gpg                       #
 eza_packages:
-  - eza             # modern alternative to ls
+  - eza                       # modern alternative to ls
 
 #==============================================================================#
 #               ------- Git ------
 #==============================================================================#
 git_packages:
-  - git
-  - git-filter-repo # quickly rewrite git repository history (filter-branch replacement)
-
+  - git                       # gold standard version control system
+  - git-filter-repo
 # git lfs
 git_lfs_install_tmp: /tmp/git
 git_lfs_install_url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
-
 git_lfs_packages:
-  - git-lfs         # git extension for versioning large files
+  - git-lfs                   # git extension for versioning large files
+git_formulas:
+  - gitleaks
 
 #==============================================================================#
 #               ------- Go ------
@@ -128,13 +147,12 @@ go_packages:
 #               ------- Google Cloud Platform ------
 #==============================================================================#
 gcp_dependencies:
-  - apt-transport-https
-  - ca-certificates
-  - curl
-  - firefox
-  - gnupg
-  - xdg-utils       # enable starting a browser to run gcloud init
-
+  - apt-transport-https       #
+  - ca-certificates           #
+  - curl                      #
+  - firefox                   #
+  - gnupg                     #
+  - xdg-utils                 # enable starting a browser to run gcloud init
 gcp_packages:
   - google-cloud-cli
   - google-cloud-cli-gke-gcloud-auth-plugin
@@ -151,44 +169,49 @@ helm_plugin_urls:
 #               ------- Homebrew ------
 #==============================================================================#
 homebrew_dependencies:
-  - build-essential
-  - curl
-  - git             # gold standard version control system
-  - language-pack-en
-  - locales
-
-homebrew_formulas:
-  - btop            # monitor of resources
-  - gitleaks        # tool for detecting secrets like passwords, API keys, and tokens in git repos
-  - grype           # vulnerability scanner for container images and filesystems
-  - lazydocker      # lazier way to manage everything Docker
-  - lazygit         # simple terminal UI for git commands
-  - lnav            # log file navigator
-  - tlrc            # tldr client, written in Rust
-  - tokei           # count your code, quickly
-  - trivy           # find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more
-
+  - build-essential           #
+  - curl                      #
+  - git                       # gold standard version control system
+  - language-pack-en          #
+  - locales                   #
 homebrew_install_tmp: /tmp/homebrew
 homebrew_install_url: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+homebrew_formulas:
+  # Modern Replacements
+  - procs
+  # Monitoring
+  - btop
+  # Orchestration
+  - grype
+  - lazydocker
+  - trivy
+  # Software Development
+  - lazygit
+  - ls-lint
+  - tokei
+  # Other
+  - lnav
+  - tlrc
 
 #==============================================================================#
 #               ------- Kubernetes ------
 #==============================================================================#
-kubernetes_formulas:
-  - helmfile        # declaratively deploy your Kubernetes manifests, Kustomize configs, and Charts as Helm releases
-  - kubectx         # faster way to switch between clusters and namespaces in kubectl
-  - k9s             # Kubernetes CLI to manage your clusters in style
-  - stern           # multi pod and container log tailing for Kubernetes
 kubectl_install_tmp: /tmp/kubernetes
+kubernetes_formulas:
+  - helmfile
+  - k9s
+  - kubectx
+  - kubetail
+  - stern
 
 #==============================================================================#
 #               ------- NodeJS ------
 #==============================================================================#
 node_dependencies:
-  - build-essential
-  - ca-certificates
-  - curl
-  - gnupg
+  - build-essential           #
+  - ca-certificates           #
+  - curl                      #
+  - gnupg                     #
 node_major: 20
 node_packages:
   - nodejs
@@ -201,8 +224,8 @@ npm_packages:
 # See https://www.nvidia.com/Download/index.aspx for more details.
 
 nvidia_packages:
-  - cuda-toolkit-12-8
-  - nvidia-container-toolkit
+  - cuda-toolkit-12-8         #
+  - nvidia-container-toolkit  #
   # - nvidia-driver-570
 
 #==============================================================================#
@@ -221,11 +244,11 @@ pulumi_install_url: https://get.pulumi.com
 #               ------- Python ------
 #==============================================================================#
 python_packages:
-  - gdal-bin        # executable to use GDAL with Python
-  - libbz2-dev      # data compression library to develop with Python
-  - libgdal-dev     # library to use GDAL with Python
+  - gdal-bin                  # executable to use GDAL with Python
+  - libbz2-dev                # data compression library to develop with Python
+  - libgdal-dev               # library to use GDAL with Python
   - python3
-  - python3-docker  # used by Ansible modules
+  - python3-docker            # used by Ansible modules
   - python3-pip
   - python3-venv
   - python3.11-dev
@@ -234,28 +257,28 @@ python_packages:
 
 # pip
 pip_packages:
-  - aiohttp
-  - asyncer
-  - filetype
-  - gradio
+  - aiohttp                   #
+  - asyncer                   #
+  - filetype                  #
+  - gradio                    #
   - markitdown
-  - onnxruntime
-  - pillow
+  - onnxruntime               #
+  - pillow                    #
   - Pygments
-  - rembg
-  - watchdog
+  - rembg                     #
+  - watchdog	                #
   - whisper-live
 
 # pyenv
 pyenv_dependencies:
-  - build-essential
-  - bzip2
-  - libffi-dev
-  - libncursesw5-dev
-  - libreadline-dev
-  - libsqlite3-dev
-  - libssl-dev
-  - zlib1g-dev
+  - build-essential           #
+  - bzip2                     #
+  - libffi-dev                #
+  - libncursesw5-dev          #
+  - libreadline-dev           #
+  - libsqlite3-dev            #
+  - libssl-dev                #
+  - zlib1g-dev                #
 pyenv_install_tmp: /tmp/pyenv
 pyenv_install_url: https://pyenv.run
 pyenv_python_version: 3.11.8
@@ -268,8 +291,8 @@ uv_install_url: https://astral.sh/uv/install.sh
 #               ------- Terraform ------
 #==============================================================================#
 terraform_dependencies:
-  - gnupg
-  - software-properties-common
+  - gnupg                       #
+  - software-properties-common  #
 
 #==============================================================================#
 #               ------- WezTerm ------
@@ -287,6 +310,6 @@ zoxide_install_url: https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/in
 #               ------- Zsh ------
 #==============================================================================#
 zsh_dependencies:
-  - curl
-  - git
-  - zsh
+  - curl                      #
+  - git                       # gold standard version control system
+  - zsh                       #

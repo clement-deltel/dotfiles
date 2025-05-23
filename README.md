@@ -23,7 +23,7 @@ I store the below sensitive configuration in my Vaultwarden instance:
 - **chezmoi toml configuration file**: notes of the item named "chezmoi"
 - **private ssh keys**: attachments of the item named "SSH Keys"
 - **kubeconfig file**: attachment "kubeconfig" of the item named "chezmoi"
-- **aws cli configuration**: custom fields of the item with the id "223277e3-498b-4d3c-9c0b-fe80e0e83d7b"
+- **aws CLI configuration**: custom fields of the item with the id "223277e3-498b-4d3c-9c0b-fe80e0e83d7b"
 
 I store the sensitive files for my Windows machine in an AWS S3 bucket.
 
@@ -58,70 +58,95 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
 4. Ansible playbooks automatically install and configure the tools listed below:
     - Package Managers
       - apt
-        - [bat](https://github.com/sharkdp/bat): cat(1) clone with wings.
-        - [ethtool](https://linux.die.net/man/8/ethtool): query and change settings such as speed, auto-negotiation and checksum offload.
-        - [FIGlet](https://linux.die.net/man/6/figlet): display large characters made up of ordinary screen characters.
-        - [fzf](https://github.com/junegunn/fzf): command-line fuzzy finder.
-        - [git-filter-repo](https://github.com/newren/git-filter-repo): quickly rewrite git repository history (filter-branch replacement).
-        - [htop](https://github.com/htop-dev/htop): interactive process viewer.
-        - [hwinfo](https://www.commandlinux.com/man-page/man8/hwinfo.8.html): probe for hardware.
-        - [jq](https://github.com/jqlang/jq): command-line JSON processor.
-        - [pdftk](https://www.pdflabs.com/tools/pdftk-server): command-line tool for working with PDFs.
-        - [pwgen](https://linux.die.net/man/1/pwgen): random password generator.
-        - [trippy](https://github.com/fujiapple852/trippy): network diagnostic tool.
-        - [vim](https://github.com/vim/vim)
-        - [xclip](https://github.com/astrand/xclip): command-line interface to the X11 clipboard.
-      - [homebrew](https://github.com/Homebrew/brew): the missing package manager for Linux.
-        - [btop](https://github.com/aristocratos/btop): monitor of resources.
-        - [grype](https://github.com/anchore/grype): vulnerability scanner for container images and filesystems.
-        - [lazydocker](https://github.com/jesseduffield/lazydocker): lazier way to manage everything Docker.
-        - [lazygit](https://github.com/jesseduffield/lazygit): simple terminal UI for git commands.
-        - [lnav](https://github.com/tstack/lnav): log file navigator.
-        - [tldr](https://github.com/tldr-pages/tlrc): tldr client, written in Rust.
-        - [tokei](https://github.com/XAMPPRocky/tokei): count your code, quickly.
-        - [trivy](https://github.com/aquasecurity/trivy): find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more.
-      - [npm](https://github.com/npm/cli): node package manager.
-        - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm): auto generate READMEs for Helm Charts.
+        - **Modern Replacements**
+          - [bat](https://github.com/sharkdp/bat) [Rust]: [cat](https://linux.die.net/man/1/cat), with syntax highlighting, git integration, and more.
+          - [duf](https://github.com/muesli/duf) [Go]: [df](https://linux.die.net/man/1/df), disk usage/free utility.
+          - [ncdu](https://dev.yorhel.nl/ncdu): [du](https://linux.die.net/man/1/du), disk usage analyzer with a text-mode user interface.
+        - **Monitoring**
+          - [htop](https://github.com/htop-dev/htop) [C/C++]: interactive process viewer.
+          - [hwinfo](https://www.commandlinux.com/man-page/man8/hwinfo.8.html): probe for hardware.
+          - [iotop](https://github.com/Tomas-M/iotop) [C/C++]: top utility for I/O.
+          - [progress](https://github.com/Xfennec/progress) [C/C++]: show progress for commands like cp, mv, dd, ... (formerly known as cv).
+        - **Network**
+          - [ethtool](https://linux.die.net/man/8/ethtool): query and change settings such as speed, auto-negotiation and checksum offload.
+          - [ipcalc](https://gitlab.com/ipcalc/ipcalc) [C/C++]: IPv4/IPv6 tool, assisting in network calculations.
+          - [mtr](https://github.com/traviscross/mtr) [C/C++]: network diagnostic tool.
+          - [termshark](https://github.com/gcla/termshark) [Go]: TUI for tshark, inspired by Wireshark.
+          - [trippy](https://github.com/fujiapple852/trippy) [Rust]: network diagnostic tool.
+        - **Search**
+          - [fzf](https://github.com/junegunn/fzf) [Go]: CLI fuzzy finder.
+          - [jq](https://github.com/jqlang/jq) [C/C++]: CLI JSON processor.
+          - [ranger](https://github.com/ranger/ranger) [Python]: vim-inspired file manager for the console.
+        - **Software Development**
+          - [git-filter-repo](https://github.com/newren/git-filter-repo) [Python]: quickly rewrite git repository history (filter-branch replacement).
+          - [ls-lint](https://github.com/loeffel-io/ls-lint) [Go]: directory and filename linter, bring some structure to your project filesystem.
+        - **Other**
+          - [FIGlet](https://linux.die.net/man/6/figlet): display large characters made up of ordinary screen characters.
+          - [magic-wormhole](https://github.com/magic-wormhole/magic-wormhole) [Python]: get things from one computer to another, safely.
+          - [unp](https://github.com/mitsuhiko/unp): wrapper around other shell tools to unpack archives easily.
+          - [pdftk](https://www.pdflabs.com/tools/pdftk-server): CLI for working with PDFs.
+          - [pwgen](https://linux.die.net/man/1/pwgen): random password generator.
+          - [vim](https://github.com/vim/vim): text editor of choice.
+          - [xclip](https://github.com/astrand/xclip) [C]: CLI to the X11 clipboard.
+      - [homebrew](https://github.com/Homebrew/brew) [Ruby]: the missing package manager for Linux.
+        - **Modern Replacements**
+          - [procs](https://github.com/dalance/procs) [Rust]: ps.
+        - **Monitoring**
+          - [btop](https://github.com/aristocratos/btop) [C/C++]: monitor of resources.
+        - **Orchestration**
+          - [grype](https://github.com/anchore/grype) [Go]: vulnerability scanner for container images and filesystems.
+          - [lazydocker](https://github.com/jesseduffield/lazydocker) [Go]: lazier way to manage everything Docker.
+          - [trivy](https://github.com/aquasecurity/trivy) [Go]: find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more.
+        - **Software Development**
+          - [lazygit](https://github.com/jesseduffield/lazygit) [Go]: simple TUI for git commands.
+          - [ls-lint](https://github.com/loeffel-io/ls-lint) [Go]: directory and filename linter, bring some structure to the project filesystem.
+          - [tokei](https://github.com/XAMPPRocky/tokei) [Rust]: count your code, quickly.
+        - **Other**
+          - [lnav](https://github.com/tstack/lnav) [C/C++]: log file navigator.
+          - [tldr](https://github.com/tldr-pages/tlrc) [Rust]: tldr client.
+      - [npm](https://github.com/npm/cli) [JavaScript]: node package manager.
+        - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm) [JavaScript]: auto generate READMEs for Helm Charts.
     - Shell
       - [antidote](https://github.com/mattmc3/antidote): the cure to slow zsh plugin management.
-      - [eza](https://github.com/eza-community/eza): modern alternative to ls.
-      - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh): the most customizable and low-latency cross platform/shell prompt renderer.
-      - [WezTerm](https://github.com/wezterm/wezterm): GPU-accelerated cross-platform terminal emulator and multiplexer.
+      - [eza](https://github.com/eza-community/eza) [Rust]: [ls](https://linux.die.net/man/1/ls), with icons, git integration, tree mode, and more.
+      - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh) [Go]: the most customizable and low-latency cross platform/shell prompt renderer.
+      - [WezTerm](https://github.com/wezterm/wezterm) [Rust]: GPU-accelerated cross-platform terminal emulator and multiplexer.
       - zsh
-      - [zoxide](https://github.com/ajeetdsouza/zoxide): smarter cd command.
+      - [zoxide](https://github.com/ajeetdsouza/zoxide) [Rust]: smarter cd command.
     - Version Control System (VCS)
       - Git
-        - [gitleaks](https://github.com/gitleaks/gitleaks): tool for detecting secrets like passwords, API keys, and tokens in git repos.
-        - [git-lfs](https://github.com/git-lfs/git-lfs): git extension for versioning large files.
+        - [gitleaks](https://github.com/gitleaks/gitleaks) [Go]: tool for detecting secrets like passwords, API keys, and tokens in git repos.
+        - [git-lfs](https://github.com/git-lfs/git-lfs) [Go]: git extension for versioning large files.
     - Security
       - [Bitwarden CLI](https://bitwarden.com/help/cli/)
     - Languages
       - Go
         - [kind](https://github.com/kubernetes-sigs/kind/): Kubernetes in Docker - local clusters for testing Kubernetes.
       - JavaScript
-        - [nodejs](https://github.com/nodejs/node): cross-platform, open-source JavaScript runtime built on Chrome's V8 JavaScript engine.
+        - [nodejs](https://github.com/nodejs/node): cross-platform, open-source JavaScript runtime built on Chrome's v8 JavaScript engine.
       - Python
         - pip
-          - [markitdown](https://github.com/microsoft/markitdown): Python tool for converting files and office documents to Markdown.
-          - [Pygments](https://github.com/pygments/pygments): generic syntax highlighter written in Python.
+          - [markitdown](https://github.com/microsoft/markitdown): tool for converting files and office documents to Markdown.
+          - [Pygments](https://github.com/pygments/pygments): generic syntax highlighter.
           - [whisper-live](https://github.com/collabora/WhisperLive): nearly-live implementation of OpenAI's Whisper.
-        - [pipx](https://github.com/pypa/pipx): install and run Python applications in isolated environments.
+        - [pipx](https://github.com/pypa/pipx): install and run applications in isolated environments.
           - [commitizen](https://github.com/commitizen-tools/commitizen): create committing rules for projects, auto bump versions, and auto changelog generation.
-          - [poetry](https://github.com/python-poetry/poetry): Python packaging and dependency management made easy.
-        - [pyenv](https://github.com/pyenv/pyenv): simple Python version management.
-        - [uv](https://github.com/astral-sh/uv): Python package and project manager, written in Rust.
+          - [poetry](https://github.com/python-poetry/poetry): packaging and dependency management made easy.
+        - [pyenv](https://github.com/pyenv/pyenv): simple version management.
+        - [uv](https://github.com/astral-sh/uv): package and project manager, written in Rust.
     - Orchestration
       - Docker
       - Kubernetes
-        - [helm](https://github.com/helm/helm): the Kubernetes Package Manager.
-        - [helmfile](https://github.com/helmfile/helmfile): declaratively deploy your Kubernetes manifests, Kustomize configs, and Charts as Helm releases.
-        - [kubectl](https://github.com/kubernetes/kubectl): Kubernetes command-line interface.
-        - [kubectx](https://github.com/ahmetb/kubectx): faster way to switch between clusters and namespaces in kubectl.
-        - [k9s](https://github.com/derailed/k9s): Kubernetes CLI to manage your clusters in style.
-        - [stern](https://github.com/stern/stern): multi pod and container log tailing for Kubernetes.
-    - Infrastructure as Code (IaC)
-      - [Pulumi](https://github.com/pulumi/pulumi): infrastructure as Code in any programming language.
-      - [Terraform](https://github.com/hashicorp/terraform): safely and predictably create, change, and improve infrastructure.
+        - [helm](https://github.com/helm/helm) [Go]: the Kubernetes package manager.
+        - [helmfile](https://github.com/helmfile/helmfile) [Go]: declaratively deploy your Kubernetes manifests, Kustomize configs, and Charts as Helm releases.
+        - [k9s](https://github.com/derailed/k9s) [Go]: Kubernetes CLI to manage your clusters in style.
+        - [kubectl](https://github.com/kubernetes/kubectl) [Go]: Kubernetes command-line interface.
+        - [kubectx](https://github.com/ahmetb/kubectx) [Go]: faster way to switch between clusters and namespaces in kubectl.
+        - [kubetail](https://github.com/johanhaleby/kubetail) [Shell]: tail Kubernetes logs from multiple pods at the same time.
+        - [stern](https://github.com/stern/stern) [Go]: multi pod and container log tailing for Kubernetes.
+    - Infrastructure-as-Code (IaC)
+      - [Pulumi](https://github.com/pulumi/pulumi) [Go]: infrastructure-as-code in any programming language.
+      - [Terraform](https://github.com/hashicorp/terraform) [Go]: safely and predictably create, change, and improve infrastructure.
     - Cloud
       - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
       - [GCP CLI](https://cloud.google.com/sdk/docs/install)
@@ -197,6 +222,25 @@ Zsh is my default shell. Here is the list of plugins:
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
 Here is my theme: robbyrussell
+
+Here are some useful Linux system commands:
+
+- Built-ins
+  - [dig](https://linux.die.net/man/1/dig): DNS lookup utility.
+  - [lshw](https://linux.die.net/man/1/lshw): list hardware.
+  - [lsof](https://linux.die.net/man/8/lsof): list open files.
+  - [rsync](https://linux.die.net/man/1/rsync): remote (and local) file-copying tool.
+  - [shred](https://linux.die.net/man/1/shred): overwrite a file to hide its contents, and optionally delete it.
+  - [stat](https://linux.die.net/man/1/stat): display file or file system status.
+  - [systemd-analyze](https://man7.org/linux/man-pages/man1/systemd-analyze.1.html): analyze and debug system manager.
+  - [tcpdump](https://linux.die.net/man/8/tcpdump): dump traffic on a network.
+  - [watch](https://linux.die.net/man/1/watch): execute a program periodically, showing output fullscreen.
+- More Utils
+  - [errno](https://linux.die.net/man/3/errno): number of last error.
+  - [ifdata](https://linux.die.net/man/1/ifdata): get network interface info without parsing ifconfig output.
+  - [vidir](https://linux.die.net/man/1/vidir): edit directory.
+  - [vipe](https://linux.die.net/man/1/vipe): edit pipe.
+  - [zrun](https://linux.die.net/man/1/zrun): automatically uncompress arguments to command.
 
 ### Update
 

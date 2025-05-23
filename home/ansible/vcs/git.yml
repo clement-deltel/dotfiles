@@ -60,7 +60,7 @@
         path: "{{ git_lfs_install_tmp }}"
         state: absent
 
-  # Packages
+  # LFS Packages
   - name: Packages
     block:
 
@@ -99,3 +99,29 @@
       when: version is defined
       ansible.builtin.debug:
         msg: "Installed version: {{ version.stdout }}"
+
+  # Formulas
+  - name: Formulas
+    become_user: ubuntu
+    block:
+
+    - name: Homebrew - List formulas
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "Formulas: {{ git_formulas }}"
+
+    # brew install
+    - name: Homebrew - Install formulas
+      tags: init
+      community.general.homebrew:
+        name: "{{ git_formulas }}"
+        state: present
+        update_homebrew: true
+
+    # brew upgrade
+    - name: Homebrew - Upgrade formulas
+      tags: update
+      community.general.homebrew:
+        name: "{{ git_formulas }}"
+        state: latest
+        update_homebrew: true

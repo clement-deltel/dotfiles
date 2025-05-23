@@ -6,7 +6,7 @@ export USER=$(whoami)
 export HOME=/home/${USER}
 
 #==============================================================================#
-#               ------- Environment ------                                     
+#               ------- Environment ------
 #==============================================================================#
 export PATH=~/.local/bin:~/scripts:${PATH}
 
@@ -17,8 +17,9 @@ export KUBE_EDITOR='vim'
 export BAT_THEME="Visual Studio Dark+"
 
 # Go
-export GOROOT=/usr/local/go
+export GO111MODULE=on
 export GOPATH=~/go
+export GOROOT=/usr/local/go
 export PATH=/usr/local/go/bin:${GOPATH}/bin:${PATH}
 
 # Homebrew

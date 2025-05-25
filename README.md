@@ -66,7 +66,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
 ```
 
 4. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.
-5. Ansible playbooks automatically install and configure the tools listed [here](./software/linux.md#current).
+5. Ansible playbooks automatically install and configure the apps listed [here](apps/linux.md#current).
 6. Clean sensitive information:
 
 ```bash
@@ -77,7 +77,7 @@ unset BW_PASSWORD
 
 ### 2.2 Shell
 
-Zsh is my default shell. The list of plugins is available [here](./software/linux.md#zsh-plugins)
+Zsh is my default shell. The list of plugins is available [here](apps/linux.md#zsh-plugins)
 
 Here is my theme: robbyrussell
 
@@ -212,8 +212,8 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
    - [Chocolatey](https://docs.chocolatey.org/en-us/)
    - [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
 
-4. Chocolatey install and configure the tools listed [here](./software/windows.md#chocolatey).
-5. Winget install and configure the tools listed [here](./software/windows.md#winget).
+4. Chocolatey install and configure the apps listed [here](apps/windows.md#chocolatey).
+5. Winget install and configure the apps listed [here](apps/windows.md#winget).
 6. chezmoi also restore some files from backups stored in AWS S3:
    - Google Chrome
    - Outlook Signatures
@@ -222,7 +222,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
    - Windows Subsystem for Linux (WSL)
    - Windows Taskbar
 
-7. Finally, softwares requiring manual effort are listed [here](./software/windows.md#manual-effort).
+7. Finally, softwares requiring manual effort are listed [here](apps/windows.md#manual-effort).
 8. Clean sensitive information:
 
 ```powershell
@@ -271,6 +271,6 @@ docker run --interactive --name dotfiles --tty --rm mcr.microsoft.com/windows/na
 
 ## 4. Browser
 
-I am still figuring out a way to install these extensions programmatically but what I use is available [here](./software/browser.md#current).
+I am still figuring out a way to install these extensions programmatically but what I use is available [here](apps/browser.md#current).
 
 ## 5. Visual Studio Code

@@ -1,3 +1,6 @@
+# https://ohmyposh.dev/docs
+# https://www.nerdfonts.com
+
 console_title_template = "{{ .Shell }} in {{ .Folder }}"
 final_space = false
 auto_upgrade = true

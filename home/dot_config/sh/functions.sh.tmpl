@@ -66,8 +66,10 @@ function ansible-update {
 #               ------- Bitwarden CLI ------
 #==============================================================================#
 function bitwarden-create-session-fn {
+  echo -n 'Syncing with Bitwarden vault...'
+  bw sync
   # Prompt for the Bitwarden password securely
-  echo -n 'Enter your Bitwarden password: '
+  echo -n 'Enter your password: '
   read -s BW_PASSWORD
   echo
   export BW_PASSWORD

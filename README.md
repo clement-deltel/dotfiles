@@ -35,8 +35,8 @@ I store the sensitive files for my Windows machine in an AWS S3 bucket.
 1. Export required environment variables:
 
 ```bash
-# Machine configuration. Options: work, perso
-export MACHINE="work"
+# Machine configuration. Options: pro, perso
+export MACHINE="pro"
 # Linux distribution family. Options: arch, debian, nixos, redhat
 export FAMILY="debian"
 # Update with your server address
@@ -48,15 +48,25 @@ export BW_PASSWORD=''
 export GITHUB_USERNAME=clement-deltel
 ```
 
-2. Install dependencies and run installation script:
+2. Install dependencies:
 
 ```bash
+# Debian-like Systems
 sudo apt update -y && sudo apt install -y curl
+# RedHat-like Systems
+sudo yum update -y && sudo yum install -y curl
+# Arch
+# NixOS
+```
+
+3. Run installation script:
+
+```bash
 curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/heads/main/docker/linux/${FAMILY}/install.sh | bash
 ```
 
-3. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.
-4. Ansible playbooks automatically install and configure the tools listed below:
+4. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.
+5. Ansible playbooks automatically install and configure the tools listed below:
     - Package Managers
       - apt
         - **Modern Replacements**
@@ -156,7 +166,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
         - [container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/index.html): collection of libraries and utilities enabling users to build and run GPU-accelerated containers.
         - [cuda-toolkit](https://docs.nvidia.com/cuda/index.html): development environment for creating high performance GPU-accelerated applications.
 
-5. Clean sensitive information:
+6. Clean sensitive information:
 
 ```bash
 unset BW_CLIENTID
@@ -266,8 +276,8 @@ Install Docker to test this setup. The following images have been tested so far:
 Then, build an image:
 
 ```bash
-# Machine configuration. Options: work, perso
-export MACHINE="work"
+# Machine configuration. Options: pro, perso
+export MACHINE="pro"
 # Set image parameters
 export FAMILY="debian"
 export IMAGE="ubuntu:22.04"
@@ -334,8 +344,8 @@ Here is the list of containerized tools that I use:
 1. Export required environment variables:
 
 ```bash
-# Machine configuration. Options: work, perso
-$Env:MACHINE="work"
+# Machine configuration. Options: pro, perso
+$Env:MACHINE="pro"
 # Update with your server address
 $Env:BW_SERVER="https://bw.domain.com"
 # Fill the blanks with your API credentials and password
@@ -450,8 +460,8 @@ Install Docker to test this setup.
 Then, build an image:
 
 ```ps1
-# Machine configuration. Options: work, perso
-$Env:MACHINE="work"
+# Machine configuration. Options: pro, perso
+$Env:MACHINE="pro"
 # Update with your server address
 $Env:BW_SERVER="https://bw.domain.com"
 # Fill the blanks with your API credentials and password

@@ -224,7 +224,7 @@ alias krmfailed='kctl delete pods --field-selector=status.phase=Failed'
 alias krmp=kctl-delete-pod-fn
 alias krr=kctl-rollout-restart-deployment-fn
 
-{{- if eq .machine "work" }}
+{{- if eq .machine "pro" }}
 {{ .kube_aliases_extra }}
 {{- end }}
 

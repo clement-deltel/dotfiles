@@ -1,5 +1,5 @@
 # Not persisted into the built image
-ARG MACHINE="work"
+ARG MACHINE="pro"
 ARG IMAGE="ubuntu:22.04"
 ARG ID="1000"
 ARG USER="linux"

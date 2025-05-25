@@ -31,6 +31,7 @@ Enhancements:
   - [terrascan](https://github.com/tenable/terrascan) [Go]: detect compliance and security violations across Infrastructure as Code to mitigate risk before provisioning cloud native infrastructure.
 - **Integrated Development Environment (IDE)**
   - [cursor](https://github.com/getcursor/cursor): AI code editor.
+  - [void](https://github.com/voideditor/void) [TypeScript]: open-source Cursor alternative.
   - [windsurf](https://windsurf.com/): AI code editor.
   - [zed](https://github.com/zed-industries/zed): high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
 - **Modern Replacements**

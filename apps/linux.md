@@ -16,7 +16,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - **Modern Replacements**
       - [bat](https://github.com/sharkdp/bat) [Rust]: [cat](https://linux.die.net/man/1/cat), with syntax highlighting, git integration, and more.
       - [duf](https://github.com/muesli/duf) [Go]: [df](https://linux.die.net/man/1/df), disk usage/free utility.
+      - [fd](https://github.com/sharkdp/fd) [Rust]: [find](https://linux.die.net/man/1/find), with colorized output, case insensitive & regex & skip hidden defaults, git integration and more.
       - [ncdu](https://dev.yorhel.nl/ncdu): [du](https://linux.die.net/man/1/du), disk usage analyzer with a text-mode user interface.
+      - [ripgrep](https://github.com/BurntSushi/ripgrep) [Rust]: [grep](https://linux.die.net/man/1/grep), with recursive & skip hidden defaults, git integration and more.
     - **Monitoring**
       - [htop](https://github.com/htop-dev/htop) [C/C++]: interactive process viewer.
       - [hwinfo](https://www.commandlinux.com/man-page/man8/hwinfo.8.html): probe for hardware.
@@ -24,10 +26,12 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [progress](https://github.com/Xfennec/progress) [C/C++]: show progress for commands like cp, mv, dd, ... (formerly known as cv).
     - **Network**
       - [ethtool](https://linux.die.net/man/8/ethtool): query and change settings such as speed, auto-negotiation and checksum offload.
+      - [fping](https://github.com/schweikert/fping) [C]: high performance ping tool.
+      - [gping](https://github.com/orf/gping) [Rust]: TUI for ping.
       - [ipcalc](https://gitlab.com/ipcalc/ipcalc) [C/C++]: IPv4/IPv6 tool, assisting in network calculations.
-      - [mtr](https://github.com/traviscross/mtr) [C/C++]: network diagnostic tool.
+      - [mtr](https://github.com/traviscross/mtr) [C/C++]: network diagnostic tool, combine ping and traceroute functionalities.
       - [termshark](https://github.com/gcla/termshark) [Go]: TUI for tshark, inspired by Wireshark.
-      - [trippy](https://github.com/fujiapple852/trippy) [Rust]: network diagnostic tool.
+      - [trippy](https://github.com/fujiapple852/trippy) [Rust]: TUI network diagnostic tool.
     - **Search**
       - [fzf](https://github.com/junegunn/fzf) [Go]: CLI fuzzy finder.
       - [jq](https://github.com/jqlang/jq) [C/C++]: CLI JSON processor.
@@ -44,7 +48,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [xclip](https://github.com/astrand/xclip) [C]: CLI to the X11 clipboard.
   - [homebrew](https://github.com/Homebrew/brew) [Ruby]: the missing package manager for Linux.
     - **Modern Replacements**
-      - [procs](https://github.com/dalance/procs) [Rust]: ps.
+      - [procs](https://github.com/dalance/procs) [Rust]: [ps](https://linux.die.net/man/1/ps), with better sorting, tree support, and more.
     - **Monitoring**
       - [btop](https://github.com/aristocratos/btop) [C/C++]: monitor of resources.
     - **Orchestration**
@@ -193,9 +197,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [atuin](https://github.com/atuinsh/atuin) [Rust]: history, magical shell history.
   - [dua](https://github.com/Byron/dua-cli) [Rust]: du, view disk space usage and delete unwanted data.
   - [dust](https://github.com/bootandy/dust) [Rust]: du, a more intuitive version.
-  - [fd](https://github.com/sharkdp/fd) [Rust]: find, fast and user-friendly alternative.
   - [hwatch](https://github.com/blacknon/hwatch) [Rust]: watch, records the differences in execution results and can check this differences at after.
-  - [ripgrep](https://github.com/BurntSushi/ripgrep) [Rust]: grep, recursively searches directories for a regex pattern while respecting your gitignore.
 - **Monitoring**
   - [powertop](https://github.com/fenrus75/powertop) [C/C++]: diagnose issues with power consumption and power management.
   - [sampler](https://github.com/sqshq/sampler) [Go]: shell commands execution, visualization and alerting.

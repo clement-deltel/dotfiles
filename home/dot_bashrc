@@ -144,9 +144,9 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PYENV_ROOT=${HOME}/.pyenv
 export PATH=${PYENV_ROOT}/bin:${PATH}
 if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
+ eval "$(pyenv init - bash)"
 fi
-eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv virtualenv-init - bash)"
 
 #==============================================================================#
 #               ------- Environment ------
@@ -167,7 +167,7 @@ export KUBE_EDITOR='code --wait'
 export PATH=~/.pulumi/bin:${PATH}
 
 #==============================================================================#
-#               ------- Personal Aliases & Functions --------                  
+#               ------- Personal Aliases & Functions --------
 #==============================================================================#
 source_if_exists (){ if test -r "$1"; then source "$1"; fi; }
 

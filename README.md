@@ -4,19 +4,20 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io).
 
 ## Table of Contents <!-- omit in toc -->
 
-- [Pre-requisites](#pre-requisites)
-- [Linux](#linux)
-  - [Install](#install)
-  - [Shell](#shell)
-  - [Update](#update)
-  - [Test](#test)
-  - [Containers](#containers)
-- [Microsoft Windows](#microsoft-windows)
-  - [Install](#install-1)
-  - [Test](#test-1)
-- [Browser extensions](#browser-extensions)
+- [1. Pre-requisites](#1-pre-requisites)
+- [2. Linux](#2-linux)
+  - [2.1 Install](#21-install)
+  - [2.2 Shell](#22-shell)
+  - [2.3 Update](#23-update)
+  - [2.4 Test](#24-test)
+  - [2.5 Containers](#25-containers)
+- [3. Microsoft Windows](#3-microsoft-windows)
+  - [3.1 Install](#31-install)
+  - [3.2 Test](#32-test)
+- [4. Browser](#4-browser)
+- [5. Visual Studio Code](#5-visual-studio-code)
 
-## Pre-requisites
+## 1. Pre-requisites
 
 I store the below sensitive configuration in my Vaultwarden instance:
 
@@ -27,9 +28,9 @@ I store the below sensitive configuration in my Vaultwarden instance:
 
 I store the sensitive files for my Windows machine in an AWS S3 bucket.
 
-## Linux
+## 2. Linux
 
-### Install
+### 2.1 Install
 
 1. Export required environment variables:
 
@@ -163,7 +164,7 @@ unset BW_CLIENTSECRET
 unset BW_PASSWORD
 ```
 
-### Shell
+### 2.2 Shell
 
 Zsh is my default shell. Here is the list of plugins:
 
@@ -242,7 +243,7 @@ Here are some useful Linux system commands:
   - [vipe](https://linux.die.net/man/1/vipe): edit pipe.
   - [zrun](https://linux.die.net/man/1/zrun): automatically uncompress arguments to command.
 
-### Update
+### 2.3 Update
 
 Follow the steps below to refresh the configuration after an update on the repository:
 
@@ -255,7 +256,7 @@ Follow the steps below to refresh the configuration after an update on the repos
 cmub
 ```
 
-### Test
+### 2.4 Test
 
 Install Docker to test this setup. The following images have been tested so far:
 
@@ -313,7 +314,7 @@ To be tested:
 docker run --interactive --name dotfiles --tty --rm <image> bash
 ```
 
-### Containers
+### 2.5 Containers
 
 If needed, run this extra playbook to pull quite handy base images:
 
@@ -326,9 +327,9 @@ Here is the list of containerized tools that I use:
 
 - [Faster Whisper](https://github.com/SYSTRAN/faster-whisper): faster whisper transcription with ctranslate2. I use more specifically the image provided by linuxserver for which the source code is available [here](https://github.com/linuxserver/docker-faster-whisper).
 
-## Microsoft Windows
+## 3. Microsoft Windows
 
-### Install
+### 3.1 Install
 
 1. Export required environment variables:
 
@@ -440,7 +441,7 @@ $Env:BW_CLIENTSECRET=$null
 $Env:BW_PASSWORD=$null
 ```
 
-### Test
+### 3.2 Test
 
 Install Docker to test this setup.
 
@@ -478,9 +479,9 @@ To be tested:
 docker run --interactive --name dotfiles --tty --rm mcr.microsoft.com/windows/nanoserver:ltsc2022 powershell
 ```
 
-## Browser extensions
+## 4. Browser
 
-I am still figuring out a way to install them programmatically but here is a list of browser extensions that I use:
+I am still figuring out a way to install these extensions programmatically but here is a list of what I use:
 
 - [Bitwarden Password Manager](https://chromewebstore.google.com/detail/bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb)
 - [Cisco Webex Content Sharing](https://chromewebstore.google.com/detail/cisco-webex-content-shari/ifbdadgbpalmagalacllfaflfakmfkac)
@@ -493,3 +494,5 @@ I am still figuring out a way to install them programmatically but here is a lis
 - [Keepa - Amazon Price Tracker](https://chromewebstore.google.com/detail/keepa-amazon-price-tracke/neebplgakaahbhdphmkckjjcegoiijjo)
 - [Raindrop.io: all-in-one bookmark manager](https://chromewebstore.google.com/detail/raindropio/ldgfbffkinooeloadekpmfoklnobpien)
 - [uBlock Origin: finally an efficient blocker, easy on CPU and memory.](https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)
+
+## 5. Visual Studio Code

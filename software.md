@@ -51,7 +51,6 @@ Enhancements:
     - [clair](https://github.com/quay/clair) [Go]: vulnerability static analysis for containers.
     - [copacetic](https://github.com/project-copacetic/copacetic) [Go]: CLI tool for directly patching container images.
     - [docker bench](https://github.com/docker/docker-bench-security): script that checks for dozens of common best-practices around deploying Docker containers in production.
-    - [dozzle](https://github.com/amir20/dozzle) [Go]: realtime log viewer for Docker containers.
     - [skopeo](https://github.com/containers/skopeo) [Go]: work with remote images registries - retrieving information, images, signing content.
     - [subtrace](https://github.com/subtrace/subtrace) [Go]: wireshark for Docker containers.
     - new Docker commands (require an account and/or subscription): init, debug, compose watch, build cloud, scout.

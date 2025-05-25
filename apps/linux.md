@@ -95,6 +95,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [helm](https://github.com/helm/helm) [Go]: Kubernetes package manager.
     - [helmfile](https://github.com/helmfile/helmfile) [Go]: declaratively deploy your manifests, Kustomize configs, and Charts as Helm releases.
     - [k9s](https://github.com/derailed/k9s) [Go]: CLI to manage your clusters in style.
+    - [kubecolor](https://github.com/kubecolor/kubecolor) [Go]: colorize your kubectl output.
     - [kubectl](https://github.com/kubernetes/kubectl) [Go]: command-line interface.
     - [kubectx](https://github.com/ahmetb/kubectx) [Go]: faster way to switch between clusters and namespaces in kubectl.
     - [kubetail](https://github.com/johanhaleby/kubetail) [Shell]: tail logs from multiple pods at the same time.

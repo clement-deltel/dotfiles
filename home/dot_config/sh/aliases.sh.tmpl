@@ -197,6 +197,9 @@ alias gcplog='gcloud auth login'
 #==============================================================================#
 #               ------- Kubernetes ------
 #==============================================================================#
+alias kubectl=kubecolor
+
+alias kctx=kubectx
 alias kdd=kctl-describe-deployment-fn
 alias kdecs=kctl-decode-secret-fn
 alias kdp=kctl-describe-pod-fn
@@ -217,6 +220,7 @@ alias kgss='kctl get statefulset'
 alias kgt='kctl --namespace kube-system describe secret eks-admin'
 alias kl=kctl-logs-fn
 alias kn='kctl config set-context --current --namespace'
+alias kns=kubens
 alias kp='kctl proxy'
 alias kpf=kctl-port-forward-fn
 alias krmfailed='kctl delete pods --field-selector=status.phase=Failed'

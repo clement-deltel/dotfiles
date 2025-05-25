@@ -211,8 +211,12 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [subtrace](https://github.com/subtrace/subtrace) [Go]: wireshark for Docker containers.
     - new Docker commands (require an account and/or subscription): init, debug, compose watch, build cloud, scout.
   - Kubernetes
-    - [khi](https://github.com/GoogleCloudPlatform/khi) [Go]: transformative log viewer for Kubernetes.
+    - [eksctl](https://github.com/eksctl-io/eksctl) [Go]: official CLI for Amazon EKS.
+    - [khi](https://github.com/GoogleCloudPlatform/khi) [Go]: transformative log viewer.
+    - [kubespray](https://github.com/kubernetes-sigs/kubespray) [Go]: deploy a production ready cluster.
     - [kubevpn](https://github.com/kubenetworks/kubevpn) [Go]: cloud native dev environment that connects to Kubernetes cluster network.
+    - [nova](https://github.com/FairwindsOps/Nova) [Go]: find outdated or deprecated Helm charts running in your cluster.
+    - [polaris](https://github.com/FairwindsOps/polaris) [Go]: validation of best practices in your clusters.
     - [skaffold](https://github.com/GoogleContainerTools/skaffold) [Go]: easy and repeatable Kubernetes development.
 - **Search**
   - [ag](https://github.com/ggreer/the_silver_searcher) [C/C++]: code-searching tool similar to ack, but faster.

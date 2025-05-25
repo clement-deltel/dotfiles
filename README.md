@@ -138,13 +138,13 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
     - Orchestration
       - Docker
       - Kubernetes
-        - [helm](https://github.com/helm/helm) [Go]: the Kubernetes package manager.
-        - [helmfile](https://github.com/helmfile/helmfile) [Go]: declaratively deploy your Kubernetes manifests, Kustomize configs, and Charts as Helm releases.
-        - [k9s](https://github.com/derailed/k9s) [Go]: Kubernetes CLI to manage your clusters in style.
-        - [kubectl](https://github.com/kubernetes/kubectl) [Go]: Kubernetes command-line interface.
+        - [helm](https://github.com/helm/helm) [Go]: Kubernetes package manager.
+        - [helmfile](https://github.com/helmfile/helmfile) [Go]: declaratively deploy your manifests, Kustomize configs, and Charts as Helm releases.
+        - [k9s](https://github.com/derailed/k9s) [Go]: CLI to manage your clusters in style.
+        - [kubectl](https://github.com/kubernetes/kubectl) [Go]: command-line interface.
         - [kubectx](https://github.com/ahmetb/kubectx) [Go]: faster way to switch between clusters and namespaces in kubectl.
-        - [kubetail](https://github.com/johanhaleby/kubetail) [Shell]: tail Kubernetes logs from multiple pods at the same time.
-        - [stern](https://github.com/stern/stern) [Go]: multi pod and container log tailing for Kubernetes.
+        - [kubetail](https://github.com/johanhaleby/kubetail) [Shell]: tail logs from multiple pods at the same time.
+        - [stern](https://github.com/stern/stern) [Go]: multi pod and container log tailing.
     - Infrastructure-as-Code (IaC)
       - [Pulumi](https://github.com/pulumi/pulumi) [Go]: infrastructure-as-code in any programming language.
       - [Terraform](https://github.com/hashicorp/terraform) [Go]: safely and predictably create, change, and improve infrastructure.
@@ -357,7 +357,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
 
 4. Chocolatey automatically install and configure the tools listed below:
 
-- Common
+- **Common**
   - [7-Zip](https://community.chocolatey.org/packages/7zip): file archiver with a high compression ratio.
   - [AutoHotkey (Portable)](https://community.chocolatey.org/packages/autohotkey): macro-creation and automation software utility that allows users to automate repetitive tasks.
   - [Bitwarden CLI](https://community.chocolatey.org/packages/bitwarden-cli): bitwarden command-line interface.
@@ -371,6 +371,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
   - [Logi Options+](https://community.chocolatey.org/packages/logioptionsplus): manage and customize your supported mice and keyboards.
   - [Nilesoft Shell](https://community.chocolatey.org/packages/nilesoft-shell): context menu extender to integrate into Windows File Explorer.
   - [Notepad++](https://community.chocolatey.org/packages/notepadplusplus): source code editor.
+  - [Notion](https://community.chocolatey.org/packages/notion)
   - [Obsidian](https://community.chocolatey.org/packages/obsidian): knowledge base that works on top of a local folder of plain text markdown files.
   - [Win32 OpenSSH](https://community.chocolatey.org/packages/openssh): SSH support for Windows.
   - [Opera](https://community.chocolatey.org/packages/opera): web browser.
@@ -385,8 +386,8 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
   - [VSCodium](https://community.chocolatey.org/packages/vscodium): community-driven, freely-licensed binary distribution of Microsoft's editor vs code.
   - [WezTerm](https://community.chocolatey.org/packages/wezterm): GPU-accelerated cross-platform terminal emulator and multiplexer.
   - [WizTree](https://community.chocolatey.org/packages/wiztree): disk space analyzer utility.
-- Perso-specific
-- Work-specific
+- **Perso**
+- **Pro**
   - [AWS CLI v2](https://community.chocolatey.org/packages/awscli)
   - [Citrix Workspace](https://community.chocolatey.org/packages/citrix-workspace)
   - [DBeaver - Community Edition](https://community.chocolatey.org/packages/dbeaver)
@@ -396,7 +397,6 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
   - [Java SE (jdk8)](https://community.chocolatey.org/packages/jdk8)
   - [Keepass 2.x](https://community.chocolatey.org/packages/keepass)
   - [MongoDB Compass](https://community.chocolatey.org/packages/mongodb-compass)
-  - [Notion](https://community.chocolatey.org/packages/notion)
   - [Podman Desktop](https://community.chocolatey.org/packages/podman-desktop)
   - [PostgreSQL ODBC Driver](https://community.chocolatey.org/packages/psqlodbc): official PostgreSQL ODBC Driver.
   - [Pyenv-win](https://community.chocolatey.org/packages/pyenv-win): simple Python version management tool.
@@ -430,8 +430,10 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
 
 7. Finally, there are softwares that require manual effort:
 
-- [Backblaze](https://www.backblaze.com)
-- Logitech Capture
+- **Common**
+  - Logitech Capture
+- **Pro**
+  - [Backblaze](https://www.backblaze.com)
 
 8. Clean sensitive information:
 
@@ -481,7 +483,7 @@ docker run --interactive --name dotfiles --tty --rm mcr.microsoft.com/windows/na
 
 ## 4. Browser
 
-I am still figuring out a way to install these extensions programmatically but here is a list of what I use:
+I am still figuring out a way to install these extensions programmatically but here is a list:
 
 - [Bitwarden Password Manager](https://chromewebstore.google.com/detail/bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb)
 - [Cisco Webex Content Sharing](https://chromewebstore.google.com/detail/cisco-webex-content-shari/ifbdadgbpalmagalacllfaflfakmfkac)

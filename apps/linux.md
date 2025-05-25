@@ -202,14 +202,14 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [tmux](https://github.com/tmux/tmux)
   - [zellij](https://github.com/zellij-org/zellij)
 - **Orchestration**
-  - **Docker**
+  - Docker
     - [clair](https://github.com/quay/clair) [Go]: vulnerability static analysis for containers.
     - [copacetic](https://github.com/project-copacetic/copacetic) [Go]: CLI tool for directly patching container images.
     - [docker bench](https://github.com/docker/docker-bench-security): script that checks for dozens of common best-practices around deploying Docker containers in production.
     - [skopeo](https://github.com/containers/skopeo) [Go]: work with remote images registries - retrieving information, images, signing content.
     - [subtrace](https://github.com/subtrace/subtrace) [Go]: wireshark for Docker containers.
     - new Docker commands (require an account and/or subscription): init, debug, compose watch, build cloud, scout.
-  - **Kubernetes**
+  - Kubernetes
     - [khi](https://github.com/GoogleCloudPlatform/khi) [Go]: transformative log viewer for Kubernetes.
     - [kubevpn](https://github.com/kubenetworks/kubevpn) [Go]: cloud native dev environment that connects to Kubernetes cluster network.
     - [skaffold](https://github.com/GoogleContainerTools/skaffold) [Go]: easy and repeatable Kubernetes development.
@@ -233,7 +233,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [glances](https://github.com/nicolargo/glances) [Python]: glances an eye on your system.
   - [nerdfetch](https://github.com/ThatOneCalculator/NerdFetch) [Shell]: POSIX *nix fetch script using Nerdfonts.
   - [macchina](https://github.com/Macchina-CLI/macchina) [Rust]: system information frontend with an emphasis on performance.
-- **Text Editors**
+- **Text Editor**
   - [lazy nvim](https://github.com/folke/lazy.nvim) [Lua]: modern plugin manager for Neovim.
   - [qsv](https://github.com/dathere/qsv) [Rust]: blazing-fast data-wrangling toolkit.
   - [xan](https://github.com/medialab/xan) [Rust]: csv magician.

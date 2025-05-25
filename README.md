@@ -83,7 +83,7 @@ Here is my theme: robbyrussell
 
 Here are some useful Linux system commands:
 
-- Built-ins
+- **Built-ins**
   - [dig](https://linux.die.net/man/1/dig): DNS lookup utility.
   - [lshw](https://linux.die.net/man/1/lshw): list hardware.
   - [lsof](https://linux.die.net/man/8/lsof): list open files.
@@ -93,7 +93,7 @@ Here are some useful Linux system commands:
   - [systemd-analyze](https://man7.org/linux/man-pages/man1/systemd-analyze.1.html): analyze and debug system manager.
   - [tcpdump](https://linux.die.net/man/8/tcpdump): dump traffic on a network.
   - [watch](https://linux.die.net/man/1/watch): execute a program periodically, showing output fullscreen.
-- More Utils
+- **More Utils**
   - [errno](https://linux.die.net/man/3/errno): number of last error.
   - [ifdata](https://linux.die.net/man/1/ifdata): get network interface info without parsing ifconfig output.
   - [vidir](https://linux.die.net/man/1/vidir): edit directory.
@@ -117,7 +117,7 @@ cmub
 
 Install Docker to test this setup. The following images have been tested so far:
 
-- Debian-like Systems
+- **Debian-like Systems**
   - ubuntu:22.04
 
 Then, build an image:
@@ -156,15 +156,15 @@ docker run --interactive --name dotfiles --tty --rm dotfiles
 
 To be tested:
 
-- Debian-like Systems
+- **Debian-like Systems**
   - debian:12:10
   - ubuntu:24.04
-- RedHat-like Systems
+- **RedHat-like Systems**
   - quay.io/centos/centos:10
   - fedora:42
-- ArchLinux
+- **ArchLinux**
   - archlinux:base-20250302.0.316047
-- NixOS
+- **NixOS**
   - nixos/nix:2.27.1
 
 ```bash

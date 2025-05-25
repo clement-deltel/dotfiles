@@ -16,37 +16,43 @@ Here is a list of apps that I am currently using, that could be interesting and 
 ### Chocolatey
 
 - **Common**
+  - **Authentication**
+    - [Bitwarden CLI](https://community.chocolatey.org/packages/bitwarden-cli): bitwarden command-line interface.
+  - **Media**
+    - [Spotify](https://community.chocolatey.org/packages/spotify): digital music service that gives you access to millions of songs.
+    - [VLC Media Player](https://community.chocolatey.org/packages/vlc): cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.
+  - **Personal Knowledge Management System (PKMS)**
+    - [Notion](https://community.chocolatey.org/packages/notion)
+    - [Obsidian](https://community.chocolatey.org/packages/obsidian): knowledge base that works on top of a local folder of plain text markdown files.
   - **Remote Access**
     - [FileZilla](https://community.chocolatey.org/packages/filezilla): cross-platform FTP, FTPS and SFTP client.
     - [RustDesk](https://community.chocolatey.org/packages/rustdesk): remote desktop software, works out of the box, no configuration required.
     - [Win32 OpenSSH](https://community.chocolatey.org/packages/openssh): SSH support for Windows.
+  - **Search**
+    - [Google Chrome](https://community.chocolatey.org/packages/googlechrome): web browser.
+    - [Opera](https://community.chocolatey.org/packages/opera): web browser.
+  - **Security**
+    - [VeraCrypt](https://community.chocolatey.org/packages/veracrypt): disk encryption software.
   - **Software Development**
     - [Docker Engine](https://community.chocolatey.org/packages/docker-engine): suite of development tools, services, trusted content, and automations, used individually or together, to accelerate the delivery of secure applications.
     - [Git](https://community.chocolatey.org/packages/git): native set of tools that bring the full feature set of the git SCM.
     - [Git Credential Manager](https://community.chocolatey.org/packages/git-credential-manager-for-windows): secure git credential storage.
     - [Visual Studio Code](https://community.chocolatey.org/packages/vscode): build and debug modern web and cloud applications.
+    - [VSCodium](https://community.chocolatey.org/packages/vscodium): community-driven, freely-licensed binary distribution of Microsoft's editor vs code.
+    - [WezTerm](https://community.chocolatey.org/packages/wezterm): GPU-accelerated cross-platform terminal emulator and multiplexer.
+  - **Text Editor**
+    - [Notepad++](https://community.chocolatey.org/packages/notepadplusplus): source code editor.
   - **Other**
-  - [7-Zip](https://community.chocolatey.org/packages/7zip): file archiver with a high compression ratio.
-  - [AutoHotkey (Portable)](https://community.chocolatey.org/packages/autohotkey): macro-creation and automation software utility that allows users to automate repetitive tasks.
-  - [Bitwarden CLI](https://community.chocolatey.org/packages/bitwarden-cli): bitwarden command-line interface.
-  - [BleachBit](https://community.chocolatey.org/packages/bleachbit.install): quickly free disk space, guard privacy, delete cookies, clear internet history, shred temporary files, delete logs, discard junk, and wipes clean thousands of applications.
-  - [Flameshot](https://community.chocolatey.org/packages/flameshot): screenshot software.
-  - [Google Chrome](https://community.chocolatey.org/packages/googlechrome): web browser.
-  - [Logi Options+](https://community.chocolatey.org/packages/logioptionsplus): manage and customize your supported mice and keyboards.
-  - [Nilesoft Shell](https://community.chocolatey.org/packages/nilesoft-shell): context menu extender to integrate into Windows File Explorer.
-  - [Notepad++](https://community.chocolatey.org/packages/notepadplusplus): source code editor.
-  - [Notion](https://community.chocolatey.org/packages/notion)
-  - [Obsidian](https://community.chocolatey.org/packages/obsidian): knowledge base that works on top of a local folder of plain text markdown files.
-  - [Opera](https://community.chocolatey.org/packages/opera): web browser.
-  - [PowerToys](https://community.chocolatey.org/packages/powertoys): set of utilities for power users to tune and streamline their Windows experience for greater productivity.
-  - [QuickLook](https://community.chocolatey.org/packages/quicklook): enables very quick preview of file by pressing Space key while highlighting it, without opening its associated application.
-  - [Spotify](https://community.chocolatey.org/packages/spotify): digital music service that gives you access to millions of songs.
-  - [Sudo](https://community.chocolatey.org/packages/sudo): elevate directly from the shell.
-  - [VeraCrypt](https://community.chocolatey.org/packages/veracrypt): disk encryption software.
-  - [VLC Media Player](https://community.chocolatey.org/packages/vlc): cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.
-  - [VSCodium](https://community.chocolatey.org/packages/vscodium): community-driven, freely-licensed binary distribution of Microsoft's editor vs code.
-  - [WezTerm](https://community.chocolatey.org/packages/wezterm): GPU-accelerated cross-platform terminal emulator and multiplexer.
-  - [WizTree](https://community.chocolatey.org/packages/wiztree): disk space analyzer utility.
+    - [7-Zip](https://community.chocolatey.org/packages/7zip): file archiver with a high compression ratio.
+    - [AutoHotkey (Portable)](https://community.chocolatey.org/packages/autohotkey): macro-creation and automation software utility that allows users to automate repetitive tasks.
+    - [BleachBit](https://community.chocolatey.org/packages/bleachbit.install): quickly free disk space, guard privacy, delete cookies, clear internet history, shred temporary files, delete logs, discard junk, and wipes clean thousands of applications.
+    - [Flameshot](https://community.chocolatey.org/packages/flameshot): screenshot software.
+    - [Logi Options+](https://community.chocolatey.org/packages/logioptionsplus): manage and customize your supported mice and keyboards.
+    - [Nilesoft Shell](https://community.chocolatey.org/packages/nilesoft-shell): context menu extender to integrate into Windows File Explorer.
+    - [PowerToys](https://community.chocolatey.org/packages/powertoys): set of utilities for power users to tune and streamline their Windows experience for greater productivity.
+    - [QuickLook](https://community.chocolatey.org/packages/quicklook): enables very quick preview of file by pressing Space key while highlighting it, without opening its associated application.
+    - [Sudo](https://community.chocolatey.org/packages/sudo): elevate directly from the shell.
+    - [WizTree](https://community.chocolatey.org/packages/wiztree): disk space analyzer utility.
 - **Perso**
 - **Pro**
   - **Authentication**

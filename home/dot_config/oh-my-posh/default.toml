@@ -23,6 +23,7 @@ version = 3
   blue_kube = "#4C70E6"
   orange_aws = "#F69D1E"
   purple_ubuntu = "#3E0442"
+  red_gcp = "#E14B42"
   yellow_python = "#F9CF45"
 
 #==============================================================================#
@@ -195,7 +196,7 @@ version = 3
     template = "❯ "
 
 #==============================================================================#
-#               ------- Tooltips --------                                      
+#               ------- Tooltips --------
 #==============================================================================#
 
 # Cloud
@@ -203,21 +204,31 @@ version = 3
   tips = ["aws","terraform"]
   type = "aws"
   style = "diamond"
-  leading_diamond = ""
-  trailing_diamond = ""
+  leading_diamond = ""
+  trailing_diamond = ""
   foreground = "p:white"
   background = "p:orange_aws"
-  template = " {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} "
+  template = "  {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} "
 
   [tooltips.properties]
     display_default = true
 
 [[tooltips]]
+  tips = ["gcp", "gcloud"]
+  type = "gcp"
+  style = "diamond"
+  leading_diamond = ""
+  trailing_diamond = ""
+  foreground = "p:white"
+  background = "p:red_gcp"
+  template = "  {{.Project}}{{ if .Region }}@{{ .Region }}{{ end }} "
+
+[[tooltips]]
   tips = ["az", "terraform"]
   type = "az"
   style = "diamond"
-  leading_diamond = ""
-  trailing_diamond = ""
+  leading_diamond = ""
+  trailing_diamond = ""
   foreground = "p:white"
   background = "p:blue_azure"
   template = " {{ .Name }} "
@@ -236,6 +247,9 @@ version = 3
   background = "p:blue_docker"
   template = " {{ .Context }} "
 
+  [tooltips.properties]
+    display_mode = "context"
+
 [[tooltips]]
   type = "helm"
   style = "diamond"
@@ -243,10 +257,10 @@ version = 3
   trailing_diamond = ""
   foreground = "p:white"
   background = "p:blue_helm"
-  template = " {{ .Version }} "
+  template = "  {{ .Version }} "
 
   [tooltips.properties]
-    display_mode = "always"
+    display_mode = "files"
 
 [[tooltips]]
   tips = [ "kubectl", "k" ]

@@ -5,9 +5,9 @@
 export USER=$(whoami)
 export HOME=/home/${USER}
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Environment ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 export PATH=~/.local/bin:~/scripts:${PATH}
 
 export EDITOR='code --wait'
@@ -36,7 +36,7 @@ export PATH=~/.pulumi/bin:${PATH}
 export PYENV_ROOT=${HOME}/.pyenv
 export PATH=${PYENV_ROOT}/bin:${PATH}
 if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init - zsh)"
+    eval "$(pyenv init - zsh)"
 fi
 eval "$(pyenv virtualenv-init - zsh)"
 

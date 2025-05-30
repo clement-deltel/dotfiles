@@ -1,25 +1,25 @@
 #!/bin/bash
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #DESCRIPTION: Initialize the system just with curl installed as a pre-requisite.
-#==============================================================================#
+#------------------------------------------------------------------------------#
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #FUNCTION: install_dependencies
 #DESCRIPTION: Install pre-requisites on the system.
-#==============================================================================#
-function install_dependencies(){
+#------------------------------------------------------------------------------#
+function install_dependencies() {
   echo "[INFO] Installing dependencies: curl, git, jq, libsecret-1-0, unzip..."
   sudo apt update -y
   sudo apt install -y curl git jq libsecret-1-0 unzip
 }
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #FUNCTION: install_chezmoi
 #DESCRIPTION: Install chezmoi on the system.
-#==============================================================================#
-function install_chezmoi(){
-    if [ ! "$(command -v chezmoi)" ]; then
+#------------------------------------------------------------------------------#
+function install_chezmoi() {
+  if [ ! "$(command -v chezmoi)" ]; then
     bin_dir="$HOME/.local/bin"
     chezmoi="$bin_dir/chezmoi"
     if [ "$(command -v curl)" ]; then
@@ -35,13 +35,13 @@ function install_chezmoi(){
   fi
 }
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #FUNCTION: install_bitwarden
 #DESCRIPTION: Install Bitwarden CLI on the system.
-#==============================================================================#
-function install_bitwarden(){
+#------------------------------------------------------------------------------#
+function install_bitwarden() {
   echo "[INFO] Getting Bitwarden CLI latest version..."
-  export BW_VERSION=$(curl -H "Accept: application/vnd.github+json" https://api.github.com/repos/bitwarden/clients/releases | jq  -r 'sort_by(.published_at) | reverse | .[].name | select( index("CLI") )' | sed "s:.*CLI v::" | head -n 1)
+  export BW_VERSION=$(curl -H "Accept: application/vnd.github+json" https://api.github.com/repos/bitwarden/clients/releases | jq -r 'sort_by(.published_at) | reverse | .[].name | select( index("CLI") )' | sed "s:.*CLI v::" | head -n 1)
 
   echo "[INFO] Installing Bitwarden CLI ${BW_VERSION}..."
   curl -L --remote-name "https://github.com/bitwarden/clients/releases/download/cli-v${BW_VERSION}/bw-linux-${BW_VERSION}.zip"
@@ -52,11 +52,11 @@ function install_bitwarden(){
   rm -f bw-linux-*.zip
 }
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #FUNCTION: configure_bitwarden
 #DESCRIPTION: Configure Bitwarden API access and get chezmoi configuration file.
-#==============================================================================#
-configure_bitwarden(){
+#------------------------------------------------------------------------------#
+configure_bitwarden() {
   echo "[INFO] Configuring Bitwarden CLI..."
   bw config server ${BW_SERVER}
   bw login --apikey
@@ -64,16 +64,16 @@ configure_bitwarden(){
   echo "[INFO] Opening session to get chezmoi configuration file..."
   export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
   mkdir -p ~/.config/chezmoi
-  bw get notes chezmoi-${MACHINE} > ~/.config/chezmoi/chezmoi.toml
+  bw get notes chezmoi-${MACHINE} >~/.config/chezmoi/chezmoi.toml
   bw lock
   echo "[INFO] chezmoi configuration file successfully retrieved"
 }
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #FUNCTION: init
 #DESCRIPTION: Initialize chezmoi on the system.
-#==============================================================================#
-init(){
+#------------------------------------------------------------------------------#
+init() {
   export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
 
   echo "[INFO] Running chezmoi initialization..."
@@ -83,10 +83,10 @@ init(){
   bw lock
 }
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #FUNCTION: main
-#==============================================================================#
-function main(){
+#------------------------------------------------------------------------------#
+function main() {
   set -e # -e: exit on error
 
   install_dependencies

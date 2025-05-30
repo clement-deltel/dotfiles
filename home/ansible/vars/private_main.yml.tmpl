@@ -1,75 +1,75 @@
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Ansible ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 deb_architecture: { "armv6l": "armhf", "armv7l": "armhf", "aarch64": "arm64", "x86_64": "amd64", "i386": "i386" }
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- APT ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 apt_packages:
-  # Modern Replacements
-  - bat
-  - duf
-  - fd-find
-  - ncdu
-  - ripgrep
-  # Monitoring
-  - htop
-  - hwinfo
-  - iotop
-  - progress
-  # Network
-  - ethtool
-  - fping
-  - gping
-  - ipcalc
-  - mtr
-  - net-tools                  #
-  - termshark
-  - trippy
-  - tshark                     #
-  - wireshark-common           # network protocol analyzer libraries
-  # Search
-  - fzf
-  - jq
-  - ranger
-  # Software Development
-  - build-essential            #
-  - cmake                      #
-  - git                        # gold standard version control system
-  - libpq-dev                  # library to develop with PostgreSQL
-  - portaudio19-dev            # library required for PyAudio
-  # Other
-  - figlet
-  - magic-wormhole
-  - moreutils                  # collection of the Unix tools that nobody thought to write long ago
-  - pdftk
-  - pwgen
-  - unp
-  - vim
-  - xclip
-  # Dependencies
-  - apache2-utils              # htpasswd utility
-  - bash-completion            #
-  - curl                       #
-  - man-db                     # man pages
-  - nfs-common                 #
-  - ninja-build                #
-  - software-properties-common #
-  - ssh                        #
-  - tzdata                     # timezone
-  - unzip                      #
-  - zip                        #
+# Modern Replacements
+- bat
+- duf
+- fd-find
+- ncdu
+- ripgrep
+# Monitoring
+- htop
+- hwinfo
+- iotop
+- progress
+# Network
+- ethtool
+- fping
+- gping
+- ipcalc
+- mtr
+- net-tools #
+- termshark
+- trippy
+- tshark           #
+- wireshark-common # network protocol analyzer libraries
+# Search
+- fzf
+- jq
+- ranger
+# Software Development
+- build-essential #
+- cmake           #
+- git             # gold standard version control system
+- libpq-dev       # library to develop with PostgreSQL
+- portaudio19-dev # library required for PyAudio
+# Other
+- figlet
+- magic-wormhole
+- moreutils # collection of the Unix tools that nobody thought to write long ago
+- pdftk
+- pwgen
+- unp
+- vim
+- xclip
+# Dependencies
+- apache2-utils              # htpasswd utility
+- bash-completion            #
+- curl                       #
+- man-db                     # man pages
+- nfs-common                 #
+- ninja-build                #
+- software-properties-common #
+- ssh                        #
+- tzdata                     # timezone
+- unzip                      #
+- zip                        #
 apt_repositories:
-  - ppa:fujiapple/trippy
+- ppa:fujiapple/trippy
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- AWS ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 aws_dependencies:
-  - firefox                    #
-  - xdg-utils                  # enable starting a browser to run aws sso login
-  - zip                        #
+- firefox   #
+- xdg-utils # enable starting a browser to run aws sso login
+- zip       #
 
 aws_profile: default
 aws_region: us-east-2
@@ -81,209 +81,209 @@ aws_sso_registration_scopes: 'sso:account:access'
 aws_sso_role_name: 'LocalAdminAccess'
 aws_sso_start_url: '{{ (bitwardenFields "item" "223277e3-498b-4d3c-9c0b-fe80e0e83d7b").sso_start_url.value }}'
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Bitwarden ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 bitwarden_dependencies:
-  - curl                      #
-  - jq
-  - libsecret-1-0             #
+- curl #
+- jq
+- libsecret-1-0 #
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Docker ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 docker_gid: 1001
 docker_uid: 1001
 
 docker_dependencies:
-  - ca-certificates           #
-  - curl                      #
-  - gnupg                     #
+- ca-certificates #
+- curl            #
+- gnupg           #
 docker_packages:
-  - docker-ce
-  - docker-ce-cli
-  - containerd.io
-  - docker-buildx-plugin
-  - docker-compose-plugin
+- docker-ce
+- docker-ce-cli
+- containerd.io
+- docker-buildx-plugin
+- docker-compose-plugin
 
 docker_images:
-  - archlinux:base-20250302.0.316047
-  - debian:12.10
-  - fedora:42
-  - mongo:7.0.4
-  - nixos/nix:2.27.1
-  - postgis/postgis:15-3.4
-  - postgres:15.0
-  - quay.io/centos/centos:10
-  - rabbitmq:3.12.10-management
-  - redis:7.2.3
-  - ubuntu:22.04
+- archlinux:base-20250302.0.316047
+- debian:12.10
+- fedora:42
+- mongo:7.0.4
+- nixos/nix:2.27.1
+- postgis/postgis:15-3.4
+- postgres:15.0
+- quay.io/centos/centos:10
+- rabbitmq:3.12.10-management
+- redis:7.2.3
+- ubuntu:22.04
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Eza ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 eza_dependencies:
-  - gpg                       #
+- gpg #
 eza_packages:
-  - eza                       # modern alternative to ls
+- eza # modern alternative to ls
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Git ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 git_packages:
-  - git                       # gold standard version control system
-  - git-filter-repo
+- git # gold standard version control system
+- git-filter-repo
 # git lfs
 git_lfs_install_tmp: /tmp/git
 git_lfs_install_url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
 git_lfs_packages:
-  - git-lfs                   # git extension for versioning large files
+- git-lfs # git extension for versioning large files
 git_formulas:
-  - gitleaks
+- gitleaks
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Go ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 go_packages:
-  - sigs.k8s.io/kind@v0.26.0
+- sigs.k8s.io/kind@v0.26.0
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Google Cloud Platform ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 gcp_dependencies:
-  - apt-transport-https       #
-  - ca-certificates           #
-  - curl                      #
-  - firefox                   #
-  - gnupg                     #
-  - xdg-utils                 # enable starting a browser to run gcloud init
+- apt-transport-https #
+- ca-certificates     #
+- curl                #
+- firefox             #
+- gnupg               #
+- xdg-utils           # enable starting a browser to run gcloud init
 gcp_packages:
-  - google-cloud-cli
-  - google-cloud-cli-gke-gcloud-auth-plugin
+- google-cloud-cli
+- google-cloud-cli-gke-gcloud-auth-plugin
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Helm ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 helm_install_tmp: /tmp/helm
 helm_install_url: https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 helm_plugin_urls:
-  - https://github.com/jkroepke/helm-secrets/releases/latest/download/helm-secrets.tar.gz
+- https://github.com/jkroepke/helm-secrets/releases/latest/download/helm-secrets.tar.gz
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Homebrew ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 homebrew_dependencies:
-  - build-essential           #
-  - curl                      #
-  - git                       # gold standard version control system
-  - language-pack-en          #
-  - locales                   #
+- build-essential  #
+- curl             #
+- git              # gold standard version control system
+- language-pack-en #
+- locales          #
 homebrew_install_tmp: /tmp/homebrew
 homebrew_install_url: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 homebrew_formulas:
-  # Modern Replacements
-  - procs
-  # Monitoring
-  - btop
-  # Orchestration
-  - grype
-  - lazydocker
-  - trivy
-  # Software Development
-  - lazygit
-  - ls-lint
-  - tokei
-  # Other
-  - lnav
-  - tlrc
+# Modern Replacements
+- procs
+# Monitoring
+- btop
+# Orchestration
+- grype
+- lazydocker
+- trivy
+# Software Development
+- lazygit
+- ls-lint
+- tokei
+# Other
+- lnav
+- tlrc
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Kubernetes ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 kubectl_install_tmp: /tmp/kubernetes
 kubernetes_formulas:
-  - helmfile
-  - k9s
-  - kubecolor
-  - kubectx
-  - kubetail
-  - stern
+- helmfile
+- k9s
+- kubecolor
+- kubectx
+- kubetail
+- stern
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- NodeJS ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 node_dependencies:
-  - build-essential           #
-  - ca-certificates           #
-  - curl                      #
-  - gnupg                     #
+- build-essential #
+- ca-certificates #
+- curl            #
+- gnupg           #
 node_major: 20
 node_packages:
-  - nodejs
+- nodejs
 npm_packages:
-  - "@bitnami/readme-generator-for-helm" # auto generate READMEs for Helm Charts
+- "@bitnami/readme-generator-for-helm" # auto generate READMEs for Helm Charts
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- NVIDIA ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 # See https://www.nvidia.com/Download/index.aspx for more details.
 
 nvidia_packages:
-  - cuda-toolkit-12-8         #
-  - nvidia-container-toolkit  #
-  # - nvidia-driver-570
+- cuda-toolkit-12-8        #
+- nvidia-container-toolkit #
+# - nvidia-driver-570
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Oh My Posh ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 omp_install_tmp: /tmp/ohmyposh
 omp_install_url: https://ohmyposh.dev/install.sh
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Pulumi ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 pulumi_install_tmp: /tmp/pulumi
 pulumi_install_url: https://get.pulumi.com
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Python ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 python_packages:
-  - gdal-bin                  # executable to use GDAL with Python
-  - libbz2-dev                # data compression library to develop with Python
-  - libgdal-dev               # library to use GDAL with Python
-  - python3
-  - python3-docker            # used by Ansible modules
-  - python3-pip
-  - python3-venv
-  - python3.11-dev
-  - python3.11-venv
-  - python-is-python3
+- gdal-bin    # executable to use GDAL with Python
+- libbz2-dev  # data compression library to develop with Python
+- libgdal-dev # library to use GDAL with Python
+- python3
+- python3-docker # used by Ansible modules
+- python3-pip
+- python3-venv
+- python3.11-dev
+- python3.11-venv
+- python-is-python3
 
 # pip
 pip_packages:
-  - aiohttp                   #
-  - asyncer                   #
-  - filetype                  #
-  - gradio                    #
-  - markitdown
-  - onnxruntime               #
-  - pillow                    #
-  - Pygments
-  - rembg                     #
-  - watchdog	                #
-  - whisper-live
+- aiohttp  #
+- asyncer  #
+- filetype #
+- gradio   #
+- markitdown
+- onnxruntime #
+- pillow      #
+- Pygments
+- rembg    #
+- watchdog #
+- whisper-live
 
 # pyenv
 pyenv_dependencies:
-  - build-essential           #
-  - bzip2                     #
-  - libffi-dev                #
-  - libncursesw5-dev          #
-  - libreadline-dev           #
-  - libsqlite3-dev            #
-  - libssl-dev                #
-  - zlib1g-dev                #
+- build-essential  #
+- bzip2            #
+- libffi-dev       #
+- libncursesw5-dev #
+- libreadline-dev  #
+- libsqlite3-dev   #
+- libssl-dev       #
+- zlib1g-dev       #
 pyenv_install_tmp: /tmp/pyenv
 pyenv_install_url: https://pyenv.run
 pyenv_python_version: 3.11.8
@@ -292,29 +292,29 @@ pyenv_python_version: 3.11.8
 uv_install_tmp: /tmp/uv
 uv_install_url: https://astral.sh/uv/install.sh
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Terraform ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 terraform_dependencies:
-  - gnupg                       #
-  - software-properties-common  #
+- gnupg                      #
+- software-properties-common #
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- WezTerm ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 wezterm_packages:
-  - wezterm
+- wezterm
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Zoxide ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 zoxide_install_tmp: /tmp/zoxide
 zoxide_install_url: https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Zsh ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 zsh_dependencies:
-  - curl                      #
-  - git                       # gold standard version control system
-  - zsh                       #
+- curl #
+- git  # gold standard version control system
+- zsh  #

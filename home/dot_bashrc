@@ -1,20 +1,20 @@
 #!/bin/bash
 # .bashrc
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Colors ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 RED='\e[1;31m'
 NC='\e[0m'
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Configuration --------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 
 # If not running interactively, don't do anything
 case $- in
-  *i*) ;;
-    *) return;;
+*i*) ;;
+*) return ;;
 esac
 
 # Shell optional behavior
@@ -49,7 +49,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-  xterm-color|*-256color) color_prompt=yes;;
+xterm-color | *-256color) color_prompt=yes ;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -58,14 +58,14 @@ esac
 #force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
+  if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
+  else
+    color_prompt=
+  fi
 fi
 
 if [ "$color_prompt" = yes ]; then
@@ -77,11 +77,10 @@ unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-xterm*|rxvt*)
+xterm* | rxvt*)
   PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
   ;;
-*)
-  ;;
+*) ;;
 esac
 
 # Enable color support of ls and also add handy aliases
@@ -122,35 +121,35 @@ if ! shopt -oq posix; then
   fi
 fi
 
-set -o ignoreeof    # Shell doesn't quit upon reading the end of file
+set -o ignoreeof # Shell doesn't quit upon reading the end of file
 #set -o noclobber   # Prevents overwriting existing regular files
-set -o notify       # Alerts the user upon background job termination
+set -o notify # Alerts the user upon background job termination
 #set -o xtrace      # Prints out command arguments during execution
-set -o vi           # Set vi mode for shell
+set -o vi # Set vi mode for shell
 
 # User specific environment and startup programs
 export USER=$(whoami)
 export HOME=/home/${USER}
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Homebrew --------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 export PATH=/home/linuxbrew/.linuxbrew/bin:${PATH}
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Pyenv --------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 export PYENV_ROOT=${HOME}/.pyenv
 export PATH=${PYENV_ROOT}/bin:${PATH}
 if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init - bash)"
+  eval "$(pyenv init - bash)"
 fi
 eval "$(pyenv virtualenv-init - bash)"
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Environment ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 export PATH=~/.local/bin:${PATH}
 
 # Chezmoi
@@ -166,10 +165,10 @@ export KUBE_EDITOR='code --wait'
 # Pulumi
 export PATH=~/.pulumi/bin:${PATH}
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Personal Aliases & Functions --------
-#==============================================================================#
-source_if_exists (){ if test -r "$1"; then source "$1"; fi; }
+#------------------------------------------------------------------------------#
+source_if_exists() { if test -r "$1"; then source "$1"; fi; }
 
 source_if_exists ~/.config/sh/aliases.sh
 source_if_exists ~/.config/sh/completions.sh

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #AUTHOR: Clement Deltel
 #DATE: 2025/02/06
 #DESCRIPTION: push code to customer's environment without internal only files.
@@ -18,7 +18,7 @@
 #  update-message: commit message to merge updates. Defaults to "chore: add latest updates from origin".
 #  work-dir: directory where to run the script. Defaults to current directory.
 #  force: flag used to force a git push.
-#==============================================================================#
+#------------------------------------------------------------------------------#
 
 set -e
 
@@ -28,47 +28,47 @@ USAGE="Usage: $0 --action={init|update|push} [--vendor-url=<repository_url>] [--
 # Parse named arguments
 while [ $# -gt 0 ]; do
     case "$1" in
-	    --action=*)
+    --action=*)
         ACTION="${1#*=}"
         shift
         ;;
-        --vendor-url=*)
+    --vendor-url=*)
         VENDOR_URL="${1#*=}"
         shift
         ;;
-        --customer-url=*)
+    --customer-url=*)
         CUSTOMER_URL="${1#*=}"
         shift
         ;;
-        --exclude=*)
-        IFS=',' read -r -a EXCLUDED_FILES <<< "${1#*=}"
+    --exclude=*)
+        IFS=',' read -r -a EXCLUDED_FILES <<<"${1#*=}"
         shift
         ;;
-		--pull-branch=*)
+    --pull-branch=*)
         VENDOR_PULL_BRANCH="${1#*=}"
         shift
         ;;
-		--push-branch=*)
+    --push-branch=*)
         CUSTOMER_PUSH_BRANCH="${1#*=}"
         shift
         ;;
-        --customer-remote=*)
+    --customer-remote=*)
         CUSTOMER_REMOTE="${1#*=}"
         shift
         ;;
-        --update-message=*)
+    --update-message=*)
         UPDATE_MESSAGE="${1#*=}"
         shift
         ;;
-		--work-dir=*)
+    --work-dir=*)
         WORK_DIR="${1#*=}"
         shift
         ;;
-        --force)
+    --force)
         FORCE_PUSH="true"
         shift
         ;;
-        *)
+    *)
         echo "Unknown parameter: $1"
         echo "$USAGE"
         exit 1
@@ -94,7 +94,7 @@ WORK_DIR="${WORK_DIR:-.}"
 filter_internal_files() {
     # Create filter spec file
     local filter_file="filter-spec.txt"
-    echo "$EXCLUDED_FILES" | tr ',' '\n' > "$filter_file"
+    echo "$EXCLUDED_FILES" | tr ',' '\n' >"$filter_file"
 
     # Use git filter-repo for more reliable filtering
     git filter-repo \
@@ -110,40 +110,40 @@ mkdir -p "$WORK_DIR"
 cd "$WORK_DIR"
 
 case "$ACTION" in
-    "init")
-	    # Clone repository
-        git clone -b "$VENDOR_PULL_BRANCH" --single-branch "$VENDOR_URL" .
-		# Filter out internal files
-        filter_internal_files
-        # Create vendor and customer remotes
-        git remote -v | grep -w origin || git remote add origin "$VENDOR_URL"
-        git remote -v | grep -w "$CUSTOMER_REMOTE" || git remote add "$CUSTOMER_REMOTE" "$CUSTOMER_URL"
-        ;;
+"init")
+    # Clone repository
+    git clone -b "$VENDOR_PULL_BRANCH" --single-branch "$VENDOR_URL" .
+    # Filter out internal files
+    filter_internal_files
+    # Create vendor and customer remotes
+    git remote -v | grep -w origin || git remote add origin "$VENDOR_URL"
+    git remote -v | grep -w "$CUSTOMER_REMOTE" || git remote add "$CUSTOMER_REMOTE" "$CUSTOMER_URL"
+    ;;
 
-    "update")
-        git remote -v | grep -w origin || git remote add origin "$VENDOR_URL"
-        git checkout "$VENDOR_PULL_BRANCH"
-        git pull origin "$VENDOR_PULL_BRANCH" --no-rebase --no-commit
-        git commit -m "$UPDATE_MESSAGE"
-        # Filter out internal files
-        filter_internal_files
-        ;;
+"update")
+    git remote -v | grep -w origin || git remote add origin "$VENDOR_URL"
+    git checkout "$VENDOR_PULL_BRANCH"
+    git pull origin "$VENDOR_PULL_BRANCH" --no-rebase --no-commit
+    git commit -m "$UPDATE_MESSAGE"
+    # Filter out internal files
+    filter_internal_files
+    ;;
 
-    "push")
-		# Disable LFS prior pushing
-		git lfs uninstall
-        if [[ "$FORCE_PUSH" == "true" ]]; then
-            git push "$CUSTOMER_REMOTE" "$VENDOR_PULL_BRANCH:$CUSTOMER_PUSH_BRANCH" --force
-        else
-            git push "$CUSTOMER_REMOTE" "$VENDOR_PULL_BRANCH:$CUSTOMER_PUSH_BRANCH"
-        fi
-		# Re-enable LFS
-		git lfs install --skip-smudge
-        ;;
+"push")
+    # Disable LFS prior pushing
+    git lfs uninstall
+    if [[ "$FORCE_PUSH" == "true" ]]; then
+        git push "$CUSTOMER_REMOTE" "$VENDOR_PULL_BRANCH:$CUSTOMER_PUSH_BRANCH" --force
+    else
+        git push "$CUSTOMER_REMOTE" "$VENDOR_PULL_BRANCH:$CUSTOMER_PUSH_BRANCH"
+    fi
+    # Re-enable LFS
+    git lfs install --skip-smudge
+    ;;
 
-    *)
-        echo "Invalid action. Use: init, update, or push"
-		echo "$USAGE"
-        exit 1
-        ;;
+*)
+    echo "Invalid action. Use: init, update, or push"
+    echo "$USAGE"
+    exit 1
+    ;;
 esac

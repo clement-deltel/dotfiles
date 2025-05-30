@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- General ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 
 # Add extension $1 to all files without any extension in the current directory
 function add-ext { find . -type f -not -name "*.*" -exec mv "{}" "{}"."$1" \;; }
@@ -11,7 +11,11 @@ function add-ext { find . -type f -not -name "*.*" -exec mv "{}" "{}"."$1" \;; }
 function col { awk -v col="$1" "{print $col}"; }
 
 # Create $2 copies of file $1
-function cp-n { EXT="${1##*.}"; FILENAME="${1%.*}"; for i in $(seq 1 "$2"); do cp "$1" "${FILENAME}${i}.${EXT}"; done; }
+function cp-n {
+  EXT="${1##*.}"
+  FILENAME="${1%.*}"
+  for i in $(seq 1 "$2"); do cp "$1" "${FILENAME}${i}.${EXT}"; done
+}
 
 # Base64 decoding
 function dec { echo "$1" | base64 --decode; }
@@ -23,7 +27,10 @@ function exec-sub { find . -maxdepth 1 -mindepth 1 -type d -execdir echo {} \; -
 function lsdp { find . -maxdepth "$1" -ls -path "./.git*" -prune; }
 
 # Make directory $1 and then cd inside
-function mkcd { mkdir "$1"; cd "$1" || return; }
+function mkcd {
+  mkdir "$1"
+  cd "$1" || return
+}
 
 # Replace separator in CSV file from ';' to ','
 function sep { find . -name '*.csv' -exec sed -i 's/;/,/g' {} \;; }
@@ -41,30 +48,36 @@ function my-ip {
 # Full summary
 function ii {
   echo -e "\nYou are logged on ${RED}$(hostname)"
-  echo -e "\nAdditional information:$NC" ; uname -a
-  echo -e "\n${RED}Users logged on:$NC" ; w -h
-  echo -e "\n${RED}Current date:$NC" ; date
-  echo -e "\n${RED}Machine stats:$NC" ; uptime
-  echo -e "\n${RED}Memory stats:$NC" ; free
-  my-ip 2>&- ;
-  echo -e "\n${RED}Local IP Address:$NC" ; echo "${MY_IP:-"Not connected"}"
+  echo -e "\nAdditional information:$NC"
+  uname -a
+  echo -e "\n${RED}Users logged on:$NC"
+  w -h
+  echo -e "\n${RED}Current date:$NC"
+  date
+  echo -e "\n${RED}Machine stats:$NC"
+  uptime
+  echo -e "\n${RED}Memory stats:$NC"
+  free
+  my-ip 2>&-
+  echo -e "\n${RED}Local IP Address:$NC"
+  echo "${MY_IP:-"Not connected"}"
   echo
 }
 
 # Online cheatsheet
 function cheatsheet { curl cheat.sh/"$1"; }
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Ansible ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 function ansible-update {
   ansible-playbook --become --connection local --inventory "localhost," --tags update ~/ansible/ubuntu.yml
   ansible-playbook --become --connection local --inventory "localhost," --tags clean ~/ansible/ubuntu.yml
 }
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Bitwarden CLI ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 function bitwarden-create-session-fn {
   echo 'Syncing with Bitwarden vault...'
   bw sync
@@ -108,31 +121,38 @@ function bitwarden-open-fn {
   bitwarden-create-session-fn
 }
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Chezmoi ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 function chezmoi-add-fn { chezmoi add "$1"; }
 function chezmoi-add-template-fn { chezmoi add --template "$1"; }
-function chezmoi-apply-bitwarden-fn { bitwarden-create-session-fn; chezmoi apply --verbose; unset BW_SESSION; }
+function chezmoi-apply-bitwarden-fn {
+  bitwarden-create-session-fn
+  chezmoi apply --verbose
+  unset BW_SESSION
+}
 function chezmoi-edit-fn { chezmoi edit "$1"; }
 function chezmoi-fn { chezmoi "$@"; }
 function chezmoi-merge-fn { chezmoi merge "$1"; }
-function chezmoi-update-bitwarden-fn { bitwarden-create-session-fn; chezmoi update --force --verbose; unset BW_SESSION; }
+function chezmoi-update-bitwarden-fn {
+  bitwarden-create-session-fn
+  chezmoi update --force --verbose
+  unset BW_SESSION
+}
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Docker ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 function docker-exec-fn { docker exec -it "$1" "${2:-bash}"; }
 function docker-fn { docker "$@"; }
 function docker-image-rm-dangling-fn {
-    IMAGES=$(docker images --filter 'dangling=true' -q --no-trunc)
-    [[ -n ${IMAGES} ]] && docker rmi ${IMAGES} || echo 'no dangling images.'
+  IMAGES=$(docker images --filter 'dangling=true' -q --no-trunc)
+  [[ -n ${IMAGES} ]] && docker rmi ${IMAGES} || echo 'no dangling images.'
 }
 function docker-inspect-fn { docker inspect "$1"; }
 function docker-ip-fn {
   echo 'IP addresses of all named running containers'
-  for DOC in $(docker-names-fn)
-  do
+  for DOC in $(docker-names-fn); do
     IP=$(docker inspect --format='{{ "{{" }}range .NetworkSettings.Networks{{ "}}" }}{{ "{{" }}.IPAddress{{ "}}" }} {{ "{{" }}end{{ "}}" }}' "$DOC")
     OUT+=$DOC'\t'$IP'\n'
   done
@@ -141,46 +161,51 @@ function docker-ip-fn {
 }
 function docker-logs-fn { docker logs -f "$1"; }
 function docker-names-fn {
-	for ID in $(docker ps | awk "{print $1}" | grep -v 'CONTAINER')
-	do
+  for ID in $(docker ps | awk "{print $1}" | grep -v 'CONTAINER'); do
     docker inspect "$ID" | grep Name | head -1 | awk "{print $2}" | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
-	done
+  done
 }
 function docker-network-rm-fn { docker network rm "$1"; }
 function docker-pull-fn { docker pull "$1"; }
 function docker-rm-exited-fn { docker rm "$(docker ps --all -q -f status=exited)"; }
 function docker-run-fn { docker run -it "$1" "$2"; }
-function docker-stop-rm-fn { docker stop "$1"; docker rm "$1"; }
+function docker-stop-rm-fn {
+  docker stop "$1"
+  docker rm "$1"
+}
 function docker-volume-rm-fn { docker volume rm "$1"; }
 function docker-volume-rm-dangling-fn {
-    VOLS=$(docker volume ls --filter 'dangling=true' -q)
-    [[ -n ${VOLS} ]] && docker volume rm ${VOLS} || echo 'no dangling volumes.'
+  VOLS=$(docker volume ls --filter 'dangling=true' -q)
+  [[ -n ${VOLS} ]] && docker volume rm ${VOLS} || echo 'no dangling volumes.'
 }
 
 {{- if eq .shell "bash" }}
 function docker-image-rm-fn { docker image rm "$@"; }
 {{- end }}
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Docker Compose ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 function docker-compose-fn { docker compose "$@"; }
 function docker-compose-run-fn { docker compose run "$@"; }
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Git ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 function git-update-email { git-filter-repo --email-callback "return email.replace(b'$1', b'$2')" --force; }
 function git-update-name { git-filter-repo --name-callback "return name.replace(b'$1', b'$2')" --force; }
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Kubernetes ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 
 # When using aliases, print kubectl command and then execute it
 function kctl { echo "+ kubectl $@" && command kubectl "$@"; }
 
-function kctl-decode-secret-fn { kctl get secret "$1" -o jsonpath='{.data}' | base64 --decode; echo; }
+function kctl-decode-secret-fn {
+  kctl get secret "$1" -o jsonpath='{.data}' | base64 --decode
+  echo
+}
 function kctl-delete-pod-fn { kctl delete pod "$1"; }
 function kctl-describe-deployment-fn { kctl describe deployment "$1"; }
 function kctl-describe-pod-fn { kctl describe pod "$1"; }
@@ -191,9 +216,9 @@ function kctl-logs-fn { kctl logs -f "$1"; }
 function kctl-port-forward-fn { kctl port-forward service/"$1" "$2":"$2"; }
 function kctl-rollout-restart-deployment-fn { kctl rollout restart deployment "$2"; }
 
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Python ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 function python-pdb-fn { python -m pdb "$@"; }
 
 # pyenv
@@ -211,12 +236,12 @@ function venv-install-fn {
     poetry install --no-root
   fi
 
-  }
+}
 
 {{- if eq .shell "bash" }}
-#==============================================================================#
+#------------------------------------------------------------------------------#
 #               ------- Terraform ------
-#==============================================================================#
+#------------------------------------------------------------------------------#
 function terraform-fn { terraform "$@"; }
 function terraform-state-fn { terraform state "$@"; }
 {{- end }}

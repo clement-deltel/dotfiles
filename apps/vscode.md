@@ -20,7 +20,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, as we
 - [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers): open any folder or repository inside a Docker container.
 - [Docker DX](https://marketplace.visualstudio.com/items?itemName=docker.docker): Edit smarter, ship faster with an enhanced Docker-development experience.
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker): makes it easy to create, manage, and debug containerized applications.
-- [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv): support for dotenv file syntax.
+- [DotENV Official + Vault](https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode): syntax highlighting, auto-cloaking, auto-completion, in-code secret peeking, and optionally dotenv-vault.
 - [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml): fully-featured TOML support.
 - [Git Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.git-extension-pack): Popular extensions for git.
 - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph): view a Git Graph of your repository, and perform git actions from the graph.

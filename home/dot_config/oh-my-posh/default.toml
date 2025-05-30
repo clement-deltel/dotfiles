@@ -6,275 +6,284 @@ final_space = false
 auto_upgrade = true
 version = 3
 
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 #               ------- Color Palette --------
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 [palette]
-  # Default
-  black = "#000000"
-  blue = "#5D94E9"
-  green = "#6AC9A4"
-  orange = "#E7772C"
-  red = "#D81E5B"
-  white = "#FFFFFF"
-  yellow = "#ECAF3A"
-  # Custom
-  blue_azure = "#3C8CD6"
-  blue_docker = "#338BB8"
-  blue_go = "#45AFD7"
-  blue_helm = "#407EA2"
-  blue_kube = "#4C70E6"
-  orange_aws = "#F69D1E"
-  purple_ubuntu = "#3E0442"
-  red_gcp = "#E14B42"
-  yellow_python = "#F9CF45"
+# Default
+black = "#000000"
+blue = "#5D94E9"
+green = "#6AC9A4"
+orange = "#E7772C"
+red = "#D81E5B"
+white = "#FFFFFF"
+yellow = "#ECAF3A"
+# Custom
+blue_azure = "#3C8CD6"
+blue_docker = "#338BB8"
+blue_go = "#45AFD7"
+blue_helm = "#407EA2"
+blue_kube = "#4C70E6"
+orange_aws = "#F69D1E"
+purple_ubuntu = "#3E0442"
+red_gcp = "#E14B42"
+yellow_python = "#F9CF45"
 
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 #               ------- Prompts --------
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 [secondary_prompt]
-  foreground = "magenta"
-  background = "transparent"
-  template = "❯❯ "
+foreground = "magenta"
+background = "transparent"
+template = "❯❯ "
 
 [transient_prompt]
-  foreground = "magenta"
-  background = "transparent"
-  foreground_templates = ["{{ if gt .Code 0 }}red{{ end }}"]
-  template = "❯ "
+foreground = "magenta"
+background = "transparent"
+foreground_templates = ["{{ if gt .Code 0 }}red{{ end }}"]
+template = "❯ "
 
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 #               ------- Left --------
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 [[blocks]]
-  type = "prompt"
-  alignment = "left"
+type = "prompt"
+alignment = "left"
 
-  # Operating System
-  [[blocks.segments]]
-  type = "os"
-  style = "diamond"
-  trailing_diamond = ""
-  foreground = "p:white"
-  background = "p:purple_ubuntu"
-  template = "{{.Icon}} "
+# Operating System
+[[blocks.segments]]
+type = "os"
+style = "diamond"
+trailing_diamond = ""
+foreground = "p:white"
+background = "p:purple_ubuntu"
+template = "{{.Icon}} "
 
-  # Session (with ssh support)
-  [[blocks.segments]]
-    type = "session"
-    style = "diamond"
-    trailing_diamond = ""
-    foreground = "p:black"
-    background = "p:yellow"
-    template = " {{ if .SSHSession }} {{ end }}{{ .UserName }} "
+# Session (with ssh support)
+[[blocks.segments]]
+type = "session"
+style = "diamond"
+trailing_diamond = ""
+foreground = "p:black"
+background = "p:yellow"
+template = " {{ if .SSHSession }} {{ end }}{{ .UserName }} "
 
-  # Path
-  [[blocks.segments]]
-    type = "path"
-    style = "powerline"
-    powerline_symbol = ""
-    foreground = "p:white"
-    background = "p:orange"
-    template = '{{ if eq .PWD "~" }}{{ else }} {{ end }} {{ path .Path .Location }} '
+# Path
+[[blocks.segments]]
+type = "path"
+style = "powerline"
+powerline_symbol = ""
+foreground = "p:white"
+background = "p:orange"
+template = '{{ if eq .PWD "~" }}{{ else }} {{ end }} {{ path .Path .Location }} '
 
-    [blocks.segments.properties]
-      folder_separator_icon = "/"
-      style = "full"
+[blocks.segments.properties]
+folder_separator_icon = "/"
+style = "full"
 
-      [blocks.segments.properties.mapped_locations]
-      "~/ansible" = "󱂚"
+[blocks.segments.properties.mapped_locations]
+"~/ansible" = "󱂚"
 
-  [[blocks.segments]]
-    type = "git"
-    style = "powerline"
-    powerline_symbol = ""
-    foreground = "p:black"
-    background = "p:green"
-    template = " {{ if .UpstreamURL }}{{ url .UpstreamIcon .UpstreamURL }} {{ end }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }} "
-    foreground_templates = ["{{ if or (.Working.Changed) (.Staging.Changed) }}p:black{{ end }}", "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:white{{ end }}", "{{ if gt .Ahead 0 }}p:white{{ end }}"]
-    background_templates = ["{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}", "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:red{{ end }}", "{{ if gt .Ahead 0 }}#49416D{{ end }}", "{{ if gt .Behind 0 }}#7A306C{{ end }}"]
+[[blocks.segments]]
+type = "git"
+style = "powerline"
+powerline_symbol = ""
+foreground = "p:black"
+background = "p:green"
+template = " {{ if .UpstreamURL }}{{ url .UpstreamIcon .UpstreamURL }} {{ end }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }} "
+foreground_templates = [
+  "{{ if or (.Working.Changed) (.Staging.Changed) }}p:black{{ end }}",
+  "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:white{{ end }}",
+  "{{ if gt .Ahead 0 }}p:white{{ end }}",
+]
+background_templates = [
+  "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}",
+  "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:red{{ end }}",
+  "{{ if gt .Ahead 0 }}#49416D{{ end }}",
+  "{{ if gt .Behind 0 }}#7A306C{{ end }}",
+]
 
-    [blocks.segments.properties]
-      branch_max_length = 25
-      fetch_status = true
-      fetch_upstream_icon = true
-      commit_icon = '@'
+[blocks.segments.properties]
+branch_max_length = 25
+fetch_status = true
+fetch_upstream_icon = true
+commit_icon = '@'
 
-  [[blocks.segments]]
-    type = "root"
-    style = "powerline"
-    powerline_symbol = ""
-    foreground = "p:white"
-    background = "p:yellow"
-    template = "  "
+[[blocks.segments]]
+type = "root"
+style = "powerline"
+powerline_symbol = ""
+foreground = "p:white"
+background = "p:yellow"
+template = "  "
 
-  [[blocks.segments]]
-    type = "status"
-    style = "diamond"
-    leading_diamond = "<transparent,background></>"
-    trailing_diamond = ""
-    foreground = "p:white"
-    background = "p:blue"
-    template = " {{ if gt .Code 0 }}{{ else }}{{ end }} "
-    background_templates = ["{{ if gt .Code 0 }}p:red{{ end }}"]
+[[blocks.segments]]
+type = "status"
+style = "diamond"
+leading_diamond = "<transparent,background></>"
+trailing_diamond = ""
+foreground = "p:white"
+background = "p:blue"
+template = " {{ if gt .Code 0 }}{{ else }}{{ end }} "
+background_templates = ["{{ if gt .Code 0 }}p:red{{ end }}"]
 
-    [blocks.segments.properties]
-      always_enabled = true
+[blocks.segments.properties]
+always_enabled = true
 
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 #               ------- Right --------
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 [[blocks]]
-  type = "rprompt"
-  overflow = "hide"
+type = "rprompt"
+overflow = "hide"
 
-  # Languages
-  [[blocks.segments]]
-    type = "go"
-    style = "plain"
-    foreground = "p:blue_go"
-    background = "transparent"
-    template = " "
+# Languages
+[[blocks.segments]]
+type = "go"
+style = "plain"
+foreground = "p:blue_go"
+background = "transparent"
+template = " "
 
-    [blocks.segments.properties]
-      fetch_version = false
+[blocks.segments.properties]
+fetch_version = false
 
-  [[blocks.segments]]
-    type = "python"
-    style = "plain"
-    foreground = "p:yellow_python"
-    background = "transparent"
-    template = " {{ if .Venv }}{{ .Venv }}{{ end }} "
+[[blocks.segments]]
+type = "python"
+style = "plain"
+foreground = "p:yellow_python"
+background = "transparent"
+template = " {{ if .Venv }}{{ .Venv }}{{ end }} "
 
-    [blocks.segments.properties]
-      display_default	= true
-      display_mode = "files"
-      fetch_version = false
-      fetch_virtual_env = true
+[blocks.segments.properties]
+display_default = true
+display_mode = "files"
+fetch_version = false
+fetch_virtual_env = true
 
-  [[blocks.segments]]
-  type = "executiontime"
-  style = "diamond"
-  leading_diamond = ""
-  foreground = "p:green"
-  background = "#2c315a"
-  template = "<#fefefe></>  {{ .FormattedMs }} "
+[[blocks.segments]]
+type = "executiontime"
+style = "diamond"
+leading_diamond = ""
+foreground = "p:green"
+background = "#2c315a"
+template = "<#fefefe></>  {{ .FormattedMs }} "
 
-    [blocks.segments.properties]
-      always_enabled = false
-      threshold = 5000
-      style = "austin"
+[blocks.segments.properties]
+always_enabled = false
+threshold = 5000
+style = "austin"
 
-  [[blocks.segments]]
-    type = "time"
-    style = "plain"
-    foreground = "p:green"
-    background = "#2c315a"
-    template = "<#fefefe></>  {{ .CurrentDate | date .Format }} "
+[[blocks.segments]]
+type = "time"
+style = "plain"
+foreground = "p:green"
+background = "#2c315a"
+template = "<#fefefe></>  {{ .CurrentDate | date .Format }} "
 
-      [blocks.segments.properties]
-      time_format = "15:04"
+[blocks.segments.properties]
+time_format = "15:04"
 
-  [[blocks.segments]]
-    type = "shell"
-    style = "plain"
-    foreground = "p:white"
-    background = "p:purple_ubuntu"
-    template = " {{ .Name }} "
+[[blocks.segments]]
+type = "shell"
+style = "plain"
+foreground = "p:white"
+background = "p:purple_ubuntu"
+template = " {{ .Name }} "
 
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 #               ------- Left Newline --------
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 [[blocks]]
-  type = "prompt"
-  alignment = "left"
-  newline = true
+type = "prompt"
+alignment = "left"
+newline = true
 
-  [[blocks.segments]]
-    type = "text"
-    style = "plain"
-    foreground = "magenta"
-    background = "transparent"
-    foreground_templates = ["{{ if gt .Code 0 }}red{{ end }}"]
-    template = "❯ "
+[[blocks.segments]]
+type = "text"
+style = "plain"
+foreground = "magenta"
+background = "transparent"
+foreground_templates = ["{{ if gt .Code 0 }}red{{ end }}"]
+template = "❯ "
 
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 #               ------- Tooltips --------
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 
 # Cloud
 [[tooltips]]
-  tips = ["aws","terraform"]
-  type = "aws"
-  style = "diamond"
-  leading_diamond = ""
-  trailing_diamond = ""
-  foreground = "p:white"
-  background = "p:orange_aws"
-  template = "  {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} "
+tips = ["aws", "terraform"]
+type = "aws"
+style = "diamond"
+leading_diamond = ""
+trailing_diamond = ""
+foreground = "p:white"
+background = "p:orange_aws"
+template = "  {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} "
 
-  [tooltips.properties]
-    display_default = true
-
-[[tooltips]]
-  tips = ["gcp", "gcloud"]
-  type = "gcp"
-  style = "diamond"
-  leading_diamond = ""
-  trailing_diamond = ""
-  foreground = "p:white"
-  background = "p:red_gcp"
-  template = "  {{.Project}}{{ if .Region }}@{{ .Region }}{{ end }} "
+[tooltips.properties]
+display_default = true
 
 [[tooltips]]
-  tips = ["az", "terraform"]
-  type = "az"
-  style = "diamond"
-  leading_diamond = ""
-  trailing_diamond = ""
-  foreground = "p:white"
-  background = "p:blue_azure"
-  template = " {{ .Name }} "
+tips = ["gcp", "gcloud"]
+type = "gcp"
+style = "diamond"
+leading_diamond = ""
+trailing_diamond = ""
+foreground = "p:white"
+background = "p:red_gcp"
+template = "  {{.Project}}{{ if .Region }}@{{ .Region }}{{ end }} "
 
-  [tooltips.properties]
-    display_default = true
+[[tooltips]]
+tips = ["az", "terraform"]
+type = "az"
+style = "diamond"
+leading_diamond = ""
+trailing_diamond = ""
+foreground = "p:white"
+background = "p:blue_azure"
+template = " {{ .Name }} "
+
+[tooltips.properties]
+display_default = true
 
 # Orchestration
 [[tooltips]]
-  tips = [ "docker", "d" ]
-  type = "docker"
-  style = "diamond"
-  leading_diamond = ""
-  trailing_diamond = ""
-  foreground = "p:white"
-  background = "p:blue_docker"
-  template = " {{ .Context }} "
+tips = ["docker", "d"]
+type = "docker"
+style = "diamond"
+leading_diamond = ""
+trailing_diamond = ""
+foreground = "p:white"
+background = "p:blue_docker"
+template = " {{ .Context }} "
 
-  [tooltips.properties]
-    display_mode = "context"
-
-[[tooltips]]
-  type = "helm"
-  style = "diamond"
-  leading_diamond = ""
-  trailing_diamond = ""
-  foreground = "p:white"
-  background = "p:blue_helm"
-  template = "  {{ .Version }} "
-
-  [tooltips.properties]
-    display_mode = "files"
+[tooltips.properties]
+display_mode = "context"
 
 [[tooltips]]
-  tips = [ "kubectl", "k" ]
-  type = "kubectl"
-  style = "diamond"
-  leading_diamond = ""
-  trailing_diamond = ""
-  foreground = "p:white"
-  background = "p:blue_kube"
-  template = "󱃾 {{.Context}}{{if .Namespace}}::{{.Namespace}}{{end}} "
+type = "helm"
+style = "diamond"
+leading_diamond = ""
+trailing_diamond = ""
+foreground = "p:white"
+background = "p:blue_helm"
+template = "  {{ .Version }} "
 
-  [tooltips.properties]
-    display_error = true
-    parse_kubeconfig = true
+[tooltips.properties]
+display_mode = "files"
+
+[[tooltips]]
+tips = ["kubectl", "k"]
+type = "kubectl"
+style = "diamond"
+leading_diamond = ""
+trailing_diamond = ""
+foreground = "p:white"
+background = "p:blue_kube"
+template = "󱃾 {{.Context}}{{if .Namespace}}::{{.Namespace}}{{end}} "
+
+[tooltips.properties]
+display_error = true
+parse_kubeconfig = true

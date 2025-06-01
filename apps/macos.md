@@ -12,6 +12,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 ## Enhancements
 
-- [sps](https://github.com/alexykn/sps) [Rust]: package manager.
+- [sps](https://github.com/alexykn/sps) - package manager. `Rust`
 
 ## Deprecated

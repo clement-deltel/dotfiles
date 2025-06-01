@@ -66,7 +66,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
 ```
 
 4. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.
-5. Ansible playbooks automatically install and configure the apps listed [here](apps/linux.md#current).
+5. Ansible playbooks automatically install and configure these [apps](apps/linux.md#current).
 6. Clean sensitive information:
 
 ```bash
@@ -77,28 +77,28 @@ unset BW_PASSWORD
 
 ### 2.2 Shell
 
-Zsh is my default shell. The list of plugins is available [here](apps/linux.md#zsh-plugins)
+Zsh is my default shell, for which I use [plugins](apps/linux.md#zsh-plugins).
 
 Here is my theme: robbyrussell
 
 Here are some useful Linux system commands:
 
 - **Built-ins**
-  - [dig](https://linux.die.net/man/1/dig): DNS lookup utility.
-  - [lshw](https://linux.die.net/man/1/lshw): list hardware.
-  - [lsof](https://linux.die.net/man/8/lsof): list open files.
-  - [rsync](https://linux.die.net/man/1/rsync): remote (and local) file-copying tool.
-  - [shred](https://linux.die.net/man/1/shred): overwrite a file to hide its contents, and optionally delete it.
-  - [stat](https://linux.die.net/man/1/stat): display file or file system status.
-  - [systemd-analyze](https://man7.org/linux/man-pages/man1/systemd-analyze.1.html): analyze and debug system manager.
-  - [tcpdump](https://linux.die.net/man/8/tcpdump): dump traffic on a network.
-  - [watch](https://linux.die.net/man/1/watch): execute a program periodically, showing output fullscreen.
+  - [dig](https://linux.die.net/man/1/dig) - DNS lookup utility.
+  - [lshw](https://linux.die.net/man/1/lshw) - list hardware.
+  - [lsof](https://linux.die.net/man/8/lsof) - list open files.
+  - [rsync](https://linux.die.net/man/1/rsync) - remote (and local) file-copying tool.
+  - [shred](https://linux.die.net/man/1/shred) - overwrite a file to hide its contents, and optionally delete it.
+  - [stat](https://linux.die.net/man/1/stat) - display file or file system status.
+  - [systemd-analyze](https://man7.org/linux/man-pages/man1/systemd-analyze.1.html) - analyze and debug system manager.
+  - [tcpdump](https://linux.die.net/man/8/tcpdump) - dump traffic on a network.
+  - [watch](https://linux.die.net/man/1/watch) - execute a program periodically, showing output fullscreen.
 - **More Utils**
-  - [errno](https://linux.die.net/man/3/errno): number of last error.
-  - [ifdata](https://linux.die.net/man/1/ifdata): get network interface info without parsing ifconfig output.
-  - [vidir](https://linux.die.net/man/1/vidir): edit directory.
-  - [vipe](https://linux.die.net/man/1/vipe): edit pipe.
-  - [zrun](https://linux.die.net/man/1/zrun): automatically uncompress arguments to command.
+  - [errno](https://linux.die.net/man/3/errno) - number of last error.
+  - [ifdata](https://linux.die.net/man/1/ifdata) - get network interface info without parsing ifconfig output.
+  - [vidir](https://linux.die.net/man/1/vidir) - edit directory.
+  - [vipe](https://linux.die.net/man/1/vipe) - edit pipe.
+  - [zrun](https://linux.die.net/man/1/zrun) - automatically uncompress arguments to command.
 
 ### 2.3 Update
 
@@ -182,7 +182,7 @@ ansible-playbook --become --connection local --inventory "localhost," --tags ini
 
 Here is the list of containerized tools that I use:
 
-- [Faster Whisper](https://github.com/SYSTRAN/faster-whisper): faster whisper transcription with ctranslate2. I use more specifically the image provided by linuxserver for which the source code is available [here](https://github.com/linuxserver/docker-faster-whisper).
+- [Faster Whisper](https://github.com/SYSTRAN/faster-whisper) - faster whisper transcription with ctranslate2. I use more specifically the [image](https://github.com/linuxserver/docker-faster-whisper) provided by linuxserver.
 
 ## 3. Microsoft Windows
 
@@ -212,8 +212,8 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
    - [Chocolatey](https://docs.chocolatey.org/en-us/)
    - [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
 
-4. Chocolatey install and configure the apps listed [here](apps/windows.md#chocolatey).
-5. Winget install and configure the apps listed [here](apps/windows.md#winget).
+4. Chocolatey install and configure these [apps](apps/windows.md#chocolatey).
+5. Winget install and configure these [apps](apps/windows.md#winget).
 6. chezmoi also restore some files from backups stored in AWS S3:
    - Google Chrome
    - Outlook Signatures
@@ -222,7 +222,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
    - Windows Subsystem for Linux (WSL)
    - Windows Taskbar
 
-7. Finally, softwares requiring manual effort are listed [here](apps/windows.md#manual-effort).
+7. Finally, install the [softwares](apps/windows.md#manual-effort) requiring manual effort.
 8. Clean sensitive information:
 
 ```powershell
@@ -271,6 +271,6 @@ docker run --interactive --name dotfiles --tty --rm mcr.microsoft.com/windows/na
 
 ## 4. Browser
 
-I am still figuring out a way to install these extensions programmatically but what I use is available [here](apps/browser.md#current).
+I am still figuring out a way to install these [extensions](apps/browser.md#current) programmatically.
 
 ## 5. Visual Studio Code

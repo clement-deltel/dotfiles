@@ -1,4 +1,4 @@
-# Browser <!-- omit in toc -->
+# Visual Studio Code <!-- omit in toc -->
 
 Here is a list of Visual Studio Code extensions that I am currently using, as well as tools that I no longer use or which are obsolete.
 
@@ -41,6 +41,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, as we
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint): linting and style checking.
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=pkief.material-icon-theme): material design icons.
 - [Mypy Type Checker](https://marketplace.visualstudio.com/items?itemName=ms-python.mypy-type-checker): type checking support for Python files.
+- [Nix IDE](https://marketplace.visualstudio.com/items?itemName=jnoortheen.nix-ide): nix language support - syntax highlighting, formatting, and error reporting.
 - [Open in GitHub, Bitbucket, Gitlab...](https://marketplace.visualstudio.com/items?itemName=ziyasal.vscode-open-in-github): jump to a source code line in Github, Bitbucket, Gitlab, VisualStudio.com.
 - [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff): compare (diff) text selections within a file, across files, or to the clipboard
 - [Paste and Indent](https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-paste-and-indent): paste some code with "correct" indentation.
@@ -69,9 +70,29 @@ Here is a list of Visual Studio Code extensions that I am currently using, as we
 
 ## Deprecated
 
+- [Ansible](https://marketplace.visualstudio.com/items?itemName=redhat.ansible): ansible language support. **Reason**: not using.
+- [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag): automatically add HTML/XML close tag.
+- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag): auto rename paired HTML/XML tag.
+- [AWS Toolkit](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.aws-toolkit-vscode): support for many AWS services.
+- [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks): mark lines and jump to them.
+- [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools): C/C++ IntelliSense, debugging, and code browsing.
+- [Cloak](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak): hides/shows your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.
+- [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner): run code in many languages.
+- [Code Snap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap): take beautiful screenshots of your code.
+- [Code Time](https://marketplace.visualstudio.com/items?itemName=softwaredotcom.swdc-vscode): open source plugin that provides programming metrics.
+- [CodeGPT: Chat & AI Agent](https://marketplace.visualstudio.com/items?itemName=DanielSanMedium.dscodegpt): easily connect to top AI providers using their official APIs.
+- [Codium AI](https://marketplace.visualstudio.com/items?itemName=Codium.codium): generative AI coding platform that offers busy developers a comprehensive AI code assistant for generating code, writing unit tests, and creating documentation.
+- [DotNET Install Tool](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime): installs and manages different versions of the .NET SDK and Runtime.
 - [Excel Viewer](https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer): edit Excel spreadsheets and CSV files. **Reason**: not needed after all.
 - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter): Jupyter notebook support, interactive programming and computing that supports Intellisense, debugging and more. **Reason**: not using.
 - [Makefile Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools): makefile support, C/C++ IntelliSense, build, debug/run. **Reason**: not needed after all.
 - [Mintlify Doc Writer](https://marketplace.visualstudio.com/items?itemName=mintlify.document): AI powered documentation writer. **Reason**: not using.
 - [pre-commit](https://marketplace.visualstudio.com/items?itemName=elagil.pre-commit-helper): commands and helpers for executing pre-commit hooks. **Reason**: not using.
 - [VSColors](https://marketplace.visualstudio.com/items?itemName=kevscript.vscolors): color format converter. Supports HEX(A), RGB(A) and HSL(A) formats. **Reason**: not using.
+
+Themes:
+
+- [Atom One Dark Theme](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onedark): one dark theme based on Atom.
+- [Aura Theme](https://marketplace.visualstudio.com/items?itemName=DaltonMenezes.aura-theme): beautiful dark theme.
+- [Cobalt2 Theme Official](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2): official theme by Wes Bos.
+

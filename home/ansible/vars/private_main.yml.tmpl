@@ -248,13 +248,15 @@ pulumi_install_url: https://get.pulumi.com
 #-----------------------------------------------------------------------------#
 #               ------- Python ------
 #-----------------------------------------------------------------------------#
-python_packages:
+python_dependencies:
 - gdal-bin    # executable to use GDAL with Python
 - libbz2-dev  # data compression library to develop with Python
 - libgdal-dev # library to use GDAL with Python
+- liblzma-dev
 - python3
 - python3-docker # used by Ansible modules
 - python3-pip
+- python3-tk
 - python3-venv
 - python3.11-dev
 - python3.11-venv

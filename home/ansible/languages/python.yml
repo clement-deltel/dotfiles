@@ -5,28 +5,28 @@
     - ../vars/main.yml
 
   tasks:
-  # Packages
-  - name: Packages
+  # Dependencies
+  - name: Dependencies
     block:
 
-    - name: List packages
+    - name: List dependencies
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "packages: {{ python_packages }}"
+        msg: "dependencies: {{ python_dependencies }}"
 
     # sudo apt update -y && sudo apt install -y
-    - name: Install
+    - name: Install dependencies
       tags: init
       ansible.builtin.apt:
-        name: "{{ python_packages }}"
+        name: "{{ python_dependencies }}"
         state: present
         update_cache: true
 
     # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade
+    - name: Upgrade dependencies
       tags: update
       ansible.builtin.apt:
-        name: "{{ python_packages }}"
+        name: "{{ python_dependencies }}"
         state: latest
         update_cache: true
 
@@ -34,7 +34,7 @@
   - name: PyPI Packages
     block:
 
-    - name: List packages
+    - name: PyPI - List packages
       tags: [init, update]
       ansible.builtin.debug:
         msg: "PyPI packages: {{ pip_packages }}"

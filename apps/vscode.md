@@ -33,6 +33,11 @@ Here is a list of Visual Studio Code extensions that I am currently using, as we
 - [Hungry Delete](https://marketplace.visualstudio.com/items?itemName=jasonlhy.hungry-delete) - delete an entire block of whitespace or tab.
 - [Intellicode API Usage Examples](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.intellicode-api-usage-examples) - relevant code examples from GitHub for over 100K different APIs right in your editor.
 - [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode) - AI-assisted development.
+- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) - Jupyter notebook support, interactive programming and computing that supports Intellisense, debugging and more.
+- [Jupyter Cell Tags](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-jupyter-cell-tags) - Jupyter cell tags support.
+- [Jupyter Keymap](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-jupyter-keymap) - Jupyter keymaps for notebooks.
+- [Jupyter Notebook Renderers](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-jupyter-renderers) - renderers for Jupyter notebooks (with plotly, vega, gif, png, svg, jpeg and other such outputs).
+- [Jupyter Slide Show](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-jupyter-slideshow) - Jupyter slide show support.
 - [Kubernetes Templates](https://marketplace.visualstudio.com/items?itemName=lunuan.kubernetes-templates) - manifest templates.
 - [Kubernetes](https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools) - develop, deploy and debug Kubernetes applications.
 - [Lua](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) - language server.
@@ -65,34 +70,102 @@ Here is a list of Visual Studio Code extensions that I am currently using, as we
 - [ty](https://marketplace.visualstudio.com/items?itemName=astral-sh.ty) - support for the ty type checker and language server.
 - [vscode-base64](https://marketplace.visualstudio.com/items?itemName=adamhartford.vscode-base64) - base64 encode/decode the current selections.
 - [vscode-pets](https://marketplace.visualstudio.com/items?itemName=tonybaloney.vscode-pets) - pets for your Visual Studio Code.
+- [WakaTime](https://marketplace.visualstudio.com/items?itemName=vscode-wakatime): metrics, insights, and time tracking automatically generated from your programming activity.
 - [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) - open any folder in the Windows Subsystem for Linux (WSL).
 - [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) - yaml language support by Red Hat, with built-in Kubernetes syntax support.
 
 ## Deprecated
 
 - [Ansible](https://marketplace.visualstudio.com/items?itemName=redhat.ansible) - ansible language support. **Reason**: not using.
-- [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) - automatically add HTML/XML close tag.
-- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag) - auto rename paired HTML/XML tag.
 - [AWS Toolkit](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.aws-toolkit-vscode) - support for many AWS services.
-- [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks) - mark lines and jump to them.
 - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) - C/C++ IntelliSense, debugging, and code browsing.
-- [Cloak](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak) - hides/shows your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) - run code in many languages.
-- [Code Snap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap) - take beautiful screenshots of your code.
-- [Code Time](https://marketplace.visualstudio.com/items?itemName=softwaredotcom.swdc-vscode) - open source plugin that provides programming metrics.
-- [CodeGPT: Chat & AI Agent](https://marketplace.visualstudio.com/items?itemName=DanielSanMedium.dscodegpt) - easily connect to top AI providers using their official APIs.
-- [Codium AI](https://marketplace.visualstudio.com/items?itemName=Codium.codium) - generative AI coding platform that offers busy developers a comprehensive AI code assistant for generating code, writing unit tests, and creating documentation.
+- [Code Time](https://marketplace.visualstudio.com/items?itemName=softwaredotcom.swdc-vscode) - open source plugin that provides programming metrics. **Reason**: using WakaTime instead.
+- [Data Preview](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.vscode-data-preview) - extension for importing, viewing, slicing, dicing,charting, & exporting, large JSON array/config, YAML, Apache Arrow, Avro, Parquet & Excel data files.
+- [Decompiler](https://marketplace.visualstudio.com/items?itemName=tintinweb.vscode-decompiler) - decompile the $h*! out of things.
+- [Diff & Merge](https://marketplace.visualstudio.com/items?itemName=moshfeu.diff-merge) - show diffs and merge.
+- [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv): support for dotenv syntax.
 - [DotNET Install Tool](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime) - installs and manages different versions of the .NET SDK and Runtime.
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) - improve highlighting of errors, warnings and other language diagnostics.
 - [Excel Viewer](https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer) - edit Excel spreadsheets and CSV files. **Reason**: not needed after all.
-- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) - Jupyter notebook support, interactive programming and computing that supports Intellisense, debugging and more. **Reason**: not using.
+- [filesize](https://marketplace.visualstudio.com/items?itemName=mkxml.vscode-filesize) - show the current file size in the status bar.
+- [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) - display import/require package size in the editor.
+- [indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) - makes indentation easier to read.
+- [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - real-time collaborative development from the comfort of your favorite tools.
 - [Makefile Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools) - makefile support, C/C++ IntelliSense, build, debug/run. **Reason**: not needed after all.
-- [Mintlify Doc Writer](https://marketplace.visualstudio.com/items?itemName=mintlify.document) - AI powered documentation writer. **Reason**: not using.
+- [Multiple cursor case preserve](https://marketplace.visualstudio.com/items?itemName=Cardinal90.multi-cursor-case-preserve) - preserves case when editing with multiple cursors.
 - [pre-commit](https://marketplace.visualstudio.com/items?itemName=elagil.pre-commit-helper) - commands and helpers for executing pre-commit hooks. **Reason**: not using.
 - [VSColors](https://marketplace.visualstudio.com/items?itemName=kevscript.vscolors) - color format converter. Supports HEX(A), RGB(A) and HSL(A) formats. **Reason**: not using.
+- [Open API (Swagger) Editor](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi) - OpenAPI editing, validation and preview.
+- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) - plugin that autocompletes filenames.
+- [PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml) - rich PlantUML support.
+- [Postman](https://marketplace.visualstudio.com/items?itemName=Postman.postman-for-vscode) - streamline API development and testing.
+- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - code formatter using prettier.
+- [Puppet](https://marketplace.visualstudio.com/items?itemName=puppet.puppet-vscode) - full Puppet DSL intellisense, syntax highlighting, Puppet command support, Puppet node graphs, and much more.
+- [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) - show TODO, FIXME, etc. comment tags in a tree view.
+- [VS Code Counter](https://marketplace.visualstudio.com/items?itemName=uctakeoff.vscode-counter) - count lines of code in many programming languages.
+- [vscode-faker](https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-faker) - generate fake data for name, address, lorem ipsum, commerce and much more.
+- [vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf) - display pdf file.
+
+Artificial Intelligence:
+
+- [CodeGPT: Chat & AI Agent](https://marketplace.visualstudio.com/items?itemName=DanielSanMedium.dscodegpt) - easily connect to top AI providers using their official APIs.
+- [Codium AI](https://marketplace.visualstudio.com/items?itemName=Codium.codium) - generative AI coding platform that offers busy developers a comprehensive AI code assistant for generating code, writing unit tests, and creating documentation.
+- [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) - AI pair programmer.
+- [Mintlify Doc Writer](https://marketplace.visualstudio.com/items?itemName=mintlify.document) - AI powered documentation writer. **Reason**: not needed after all.
+- [Swimm Documentation](https://marketplace.visualstudio.com/items?itemName=Swimm.swimm) - AI chat and documentation.
+- [Tabnine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode) - AI code assistant that accelerates and simplifies software development while keeping your code private, secure, and compliant.
+
+Databases:
+
+- [MongoDB for VS Code](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode) - connect to MongoDB and Atlas directly from environment, navigate your databases and collections, inspect your schema and use playgrounds to prototype queries and aggregations. **Reason**: using MongoDB Compass standalone instead.
+- [Oracle SQL Developer](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer) - end-to-end development tools for your SQL and PL/SQL applications. **Reason**: using DBeaver instead.
+
+HTML:
+
+- [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) - automatically add HTML/XML close tag.
+- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag) - auto rename paired HTML/XML tag.
+
+Navigation:
+
+- [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks) - mark lines and jump to them.
+- [footsteps](https://marketplace.visualstudio.com/items?itemName=Wattenberger.footsteps) - highlight and navigate between your most recently edited chunks of code.
+
+Python:
+
+- [Flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8) - linting support for Python files using flake8. **Reason**: using uv with flake8 support instead.
+- [isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort) - import organization support for Python files using isort. **Reason**: using uv with isort support instead.
+- [Language-Cython](https://marketplace.visualstudio.com/items?itemName=guyskk.language-cython) - syntax highlighter for Cython.
+- [Pylint](https://marketplace.visualstudio.com/items?itemName=ms-python.pylint) - linting support for Python files. **Reason**: using uv with pylint support instead.
+
+Security:
+
+- [Cloak](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak) - hides/shows your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.
+- [Snyk Security](https://marketplace.visualstudio.com/items?itemName=snyk-security.snyk-vulnerability-scanner) - easily find and fix issues in your code, open source dependencies, infrastructure as code configurations with fast and accurate scans.
+- [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode) - advanced linter to detect & fix coding issues locally in JS/TS, Python, Java, C#, C/C++, Go, PHP.
+
+Screenshots:
+
+- [Code Snap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap) - take beautiful screenshots of your code.
+- [Polacode](https://marketplace.visualstudio.com/items?itemName=pnp.polacode) - polaroid for your code.
 
 Themes:
 
 - [Atom One Dark Theme](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onedark) - one dark theme based on Atom.
 - [Aura Theme](https://marketplace.visualstudio.com/items?itemName=DaltonMenezes.aura-theme) - beautiful dark theme.
 - [Cobalt2 Theme Official](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2) - official theme by Wes Bos.
-
+- [file-icons](https://marketplace.visualstudio.com/items?itemName=file-icons.file-icons) - file-specific icons for improved visual grepping.
+- [Icons Fonts](https://marketplace.visualstudio.com/items?itemName=idleberg.icon-fonts) - snippets for popular icon fonts such as font awesome, ionicons, glyphicons, octicons, material design icons and many more.
+- [Material Theme](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme) - the most epic theme.
+- [Material Theme Icons](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme-icons) - the most epic icons theme.
+- [morgan.codes-theme](https://marketplace.visualstudio.com/items?itemName=morgan-codes.morgan-codes-vscode-theme) - bright, modern, contrasting theme.
+- [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl) - theme for the night owls out there.
+- [Noctis](https://marketplace.visualstudio.com/items?itemName=liviuschera.noctis) - collection of light & dark themes with a well balanced blend of warm and cold colors.
+- [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) - Atom's iconic one dark theme.
+- [One Monokai Theme](https://marketplace.visualstudio.com/items?itemName=azemoh.one-monokai) - cross between monokai and one dark theme.
+- [Palenight Theme](https://marketplace.visualstudio.com/items?itemName=whizkydee.material-palenight-theme) - elegant and juicy material-inspired theme.
+- [Shades of Purple](https://marketplace.visualstudio.com/items?itemName=ahmadawais.shades-of-purple) - professional theme suite with hand-picked & bold shades of purple.
+- [The Digital Life](https://marketplace.visualstudio.com/items?itemName=xcad2k.vscode-thedigitallife) - theme built by Christian from The Digital Life.
+- [Tokyo Night](https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night) - clean theme that celebrates the lights of Downtown Tokyo at night.
+- [Vira Theme](https://marketplace.visualstudio.com/items?itemName=vira.vsc-vira-theme) - the new most epic theme.
+- [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons) - icons.

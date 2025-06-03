@@ -181,8 +181,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [hyperfine](https://github.com/sharkdp/hyperfine) - benchmarking CLI. `Rust`
   - [stress-ng](https://github.com/ColinIanKing/stress-ng) - stress test a computer system in various selectable ways. `C`
   - [s-tui](https://github.com/amanusk/s-tui) - terminal-based CPU stress and monitoring utility. `Python`
-- **Files**
+- **Directories & Files**
   - [entr](https://github.com/eradman/entr) - run arbitrary commands when files change. `C`
+  - [f2](https://github.com/ayoisaiah/f2): cross-platform command-line tool for batch renaming files and directories quickly and safely. `Go`
   - [watchman](https://github.com/facebook/watchman) - watches files and records, or triggers actions, when they change. `C++` `Python`
   - [yazi](https://github.com/sxyazi/yazi) - terminal file manager based on async I/O. `Rust`
 - **Infrastructure-as-Code (IaC)**

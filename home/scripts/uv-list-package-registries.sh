@@ -62,6 +62,12 @@ in_package && /registry = / {
     if (arr[1]) registry = arr[1]
 }
 
+# Extract git source
+in_package && /git = / {
+    match($0, /git = "([^"]*)"/, arr)
+    if (arr[1]) registry = "git+" arr[1]
+}
+
 END {
     # Print the last package if it exists
     if (name != "" && registry != "") {

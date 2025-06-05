@@ -95,6 +95,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [uv](https://github.com/astral-sh/uv) - package and project manager. `Rust`
 - **Orchestration**
   - Docker
+    - [skopeo](https://github.com/containers/skopeo)  - work with remote images registries - retrieving information, images, signing content. `Go`
   - Kubernetes
     - [helm](https://github.com/helm/helm)  - Kubernetes package manager. `Go`
     - [helmfile](https://github.com/helmfile/helmfile)  - declaratively deploy your manifests, Kustomize configs, and Charts as Helm releases. `Go`
@@ -210,7 +211,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [clair](https://github.com/quay/clair)  - vulnerability static analysis for containers. `Go`
     - [copacetic](https://github.com/project-copacetic/copacetic)  - CLI tool for directly patching container images. `Go`
     - [docker bench](https://github.com/docker/docker-bench-security) - script that checks for dozens of common best-practices around deploying Docker containers in production.
-    - [skopeo](https://github.com/containers/skopeo)  - work with remote images registries - retrieving information, images, signing content. `Go`
     - [subtrace](https://github.com/subtrace/subtrace)  - wireshark for Docker containers. `Go`
     - new Docker commands (require an account and/or subscription) - init, debug, compose watch, build cloud, scout.
   - Kubernetes

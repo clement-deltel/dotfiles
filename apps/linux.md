@@ -47,6 +47,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [vim](https://github.com/vim/vim) - text editor of choice.
       - [xclip](https://github.com/astrand/xclip) - CLI to the X11 clipboard. `C`
   - [homebrew](https://github.com/Homebrew/brew) - the missing package manager for Linux. `Ruby`
+    - **CI/CD**
+      - [act](https://github.com/nektos/act) - run your GitHub Actions locally. `Go`
     - **Modern Replacements**
       - [procs](https://github.com/dalance/procs) - [ps](https://linux.die.net/man/1/ps), with better sorting, tree support, and more. `Rust`
     - **Monitoring**
@@ -175,7 +177,10 @@ Here is a list of apps that I am currently using, that could be interesting and 
 ## Enhancements
 
 - **CI/CD**
-  - [gh-signoff](https://github.com/basecamp/gh-signoff) - local CI, sign off on your own work. `Shell`
+  - [gh-signoff](https://github.com/basecamp/gh-signoff) -  GitHub CLI extension local CI, sign off on your own work. `Shell`
+  - [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local) - Tired of pushing to test your .gitlab-ci.yml? `TypeScript`
+- **Database**
+  - [tbls](https://github.com/k1LoW/tbls) - ci-friendly tool to document a database. `Go`
 - **Diagrams**
   - [d2](https://github.com/terrastruct/d2) - modern diagram scripting language that turns text to diagrams. `JavaScript`
 - **Benchmarking**
@@ -221,6 +226,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [nova](https://github.com/FairwindsOps/Nova)  - find outdated or deprecated Helm charts running in your cluster. `Go`
     - [polaris](https://github.com/FairwindsOps/polaris)  - validation of best practices in your clusters. `Go`
     - [skaffold](https://github.com/GoogleContainerTools/skaffold)  - easy and repeatable Kubernetes development. `Go`
+    - [velero](https://github.com/vmware-tanzu/velero) - backup and migrate applications and their persistent volumes. `Go`
 - **Search**
   - [ag](https://github.com/ggreer/the_silver_searcher) - code-searching tool similar to ack, but faster. `C/C++`
 - **Secrets**
@@ -230,6 +236,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [google osv](https://github.com/google/osv.dev) - Open source vulnerability DB and triage service.
 - **Shell**
   - [brush](https://github.com/reubeno/brush) - bash/POSIX-compatible shell. `Rust`
+  - [Warp](https://github.com/warpdotdev/Warp) - modern terminal with AI built in so you and your team can build great software, faster. `Rust`
+  - [WindTerm](https://github.com/kingToolbox/WindTerm) - professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal. `C`
 - **Software Development**
   - [autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell. `TypeScript`
   - [cheat](https://github.com/cheat/cheat)  - create and view interactive cheatsheets on the command-line. `Go`

@@ -189,7 +189,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [s-tui](https://github.com/amanusk/s-tui) - terminal-based CPU stress and monitoring utility. `Python`
 - **Directories & Files**
   - [entr](https://github.com/eradman/entr) - run arbitrary commands when files change. `C`
-  - [f2](https://github.com/ayoisaiah/f2): cross-platform command-line tool for batch renaming files and directories quickly and safely. `Go`
+  - [f2](https://github.com/ayoisaiah/f2) - cross-platform command-line tool for batch renaming files and directories quickly and safely. `Go`
   - [watchman](https://github.com/facebook/watchman) - watches files and records, or triggers actions, when they change. `C++` `Python`
   - [yazi](https://github.com/sxyazi/yazi) - terminal file manager based on async I/O. `Rust`
 - **Infrastructure-as-Code (IaC)**

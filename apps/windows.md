@@ -19,6 +19,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - **Authentication**
     - [Bitwarden CLI](https://community.chocolatey.org/packages/bitwarden-cli) - bitwarden command-line interface.
   - **Media**
+    - [Flameshot](https://community.chocolatey.org/packages/flameshot) - screenshot software.
     - [Spotify](https://community.chocolatey.org/packages/spotify) - digital music service that gives you access to millions of songs.
     - [VLC Media Player](https://community.chocolatey.org/packages/vlc) - cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.
   - **Personal Knowledge Management System (PKMS)**
@@ -40,18 +41,18 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [Visual Studio Code](https://community.chocolatey.org/packages/vscode) - build and debug modern web and cloud applications.
     - [VSCodium](https://community.chocolatey.org/packages/vscodium) - community-driven, freely-licensed binary distribution of Microsoft's editor vs code.
     - [WezTerm](https://community.chocolatey.org/packages/wezterm) - GPU-accelerated cross-platform terminal emulator and multiplexer.
-  - **Text Editor**
-    - [Notepad++](https://community.chocolatey.org/packages/notepadplusplus) - source code editor.
-  - **Other**
-    - [7-Zip](https://community.chocolatey.org/packages/7zip) - file archiver with a high compression ratio.
+  - **Software Tweaks**
     - [AutoHotkey (Portable)](https://community.chocolatey.org/packages/autohotkey) - macro-creation and automation software utility that allows users to automate repetitive tasks.
-    - [BleachBit](https://community.chocolatey.org/packages/bleachbit.install) - quickly free disk space, guard privacy, delete cookies, clear internet history, shred temporary files, delete logs, discard junk, and wipes clean thousands of applications.
-    - [Flameshot](https://community.chocolatey.org/packages/flameshot) - screenshot software.
-    - [Logi Options+](https://community.chocolatey.org/packages/logioptionsplus) - manage and customize your supported mice and keyboards.
     - [Nilesoft Shell](https://community.chocolatey.org/packages/nilesoft-shell) - context menu extender to integrate into Windows File Explorer.
     - [PowerToys](https://community.chocolatey.org/packages/powertoys) - set of utilities for power users to tune and streamline their Windows experience for greater productivity.
     - [QuickLook](https://community.chocolatey.org/packages/quicklook) - enables very quick preview of file by pressing Space key while highlighting it, without opening its associated application.
     - [Sudo](https://community.chocolatey.org/packages/sudo) - elevate directly from the shell.
+  - **Text Editor**
+    - [Notepad++](https://community.chocolatey.org/packages/notepadplusplus) - source code editor.
+  - **Other**
+    - [7-Zip](https://community.chocolatey.org/packages/7zip) - file archiver with a high compression ratio.
+    - [BleachBit](https://community.chocolatey.org/packages/bleachbit.install) - quickly free disk space, guard privacy, delete cookies, clear internet history, shred temporary files, delete logs, discard junk, and wipes clean thousands of applications.
+    - [Logi Options+](https://community.chocolatey.org/packages/logioptionsplus) - manage and customize your supported mice and keyboards.
     - [WizTree](https://community.chocolatey.org/packages/wiztree) - disk space analyzer utility.
 - **Perso**
 - **Pro**
@@ -61,6 +62,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - **GIS**
     - [Google Earth Pro](https://community.chocolatey.org/packages/googleearthpro)
     - [QGIS](https://community.chocolatey.org/packages/qgis) - user friendly Open Source Geographic Information System (GIS).
+  - **Media**
+    - [GIMP](https://community.chocolatey.org/packages/gimp)
+    - [SoundSwitch](https://community.chocolatey.org/packages/soundswitch) - switch your playback and recording devices using simple hotkeys.
   - **Meetings**
     - [Webex Meetings - Cisco](https://community.chocolatey.org/packages/webex-meetings) - video conferencing is as simple and seamless as meeting in person.
     - [Zoom](https://community.chocolatey.org/packages/zoom) - unify cloud video conferencing, simple online meetings, group messaging, and a software-defined conference room solution into one easy-to-use platform.
@@ -78,10 +82,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [PostgreSQL ODBC Driver](https://community.chocolatey.org/packages/psqlodbc) - official PostgreSQL ODBC Driver.
     - [Pyenv-win](https://community.chocolatey.org/packages/pyenv-win) - simple Python version management tool.
     - [Python](https://community.chocolatey.org/packages/python) - programming language that lets you work more quickly and integrate your systems more effectively.
-  - **Other**
-    - [GIMP](https://community.chocolatey.org/packages/gimp)
+  - **Tools**
     - [Rufus](https://community.chocolatey.org/packages/rufus) - utility that helps format and create bootable USB flash drives, such as USB keys/pendrives, memory sticks, etc.
-    - [SoundSwitch](https://community.chocolatey.org/packages/soundswitch) - switch your playback and recording devices using simple hotkeys.
 
 ### Winget
 
@@ -111,10 +113,15 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - **Hardware Tweaks**
     - [MSI Afterburner](https://community.chocolatey.org/packages/msiafterburner) - graphics card utility.
     - [OCCT](https://community.chocolatey.org/packages/occt) - stability checking tool.
+  - **Media**
+    - [MP3Tag](https://community.chocolatey.org/packages/mp3tag) - edit metadata of common audio formats.
+    - [MusicBee](https://community.chocolatey.org/packages/musicbee)
   - **Monitoring**
     - [CPU-Z](https://community.chocolatey.org/packages/cpu-z) - system profiler (system monitor) application that detects the central processing unit, RAM, motherboard chipset, and other hardware features.
     - [GPU-Z](https://community.chocolatey.org/packages/gpu-z) - utility designed to provide you with all information about your graphics card and GPU.
     - [Open Hardware Monitor](https://community.chocolatey.org/packages/openhardwaremonitor)
+  - Search
+    - [Everything](https://community.chocolatey.org/packages/Everything)
   - **Social**
     - [Beeper](https://community.chocolatey.org/packages/beeper-app)
     - [Discord](https://community.chocolatey.org/packages/discord)
@@ -123,6 +130,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [Winaero Tweaker](https://community.chocolatey.org/packages/winaero-tweaker) - all-in-one application that comes with dozens of options for fine-grained tuning of various Windows settings and features.
   - **Tools**
     - [Revo Uninstaller](https://community.chocolatey.org/packages/revo-uninstaller)
+    - [ripgrep](https://community.chocolatey.org/packages/ripgrep)
 - **Independently**
   - **Databases**
     - Oracle SQL Developer (Chocolatey package outdated)
@@ -137,6 +145,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [UniGetUI](https://github.com/marticliment/UniGetUI) - unified graphical interface for package managers.
   - **Security**
     - [Zed Encrypt](https://www.zedencrypt.com)
+  - **Tools**
+    - [Uninstalr](https://uninstalr.com/)
   - **Other**
     - Minecraft
     - Office 365

@@ -40,7 +40,7 @@
         url: https://api.github.com/repos/bitwarden/clients/releases
         headers:
           Accept: application/vnd.github+json
-        return_content: yes
+        return_content: true
       register: releases
 
     - name: Extract the latest Bitwarden CLI version

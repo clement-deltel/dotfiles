@@ -67,7 +67,7 @@
       ansible.builtin.copy:
         src: "{{ keyring_file.files[0].path }}"
         dest: /usr/share/keyrings/
-        remote_src: yes
+        remote_src: true
         mode: 0644
       when: keyring_file.files | length > 0
 
@@ -112,4 +112,4 @@
       ansible.builtin.systemd:
         name: docker
         state: restarted
-        enabled: yes
+        enabled: true

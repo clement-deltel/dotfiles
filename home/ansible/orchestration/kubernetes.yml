@@ -48,7 +48,7 @@
     - name: kubectl - Get latest version
       ansible.builtin.uri:
         url: https://dl.k8s.io/release/stable.txt
-        return_content: yes
+        return_content: true
       register: version
 
     - name: kubectl - Download

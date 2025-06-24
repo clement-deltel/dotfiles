@@ -128,7 +128,7 @@
       tags: init
       ansible.builtin.systemd:
         name: docker
-        enabled: yes
+        enabled: true
         state: started
 
     # sudo systemctl restart docker
@@ -136,7 +136,7 @@
       tags: update
       ansible.builtin.systemd:
         name: docker
-        enabled: yes
+        enabled: true
         state: restarted
 
   # Version

@@ -7,6 +7,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - [Current](#current)
 - [Zsh Plugins](#zsh-plugins)
 - [Enhancements](#enhancements)
+- [Production Applications](#production-applications)
 - [Deprecated](#deprecated)
 
 ## Current
@@ -179,6 +180,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **CI/CD**
   - [gh-signoff](https://github.com/basecamp/gh-signoff) -  GitHub CLI extension local CI, sign off on your own work. `Shell`
   - [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local) - Tired of pushing to test your .gitlab-ci.yml? `TypeScript`
+- **Cloud**
+  - [sourcerer](https://github.com/the-impact-craft/sourcerer) - CLI-based cloud storage explorer that provides a unified interface to view and manage files across multiple cloud providers. `Python`
 - **Database**
   - [tbls](https://github.com/k1LoW/tbls) - ci-friendly tool to document a database. `Go`
 - **Diagrams**
@@ -190,6 +193,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Directories & Files**
   - [entr](https://github.com/eradman/entr) - run arbitrary commands when files change. `C`
   - [f2](https://github.com/ayoisaiah/f2) - cross-platform command-line tool for batch renaming files and directories quickly and safely. `Go`
+  - [lstr](https://github.com/bgreenwell/lstr) - fast, minimalist directory tree viewer. `Rust`
+  - [noxdir](https://github.com/crumbyte/noxdir) - terminal utility for visualizing file system usage. `Go`
   - [watchman](https://github.com/facebook/watchman) - watches files and records, or triggers actions, when they change. `C++` `Python`
   - [yazi](https://github.com/sxyazi/yazi) - terminal file manager based on async I/O. `Rust`
 - **Infrastructure-as-Code (IaC)**
@@ -205,6 +210,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [dua](https://github.com/Byron/dua-cli) - du, view disk space usage and delete unwanted data. `Rust`
   - [dust](https://github.com/bootandy/dust) - du, a more intuitive version. `Rust`
   - [hwatch](https://github.com/blacknon/hwatch) - watch, records the differences in execution results and can check this differences at after. `Rust`
+  - [somo](https://github.com/theopfr/somo) - netstat, human-friendly alternative for socket and port monitoring. `Rust`
 - **Monitoring**
   - [powertop](https://github.com/fenrus75/powertop) - diagnose issues with power consumption and power management. `C/C++`
   - [sampler](https://github.com/sqshq/sampler)  - shell commands execution, visualization and alerting. `Go`
@@ -221,6 +227,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - Kubernetes
     - [eksctl](https://github.com/eksctl-io/eksctl)  - official CLI for Amazon EKS. `Go`
     - [khi](https://github.com/GoogleCloudPlatform/khi)  - transformative log viewer. `Go`
+    - [kubectlai](https://github.com/GoogleCloudPlatform/kubectl-ai) - AI powered Kubernetes assistant. `Go`
     - [kubespray](https://github.com/kubernetes-sigs/kubespray)  - deploy a production ready cluster. `Go`
     - [kubevpn](https://github.com/kubenetworks/kubevpn)  - cloud native dev environment that connects to Kubernetes cluster network. `Go`
     - [nova](https://github.com/FairwindsOps/Nova)  - find outdated or deprecated Helm charts running in your cluster. `Go`
@@ -283,12 +290,24 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [mergiraf](https://mergiraf.org)
   - [multi-gitter](https://github.com/lindell/multi-gitter)  - update multiple repositories in with one command. `Go`
   - [opencommit](https://github.com/di-sukharev/opencommit) - generate commit messages by an LLM in 1 sec. `JavaScript`
+  - [zizmor](https://github.com/zizmorcore/zizmor) - static analysis for GitHub Actions. `Rust`
 - **Web**
   - [hey](https://github.com/rakyll/hey)  - HTTP load generator, apachebench (ab) replacement. `Go`
   - [monolith](https://github.com/Y2Z/monolith) - CLI tool and library for saving complete web pages as a single HTML file. `Rust`
   - [oha](https://github.com/hatoo/oha) - HTTP load generator, with tui animation. `Rust`
 - **zsh**
   - [zsh-auto-notify](https://github.com/MichaelAquilina/zsh-auto-notify)
+
+## Production Applications
+
+- [dependabot-core](https://github.com/dependabot/dependabot-core) - dependabot's core logic for creating update PRs. `Ruby`
+- [renovate](https://github.com/renovatebot/renovate) - cross-platform dependency automation by mend.io. `TypeScript`
+- Kubernetes
+  - [calico](https://github.com/projectcalico/calico) - cloud native networking and network security. `Go`
+  - [flannel](https://github.com/flannel-io/flannel) - network fabric for containers. `Go`
+  - [headlamp](https://github.com/kubernetes-sigs/headlamp) - Kubernetes web UI that is fully-featured, user-friendly and extensible. `TypeScript` `Go`
+  - [k8s-dqlite](https://github.com/canonical/k8s-dqlite) - dqlite for Kubernetes. `Go`
+  - [kine](https://github.com/k3s-io/kine) - Run Kubernetes on mysql, postgres, sqlite, dqlite, not etcd. `Go`
 
 ## Deprecated
 

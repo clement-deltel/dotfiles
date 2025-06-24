@@ -1,10 +1,11 @@
 # Visual Studio Code <!-- omit in toc -->
 
-Here is a list of Visual Studio Code extensions that I am currently using, as well as tools that I no longer use or which are obsolete.
+Here is a list of Visual Studio Code extensions that I am currently using, that could be interesting and further enhance the stack, as well as tools that I no longer use or which are obsolete.
 
 ## Table of Contents <!-- omit in toc -->
 
 - [Current](#current)
+- [Enhancements](#enhancements)
 - [Deprecated](#deprecated)
 
 ## Current
@@ -73,6 +74,10 @@ Here is a list of Visual Studio Code extensions that I am currently using, as we
 - [WakaTime](https://marketplace.visualstudio.com/items?itemName=vscode-wakatime): metrics, insights, and time tracking automatically generated from your programming activity.
 - [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) - open any folder in the Windows Subsystem for Linux (WSL).
 - [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) - yaml language support by Red Hat, with built-in Kubernetes syntax support.
+
+## Enhancements
+
+- [edamagit](https://marketplace.visualstudio.com/items?itemName=kahole.magit) - magit for Visual Studio Code.
 
 ## Deprecated
 

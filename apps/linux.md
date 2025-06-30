@@ -233,6 +233,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [nova](https://github.com/FairwindsOps/Nova)  - find outdated or deprecated Helm charts running in your cluster. `Go`
     - [polaris](https://github.com/FairwindsOps/polaris)  - validation of best practices in your clusters. `Go`
     - [skaffold](https://github.com/GoogleContainerTools/skaffold)  - easy and repeatable Kubernetes development. `Go`
+    - [stash](https://github.com/stashed/stash) - backup your Kubernetes stateful applications. `Go`
     - [velero](https://github.com/vmware-tanzu/velero) - backup and migrate applications and their persistent volumes. `Go`
 - **Search**
   - [ag](https://github.com/ggreer/the_silver_searcher) - code-searching tool similar to ack, but faster. `C/C++`

@@ -37,12 +37,14 @@ apt_packages:
 - build-essential #
 - cmake           #
 - git             # gold standard version control system
+- libfmt-dev
 - libpq-dev       # library to develop with PostgreSQL
 - portaudio19-dev # library required for PyAudio
 # Other
 - figlet
 - magic-wormhole
 - moreutils # collection of the Unix tools that nobody thought to write long ago
+- patchelf  # utility to modify the dynamic linker and RPATH of ELF executables
 - pdftk
 - pwgen
 - unp
@@ -192,6 +194,7 @@ homebrew_formulas:
 - grype
 - lazydocker
 - trivy
+- dmno-dev/tap/varlock
 # Software Development
 - lazygit
 - ls-lint
@@ -199,6 +202,7 @@ homebrew_formulas:
 # Other
 - lnav
 - tlrc
+- yq
 
 #-----------------------------------------------------------------------------#
 #               ------- Kubernetes ------

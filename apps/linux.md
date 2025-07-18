@@ -41,6 +41,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [ls-lint](https://github.com/loeffel-io/ls-lint)  - directory and filename linter, bring some structure to your project filesystem. `Go`
     - **Other**
       - [FIGlet](https://linux.die.net/man/6/figlet) - display large characters made up of ordinary screen characters.
+      - [fmt](https://github.com/fmtlib/fmt) - modern formatting library. `C++`
       - [magic-wormhole](https://github.com/magic-wormhole/magic-wormhole) - get things from one computer to another, safely. `Python`
       - [unp](https://github.com/mitsuhiko/unp) - wrapper around other shell tools to unpack archives easily.
       - [pdftk](https://www.pdflabs.com/tools/pdftk-server) - CLI for working with PDFs.
@@ -62,9 +63,11 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [lazygit](https://github.com/jesseduffield/lazygit)  - simple TUI for git commands. `Go`
       - [ls-lint](https://github.com/loeffel-io/ls-lint)  - directory and filename linter, bring some structure to the project filesystem. `Go`
       - [tokei](https://github.com/XAMPPRocky/tokei) - count your code, quickly. `Rust`
+      - [varlock](https://github.com/dmno-dev/varlock) - .env files built for sharing powered by @env-spec decorator comments. `TypeScript` `JavaScript`
     - **Other**
       - [lnav](https://github.com/tstack/lnav) - log file navigator. `C/C++`
       - [tldr](https://github.com/tldr-pages/tlrc) - tldr client. `Rust`
+      - [yq](https://github.com/mikefarah/yq) - command-line YAML, JSON, XML, CSV, TOML and properties processor. `Go`
   - [npm](https://github.com/npm/cli) - node package manager. `JavaScript`
     - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm) - auto generate READMEs for Helm Charts. `JavaScript`
 - **Shell**

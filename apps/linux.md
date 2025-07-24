@@ -227,6 +227,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [docker bench](https://github.com/docker/docker-bench-security) - script that checks for dozens of common best-practices around deploying Docker containers in production.
     - [subtrace](https://github.com/subtrace/subtrace)  - wireshark for Docker containers. `Go`
     - new Docker commands (require an account and/or subscription) - init, debug, compose watch, build cloud, scout.
+  - Helm
+    - [Helm unittest](https://github.com/helm-unittest/helm-unittest) - BDD styled unit test framework for Kubernetes Helm charts as a Helm plugin. `Go`
   - Kubernetes
     - [eksctl](https://github.com/eksctl-io/eksctl)  - official CLI for Amazon EKS. `Go`
     - [khi](https://github.com/GoogleCloudPlatform/khi)  - transformative log viewer. `Go`

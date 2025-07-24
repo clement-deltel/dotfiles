@@ -219,10 +219,19 @@ function kctl-rollout-restart-deployment-fn { kctl rollout restart deployment "$
 #-----------------------------------------------------------------------------#
 #               ------- Python ------
 #-----------------------------------------------------------------------------#
+function python-clean-cache-fn {
+  find . -type f -name '*.pyc' | xargs rm -rf
+	find . -type d -name 'control' | xargs rm -rf
+	find . -type d -name '__pycache__' | xargs rm -rf
+	find . -type d -name '.mypy_cache' | xargs rm -rf
+	find . -type d -name '.pytest_cache' | xargs rm -rf
+	find . -type d -name '.ruff_cache' | xargs rm -rf
+}
+
 function python-pdb-fn { python -m pdb "$@"; }
 
 # pyenv
-function venv-activate { pyenv activate "$1"; }
+function venv-activate-fn { pyenv activate "$1"; }
 function venv-create-fn { pyenv virtualenv "$1" "$2"; }
 function venv-delete-fn { pyenv virtualenv-delete "$1"; }
 function venv-set-local-fn { pyenv local "$1"; }

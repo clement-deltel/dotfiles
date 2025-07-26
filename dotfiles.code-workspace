@@ -1,0 +1,66 @@
+{
+    "folders": [
+        {
+            // Source code
+            "name": "Dotfiles",
+            "path": "."
+        }
+    ],
+    "extensions": {
+        "recommendations": [
+            // Docker
+            "ms-azuretools.vscode-containers",
+            // DotENV
+            "dotenv.dotenv-vscode",
+            // Git
+            "donjayamanne.git-extension-pack",
+            "elagil.pre-commit-helper",
+            // General purpose linter
+            "fnando.linter",
+            // Markdown
+            "davidanson.vscode-markdownlint",
+            "yzhang.markdown-all-in-one",
+            // Spell Checker
+            "streetsidesoftware.code-spell-checker",
+            // TOML
+            "tamasfe.even-better-toml"
+        ]
+    },
+    "settings": {
+        "[dockerfile]": {
+            "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+        },
+        "[markdown]": {
+            "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+            "editor.formatOnSave": true
+        },
+        // Editor
+        "editor.guides.bracketPairs": "active",
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        // Files
+        "files.eol": "\n",
+        "files.exclude": {},
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true,
+        // Extension - Git
+        "git.allowForcePush": true,
+        "git.autofetch": true,
+        "git.autorefresh": true,
+        "git.showPushSuccessNotification": true,
+        // Extension - Markdownlint
+        "markdownlint.config": {
+            "MD029": false, // ordered-list-item-prefix
+            "MD059": false // link-text-should-be-descriptive
+        },
+    },
+    "launch": {
+        // Use IntelliSense to learn about possible attributes.
+        // Hover to view descriptions of existing attributes.
+        // For more information, visit https://go.microsoft.com/fwlink/?linkid=830387.
+        "version": "0.2.0",
+        "configurations": [],
+        "compounds": []
+    }
+}

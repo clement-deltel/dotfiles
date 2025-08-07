@@ -247,6 +247,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [teller](https://github.com/tellerops/teller) - cloud native secrets management for developers - never leave your command line for secrets. `Rust`
 - **Security**
   - [google osv](https://github.com/google/osv.dev) - Open source vulnerability DB and triage service.
+  - [vet](https://github.com/vet-run/vet) - CLI tool that acts as a safety net for the risky curl | bash pattern. `Shell`
 - **Shell**
   - [brush](https://github.com/reubeno/brush) - bash/POSIX-compatible shell. `Rust`
   - [Warp](https://github.com/warpdotdev/Warp) - modern terminal with AI built in so you and your team can build great software, faster. `Rust`

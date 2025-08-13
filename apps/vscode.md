@@ -10,6 +10,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 
 ## Current
 
+- [@env-spec](https://marketplace.visualstudio.com/items?itemName=varlock.env-spec-language) - add syntax highlighting and additional tooling for @env-spec enabled .env files.
 - [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring) - generates python docstrings automatically.
 - [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) - improve your code commenting by annotating with alert, informational, TODOs, and more.
 - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) - spelling checker for source code.
@@ -30,10 +31,12 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [gitignore](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore) - language support for .gitignore files.
 - [Gitmoji](https://marketplace.visualstudio.com/items?itemName=seatonjiang.gitmoji-vscode) - gitmoji tool for git commit messages.
 - [Go](https://marketplace.visualstudio.com/items?itemName=golang.Go) - rich Go language support.
+- [Hadolint](https://marketplace.visualstudio.com/items?itemName=exiasr.hadolint) - integrate hadolint, a Dockerfile linter.
 - [HashiCorp Terraform](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform) - syntax highlighting and autocompletion for Terraform.
 - [Hungry Delete](https://marketplace.visualstudio.com/items?itemName=jasonlhy.hungry-delete) - delete an entire block of whitespace or tab.
 - [Intellicode API Usage Examples](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.intellicode-api-usage-examples) - relevant code examples from GitHub for over 100K different APIs right in your editor.
 - [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode) - AI-assisted development.
+- [isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort) - import organization support for Python files using isort.
 - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) - Jupyter notebook support, interactive programming and computing that supports Intellisense, debugging and more.
 - [Jupyter Cell Tags](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-jupyter-cell-tags) - Jupyter cell tags support.
 - [Jupyter Keymap](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-jupyter-keymap) - Jupyter keymaps for notebooks.
@@ -55,6 +58,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) - easily switch between projects.
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) - performant, feature-rich language server.
 - [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy) - debugger extension using debugpy.
+- [Python Environments](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-python-envs) - unified python environment experience.
 - [Python Indent](https://marketplace.visualstudio.com/items?itemName=kevinrose.vsc-python-indent) - correct Python indentation.
 - [Python Snippets 3](https://marketplace.visualstudio.com/items?itemName=ericsia.pythonsnippets3) - new auto suggestion for Python updated in 2024.
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) - language support with extension access points for IntelliSense (Pylance), Debugging (Python Debugger), linting, formatting, refactoring, unit tests, and more.
@@ -139,8 +143,7 @@ Navigation:
 
 Python:
 
-- [Flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8) - linting support for Python files using flake8. **Reason**: using uv with flake8 support instead.
-- [isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort) - import organization support for Python files using isort. **Reason**: using uv with isort support instead.
+- [Flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8) - linting support for Python files using flake8. **Reason**: using ruff with flake8 support instead.
 - [Language-Cython](https://marketplace.visualstudio.com/items?itemName=guyskk.language-cython) - syntax highlighter for Cython.
 - [Pylint](https://marketplace.visualstudio.com/items?itemName=ms-python.pylint) - linting support for Python files. **Reason**: using uv with pylint support instead.
 

@@ -57,6 +57,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [btop](https://github.com/aristocratos/btop) - monitor of resources. `C/C++`
     - **Orchestration**
       - [grype](https://github.com/anchore/grype)  - vulnerability scanner for container images and filesystems. `Go`
+      - [hadolint](https://github.com/hadolint/hadolint) - Dockerfile linter, validate inline bash. `Haskell`
       - [lazydocker](https://github.com/jesseduffield/lazydocker)  - lazier way to manage everything Docker. `Go`
       - [trivy](https://github.com/aquasecurity/trivy)  - find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more. `Go`
     - **Software Development**

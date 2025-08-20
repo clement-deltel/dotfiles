@@ -57,6 +57,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [btop](https://github.com/aristocratos/btop) - monitor of resources. `C/C++`
     - **Orchestration**
       - [dive](https://github.com/wagoodman/dive) - tool for exploring each layer in a docker image. `Go`
+      - [dockle](https://github.com/goodwithtech/dockle) - container image linter for security. `Go`
       - [grype](https://github.com/anchore/grype) - vulnerability scanner for container images and filesystems. `Go`
       - [hadolint](https://github.com/hadolint/hadolint) - Dockerfile linter, validate inline bash. `Haskell`
       - [lazydocker](https://github.com/jesseduffield/lazydocker) - lazier way to manage everything Docker. `Go`

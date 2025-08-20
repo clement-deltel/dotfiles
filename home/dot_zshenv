@@ -16,6 +16,9 @@ export KUBE_EDITOR='vim'
 # Bat
 export BAT_THEME="Visual Studio Dark+"
 
+# Docker
+export DOCKER_CONTENT_TRUST=1
+
 # Go
 export GO111MODULE=on
 export GOPATH=~/go

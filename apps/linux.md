@@ -38,7 +38,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [jq](https://github.com/jqlang/jq) - CLI JSON processor. `C/C++`
       - [ranger](https://github.com/ranger/ranger) - vim-inspired file manager for the console. `Python`
     - **Software Development**
-      - [ls-lint](https://github.com/loeffel-io/ls-lint)  - directory and filename linter, bring some structure to your project filesystem. `Go`
+      - [ls-lint](https://github.com/loeffel-io/ls-lint) - directory and filename linter, bring some structure to your project filesystem. `Go`
     - **Other**
       - [FIGlet](https://linux.die.net/man/6/figlet) - display large characters made up of ordinary screen characters.
       - [fmt](https://github.com/fmtlib/fmt) - modern formatting library. `C++`
@@ -56,13 +56,14 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - **Monitoring**
       - [btop](https://github.com/aristocratos/btop) - monitor of resources. `C/C++`
     - **Orchestration**
-      - [grype](https://github.com/anchore/grype)  - vulnerability scanner for container images and filesystems. `Go`
+      - [dive](https://github.com/wagoodman/dive) - tool for exploring each layer in a docker image. `Go`
+      - [grype](https://github.com/anchore/grype) - vulnerability scanner for container images and filesystems. `Go`
       - [hadolint](https://github.com/hadolint/hadolint) - Dockerfile linter, validate inline bash. `Haskell`
-      - [lazydocker](https://github.com/jesseduffield/lazydocker)  - lazier way to manage everything Docker. `Go`
-      - [trivy](https://github.com/aquasecurity/trivy)  - find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more. `Go`
+      - [lazydocker](https://github.com/jesseduffield/lazydocker) - lazier way to manage everything Docker. `Go`
+      - [trivy](https://github.com/aquasecurity/trivy) - find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more. `Go`
     - **Software Development**
-      - [lazygit](https://github.com/jesseduffield/lazygit)  - simple TUI for git commands. `Go`
-      - [ls-lint](https://github.com/loeffel-io/ls-lint)  - directory and filename linter, bring some structure to the project filesystem. `Go`
+      - [lazygit](https://github.com/jesseduffield/lazygit) - simple TUI for git commands. `Go`
+      - [ls-lint](https://github.com/loeffel-io/ls-lint) - directory and filename linter, bring some structure to the project filesystem. `Go`
       - [tokei](https://github.com/XAMPPRocky/tokei) - count your code, quickly. `Rust`
       - [varlock](https://github.com/dmno-dev/varlock) - .env files built for sharing powered by @env-spec decorator comments. `TypeScript` `JavaScript`
     - **Other**
@@ -74,15 +75,15 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Shell**
   - [antidote](https://github.com/mattmc3/antidote) - the cure to slow zsh plugin management.
   - [eza](https://github.com/eza-community/eza) - [ls](https://linux.die.net/man/1/ls), with icons, git integration, tree mode, and more. `Rust`
-  - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh)  - the most customizable and low-latency cross platform/shell prompt renderer. `Go`
+  - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh) - the most customizable and low-latency cross platform/shell prompt renderer. `Go`
   - [WezTerm](https://github.com/wezterm/wezterm) - GPU-accelerated cross-platform terminal emulator and multiplexer. `Rust`
   - zsh
   - [zoxide](https://github.com/ajeetdsouza/zoxide) - [cd](https://linux.die.net/man/1/cd), with recent directories,and more. `Rust`
 - **Version Control System (VCS)**
   - Git
-    - [gitleaks](https://github.com/gitleaks/gitleaks)  - tool for detecting secrets like passwords, API keys, and tokens in git repos. `Go`
+    - [gitleaks](https://github.com/gitleaks/gitleaks) - tool for detecting secrets like passwords, API keys, and tokens in git repos. `Go`
     - [git-filter-repo](https://github.com/newren/git-filter-repo) - quickly rewrite git repository history (filter-branch replacement). `Python`
-    - [git-lfs](https://github.com/git-lfs/git-lfs)  - git extension for versioning large files. `Go`
+    - [git-lfs](https://github.com/git-lfs/git-lfs) - git extension for versioning large files. `Go`
 - **Security**
   - [Bitwarden CLI](https://bitwarden.com/help/cli/)
 - **Languages**
@@ -102,19 +103,19 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [uv](https://github.com/astral-sh/uv) - package and project manager. `Rust`
 - **Orchestration**
   - Docker
-    - [skopeo](https://github.com/containers/skopeo)  - work with remote images registries - retrieving information, images, signing content. `Go`
+    - [skopeo](https://github.com/containers/skopeo) - work with remote images registries - retrieving information, images, signing content. `Go`
   - Kubernetes
-    - [helm](https://github.com/helm/helm)  - Kubernetes package manager. `Go`
-    - [helmfile](https://github.com/helmfile/helmfile)  - declaratively deploy your manifests, Kustomize configs, and Charts as Helm releases. `Go`
-    - [k9s](https://github.com/derailed/k9s)  - CLI to manage your clusters in style. `Go`
-    - [kubecolor](https://github.com/kubecolor/kubecolor)  - colorize your kubectl output. `Go`
-    - [kubectl](https://github.com/kubernetes/kubectl)  - command-line interface. `Go`
-    - [kubectx](https://github.com/ahmetb/kubectx)  - faster way to switch between clusters and namespaces in kubectl. `Go`
+    - [helm](https://github.com/helm/helm) - Kubernetes package manager. `Go`
+    - [helmfile](https://github.com/helmfile/helmfile) - declaratively deploy your manifests, Kustomize configs, and Charts as Helm releases. `Go`
+    - [k9s](https://github.com/derailed/k9s) - CLI to manage your clusters in style. `Go`
+    - [kubecolor](https://github.com/kubecolor/kubecolor) - colorize your kubectl output. `Go`
+    - [kubectl](https://github.com/kubernetes/kubectl) - command-line interface. `Go`
+    - [kubectx](https://github.com/ahmetb/kubectx) - faster way to switch between clusters and namespaces in kubectl. `Go`
     - [kubetail](https://github.com/johanhaleby/kubetail) - tail logs from multiple pods at the same time. `Shell`
-    - [stern](https://github.com/stern/stern)  - multi pod and container log tailing. `Go`
+    - [stern](https://github.com/stern/stern) - multi pod and container log tailing. `Go`
 - **Infrastructure-as-Code (IaC)**
-  - [Pulumi](https://github.com/pulumi/pulumi)  - infrastructure-as-code in any programming language. `Go`
-  - [Terraform](https://github.com/hashicorp/terraform)  - safely and predictably create, change, and improve infrastructure. `Go`
+  - [Pulumi](https://github.com/pulumi/pulumi) - infrastructure-as-code in any programming language. `Go`
+  - [Terraform](https://github.com/hashicorp/terraform) - safely and predictably create, change, and improve infrastructure. `Go`
 - **Cloud**
   - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
   - [GCP CLI](https://cloud.google.com/sdk/docs/install)
@@ -203,7 +204,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [yazi](https://github.com/sxyazi/yazi) - terminal file manager based on async I/O. `Rust`
 - **Infrastructure-as-Code (IaC)**
   - [sst](https://sst.dev) - build full-stack apps on your own infrastructure.
-  - [terrascan](https://github.com/tenable/terrascan)  - detect compliance and security violations across Infrastructure as Code to mitigate risk before provisioning cloud native infrastructure. `Go`
+  - [terrascan](https://github.com/tenable/terrascan) - detect compliance and security violations across Infrastructure as Code to mitigate risk before provisioning cloud native infrastructure. `Go`
 - **Integrated Development Environment (IDE)**
   - [cursor](https://github.com/getcursor/cursor) - AI code editor.
   - [void](https://github.com/voideditor/void) - open-source Cursor alternative. `TypeScript`
@@ -217,28 +218,28 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [somo](https://github.com/theopfr/somo) - netstat, human-friendly alternative for socket and port monitoring. `Rust`
 - **Monitoring**
   - [powertop](https://github.com/fenrus75/powertop) - diagnose issues with power consumption and power management. `C/C++`
-  - [sampler](https://github.com/sqshq/sampler)  - shell commands execution, visualization and alerting. `Go`
+  - [sampler](https://github.com/sqshq/sampler) - shell commands execution, visualization and alerting. `Go`
 - **Multiplexer**
   - [tmux](https://github.com/tmux/tmux)
   - [zellij](https://github.com/zellij-org/zellij)
 - **Orchestration**
   - Docker
-    - [clair](https://github.com/quay/clair)  - vulnerability static analysis for containers. `Go`
-    - [copacetic](https://github.com/project-copacetic/copacetic)  - CLI tool for directly patching container images. `Go`
+    - [clair](https://github.com/quay/clair) - vulnerability static analysis for containers. `Go`
+    - [copacetic](https://github.com/project-copacetic/copacetic) - CLI tool for directly patching container images. `Go`
     - [docker bench](https://github.com/docker/docker-bench-security) - script that checks for dozens of common best-practices around deploying Docker containers in production.
-    - [subtrace](https://github.com/subtrace/subtrace)  - wireshark for Docker containers. `Go`
+    - [subtrace](https://github.com/subtrace/subtrace) - wireshark for Docker containers. `Go`
     - new Docker commands (require an account and/or subscription) - init, debug, compose watch, build cloud, scout.
   - Helm
     - [Helm unittest](https://github.com/helm-unittest/helm-unittest) - BDD styled unit test framework for Kubernetes Helm charts as a Helm plugin. `Go`
   - Kubernetes
-    - [eksctl](https://github.com/eksctl-io/eksctl)  - official CLI for Amazon EKS. `Go`
-    - [khi](https://github.com/GoogleCloudPlatform/khi)  - transformative log viewer. `Go`
+    - [eksctl](https://github.com/eksctl-io/eksctl) - official CLI for Amazon EKS. `Go`
+    - [khi](https://github.com/GoogleCloudPlatform/khi) - transformative log viewer. `Go`
     - [kubectlai](https://github.com/GoogleCloudPlatform/kubectl-ai) - AI powered Kubernetes assistant. `Go`
-    - [kubespray](https://github.com/kubernetes-sigs/kubespray)  - deploy a production ready cluster. `Go`
-    - [kubevpn](https://github.com/kubenetworks/kubevpn)  - cloud native dev environment that connects to Kubernetes cluster network. `Go`
-    - [nova](https://github.com/FairwindsOps/Nova)  - find outdated or deprecated Helm charts running in your cluster. `Go`
-    - [polaris](https://github.com/FairwindsOps/polaris)  - validation of best practices in your clusters. `Go`
-    - [skaffold](https://github.com/GoogleContainerTools/skaffold)  - easy and repeatable Kubernetes development. `Go`
+    - [kubespray](https://github.com/kubernetes-sigs/kubespray) - deploy a production ready cluster. `Go`
+    - [kubevpn](https://github.com/kubenetworks/kubevpn) - cloud native dev environment that connects to Kubernetes cluster network. `Go`
+    - [nova](https://github.com/FairwindsOps/Nova) - find outdated or deprecated Helm charts running in your cluster. `Go`
+    - [polaris](https://github.com/FairwindsOps/polaris) - validation of best practices in your clusters. `Go`
+    - [skaffold](https://github.com/GoogleContainerTools/skaffold) - easy and repeatable Kubernetes development. `Go`
     - [stash](https://github.com/stashed/stash) - backup your Kubernetes stateful applications. `Go`
     - [velero](https://github.com/vmware-tanzu/velero) - backup and migrate applications and their persistent volumes. `Go`
 - **Search**
@@ -255,10 +256,10 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [WindTerm](https://github.com/kingToolbox/WindTerm) - professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal. `C`
 - **Software Development**
   - [autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell. `TypeScript`
-  - [cheat](https://github.com/cheat/cheat)  - create and view interactive cheatsheets on the command-line. `Go`
-  - [devbox](https://github.com/jetify-com/devbox)  - instant, easy, and predictable development environments. `Go`
+  - [cheat](https://github.com/cheat/cheat) - create and view interactive cheatsheets on the command-line. `Go`
+  - [devbox](https://github.com/jetify-com/devbox) - instant, easy, and predictable development environments. `Go`
   - [epic-stack](https://github.com/epicweb-dev/epic-stack) - full stack app starter with the foundational things setup and configured for you. `TypeScript`
-  - [mailpit](https://github.com/axllent/mailpit)  - email and SMTP testing tool with API for developers. `Go`
+  - [mailpit](https://github.com/axllent/mailpit) - email and SMTP testing tool with API for developers. `Go`
 - **System Info**
   - [fastfetch](https://github.com/fastfetch-cli/fastfetch) - feature-rich and performance oriented, neofetch like system information tool. `C`
   - [glances](https://github.com/nicolargo/glances) - glances an eye on your system. `Python`
@@ -272,7 +273,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [Clipboard](https://github.com/Slackadays/Clipboard) - smart clipboard manager.
   - [cmatrix](https://github.com/abishekvashok/cmatrix) - terminal based "The Matrix" like implementation. `C`
   - [espanso](https://github.com/espanso/espanso) - cross-platform text expander. `Rust`
-  - [glow](https://github.com/charmbracelet/glow)  - render markdown on the terminal. `Go`
+  - [glow](https://github.com/charmbracelet/glow) - render markdown on the terminal. `Go`
   - [midnight commander](https://github.com/MidnightCommander/mc)
   - [mosh](https://github.com/mobile-shell/mosh) - mobile shell. `C++`
   - [pmd](https://github.com/pmd/pmd) - extensible multi-language static code analyzer. `Java`
@@ -284,23 +285,24 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [commitlint](https://github.com/conventional-changelog/commitlint) - lint commit messages. `TypeScript`
   - [delta](https://github.com/dandavison/delta) - syntax-highlighting pager for git, diff, grep, and blame output. `Rust`
   - [difftastic](https://difftastic.wilfred.me.uk)
-  - [gh-dash](https://github.com/dlvhdr/gh-dash)  - beautiful CLI dashboard for GitHub. `Go`
+  - [gh-dash](https://github.com/dlvhdr/gh-dash) - beautiful CLI dashboard for GitHub. `Go`
   - [gitbutler](https://github.com/gitbutlerapp/gitbutler) - GitButler version control client. `Rust`
+  - [GitHub CLI](https://github.com/cli/cli) - GitHub’s official command line tool. `Go`
   - [gitu](https://github.com/altsem/gitu) - TUI git client inspired by Magit. `Rust`
-  - [git-appraise](https://github.com/google/git-appraise)  - distributed code review system for git repos. `Go`
-  - [git-bug](https://github.com/git-bug/git-bug)  - distributed, offline-first bug tracker embedded in git, with bridges. `Go`
+  - [git-appraise](https://github.com/google/git-appraise) - distributed code review system for git repos. `Go`
+  - [git-bug](https://github.com/git-bug/git-bug) - distributed, offline-first bug tracker embedded in git, with bridges. `Go`
   - [git-plan](https://github.com/rorybyrne/git-plan) - a better workflow for git. `Python`
   - [git-sim](https://github.com/initialcommit-com/git-sim) - visually simulate Git operations in your own repos with a single terminal command. `Python`
-  - [git-xargs](https://github.com/gruntwork-io/git-xargs)  - CLI for making updates across multiple Github repositories with a single command. `Go`
+  - [git-xargs](https://github.com/gruntwork-io/git-xargs) - CLI for making updates across multiple Github repositories with a single command. `Go`
   - [gitflow](https://github.com/nvie/gitflow) - git extensions to provide high-level repository operations for Vincent Driessen's branching model. `Shell`
   - [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) - gitmoji interactive CLI tool for using emojis on commits. `JavaScript`
   - [husky](https://github.com/typicode/husky) - git hooks made easy. `JavaScript`
   - [mergiraf](https://mergiraf.org)
-  - [multi-gitter](https://github.com/lindell/multi-gitter)  - update multiple repositories in with one command. `Go`
+  - [multi-gitter](https://github.com/lindell/multi-gitter) - update multiple repositories in with one command. `Go`
   - [opencommit](https://github.com/di-sukharev/opencommit) - generate commit messages by an LLM in 1 sec. `JavaScript`
   - [zizmor](https://github.com/zizmorcore/zizmor) - static analysis for GitHub Actions. `Rust`
 - **Web**
-  - [hey](https://github.com/rakyll/hey)  - HTTP load generator, apachebench (ab) replacement. `Go`
+  - [hey](https://github.com/rakyll/hey) - HTTP load generator, apachebench (ab) replacement. `Go`
   - [monolith](https://github.com/Y2Z/monolith) - CLI tool and library for saving complete web pages as a single HTML file. `Rust`
   - [oha](https://github.com/hatoo/oha) - HTTP load generator, with tui animation. `Rust`
 - **zsh**

@@ -17,18 +17,18 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Colorize](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize) - help visualize css colors in files.
 - [Commit Message Editor](https://marketplace.visualstudio.com/items?itemName=adam-bender.commit-message-editor) - edit commit messages in a convenient way.
 - [Containers Tools](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-containers) - makes it easy to create, manage, and debug containerized applications.
-- [Copy on Select](https://marketplace.visualstudio.com/items?itemName=dinhani.copy-on-select) - copy the selected text without having to hit CTRL+C.
+- [Copy on Select](https://marketplace.visualstudio.com/items?itemName=dinhani.copy-on-select) - copy the selected text without having to hit Ctrl+C.
 - [Data Wrangler](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler) - data viewing, cleaning and preparation for tabular datasets.
 - [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) - open any folder or repository inside a Docker container.
-- [Docker DX](https://marketplace.visualstudio.com/items?itemName=docker.docker) - Edit smarter, ship faster with an enhanced Docker-development experience.
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) - makes it easy to create, manage, and debug containerized applications.
+- [Docker DX](https://marketplace.visualstudio.com/items?itemName=docker.docker) - Edit smarter, ship faster with an enhanced Docker-development experience.
 - [DotENV Official + Vault](https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode) - syntax highlighting, auto-cloaking, auto-completion, in-code secret peeking, and optionally dotenv-vault.
 - [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) - fully-featured TOML support.
 - [Git Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.git-extension-pack) - Popular extensions for git.
 - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) - view a Git Graph of your repository, and perform git actions from the graph.
 - [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) - view git log, file history, compare branches or commits.
-- [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) -  visualize code authorship at a glance via Git blame annotations and CodeLens, and more.
 - [gitignore](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore) - language support for .gitignore files.
+- [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) -  visualize code authorship at a glance via Git blame annotations and CodeLens, and more.
 - [Gitmoji](https://marketplace.visualstudio.com/items?itemName=seatonjiang.gitmoji-vscode) - gitmoji tool for git commit messages.
 - [Go](https://marketplace.visualstudio.com/items?itemName=golang.Go) - rich Go language support.
 - [Hadolint](https://marketplace.visualstudio.com/items?itemName=exiasr.hadolint) - integrate hadolint, a Dockerfile linter.
@@ -52,16 +52,18 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Mypy Type Checker](https://marketplace.visualstudio.com/items?itemName=ms-python.mypy-type-checker) - type checking support for Python files.
 - [Nix IDE](https://marketplace.visualstudio.com/items?itemName=jnoortheen.nix-ide) - nix language support - syntax highlighting, formatting, and error reporting.
 - [Open in GitHub, Bitbucket, Gitlab...](https://marketplace.visualstudio.com/items?itemName=ziyasal.vscode-open-in-github) - jump to a source code line in Github, Bitbucket, Gitlab, VisualStudio.com.
-- [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff) - compare (diff) text selections within a file, across files, or to the clipboard
+- [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff) - compare (diff) text selections within a file, across files, or to the clipboard.
 - [Paste and Indent](https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-paste-and-indent) - paste some code with "correct" indentation.
 - [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock) - subtly change the workspace color of your workspace.
 - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) - easily switch between projects.
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) - performant, feature-rich language server.
 - [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy) - debugger extension using debugpy.
+- [Python Docstring Highlighter](https://marketplace.visualstudio.com/items?itemName=rodolphebarbanneau.python-docstring-highlighter) - syntax highlighting for python docstrings.
 - [Python Environments](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-python-envs) - unified python environment experience.
 - [Python Indent](https://marketplace.visualstudio.com/items?itemName=kevinrose.vsc-python-indent) - correct Python indentation.
 - [Python Snippets 3](https://marketplace.visualstudio.com/items?itemName=ericsia.pythonsnippets3) - new auto suggestion for Python updated in 2024.
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) - language support with extension access points for IntelliSense (Pylance), Debugging (Python Debugger), linting, formatting, refactoring, unit tests, and more.
+- [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) - highlight CSV and TSV files, run SQL-like queries.
 - [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) - open any folder on a remote machine using SSH.
 - [Remote - SSH: Editing Configuration Files](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit) - edit SSH configuration files.
 - [Remote - Tunnels](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server) - connect to a remote machine through a tunnel.
@@ -71,7 +73,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [shell-format](https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format) - formatter for shell scripts, Dockerfile, gitignore, dotenv, /etc/hosts, jvmoptions, and other file types.
 - [Sort JSON objects](https://marketplace.visualstudio.com/items?itemName=richie5um2.vscode-sort-json) - sorts the keys within JSON objects.
 - [Sort lines](https://marketplace.visualstudio.com/items?itemName=tyriar.sort-lines) - sorts lines of text.
-- [TabOut](https://marketplace.visualstudio.com/items?itemName=albert.tabout) - tab out of quotes, brackets, etc
+- [TabOut](https://marketplace.visualstudio.com/items?itemName=albert.tabout) - tab out of quotes, brackets, etc.
 - [ty](https://marketplace.visualstudio.com/items?itemName=astral-sh.ty) - support for the ty type checker and language server.
 - [vscode-base64](https://marketplace.visualstudio.com/items?itemName=adamhartford.vscode-base64) - base64 encode/decode the current selections.
 - [vscode-pets](https://marketplace.visualstudio.com/items?itemName=tonybaloney.vscode-pets) - pets for your Visual Studio Code.
@@ -143,6 +145,7 @@ Navigation:
 
 Python:
 
+- [Bandit by PyCQA](https://marketplace.visualstudio.com/items?itemName=pycqa.bandit-pycqa) - static analysis security tool, developed and maintained by the original authors of Bandit.
 - [Flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8) - linting support for Python files using flake8. **Reason**: using ruff with flake8 support instead.
 - [Language-Cython](https://marketplace.visualstudio.com/items?itemName=guyskk.language-cython) - syntax highlighter for Cython.
 - [Pylint](https://marketplace.visualstudio.com/items?itemName=ms-python.pylint) - linting support for Python files. **Reason**: using uv with pylint support instead.

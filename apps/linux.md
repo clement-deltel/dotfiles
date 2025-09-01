@@ -192,6 +192,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [tbls](https://github.com/k1LoW/tbls) - ci-friendly tool to document a database. `Go`
 - **Diagrams**
   - [d2](https://github.com/terrastruct/d2) - modern diagram scripting language that turns text to diagrams. `JavaScript`
+- **Dotfiles Management**
+  - [stow](https://www.gnu.org/software/stow/manual/stow.html) - symlink farm manager which takes distinct sets of software and/or data located in separate directories on the filesystem, and makes them all appear to be installed in a single directory tree.
 - **Benchmarking**
   - [hyperfine](https://github.com/sharkdp/hyperfine) - benchmarking CLI. `Rust`
   - [stress-ng](https://github.com/ColinIanKing/stress-ng) - stress test a computer system in various selectable ways. `C`

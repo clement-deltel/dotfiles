@@ -51,6 +51,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [homebrew](https://github.com/Homebrew/brew) - the missing package manager for Linux. `Ruby`
     - **CI/CD**
       - [act](https://github.com/nektos/act) - run your GitHub Actions locally. `Go`
+    - **Log Analysis**
+      - [gonzo](https://github.com/control-theory/gonzo) - TUI log analysis tool. `Go`
+      - [lnav](https://github.com/tstack/lnav) - log file navigator. `C/C++`
     - **Modern Replacements**
       - [procs](https://github.com/dalance/procs) - [ps](https://linux.die.net/man/1/ps), with better sorting, tree support, and more. `Rust`
     - **Monitoring**
@@ -68,7 +71,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [tokei](https://github.com/XAMPPRocky/tokei) - count your code, quickly. `Rust`
       - [varlock](https://github.com/dmno-dev/varlock) - .env files built for sharing powered by @env-spec decorator comments. `TypeScript` `JavaScript`
     - **Other**
-      - [lnav](https://github.com/tstack/lnav) - log file navigator. `C/C++`
       - [tldr](https://github.com/tldr-pages/tlrc) - tldr client. `Rust`
       - [yq](https://github.com/mikefarah/yq) - command-line YAML, JSON, XML, CSV, TOML and properties processor. `Go`
   - [npm](https://github.com/npm/cli) - node package manager. `JavaScript`

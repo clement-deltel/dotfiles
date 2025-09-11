@@ -18,6 +18,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Common**
   - **Authentication**
     - [Bitwarden CLI](https://community.chocolatey.org/packages/bitwarden-cli) - bitwarden command-line interface.
+  - **Cleaning**
+    - [BleachBit](https://community.chocolatey.org/packages/bleachbit.install) - quickly free disk space, guard privacy, delete cookies, clear internet history, shred temporary files, delete logs, discard junk, and wipes clean thousands of applications.
   - **Media**
     - [Flameshot](https://community.chocolatey.org/packages/flameshot) - screenshot software.
     - [Spotify](https://community.chocolatey.org/packages/spotify) - digital music service that gives you access to millions of songs.
@@ -51,7 +53,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [Notepad++](https://community.chocolatey.org/packages/notepadplusplus) - source code editor.
   - **Other**
     - [7-Zip](https://community.chocolatey.org/packages/7zip) - file archiver with a high compression ratio.
-    - [BleachBit](https://community.chocolatey.org/packages/bleachbit.install) - quickly free disk space, guard privacy, delete cookies, clear internet history, shred temporary files, delete logs, discard junk, and wipes clean thousands of applications.
     - [Logi Options+](https://community.chocolatey.org/packages/logioptionsplus) - manage and customize your supported mice and keyboards.
     - [WizTree](https://community.chocolatey.org/packages/wiztree) - disk space analyzer utility.
 - **Perso**
@@ -110,6 +111,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Chocolatey**
   - **Benchmarking**
     - [Cinebench](https://community.chocolatey.org/packages/cinebench) - real-world cross-platform test suite that evaluates your computer's hardware capabilities.
+  - **Cleaning**
+    - [Bulk Crap Uninstaller](https://community.chocolatey.org/packages/bulk-crap-uninstaller)
+    - [Revo Uninstaller](https://community.chocolatey.org/packages/revo-uninstaller)
   - **Hardware Tweaks**
     - [MSI Afterburner](https://community.chocolatey.org/packages/msiafterburner) - graphics card utility.
     - [OCCT](https://community.chocolatey.org/packages/occt) - stability checking tool.
@@ -120,16 +124,24 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [CPU-Z](https://community.chocolatey.org/packages/cpu-z) - system profiler (system monitor) application that detects the central processing unit, RAM, motherboard chipset, and other hardware features.
     - [GPU-Z](https://community.chocolatey.org/packages/gpu-z) - utility designed to provide you with all information about your graphics card and GPU.
     - [Open Hardware Monitor](https://community.chocolatey.org/packages/openhardwaremonitor)
-  - Search
+  - **Privacy**
+    - [ShutUp10](https://community.chocolatey.org/packages/shutup10)
+  - **Search**
     - [Everything](https://community.chocolatey.org/packages/Everything)
   - **Social**
     - [Beeper](https://community.chocolatey.org/packages/beeper-app)
     - [Discord](https://community.chocolatey.org/packages/discord)
+    - [Ferdium](https://community.chocolatey.org/packages/ferdium)
+    - [Franz](https://community.chocolatey.org/packages/franz)
+    - [Mattermost Desktop](https://community.chocolatey.org/packages/mattermost-desktop)
+    - [PushBullet for Windows](https://community.chocolatey.org/packages/pushbullet)
+    - [VoiceMod](https://community.chocolatey.org/packages/voicemod)
   - **Software Tweaks**
     - [Flow Launcher](https://community.chocolatey.org/packages/flow-launcher) - Search everything from applications, files, bookmarks, YouTube, Twitter and more.
     - [Winaero Tweaker](https://community.chocolatey.org/packages/winaero-tweaker) - all-in-one application that comes with dozens of options for fine-grained tuning of various Windows settings and features.
   - **Tools**
-    - [Revo Uninstaller](https://community.chocolatey.org/packages/revo-uninstaller)
+    - [Parsec](https://community.chocolatey.org/packages/parsec) - desktop capturing application primarily used for cloud-based gaming through video streaming.
+    - [Recuva](https://community.chocolatey.org/packages/Recuva)
     - [ripgrep](https://community.chocolatey.org/packages/ripgrep)
 - **Independently**
   - **Databases**

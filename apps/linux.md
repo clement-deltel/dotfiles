@@ -88,10 +88,10 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [git-filter-repo](https://github.com/newren/git-filter-repo) - quickly rewrite git repository history (filter-branch replacement). `Python`
     - [git-lfs](https://github.com/git-lfs/git-lfs) - git extension for versioning large files. `Go`
 - **Security**
-  - [Bitwarden CLI](https://bitwarden.com/help/cli/)
+  - [Bitwarden CLI](https://bitwarden.com/help/cli)
 - **Languages**
   - Go
-    - [kind](https://github.com/kubernetes-sigs/kind/) - Kubernetes in Docker - local clusters for testing Kubernetes.
+    - [kind](https://github.com/kubernetes-sigs/kind) - Kubernetes in Docker - local clusters for testing Kubernetes.
   - JavaScript
     - [nodejs](https://github.com/nodejs/node) - cross-platform, open-source JavaScript runtime built on Chrome's v8 JavaScript engine.
   - Python
@@ -185,6 +185,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 ## Enhancements
 
+- **Artificial Intelligence**
+  - [flux](https://github.com/black-forest-labs/flux) - official inference repo for FLUX.1 models. `Python`
 - **CI/CD**
   - [gh-signoff](https://github.com/basecamp/gh-signoff) -  GitHub CLI extension local CI, sign off on your own work. `Shell`
   - [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local) - Tired of pushing to test your .gitlab-ci.yml? `TypeScript`
@@ -208,13 +210,22 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [watchman](https://github.com/facebook/watchman) - watches files and records, or triggers actions, when they change. `C++` `Python`
   - [yazi](https://github.com/sxyazi/yazi) - terminal file manager based on async I/O. `Rust`
 - **Infrastructure-as-Code (IaC)**
+  - [opentofu](https://github.com/opentofu/opentofu) -  declaratively manage your cloud infrastructure. `Go`
+  - [puppet](https://github.com/puppetlabs/puppet) - server automation framework and application. `Ruby`
   - [sst](https://sst.dev) - build full-stack apps on your own infrastructure.
-  - [terrascan](https://github.com/tenable/terrascan) - detect compliance and security violations across Infrastructure as Code to mitigate risk before provisioning cloud native infrastructure. `Go`
+  - [terragrunt](https://github.com/gruntwork-io/terragrunt) - flexible orchestration tool that allows IaC written in OpenTofu/Terraform to scale. `Go`
+  - [terrascan](https://github.com/tenable/terrascan) - detect compliance and security violations across IaC to mitigate risk before provisioning cloud native infrastructure. `Go`
+  - [tflint](https://github.com/terraform-linters/tflint) - pluggable Terraform linter. `Go`
 - **Integrated Development Environment (IDE)**
   - [cursor](https://github.com/getcursor/cursor) - AI code editor.
   - [void](https://github.com/voideditor/void) - open-source Cursor alternative. `TypeScript`
-  - [windsurf](https://windsurf.com/) - AI code editor.
+  - [windsurf](https://windsurf.com) - AI code editor.
   - [zed](https://github.com/zed-industries/zed) - high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
+- **Languages**
+  - Go
+    - [golangci-lint](https://github.com/golangci/golangci-lint) - fast linters runner for Go. `Go`
+  - Rust
+    - [maturin](https://github.com/PyO3/maturin) - build and publish crates with pyo3, cffi and uniffi bindings as well as rust binaries as python packages. `Rust`
 - **Modern Replacements**
   - [atuin](https://github.com/atuinsh/atuin) - history, magical shell history. `Rust`
   - [dua](https://github.com/Byron/dua-cli) - du, view disk space usage and delete unwanted data. `Rust`
@@ -239,6 +250,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - Kubernetes
     - [eksctl](https://github.com/eksctl-io/eksctl) - official CLI for Amazon EKS. `Go`
     - [khi](https://github.com/GoogleCloudPlatform/khi) - transformative log viewer. `Go`
+    - [kubeconform](https://github.com/yannh/kubeconform) - fast Kubernetes manifests validator, with support for custom resources. `Go`
     - [kubectlai](https://github.com/GoogleCloudPlatform/kubectl-ai) - AI powered Kubernetes assistant. `Go`
     - [kubespray](https://github.com/kubernetes-sigs/kubespray) - deploy a production ready cluster. `Go`
     - [kubevpn](https://github.com/kubenetworks/kubevpn) - cloud native dev environment that connects to Kubernetes cluster network. `Go`
@@ -261,10 +273,13 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [WindTerm](https://github.com/kingToolbox/WindTerm) - professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal. `C`
 - **Software Development**
   - [autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell. `TypeScript`
+  - [biome](https://github.com/biomejs/biome) - toolchain for web projects, aimed to provide functionalities to maintain them, offers formatter and linter, usable via CLI and LSP. `Rust`
   - [cheat](https://github.com/cheat/cheat) - create and view interactive cheatsheets on the command-line. `Go`
+  - [codeql](https://github.com/github/codeql) - libraries and queries that power security researchers around the world. `CodeQL` `Kotlin`
   - [devbox](https://github.com/jetify-com/devbox) - instant, easy, and predictable development environments. `Go`
   - [epic-stack](https://github.com/epicweb-dev/epic-stack) - full stack app starter with the foundational things setup and configured for you. `TypeScript`
   - [mailpit](https://github.com/axllent/mailpit) - email and SMTP testing tool with API for developers. `Go`
+  - [otelbin](https://github.com/dash0hq/otelbin) - web-based tool to facilitate OpenTelemetry collector configuration editing and verification. `TypeScript`
 - **System Info**
   - [fastfetch](https://github.com/fastfetch-cli/fastfetch) - feature-rich and performance oriented, neofetch like system information tool. `C`
   - [glances](https://github.com/nicolargo/glances) - glances an eye on your system. `Python`
@@ -283,6 +298,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [mosh](https://github.com/mobile-shell/mosh) - mobile shell. `C++`
   - [pmd](https://github.com/pmd/pmd) - extensible multi-language static code analyzer. `Java`
   - [simdjson](https://github.com/simdjson/simdjson) - parsing gigabytes of JSON per second. `C++`
+  - [task](https://github.com/go-task/task) -  task runner, simpler Make alternative. `Go`
   - [thefuck](https://github.com/nvbn/thefuck) - magnificent app which corrects your previous console command. `Python`
 - **Version Control System (VCS)**
   - [better commits](https://github.com/Everduin94/better-commits) - CLI for creating better commits following the conventional commits specification. `JavaScript`
@@ -318,11 +334,15 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - [dependabot-core](https://github.com/dependabot/dependabot-core) - dependabot's core logic for creating update PRs. `Ruby`
 - [renovate](https://github.com/renovatebot/renovate) - cross-platform dependency automation by mend.io. `TypeScript`
 - Kubernetes
+  - [argo-cd](https://github.com/argoproj/argo-cd) - declarative continuous deployment for Kubernetes. `Go` `TypeScript`
   - [calico](https://github.com/projectcalico/calico) - cloud native networking and network security. `Go`
   - [flannel](https://github.com/flannel-io/flannel) - network fabric for containers. `Go`
-  - [headlamp](https://github.com/kubernetes-sigs/headlamp) - Kubernetes web UI that is fully-featured, user-friendly and extensible. `TypeScript` `Go`
   - [k8s-dqlite](https://github.com/canonical/k8s-dqlite) - dqlite for Kubernetes. `Go`
   - [kine](https://github.com/k3s-io/kine) - Run Kubernetes on mysql, postgres, sqlite, dqlite, not etcd. `Go`
+- Kubernetes GUI
+  - [aptakube](https://github.com/aptakube/aptakube) - modern, lightweight and multi-cluster Kubernetes GUI.
+  - [freelens](https://github.com/freelensapp/freelens) - IDE for Kubernetes. `TypeScript`
+  - [headlamp](https://github.com/kubernetes-sigs/headlamp) - Kubernetes web UI that is fully-featured, user-friendly and extensible. `TypeScript` `Go`
 
 ## Deprecated
 

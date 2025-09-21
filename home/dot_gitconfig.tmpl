@@ -93,9 +93,12 @@
 
     # config
     cla = "!git config --list | grep alias | cut -c 7-"
-    cli = "config --list"
-    cls = "config --list --show-origin"
+    cli = config --list
+    cls = config --list --show-origin
     clu = "!git config --list --show-origin | grep user"
+
+    # garbage collection
+    gcna = gc --prune=now --aggressive
 
     # log
     lg = log --graph --abbrev-commit --decorate=no --date=format:'%Y-%m-%d %H:%I:%S' --pretty=format:'%C(03)%>|(15)%h%C(reset) %C(04)%ad%C(reset) %C(green)%<(16,trunc)%an%C(reset) %C(auto)%d%C(reset) %C(bold 0)%>|(1)%s%C(reset)'
@@ -114,6 +117,9 @@
     rh = reset --hard
     rh1 = reset HEAD^ --hard
     rh2 = reset HEAD^^ --hard
+
+    # rev-list
+    rlcm = rev-list --count main
 
     # zip
     zip = "!git archive --format=zip HEAD ':!*.gitignore' -o ${PWD##*/}.zip"

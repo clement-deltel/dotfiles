@@ -285,6 +285,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [glances](https://github.com/nicolargo/glances) - glances an eye on your system. `Python`
   - [nerdfetch](https://github.com/ThatOneCalculator/NerdFetch) - POSIX *nix fetch script using Nerdfonts. `Shell`
   - [macchina](https://github.com/Macchina-CLI/macchina) - system information frontend with an emphasis on performance. `Rust`
+- **System Performance**
+  - zRAM - linux kernel module to create a compressed block device in RAM.
 - **Text Editor**
   - [lazy nvim](https://github.com/folke/lazy.nvim) - modern plugin manager for Neovim. `Lua`
   - [qsv](https://github.com/dathere/qsv) - blazing-fast data-wrangling toolkit. `Rust`

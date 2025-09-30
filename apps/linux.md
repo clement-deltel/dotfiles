@@ -269,8 +269,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [vet](https://github.com/vet-run/vet) - CLI tool that acts as a safety net for the risky curl | bash pattern. `Shell`
 - **Shell**
   - [brush](https://github.com/reubeno/brush) - bash/POSIX-compatible shell. `Rust`
-  - [Warp](https://github.com/warpdotdev/Warp) - modern terminal with AI built in so you and your team can build great software, faster. `Rust`
-  - [WindTerm](https://github.com/kingToolbox/WindTerm) - professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal. `C`
 - **Software Development**
   - [autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell. `TypeScript`
   - [biome](https://github.com/biomejs/biome) - toolchain for web projects, aimed to provide functionalities to maintain them, offers formatter and linter, usable via CLI and LSP. `Rust`
@@ -287,6 +285,10 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [macchina](https://github.com/Macchina-CLI/macchina) - system information frontend with an emphasis on performance. `Rust`
 - **System Performance**
   - zRAM - linux kernel module to create a compressed block device in RAM.
+- **Terminal**
+  - [alacritty](https://github.com/alacritty/alacritty) - cross-platform, OpenGL terminal emulator. `Rust`
+  - [Warp](https://github.com/warpdotdev/Warp) - modern terminal with AI built in so you and your team can build great software, faster. `Rust`
+  - [WindTerm](https://github.com/kingToolbox/WindTerm) - professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal. `C`
 - **Text Editor**
   - [lazy nvim](https://github.com/folke/lazy.nvim) - modern plugin manager for Neovim. `Lua`
   - [qsv](https://github.com/dathere/qsv) - blazing-fast data-wrangling toolkit. `Rust`

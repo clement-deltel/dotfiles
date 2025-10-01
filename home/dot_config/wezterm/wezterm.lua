@@ -75,11 +75,9 @@ config.skip_close_confirmation_for_processes_named = {
   "powershell.exe",
 }
 
--- Launch Menu
+-- Launch
+config.default_prog = { "pwsh.exe", "-NoLogo" }
 config.launch_menu = launch_menu
-
--- Workspaces, Windows, Tabs, and Panes
-config.default_prog = { "powershell.exe" }
 
 --------------------------------------------------------------------------------
 --               ------- WSL Domains ------
@@ -396,13 +394,26 @@ local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/s
 
 -- Keybindings
 local switcher_keys = {
-  { key = "w", mods = "LEADER", action = workspace_switcher.switch_workspace() },
+  { key = "w", mods = "LEADER",       action = workspace_switcher.switch_workspace() },
   { key = "W", mods = "LEADER|SHIFT", action = workspace_switcher.switch_workspace() },
 }
 
 for _, keymap in ipairs(switcher_keys) do
   table.insert(config.keys, keymap)
 end
+
+--------------------------------------------------------------------------------
+--               ------- Plugin - Command Sender ------
+--------------------------------------------------------------------------------
+local cmd_sender = wezterm.plugin.require("https://github.com/aureolebigben/wezterm-cmd-sender")
+
+local cmd_sender_key = {
+  key = ':',
+  mods = 'CTRL|SHIFT',
+  description = 'Enter command to send to all panes of active tab'
+}
+
+cmd_sender.apply_to_config(config, cmd_sender_key)
 
 --------------------------------------------------------------------------------
 --               ------- Plugin - Tabline ------
@@ -451,8 +462,7 @@ tabline.apply_to_config(config)
 --               ------- Startup ------
 --------------------------------------------------------------------------------
 wezterm.on("gui-startup", function(cmd)
-  -- allow `wezterm start -- something` to affect what we spawn
-  -- in our initial window
+  -- allow `wezterm start -- something` to affect what we spawn in our initial window
   local args = {}
   if cmd then
     args = cmd.args

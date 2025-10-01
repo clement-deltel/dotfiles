@@ -100,10 +100,10 @@ config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 2000 }
 config.keys = {
   -- Configuration
   { key = 'R',          mods = 'CTRL|SHIFT',   action = act.ReloadConfiguration },
-  -- Domain
+  -- Domains
   { key = 'w',          mods = 'ALT',          action = act.SpawnTab 'DefaultDomain' },
   { key = 'k',          mods = 'ALT',          action = act.SpawnTab { DomainName = 'WSL:Kali-Linux' } },
-  { key = 'l',          mods = 'ALT',          action = act.SpawnTab { DomainName = 'WSL:Ubuntu' } },
+  { key = 'u',          mods = 'ALT',          action = act.SpawnTab { DomainName = 'WSL:Ubuntu' } },
   -- Window
   { key = 'N',          mods = 'CTRL|SHIFT',   action = act.SpawnWindow },
   -- Tab - open & close
@@ -114,10 +114,8 @@ config.keys = {
   { key = 'L',          mods = 'LEADER|SHIFT', action = act.ActivateTabRelative(1) },
   { key = 'Tab',        mods = 'CTRL',         action = act.ActivateTabRelative(1) },
   { key = 'Tab',        mods = 'CTRL|SHIFT',   action = act.ActivateTabRelative(-1) },
-  { key = 'LeftArrow',  mods = 'CTRL',         action = act.ActivateTabRelative(-1) },
-  { key = 'RightArrow', mods = 'CTRL',         action = act.ActivateTabRelative(1) },
-  { key = 'PageUp',     mods = 'CTRL',         action = act.ActivateTabRelative(-1) },
-  { key = 'PageDown',   mods = 'CTRL',         action = act.ActivateTabRelative(1) },
+  { key = 'PageUp',     mods = 'SHIFT',         action = act.ActivateTabRelative(-1) },
+  { key = 'PageDown',   mods = 'SHIFT',         action = act.ActivateTabRelative(1) },
   -- Tab - move
   { key = 'PageUp',     mods = 'CTRL|SHIFT',   action = act.MoveTabRelative(-1) },
   { key = 'PageDown',   mods = 'CTRL|SHIFT',   action = act.MoveTabRelative(1) },
@@ -147,9 +145,12 @@ config.keys = {
   { key = 'z',          mods = 'CTRL',         action = act.TogglePaneZoomState },
   { key = 'Z',          mods = 'CTRL|SHIFT',   action = act.TogglePaneZoomState },
   -- Font - size
-  { key = '+',          mods = 'CTRL',         action = act.IncreaseFontSize },
+  { key = '=',          mods = 'CTRL',         action = act.IncreaseFontSize },
   { key = '-',          mods = 'CTRL',         action = act.DecreaseFontSize },
   { key = '0',          mods = 'CTRL',         action = act.ResetFontSize },
+  -- Delete
+  { key = 'Backspace',  mods = 'CTRL',         action = act.SendKey { key = 'w', mods = 'CTRL' } },
+  { key = 'Backspace',  mods = 'CTRL|SHIFT',   action = act.SendKey { key = 'u', mods = 'CTRL' } },
   -- Search
   { key = 'f',          mods = 'CTRL',         action = act.Search 'CurrentSelectionOrEmptyString' },
   { key = 'F',          mods = 'CTRL|SHIFT',   action = act.Search 'CurrentSelectionOrEmptyString' },
@@ -160,12 +161,10 @@ config.keys = {
   -- Scroll
   { key = 'g',          mods = 'LEADER',       action = act.ScrollToTop },
   { key = 'G',          mods = 'LEADER|SHIFT', action = act.ScrollToBottom },
-  { key = 'PageUp',     mods = 'SHIFT',        action = act.ScrollByPage(-1) },
-  { key = 'PageDown',   mods = 'SHIFT',        action = act.ScrollByPage(1) },
+  { key = 'PageUp',     mods = 'CTRL',        action = act.ScrollByPage(-1) },
+  { key = 'PageDown',   mods = 'CTRL',        action = act.ScrollByPage(1) },
   -- Copy & paste
   { key = 'C',          mods = 'CTRL|SHIFT',   action = act.CopyTo 'Clipboard' },
-  { key = 'u',          mods = 'CTRL',         action = act.CharSelect { copy_on_select = true, copy_to = 'ClipboardAndPrimarySelection' } },
-  { key = 'U',          mods = 'CTRL|SHIFT',   action = act.CharSelect { copy_on_select = true, copy_to = 'ClipboardAndPrimarySelection' } },
   { key = 'v',          mods = 'CTRL',         action = act.PasteFrom 'Clipboard' },
   { key = 'V',          mods = 'CTRL|SHIFT',   action = act.PasteFrom 'Clipboard' },
   -- { key = 'p',          mods = 'LEADER',       action = act.PasteFrom 'PrimarySelection', },
@@ -176,6 +175,9 @@ config.keys = {
   -- Command Palette
   { key = 'p',          mods = 'CTRL',         action = act.ActivateCommandPalette },
   { key = 'P',          mods = 'CTRL|SHIFT',   action = act.ActivateCommandPalette },
+  -- Emojis
+  { key = '.',          mods = 'CTRL',         action = act.CharSelect { copy_on_select = true, copy_to = 'ClipboardAndPrimarySelection' } },
+  { key = '.',          mods = 'CTRL|SHIFT',   action = act.CharSelect { copy_on_select = true, copy_to = 'ClipboardAndPrimarySelection' } },
   -- Launcher
   { key = 'l',          mods = 'ALT',          action = act.ShowLauncher },
   -- Other

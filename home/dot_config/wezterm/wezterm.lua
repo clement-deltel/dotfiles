@@ -6,7 +6,7 @@ local wezterm = require 'wezterm'
 -- Mux - multiplexer for windows, tabs, and panes inside the terminal
 local mux = wezterm.mux
 -- Action - perform actions on the terminal
-local action = wezterm.action
+local act = wezterm.action
 
 -- Vars to put things in later
 local config = {}
@@ -17,12 +17,16 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+-- WSL
+local ubuntu_distribution = 'Ubuntu-22.04'
+
 --------------------------------------------------------------------------------
 --               ------- General ------
 --------------------------------------------------------------------------------
 
 -- Window
 config.adjust_window_size_when_changing_font_size = false
+config.window_close_confirmation = 'NeverPrompt'
 config.window_decorations = 'RESIZE'
 config.window_frame = {
   font = wezterm.font { family = 'Noto Sans', weight = 'Regular' },
@@ -42,6 +46,9 @@ config.show_tabs_in_tab_bar = true
 config.enable_scroll_bar = true
 config.scroll_to_bottom_on_input = true
 config.scrollback_lines = 100000
+
+-- Select
+-- config.quick_select_remove_styling = true
 
 -- Security
 config.detect_password_input = true
@@ -66,15 +73,22 @@ config.launch_menu = launch_menu
 config.default_prog = { 'powershell.exe' }
 
 --------------------------------------------------------------------------------
---               ------- Domains ------
+--               ------- WSL Domains ------
 --------------------------------------------------------------------------------
 config.wsl_domains = {
   {
-    name = 'WSL:Ubuntu-22.04',
-    distribution = 'Ubuntu-22.04',
+    name = 'WSL:Ubuntu',
+    distribution = ubuntu_distribution,
     username = 'ubuntu',
     default_cwd = '/home/ubuntu',
     default_prog = { 'zsh' }
+  },
+  {
+    name = 'WSL:Kali-Linux',
+    distribution = 'kali-linux',
+    username = 'kali',
+    default_cwd = '/home/kali',
+    default_prog = { 'bash' }
   },
 }
 
@@ -85,93 +99,141 @@ config.disable_default_key_bindings = true
 config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 2000 }
 config.keys = {
   -- Configuration
-  { key = 'R',          mods = 'CTRL|SHIFT',   action = action.ReloadConfiguration },
+  { key = 'R',          mods = 'CTRL|SHIFT',   action = act.ReloadConfiguration },
+  -- Domain
+  { key = 'w',          mods = 'ALT',          action = act.SpawnTab 'DefaultDomain' },
+  { key = 'k',          mods = 'ALT',          action = act.SpawnTab { DomainName = 'WSL:Kali-Linux' } },
+  { key = 'l',          mods = 'ALT',          action = act.SpawnTab { DomainName = 'WSL:Ubuntu' } },
   -- Window
-  { key = 'N',          mods = 'CTRL|SHIFT',   action = action.SpawnWindow },
+  { key = 'N',          mods = 'CTRL|SHIFT',   action = act.SpawnWindow },
   -- Tab - open & close
-  { key = 't',          mods = 'ALT',          action = action.SpawnTab 'CurrentPaneDomain' },
-  { key = 'w',          mods = 'ALT',          action = action.SpawnTab 'DefaultDomain' },
-  { key = 'l',          mods = 'ALT',          action = action.SpawnTab { DomainName = 'WSL:Ubuntu-22.04' } },
-  { key = 'w',          mods = 'CTRL',         action = action.CloseCurrentTab { confirm = false } },
+  { key = 't',          mods = 'ALT',          action = act.SpawnTab 'CurrentPaneDomain' },
+  { key = 'w',          mods = 'CTRL',         action = act.CloseCurrentTab { confirm = false } },
   -- Tab - activate
-  { key = 'H',          mods = 'LEADER|SHIFT', action = action.ActivateTabRelative(-1) },
-  { key = 'L',          mods = 'LEADER|SHIFT', action = action.ActivateTabRelative(1) },
-  { key = 'PageUp',     mods = 'CTRL',         action = action.ActivateTabRelative(-1) },
-  { key = 'PageDown',   mods = 'CTRL',         action = action.ActivateTabRelative(1) },
+  { key = 'H',          mods = 'LEADER|SHIFT', action = act.ActivateTabRelative(-1) },
+  { key = 'L',          mods = 'LEADER|SHIFT', action = act.ActivateTabRelative(1) },
+  { key = 'Tab',        mods = 'CTRL',         action = act.ActivateTabRelative(1) },
+  { key = 'Tab',        mods = 'CTRL|SHIFT',   action = act.ActivateTabRelative(-1) },
+  { key = 'LeftArrow',  mods = 'CTRL',         action = act.ActivateTabRelative(-1) },
+  { key = 'RightArrow', mods = 'CTRL',         action = act.ActivateTabRelative(1) },
+  { key = 'PageUp',     mods = 'CTRL',         action = act.ActivateTabRelative(-1) },
+  { key = 'PageDown',   mods = 'CTRL',         action = act.ActivateTabRelative(1) },
+  -- Tab - move
+  { key = 'PageUp',     mods = 'CTRL|SHIFT',   action = act.MoveTabRelative(-1) },
+  { key = 'PageDown',   mods = 'CTRL|SHIFT',   action = act.MoveTabRelative(1) },
   -- Pane - split & close
-  { key = '\\',         mods = 'LEADER',       action = action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
-  { key = '-',          mods = 'LEADER',       action = action.SplitVertical { domain = 'CurrentPaneDomain' } },
-  { key = 'x',          mods = 'ALT',          action = action.CloseCurrentPane { confirm = false } },
+  { key = '\\',         mods = 'LEADER',       action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+  { key = '-',          mods = 'LEADER',       action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+  { key = 'x',          mods = 'ALT',          action = act.CloseCurrentPane { confirm = false } },
   -- Pane - activate
-  { key = 'h',          mods = 'LEADER',       action = action.ActivatePaneDirection 'Left' },
-  { key = 'j',          mods = 'LEADER',       action = action.ActivatePaneDirection 'Down' },
-  { key = 'k',          mods = 'LEADER',       action = action.ActivatePaneDirection 'Up' },
-  { key = 'l',          mods = 'LEADER',       action = action.ActivatePaneDirection 'Right' },
-  { key = 'LeftArrow',  mods = 'CTRL|SHIFT',   action = action.ActivatePaneDirection 'Left' },
-  { key = 'DownArrow',  mods = 'CTRL|SHIFT',   action = action.ActivatePaneDirection 'Down' },
-  { key = 'UpArrow',    mods = 'CTRL|SHIFT',   action = action.ActivatePaneDirection 'Up' },
-  { key = 'RightArrow', mods = 'CTRL|SHIFT',   action = action.ActivatePaneDirection 'Right' },
+  { key = 'h',          mods = 'LEADER',       action = act.ActivatePaneDirection 'Left' },
+  { key = 'j',          mods = 'LEADER',       action = act.ActivatePaneDirection 'Down' },
+  { key = 'k',          mods = 'LEADER',       action = act.ActivatePaneDirection 'Up' },
+  { key = 'l',          mods = 'LEADER',       action = act.ActivatePaneDirection 'Right' },
+  { key = 'LeftArrow',  mods = 'CTRL|SHIFT',   action = act.ActivatePaneDirection 'Left' },
+  { key = 'DownArrow',  mods = 'CTRL|SHIFT',   action = act.ActivatePaneDirection 'Down' },
+  { key = 'UpArrow',    mods = 'CTRL|SHIFT',   action = act.ActivatePaneDirection 'Up' },
+  { key = 'RightArrow', mods = 'CTRL|SHIFT',   action = act.ActivatePaneDirection 'Right' },
   -- Pane - size
-  { key = 'h',          mods = 'CTRL',         action = action.AdjustPaneSize({ 'Left', 5 }) },
-  { key = 'j',          mods = 'CTRL',         action = action.AdjustPaneSize({ 'Down', 5 }) },
-  { key = 'k',          mods = 'CTRL',         action = action.AdjustPaneSize({ 'Up', 5 }) },
-  { key = 'l',          mods = 'CTRL',         action = action.AdjustPaneSize({ 'Right', 5 }) },
-  { key = 'H',          mods = 'CTRL|SHIFT',   action = action.AdjustPaneSize({ 'Left', 10 }) },
-  { key = 'J',          mods = 'CTRL|SHIFT',   action = action.AdjustPaneSize({ 'Down', 10 }) },
-  { key = 'K',          mods = 'CTRL|SHIFT',   action = action.AdjustPaneSize({ 'Up', 10 }) },
-  { key = 'L',          mods = 'CTRL|SHIFT',   action = action.AdjustPaneSize({ 'Right', 10 }) },
-  { key = 'm',          mods = 'LEADER',       action = action.TogglePaneZoomState },
+  { key = 'h',          mods = 'CTRL',         action = act.AdjustPaneSize({ 'Left', 5 }) },
+  { key = 'j',          mods = 'CTRL',         action = act.AdjustPaneSize({ 'Down', 5 }) },
+  { key = 'k',          mods = 'CTRL',         action = act.AdjustPaneSize({ 'Up', 5 }) },
+  { key = 'l',          mods = 'CTRL',         action = act.AdjustPaneSize({ 'Right', 5 }) },
+  { key = 'H',          mods = 'CTRL|SHIFT',   action = act.AdjustPaneSize({ 'Left', 10 }) },
+  { key = 'J',          mods = 'CTRL|SHIFT',   action = act.AdjustPaneSize({ 'Down', 10 }) },
+  { key = 'K',          mods = 'CTRL|SHIFT',   action = act.AdjustPaneSize({ 'Up', 10 }) },
+  { key = 'L',          mods = 'CTRL|SHIFT',   action = act.AdjustPaneSize({ 'Right', 10 }) },
+  { key = 'm',          mods = 'LEADER',       action = act.TogglePaneZoomState },
+  { key = 'z',          mods = 'CTRL',         action = act.TogglePaneZoomState },
+  { key = 'Z',          mods = 'CTRL|SHIFT',   action = act.TogglePaneZoomState },
   -- Font - size
-  { key = '+',          mods = 'CTRL',         action = action.IncreaseFontSize },
-  { key = '-',          mods = 'CTRL',         action = action.DecreaseFontSize },
-  { key = '0',          mods = 'CTRL',         action = action.ResetFontSize },
+  { key = '+',          mods = 'CTRL',         action = act.IncreaseFontSize },
+  { key = '-',          mods = 'CTRL',         action = act.DecreaseFontSize },
+  { key = '0',          mods = 'CTRL',         action = act.ResetFontSize },
+  -- Search
+  { key = 'f',          mods = 'CTRL',         action = act.Search 'CurrentSelectionOrEmptyString' },
+  { key = 'F',          mods = 'CTRL|SHIFT',   action = act.Search 'CurrentSelectionOrEmptyString' },
+  { key = 'q',          mods = 'CTRL',         action = act.ClearScrollback 'ScrollbackOnly' },
+  { key = 'Q',          mods = 'CTRL|SHIFT',   action = act.ClearScrollback 'ScrollbackOnly' },
+  -- Select
+  { key = 'phys:Space', mods = 'CTRL|SHIFT',   action = act.QuickSelect },
   -- Scroll
-  { key = 'g',          mods = 'LEADER',       action = action.ScrollToTop },
-  { key = 'G',          mods = 'LEADER|SHIFT', action = action.ScrollToBottom },
+  { key = 'g',          mods = 'LEADER',       action = act.ScrollToTop },
+  { key = 'G',          mods = 'LEADER|SHIFT', action = act.ScrollToBottom },
+  { key = 'PageUp',     mods = 'SHIFT',        action = act.ScrollByPage(-1) },
+  { key = 'PageDown',   mods = 'SHIFT',        action = act.ScrollByPage(1) },
   -- Copy & paste
-  -- { key = 'C',          mods = 'CTRL|SHIFT',   action = action.CopyTo 'Clipboard' },
-  { key = 'v',          mods = 'ALT',          action = action.PasteFrom 'Clipboard' },
-  -- { key = 'p',          mods = 'LEADER',       action = action.PasteFrom 'PrimarySelection', },
-  { key = 'Enter',      mods = 'ALT',          action = action.ActivateCopyMode },
-  { key = 'Enter',      mods = 'LEADER',       action = action.ActivateCopyMode },
+  { key = 'C',          mods = 'CTRL|SHIFT',   action = act.CopyTo 'Clipboard' },
+  { key = 'u',          mods = 'CTRL',         action = act.CharSelect { copy_on_select = true, copy_to = 'ClipboardAndPrimarySelection' } },
+  { key = 'U',          mods = 'CTRL|SHIFT',   action = act.CharSelect { copy_on_select = true, copy_to = 'ClipboardAndPrimarySelection' } },
+  { key = 'v',          mods = 'CTRL',         action = act.PasteFrom 'Clipboard' },
+  { key = 'V',          mods = 'CTRL|SHIFT',   action = act.PasteFrom 'Clipboard' },
+  -- { key = 'p',          mods = 'LEADER',       action = act.PasteFrom 'PrimarySelection', },
+  { key = 'x',          mods = 'CTRL',         action = act.ActivateCopyMode },
+  { key = 'X',          mods = 'CTRL|SHIFT',   action = act.ActivateCopyMode },
+  { key = 'Enter',      mods = 'ALT',          action = act.ActivateCopyMode },
+  { key = 'Enter',      mods = 'LEADER',       action = act.ActivateCopyMode },
+  -- Command Palette
+  { key = 'p',          mods = 'CTRL',         action = act.ActivateCommandPalette },
+  { key = 'P',          mods = 'CTRL|SHIFT',   action = act.ActivateCommandPalette },
+  -- Launcher
+  { key = 'l',          mods = 'ALT',          action = act.ShowLauncher },
   -- Other
-  { key = 'U',          mods = 'CTRL|SHIFT',   action = action.CharSelect { copy_on_select = true, copy_to = 'ClipboardAndPrimarySelection' } },
-  { key = 'b',          mods = 'CTRL|LEADER',  action = action.SendString '\x02', },
+  { key = 'b',          mods = 'CTRL|LEADER',  action = act.SendString '\x02', },
   {
     key = 'k',
     mods = 'CTRL|ALT',
-    action = action.Multiple
+    action = act.Multiple
         {
-          action.ClearScrollback 'ScrollbackAndViewport',
-          action.SendKey { key = 'L', mods = 'CTRL' }
+          act.ClearScrollback 'ScrollbackAndViewport',
+          act.SendKey { key = 'L', mods = 'CTRL' }
         }
   },
-  { key = 'r', mods = 'LEADER', action = action.ActivateKeyTable { name = 'resize_pane', one_shot = false, }, }
+  { key = 'r', mods = 'LEADER', action = act.ActivateKeyTable { name = 'resize_pane', one_shot = false, } }
 }
 
 -- Tmux keybindings compatibility
 local tmux_keys = {
   -- Tab - open & close
-  { key = 'c',          mods = 'LEADER', action = action.SpawnTab 'CurrentPaneDomain' },
-  { key = '&',          mods = 'LEADER', action = action.CloseCurrentTab { confirm = false } },
+  { key = 'c',          mods = 'LEADER', action = act.SpawnTab 'CurrentPaneDomain' },
+  { key = '&',          mods = 'LEADER', action = act.CloseCurrentTab { confirm = false } },
   -- Tab - activate
-  { key = 'p',          mods = 'LEADER', action = action.ActivateTabRelative(-1) },
-  { key = 'n',          mods = 'LEADER', action = action.ActivateTabRelative(1) },
+  { key = 'p',          mods = 'LEADER', action = act.ActivateTabRelative(-1) },
+  { key = 'n',          mods = 'LEADER', action = act.ActivateTabRelative(1) },
   -- Pane - close
-  { key = 'x',          mods = 'LEADER', action = action.CloseCurrentPane { confirm = false } },
+  { key = 'x',          mods = 'LEADER', action = act.CloseCurrentPane { confirm = false } },
   -- Pane - activate
-  { key = 'LeftArrow',  mods = 'LEADER', action = action.ActivatePaneDirection 'Left' },
-  { key = 'DownArrow',  mods = 'LEADER', action = action.ActivatePaneDirection 'Down' },
-  { key = 'UpArrow',    mods = 'LEADER', action = action.ActivatePaneDirection 'Up' },
-  { key = 'RightArrow', mods = 'LEADER', action = action.ActivatePaneDirection 'Right' },
+  { key = 'LeftArrow',  mods = 'LEADER', action = act.ActivatePaneDirection 'Left' },
+  { key = 'DownArrow',  mods = 'LEADER', action = act.ActivatePaneDirection 'Down' },
+  { key = 'UpArrow',    mods = 'LEADER', action = act.ActivatePaneDirection 'Up' },
+  { key = 'RightArrow', mods = 'LEADER', action = act.ActivatePaneDirection 'Right' },
+  -- Copy & paste
+  { key = '[',          mods = 'LEADER', action = act.ActivateCopyMode }
 }
 for _, keymap in ipairs(tmux_keys) do
   table.insert(config.keys, keymap)
 end
 -- Add keybindings to activate a specific tab by its number from 1 to 9
 for i = 1, 9 do
-  table.insert(config.keys, { key = tostring(i), mods = "LEADER", action = action.ActivateTab(i - 1) })
+  table.insert(config.keys, { key = tostring(i), mods = "LEADER", action = act.ActivateTab(i - 1) })
 end
+
+-- Key tables
+config.key_tables = {
+  search_mode = {
+    { key = 'Enter',     mods = 'NONE', action = act.CopyMode 'NextMatch' },
+    { key = 'Escape',    mods = 'NONE', action = act.CopyMode 'Close' },
+    { key = 'n',         mods = 'CTRL', action = act.CopyMode 'NextMatch' },
+    { key = 'p',         mods = 'CTRL', action = act.CopyMode 'PriorMatch' },
+    { key = 'r',         mods = 'CTRL', action = act.CopyMode 'CycleMatchType' },
+    { key = 'u',         mods = 'CTRL', action = act.CopyMode 'ClearPattern' },
+    { key = 'Backspace', mods = 'CTRL', action = act.CopyMode 'ClearPattern' },
+    { key = 'PageUp',    mods = 'NONE', action = act.CopyMode 'PriorMatchPage', },
+    { key = 'PageDown',  mods = 'NONE', action = act.CopyMode 'NextMatchPage', },
+    { key = 'UpArrow',   mods = 'NONE', action = act.CopyMode 'PriorMatch' },
+    { key = 'DownArrow', mods = 'NONE', action = act.CopyMode 'NextMatch' },
+  },
+}
 
 -- Dead Keys
 config.use_dead_keys = false
@@ -179,59 +241,23 @@ config.use_dead_keys = false
 --------------------------------------------------------------------------------
 --               ------- Mouse ------
 --------------------------------------------------------------------------------
+config.disable_default_mouse_bindings = false
 config.mouse_wheel_scrolls_tabs = true
 config.mouse_bindings = {
-  -- Change the default click behavior so that it does not open hyperlinks
-  -- Make CTRL-Click open hyperlinks
-  -- Disable the 'Down' event of CTRL-Click to avoid weird program behaviors
-  {
-    event = { Up = { streak = 1, button = 'Left' } },
-    mods = 'NONE',
-    action = action.CompleteSelection 'ClipboardAndPrimarySelection',
-  },
-  {
-    event = { Up = { streak = 1, button = 'Left' } },
-    mods = 'CTRL',
-    action = action.OpenLinkAtMouseCursor,
-  },
-  {
-    event = { Down = { streak = 1, button = 'Left' } },
-    mods = 'CTRL',
-    action = action.Nop,
-  },
-
+  -- Paste
+  { event = { Up = { streak = 1, button = 'Right' } },             mods = 'NONE', action = act.PasteFrom 'Clipboard' },
+  -- Select
+  { event = { Down = { streak = 2, button = 'Left' } },            mods = 'NONE', action = act.SelectTextAtMouseCursor 'Word' },
+  { event = { Down = { streak = 3, button = 'Left' } },            mods = 'NONE', action = act.SelectTextAtMouseCursor 'Line' },
+  -- Hyperlinks
+  -- Make CTRL-Click open hyperlinks and disable the 'Down' event to avoid weird program behaviors
+  { event = { Up = { streak = 1, button = 'Left' } },              mods = 'NONE', action = act.CompleteSelection 'ClipboardAndPrimarySelection' },
+  { event = { Up = { streak = 1, button = 'Left' } },              mods = 'CTRL', action = act.OpenLinkAtMouseCursor },
+  { event = { Down = { streak = 1, button = 'Left' } },            mods = 'CTRL', action = act.Nop },
+  -- Wheel
   -- Scrolling up/down while holding CTRL increases/decreases the font size
-  {
-    event = { Down = { streak = 1, button = { WheelUp = 1 } } },
-    mods = 'CTRL',
-    action = action.IncreaseFontSize,
-  },
-  {
-    event = { Down = { streak = 1, button = { WheelDown = 1 } } },
-    mods = 'CTRL',
-    action = action.DecreaseFontSize,
-  },
-
-  -- Mimic Windows Terminal and let you copy
-  -- To copy just highlight something and right click. Simple
-  {
-    event = { Down = { streak = 3, button = 'Left' } },
-    action = action.SelectTextAtMouseCursor 'SemanticZone',
-    mods = 'NONE',
-  },
-  {
-    event = { Down = { streak = 1, button = 'Right' } },
-    mods = 'NONE',
-    action = wezterm.action_callback(function(window, pane)
-      local has_selection = window:get_selection_text_for_pane(pane) ~= ''
-      if has_selection then
-        window:perform_action(action.CopyTo('ClipboardAndPrimarySelection'), pane)
-        window:perform_action(action.ClearSelection, pane)
-      else
-        window:perform_action(action({ PasteFrom = 'Clipboard' }), pane)
-      end
-    end),
-  },
+  { event = { Down = { streak = 1, button = { WheelUp = 1 } } },   mods = 'CTRL', action = act.IncreaseFontSize },
+  { event = { Down = { streak = 1, button = { WheelDown = 1 } } }, mods = 'CTRL', action = act.DecreaseFontSize }
 }
 
 --------------------------------------------------------------------------------
@@ -272,18 +298,19 @@ wezterm.on('gui-startup', function(cmd)
     args = cmd.args
   end
 
-  -- First tab: PowerShell with admin privileges in Windows home directory
+  -- First tab: PowerShell with admin privileges in code-win directory
   local tab1, _, window = mux.spawn_window {
     args = args,
     cwd = 'C:\\code-win',
     workspace = 'work'
   }
-  tab1:set_title('PowerShell (admin)')
+  tab1:set_title('PowerShell')
   window:gui_window():maximize()
 
-  -- Second tab: WSL Ubuntu in home directory
-  local tab2, _, _ = window:spawn_tab { domain = { DomainName = 'WSL:Ubuntu-22.04' } }
-  tab2:set_title('WSL Ubuntu'):activate()
+  -- Second tab: WSL Ubuntu in /home/ubuntu directory
+  local tab2, _, _ = window:spawn_tab { domain = { DomainName = 'WSL:Ubuntu' } }
+  tab2:set_title('WSL Ubuntu')
+  tab2:activate()
 
   mux.set_active_workspace 'work'
 end)

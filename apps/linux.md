@@ -34,9 +34,10 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [termshark](https://github.com/gcla/termshark) - TUI for tshark, inspired by Wireshark. `Go`
       - [trippy](https://github.com/fujiapple852/trippy) - TUI network diagnostic tool. `Rust`
     - **Search**
-      - [fzf](https://github.com/junegunn/fzf) - CLI fuzzy finder. `Go`
       - [jq](https://github.com/jqlang/jq) - CLI JSON processor. `C/C++`
       - [ranger](https://github.com/ranger/ranger) - vim-inspired file manager for the console. `Python`
+    - **Security**
+      - [age](https://github.com/FiloSottile/age) - encryption tool with small explicit keys, no config options, and UNIX-style composability. `Go`
     - **Software Development**
       - [ls-lint](https://github.com/loeffel-io/ls-lint) - directory and filename linter, bring some structure to your project filesystem. `Go`
     - **Other**
@@ -65,6 +66,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [hadolint](https://github.com/hadolint/hadolint) - Dockerfile linter, validate inline bash. `Haskell`
       - [lazydocker](https://github.com/jesseduffield/lazydocker) - lazier way to manage everything Docker. `Go`
       - [trivy](https://github.com/aquasecurity/trivy) - find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more. `Go`
+    - **Search**
+      - [fzf](https://github.com/junegunn/fzf) - CLI fuzzy finder. `Go`
     - **Software Development**
       - [lazygit](https://github.com/jesseduffield/lazygit) - simple TUI for git commands. `Go`
       - [ls-lint](https://github.com/loeffel-io/ls-lint) - directory and filename linter, bring some structure to the project filesystem. `Go`

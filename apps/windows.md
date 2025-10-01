@@ -32,6 +32,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [RustDesk](https://community.chocolatey.org/packages/rustdesk) - remote desktop software, works out of the box, no configuration required.
     - [Win32 OpenSSH](https://community.chocolatey.org/packages/openssh) - SSH support for Windows.
   - **Search**
+    - [fzf](https://community.chocolatey.org/packages/fzf) - command-line fuzzy finder.
     - [Google Chrome](https://community.chocolatey.org/packages/googlechrome) - web browser.
     - [Opera](https://community.chocolatey.org/packages/opera) - web browser.
   - **Security**
@@ -89,6 +90,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 ### Winget
 
 - **Common**
+  - [Age]
   - [Apple Devices](https://apps.microsoft.com/detail/9np83lwlpz9k)
   - [Microsoft Sysinternals](https://apps.microsoft.com/detail/9p7knl5rwt25)
   - [Rainmeter](https://www.rainmeter.net)

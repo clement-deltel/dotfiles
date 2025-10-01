@@ -18,7 +18,7 @@ HISTSIZE=9999
 #------------------------------------------------------------------------------#
 
 # fzf
-export FZF_BASE=/usr/bin/fzf
+export FZF_BASE=/home/linuxbrew/.linuxbrew/bin/fzf
 export FZF_DEFAULT_COMMAND='fzf'
 
 DISABLE_FZF_AUTO_COMPLETION="false"

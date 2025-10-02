@@ -57,7 +57,7 @@ if ($isAdmin)
 #------------------------------------------------------------------------------#
 $machine={{ .machine }}
 $user=$Env:UserName
-$Env:XDG_CONFIG_HOME="C:\Users\$user\.config"
+$Env:XDG_CONFIG_HOME="C:/Users/$user/.config"
 
 #------------------------------------------------------------------------------#
 #               ------- Aliases --------
@@ -71,7 +71,7 @@ $Env:XDG_CONFIG_HOME="C:\Users\$user\.config"
 # h / history
 # kill
 # ls
-# man, mkdir, mv
+# man, mkdir, mount, mv
 # ps, pwd
 # rm
 # set, sleep, sort
@@ -81,6 +81,7 @@ $Env:XDG_CONFIG_HOME="C:\Users\$user\.config"
 
 New-Alias -Name "alias" -Value Get-Alias -Description "Gets the aliases for the current session" -Option ReadOnly
 New-Alias -Name "c" -Value Clear-Host -Description "Clears the display in the host program" -Option ReadOnly
+New-Alias -Name "ifconfig" -Value ipconfig -Option ReadOnly
 New-Alias -Name "ll" -Value Get-ChildItem -Option ReadOnly
 New-Alias -Name "reboot" -Value Restart-Computer -Description "Restarts the operating system on local and remote computers" -Option ReadOnly
 
@@ -89,8 +90,9 @@ New-Alias -Name "reboot" -Value Restart-Computer -Description "Restarts the oper
 #------------------------------------------------------------------------------#
 
 # Shortcuts for traversing directories
-function ... { Set-Location ..\.. }
-function .... { Set-Location ..\..\.. }
+function .. { Set-Location .. }
+function ... { Set-Location ../.. }
+function .... { Set-Location ../../.. }
 
 # Environment variables
 function env { Get-ChildItem Env:* | Sort-Object Name }
@@ -138,11 +140,15 @@ function cmu { chezmoi update --force }
 #------------------------------------------------------------------------------#
 #               ------- Chocolatey ------
 #------------------------------------------------------------------------------#
-function chocob { . $HOME\powershell\packages\chocolatey.ps1 backup $machine }
+function chocob {
+    choco export -y --include-version-numbers --output-file-path="$HOME/.config/chocolatey/$machine.config"
+    Remove-Item "$HOME/.config/chocolatey/$machine.config.backup"
+ }
 
 #------------------------------------------------------------------------------#
 #               ------- Docker ------
 #------------------------------------------------------------------------------#
+function dex { docker exec -it $args powershell }
 function dim { docker images }
 function dirm { docker image rm $args }
 function dl { docker logs -f $args }
@@ -151,28 +157,47 @@ function dnrm { docker network rm $args }
 function dps { docker ps }
 function dpsa { docker ps -a }
 function dpsf { docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}" }
+function dsp { docker system prune }
 function dvls { docker volume ls }
 function dvrm { docker volume rm $args }
 
 #------------------------------------------------------------------------------#
 #               ------- Docker Compose ------
 #------------------------------------------------------------------------------#
-function dcu { docker-compose up -d }
 function dcd { docker-compose down -v }
+function dcu { docker-compose up -d }
+function dcub { docker compose up -d --build }
+
+#------------------------------------------------------------------------------#
+#               ------- PSfzf - fuzzy finder PowerShell wrapper ------
+#------------------------------------------------------------------------------#
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
 
 #------------------------------------------------------------------------------#
 #               ------- Kubernetes ------
 #------------------------------------------------------------------------------#
-function kdp { kubectl delete pod $args }
-function kex { kubectl exec --stdin --tty $args -- bash }
+New-Alias -Name "kctx" -Value kubectx -Option ReadOnly
+
+function kccc { kubectl config current-context }
+function kcsc { kubectl config set-context $args }
+function kgc { kubectl config get-contexts }
 function kgd { kubectl get deployment }
 function kgp { kubectl get pods }
-function kgsec { kubectl get secret }
-function kgser { kubectl get service }
+function kgpv { kctl get persistentvolume }
+function kgpvc { kctl get persistentvolumeclaim }
+function kgs { kubectl get secret }
+function kgsj { kubectl get secret $args -o jsonpath='{.data}' }
+function kgss { kctl get statefulset }
+function kgsvc { kubectl get service }
 function kl { kubectl logs -f $args }
-function kpf($1, $2) { kubectl port-forward service/${1} ${2}:${2} }
-function kro { kubectl rollout restart deployment $args -n default }
-function ksl { kubectl get secret $args -o jsonpath='{.data}' }
+function krmfailed { kctl delete pods --field-selector=status.phase=Failed }
+function krr { kubectl rollout restart deployment $args }
+
+#------------------------------------------------------------------------------#
+#               ------- Powershell ------
+#------------------------------------------------------------------------------#
+function np { notepad++ "$HOME\Documents\PowerShell\profile.ps1" }
+function version { Write-Output $PSVersionTable }
 
 #------------------------------------------------------------------------------#
 #               ------- Python ------
@@ -182,11 +207,19 @@ function ksl { kubectl get secret $args -o jsonpath='{.data}' }
 function pipfr { pip freeze --all > requirements.txt }
 function pipir { pip install -r requirements.txt }
 
+# pyenv
+function pyl { pyenv versions }
+
 # pyenv virtualenvs
 function vc {
-    python -m virtualenv --python "C:\Users\$user\.pyenv\pyenv-win\versions\3.11.8\python.exe" $args }
+    python -m virtualenv --python "C:/Users/$user/.pyenv/pyenv-win/versions/3.11.8/python.exe" $args }
 
 #------------------------------------------------------------------------------#
 #               ------- Visual Studio Code --------
 #------------------------------------------------------------------------------#
 function cwo { code *.code-workspace }
+
+#------------------------------------------------------------------------------#
+#               ------- Zoxide --------
+#------------------------------------------------------------------------------#
+Invoke-Expression (& { (zoxide init powershell --cmd cd | Out-String) })

@@ -38,6 +38,7 @@ $winToysId="9P8LTPGCBZXD"
 If( $tag -eq "init" )
 {
   winget install --exact --id FiloSottile.age
+  winget install --exact --id Microsoft.PowerShell --source winget
   winget install --exact --id Rainmeter.Rainmeter --interactive --override "/S /AUTOSTARTUP=1 /RESTART=1"
 
   If( $machine -eq "personal" )
@@ -58,6 +59,7 @@ If( $tag -eq "init" )
 Else If( $tag -eq "update" )
 {
   winget upgrade --exact --id FiloSottile.age
+  winget upgrade --exact --id Microsoft.PowerShell --source winget
   winget upgrade --exact --id Rainmeter.Rainmeter --interactive
 
   If( $machine -eq "personal" )

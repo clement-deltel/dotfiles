@@ -35,6 +35,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [fzf](https://community.chocolatey.org/packages/fzf) - command-line fuzzy finder.
     - [Google Chrome](https://community.chocolatey.org/packages/googlechrome) - web browser.
     - [Opera](https://community.chocolatey.org/packages/opera) - web browser.
+    - [zoxide](https://community.chocolatey.org/packages/zoxide) - smarter cd command.
   - **Security**
     - [VeraCrypt](https://community.chocolatey.org/packages/veracrypt) - disk encryption software.
   - **Software Development**

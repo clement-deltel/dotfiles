@@ -273,7 +273,7 @@ local domain_keys = {
     key = "w",
     mods = "ALT",
     action = wezterm.action_callback(function(win, pane)
-      local tab = win:mux_window():spawn_tab({ domain = { DomainName = "DefaultDomain" } })
+      local tab = win:mux_window():spawn_tab({ cwd = "C:\\code-win", domain = "DefaultDomain" })
       tab:set_title("PowerShell")
     end)
   },
@@ -325,7 +325,6 @@ config.font_size = 11
 
 -- Cursor
 config.default_cursor_style = "SteadyBlock"
-
 
 --------------------------------------------------------------------------------
 --               ------- Plugin - Resurrect ------
@@ -539,6 +538,7 @@ wezterm.on("gui-startup", function()
   -- First tab: PowerShell in code-win directory
   local tab1, _, window = mux.spawn_window {
     cwd = "C:\\code-win",
+    domain = "DefaultDomain",
     workspace = "work"
   }
   window:gui_window():maximize()

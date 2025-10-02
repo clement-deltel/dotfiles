@@ -40,7 +40,7 @@ config.window_frame = {
 }
 
 -- Tab
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
 config.prefer_to_spawn_tabs = true
 config.tab_bar_at_bottom = true
 config.tab_max_width = 20
@@ -77,26 +77,6 @@ config.skip_close_confirmation_for_processes_named = {
 }
 
 --------------------------------------------------------------------------------
---               ------- WSL Domains ------
---------------------------------------------------------------------------------
-config.wsl_domains = {
-  {
-    name = "WSL:Ubuntu",
-    distribution = ubuntu_distribution,
-    username = "ubuntu",
-    default_cwd = "/home/ubuntu",
-    default_prog = { "zsh" }
-  },
-  {
-    name = "WSL:Kali-Linux",
-    distribution = "kali-linux",
-    username = "kali",
-    default_cwd = "/home/kali",
-    default_prog = { "bash" }
-  },
-}
-
---------------------------------------------------------------------------------
 --               ------- Keyboard ------
 --------------------------------------------------------------------------------
 config.disable_default_key_bindings = true
@@ -104,34 +84,33 @@ config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
 config.keys = {
   -- Configuration
   { key = "R",          mods = "CTRL|SHIFT",   action = act.ReloadConfiguration },
-  -- Domains
-  { key = "w",          mods = "ALT",          action = act.SpawnTab "DefaultDomain" },
-  { key = "k",          mods = "ALT",          action = act.SpawnTab { DomainName = "WSL:Kali-Linux" } },
-  { key = "u",          mods = "ALT",          action = act.SpawnTab { DomainName = "WSL:Ubuntu" } },
+  -- Application
+  { key = "q",          mods = "CTRL",         action = act.QuitApplication },
   -- Window
   { key = "N",          mods = "CTRL|SHIFT",   action = act.SpawnWindow },
+  -- Workspaces - activate
+  { key = "[",          mods = "CTRL",         action = act.SwitchWorkspaceRelative(-1) },
+  { key = "]",          mods = "CTRL",         action = act.SwitchWorkspaceRelative(1) },
   -- Tab - open & close
   { key = "t",          mods = "ALT",          action = act.SpawnTab "CurrentPaneDomain" },
   { key = "w",          mods = "CTRL",         action = act.CloseCurrentTab { confirm = false } },
   -- Tab - activate
-  { key = "H",          mods = "LEADER|SHIFT", action = act.ActivateTabRelative(-1) },
-  { key = "L",          mods = "LEADER|SHIFT", action = act.ActivateTabRelative(1) },
+  { key = "H",          mods = "ALT",          action = act.ActivateTabRelative(-1) },
+  { key = "L",          mods = "ALT",          action = act.ActivateTabRelative(1) },
   { key = "Tab",        mods = "CTRL",         action = act.ActivateTabRelative(1) },
   { key = "Tab",        mods = "CTRL|SHIFT",   action = act.ActivateTabRelative(-1) },
-  { key = "PageUp",     mods = "SHIFT",        action = act.ActivateTabRelative(-1) },
-  { key = "PageDown",   mods = "SHIFT",        action = act.ActivateTabRelative(1) },
   -- Tab - move
   { key = "PageUp",     mods = "CTRL|SHIFT",   action = act.MoveTabRelative(-1) },
   { key = "PageDown",   mods = "CTRL|SHIFT",   action = act.MoveTabRelative(1) },
   -- Pane - split & close
-  { key = "\\",         mods = "LEADER",       action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
-  { key = "-",          mods = "LEADER",       action = act.SplitVertical { domain = "CurrentPaneDomain" } },
+  { key = "\\",         mods = "LEADER|CTRL",  action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
+  { key = "-",          mods = "LEADER|CTRL",  action = act.SplitVertical { domain = "CurrentPaneDomain" } },
   { key = "x",          mods = "ALT",          action = act.CloseCurrentPane { confirm = false } },
   -- Pane - activate
-  { key = "h",          mods = "LEADER",       action = act.ActivatePaneDirection "Left" },
-  { key = "j",          mods = "LEADER",       action = act.ActivatePaneDirection "Down" },
-  { key = "k",          mods = "LEADER",       action = act.ActivatePaneDirection "Up" },
-  { key = "l",          mods = "LEADER",       action = act.ActivatePaneDirection "Right" },
+  { key = "H",          mods = "CTRL|SHIFT",   action = act.ActivatePaneDirection "Left" },
+  { key = "J",          mods = "CTRL|SHIFT",   action = act.ActivatePaneDirection "Down" },
+  { key = "K",          mods = "CTRL|SHIFT",   action = act.ActivatePaneDirection "Up" },
+  { key = "L",          mods = "CTRL|SHIFT",   action = act.ActivatePaneDirection "Right" },
   { key = "LeftArrow",  mods = "CTRL|SHIFT",   action = act.ActivatePaneDirection "Left" },
   { key = "DownArrow",  mods = "CTRL|SHIFT",   action = act.ActivatePaneDirection "Down" },
   { key = "UpArrow",    mods = "CTRL|SHIFT",   action = act.ActivatePaneDirection "Up" },
@@ -141,13 +120,12 @@ config.keys = {
   { key = "j",          mods = "CTRL",         action = act.AdjustPaneSize({ "Down", 5 }) },
   { key = "k",          mods = "CTRL",         action = act.AdjustPaneSize({ "Up", 5 }) },
   { key = "l",          mods = "CTRL",         action = act.AdjustPaneSize({ "Right", 5 }) },
-  { key = "H",          mods = "CTRL|SHIFT",   action = act.AdjustPaneSize({ "Left", 10 }) },
-  { key = "J",          mods = "CTRL|SHIFT",   action = act.AdjustPaneSize({ "Down", 10 }) },
-  { key = "K",          mods = "CTRL|SHIFT",   action = act.AdjustPaneSize({ "Up", 10 }) },
-  { key = "L",          mods = "CTRL|SHIFT",   action = act.AdjustPaneSize({ "Right", 10 }) },
+  { key = "H",          mods = "SHIFT",        action = act.AdjustPaneSize({ "Left", 10 }) },
+  { key = "J",          mods = "SHIFT",        action = act.AdjustPaneSize({ "Down", 10 }) },
+  { key = "K",          mods = "SHIFT",        action = act.AdjustPaneSize({ "Up", 10 }) },
+  { key = "L",          mods = "SHIFT",        action = act.AdjustPaneSize({ "Right", 10 }) },
   { key = "m",          mods = "LEADER",       action = act.TogglePaneZoomState },
   { key = "z",          mods = "CTRL",         action = act.TogglePaneZoomState },
-  { key = "Z",          mods = "CTRL|SHIFT",   action = act.TogglePaneZoomState },
   -- Font - size
   { key = "=",          mods = "CTRL",         action = act.IncreaseFontSize },
   { key = "-",          mods = "CTRL",         action = act.DecreaseFontSize },
@@ -158,8 +136,8 @@ config.keys = {
   -- Search
   { key = "f",          mods = "CTRL",         action = act.Search "CurrentSelectionOrEmptyString" },
   { key = "F",          mods = "CTRL|SHIFT",   action = act.Search "CurrentSelectionOrEmptyString" },
-  { key = "q",          mods = "CTRL",         action = act.ClearScrollback "ScrollbackOnly" },
-  { key = "Q",          mods = "CTRL|SHIFT",   action = act.ClearScrollback "ScrollbackOnly" },
+  { key = "b",          mods = "CTRL",         action = act.ClearScrollback "ScrollbackOnly" },
+  { key = "B",          mods = "CTRL|SHIFT",   action = act.ClearScrollback "ScrollbackOnly" },
   -- Select
   { key = "phys:Space", mods = "CTRL|SHIFT",   action = act.QuickSelect },
   -- Scroll
@@ -176,14 +154,11 @@ config.keys = {
   { key = "X",          mods = "CTRL|SHIFT",   action = act.ActivateCopyMode },
   { key = "Enter",      mods = "ALT",          action = act.ActivateCopyMode },
   { key = "Enter",      mods = "LEADER",       action = act.ActivateCopyMode },
-  -- Command Palette
-  { key = "p",          mods = "CTRL",         action = act.ActivateCommandPalette },
+  -- Launcher & Command Palette
+  { key = "p",          mods = "CTRL",         action = act.ShowLauncher },
   { key = "P",          mods = "CTRL|SHIFT",   action = act.ActivateCommandPalette },
   -- Emojis
   { key = ".",          mods = "CTRL",         action = act.CharSelect { copy_on_select = true, copy_to = "ClipboardAndPrimarySelection" } },
-  { key = ".",          mods = "CTRL|SHIFT",   action = act.CharSelect { copy_on_select = true, copy_to = "ClipboardAndPrimarySelection" } },
-  -- Launcher
-  { key = "l",          mods = "ALT",          action = act.ShowLauncher },
   -- Comment and skip command
   {
     key = "q",
@@ -274,6 +249,57 @@ config.mouse_bindings = {
 }
 
 --------------------------------------------------------------------------------
+--               ------- WSL Domains ------
+--------------------------------------------------------------------------------
+config.wsl_domains = {
+  {
+    name = "WSL:Ubuntu",
+    distribution = ubuntu_distribution,
+    username = "ubuntu",
+    default_cwd = "/home/ubuntu",
+    default_prog = { "zsh" }
+  },
+  {
+    name = "WSL:Kali-Linux",
+    distribution = "kali-linux",
+    username = "kali",
+    default_cwd = "/home/kali",
+    default_prog = { "bash" }
+  },
+}
+
+local domain_keys = {
+  {
+    key = "w",
+    mods = "ALT",
+    action = wezterm.action_callback(function(win, pane)
+      local tab = win:mux_window():spawn_tab({ domain = { DomainName = "DefaultDomain" } })
+      tab:set_title("PowerShell")
+    end)
+  },
+  {
+    key = "k",
+    mods = "ALT",
+    action = wezterm.action_callback(function(win, pane)
+      local tab = win:mux_window():spawn_tab({ domain = { DomainName = "WSL:Kali-Linux" } })
+      tab:set_title("Kali")
+    end)
+  },
+  {
+    key = "u",
+    mods = "ALT",
+    action = wezterm.action_callback(function(win, pane)
+      local tab = win:mux_window():spawn_tab({ domain = { DomainName = "WSL:Ubuntu" } })
+      tab:set_title("Ubuntu")
+    end)
+  }
+}
+
+for _, keymap in ipairs(domain_keys) do
+  table.insert(config.keys, keymap)
+end
+
+--------------------------------------------------------------------------------
 --               ------- Theme ------
 --------------------------------------------------------------------------------
 
@@ -304,83 +330,133 @@ config.default_cursor_style = "SteadyBlock"
 --------------------------------------------------------------------------------
 --               ------- Plugin - Resurrect ------
 --------------------------------------------------------------------------------
-local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
+-- local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 
--- Encryption
-resurrect.state_manager.set_encryption({
-  enable = true,
-  method = "age",
-  private_key = wezterm.home_dir .. "/.config/age/key.txt",
-  public_key = "age18zugsyvstf50u76u5lnlqynauz5cje5dgpafrms8zey4rje0gvfs83chsc",
-})
+-- -- Encryption
+-- resurrect.state_manager.set_encryption({
+--   enable = true,
+--   method = "age",
+--   private_key = wezterm.home_dir .. "/.config/age/key.txt",
+--   public_key = "age18zugsyvstf50u76u5lnlqynauz5cje5dgpafrms8zey4rje0gvfs83chsc",
+-- })
 
--- Periodic save every 5 minutes
-resurrect.state_manager.periodic_save({ interval_seconds = 300, save_workspaces = true, save_windows = true, save_tabs = true })
+-- -- Periodic save every 5 minutes
+-- resurrect.state_manager.periodic_save({ interval_seconds = 300, save_workspaces = true, save_windows = true, save_tabs = true })
 
--- Save only 5000 lines per pane
-resurrect.state_manager.set_max_nlines(5000)
+-- -- Save only 5000 lines per pane
+-- resurrect.state_manager.set_max_nlines(5000)
 
--- Keybindings
-local resurrect_keys = {
+-- -- Keybindings
+-- local resurrect_keys = {
+--   {
+--     -- Save current and window state
+--     key = "s",
+--     mods = "LEADER|CTRL",
+--     action = wezterm.action_callback(function(win, pane)
+--       resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state())
+--       resurrect.window_state.save_window_action()
+--     end)
+--   },
+--   {
+--     -- Load workspace or window state using a fuzzy finder
+--     key = "r",
+--     mods = "LEADER|CTRL",
+--     action = wezterm.action_callback(function(win, pane)
+--       resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
+--         local type = string.match(id, "^([^/]+)") -- match before "/"
+--         id = string.match(id, "([^/]+)$")         -- match after "/"
+--         id = string.match(id, "(.+)%..+$")        -- remove file extension
+--         local opts = {
+--           relative = true,
+--           restore_text = true,
+--           on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+--         }
+--         if type == "workspace" then
+--           local state = resurrect.state_manager.load_state(id, "workspace")
+--           resurrect.workspace_state.restore_workspace(state, opts)
+--         elseif type == "window" then
+--           local state = resurrect.state_manager.load_state(id, "window")
+--           resurrect.window_state.restore_window(pane:window(), state, opts)
+--         elseif type == "tab" then
+--           local state = resurrect.state_manager.load_state(id, "tab")
+--           resurrect.tab_state.restore_tab(pane:tab(), state, opts)
+--         end
+--       end)
+--     end),
+--   },
+--   {
+--     -- Delete a saved session using a fuzzy finder
+--     key = "d",
+--     mods = "LEADER|CTRL",
+--     action = wezterm.action_callback(function(win, pane)
+--       resurrect.fuzzy_loader.fuzzy_load(
+--         win,
+--         pane,
+--         function(id)
+--           resurrect.delete_state(id)
+--         end,
+--         {
+--           title             = "Delete State",
+--           description       = "Select session to delete and press Enter = accept, Esc = cancel, / = filter",
+--           fuzzy_description = "Search session to delete: ",
+--           is_fuzzy          = true,
+--         }
+--       )
+--     end),
+--   }
+-- }
+
+-- for _, keymap in ipairs(resurrect_keys) do
+--   table.insert(config.keys, keymap)
+-- end
+
+--------------------------------------------------------------------------------
+--               ------- Plugin - Sessions ------
+--------------------------------------------------------------------------------
+-- local sessions = wezterm.plugin.require("https://github.com/abidibo/wezterm-sessions")
+-- sessions.apply_to_config(config)
+
+local sessions_keys = {
+  -- { key = "s", mods = "LEADER|CTRL", action = act({ EmitEvent = "save_session" }) },
+  -- { key = "l", mods = "LEADER|CTRL", action = act({ EmitEvent = "load_session" }) },
+  -- { key = "r", mods = "LEADER|CTRL", action = act({ EmitEvent = "restore_session" }) },
+  -- { key = "d", mods = "LEADER|CTRL", action = act({ EmitEvent = "delete_session" }) },
+  -- { key = "e", mods = "LEADER|CTRL", action = act({ EmitEvent = "edit_session" }) },
+  -- Rename current workspace
   {
-    -- Save current and window state
-    key = "s",
-    mods = "LEADER",
-    action = wezterm.action_callback(function(win, pane)
-      resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state())
-      resurrect.window_state.save_window_action()
-    end)
+    key = "e",
+    mods = "CTRL",
+    action = act.PromptInputLine {
+      description = "Enter new workspace name",
+      action = wezterm.action_callback(
+        function(window, pane, line)
+          if line then
+            wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), line)
+          end
+        end) }
   },
+  -- Prompt for a name to use for a new workspace and switch to it.
   {
-    -- Load workspace or window state using a fuzzy finder
-    key = "r",
-    mods = "LEADER",
-    action = wezterm.action_callback(function(win, pane)
-      resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
-        local type = string.match(id, "^([^/]+)") -- match before "/"
-        id = string.match(id, "([^/]+)$")         -- match after "/"
-        id = string.match(id, "(.+)%..+$")        -- remove file extention
-        local opts = {
-          relative = true,
-          restore_text = true,
-          on_pane_restore = resurrect.tab_state.default_on_pane_restore,
-        }
-        if type == "workspace" then
-          local state = resurrect.state_manager.load_state(id, "workspace")
-          resurrect.workspace_state.restore_workspace(state, opts)
-        elseif type == "window" then
-          local state = resurrect.state_manager.load_state(id, "window")
-          resurrect.window_state.restore_window(pane:window(), state, opts)
-        elseif type == "tab" then
-          local state = resurrect.state_manager.load_state(id, "tab")
-          resurrect.tab_state.restore_tab(pane:tab(), state, opts)
+    key = "n",
+    mods = "CTRL",
+    action = act.PromptInputLine {
+      description = wezterm.format {
+        { Attribute = { Intensity = "Bold" } },
+        { Foreground = { AnsiColor = "Fuchsia" } },
+        { Text = "Enter name for new workspace" },
+      },
+      action = wezterm.action_callback(function(window, pane, line)
+        -- line will be `nil` if they hit escape without entering anything
+        -- An empty string if they just hit enter
+        -- Or the actual line of text they wrote
+        if line then
+          window:perform_action(act.SwitchToWorkspace { name = line, }, pane)
         end
-      end)
-    end),
-  },
-  {
-    -- Delete a saved session using a fuzzy finder
-    key = "d",
-    mods = "LEADER|SHIFT",
-    action = wezterm.action_callback(function(win, pane)
-      resurrect.fuzzy_loader.fuzzy_load(
-        win,
-        pane,
-        function(id)
-          resurrect.delete_state(id)
-        end,
-        {
-          title             = "Delete State",
-          description       = "Select session to delete and press Enter = accept, Esc = cancel, / = filter",
-          fuzzy_description = "Search session to delete: ",
-          is_fuzzy          = true,
-        }
-      )
-    end),
+      end) }
   }
 }
 
-for _, keymap in ipairs(resurrect_keys) do
+for _, keymap in ipairs(sessions_keys) do
   table.insert(config.keys, keymap)
 end
 
@@ -391,8 +467,7 @@ local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/s
 
 -- Keybindings
 local switcher_keys = {
-  { key = "w", mods = "LEADER",       action = workspace_switcher.switch_workspace() },
-  { key = "W", mods = "LEADER|SHIFT", action = workspace_switcher.switch_workspace() },
+  { key = "w", mods = "LEADER|CTRL", action = workspace_switcher.switch_workspace() },
 }
 
 for _, keymap in ipairs(switcher_keys) do
@@ -405,9 +480,9 @@ end
 local cmd_sender = wezterm.plugin.require("https://github.com/aureolebigben/wezterm-cmd-sender")
 
 local cmd_sender_key = {
-  key = ':',
-  mods = 'CTRL|SHIFT',
-  description = 'Enter command to send to all panes of active tab'
+  key = ":",
+  mods = "CTRL|SHIFT",
+  description = "Enter command to send to all panes of active tab"
 }
 
 cmd_sender.apply_to_config(config, cmd_sender_key)
@@ -471,7 +546,7 @@ wezterm.on("gui-startup", function()
 
   -- Second tab: WSL Ubuntu in /home/ubuntu directory
   local tab2, _, _ = window:spawn_tab { domain = { DomainName = "WSL:Ubuntu" } }
-  tab2:set_title("WSL Ubuntu")
+  tab2:set_title("Ubuntu")
   tab2:activate()
 
   mux.set_active_workspace "work"

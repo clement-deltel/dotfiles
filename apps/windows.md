@@ -42,6 +42,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [Docker Engine](https://community.chocolatey.org/packages/docker-engine) - suite of development tools, services, trusted content, and automations, used individually or together, to accelerate the delivery of secure applications.
     - [Git](https://community.chocolatey.org/packages/git) - native set of tools that bring the full feature set of the git SCM.
     - [Git Credential Manager](https://community.chocolatey.org/packages/git-credential-manager-for-windows) - secure git credential storage.
+    - [Make](https://community.chocolatey.org/packages/make) - controls the generation of executables and other non-source files of a program.
     - [Visual Studio Code](https://community.chocolatey.org/packages/vscode) - build and debug modern web and cloud applications.
     - [VSCodium](https://community.chocolatey.org/packages/vscodium) - community-driven, freely-licensed binary distribution of Microsoft's editor vs code.
     - [WezTerm](https://community.chocolatey.org/packages/wezterm) - GPU-accelerated cross-platform terminal emulator and multiplexer.

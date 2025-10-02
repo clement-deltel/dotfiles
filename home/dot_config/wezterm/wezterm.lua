@@ -1,6 +1,9 @@
 --------------------------------------------------------------------------------
 --               ------- WezTerm Configuration File ------
 --------------------------------------------------------------------------------
+--- List of plugins: https://github.com/michaelbrusegard/awesome-wezterm
+--- List of themes: https://wezfurlong.org/wezterm/colorschemes/index.html
+
 local wezterm = require "wezterm"
 
 -- Mux - multiplexer for windows, tabs, and panes inside the terminal
@@ -10,7 +13,6 @@ local act = wezterm.action
 
 -- Vars to put things in later
 local config = {}
-local launch_menu = {}
 
 -- Newer wezterm versions can use the config builder
 if wezterm.config_builder then
@@ -19,7 +21,6 @@ end
 
 -- Color Theme
 -- Tested so far: AdventureTime, Ubuntu
--- https://wezfurlong.org/wezterm/colorschemes/index.html
 local default_theme = "Oceanic Next (Gogh)"
 local tabline_theme = "Catppuccin Mocha"
 
@@ -74,10 +75,6 @@ config.skip_close_confirmation_for_processes_named = {
   "pwsh.exe",
   "powershell.exe",
 }
-
--- Launch
-config.default_prog = { "pwsh.exe", "-NoLogo" }
-config.launch_menu = launch_menu
 
 --------------------------------------------------------------------------------
 --               ------- WSL Domains ------
@@ -461,21 +458,16 @@ tabline.apply_to_config(config)
 --------------------------------------------------------------------------------
 --               ------- Startup ------
 --------------------------------------------------------------------------------
-wezterm.on("gui-startup", function(cmd)
-  -- allow `wezterm start -- something` to affect what we spawn in our initial window
-  local args = {}
-  if cmd then
-    args = cmd.args
-  end
+config.default_prog = { "pwsh.exe", "-NoLogo" }
 
-  -- First tab: PowerShell with admin privileges in code-win directory
+wezterm.on("gui-startup", function()
+  -- First tab: PowerShell in code-win directory
   local tab1, _, window = mux.spawn_window {
-    args = args,
     cwd = "C:\\code-win",
     workspace = "work"
   }
-  tab1:set_title("PowerShell")
   window:gui_window():maximize()
+  tab1:set_title("PowerShell")
 
   -- Second tab: WSL Ubuntu in /home/ubuntu directory
   local tab2, _, _ = window:spawn_tab { domain = { DomainName = "WSL:Ubuntu" } }

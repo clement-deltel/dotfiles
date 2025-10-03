@@ -1,8 +1,16 @@
 --------------------------------------------------------------------------------
 --               ------- WezTerm Configuration File ------
 --------------------------------------------------------------------------------
---- List of plugins: https://github.com/michaelbrusegard/awesome-wezterm
---- List of themes: https://wezfurlong.org/wezterm/colorschemes/index.html
+-- List of plugins: https://github.com/michaelbrusegard/awesome-wezterm
+-- List of themes: https://wezfurlong.org/wezterm/colorschemes/index.html
+
+-- Enable debug logs
+-- $env:WEZTERM_LOG="debug"
+
+-- Clone plugin repositories locally and use file URI if experiencing network issues
+-- git clone ${REPOSITORY_URL} ${HOME}/.local/share/wezterm/plugins/
+-- local ${PLUGIN} = wezterm.plugin.require("file:///${HOME}/.local/share/wezterm/plugins/{REPOSITORY_NAME}")
+
 
 local wezterm = require "wezterm"
 

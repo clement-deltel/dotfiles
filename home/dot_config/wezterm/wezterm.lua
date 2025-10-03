@@ -130,6 +130,8 @@ config.keys = {
   { key = "=",          mods = "CTRL",         action = act.IncreaseFontSize },
   { key = "-",          mods = "CTRL",         action = act.DecreaseFontSize },
   { key = "0",          mods = "CTRL",         action = act.ResetFontSize },
+  -- Debug
+  { key = 'd',          mods = 'ALT',          action = wezterm.action.ShowDebugOverlay },
   -- Delete
   { key = "Backspace",  mods = "CTRL",         action = act.SendKey { key = "w", mods = "CTRL" } }, --word
   { key = "Backspace",  mods = "CTRL|SHIFT",   action = act.SendKey { key = "u", mods = "CTRL" } }, --line
@@ -329,83 +331,10 @@ config.default_cursor_style = "SteadyBlock"
 --------------------------------------------------------------------------------
 --               ------- Plugin - Resurrect ------
 --------------------------------------------------------------------------------
--- local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
+---https://mwop.net/blog/2024-10-21-wezterm-resurrect.html
+-- local resurrect = require "resurrect/config"
 
--- -- Encryption
--- resurrect.state_manager.set_encryption({
---   enable = true,
---   method = "age",
---   private_key = wezterm.home_dir .. "/.config/age/key.txt",
---   public_key = "age18zugsyvstf50u76u5lnlqynauz5cje5dgpafrms8zey4rje0gvfs83chsc",
--- })
-
--- -- Periodic save every 5 minutes
--- resurrect.state_manager.periodic_save({ interval_seconds = 300, save_workspaces = true, save_windows = true, save_tabs = true })
-
--- -- Save only 5000 lines per pane
--- resurrect.state_manager.set_max_nlines(5000)
-
--- -- Keybindings
--- local resurrect_keys = {
---   {
---     -- Save current and window state
---     key = "s",
---     mods = "LEADER|CTRL",
---     action = wezterm.action_callback(function(win, pane)
---       resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state())
---       resurrect.window_state.save_window_action()
---     end)
---   },
---   {
---     -- Load workspace or window state using a fuzzy finder
---     key = "r",
---     mods = "LEADER|CTRL",
---     action = wezterm.action_callback(function(win, pane)
---       resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
---         local type = string.match(id, "^([^/]+)") -- match before "/"
---         id = string.match(id, "([^/]+)$")         -- match after "/"
---         id = string.match(id, "(.+)%..+$")        -- remove file extension
---         local opts = {
---           relative = true,
---           restore_text = true,
---           on_pane_restore = resurrect.tab_state.default_on_pane_restore,
---         }
---         if type == "workspace" then
---           local state = resurrect.state_manager.load_state(id, "workspace")
---           resurrect.workspace_state.restore_workspace(state, opts)
---         elseif type == "window" then
---           local state = resurrect.state_manager.load_state(id, "window")
---           resurrect.window_state.restore_window(pane:window(), state, opts)
---         elseif type == "tab" then
---           local state = resurrect.state_manager.load_state(id, "tab")
---           resurrect.tab_state.restore_tab(pane:tab(), state, opts)
---         end
---       end)
---     end),
---   },
---   {
---     -- Delete a saved session using a fuzzy finder
---     key = "d",
---     mods = "LEADER|CTRL",
---     action = wezterm.action_callback(function(win, pane)
---       resurrect.fuzzy_loader.fuzzy_load(
---         win,
---         pane,
---         function(id)
---           resurrect.delete_state(id)
---         end,
---         {
---           title             = "Delete State",
---           description       = "Select session to delete and press Enter = accept, Esc = cancel, / = filter",
---           fuzzy_description = "Search session to delete: ",
---           is_fuzzy          = true,
---         }
---       )
---     end),
---   }
--- }
-
--- for _, keymap in ipairs(resurrect_keys) do
+-- for _, keymap in ipairs(resurrect.keys) do
 --   table.insert(config.keys, keymap)
 -- end
 
@@ -551,7 +480,5 @@ wezterm.on("gui-startup", function()
 
   mux.set_active_workspace "work"
 end)
-
--- wezterm.on("gui-startup", resurrect.state_manager.resurrect_on_gui_startup)
 
 return config

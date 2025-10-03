@@ -95,8 +95,6 @@ config.keys = {
   { key = "t",          mods = "ALT",          action = act.SpawnTab "CurrentPaneDomain" },
   { key = "w",          mods = "CTRL",         action = act.CloseCurrentTab { confirm = false } },
   -- Tab - activate
-  { key = "H",          mods = "ALT",          action = act.ActivateTabRelative(-1) },
-  { key = "L",          mods = "ALT",          action = act.ActivateTabRelative(1) },
   { key = "Tab",        mods = "CTRL",         action = act.ActivateTabRelative(1) },
   { key = "Tab",        mods = "CTRL|SHIFT",   action = act.ActivateTabRelative(-1) },
   -- Tab - move
@@ -120,10 +118,10 @@ config.keys = {
   { key = "j",          mods = "CTRL",         action = act.AdjustPaneSize({ "Down", 5 }) },
   { key = "k",          mods = "CTRL",         action = act.AdjustPaneSize({ "Up", 5 }) },
   { key = "l",          mods = "CTRL",         action = act.AdjustPaneSize({ "Right", 5 }) },
-  { key = "H",          mods = "SHIFT",        action = act.AdjustPaneSize({ "Left", 10 }) },
-  { key = "J",          mods = "SHIFT",        action = act.AdjustPaneSize({ "Down", 10 }) },
-  { key = "K",          mods = "SHIFT",        action = act.AdjustPaneSize({ "Up", 10 }) },
-  { key = "L",          mods = "SHIFT",        action = act.AdjustPaneSize({ "Right", 10 }) },
+  { key = "h",          mods = "ALT",        action = act.AdjustPaneSize({ "Left", 10 }) },
+  { key = "j",          mods = "ALT",        action = act.AdjustPaneSize({ "Down", 10 }) },
+  { key = "k",          mods = "ALT",        action = act.AdjustPaneSize({ "Up", 10 }) },
+  { key = "l",          mods = "ALT",        action = act.AdjustPaneSize({ "Right", 10 }) },
   { key = "m",          mods = "LEADER",       action = act.TogglePaneZoomState },
   { key = "z",          mods = "CTRL",         action = act.TogglePaneZoomState },
   -- Font - size

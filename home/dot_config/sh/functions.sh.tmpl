@@ -254,3 +254,8 @@ function venv-install-fn {
 function terraform-fn { terraform "$@"; }
 function terraform-state-fn { terraform state "$@"; }
 {{- end }}
+
+#------------------------------------------------------------------------------#
+#               ------- Visual Studio Code --------
+#------------------------------------------------------------------------------#
+function cd-open-workspace-fn { cd "$@"; code *.code-workspace; }

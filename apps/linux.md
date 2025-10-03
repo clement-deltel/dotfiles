@@ -280,6 +280,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [devbox](https://github.com/jetify-com/devbox) - instant, easy, and predictable development environments. `Go`
   - [epic-stack](https://github.com/epicweb-dev/epic-stack) - full stack app starter with the foundational things setup and configured for you. `TypeScript`
   - [mailpit](https://github.com/axllent/mailpit) - email and SMTP testing tool with API for developers. `Go`
+  - [nsenter](https://man7.org/linux/man-pages/man1/nsenter.1.html) - run program in different namespaces.
   - [otelbin](https://github.com/dash0hq/otelbin) - web-based tool to facilitate OpenTelemetry collector configuration editing and verification. `TypeScript`
 - **System Info**
   - [fastfetch](https://github.com/fastfetch-cli/fastfetch) - feature-rich and performance oriented, neofetch like system information tool. `C`
@@ -335,6 +336,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [oha](https://github.com/hatoo/oha) - HTTP load generator, with tui animation. `Rust`
 - **zsh**
   - [zsh-auto-notify](https://github.com/MichaelAquilina/zsh-auto-notify)
+  - [zsh-fzf-history-search](https://github.com/joshskidmore/zsh-fzf-history-search)
 
 ## Production Applications
 

@@ -1,9 +1,8 @@
 # Platform
 {{ if eq .chezmoi.os "linux" }}
 .config/chocolatey/
-.config/layouts/
-.config/outlook/
 powershell/
+.wslconfig
 profile.ps1
 # Shell
 {{ if ne .shell "zsh" }}
@@ -20,10 +19,14 @@ profile.ps1
 # Platform
 {{ if eq .chezmoi.os "windows" }}
 .config/sh/
+.config/wsl/
+.config/zsh/
 ansible/
+whisper/
+.azuredevops
 .bash_profile
 .bashrc
-.p10k.zsh
+.netrc
 .vimrc
 .zshenv
 .zshrc

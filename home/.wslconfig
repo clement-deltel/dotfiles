@@ -1,0 +1,86 @@
+# ---------------------------------------------------------------------------- #
+#               ------- WSL Global Settings ------
+# ---------------------------------------------------------------------------- #
+# https://learn.microsoft.com/en-us/windows/wsl/wsl-config#wslconfig
+
+[wsl2]
+# ---------------------------------------------------------------------------- #
+#               ------- Debug ------
+# ---------------------------------------------------------------------------- #
+
+# Enable an output console Window that shows the contents of dmesg upon start of a distro instance
+# Default to false
+debugConsole = false
+
+# Set the maximum number of crash dump files that will be retained for debugging purposes. Default to 10
+maxCrashDumpCount = 10
+
+# ---------------------------------------------------------------------------- #
+#               ------- DNS ------
+# ---------------------------------------------------------------------------- #
+
+# Configure the DNS Server in Linux to the NAT on the host if true, will mirror DNS servers from Windows to Linux if false. Applicable to networkingMode = NAT only
+# Default to true
+dnsProxy = true
+
+# Change how DNS requests are proxied from WSL to Windows
+# Default to true
+dnsTunneling = true
+
+# ---------------------------------------------------------------------------- #
+#               ------- Features ------
+# ---------------------------------------------------------------------------- #
+
+# Enable GUI applications support
+# Default to true
+guiApplications = true
+
+# Enable other nested VMs to run inside WSL. Default to true
+nestedVirtualization = true
+
+# Run WSL in "Safe Mode" which disables many features and is intended to be used to recover distributions that are in bad states.
+safeMode = false
+
+# Number of milliseconds that a VM is idle, before it is shut down
+# Default to 60000
+vmIdleTimeout = 36000
+
+# ---------------------------------------------------------------------------- #
+#               ------- Network ------
+# ---------------------------------------------------------------------------- #
+
+# Enforce WSL to use Windows’ HTTP proxy information
+# Default to true
+autoProxy = true
+
+# Enable Windows Firewall rules, as well as rules specific to Hyper-V traffic, to filter WSL network traffic
+# Default to true
+firewall = true
+
+# Boolean specifying if ports bound to wildcard or localhost should be connectable from the host via localhost:port.
+localhostForwarding = true
+
+# Available values are: none, net, bridged (deprecated), mirrored, and virtioproxy
+# Default to NAT
+networkingMode = NAT
+
+
+# ---------------------------------------------------------------------------- #
+#               ------- Resources ------
+# ---------------------------------------------------------------------------- #
+memory = 64GB
+processors = 24
+swap = 32GB
+# swapFile = %Temp%\swap.vhdx
+
+# Enable Windows to reclaim unused memory allocated to WSL 2 virtual machine.
+# Default to true
+pageReporting = true
+
+# ---------------------------------------------------------------------------- #
+#               ------- Storage ------
+# ---------------------------------------------------------------------------- #
+
+# Set the Virtual Hard Disk (VHD) size that stores the Linux distribution
+# Default to 1TB
+defaultVhdSize=1099511627776

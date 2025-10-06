@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#------------------------------------------------------------------------------#
+# ---------------------------------------------------------------------------- #
 #AUTHOR: Clement Deltel
 #DATE: 2025/02/06
 #DESCRIPTION: push code to customer's environment without internal only files.
@@ -18,7 +18,7 @@
 #  update-message: commit message to merge updates. Defaults to "chore: add latest updates from origin".
 #  work-dir: directory where to run the script. Defaults to current directory.
 #  force: flag used to force a git push.
-#------------------------------------------------------------------------------#
+# ---------------------------------------------------------------------------- #
 
 set -e
 

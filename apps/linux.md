@@ -348,6 +348,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [flannel](https://github.com/flannel-io/flannel) - network fabric for containers. `Go`
   - [k8s-dqlite](https://github.com/canonical/k8s-dqlite) - dqlite for Kubernetes. `Go`
   - [kine](https://github.com/k3s-io/kine) - Run Kubernetes on mysql, postgres, sqlite, dqlite, not etcd. `Go`
+  - [zarf](https://github.com/zarf-dev/zarf) - airgap native packager manager for Kubernetes. `Go`
 - Kubernetes GUI
   - [aptakube](https://github.com/aptakube/aptakube) - modern, lightweight and multi-cluster Kubernetes GUI.
   - [freelens](https://github.com/freelensapp/freelens) - IDE for Kubernetes. `TypeScript`

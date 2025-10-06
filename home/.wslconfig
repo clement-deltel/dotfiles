@@ -12,7 +12,8 @@
 # Default to false
 debugConsole = false
 
-# Set the maximum number of crash dump files that will be retained for debugging purposes. Default to 10
+# Set the maximum number of crash dump files that will be retained for debugging purposes.
+# Default to 10
 maxCrashDumpCount = 10
 
 # ---------------------------------------------------------------------------- #
@@ -39,6 +40,7 @@ guiApplications = true
 nestedVirtualization = true
 
 # Run WSL in "Safe Mode" which disables many features and is intended to be used to recover distributions that are in bad states.
+# Default to false
 safeMode = false
 
 # Number of milliseconds that a VM is idle, before it is shut down
@@ -58,6 +60,7 @@ autoProxy = true
 firewall = true
 
 # Boolean specifying if ports bound to wildcard or localhost should be connectable from the host via localhost:port.
+# Default to true
 localhostForwarding = true
 
 # Available values are: none, net, bridged (deprecated), mirrored, and virtioproxy

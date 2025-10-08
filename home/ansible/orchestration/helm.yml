@@ -51,13 +51,19 @@
 
   # Helm Plugins
   - name: Plugins
-    tags: [init, update]
     block:
 
-    - name: Download and install plugins
+    - name: Install plugins
+      tags: init
       ansible.builtin.command:
-        cmd: helm install plugin {{ item }}
+        cmd: helm plugin install {{ item }}
       loop: "{{ helm_plugin_urls }}"
+
+    - name: Upgrade plugins
+      tags: update
+      ansible.builtin.command:
+        cmd: helm plugin update {{ item }}
+      loop: "{{ helm_plugin_names }}"
 
     always:
     - name: Confirm installed plugins

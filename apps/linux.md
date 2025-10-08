@@ -111,14 +111,17 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - Docker
     - [skopeo](https://github.com/containers/skopeo) - work with remote images registries - retrieving information, images, signing content. `Go`
   - Kubernetes
-    - [helm](https://github.com/helm/helm) - Kubernetes package manager. `Go`
-    - [helmfile](https://github.com/helmfile/helmfile) - declaratively deploy your manifests, Kustomize configs, and Charts as Helm releases. `Go`
     - [k9s](https://github.com/derailed/k9s) - CLI to manage your clusters in style. `Go`
     - [kubecolor](https://github.com/kubecolor/kubecolor) - colorize your kubectl output. `Go`
     - [kubectl](https://github.com/kubernetes/kubectl) - command-line interface. `Go`
     - [kubectx](https://github.com/ahmetb/kubectx) - faster way to switch between clusters and namespaces in kubectl. `Go`
     - [kubetail](https://github.com/johanhaleby/kubetail) - tail logs from multiple pods at the same time. `Shell`
     - [stern](https://github.com/stern/stern) - multi pod and container log tailing. `Go`
+  - Helm
+    - [helm](https://github.com/helm/helm) - Kubernetes package manager. `Go`
+    - [helmfile](https://github.com/helmfile/helmfile) - declaratively deploy your manifests, Kustomize configs, and Charts as Helm releases. `Go`
+    - [helm-secrets](https://github.com/jkroepke/helm-secrets) - help manage secrets with Git workflow and store them anywhere. `Shell`
+    - [Helm-unittest](https://github.com/helm-unittest/helm-unittest) - BDD styled unit test framework for Kubernetes Helm charts as a Helm plugin. `Go`
 - **Infrastructure-as-Code (IaC)**
   - [Pulumi](https://github.com/pulumi/pulumi) - infrastructure-as-code in any programming language. `Go`
   - [Terraform](https://github.com/hashicorp/terraform) - safely and predictably create, change, and improve infrastructure. `Go`
@@ -244,8 +247,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [docker bench](https://github.com/docker/docker-bench-security) - script that checks for dozens of common best-practices around deploying Docker containers in production.
     - [subtrace](https://github.com/subtrace/subtrace) - wireshark for Docker containers. `Go`
     - new Docker commands (require an account and/or subscription) - init, debug, compose watch, build cloud, scout.
-  - Helm
-    - [Helm unittest](https://github.com/helm-unittest/helm-unittest) - BDD styled unit test framework for Kubernetes Helm charts as a Helm plugin. `Go`
   - Kubernetes
     - [eksctl](https://github.com/eksctl-io/eksctl) - official CLI for Amazon EKS. `Go`
     - [infra-flux](https://github.com/n3tuk/infra-flux) - Terraform and Flux-based repository for the deployment and management of core configuration of Kubernetes Clusters and the deployment of third-party utilities (such as external-dns and cert-manager). `HCL`

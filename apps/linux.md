@@ -190,6 +190,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 - **Artificial Intelligence**
   - [flux](https://github.com/black-forest-labs/flux) - official inference repo for FLUX.1 models. `Python`
+  - [mdream](https://github.com/harlan-zw/mdream) - convert any site to clean markdown & llms.txt. `TypeScript`
 - **CI/CD**
   - [gh-signoff](https://github.com/basecamp/gh-signoff) -  GitHub CLI extension local CI, sign off on your own work. `Shell`
   - [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local) - Tired of pushing to test your .gitlab-ci.yml? `TypeScript`
@@ -226,9 +227,18 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [zed](https://github.com/zed-industries/zed) - high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
 - **Languages**
   - Go
-    - [golangci-lint](https://github.com/golangci/golangci-lint) - fast linters runner for Go. `Go`
+    - [fang](https://github.com/charmbracelet/fang) - CLI starter kit. `Go`
+    - [golangci-lint](https://github.com/golangci/golangci-lint) - fast linters runner. `Go`
+    - [tview](https://github.com/rivo/tview) - terminal UI library with rich, interactive widgets. `Go`
+  - Ruby
+    - [rv](https://github.com/spinel-coop/rv) - next-gen very fast tooling. `Rust`
   - Rust
     - [maturin](https://github.com/PyO3/maturin) - build and publish crates with pyo3, cffi and uniffi bindings as well as rust binaries as python packages. `Rust`
+  - TypeScript
+    - [kibo](https://github.com/haydenbleasel/kibo) - custom registry of composable, accessible and extensible components designed for use with shadcn/ui. `TypeScript`
+    - [turborepo](https://github.com/vercel/turborepo) - build system optimized for JavaScript and TypeScript. `Rust` `TypeScript`
+    - [shadcn-ui](https://github.com/shadcn-ui/ui) - set of beautifully-designed, accessible components and a code distribution platform. `TypeScript`
+    - [zod](https://github.com/colinhacks/zod) - schema validation with static type inference. `TypeScript`
 - **Modern Replacements**
   - [atuin](https://github.com/atuinsh/atuin) - history, magical shell history. `Rust`
   - [dua](https://github.com/Byron/dua-cli) - du, view disk space usage and delete unwanted data. `Rust`
@@ -252,6 +262,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [Helm unittest](https://github.com/helm-unittest/helm-unittest) - BDD styled unit test framework for Kubernetes Helm charts as a Helm plugin. `Go`
   - Kubernetes
     - [eksctl](https://github.com/eksctl-io/eksctl) - official CLI for Amazon EKS. `Go`
+    - [infra-flux](https://github.com/n3tuk/infra-flux) - Terraform and Flux-based repository for the deployment and management of core configuration of Kubernetes Clusters and the deployment of third-party utilities (such as external-dns and cert-manager). `HCL`
     - [khi](https://github.com/GoogleCloudPlatform/khi) - transformative log viewer. `Go`
     - [kubeconform](https://github.com/yannh/kubeconform) - fast Kubernetes manifests validator, with support for custom resources. `Go`
     - [kubectlai](https://github.com/GoogleCloudPlatform/kubectl-ai) - AI powered Kubernetes assistant. `Go`
@@ -266,22 +277,31 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [ag](https://github.com/ggreer/the_silver_searcher) - code-searching tool similar to ack, but faster. `C/C++`
 - **Secrets**
   - [envilder](https://github.com/macalbert/envilder) - securely centralizes environment variables from AWS SSM. `TypeScript`
+  - [kingfisher](https://github.com/mongodb/kingfisher) - secret detection and live validation across files, git repos, GitHub, GitLab, Azure DevOps, BitBucket, Gitea, AWS S3, Docker images, Jira, Slack, and Confluence. `Rust`
   - [teller](https://github.com/tellerops/teller) - cloud native secrets management for developers - never leave your command line for secrets. `Rust`
 - **Security**
+  - [caracal](https://github.com/adgaultier/caracal) - make your programs stealthier. `Rust`
+  - [codeql](https://github.com/github/codeql) - libraries and queries that power security researchers around the world. `CodeQL` `Kotlin`
   - [google osv](https://github.com/google/osv.dev) - Open source vulnerability DB and triage service.
+  - [lynis](https://github.com/CISOfy/lynis) - cross-platform security auditing tool, assists with compliance testing (HIPAA/ISO27001/PCI DSS) and system hardening. `Shell`
+  - [sharpeye](https://github.com/sgInnora/sharpeye) - advanced Linux intrusion detection and threat hunting system. `Python`
+  - [syft](https://github.com/anchore/syft) - CLI tool and library for generating a Software Bill of Materials (SBOM) from container images and filesystems. `Go`
   - [vet](https://github.com/vet-run/vet) - CLI tool that acts as a safety net for the risky curl | bash pattern. `Shell`
 - **Shell**
   - [brush](https://github.com/reubeno/brush) - bash/POSIX-compatible shell. `Rust`
+  - [murex](https://github.com/lmorg/murex) - smarter shell and scripting environment with advanced features designed for usability, safety and productivity. `Go`
 - **Software Development**
   - [autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell. `TypeScript`
   - [biome](https://github.com/biomejs/biome) - toolchain for web projects, aimed to provide functionalities to maintain them, offers formatter and linter, usable via CLI and LSP. `Rust`
   - [cheat](https://github.com/cheat/cheat) - create and view interactive cheatsheets on the command-line. `Go`
-  - [codeql](https://github.com/github/codeql) - libraries and queries that power security researchers around the world. `CodeQL` `Kotlin`
   - [devbox](https://github.com/jetify-com/devbox) - instant, easy, and predictable development environments. `Go`
   - [epic-stack](https://github.com/epicweb-dev/epic-stack) - full stack app starter with the foundational things setup and configured for you. `TypeScript`
+  - [flox](https://github.com/flox/flox) - developer environments you can take with you. `Rust` `Shell`
   - [mailpit](https://github.com/axllent/mailpit) - email and SMTP testing tool with API for developers. `Go`
   - [nsenter](https://man7.org/linux/man-pages/man1/nsenter.1.html) - run program in different namespaces.
   - [otelbin](https://github.com/dash0hq/otelbin) - web-based tool to facilitate OpenTelemetry collector configuration editing and verification. `TypeScript`
+  - [run](https://github.com/Esubaalew/run) - universal multi-language runner and smart REPL. `Rust`
+  - [unleash](https://github.com/Unleash/unleash) - feature management platform. `TypeScript`
 - **System Info**
   - [fastfetch](https://github.com/fastfetch-cli/fastfetch) - feature-rich and performance oriented, neofetch like system information tool. `C`
   - [glances](https://github.com/nicolargo/glances) - glances an eye on your system. `Python`
@@ -295,9 +315,11 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [WindTerm](https://github.com/kingToolbox/WindTerm) - professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal. `C`
 - **Text Editor**
   - [lazy nvim](https://github.com/folke/lazy.nvim) - modern plugin manager for Neovim. `Lua`
+  - [lazy vim](https://github.com/LazyVim/LazyVim) - neovim config for the lazy. `Lua`
   - [qsv](https://github.com/dathere/qsv) - blazing-fast data-wrangling toolkit. `Rust`
   - [xan](https://github.com/medialab/xan) - csv magician. `Rust`
 - **Tools**
+  - [asciinema](https://github.com/asciinema/asciinema) - terminal session recorder, streamer and player. `Rust`
   - [Clipboard](https://github.com/Slackadays/Clipboard) - smart clipboard manager.
   - [cmatrix](https://github.com/abishekvashok/cmatrix) - terminal based "The Matrix" like implementation. `C`
   - [espanso](https://github.com/espanso/espanso) - cross-platform text expander. `Rust`
@@ -308,6 +330,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [simdjson](https://github.com/simdjson/simdjson) - parsing gigabytes of JSON per second. `C++`
   - [task](https://github.com/go-task/task) -  task runner, simpler Make alternative. `Go`
   - [thefuck](https://github.com/nvbn/thefuck) - magnificent app which corrects your previous console command. `Python`
+  - [typst](https://github.com/typst/typst) - markup-based typesetting system that is powerful and easy to learn. `Rust`
 - **Version Control System (VCS)**
   - [better commits](https://github.com/Everduin94/better-commits) - CLI for creating better commits following the conventional commits specification. `JavaScript`
   - [cocommit](https://github.com/andrewromanenco/cocommit) - CLI that works with your HEAD commit and leverages an LLM of your choice to enhance commit quality. `Python`
@@ -335,13 +358,18 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [monolith](https://github.com/Y2Z/monolith) - CLI tool and library for saving complete web pages as a single HTML file. `Rust`
   - [oha](https://github.com/hatoo/oha) - HTTP load generator, with tui animation. `Rust`
 - **zsh**
+  - [zap](https://github.com/zap-zsh/zap) - minimal plugin manager. `Shell`
+  - [zinit](https://github.com/zdharma-continuum/zinit) - flexible and fast plugin manager. `Shell`
   - [zsh-auto-notify](https://github.com/MichaelAquilina/zsh-auto-notify)
+  - [zsh-bench](https://github.com/romkatv/zsh-bench) - benchmark for interactive zsh. `Shell`
   - [zsh-fzf-history-search](https://github.com/joshskidmore/zsh-fzf-history-search)
 
 ## Production Applications
 
 - [dependabot-core](https://github.com/dependabot/dependabot-core) - dependabot's core logic for creating update PRs. `Ruby`
 - [renovate](https://github.com/renovatebot/renovate) - cross-platform dependency automation by mend.io. `TypeScript`
+- Kafka
+  - [ktea](https://github.com/jonas-grgt/ktea) - kafka TUI client. `Go`
 - Kubernetes
   - [argo-cd](https://github.com/argoproj/argo-cd) - declarative continuous deployment for Kubernetes. `Go` `TypeScript`
   - [calico](https://github.com/projectcalico/calico) - cloud native networking and network security. `Go`

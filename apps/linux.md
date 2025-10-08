@@ -293,7 +293,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Software Development**
   - [autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell. `TypeScript`
   - [biome](https://github.com/biomejs/biome) - toolchain for web projects, aimed to provide functionalities to maintain them, offers formatter and linter, usable via CLI and LSP. `Rust`
-  - [cheat](https://github.com/cheat/cheat) - create and view interactive cheatsheets on the command-line. `Go`
+  - [cheat](https://github.com/cheat/cheat) - create and view interactive cheat sheets on the command-line. `Go`
   - [devbox](https://github.com/jetify-com/devbox) - instant, easy, and predictable development environments. `Go`
   - [epic-stack](https://github.com/epicweb-dev/epic-stack) - full stack app starter with the foundational things setup and configured for you. `TypeScript`
   - [flox](https://github.com/flox/flox) - developer environments you can take with you. `Rust` `Shell`
@@ -305,7 +305,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **System Info**
   - [fastfetch](https://github.com/fastfetch-cli/fastfetch) - feature-rich and performance oriented, neofetch like system information tool. `C`
   - [glances](https://github.com/nicolargo/glances) - glances an eye on your system. `Python`
-  - [nerdfetch](https://github.com/ThatOneCalculator/NerdFetch) - POSIX *nix fetch script using Nerdfonts. `Shell`
+  - [nerdfetch](https://github.com/ThatOneCalculator/NerdFetch) - POSIX *nix fetch script using Nerd Fonts. `Shell`
   - [macchina](https://github.com/Macchina-CLI/macchina) - system information frontend with an emphasis on performance. `Rust`
 - **System Performance**
   - zRAM - linux kernel module to create a compressed block device in RAM.

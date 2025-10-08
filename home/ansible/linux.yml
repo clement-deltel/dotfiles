@@ -43,6 +43,8 @@
   import_playbook: orchestration/docker.yml
 - name: Kubernetes
   import_playbook: orchestration/kubernetes.yml
+- name: Helm
+  import_playbook: orchestration/helm.yml
 
 # Infrastructure as Code - IAC
 - name: Pulumi

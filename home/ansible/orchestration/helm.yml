@@ -1,0 +1,100 @@
+- name: Helm
+  hosts: all
+  gather_facts: true
+  vars_files:
+    - ../vars/main.yml
+
+  tasks:
+  # Helm
+  - name: Helm
+    tags: [init, update]
+    block:
+
+    - name: Helm - Create temporary directory
+      ansible.builtin.file:
+        path: "{{ helm_install_tmp }}"
+        state: directory
+        mode: 0700
+
+    - name: Helm - Download install script
+      ansible.builtin.uri:
+        method: GET
+        url: "{{ helm_install_url }}"
+        dest: "{{ helm_install_tmp }}/get_helm.sh"
+        follow_redirects: safe
+        mode: 0700
+
+    - name: Helm - Install
+      ansible.builtin.command:
+        cmd: /bin/bash -c {{ helm_install_tmp }}/get_helm.sh
+      register: install_result
+      changed_when: install_result.rc == 0
+
+    - name: Helm - Remove temporary directory
+      ansible.builtin.file:
+        path: "{{ helm_install_tmp }}"
+        state: absent
+
+    always:
+    - name: Helm - Confirm version
+      tags: [init, update]
+      ansible.builtin.command:
+        cmd: helm version
+      register: version
+      changed_when: false
+
+    - name: Helm - Show version
+      tags: [init, update]
+      when: version is defined
+      ansible.builtin.debug:
+        msg: "Installed version: {{ version.stdout }}"
+
+  # Helm Plugins
+  - name: Plugins
+    tags: [init, update]
+    block:
+
+    - name: Download and install plugins
+      ansible.builtin.command:
+        cmd: helm install plugin {{ item }}
+      loop: "{{ helm_plugin_urls }}"
+
+    always:
+    - name: Confirm installed plugins
+      tags: [init, update]
+      ansible.builtin.command:
+        cmd: helm plugin list
+      register: plugins_list
+      changed_when: false
+
+    - name: Show plugins
+      tags: [init, update]
+      when: plugins_list is defined
+      ansible.builtin.debug:
+        msg: "Installed plugins: {{ plugins_list.stdout }}"
+
+  # Helm related Formulas
+  - name: Formulas
+    become_user: ubuntu
+    block:
+
+    - name: Homebrew - List formulas
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "Formulas: {{ helm_formulas }}"
+
+    # brew install
+    - name: Homebrew - Install formulas
+      tags: init
+      community.general.homebrew:
+        name: "{{ helm_formulas }}"
+        state: present
+        update_homebrew: true
+
+    # brew upgrade
+    - name: Homebrew - Upgrade formulas
+      tags: update
+      community.general.homebrew:
+        name: "{{ helm_formulas }}"
+        state: latest
+        update_homebrew: true

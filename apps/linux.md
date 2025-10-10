@@ -193,7 +193,10 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 - **Artificial Intelligence**
   - [flux](https://github.com/black-forest-labs/flux) - official inference repo for FLUX.1 models. `Python`
+  - [goose](https://github.com/block/goose) - extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM. `Rust` `TypeScript`
   - [mdream](https://github.com/harlan-zw/mdream) - convert any site to clean markdown & llms.txt. `TypeScript`
+  - [recall](https://github.com/joseairosa/recall) - redis-powered persistent memory for LLMs. `TypeScript` `JavaScript`
+  - [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) - stable diffusion web UI. `Python` `JavaScript`
 - **CI/CD**
   - [gh-signoff](https://github.com/basecamp/gh-signoff) -  GitHub CLI extension local CI, sign off on your own work. `Shell`
   - [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local) - Tired of pushing to test your .gitlab-ci.yml? `TypeScript`
@@ -242,9 +245,11 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [zellij](https://github.com/zellij-org/zellij)
 - **Orchestration**
   - Docker
+    - [blafs](https://github.com/negativa-ai/BLAFS) - container debloating that removes bloat and improves performance. `Go` `C++`
     - [clair](https://github.com/quay/clair) - vulnerability static analysis for containers. `Go`
     - [copacetic](https://github.com/project-copacetic/copacetic) - CLI tool for directly patching container images. `Go`
     - [docker bench](https://github.com/docker/docker-bench-security) - script that checks for dozens of common best-practices around deploying Docker containers in production.
+    - [harbor-guard](https://github.com/HarborGuard/HarborGuard) - image vulnerability scanning & patching platform with multi-tool integration. `TypeScript`
     - [subtrace](https://github.com/subtrace/subtrace) - wireshark for Docker containers. `Go`
     - new Docker commands (require an account and/or subscription) - init, debug, compose watch, build cloud, scout.
   - Kubernetes
@@ -271,6 +276,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [codeql](https://github.com/github/codeql) - libraries and queries that power security researchers around the world. `CodeQL` `Kotlin`
   - [google osv](https://github.com/google/osv.dev) - Open source vulnerability DB and triage service.
   - [lynis](https://github.com/CISOfy/lynis) - cross-platform security auditing tool, assists with compliance testing (HIPAA/ISO27001/PCI DSS) and system hardening. `Shell`
+  - [radare2](https://github.com/radareorg/radare2) - UNIX-like reverse engineering framework and command-line toolset. `C`
   - [sharpeye](https://github.com/sgInnora/sharpeye) - advanced Linux intrusion detection and threat hunting system. `Python`
   - [syft](https://github.com/anchore/syft) - CLI tool and library for generating a Software Bill of Materials (SBOM) from container images and filesystems. `Go`
   - [vet](https://github.com/vet-run/vet) - CLI tool that acts as a safety net for the risky curl | bash pattern. `Shell`
@@ -296,8 +302,12 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [macchina](https://github.com/Macchina-CLI/macchina) - system information frontend with an emphasis on performance. `Rust`
 - **System Performance**
   - zRAM - linux kernel module to create a compressed block device in RAM.
+- **Tasks**
+  - [poe](https://github.com/nat-n/poethepoet) - task runner that works well with poetry or uv. `Python`
+  - [task](https://github.com/go-task/task) -  task runner, simpler Make alternative. `Go`
 - **Terminal**
   - [alacritty](https://github.com/alacritty/alacritty) - cross-platform, OpenGL terminal emulator. `Rust`
+  - [rio](https://github.com/raphamorim/rio) - hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers. `Rust`
   - [Warp](https://github.com/warpdotdev/Warp) - modern terminal with AI built in so you and your team can build great software, faster. `Rust`
   - [WindTerm](https://github.com/kingToolbox/WindTerm) - professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal. `C`
 - **Text Editor**
@@ -310,14 +320,15 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [Clipboard](https://github.com/Slackadays/Clipboard) - smart clipboard manager.
   - [cmatrix](https://github.com/abishekvashok/cmatrix) - terminal based "The Matrix" like implementation. `C`
   - [espanso](https://github.com/espanso/espanso) - cross-platform text expander. `Rust`
+  - [exosphere](https://github.com/mrdaemon/exosphere) - CLI and TUI driven application that offers patch reporting for remote unix systems. `Python`
   - [glow](https://github.com/charmbracelet/glow) - render markdown on the terminal. `Go`
   - [midnight commander](https://github.com/MidnightCommander/mc)
   - [mosh](https://github.com/mobile-shell/mosh) - mobile shell. `C++`
   - [pmd](https://github.com/pmd/pmd) - extensible multi-language static code analyzer. `Java`
   - [simdjson](https://github.com/simdjson/simdjson) - parsing gigabytes of JSON per second. `C++`
-  - [task](https://github.com/go-task/task) -  task runner, simpler Make alternative. `Go`
   - [thefuck](https://github.com/nvbn/thefuck) - magnificent app which corrects your previous console command. `Python`
   - [typst](https://github.com/typst/typst) - markup-based typesetting system that is powerful and easy to learn. `Rust`
+  - [ut](https://github.com/ksdme/ut) - utility toolbox for developers. `Rust`
 - **Version Control System (VCS)**
   - [better commits](https://github.com/Everduin94/better-commits) - CLI for creating better commits following the conventional commits specification. `JavaScript`
   - [cocommit](https://github.com/andrewromanenco/cocommit) - CLI that works with your HEAD commit and leverages an LLM of your choice to enhance commit quality. `Python`
@@ -363,11 +374,15 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [flannel](https://github.com/flannel-io/flannel) - network fabric for containers. `Go`
   - [k8s-dqlite](https://github.com/canonical/k8s-dqlite) - dqlite for Kubernetes. `Go`
   - [kine](https://github.com/k3s-io/kine) - Run Kubernetes on mysql, postgres, sqlite, dqlite, not etcd. `Go`
+  - [meshery](https://github.com/meshery/meshery) - cloud native manager. `JavaScript` `Go`
+  - [octopus](https://github.com/OctopusDeploy)
   - [zarf](https://github.com/zarf-dev/zarf) - airgap native packager manager for Kubernetes. `Go`
 - Kubernetes GUI
   - [aptakube](https://github.com/aptakube/aptakube) - modern, lightweight and multi-cluster Kubernetes GUI.
   - [freelens](https://github.com/freelensapp/freelens) - IDE for Kubernetes. `TypeScript`
   - [headlamp](https://github.com/kubernetes-sigs/headlamp) - Kubernetes web UI that is fully-featured, user-friendly and extensible. `TypeScript` `Go`
+- Monitoring
+  - [Elasticsearch](https://github.com/elastic/elasticsearch) - distributed, RESTful search engine. `Java`
 
 ## Deprecated
 

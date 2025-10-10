@@ -7,6 +7,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Current](#current)
 - [Enhancements](#enhancements)
 - [Deprecated](#deprecated)
+- [Resources](#resources)
 
 ## Current
 
@@ -181,3 +182,8 @@ Themes:
 - [Tokyo Night](https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night) - clean theme that celebrates the lights of Downtown Tokyo at night.
 - [Vira Theme](https://marketplace.visualstudio.com/items?itemName=vira.vsc-vira-theme) - the new most epic theme.
 - [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons) - icons.
+
+## Resources
+
+- [Base16 Terminal Colors for Visual Studio Code](https://glitchbone.github.io/vscode-base16-term/#/)
+- [VSCode Themes](https://vscodethemes.com)

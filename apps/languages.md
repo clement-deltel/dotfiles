@@ -5,6 +5,7 @@ Here is a list of libraries and frameworks for different programming languages t
 ## Table of Contents <!-- omit in toc -->
 
 - [Go](#go)
+- [JavaScript](#javascript)
 - [Ruby](#ruby)
 - [Rust](#rust)
 - [TypeScript](#typescript)
@@ -15,6 +16,10 @@ Here is a list of libraries and frameworks for different programming languages t
 - [fang](https://github.com/charmbracelet/fang) - CLI starter kit. `Go`
 - [golangci-lint](https://github.com/golangci/golangci-lint) - fast linters runner. `Go`
 - [tview](https://github.com/rivo/tview) - terminal UI library with rich, interactive widgets. `Go`
+
+## JavaScript
+
+[npq](https://github.com/lirantal/npq) - safely install npm packages by auditing them pre-install stage. `JavaScript`
 
 ## Ruby
 

@@ -63,6 +63,10 @@ Pro:
 - **Authentication**
   - [Keepass XC](https://community.chocolatey.org/packages/keepassxc) - fork of KeePassX that aims to incorporate stalled pull requests, features, and bug fixes that have never made it into the main KeePassX repository.
   - [Yubico Authenticator](https://community.chocolatey.org/packages/yubico-authenticator) - store your unique credential on a hardware-backed security key and take it wherever you go from mobile to desktop.
+- **Databases**
+  - [DBeaver - Community Edition](https://community.chocolatey.org/packages/dbeaver)
+  - [MongoDB Compass](https://community.chocolatey.org/packages/mongodb-compass)
+  - [PostgreSQL ODBC Driver](https://community.chocolatey.org/packages/psqlodbc) - official PostgreSQL ODBC Driver.
 - **GIS**
   - [Google Earth Pro](https://community.chocolatey.org/packages/googleearthpro)
   - [QGIS](https://community.chocolatey.org/packages/qgis) - user friendly Open Source Geographic Information System (GIS).
@@ -75,6 +79,10 @@ Pro:
 - **Meetings**
   - [Webex Meetings - Cisco](https://community.chocolatey.org/packages/webex-meetings) - video conferencing is as simple and seamless as meeting in person.
   - [Zoom](https://community.chocolatey.org/packages/zoom) - unify cloud video conferencing, simple online meetings, group messaging, and a software-defined conference room solution into one easy-to-use platform.
+- **Orchestration**
+  - [Docker Engine](https://community.chocolatey.org/packages/docker-engine) - suite of development tools, services, and automation,  to accelerate the delivery of secure applications.
+  - [Kubernetes CLI](https://community.chocolatey.org/packages/kubernetes-cli) - command-line interface.
+  - [Podman Desktop](https://community.chocolatey.org/packages/podman-desktop)
 - **Personal Knowledge Management System (PKMS)**
   - [Notion](https://community.chocolatey.org/packages/notion)
   - [Obsidian](https://community.chocolatey.org/packages/obsidian) - knowledge base that works on top of a local folder of plain text markdown files.
@@ -86,15 +94,9 @@ Pro:
   - [VeraCrypt](https://community.chocolatey.org/packages/veracrypt) - disk encryption software.
 - **Software Development**
   - [AWS CLI v2](https://community.chocolatey.org/packages/awscli)
-  - [DBeaver - Community Edition](https://community.chocolatey.org/packages/dbeaver)
-  - [Docker Engine](https://community.chocolatey.org/packages/docker-engine) - suite of development tools, services, and automation,  to accelerate the delivery of secure applications.
   - [Insomnia](https://community.chocolatey.org/packages/insomnia-rest-api-client)
   - [Java SE (jdk8)](https://community.chocolatey.org/packages/jdk8)
-  - [Kubernetes CLI](https://community.chocolatey.org/packages/kubernetes-cli) - command-line interface.
   - [Make](https://community.chocolatey.org/packages/make) - controls the generation of executables and other non-source files of a program.
-  - [MongoDB Compass](https://community.chocolatey.org/packages/mongodb-compass)
-  - [Podman Desktop](https://community.chocolatey.org/packages/podman-desktop)
-  - [PostgreSQL ODBC Driver](https://community.chocolatey.org/packages/psqlodbc) - official PostgreSQL ODBC Driver.
   - [Pyenv-win](https://community.chocolatey.org/packages/pyenv-win) - Python version management tool.
   - [Python](https://community.chocolatey.org/packages/python) - programming language.
   - [uv](https://community.chocolatey.org/packages/uv) - Python package and project manager.
@@ -123,6 +125,7 @@ Pro:
   - Logitech Capture
 - **Pro**
   - [Backblaze](https://www.backblaze.com)
+  - Proton VPN
 
 ## Enhancements
 
@@ -154,6 +157,8 @@ Pro:
     - [Mattermost Desktop](https://community.chocolatey.org/packages/mattermost-desktop)
     - [PushBullet for Windows](https://community.chocolatey.org/packages/pushbullet)
     - [VoiceMod](https://community.chocolatey.org/packages/voicemod)
+  - **Software Development**
+    - [Helm](https://community.chocolatey.org/packages/kubernetes-helm)
   - **Software Tweaks**
     - [Flow Launcher](https://community.chocolatey.org/packages/flow-launcher) - Search everything from applications, files, bookmarks, YouTube, Twitter and more.
     - [Winaero Tweaker](https://community.chocolatey.org/packages/winaero-tweaker) - all-in-one application that comes with dozens of options for fine-grained tuning of various Windows settings and features.
@@ -187,7 +192,9 @@ Pro:
   - [Ant Renamer](https://community.chocolatey.org/packages/ant-renamer) - make easier the renaming of lots of files and folders by using specified settings. **Reason**: using PowerToys PowerRename instead.
   - [DevToys](https://community.chocolatey.org/packages/devtoys) - developer toolbox. **Reason**: using self-hosted ITools instead.
   - [Keepass 2.x](https://community.chocolatey.org/packages/keepass) - password manager. **Reason**: using Keepass XC instead.
+  - [MoaXTerm](https://community.chocolatey.org/packages/MobaXTerm) - terminal. **Reason**: using WezTerm instead.
   - [PDF Gear](https://community.chocolatey.org/packages/pdfgear) - read, edit, convert, merge, and sign PDF files across devices, for completely free and without signing up. **Reason**: too bloated and slow.
+  - [Postman](https://community.chocolatey.org/packages/postman) - API client. **Reason**: using Insomnia instead.
   - [TreeSize Free](https://community.chocolatey.org/packages/treesizefree) - tells you where precious disk space has gone. **Reason**: using WizTree instead.
 - **Winget**
   - [Intel Unison](https://apps.microsoft.com/detail/9pp9gzm2gn26) - seamlessly connects your PC and mobile devices. **Reason**: being deprecated.

@@ -12,6 +12,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 ## Current
 
 - [@env-spec](https://marketplace.visualstudio.com/items?itemName=varlock.env-spec-language) - add syntax highlighting and additional tooling for @env-spec enabled .env files.
+- [Auto Snippet](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.auto-snippet) - insert a snippet when opening an empty file.
 - [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring) - generates python docstrings automatically.
 - [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) - improve your code commenting by annotating with alert, informational, TODOs, and more.
 - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) - spelling checker for source code.
@@ -25,6 +26,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Docker DX](https://marketplace.visualstudio.com/items?itemName=docker.docker) - Edit smarter, ship faster with an enhanced Docker-development experience.
 - [DotENV Official + Vault](https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode) - syntax highlighting, auto-cloaking, auto-completion, in-code secret peeking, and optionally dotenv-vault.
 - [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) - fully-featured TOML support.
+- [Gemini Code Assist](https://marketplace.visualstudio.com/items?itemName=Google.geminicodeassist) - AI-assisted development powered by Gemini.
 - [Git Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.git-extension-pack) - Popular extensions for git.
 - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) - view a Git Graph of your repository, and perform git actions from the graph.
 - [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) - view git log, file history, compare branches or commits.
@@ -32,6 +34,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) -  visualize code authorship at a glance via Git blame annotations and CodeLens, and more.
 - [Gitmoji](https://marketplace.visualstudio.com/items?itemName=seatonjiang.gitmoji-vscode) - gitmoji tool for git commit messages.
 - [Go](https://marketplace.visualstudio.com/items?itemName=golang.Go) - rich Go language support.
+- [Google Cloud Code](https://marketplace.visualstudio.com/items?itemName=GoogleCloudTools.cloudcode) - tools for Google Cloud.
 - [Hadolint](https://marketplace.visualstudio.com/items?itemName=exiasr.hadolint) - integrate hadolint, a Dockerfile linter.
 - [HashiCorp Terraform](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform) - syntax highlighting and autocompletion for Terraform.
 - [Hungry Delete](https://marketplace.visualstudio.com/items?itemName=jasonlhy.hungry-delete) - delete an entire block of whitespace or tab.
@@ -47,6 +50,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Kubernetes](https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools) - develop, deploy and debug Kubernetes applications.
 - [Lua](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) - language server.
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) - all you need to write Markdown (keyboard shortcuts, table of contents, auto preview and more).
+- [Markdown Image Size](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-image-size) - add ![](./cat.gif =100x200) image support to markdown preview.
 - [Markdown Table](https://marketplace.visualstudio.com/items?itemName=TakumiI.markdowntable) - add features to edit table.
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) - linting and style checking.
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=pkief.material-icon-theme) - material design icons.
@@ -75,6 +79,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Sort JSON objects](https://marketplace.visualstudio.com/items?itemName=richie5um2.vscode-sort-json) - sorts the keys within JSON objects.
 - [Sort lines](https://marketplace.visualstudio.com/items?itemName=tyriar.sort-lines) - sorts lines of text.
 - [TabOut](https://marketplace.visualstudio.com/items?itemName=albert.tabout) - tab out of quotes, brackets, etc.
+- [Tasks Shell Input](https://marketplace.visualstudio.com/items?itemName=augustocdias.tasks-shell-input) - use shell commands as input for your tasks.
 - [ty](https://marketplace.visualstudio.com/items?itemName=astral-sh.ty) - support for the ty type checker and language server.
 - [vscode-base64](https://marketplace.visualstudio.com/items?itemName=adamhartford.vscode-base64) - base64 encode/decode the current selections.
 - [vscode-pets](https://marketplace.visualstudio.com/items?itemName=tonybaloney.vscode-pets) - pets for your Visual Studio Code.

@@ -76,14 +76,10 @@ processors = 24
 swap = 32GB
 # swapFile = %Temp%\swap.vhdx
 
-# Enable Windows to reclaim unused memory allocated to WSL 2 virtual machine.
-# Default to true
-pageReporting = true
-
 # ---------------------------------------------------------------------------- #
 #               ------- Storage ------
 # ---------------------------------------------------------------------------- #
 
 # Set the Virtual Hard Disk (VHD) size that stores the Linux distribution
 # Default to 1TB
-defaultVhdSize=1099511627776
+defaultVhdSize = 1099511627776

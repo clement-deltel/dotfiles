@@ -140,10 +140,16 @@ function cmu { chezmoi update --force }
 # ---------------------------------------------------------------------------- #
 #               ------- Chocolatey ------
 # ---------------------------------------------------------------------------- #
-function chocob {
+function chob {
     choco export -y --include-version-numbers --output-file-path="$HOME/.config/chocolatey/$machine.config"
     Remove-Item "$HOME/.config/chocolatey/$machine.config.backup"
- }
+}
+
+function choub {
+    choco upgrade -y all
+    choco export -y --include-version-numbers --output-file-path="$HOME/.config/chocolatey/$machine.config"
+    Remove-Item "$HOME/.config/chocolatey/$machine.config.backup"
+}
 
 # ---------------------------------------------------------------------------- #
 #               ------- Docker ------

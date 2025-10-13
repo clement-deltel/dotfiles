@@ -290,6 +290,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [devbox](https://github.com/jetify-com/devbox) - instant, easy, and predictable development environments. `Go`
   - [epic-stack](https://github.com/epicweb-dev/epic-stack) - full stack app starter with the foundational things setup and configured for you. `TypeScript`
   - [flox](https://github.com/flox/flox) - developer environments you can take with you. `Rust` `Shell`
+  - [jwt-cli](https://github.com/mike-engel/jwt-cli) - tool to decode and encode JWTs. `Rust`
   - [mailpit](https://github.com/axllent/mailpit) - email and SMTP testing tool with API for developers. `Go`
   - [nsenter](https://man7.org/linux/man-pages/man1/nsenter.1.html) - run program in different namespaces.
   - [otelbin](https://github.com/dash0hq/otelbin) - web-based tool to facilitate OpenTelemetry collector configuration editing and verification. `TypeScript`

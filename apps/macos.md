@@ -12,6 +12,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 ## Enhancements
 
+- [rift](https://github.com/acsandmann/rift) - tiling window manager. `Rust`
 - [sps](https://github.com/alexykn/sps) - package manager. `Rust`
 
 ## Deprecated

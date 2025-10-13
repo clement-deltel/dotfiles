@@ -107,6 +107,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [poetry](https://github.com/python-poetry/poetry) - packaging and dependency management made easy. `Python`
     - [pyenv](https://github.com/pyenv/pyenv) - simple version management.
     - [uv](https://github.com/astral-sh/uv) - package and project manager. `Rust`
+  - Rust
 - **Orchestration**
   - Docker
     - [skopeo](https://github.com/containers/skopeo) - work with remote images registries - retrieving information, images, signing content. `Go`

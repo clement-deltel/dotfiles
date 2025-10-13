@@ -1,0 +1,63 @@
+- name: Rust
+  hosts: all
+  gather_facts: false
+  vars_files:
+    - ../vars/main.yml
+
+  tasks:
+  # -------------------------------------------------------------------------- #
+  #               ------- Installation ------
+  # -------------------------------------------------------------------------- #
+  - name: Rust
+    tags: init
+    block:
+
+    # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    - name: Download install script
+      ansible.builtin.uri:
+        method: GET
+        url: "{{ rust_install_url }}"
+        dest: "/tmp/sh.rustup.rs"
+        follow_redirects: safe
+        mode: 0700
+
+    - name: Run install script
+      ansible.builtin.command:
+        cmd: /bin/sh -c /tmp/sh.rustup.rs -y
+      register: install_result
+      changed_when: install_result.rc == 0
+
+    - name: Remove install script
+      ansible.builtin.file:
+        path: "/tmp/sh.rustup.rs"
+        state: absent
+
+    # ------------------------------------------------------------------------ #
+    #               ------- Version ------
+    # ------------------------------------------------------------------------ #
+    always:
+    - name: rustc - confirm version
+      tags: [init, update]
+      ansible.builtin.command:
+        cmd: rustc --version
+      register: version
+      changed_when: false
+
+    - name: rustc - show version
+      tags: [init, update]
+      when: version is defined
+      ansible.builtin.debug:
+        msg: "Installed version: {{ version.stdout }}"
+
+    - name: cargo - confirm version
+      tags: [init, update]
+      ansible.builtin.command:
+        cmd: cargo --version
+      register: version
+      changed_when: false
+
+    - name: cargo - show version
+      tags: [init, update]
+      when: version is defined
+      ansible.builtin.debug:
+        msg: "Installed version: {{ version.stdout }}"

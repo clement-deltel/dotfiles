@@ -28,7 +28,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - **Network**
       - [ethtool](https://linux.die.net/man/8/ethtool) - query and change settings such as speed, auto-negotiation and checksum offload.
       - [fping](https://github.com/schweikert/fping) - high performance ping tool. `C`
-      - [gping](https://github.com/orf/gping) - TUI for ping. `Rust`
       - [ipcalc](https://gitlab.com/ipcalc/ipcalc) - IPv4/IPv6 tool, assisting in network calculations. `C/C++`
       - [mtr](https://github.com/traviscross/mtr) - network diagnostic tool, combine ping and traceroute functionalities. `C/C++`
       - [termshark](https://github.com/gcla/termshark) - TUI for tshark, inspired by Wireshark. `Go`
@@ -57,6 +56,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [procs](https://github.com/dalance/procs) - [ps](https://linux.die.net/man/1/ps), with better sorting, tree support, and more. `Rust`
     - **Monitoring**
       - [btop](https://github.com/aristocratos/btop) - monitor of resources. `C/C++`
+      - [gping](https://github.com/orf/gping) - TUI for ping. `Rust`
     - **Search**
       - [fzf](https://github.com/junegunn/fzf) - CLI fuzzy finder. `Go`
     - **Software Development**

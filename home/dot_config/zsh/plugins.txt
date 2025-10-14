@@ -22,16 +22,24 @@ ohmyzsh/ohmyzsh path:plugins/ubuntu
 # Infrastructure as Code
 ohmyzsh/ohmyzsh path:plugins/terraform
 
+# Integrated Development Environment (IDE)
+ohmyzsh/ohmyzsh path:plugins/vscode
+
 # Languages - Go
 ohmyzsh/ohmyzsh path:plugins/golang
 
 # Languages - JavaScript
 ohmyzsh/ohmyzsh path:plugins/node
+ohmyzsh/ohmyzsh path:plugins/npm
 
 # Languages - Python
 ohmyzsh/ohmyzsh path:plugins/pip
 ohmyzsh/ohmyzsh path:plugins/poetry
+ohmyzsh/ohmyzsh path:plugins/python
 ohmyzsh/ohmyzsh path:plugins/uv
+
+# Languages - Rust
+ohmyzsh/ohmyzsh path:plugins/rust
 
 # Packages
 ohmyzsh/ohmyzsh path:plugins/brew
@@ -43,10 +51,15 @@ ohmyzsh/ohmyzsh path:plugins/colorize
 ohmyzsh/ohmyzsh path:plugins/command-not-found
 ohmyzsh/ohmyzsh path:plugins/safe-paste
 
-# Orchestration
+# Orchestration - Docker
 ohmyzsh/ohmyzsh path:plugins/docker
 ohmyzsh/ohmyzsh path:plugins/docker-compose
+
+# Orchestration - Kubernetes
+ohmyzsh/ohmyzsh path:plugins/argocd
 ohmyzsh/ohmyzsh path:plugins/helm
+ohmyzsh/ohmyzsh path:plugins/k9s
+ohmyzsh/ohmyzsh path:plugins/kind
 ohmyzsh/ohmyzsh path:plugins/kubectl
 
 # Shell
@@ -54,15 +67,14 @@ ohmyzsh/ohmyzsh path:plugins/cp
 ohmyzsh/ohmyzsh path:plugins/eza
 ohmyzsh/ohmyzsh path:plugins/fzf
 ohmyzsh/ohmyzsh path:plugins/history
+ohmyzsh/ohmyzsh path:plugins/procs
 ohmyzsh/ohmyzsh path:plugins/sudo
 
 # Version Control System
 ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/git-commit
 ohmyzsh/ohmyzsh path:plugins/git-lfs
 ohmyzsh/ohmyzsh path:plugins/pre-commit
-
-# Other
-ohmyzsh/ohmyzsh path:plugins/vscode
 
 # Load bundles from external repos
 zsh-users/zsh-autosuggestions

@@ -78,7 +78,28 @@ precmd_functions+=(load-aliases-and-functions)
 # ---------------------------------------------------------------------------- #
 #               ------- Completions --------
 # ---------------------------------------------------------------------------- #
+autoload -Uz bashcompinit
+bashcompinit
+
+# Infrastructure as Code (IaC)
+eval "$(pulumi gen-completion zsh)"
+
+# Language - Python
+eval "$(register-python-argcomplete cz)"
+eval "$(register-python-argcomplete pipx)"
+source ${HOME}/.pyenv/completions/pyenv.zsh
+
+# Orchestration
+eval "$(grype completion zsh)"
+eval "$(stern --completion zsh)"
+eval "$(trivy completion zsh)"
+
+# Version Control System (VCS)
 eval "$(gitleaks completion zsh)"
+
+# Tools
+eval "$(gonzo completion zsh)"
+eval "$(yq shell-completion zsh)"
 
 # ---------------------------------------------------------------------------- #
 #               ------- Oh My Posh --------

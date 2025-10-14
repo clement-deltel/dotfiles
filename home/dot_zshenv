@@ -4,6 +4,7 @@
 # User specific environment and startup programs
 export USER=$(whoami)
 export HOME=/home/${USER}
+export XDG_CONFIG_HOME=${HOME}/.config
 
 # ---------------------------------------------------------------------------- #
 #               ------- Environment ------
@@ -45,6 +46,3 @@ eval "$(pyenv virtualenv-init - zsh)"
 
 # Rust
 . "$HOME/.cargo/env"
-
-# Wezterm
-export XDG_CONFIG_HOME=${HOME}/.config

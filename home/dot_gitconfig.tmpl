@@ -35,7 +35,11 @@
 [init]
 	defaultBranch = main
 [merge]
+{{- if eq .chezmoi.osRelease.versionID "22.04" }}
+    conflictstyle = diff3
+{{- else}}
     conflictstyle = zdiff3
+{{- end }}
 [push]
     autoSetupRemote = true
     default = current

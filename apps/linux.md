@@ -377,9 +377,11 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **zsh**
   - [zap](https://github.com/zap-zsh/zap) - minimal plugin manager. `Shell`
   - [zinit](https://github.com/zdharma-continuum/zinit) - flexible and fast plugin manager. `Shell`
+  - [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete) - real-time type-ahead completion, asynchronous find-as-you-type autocompletion. `Shell`
   - [zsh-auto-notify](https://github.com/MichaelAquilina/zsh-auto-notify)
   - [zsh-bench](https://github.com/romkatv/zsh-bench) - benchmark for interactive zsh. `Shell`
   - [zsh-fzf-history-search](https://github.com/joshskidmore/zsh-fzf-history-search)
+  - [zsh-snap](https://github.com/marlonrichert/zsh-snap) - tools for zsh dotfiles & plugins, plus git repos. `Shell`
 
 ## Production Applications
 

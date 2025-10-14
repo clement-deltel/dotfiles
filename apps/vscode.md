@@ -34,6 +34,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) -  visualize code authorship at a glance via Git blame annotations and CodeLens, and more.
 - [Gitmoji](https://marketplace.visualstudio.com/items?itemName=seatonjiang.gitmoji-vscode) - gitmoji tool for git commit messages.
 - [Go](https://marketplace.visualstudio.com/items?itemName=golang.Go) - rich Go language support.
+- [Go Template Support](https://marketplace.visualstudio.com/items?itemName=jinliming2.vscode-go-template) - syntax highlight support for Go text/template and html/template.
 - [Google Cloud Code](https://marketplace.visualstudio.com/items?itemName=GoogleCloudTools.cloudcode) - tools for Google Cloud.
 - [Hadolint](https://marketplace.visualstudio.com/items?itemName=exiasr.hadolint) - integrate hadolint, a Dockerfile linter.
 - [HashiCorp Terraform](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform) - syntax highlighting and autocompletion for Terraform.

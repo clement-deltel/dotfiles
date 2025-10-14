@@ -9,12 +9,16 @@
     "extensions": {
         "recommendations": [
             // Docker
+            "exiasr.hadolint",
             "ms-azuretools.vscode-containers",
             // DotENV
             "dotenv.dotenv-vscode",
             // Git
             "donjayamanne.git-extension-pack",
             "elagil.pre-commit-helper",
+            // Go
+            "golang.Go",
+            "jinliming2.vscode-go-template",
             // General purpose linter
             "fnando.linter",
             // Markdown

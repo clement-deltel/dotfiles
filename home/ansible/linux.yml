@@ -13,6 +13,8 @@
   import_playbook: shell/zsh.yml
 - name: Eza
   import_playbook: shell/eza.yml
+- name: Fzf
+  import_playbook: shell/fzf.yml
 - name: Oh My Posh
   import_playbook: shell/oh-my-posh.yml
 - name: Zoxide

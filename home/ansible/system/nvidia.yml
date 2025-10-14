@@ -110,7 +110,7 @@
   #               ------- Docker Configuration ------
   # -------------------------------------------------------------------------- #
   - name: Docker Configuration
-    tag: init
+    tags: init
     block:
 
     - name: Run toolkit runtime configuration

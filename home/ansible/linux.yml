@@ -22,7 +22,7 @@
 - name: WezTerm
   import_playbook: terminal/wezterm.yml
 
-# VCS
+# Version Control System (VCS)
 - name: Git
   import_playbook: vcs/git.yml
 
@@ -48,7 +48,7 @@
 - name: Helm
   import_playbook: orchestration/helm.yml
 
-# Infrastructure as Code - IAC
+# Infrastructure as Code (IaC)
 - name: Pulumi
   import_playbook: iac/pulumi.yml
 - name: Terraform

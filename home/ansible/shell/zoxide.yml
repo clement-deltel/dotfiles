@@ -5,37 +5,36 @@
     - ../vars/main.yml
 
   tasks:
-  # Zoxide
+  # -------------------------------------------------------------------------- #
+  #               ------- Installation ------
+  # -------------------------------------------------------------------------- #
   - name: Zoxide
     become_user: ubuntu
     tags: [init, update]
     block:
 
-    - name: Create temporary directory
-      ansible.builtin.file:
-        path: "{{ zoxide_install_tmp }}"
-        state: directory
-        mode: 0700
-
     - name: Download install script
       ansible.builtin.uri:
         method: GET
         url: "{{ zoxide_install_url }}"
-        dest: "{{ zoxide_install_tmp }}/install.sh"
+        dest: "/tmp/zoxide_install.sh"
         follow_redirects: safe
         mode: 0700
 
-    - name: Install
+    - name: Run install script
       ansible.builtin.command:
-        cmd: /bin/sh -c {{ zoxide_install_tmp }}/install.sh
+        cmd: /bin/sh -c /tmp/zoxide_install.sh
       register: install_result
       changed_when: install_result.rc == 0
 
-    - name: Remove temporary directory
+    - name: Remove install script
       ansible.builtin.file:
-        path: "{{ zoxide_install_tmp }}"
+        path: "/tmp/zoxide_install.sh"
         state: absent
 
+    # ------------------------------------------------------------------------ #
+    #               ------- Version ------
+    # ------------------------------------------------------------------------ #
     always:
     - name: Confirm version
       ansible.builtin.command:

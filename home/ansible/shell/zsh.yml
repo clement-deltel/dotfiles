@@ -5,14 +5,16 @@
     - ../vars/main.yml
 
   tasks:
-  # Dependencies
+  # -------------------------------------------------------------------------- #
+  #               ------- Dependencies ------
+  # -------------------------------------------------------------------------- #
   - name: Dependencies
     block:
 
     - name: List dependencies
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "dependencies: {{ zsh_dependencies }}"
+        msg: "Dependencies: {{ zsh_dependencies }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install dependencies
@@ -30,14 +32,18 @@
         state: latest
         update_cache: true
 
-  # Shell
+  # -------------------------------------------------------------------------- #
+  #               ------- Shell ------
+  # -------------------------------------------------------------------------- #
   - name: Set zsh as default shell
     tags: init
     ansible.builtin.user:
       name: ubuntu
       shell: /bin/zsh
 
-  # Package Manager - Antidote
+  # -------------------------------------------------------------------------- #
+  #               ------- Antidote ------
+  # -------------------------------------------------------------------------- #
   # git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/antidote
   - name: Antidote
     become_user: ubuntu

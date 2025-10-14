@@ -5,16 +5,18 @@
     - ../vars/main.yml
 
   tasks:
-  # Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Packages
     block:
 
-    # wget -c https://go.dev/dl/go1.25.1.linux-amd64.tar.gz
-    # sudo tar -C /usr/local/ -xzf go1.25.1.linux-amd64.tar.gz
+    # wget -c https://go.dev/dl/go{{ go_version }}.linux-amd64.tar.gz
+    # sudo tar -C /usr/local/ -xzf go{{ go_version }}.linux-amd64.tar.gz
     - name: Install
       tags: [init, update]
       ansible.builtin.unarchive:
-        src: "https://go.dev/dl/go1.25.1.linux-amd64.tar.gz"
+        src: "https://go.dev/dl/go{{ go_version }}.linux-amd64.tar.gz"
         dest: "/usr/local"
         remote_src: true
         mode: 0755
@@ -35,32 +37,19 @@
     #     state: latest
     #     update_cache: true
 
+    # ------------------------------------------------------------------------ #
+    #               ------- Version ------
+    # ------------------------------------------------------------------------ #
     always:
-    - name: Go - Confirm version
+    - name: Confirm version
       tags: [init, update]
       ansible.builtin.command:
-        # cmd: go version
         cmd: /usr/local/go/bin/go version
       register: version
       changed_when: false
 
-    - name: Go - Show version
+    - name: Show version
       tags: [init, update]
       when: version is defined
       ansible.builtin.debug:
         msg: "Installed version: {{ version.stdout }}"
-
-  # Go Packages
-  - name: Go Packages
-    block:
-
-    - name: List packages
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "packages: {{ go_packages }}"
-
-    - name: Install
-      tags: [init, update]
-      ansible.builtin.command:
-        cmd: "/usr/local/go/bin/go install {{ item }}"
-      loop: "{{ go_packages }}"

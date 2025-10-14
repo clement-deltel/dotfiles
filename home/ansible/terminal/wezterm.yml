@@ -5,7 +5,9 @@
     - ../vars/main.yml
 
   tasks:
-  # Repository
+  # -------------------------------------------------------------------------- #
+  #               ------- Repository ------
+  # -------------------------------------------------------------------------- #
   - name: Repository
     tags: init
     block:
@@ -38,14 +40,16 @@
         path: /tmp/wezterm.key
         state: absent
 
-  # Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Packages
     block:
 
     - name: List packages
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "packages: {{ wezterm_packages }}"
+        msg: "Packages: {{ wezterm_packages }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install

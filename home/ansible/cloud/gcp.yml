@@ -6,14 +6,16 @@
     - ../vars/main.yml
 
   tasks:
-  # Dependencies
+  # -------------------------------------------------------------------------- #
+  #               ------- Dependencies ------
+  # -------------------------------------------------------------------------- #
   - name: Dependencies
     block:
 
-    - name: List dependencies
+    - name: Show dependencies
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "dependencies: {{ gcp_dependencies }}"
+        msg: "Dependencies: {{ gcp_dependencies }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install dependencies
@@ -31,7 +33,9 @@
         state: latest
         update_cache: true
 
-  # Repository
+  # -------------------------------------------------------------------------- #
+  #               ------- Repository ------
+  # -------------------------------------------------------------------------- #
   - name: Repository
     tags: init
     block:
@@ -42,7 +46,7 @@
         state: directory
         mode: 0755
 
-    # curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+    # curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor --output /usr/share/keyrings/cloud.google.gpg
     - name: Download GPG apt key
       ansible.builtin.uri:
         method: GET
@@ -60,22 +64,24 @@
       ansible.builtin.apt_repository:
         repo: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main
 
-    - name: Remove GPG temporary key
+    - name: Remove temporary GPG key
       ansible.builtin.file:
         path: /tmp/gcp.gpg
         state: absent
 
-  # Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Packages
     block:
 
-    - name: List packages
+    - name: Show packages
       tags: [init, update]
       ansible.builtin.debug:
         msg: "packages: {{ gcp_packages }}"
 
     # sudo apt update -y && sudo apt install -y
-    - name: Install
+    - name: Install packages
       tags: init
       ansible.builtin.apt:
         name: "{{ gcp_packages }}"
@@ -83,14 +89,16 @@
         update_cache: true
 
     # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade
+    - name: Upgrade packages
       tags: update
       ansible.builtin.apt:
         name: "{{ gcp_packages }}"
         state: latest
         update_cache: true
 
-  # Version
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
   - name: Version
     tags: [init, update]
     block:

@@ -5,14 +5,16 @@
     - ../vars/main.yml
 
   tasks:
-  # Dependencies
+  # -------------------------------------------------------------------------- #
+  #               ------- Dependencies ------
+  # -------------------------------------------------------------------------- #
   - name: Dependencies
     block:
 
-    - name: List dependencies
+    - name: Show dependencies
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "dependencies: {{ python_dependencies }}"
+        msg: "Dependencies: {{ python_dependencies }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install dependencies
@@ -30,11 +32,40 @@
         state: latest
         update_cache: true
 
-  # PyPI Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages ------
+  # -------------------------------------------------------------------------- #
+  - name: Packages
+    block:
+
+    - name: Show packages
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "Packages: {{ python_packages }}"
+
+    # sudo apt update -y && sudo apt install -y
+    - name: Install packages
+      tags: init
+      ansible.builtin.apt:
+        name: "{{ python_packages }}"
+        state: present
+        update_cache: true
+
+    # sudo apt update -y && sudo apt upgrade -y
+    - name: Upgrade packages
+      tags: update
+      ansible.builtin.apt:
+        name: "{{ python_packages }}"
+        state: latest
+        update_cache: true
+
+  # -------------------------------------------------------------------------- #
+  #               ------- PyPI - Packages ------
+  # -------------------------------------------------------------------------- #
   - name: PyPI Packages
     block:
 
-    - name: PyPI - List packages
+    - name: PyPI - Show packages
       tags: [init, update]
       ansible.builtin.debug:
         msg: "PyPI packages: {{ pip_packages }}"
@@ -46,12 +77,6 @@
         name: "{{ pip_packages }}"
         state: present
 
-    - name: PyPI - Install paramiko with minimum version
-      tags: init
-      ansible.builtin.pip:
-        name: paramiko>3.5.1
-        state: present
-
     # pip install --upgrade
     - name: PyPI - Upgrade packages
       tags: update
@@ -59,15 +84,23 @@
         name: "{{ pip_packages }}"
         state: latest
 
+    # paramiko
+    - name: PyPI - Install paramiko with minimum version
+      tags: init
+      ansible.builtin.pip:
+        name: paramiko>3.5.1
+        state: present
 
-  # Pyenv - Dependencies
+  # -------------------------------------------------------------------------- #
+  #               ------- Pyenv - Dependencies ------
+  # -------------------------------------------------------------------------- #
   - name: Pyenv - Dependencies
     block:
 
-    - name: pyenv - List dependencies
+    - name: pyenv - Show dependencies
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "dependencies: {{ pyenv_dependencies }}"
+        msg: "Dependencies: {{ pyenv_dependencies }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: pyenv - Install dependencies
@@ -85,53 +118,60 @@
         state: latest
         update_cache: true
 
-  # Pyenv
-  - name: Pyenv
-    become_user: ubuntu
-    tags: [init, update]
-    block:
-
-    - name: Create temporary directory
-      ansible.builtin.file:
-        path: "{{ pyenv_install_tmp }}"
-        state: directory
-        mode: 0700
-
-    # curl https://pyenv.run | bash
-    - name: Download install script
-      ansible.builtin.uri:
-        method: GET
-        url: "{{ pyenv_install_url }}"
-        dest: "{{ pyenv_install_tmp }}/pyenv.run"
-        follow_redirects: safe
-        mode: 0700
-
-    - name: Install
-      ansible.builtin.shell:
-        cmd: "{{ pyenv_install_tmp }}/pyenv.run"
-        executable: /usr/bin/zsh
-      register: install_result
-      changed_when: install_result.rc == 0
-
-    - name: Remove temporary directory
-      ansible.builtin.file:
-        path: "{{ pyenv_install_tmp }}"
-        state: absent
-
-  # Pyenv - Default Python version
-  - name: Pyenv - Default Python version
+  # -------------------------------------------------------------------------- #
+  #               ------- Pyenv - Install ------
+  # -------------------------------------------------------------------------- #
+  - name: pyenv - Install
     become_user: ubuntu
     tags: init
     block:
 
-    # pyenv install
-    - name: pyenv - Install Python
-      ansible.builtin.shell:
-        cmd: pyenv install {{ pyenv_python_version }}
-        executable: /usr/bin/zsh
+    # curl https://pyenv.run | bash
+    - name: pyenv - Download install script
+      ansible.builtin.uri:
+        method: GET
+        url: "{{ pyenv_install_url }}"
+        dest: "/tmp/pyenv.run"
+        follow_redirects: safe
+        mode: 0700
 
-  # Pipx
-  - name: Pipx
+    - name: pyenv - Run install script
+      ansible.builtin.shell:
+        cmd: "/tmp/pyenv.run"
+        executable: /usr/bin/zsh
+      register: install_result
+      changed_when: install_result.rc == 0
+
+    - name: pyenv - Remove install script
+      ansible.builtin.file:
+        path: "/tmp/pyenv.run"
+        state: absent
+
+  # -------------------------------------------------------------------------- #
+  #               ------- Pyenv - Upgrade ------
+  # -------------------------------------------------------------------------- #
+  - name: pyenv - Upgrade
+    become_user: ubuntu
+    tags: update
+    ansible.builtin.command:
+      cmd: pyenv update
+    register: upgrade_result
+    changed_when: upgrade_result.rc == 0
+
+  # -------------------------------------------------------------------------- #
+  #               ------- Pyenv - Install Python ------
+  # -------------------------------------------------------------------------- #
+  - name: Pyenv - Install Python
+    become_user: ubuntu
+    tags: init
+    ansible.builtin.shell:
+      cmd: pyenv install {{ pyenv_python_version }}
+      executable: /usr/bin/zsh
+
+  # -------------------------------------------------------------------------- #
+  #               ------- pipx ------
+  # -------------------------------------------------------------------------- #
+  - name: pipx
     block:
 
     # sudo apt update -y && sudo apt install -y pipx
@@ -150,6 +190,7 @@
         state: latest
         update_cache: true
 
+    # Version
     always:
     - name: pipx - Confirm version
       tags: [init, update]
@@ -164,40 +205,9 @@
       ansible.builtin.debug:
         msg: "Installed version: {{ version.stdout }}"
 
-  # Commitizen
-  - name: commitizen
-    become_user: ubuntu
-    block:
-
-    # pipx install commitizen
-    - name: Commitizen - Install
-      tags: init
-      community.general.pipx:
-        name: commitizen
-        state: present
-
-    # pipx upgrade commitizen
-    - name: Commitizen - Upgrade
-      tags: update
-      community.general.pipx:
-        name: commitizen
-        state: latest
-
-    always:
-    - name: Commitizen - Confirm version
-      tags: [init, update]
-      ansible.builtin.command:
-        cmd: ~/.local/bin/cz version
-      register: version
-      changed_when: false
-
-    - name: Commitizen - Show version
-      tags: [init, update]
-      when: version is defined
-      ansible.builtin.debug:
-        msg: "Installed version: {{ version.stdout }}"
-
-  # Poetry
+  # -------------------------------------------------------------------------- #
+  #               ------- Poetry ------
+  # -------------------------------------------------------------------------- #
   - name: Poetry
     become_user: ubuntu
     block:
@@ -216,6 +226,7 @@
         name: poetry
         state: latest
 
+    # Version
     always:
     - name: Poetry - Confirm version
       tags: [init, update]
@@ -230,48 +241,53 @@
       ansible.builtin.debug:
         msg: "Installed version: {{ version.stdout }}"
 
-  # uv
+  # -------------------------------------------------------------------------- #
+  #               ------- uv ------
+  # -------------------------------------------------------------------------- #
   - name: uv
-    become_user: ubuntu
-    tags: [init, update]
     block:
 
-    - name: Create temporary directory
-      ansible.builtin.file:
-        path: "{{ uv_install_tmp }}"
-        state: directory
-        mode: 0700
-
     # curl -fsSL https://astral.sh/uv/install.sh | sh
-    - name: Download install script
+    - name: uv - Download install script
+      tags: init
       ansible.builtin.uri:
         method: GET
         url: "{{ uv_install_url }}"
-        dest: "{{ uv_install_tmp }}/install.sh"
+        dest: "/tmp/uv_install.sh"
         follow_redirects: safe
         mode: 0700
 
-    - name: Install
+    - name: uv - Install
+      tags: init
       ansible.builtin.command:
-        cmd: /bin/sh -c {{ uv_install_tmp }}/install.sh
+        cmd: /bin/sh -c /tmp/uv_install.sh
       register: install_result
       changed_when: install_result.rc == 0
 
-    - name: Remove temporary directory
+    - name: uv - Remove install script
+      tags: init
       ansible.builtin.file:
-        path: "{{ uv_install_tmp }}"
+        path: "/tmp/uv_install.sh"
         state: absent
+
+    # Upgrade
+    - name: uv - Upgrade
+      tags: update
+      ansible.builtin.command:
+        cmd: uv self update
+      register: upgrade_result
+      changed_when: upgrade_result.rc == 0
 
     # Version
     always:
-    - name: Confirm version
+    - name: uv - Confirm version
       tags: [init, update]
       ansible.builtin.command:
         cmd: uv --version
       register: version
       changed_when: false
 
-    - name: Show version
+    - name: uv - Show version
       tags: [init, update]
       when: version is defined
       ansible.builtin.debug:

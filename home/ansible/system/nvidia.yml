@@ -5,7 +5,9 @@
     - ../vars/main.yml
 
   tasks:
-  # Repository - Container Toolkit
+  # -------------------------------------------------------------------------- #
+  #               ------- Repository - Container Toolkit ------
+  # -------------------------------------------------------------------------- #
   - name: Repository - Container Toolkit
     tags: init
     block:
@@ -39,7 +41,9 @@
         path: /tmp/nvidia-container-toolkit.gpg
         state: absent
 
-  # Repository - CUDA Toolkit
+  # -------------------------------------------------------------------------- #
+  #               ------- Repository - CUDA Toolkit ------
+  # -------------------------------------------------------------------------- #
   - name: Repository - CUDA Toolkit
     tags: init
     block:
@@ -71,7 +75,9 @@
         mode: 0644
       when: keyring_file.files | length > 0
 
-  # Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Packages
     block:
 
@@ -84,7 +90,7 @@
     - name: List packages
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "packages: {{ nvidia_packages }}"
+        msg: "Packages: {{ nvidia_packages }}"
 
     # sudo apt install -y
     - name: Install packages
@@ -100,7 +106,9 @@
         name: "{{ nvidia_packages }}"
         state: latest
 
-  # Docker Configuration
+  # -------------------------------------------------------------------------- #
+  #               ------- Docker Configuration ------
+  # -------------------------------------------------------------------------- #
   - name: Docker Configuration
     tag: init
     block:

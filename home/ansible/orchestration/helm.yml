@@ -5,51 +5,52 @@
     - ../vars/main.yml
 
   tasks:
-  # Helm
+  # -------------------------------------------------------------------------- #
+  #               ------- Installation ------
+  # -------------------------------------------------------------------------- #
   - name: Helm
     tags: [init, update]
     block:
 
-    - name: Helm - Create temporary directory
-      ansible.builtin.file:
-        path: "{{ helm_install_tmp }}"
-        state: directory
-        mode: 0700
-
-    - name: Helm - Download install script
+    - name: Download install script
       ansible.builtin.uri:
         method: GET
         url: "{{ helm_install_url }}"
-        dest: "{{ helm_install_tmp }}/get_helm.sh"
+        dest: "/tmp/get_helm.sh"
         follow_redirects: safe
         mode: 0700
 
-    - name: Helm - Install
+    - name: Run install script
       ansible.builtin.command:
-        cmd: /bin/bash -c {{ helm_install_tmp }}/get_helm.sh
+        cmd: /bin/bash -c /tmp/get_helm.sh
       register: install_result
       changed_when: install_result.rc == 0
 
-    - name: Helm - Remove temporary directory
+    - name: Remove install script
       ansible.builtin.file:
-        path: "{{ helm_install_tmp }}"
+        path: "/tmp/get_helm.sh"
         state: absent
 
+    # ------------------------------------------------------------------------ #
+    #               ------- Version ------
+    # ------------------------------------------------------------------------ #
     always:
-    - name: Helm - Confirm version
+    - name: Confirm version
       tags: [init, update]
       ansible.builtin.command:
         cmd: helm version
       register: version
       changed_when: false
 
-    - name: Helm - Show version
+    - name: Show version
       tags: [init, update]
       when: version is defined
       ansible.builtin.debug:
         msg: "Installed version: {{ version.stdout }}"
 
-  # Helm Plugins
+  # -------------------------------------------------------------------------- #
+  #               ------- Plugins ------
+  # -------------------------------------------------------------------------- #
   - name: Plugins
     block:
 
@@ -66,7 +67,7 @@
       loop: "{{ helm_plugin_names }}"
 
     always:
-    - name: Confirm installed plugins
+    - name: Confirm plugins
       tags: [init, update]
       ansible.builtin.command:
         cmd: helm plugin list
@@ -79,12 +80,14 @@
       ansible.builtin.debug:
         msg: "Installed plugins: {{ plugins_list.stdout }}"
 
-  # Helm related Formulas
+  # -------------------------------------------------------------------------- #
+  #               ------- Formulas ------
+  # -------------------------------------------------------------------------- #
   - name: Formulas
     become_user: ubuntu
     block:
 
-    - name: Homebrew - List formulas
+    - name: Homebrew - Show formulas
       tags: [init, update]
       ansible.builtin.debug:
         msg: "Formulas: {{ helm_formulas }}"

@@ -5,14 +5,16 @@
     - ../vars/main.yml
 
   tasks:
-  # Repositories
+  # -------------------------------------------------------------------------- #
+  #               ------- Repositories ------
+  # -------------------------------------------------------------------------- #
   - name: Repositories
     tags: init
     block:
 
     - name: List repositories
       ansible.builtin.debug:
-        msg: "packages: {{ apt_repositories }}"
+        msg: "Repositories: {{ apt_repositories }}"
 
     # add-apt-repository
     - name: Add repositories
@@ -20,7 +22,9 @@
         repo: "{{ item }}"
       loop: "{{ apt_repositories }}"
 
-  # Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Packages
     block:
 
@@ -30,10 +34,10 @@
       ansible.builtin.apt:
         update_cache: true
 
-    - name: List packages
+    - name: Show packages
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "packages: {{ apt_packages }}"
+        msg: "Packages: {{ apt_packages }}"
 
     # sudo apt install -y
     - name: Install packages
@@ -57,7 +61,9 @@
         name: "{{ apt_packages }}"
         state: latest
 
-  # Cleaning
+  # -------------------------------------------------------------------------- #
+  #               ------- Cleaning ------
+  # -------------------------------------------------------------------------- #
   - name: Cleaning
     tags: clean
     block:
@@ -71,20 +77,3 @@
     - name: Remove unused dependencies
       ansible.builtin.apt:
         autoremove: true
-
-  # fzf
-  - name: fzf
-    tags: [init, update]
-    block:
-
-    - name: fzf - Download completion and key-bindings
-      ansible.builtin.uri:
-        method: GET
-        url: https://raw.githubusercontent.com/junegunn/fzf/refs/heads/master/shell/{{ item }}
-        dest: /usr/share/doc/fzf/examples/{{ item }}
-        follow_redirects: safe
-      loop:
-       - completion.bash
-       - completion.zsh
-       - key-bindings.bash
-       - key-bindings.zsh

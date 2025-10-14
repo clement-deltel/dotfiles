@@ -5,14 +5,16 @@
     - ../vars/main.yml
 
   tasks:
-  # Dependencies
+  # -------------------------------------------------------------------------- #
+  #               ------- Dependencies ------
+  # -------------------------------------------------------------------------- #
   - name: Dependencies
     block:
 
     - name: List dependencies
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "dependencies: {{ bitwarden_dependencies }}"
+        msg: "Dependencies: {{ bitwarden_dependencies }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install dependencies
@@ -30,7 +32,9 @@
         state: latest
         update_cache: true
 
-  # Bitwarden CLI
+  # -------------------------------------------------------------------------- #
+  #               ------- Installation ------
+  # -------------------------------------------------------------------------- #
   - name: Bitwarden CLI
     tags: [init, update]
     block:

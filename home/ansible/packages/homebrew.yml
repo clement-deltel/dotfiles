@@ -3,16 +3,18 @@
   gather_facts: false
   vars_files:
     - ../vars/main.yml
-    
+
   tasks:
-  # Dependencies
+  # -------------------------------------------------------------------------- #
+  #               ------- Dependencies ------
+  # -------------------------------------------------------------------------- #
   - name: Dependencies
     block:
 
-    - name: List dependencies
+    - name: Show dependencies
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "dependencies: {{ homebrew_dependencies }}"
+        msg: "Dependencies: {{ homebrew_dependencies }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install dependencies
@@ -30,43 +32,41 @@
         state: latest
         update_cache: true
 
-  # Homebrew
+  # -------------------------------------------------------------------------- #
+  #               ------- Homebrew ------
+  # -------------------------------------------------------------------------- #
   - name: Homebrew
     tags: [init, update]
     become_user: ubuntu
     block:
 
-    - name: Create temporary directory
-      ansible.builtin.file:
-        path: "{{ homebrew_install_tmp }}"
-        state: directory
-        mode: 0700
-
     - name: Download install script
       ansible.builtin.uri:
         method: GET
         url: "{{ homebrew_install_url }}"
-        dest: "{{ homebrew_install_tmp }}/install.sh"
+        dest: "/tmp/homebrew_install.sh"
         follow_redirects: safe
         mode: 0700
 
-    - name: Install
+    - name: Run install script
       ansible.builtin.command:
-        cmd: /bin/bash -c {{ homebrew_install_tmp }}/install.sh
+        cmd: /bin/bash -c /tmp/homebrew_install.sh
       register: install_result
       changed_when: install_result.rc == 0
 
-    - name: Remove temporary directory
+    - name: Remove install script
       ansible.builtin.file:
-        path: "{{ homebrew_install_tmp }}"
+        path: "/tmp/homebrew_install.sh"
         state: absent
 
-  # Formulas
+  # -------------------------------------------------------------------------- #
+  #               ------- Formulas ------
+  # -------------------------------------------------------------------------- #
   - name: Formulas
     become_user: ubuntu
     block:
 
-    - name: List formulas
+    - name: Show formulas
       tags: [init, update]
       ansible.builtin.debug:
         msg: "Formulas: {{ homebrew_formulas }}"

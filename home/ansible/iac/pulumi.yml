@@ -5,39 +5,37 @@
     - ../vars/main.yml
 
   tasks:
-  # Pulumi
+  # -------------------------------------------------------------------------- #
+  #               ------- Installation ------
+  # -------------------------------------------------------------------------- #
   - name: Pulumi
     become_user: ubuntu
     tags: [init, update]
     block:
-
-    - name: Create temporary directory
-      ansible.builtin.file:
-        path: "{{ pulumi_install_tmp }}"
-        state: directory
-        mode: 0700
 
     # curl -fsSL https://get.pulumi.com | sh
     - name: Download install script
       ansible.builtin.uri:
         method: GET
         url: "{{ pulumi_install_url }}"
-        dest: "{{ pulumi_install_tmp }}/get.pulumi.com"
+        dest: "/tmp/get.pulumi.com"
         follow_redirects: safe
         mode: 0700
 
     - name: Install
       ansible.builtin.command:
-        cmd: /bin/sh -c {{ pulumi_install_tmp }}/get.pulumi.com
+        cmd: /bin/sh -c /tmp/get.pulumi.com
       register: install_result
       changed_when: install_result.rc == 0
 
-    - name: Remove temporary directory
+    - name: Remove install script
       ansible.builtin.file:
-        path: "{{ pulumi_install_tmp }}"
+        path: "/tmp/get.pulumi.com"
         state: absent
 
-    # Version
+    # ------------------------------------------------------------------------ #
+    #               ------- Version ------
+    # ------------------------------------------------------------------------ #
     always:
     - name: Confirm version
       tags: [init, update]

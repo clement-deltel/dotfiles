@@ -5,37 +5,36 @@
     - ../vars/main.yml
 
   tasks:
-  # Oh My Posh
+  # -------------------------------------------------------------------------- #
+  #               ------- Installation ------
+  # -------------------------------------------------------------------------- #
   - name: Oh My Posh
     become_user: ubuntu
     tags: [init, update]
     block:
 
-    - name: Create temporary directory
-      ansible.builtin.file:
-        path: "{{ omp_install_tmp }}"
-        state: directory
-        mode: 0700
-
     - name: Download install script
       ansible.builtin.uri:
         method: GET
         url: "{{ omp_install_url }}"
-        dest: "{{ omp_install_tmp }}/install.sh"
+        dest: "/tmp/oh_my_posh_install.sh"
         follow_redirects: safe
         mode: 0700
 
-    - name: Install
+    - name: Run install script
       ansible.builtin.command:
-        cmd: /bin/bash {{ omp_install_tmp }}/install.sh -d ~/.local/bin
+        cmd: /bin/bash /tmp/oh_my_posh_install.sh -d ~/.local/bin
       register: install_result
       changed_when: install_result.rc == 0
 
-    - name: Remove temporary directory
+    - name: Remove install script
       ansible.builtin.file:
-        path: "{{ omp_install_tmp }}"
+        path: "/tmp/oh_my_posh_install.sh"
         state: absent
 
+    # ------------------------------------------------------------------------ #
+    #               ------- Version ------
+    # ------------------------------------------------------------------------ #
     always:
     - name: Confirm version
       ansible.builtin.command:

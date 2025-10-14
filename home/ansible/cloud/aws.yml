@@ -6,14 +6,16 @@
     - ../vars/main.yml
 
   tasks:
-  # Dependencies
+  # -------------------------------------------------------------------------- #
+  #               ------- Dependencies ------
+  # -------------------------------------------------------------------------- #
   - name: Dependencies
     block:
 
-    - name: List dependencies
+    - name: Show dependencies
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "dependencies: {{ aws_dependencies }}"
+        msg: "Dependencies: {{ aws_dependencies }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install dependencies
@@ -31,8 +33,10 @@
         state: latest
         update_cache: true
 
-  # Install AWS CLI
-  - name: Install AWS CLI
+  # -------------------------------------------------------------------------- #
+  #               ------- Installation ------
+  # -------------------------------------------------------------------------- #
+  - name: Installation
     tags: [init, update]
     block:
 
@@ -47,7 +51,7 @@
         mode: 0755
 
     # sudo ./aws/install
-    - name: Install
+    - name: Run the installer
       ansible.builtin.command:
       args:
         cmd: "/tmp/aws/install"
@@ -58,8 +62,10 @@
         path: /tmp/aws
         state: absent
 
-  # Configure AWS CLI
-  - name: Configure AWS CLI
+  # -------------------------------------------------------------------------- #
+  #               ------- Configuration ------
+  # -------------------------------------------------------------------------- #
+  - name: Configuration
     become_user: ubuntu
     tags: init
     ansible.builtin.shell:
@@ -73,3 +79,21 @@
       sso_registration_scopes: "{{ aws_sso_registration_scopes }}"
       sso_role_name: "{{ aws_sso_role_name }}"
       sso_start_url: "{{ aws_sso_start_url }}"
+
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
+  - name: Version
+    tags: [init, update]
+    block:
+
+    - name: Confirm version
+      ansible.builtin.command:
+        cmd: aws --version
+      register: version
+      changed_when: false
+
+    - name: Show version
+      when: version is defined
+      ansible.builtin.debug:
+        msg: "Installed version: {{ version.stdout }}"

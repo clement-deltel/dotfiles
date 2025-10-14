@@ -5,15 +5,18 @@
     - ../vars/main.yml
 
   tasks:
-  # Dependencies
+  # -------------------------------------------------------------------------- #
+  #               ------- Dependencies ------
+  # -------------------------------------------------------------------------- #
   - name: Dependencies
     block:
 
-    - name: List dependencies
+    - name: Show dependencies
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "dependencies: {{ node_dependencies }}"
+        msg: "Dependencies: {{ node_dependencies }}"
 
+    # sudo apt update -y && sudo apt install -y
     - name: Install dependencies
       tags: init
       ansible.builtin.apt:
@@ -21,6 +24,7 @@
         state: present
         update_cache: true
 
+    # sudo apt update -y && sudo apt upgrade -y
     - name: Upgrade dependencies
       tags: update
       ansible.builtin.apt:
@@ -28,7 +32,9 @@
         state: latest
         update_cache: true
 
-  # Repository
+  # -------------------------------------------------------------------------- #
+  #               ------- Repository ------
+  # -------------------------------------------------------------------------- #
   - name: Repository
     tags: init
     block:
@@ -39,6 +45,7 @@
         state: directory
         mode: 0755
 
+    # curl https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor --output /etc/apt/keyrings/nodesource.gpg
     - name: Download GPG apt key
       ansible.builtin.uri:
         method: GET
@@ -56,19 +63,21 @@
       ansible.builtin.apt_repository:
         repo: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_{{ node_major }}.x nodistro main
 
-    - name: Remove GPG temporary key
+    - name: Remove temporary GPG key
       ansible.builtin.file:
         path: /tmp/nodejs.gpg
         state: absent
 
-  # Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Packages
     block:
 
-    - name: List packages
+    - name: Show packages
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "packages: {{ node_packages }}"
+        msg: "Packages: {{ node_packages }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install packages
@@ -86,7 +95,9 @@
         state: latest
         update_cache: true
 
-  # Version
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
   - name: Version
     tags: [init, update]
     block:
@@ -102,25 +113,27 @@
       ansible.builtin.debug:
         msg: "Installed version: {{ version.stdout }}"
 
-  # NPM Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- NPM Packages ------
+  # -------------------------------------------------------------------------- #
   - name: NPM Packages
     block:
 
-    - name: List NPM packages
+    - name: NPM - Show packages
       tags: [init, update]
       ansible.builtin.debug:
         msg: "NPM packages: {{ npm_packages }}"
 
     # sudo npm install
-    - name: Install NPM packages
+    - name: NPM - Install packages
       tags: init
       community.general.npm:
         name: "{{ npm_packages | join(' ') }}"
         global: true
         state: present
 
-    # sudo npm install
-    - name: Upgrade packages
+    # sudo npm update
+    - name: NPM - Upgrade packages
       tags: update
       community.general.npm:
         name: "{{ npm_packages | join(' ') }}"

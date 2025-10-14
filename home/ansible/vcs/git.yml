@@ -5,14 +5,16 @@
     - ../vars/main.yml
 
   tasks:
-  # Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Packages
     block:
 
     - name: List packages
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "packages: {{ git_packages }}"
+        msg: "Packages: {{ git_packages }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install packages
@@ -30,44 +32,42 @@
         state: latest
         update_cache: true
 
-  # Repository
+  # -------------------------------------------------------------------------- #
+  #               ------- Repository ------
+  # -------------------------------------------------------------------------- #
   - name: Repository
     tags: init
     block:
-
-    - name: Create temporary directory
-      ansible.builtin.file:
-        path: "{{ git_lfs_install_tmp }}"
-        state: directory
-        mode: 0700
 
     - name: Download repository script
       ansible.builtin.uri:
         method: GET
         url: "{{ git_lfs_install_url }}"
-        dest: "{{ git_lfs_install_tmp }}/script.deb.sh"
+        dest: "/tmp/script.deb.sh"
         follow_redirects: safe
         mode: 0700
 
-    - name: Add apt repository
+    - name: Run repository script
       ansible.builtin.command:
-        cmd: /bin/bash -c {{ git_lfs_install_tmp }}/script.deb.sh
+        cmd: /bin/bash -c /tmp/script.deb.sh
       register: install_result
       changed_when: install_result.rc == 0
 
-    - name: Remove temporary directory
+    - name: Remove repository script
       ansible.builtin.file:
-        path: "{{ git_lfs_install_tmp }}"
+        path: "/tmp/script.deb.sh"
         state: absent
 
-  # LFS Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages - Git LFS ------
+  # -------------------------------------------------------------------------- #
   - name: Packages
     block:
 
     - name: List packages
       tags: [init, update]
       ansible.builtin.debug:
-        msg: "packages: {{ git_lfs_packages }}"
+        msg: "Packages: {{ git_lfs_packages }}"
 
     # sudo apt update -y && sudo apt install -y
     - name: Install packages
@@ -85,7 +85,9 @@
         state: latest
         update_cache: true
 
-    # Version
+    # ------------------------------------------------------------------------ #
+    #               ------- Version ------
+    # ------------------------------------------------------------------------ #
     always:
     - name: Confirm version
       tags: [init, update]
@@ -100,7 +102,9 @@
       ansible.builtin.debug:
         msg: "Installed version: {{ version.stdout }}"
 
-  # Formulas
+  # -------------------------------------------------------------------------- #
+  #               ------- Formulas ------
+  # -------------------------------------------------------------------------- #
   - name: Formulas
     become_user: ubuntu
     block:

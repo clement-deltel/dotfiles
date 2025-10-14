@@ -109,6 +109,13 @@ docker_packages:
 - docker-buildx-plugin
 - docker-compose-plugin
 - skopeo
+docker_formulas:
+- dive
+- goodwithtech/r/dockle
+- grype
+- hadolint
+- lazydocker
+- trivy
 
 docker_images:
 - archlinux:base-20250302.0.316047
@@ -137,19 +144,20 @@ eza_packages:
 git_packages:
 - git # gold standard version control system
 - git-filter-repo
-# git lfs
-git_lfs_install_tmp: /tmp/git
+
 git_lfs_install_url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
 git_lfs_packages:
 - git-lfs # git extension for versioning large files
+
 git_formulas:
+- commitizen
 - gitleaks
+- lazygit
 
 # ---------------------------------------------------------------------------- #
 #               ------- Go ------
 # ---------------------------------------------------------------------------- #
-go_packages:
-- sigs.k8s.io/kind@v0.26.0
+go_version: 1.25.1
 
 # ---------------------------------------------------------------------------- #
 #               ------- Google Cloud Platform ------
@@ -168,7 +176,6 @@ gcp_packages:
 # ---------------------------------------------------------------------------- #
 #               ------- Helm ------
 # ---------------------------------------------------------------------------- #
-helm_install_tmp: /tmp/helm
 helm_install_url: https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 
 helm_plugin_names:
@@ -189,7 +196,6 @@ homebrew_dependencies:
 - git              # gold standard version control system
 - language-pack-en #
 - locales          #
-homebrew_install_tmp: /tmp/homebrew
 homebrew_install_url: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 homebrew_formulas:
 # CI/CD
@@ -201,20 +207,12 @@ homebrew_formulas:
 - procs
 # Monitoring
 - btop
-# Orchestration
-- dive
-- goodwithtech/r/dockle
-- grype
-- hadolint
-- lazydocker
-- trivy
-- dmno-dev/tap/varlock
 # Search
 - fzf
 # Software Development
-- lazygit
 - ls-lint
 - tokei
+- dmno-dev/tap/varlock
 # Other
 - tlrc
 - yq
@@ -222,12 +220,13 @@ homebrew_formulas:
 # ---------------------------------------------------------------------------- #
 #               ------- Kubernetes ------
 # ---------------------------------------------------------------------------- #
-kubectl_install_tmp: /tmp/kubernetes
 kubernetes_formulas:
 - k9s
+- kind
 - kubecolor
 - kubectx
 - kubetail
+- pinniped-cli
 - stern
 
 # ---------------------------------------------------------------------------- #
@@ -257,13 +256,11 @@ nvidia_packages:
 # ---------------------------------------------------------------------------- #
 #               ------- Oh My Posh ------
 # ---------------------------------------------------------------------------- #
-omp_install_tmp: /tmp/ohmyposh
 omp_install_url: https://ohmyposh.dev/install.sh
 
 # ---------------------------------------------------------------------------- #
 #               ------- Pulumi ------
 # ---------------------------------------------------------------------------- #
-pulumi_install_tmp: /tmp/pulumi
 pulumi_install_url: https://get.pulumi.com
 
 # ---------------------------------------------------------------------------- #
@@ -274,6 +271,8 @@ python_dependencies:
 - libbz2-dev  # data compression library to develop with Python
 - libgdal-dev # library to use GDAL with Python
 - liblzma-dev
+
+python_packages:
 - python3
 - python3-docker # used by Ansible modules
 - python3-pip
@@ -283,7 +282,6 @@ python_dependencies:
 - python3.11-venv
 - python-is-python3
 
-# pip
 pip_packages:
 - aiohttp  #
 - asyncer  #
@@ -297,7 +295,6 @@ pip_packages:
 - watchdog #
 - whisper-live
 
-# pyenv
 pyenv_dependencies:
 - build-essential  #
 - bzip2            #
@@ -307,12 +304,10 @@ pyenv_dependencies:
 - libsqlite3-dev   #
 - libssl-dev       #
 - zlib1g-dev       #
-pyenv_install_tmp: /tmp/pyenv
 pyenv_install_url: https://pyenv.run
 pyenv_python_version: 3.11.13
 
 # uv
-uv_install_tmp: /tmp/uv
 uv_install_url: https://astral.sh/uv/install.sh
 
 # ---------------------------------------------------------------------------- #
@@ -336,7 +331,6 @@ wezterm_packages:
 # ---------------------------------------------------------------------------- #
 #               ------- Zoxide ------
 # ---------------------------------------------------------------------------- #
-zoxide_install_tmp: /tmp/zoxide
 zoxide_install_url: https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh
 
 # ---------------------------------------------------------------------------- #

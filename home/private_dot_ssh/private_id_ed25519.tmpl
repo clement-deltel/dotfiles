@@ -1,1 +1,3 @@
+{{- if eq .ssh_keys }}
 {{ bitwardenAttachmentByRef "id_ed25519" "item" "SSH Keys" }}
+{{- end }}

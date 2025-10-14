@@ -38,8 +38,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [ranger](https://github.com/ranger/ranger) - vim-inspired file manager for the console. `Python`
     - **Security**
       - [age](https://github.com/FiloSottile/age) - encryption tool with small explicit keys, no config options, and UNIX-style composability. `Go`
-    - **Software Development**
-      - [ls-lint](https://github.com/loeffel-io/ls-lint) - directory and filename linter, bring some structure to your project filesystem. `Go`
     - **Other**
       - [FIGlet](https://linux.die.net/man/6/figlet) - display large characters made up of ordinary screen characters.
       - [fmt](https://github.com/fmtlib/fmt) - modern formatting library. `C++`
@@ -59,17 +57,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [procs](https://github.com/dalance/procs) - [ps](https://linux.die.net/man/1/ps), with better sorting, tree support, and more. `Rust`
     - **Monitoring**
       - [btop](https://github.com/aristocratos/btop) - monitor of resources. `C/C++`
-    - **Orchestration**
-      - [dive](https://github.com/wagoodman/dive) - tool for exploring each layer in a docker image. `Go`
-      - [dockle](https://github.com/goodwithtech/dockle) - container image linter for security. `Go`
-      - [grype](https://github.com/anchore/grype) - vulnerability scanner for container images and filesystems. `Go`
-      - [hadolint](https://github.com/hadolint/hadolint) - Dockerfile linter, validate inline bash. `Haskell`
-      - [lazydocker](https://github.com/jesseduffield/lazydocker) - lazier way to manage everything Docker. `Go`
-      - [trivy](https://github.com/aquasecurity/trivy) - find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more. `Go`
     - **Search**
       - [fzf](https://github.com/junegunn/fzf) - CLI fuzzy finder. `Go`
     - **Software Development**
-      - [lazygit](https://github.com/jesseduffield/lazygit) - simple TUI for git commands. `Go`
       - [ls-lint](https://github.com/loeffel-io/ls-lint) - directory and filename linter, bring some structure to the project filesystem. `Go`
       - [tokei](https://github.com/XAMPPRocky/tokei) - count your code, quickly. `Rust`
       - [varlock](https://github.com/dmno-dev/varlock) - .env files built for sharing powered by @env-spec decorator comments. `TypeScript` `JavaScript`
@@ -82,19 +72,23 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [antidote](https://github.com/mattmc3/antidote) - the cure to slow zsh plugin management.
   - [eza](https://github.com/eza-community/eza) - [ls](https://linux.die.net/man/1/ls), with icons, git integration, tree mode, and more. `Rust`
   - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh) - the most customizable and low-latency cross platform/shell prompt renderer. `Go`
-  - [WezTerm](https://github.com/wezterm/wezterm) - GPU-accelerated cross-platform terminal emulator and multiplexer. `Rust`
   - zsh
   - [zoxide](https://github.com/ajeetdsouza/zoxide) - [cd](https://linux.die.net/man/1/cd), with recent directories,and more. `Rust`
+- **Terminal**
+  - [WezTerm](https://github.com/wezterm/wezterm) - GPU-accelerated cross-platform terminal emulator and multiplexer. `Rust`
 - **Version Control System (VCS)**
   - Git
-    - [gitleaks](https://github.com/gitleaks/gitleaks) - tool for detecting secrets like passwords, API keys, and tokens in git repos. `Go`
-    - [git-filter-repo](https://github.com/newren/git-filter-repo) - quickly rewrite git repository history (filter-branch replacement). `Python`
-    - [git-lfs](https://github.com/git-lfs/git-lfs) - git extension for versioning large files. `Go`
+    - Packages
+      - [git-filter-repo](https://github.com/newren/git-filter-repo) - quickly rewrite git repository history (filter-branch replacement). `Python`
+      - [git-lfs](https://github.com/git-lfs/git-lfs) - git extension for versioning large files. `Go`
+    - Formulas
+      - [commitizen](https://github.com/commitizen-tools/commitizen) - create committing rules for projects, auto bump versions, and auto changelog generation. `Python`
+      - [gitleaks](https://github.com/gitleaks/gitleaks) - tool for detecting secrets like passwords, API keys, and tokens in git repos. `Go`
+      - [lazygit](https://github.com/jesseduffield/lazygit) - simple TUI for git commands. `Go`
 - **Security**
   - [Bitwarden CLI](https://bitwarden.com/help/cli)
 - **Languages**
   - Go
-    - [kind](https://github.com/kubernetes-sigs/kind) - Kubernetes in Docker - local clusters for testing Kubernetes.
   - JavaScript
     - [nodejs](https://github.com/nodejs/node) - cross-platform, open-source JavaScript runtime built on Chrome's v8 JavaScript engine.
   - Python
@@ -103,21 +97,33 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [Pygments](https://github.com/pygments/pygments) - generic syntax highlighter.
       - [whisper-live](https://github.com/collabora/WhisperLive) - nearly-live implementation of OpenAI's Whisper.
     - [pipx](https://github.com/pypa/pipx) - install and run applications in isolated environments.
-      - [commitizen](https://github.com/commitizen-tools/commitizen) - create committing rules for projects, auto bump versions, and auto changelog generation. `Python`
       - [poetry](https://github.com/python-poetry/poetry) - packaging and dependency management made easy. `Python`
     - [pyenv](https://github.com/pyenv/pyenv) - simple version management.
     - [uv](https://github.com/astral-sh/uv) - package and project manager. `Rust`
   - Rust
 - **Orchestration**
   - Docker
-    - [skopeo](https://github.com/containers/skopeo) - work with remote images registries - retrieving information, images, signing content. `Go`
+    - Packages
+      - [docker](https://github.com/docker)
+      - [skopeo](https://github.com/containers/skopeo) - work with remote images registries - retrieving information, images, signing content. `Go`
+    - Formulas
+      - [dive](https://github.com/wagoodman/dive) - tool for exploring each layer in a docker image. `Go`
+      - [dockle](https://github.com/goodwithtech/dockle) - container image linter for security. `Go`
+      - [grype](https://github.com/anchore/grype) - vulnerability scanner for container images and filesystems. `Go`
+      - [hadolint](https://github.com/hadolint/hadolint) - Dockerfile linter, validate inline bash. `Haskell`
+      - [lazydocker](https://github.com/jesseduffield/lazydocker) - lazier way to manage everything Docker. `Go`
+      - [trivy](https://github.com/aquasecurity/trivy) - find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more. `Go`
   - Kubernetes
-    - [k9s](https://github.com/derailed/k9s) - CLI to manage your clusters in style. `Go`
-    - [kubecolor](https://github.com/kubecolor/kubecolor) - colorize your kubectl output. `Go`
-    - [kubectl](https://github.com/kubernetes/kubectl) - command-line interface. `Go`
-    - [kubectx](https://github.com/ahmetb/kubectx) - faster way to switch between clusters and namespaces in kubectl. `Go`
-    - [kubetail](https://github.com/johanhaleby/kubetail) - tail logs from multiple pods at the same time. `Shell`
-    - [stern](https://github.com/stern/stern) - multi pod and container log tailing. `Go`
+    - Packages
+      - [kubectl](https://github.com/kubernetes/kubectl) - command-line interface. `Go`
+    - Formulas
+      - [k9s](https://github.com/derailed/k9s) - CLI to manage your clusters in style. `Go`
+      - [kind](https://github.com/kubernetes-sigs/kind) - Kubernetes in Docker - local clusters for testing Kubernetes. `Go`
+      - [kubecolor](https://github.com/kubecolor/kubecolor) - colorize your kubectl output. `Go`
+      - [kubectx](https://github.com/ahmetb/kubectx) - faster way to switch between clusters and namespaces in kubectl. `Go`
+      - [kubetail](https://github.com/johanhaleby/kubetail) - tail logs from multiple pods at the same time. `Shell`
+      - [pinniped](https://github.com/vmware/pinniped) - secure way to log in to your Kubernetes clusters. `Go`
+      - [stern](https://github.com/stern/stern) - multi pod and container log tailing. `Go`
   - Helm
     - [helm](https://github.com/helm/helm) - Kubernetes package manager. `Go`
     - [helmfile](https://github.com/helmfile/helmfile) - declaratively deploy your manifests, Kustomize configs, and Charts as Helm releases. `Go`
@@ -158,10 +164,14 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [golang](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/golang)
     - JavaScript
       - [node](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/node)
+      - [npm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/npm)
     - Python
       - [pip](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pip)
       - [poetry](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/poetry)
+      - [python](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/python)
       - [uv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/uv)
+    - Rust
+      - [rust](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rust)
   - **Package Management**
     - [brew](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/brew)
     - [npm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/npm)
@@ -171,18 +181,25 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [command-not-found](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found)
     - [safe-paste](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/safe-paste)
   - **Orchestration**
-    - [docker](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker)
-    - [docker-compose](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker-compose)
-    - [helm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/helm)
-    - [kubectl](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl)
+    - Docker
+      - [docker](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker)
+      - [docker-compose](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker-compose)
+    - Kubernetes
+      - [argocd](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/argocd)
+      - [helm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/helm)
+      - [k9s](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/k9s)
+      - [kind](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kind)
+      - [kubectl](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl)
   - **Shell**
     - [cp](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cp)
     - [eza](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/eza)
     - [fzf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf)
     - [history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history)
+    - [procs](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/procs)
     - [sudo](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo)
   - **Version Control System (VCS)**
     - [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
+    - [git-commit](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-commit)
     - [git-lfs](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-lfs)
     - [pre-commit](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pre-commit)
 - **zsh-users repository**
@@ -195,7 +212,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Artificial Intelligence**
   - [flux](https://github.com/black-forest-labs/flux) - official inference repo for FLUX.1 models. `Python`
   - [goose](https://github.com/block/goose) - extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM. `Rust` `TypeScript`
-  - [mdream](https://github.com/harlan-zw/mdream) - convert any site to clean markdown & llms.txt. `TypeScript`
+  - [mdream](https://github.com/harlan-zw/mdream) - convert any site to clean markdown & llm.txt. `TypeScript`
   - [recall](https://github.com/joseairosa/recall) - redis-powered persistent memory for LLMs. `TypeScript` `JavaScript`
   - [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) - stable diffusion web UI. `Python` `JavaScript`
 - **CI/CD**

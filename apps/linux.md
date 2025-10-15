@@ -88,7 +88,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Security**
   - [Bitwarden CLI](https://bitwarden.com/help/cli)
 - **Languages**
-  - Go
+  - [Go](https://go.dev)
   - JavaScript
     - [nodejs](https://github.com/nodejs/node) - cross-platform, open-source JavaScript runtime built on Chrome's v8 JavaScript engine.
   - Python
@@ -100,7 +100,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [poetry](https://github.com/python-poetry/poetry) - packaging and dependency management made easy. `Python`
     - [pyenv](https://github.com/pyenv/pyenv) - simple version management.
     - [uv](https://github.com/astral-sh/uv) - package and project manager. `Rust`
-  - Rust
+  - [Rust](https://rust-lang.org)
 - **Orchestration**
   - Docker
     - Packages
@@ -274,9 +274,10 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [eksctl](https://github.com/eksctl-io/eksctl) - official CLI for Amazon EKS. `Go`
     - [infra-flux](https://github.com/n3tuk/infra-flux) - Terraform and Flux-based repository for the deployment and management of core configuration of Kubernetes Clusters and the deployment of third-party utilities (such as external-dns and cert-manager). `HCL`
     - [khi](https://github.com/GoogleCloudPlatform/khi) - transformative log viewer. `Go`
-    - [kubeconform](https://github.com/yannh/kubeconform) - fast Kubernetes manifests validator, with support for custom resources. `Go`
+    - [kubeconform](https://github.com/yannh/kubeconform) - fast manifests validator, with support for custom resources. `Go`
     - [kubectlai](https://github.com/GoogleCloudPlatform/kubectl-ai) - AI powered Kubernetes assistant. `Go`
     - [kubespray](https://github.com/kubernetes-sigs/kubespray) - deploy a production ready cluster. `Go`
+    - [kubetest2](https://github.com/kubernetes-sigs/kubetest2) - framework for launching and running end-to-end tests. `Go`
     - [kubevpn](https://github.com/kubenetworks/kubevpn) - cloud native dev environment that connects to Kubernetes cluster network. `Go`
     - [nova](https://github.com/FairwindsOps/Nova) - find outdated or deprecated Helm charts running in your cluster. `Go`
     - [polaris](https://github.com/FairwindsOps/polaris) - validation of best practices in your clusters. `Go`
@@ -288,6 +289,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Secrets**
   - [envilder](https://github.com/macalbert/envilder) - securely centralizes environment variables from AWS SSM. `TypeScript`
   - [kingfisher](https://github.com/mongodb/kingfisher) - secret detection and live validation across files, git repos, GitHub, GitLab, Azure DevOps, BitBucket, Gitea, AWS S3, Docker images, Jira, Slack, and Confluence. `Rust`
+  - [sops](https://github.com/getsops/sops) - simple and flexible tool for managing secrets. `Go`
   - [teller](https://github.com/tellerops/teller) - cloud native secrets management for developers - never leave your command line for secrets. `Rust`
 - **Security**
   - [caracal](https://github.com/adgaultier/caracal) - make your programs stealthier. `Rust`
@@ -390,18 +392,24 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - Kafka
   - [ktea](https://github.com/jonas-grgt/ktea) - kafka TUI client. `Go`
 - Kubernetes
-  - [argo-cd](https://github.com/argoproj/argo-cd) - declarative continuous deployment for Kubernetes. `Go` `TypeScript`
-  - [calico](https://github.com/projectcalico/calico) - cloud native networking and network security. `Go`
-  - [flannel](https://github.com/flannel-io/flannel) - network fabric for containers. `Go`
-  - [k8s-dqlite](https://github.com/canonical/k8s-dqlite) - dqlite for Kubernetes. `Go`
-  - [kine](https://github.com/k3s-io/kine) - Run Kubernetes on mysql, postgres, sqlite, dqlite, not etcd. `Go`
-  - [meshery](https://github.com/meshery/meshery) - cloud native manager. `JavaScript` `Go`
-  - [octopus](https://github.com/OctopusDeploy)
-  - [zarf](https://github.com/zarf-dev/zarf) - airgap native packager manager for Kubernetes. `Go`
-- Kubernetes GUI
-  - [aptakube](https://github.com/aptakube/aptakube) - modern, lightweight and multi-cluster Kubernetes GUI.
-  - [freelens](https://github.com/freelensapp/freelens) - IDE for Kubernetes. `TypeScript`
-  - [headlamp](https://github.com/kubernetes-sigs/headlamp) - Kubernetes web UI that is fully-featured, user-friendly and extensible. `TypeScript` `Go`
+  - GitOps
+    - [argo-cd](https://github.com/argoproj/argo-cd) - declarative continuous deployment for Kubernetes. `Go` `TypeScript`
+    - [meshery](https://github.com/meshery/meshery) - cloud native manager. `JavaScript` `Go`
+    - [octopus](https://github.com/OctopusDeploy)
+  - GUI
+    - [aptakube](https://github.com/aptakube/aptakube) - modern, lightweight and multi-cluster GUI.
+    - [freelens](https://github.com/freelensapp/freelens) - IDE for Kubernetes. `TypeScript`
+    - [headlamp](https://github.com/kubernetes-sigs/headlamp) - web UI that is fully-featured, user-friendly and extensible. `TypeScript` `Go`
+  - Network
+    - [calico](https://github.com/projectcalico/calico) - cloud native networking and network security. `Go`
+    - [flannel](https://github.com/flannel-io/flannel) - network fabric for containers. `Go`
+    - [weave](https://github.com/weaveworks/weave) -
+  - Secrets
+    - [external-secrets](https://github.com/external-secrets/external-secrets) - read information from a third-party service like AWS Secrets Manager and automatically injects the values as Kubernetes Secrets. `Go`
+  - Other
+    - [k8s-dqlite](https://github.com/canonical/k8s-dqlite) - dqlite for Kubernetes. `Go`
+    - [kine](https://github.com/k3s-io/kine) - Run Kubernetes on mysql, postgres, sqlite, dqlite, not etcd. `Go`
+    - [zarf](https://github.com/zarf-dev/zarf) - airgap native packager manager for Kubernetes. `Go`
 - Monitoring
   - [Elasticsearch](https://github.com/elastic/elasticsearch) - distributed, RESTful search engine. `Java`
 

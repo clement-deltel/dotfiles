@@ -94,7 +94,9 @@ function main() {
   install_bitwarden
   configure_bitwarden
 
-  init
+  if [[ -z ${DISABLE_INIT} ]]; then
+    init
+  fi
 }
 
 main $@

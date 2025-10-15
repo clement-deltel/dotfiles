@@ -9,29 +9,13 @@
   #               ------- Dependencies ------
   # -------------------------------------------------------------------------- #
   - name: Dependencies
-    block:
-
-    - name: List dependencies
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Dependencies: {{ zsh_dependencies }}"
-
-    # sudo apt update -y && sudo apt install -y
-    - name: Install dependencies
-      tags: init
-      ansible.builtin.apt:
-        name: "{{ zsh_dependencies }}"
-        state: present
-        update_cache: true
-
-    # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade dependencies
-      tags: update
-      ansible.builtin.apt:
-        name: "{{ zsh_dependencies }}"
-        state: latest
-        update_cache: true
-
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ zsh_dependencies }}"
+      package_type: "dependencies"
+      
   # -------------------------------------------------------------------------- #
   #               ------- Shell ------
   # -------------------------------------------------------------------------- #

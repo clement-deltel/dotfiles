@@ -9,28 +9,11 @@
   #               ------- Packages ------
   # -------------------------------------------------------------------------- #
   - name: Packages
-    block:
-
-    - name: List packages
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Packages: {{ git_packages }}"
-
-    # sudo apt update -y && sudo apt install -y
-    - name: Install packages
-      tags: init
-      ansible.builtin.apt:
-        name: "{{ git_packages }}"
-        state: present
-        update_cache: true
-
-    # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade packages
-      tags: update
-      ansible.builtin.apt:
-        name: "{{ git_packages }}"
-        state: latest
-        update_cache: true
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ git_packages }}"
 
   # -------------------------------------------------------------------------- #
   #               ------- Repository ------
@@ -61,29 +44,12 @@
   # -------------------------------------------------------------------------- #
   #               ------- Packages - Git LFS ------
   # -------------------------------------------------------------------------- #
-  - name: Packages
-    block:
-
-    - name: List packages
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Packages: {{ git_lfs_packages }}"
-
-    # sudo apt update -y && sudo apt install -y
-    - name: Install packages
-      tags: init
-      ansible.builtin.apt:
-        name: "{{ git_lfs_packages }}"
-        state: present
-        update_cache: true
-
-    # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade packages
-      tags: update
-      ansible.builtin.apt:
-        name: "{{ git_lfs_packages }}"
-        state: latest
-        update_cache: true
+  - name: Git LFS - Packages
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ git_lfs_packages }}"
 
     # ------------------------------------------------------------------------ #
     #               ------- Version ------
@@ -106,26 +72,8 @@
   #               ------- Formulas ------
   # -------------------------------------------------------------------------- #
   - name: Formulas
-    become_user: "{{ ansible_user_id }}"
-    block:
-
-    - name: Homebrew - List formulas
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Formulas: {{ git_formulas }}"
-
-    # brew install
-    - name: Homebrew - Install formulas
-      tags: init
-      community.general.homebrew:
-        name: "{{ git_formulas }}"
-        state: present
-        update_homebrew: true
-
-    # brew upgrade
-    - name: Homebrew - Upgrade formulas
-      tags: update
-      community.general.homebrew:
-        name: "{{ git_formulas }}"
-        state: latest
-        update_homebrew: true
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/formulas.yml
+    vars:
+      formulas: "{{ git_formulas }}"

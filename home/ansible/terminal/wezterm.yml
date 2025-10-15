@@ -44,25 +44,8 @@
   #               ------- Packages ------
   # -------------------------------------------------------------------------- #
   - name: Packages
-    block:
-
-    - name: List packages
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Packages: {{ wezterm_packages }}"
-
-    # sudo apt update -y && sudo apt install -y
-    - name: Install
-      tags: init
-      ansible.builtin.apt:
-        name: "{{ wezterm_packages }}"
-        state: present
-        update_cache: true
-
-    # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade
-      tags: update
-      ansible.builtin.apt:
-        name: "{{ wezterm_packages }}"
-        state: latest
-        update_cache: true
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ wezterm_packages }}"

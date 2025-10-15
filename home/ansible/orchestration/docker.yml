@@ -41,28 +41,12 @@
   #               ------- Dependencies ------
   # -------------------------------------------------------------------------- #
   - name: Dependencies
-    block:
-
-    - name: List dependencies
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Dependencies: {{ docker_dependencies }}"
-
-    # sudo apt update -y && sudo apt install -y
-    - name: Install dependencies
-      tags: init
-      ansible.builtin.apt:
-        name: "{{ docker_dependencies }}"
-        state: present
-        update_cache: true
-
-    # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade dependencies
-      tags: update
-      ansible.builtin.apt:
-        name: "{{ docker_dependencies }}"
-        state: latest
-        update_cache: true
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ docker_dependencies }}"
+      package_type: "dependencies"
 
   # -------------------------------------------------------------------------- #
   #               ------- Repository ------
@@ -104,56 +88,33 @@
   #               ------- Packages ------
   # -------------------------------------------------------------------------- #
   - name: Packages
-    block:
-
-    - name: List packages
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Packages: {{ docker_packages }}"
-
-    # sudo apt update -y && sudo apt install -y
-    - name: Install
-      tags: init
-      ansible.builtin.apt:
-        name: "{{ docker_packages }}"
-        state: present
-        update_cache: true
-
-    # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade
-      tags: update
-      ansible.builtin.apt:
-        name: "{{ docker_packages }}"
-        state: latest
-        update_cache: true
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ docker_packages }}"
 
   # -------------------------------------------------------------------------- #
   #               ------- Formulas ------
   # -------------------------------------------------------------------------- #
   - name: Formulas
-    become_user: "{{ ansible_user_id }}"
-    block:
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/formulas.yml
+    vars:
+      formulas: "{{ docker_formulas }}"
 
-    - name: Homebrew - List formulas
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Formulas: {{ docker_formulas }}"
+  # -------------------------------------------------------------------------- #
+  #               ------- Daemon ------
+  # -------------------------------------------------------------------------- #
+  # - name: Daemon
+  #   block:
 
-    # brew install
-    - name: Homebrew - Install formulas
-      tags: init
-      community.general.homebrew:
-        name: "{{ docker_formulas }}"
-        state: present
-        update_homebrew: true
+  #   - name: Create daemon.json
+  #     ansible.builtin.copy:
+  #       dest:
+  #       content: |
 
-    # brew upgrade
-    - name: Homebrew - Upgrade formulas
-      tags: update
-      community.general.homebrew:
-        name: "{{ docker_formulas }}"
-        state: latest
-        update_homebrew: true
   # -------------------------------------------------------------------------- #
   #               ------- Service ------
   # -------------------------------------------------------------------------- #

@@ -1,0 +1,24 @@
+- name: Formulas
+  become_user: "{{ ansible_user_id }}"
+  block:
+
+  - name: Show formulas
+    tags: [init, update]
+    ansible.builtin.debug:
+      msg: "{{ formulas }}"
+
+  # brew install
+  - name: Install formulas
+    tags: init
+    community.general.homebrew:
+      name: "{{ formulas }}"
+      state: present
+      update_homebrew: true
+
+  # brew upgrade
+  - name: Upgrade formulas
+    tags: update
+    community.general.homebrew:
+      name: "{{ formulas }}"
+      state: latest
+      update_homebrew: true

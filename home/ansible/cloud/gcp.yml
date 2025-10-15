@@ -10,28 +10,12 @@
   #               ------- Dependencies ------
   # -------------------------------------------------------------------------- #
   - name: Dependencies
-    block:
-
-    - name: Show dependencies
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Dependencies: {{ gcp_dependencies }}"
-
-    # sudo apt update -y && sudo apt install -y
-    - name: Install dependencies
-      tags: init
-      ansible.builtin.apt:
-        name: "{{ gcp_dependencies }}"
-        state: present
-        update_cache: true
-
-    # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade dependencies
-      tags: update
-      ansible.builtin.apt:
-        name: "{{ gcp_dependencies }}"
-        state: latest
-        update_cache: true
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ gcp_dependencies }}"
+      package_type: "dependencies"
 
   # -------------------------------------------------------------------------- #
   #               ------- Repository ------
@@ -73,28 +57,11 @@
   #               ------- Packages ------
   # -------------------------------------------------------------------------- #
   - name: Packages
-    block:
-
-    - name: Show packages
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "packages: {{ gcp_packages }}"
-
-    # sudo apt update -y && sudo apt install -y
-    - name: Install packages
-      tags: init
-      ansible.builtin.apt:
-        name: "{{ gcp_packages }}"
-        state: present
-        update_cache: true
-
-    # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade packages
-      tags: update
-      ansible.builtin.apt:
-        name: "{{ gcp_packages }}"
-        state: latest
-        update_cache: true
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ gcp_packages }}"
 
   # -------------------------------------------------------------------------- #
   #               ------- Version ------

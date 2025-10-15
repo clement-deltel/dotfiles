@@ -1,0 +1,20 @@
+- name: "Show {{ package_type | default('packages') }}"
+  tags: [init, update]
+  ansible.builtin.debug:
+    msg: "{{ package_list }}"
+
+# sudo apt update -y && sudo apt install -y
+- name: "Install {{ package_type | default('packages') }}"
+  tags: init
+  ansible.builtin.apt:
+    name: "{{ package_list }}"
+    state: present
+    update_cache: true
+
+# sudo apt update -y && sudo apt upgrade -y
+- name: "Upgrade {{ package_type | default('packages') }}"
+  tags: update
+  ansible.builtin.apt:
+    name: "{{ package_list }}"
+    state: latest
+    update_cache: true

@@ -79,32 +79,11 @@
   #               ------- Packages ------
   # -------------------------------------------------------------------------- #
   - name: Packages
-    block:
-
-    # sudo apt update -y
-    - name: Update cache
-      tags: [init, update]
-      ansible.builtin.apt:
-        update_cache: true
-
-    - name: List packages
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Packages: {{ nvidia_packages }}"
-
-    # sudo apt install -y
-    - name: Install packages
-      tags: init
-      ansible.builtin.apt:
-        name: "{{ nvidia_packages }}"
-        state: present
-
-    # sudo apt upgrade -y
-    - name: Upgrade packages
-      tags: update
-      ansible.builtin.apt:
-        name: "{{ nvidia_packages }}"
-        state: latest
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ nvidia_packages }}"
 
   # -------------------------------------------------------------------------- #
   #               ------- Docker Configuration ------

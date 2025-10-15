@@ -84,26 +84,8 @@
   #               ------- Formulas ------
   # -------------------------------------------------------------------------- #
   - name: Formulas
-    become_user: "{{ ansible_user_id }}"
-    block:
-
-    - name: Homebrew - Show formulas
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Formulas: {{ helm_formulas }}"
-
-    # brew install
-    - name: Homebrew - Install formulas
-      tags: init
-      community.general.homebrew:
-        name: "{{ helm_formulas }}"
-        state: present
-        update_homebrew: true
-
-    # brew upgrade
-    - name: Homebrew - Upgrade formulas
-      tags: update
-      community.general.homebrew:
-        name: "{{ helm_formulas }}"
-        state: latest
-        update_homebrew: true
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/formulas.yml
+    vars:
+      formulas: "{{ helm_formulas }}"

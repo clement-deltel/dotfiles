@@ -10,28 +10,12 @@
   #               ------- Dependencies ------
   # -------------------------------------------------------------------------- #
   - name: Dependencies
-    block:
-
-    - name: Show dependencies
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Dependencies: {{ aws_dependencies }}"
-
-    # sudo apt update -y && sudo apt install -y
-    - name: Install dependencies
-      tags: init
-      ansible.builtin.apt:
-        name: "{{ aws_dependencies }}"
-        state: present
-        update_cache: true
-
-    # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade dependencies
-      tags: update
-      ansible.builtin.apt:
-        name: "{{ aws_dependencies }}"
-        state: latest
-        update_cache: true
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ aws_dependencies }}"
+      package_type: "dependencies"
 
   # -------------------------------------------------------------------------- #
   #               ------- Installation ------

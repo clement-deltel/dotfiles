@@ -9,28 +9,12 @@
   #               ------- Dependencies ------
   # -------------------------------------------------------------------------- #
   - name: Dependencies
-    block:
-
-    - name: Show dependencies
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Dependencies: {{ homebrew_dependencies }}"
-
-    # sudo apt update -y && sudo apt install -y
-    - name: Install dependencies
-      tags: init
-      ansible.builtin.apt:
-        name: "{{ homebrew_dependencies }}"
-        state: present
-        update_cache: true
-
-    # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade dependencies
-      tags: update
-      ansible.builtin.apt:
-        name: "{{ homebrew_dependencies }}"
-        state: latest
-        update_cache: true
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ homebrew_dependencies }}"
+      package_type: "dependencies"
 
   # -------------------------------------------------------------------------- #
   #               ------- Homebrew ------
@@ -63,26 +47,8 @@
   #               ------- Formulas ------
   # -------------------------------------------------------------------------- #
   - name: Formulas
-    become_user: "{{ ansible_user_id }}"
-    block:
-
-    - name: Show formulas
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Formulas: {{ homebrew_formulas }}"
-
-    # brew install
-    - name: Install formulas
-      tags: init
-      community.general.homebrew:
-        name: "{{ homebrew_formulas }}"
-        state: present
-        update_homebrew: true
-
-    # brew upgrade
-    - name: Upgrade formulas
-      tags: update
-      community.general.homebrew:
-        name: "{{ homebrew_formulas }}"
-        state: latest
-        update_homebrew: true
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/formulas.yml
+    vars:
+      formulas: "{{ homebrew_formulas }}"

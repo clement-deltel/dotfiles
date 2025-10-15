@@ -9,55 +9,22 @@
   #               ------- Dependencies ------
   # -------------------------------------------------------------------------- #
   - name: Dependencies
-    block:
-
-    - name: Show dependencies
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Dependencies: {{ python_dependencies }}"
-
-    # sudo apt update -y && sudo apt install -y
-    - name: Install dependencies
-      tags: init
-      ansible.builtin.apt:
-        name: "{{ python_dependencies }}"
-        state: present
-        update_cache: true
-
-    # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade dependencies
-      tags: update
-      ansible.builtin.apt:
-        name: "{{ python_dependencies }}"
-        state: latest
-        update_cache: true
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ python_dependencies }}"
+      package_type: "dependencies"
 
   # -------------------------------------------------------------------------- #
   #               ------- Packages ------
   # -------------------------------------------------------------------------- #
   - name: Packages
-    block:
-
-    - name: Show packages
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Packages: {{ python_packages }}"
-
-    # sudo apt update -y && sudo apt install -y
-    - name: Install packages
-      tags: init
-      ansible.builtin.apt:
-        name: "{{ python_packages }}"
-        state: present
-        update_cache: true
-
-    # sudo apt update -y && sudo apt upgrade -y
-    - name: Upgrade packages
-      tags: update
-      ansible.builtin.apt:
-        name: "{{ python_packages }}"
-        state: latest
-        update_cache: true
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ python_packages }}"
 
   # -------------------------------------------------------------------------- #
   #               ------- PyPI - Packages ------
@@ -95,28 +62,12 @@
   #               ------- Pyenv - Dependencies ------
   # -------------------------------------------------------------------------- #
   - name: Pyenv - Dependencies
-    block:
-
-    - name: pyenv - Show dependencies
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "Dependencies: {{ pyenv_dependencies }}"
-
-    # sudo apt update -y && sudo apt install -y
-    - name: pyenv - Install dependencies
-      tags: init
-      ansible.builtin.apt:
-        name: "{{ pyenv_dependencies }}"
-        state: present
-        update_cache: true
-
-    # sudo apt update -y && sudo apt upgrade -y
-    - name: pyenv - Upgrade dependencies
-      tags: update
-      ansible.builtin.apt:
-        name: "{{ pyenv_dependencies }}"
-        state: latest
-        update_cache: true
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ pyenv_dependencies }}"
+      package_type: "dependencies"
 
   # -------------------------------------------------------------------------- #
   #               ------- Pyenv - Install ------

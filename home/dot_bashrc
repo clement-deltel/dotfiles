@@ -170,7 +170,7 @@ export PATH=~/.pulumi/bin:${PATH}
 # ---------------------------------------------------------------------------- #
 source_if_exists() { if test -r "$1"; then source "$1"; fi; }
 
-source_if_exists ~/.config/sh/aliases.sh
 source_if_exists ~/.config/sh/completions.sh
 source_if_exists ~/.config/sh/functions.sh
+source_if_exists ~/.config/sh/aliases.sh
 source_if_exists ~/.kube/aliases.sh

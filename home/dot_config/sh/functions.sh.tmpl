@@ -200,7 +200,7 @@ function git-update-name { git-filter-repo --name-callback "return name.replace(
 # ---------------------------------------------------------------------------- #
 
 # When using aliases, print kubectl command and then execute it
-function kctl { echo "+ kubectl $@" && command kubectl "$@"; }
+function kctl { echo "+ kubectl $@" && command kubecolor "$@"; }
 
 function kctl-decode-secret-fn {
   kctl get secret "$1" -o jsonpath='{.data}' | base64 --decode

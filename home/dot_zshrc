@@ -64,8 +64,8 @@ antidote load ${HOME}/.config/zsh/plugins.txt
 # ---------------------------------------------------------------------------- #
 function source-if-exists() { if test -r "$1"; then source "$1"; fi; }
 
-source-if-exists ~/.config/sh/aliases.sh
 source-if-exists ~/.config/sh/functions.sh
+source-if-exists ~/.config/sh/aliases.sh
 source-if-exists ~/.kube/aliases.sh
 
 function load-aliases-and-functions() {

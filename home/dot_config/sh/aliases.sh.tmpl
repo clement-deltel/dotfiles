@@ -200,6 +200,8 @@ alias gcplog='gcloud auth login'
 alias kubectl=kubecolor
 
 alias kctx=kubectx
+alias kns=kubens
+
 alias kdd=kctl-describe-deployment-fn
 alias kdecs=kctl-decode-secret-fn
 alias kdp=kctl-describe-pod-fn
@@ -209,7 +211,7 @@ alias kgc='kctl config get-contexts'
 alias kgd='kctl get deployment'
 alias kgh='kctl get hpa'
 alias kgi='kctl get ingress'
-alias kgnr='kubectl get nodes --no-headers | awk "{print \$1}" | xargs -I {} sh -c "echo {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo "'
+alias kgnr='kctl get nodes --no-headers | awk "{print \$1}" | xargs -I {} sh -c "echo {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo "'
 alias kgp='kctl get pods'
 alias kgpv='kctl get persistentvolume'
 alias kgpvc='kctl get persistentvolumeclaim'
@@ -220,7 +222,6 @@ alias kgss='kctl get statefulset'
 alias kgt='kctl --namespace kube-system describe secret eks-admin'
 alias kl=kctl-logs-fn
 alias kn='kctl config set-context --current --namespace'
-alias kns=kubens
 alias kp='kctl proxy'
 alias kpf=kctl-port-forward-fn
 alias krmfailed='kctl delete pods --field-selector=status.phase=Failed'

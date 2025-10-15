@@ -86,6 +86,33 @@ Temporary Items
 *.icloud
 
 # ---------------------------------------------------------------------------- #
+#               ------- Visual Studio Code ------
+# ---------------------------------------------------------------------------- #
+# https://www.gitignore.io/?templates=visualstudiocode
+
+# General
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# Visual Studio Code externally downloaded files
+*Zone.Identifier
+
+# ---------------------------------------------------------------------------- #
 #               ------- Terraform ------
 # ---------------------------------------------------------------------------- #
 # https://www.toptal.com/developers/gitignore/?templates=terraform
@@ -132,28 +159,5 @@ terraform.rc
 #               ------- Repository ------
 # ---------------------------------------------------------------------------- #
 
-# Common
-**/.*
-**/*.pdf
-
-# Docker
-# compose.yaml
-.docker*
-docker/
-# Dockerfile
-
 # Git
 .git*
-.pre-commit*
-
-# Markdown
-**/*.md
-# CHANGELOG.md
-# LICENSE.md
-# README.md
-
-# Tests
-test*
-
-# Visual Studio Code
-.vscode*

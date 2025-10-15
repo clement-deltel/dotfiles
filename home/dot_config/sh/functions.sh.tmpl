@@ -71,8 +71,8 @@ function cheatsheet { curl cheat.sh/"$1"; }
 #               ------- Ansible ------
 # ---------------------------------------------------------------------------- #
 function ansible-update {
-  ansible-playbook --become --connection local --inventory "localhost," --tags update ~/ansible/ubuntu.yml
-  ansible-playbook --become --connection local --inventory "localhost," --tags clean ~/ansible/ubuntu.yml
+  ansible-playbook --become --connection local --inventory "localhost," --tags update ~/ansible/linux.yml
+  ansible-playbook --become --connection local --inventory "localhost," --tags clean ~/ansible/linux.yml
 }
 
 # ---------------------------------------------------------------------------- #

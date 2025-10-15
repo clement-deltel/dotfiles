@@ -106,7 +106,7 @@
   #               ------- Formulas ------
   # -------------------------------------------------------------------------- #
   - name: Formulas
-    become_user: ubuntu
+    become_user: "{{ ansible_user_id }}"
     block:
 
     - name: Homebrew - List formulas

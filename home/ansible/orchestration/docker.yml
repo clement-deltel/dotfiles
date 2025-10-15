@@ -30,10 +30,10 @@
         comment: Docker
         state: present
 
-    # sudo usermod -a -G docker ubuntu
-    - name: Add ubuntu user to group
+    # sudo usermod -a -G docker ${USER}
+    - name: Add user to group
       ansible.builtin.user:
-        name: ubuntu
+        name: "{{ ansible_user_id }}"
         groups: docker
         append: true
 
@@ -131,7 +131,7 @@
   #               ------- Formulas ------
   # -------------------------------------------------------------------------- #
   - name: Formulas
-    become_user: ubuntu
+    become_user: "{{ ansible_user_id }}"
     block:
 
     - name: Homebrew - List formulas

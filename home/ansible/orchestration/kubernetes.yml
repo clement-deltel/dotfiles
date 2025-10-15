@@ -15,25 +15,25 @@
 
     - name: Create .kube directory
       ansible.builtin.file:
-        path: "/home/ubuntu/.kube"
+        path: "/home/{{ ansible_user_id }}/.kube"
         state: directory
         mode: 0700
-        owner: ubuntu
-        group: ubuntu
+        owner: "{{ ansible_user_id }}"
+        group: "{{ ansible_user_id }}"
 
     - name: Download aliases
       ansible.builtin.uri:
         method: GET
         url: https://raw.githubusercontent.com/ahmetb/kubectl-aliases/master/.kubectl_aliases
-        dest: /home/ubuntu/.kube/aliases.sh
-        owner: ubuntu
-        group: ubuntu
+        dest: "/home/{{ ansible_user_id }}/.kube/aliases.sh"
+        owner: "{{ ansible_user_id }}"
+        group: "{{ ansible_user_id }}"
         follow_redirects: safe
         mode: 0700
 
     - name : Update aliases
       ansible.builtin.replace:
-        path: /home/ubuntu/.kube/aliases.sh
+        path: "/home/{{ ansible_user_id }}/.kube/aliases.sh"
         regexp: kubectl
         replace: kctl
 
@@ -117,7 +117,7 @@
   #               ------- Formulas ------
   # -------------------------------------------------------------------------- #
   - name: Formulas
-    become_user: ubuntu
+    become_user: "{{ ansible_user_id }}"
     block:
 
     - name: Homebrew - Show formulas

@@ -1,6 +1,6 @@
 - name: Zsh
   hosts: all
-  gather_facts: false
+  gather_facts: true
   vars_files:
     - ../vars/main.yml
 
@@ -38,7 +38,7 @@
   - name: Set zsh as default shell
     tags: init
     ansible.builtin.user:
-      name: ubuntu
+      name: "{{ ansible_user_id }}"
       shell: /bin/zsh
 
   # -------------------------------------------------------------------------- #
@@ -46,12 +46,12 @@
   # -------------------------------------------------------------------------- #
   # git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/antidote
   - name: Antidote
-    become_user: ubuntu
+    become_user: "{{ ansible_user_id }}"
     block:
 
     - name: Antidote - Install
       tags: [init, update]
       ansible.builtin.git:
         repo: https://github.com/mattmc3/antidote.git
-        dest: /home/ubuntu/.local/antidote
+        dest: "/home/{{ ansible_user_id }}/.local/antidote"
         depth: 1

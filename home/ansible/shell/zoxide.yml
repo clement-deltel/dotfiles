@@ -1,6 +1,6 @@
 - name: Zoxide
   hosts: all
-  gather_facts: false
+  gather_facts: true
   vars_files:
     - ../vars/main.yml
 
@@ -9,7 +9,7 @@
   #               ------- Installation ------
   # -------------------------------------------------------------------------- #
   - name: Zoxide
-    become_user: ubuntu
+    become_user: "{{ ansible_user_id }}"
     tags: [init, update]
     block:
 

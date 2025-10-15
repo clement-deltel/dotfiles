@@ -1,6 +1,6 @@
 - name: Homebrew
   hosts: all
-  gather_facts: false
+  gather_facts: true
   vars_files:
     - ../vars/main.yml
 
@@ -37,7 +37,7 @@
   # -------------------------------------------------------------------------- #
   - name: Homebrew
     tags: [init, update]
-    become_user: ubuntu
+    become_user: "{{ ansible_user_id }}"
     block:
 
     - name: Download install script
@@ -63,7 +63,7 @@
   #               ------- Formulas ------
   # -------------------------------------------------------------------------- #
   - name: Formulas
-    become_user: ubuntu
+    become_user: "{{ ansible_user_id }}"
     block:
 
     - name: Show formulas

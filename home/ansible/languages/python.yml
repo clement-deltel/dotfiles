@@ -1,6 +1,6 @@
 - name: Python
   hosts: all
-  gather_facts: false
+  gather_facts: true
   vars_files:
     - ../vars/main.yml
 
@@ -122,7 +122,7 @@
   #               ------- Pyenv - Install ------
   # -------------------------------------------------------------------------- #
   - name: pyenv - Install
-    become_user: ubuntu
+    become_user: "{{ ansible_user_id }}"
     tags: init
     block:
 
@@ -151,7 +151,7 @@
   #               ------- Pyenv - Upgrade ------
   # -------------------------------------------------------------------------- #
   - name: pyenv - Upgrade
-    become_user: ubuntu
+    become_user: "{{ ansible_user_id }}"
     tags: update
     ansible.builtin.command:
       cmd: pyenv update
@@ -162,7 +162,7 @@
   #               ------- Pyenv - Install Python ------
   # -------------------------------------------------------------------------- #
   - name: Pyenv - Install Python
-    become_user: ubuntu
+    become_user: "{{ ansible_user_id }}"
     tags: init
     ansible.builtin.shell:
       cmd: pyenv install {{ pyenv_python_version }}
@@ -209,7 +209,7 @@
   #               ------- Poetry ------
   # -------------------------------------------------------------------------- #
   - name: Poetry
-    become_user: ubuntu
+    become_user: "{{ ansible_user_id }}"
     block:
 
     # pipx install poetry

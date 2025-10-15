@@ -66,7 +66,7 @@
   #               ------- Configuration ------
   # -------------------------------------------------------------------------- #
   - name: Configuration
-    become_user: ubuntu
+    become_user: "{{ ansible_user_id }}"
     tags: init
     ansible.builtin.shell:
       cmd: aws configure set {{ item.key }} {{ item.value }} --profile {{ aws_profile }}

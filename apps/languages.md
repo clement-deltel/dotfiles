@@ -29,6 +29,7 @@ Here is a list of libraries and frameworks for different programming languages t
 
 - [maturin](https://github.com/PyO3/maturin) - build and publish crates with pyo3, cffi and uniffi bindings as well as rust binaries as python packages. `Rust`
 - [ratatui](https://github.com/ratatui/ratatui) -  crate for cooking up terminal user interfaces. `Rust`
+- [rust-clippy](https://github.com/rust-lang/rust-clippy) - bunch of lints to catch common mistakes and improve your Rust code. `Rust`
 
 ## TypeScript
 

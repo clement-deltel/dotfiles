@@ -56,6 +56,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [procs](https://github.com/dalance/procs) - [ps](https://linux.die.net/man/1/ps), with better sorting, tree support, and more. `Rust`
     - **Monitoring**
       - [btop](https://github.com/aristocratos/btop) - monitor of resources. `C/C++`
+      - [fastfetch](https://github.com/fastfetch-cli/fastfetch) - feature-rich and performance oriented, neofetch like system information tool. `C`
       - [gping](https://github.com/orf/gping) - TUI for ping. `Rust`
     - **Search**
       - [fzf](https://github.com/junegunn/fzf) - CLI fuzzy finder. `Go`
@@ -324,7 +325,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [run](https://github.com/Esubaalew/run) - universal multi-language runner and smart REPL. `Rust`
   - [unleash](https://github.com/Unleash/unleash) - feature management platform. `TypeScript`
 - **System Info**
-  - [fastfetch](https://github.com/fastfetch-cli/fastfetch) - feature-rich and performance oriented, neofetch like system information tool. `C`
   - [glances](https://github.com/nicolargo/glances) - glances an eye on your system. `Python`
   - [nerdfetch](https://github.com/ThatOneCalculator/NerdFetch) - POSIX *nix fetch script using Nerd Fonts. `Shell`
   - [macchina](https://github.com/Macchina-CLI/macchina) - system information frontend with an emphasis on performance. `Rust`

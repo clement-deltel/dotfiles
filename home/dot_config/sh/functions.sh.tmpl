@@ -47,6 +47,8 @@ function my-ip {
 
 # Full summary
 function ii {
+  RED='\e[31m'
+  NC='\e[39m'
   echo -e "\nYou are logged on ${RED}$(hostname)"
   echo -e "\nAdditional information:$NC"
   uname -a
@@ -61,6 +63,8 @@ function ii {
   my-ip 2>&-
   echo -e "\n${RED}Local IP Address:$NC"
   echo "${MY_IP:-"Not connected"}"
+  echo -e "\n${RED}Public IP Address:$NC"
+  echo "$(curl -s ifconfig.me)"
   echo
 }
 

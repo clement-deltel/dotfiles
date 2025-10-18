@@ -273,7 +273,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - Kubernetes
     - [eksctl](https://github.com/eksctl-io/eksctl) - official CLI for Amazon EKS. `Go`
     - [infra-flux](https://github.com/n3tuk/infra-flux) - Terraform and Flux-based repository for the deployment and management of core configuration of Kubernetes Clusters and the deployment of third-party utilities (such as external-dns and cert-manager). `HCL`
+    - [kftray](https://github.com/hcavarsan/kftray) - port-forward manager with TLS port forwards, traffic inspection, udp support, proxy connections through k8s clusters and state via local files or git repos. `Rust`
     - [khi](https://github.com/GoogleCloudPlatform/khi) - transformative log viewer. `Go`
+    - [kubechecks](https://github.com/zapier/kubechecks) - check your changes before they hit the cluster. `Go`
     - [kubeconform](https://github.com/yannh/kubeconform) - fast manifests validator, with support for custom resources. `Go`
     - [kubectlai](https://github.com/GoogleCloudPlatform/kubectl-ai) - AI powered Kubernetes assistant. `Go`
     - [kubespray](https://github.com/kubernetes-sigs/kubespray) - deploy a production ready cluster. `Go`
@@ -283,7 +285,10 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [polaris](https://github.com/FairwindsOps/polaris) - validation of best practices in your clusters. `Go`
     - [skaffold](https://github.com/GoogleContainerTools/skaffold) - easy and repeatable Kubernetes development. `Go`
     - [stash](https://github.com/stashed/stash) - backup your Kubernetes stateful applications. `Go`
+    - [tilt](https://github.com/tilt-dev/tilt) - define your dev environment as code. For microservice apps on Kubernetes. `Go` `TypeScript`
     - [velero](https://github.com/vmware-tanzu/velero) - backup and migrate applications and their persistent volumes. `Go`
+  - Helm
+    - [helmwave](https://github.com/helmwave/helmwave) - new wave for helm. `Go`
 - **Search**
   - [ag](https://github.com/ggreer/the_silver_searcher) - code-searching tool similar to ack, but faster. `C/C++`
 - **Secrets**
@@ -295,6 +300,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [caracal](https://github.com/adgaultier/caracal) - make your programs stealthier. `Rust`
   - [codeql](https://github.com/github/codeql) - libraries and queries that power security researchers around the world. `CodeQL` `Kotlin`
   - [google osv](https://github.com/google/osv.dev) - Open source vulnerability DB and triage service.
+  - [hashcat](https://github.com/hashcat/hashcat) - world's fastest and most advanced password recovery utility. `C`
   - [lynis](https://github.com/CISOfy/lynis) - cross-platform security auditing tool, assists with compliance testing (HIPAA/ISO27001/PCI DSS) and system hardening. `Shell`
   - [radare2](https://github.com/radareorg/radare2) - UNIX-like reverse engineering framework and command-line toolset. `C`
   - [sharpeye](https://github.com/sgInnora/sharpeye) - advanced Linux intrusion detection and threat hunting system. `Python`
@@ -397,19 +403,23 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [argo-cd](https://github.com/argoproj/argo-cd) - declarative continuous deployment for Kubernetes. `Go` `TypeScript`
     - [meshery](https://github.com/meshery/meshery) - cloud native manager. `JavaScript` `Go`
     - [octopus](https://github.com/OctopusDeploy)
+    - [werf](https://github.com/werf/werf) - solution for implementing efficient and consistent software delivery to Kubernetes facilitating best practices. `Go`
   - GUI
     - [aptakube](https://github.com/aptakube/aptakube) - modern, lightweight and multi-cluster GUI.
     - [freelens](https://github.com/freelensapp/freelens) - IDE for Kubernetes. `TypeScript`
     - [headlamp](https://github.com/kubernetes-sigs/headlamp) - web UI that is fully-featured, user-friendly and extensible. `TypeScript` `Go`
+    - [kubewall](https://github.com/kubewall/kubewall) - dashboard with multi-cluster management & AI integration. `TypeScript` `Go`
   - Network
     - [calico](https://github.com/projectcalico/calico) - cloud native networking and network security. `Go`
     - [flannel](https://github.com/flannel-io/flannel) - network fabric for containers. `Go`
-    - [weave](https://github.com/weaveworks/weave) -
+    - [submariner](https://github.com/submariner-io/submariner) - networking component for interconnecting Pods and Services across clusters. `Go`
+    - [weave](https://github.com/weaveworks/weave) - simple, resilient multi-host containers networking and more. `Go`
   - Secrets
     - [external-secrets](https://github.com/external-secrets/external-secrets) - read information from a third-party service like AWS Secrets Manager and automatically injects the values as Kubernetes Secrets. `Go`
   - Other
     - [k8s-dqlite](https://github.com/canonical/k8s-dqlite) - dqlite for Kubernetes. `Go`
     - [kine](https://github.com/k3s-io/kine) - Run Kubernetes on mysql, postgres, sqlite, dqlite, not etcd. `Go`
+    - [kubevirt](https://github.com/kubevirt/kubevirt) - Kubernetes virtualization API and runtime in order to define and manage virtual machines. `Go`
     - [zarf](https://github.com/zarf-dev/zarf) - airgap native packager manager for Kubernetes. `Go`
 - Monitoring
   - [Elasticsearch](https://github.com/elastic/elasticsearch) - distributed, RESTful search engine. `Java`

@@ -1,6 +1,6 @@
 # Software Development <!-- omit in toc -->
 
-Here is a list of fully developed products that could be interesting to build an application.
+Here is a list of products that could be interesting to use to build an application.
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -14,7 +14,7 @@ Here is a list of fully developed products that could be interesting to build an
 
 ## Notifications
 
-- [novu](https://github.com/novuhq/novu) - notification Inbox infrastructure. `TypeScript`
+- [novu](https://github.com/novuhq/novu) - notification inbox infrastructure. E-mail, SMS, push and Slack integrations. `TypeScript`
 
 ## Payment
 

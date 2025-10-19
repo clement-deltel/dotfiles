@@ -126,10 +126,10 @@ config.keys = {
   { key = "j",          mods = "CTRL",         action = act.AdjustPaneSize({ "Down", 5 }) },
   { key = "k",          mods = "CTRL",         action = act.AdjustPaneSize({ "Up", 5 }) },
   { key = "l",          mods = "CTRL",         action = act.AdjustPaneSize({ "Right", 5 }) },
-  { key = "h",          mods = "ALT",        action = act.AdjustPaneSize({ "Left", 10 }) },
-  { key = "j",          mods = "ALT",        action = act.AdjustPaneSize({ "Down", 10 }) },
-  { key = "k",          mods = "ALT",        action = act.AdjustPaneSize({ "Up", 10 }) },
-  { key = "l",          mods = "ALT",        action = act.AdjustPaneSize({ "Right", 10 }) },
+  { key = "h",          mods = "ALT",          action = act.AdjustPaneSize({ "Left", 10 }) },
+  { key = "j",          mods = "ALT",          action = act.AdjustPaneSize({ "Down", 10 }) },
+  { key = "k",          mods = "ALT",          action = act.AdjustPaneSize({ "Up", 10 }) },
+  { key = "l",          mods = "ALT",          action = act.AdjustPaneSize({ "Right", 10 }) },
   { key = "m",          mods = "LEADER",       action = act.TogglePaneZoomState },
   { key = "z",          mods = "CTRL",         action = act.TogglePaneZoomState },
   -- Font - size
@@ -297,7 +297,7 @@ local domain_keys = {
     key = "u",
     mods = "ALT",
     action = wezterm.action_callback(function(win, pane)
-      local tab = win:mux_window():spawn_tab({ domain = { DomainName = "WSL:Ubuntu" } })
+      local tab = win:mux_window():spawn_tab({ cwd = "/home/ubuntu", domain = { DomainName = "WSL:Ubuntu" } })
       tab:set_title("Ubuntu")
     end)
   }
@@ -479,10 +479,40 @@ wezterm.on("gui-startup", function()
   window:gui_window():maximize()
   tab1:set_title("PowerShell")
 
-  -- Second tab: WSL Ubuntu in /home/ubuntu directory
-  local tab2, _, _ = window:spawn_tab { domain = { DomainName = "WSL:Ubuntu" } }
-  tab2:set_title("Ubuntu")
-  tab2:activate()
+  -- Second tab: WSL Ubuntu with dashboard
+  local tab2, pane21, _ = window:spawn_tab {
+    args = { "zsh", "-c", "fastfetch; exec zsh" },
+    cwd = "/home/ubuntu",
+    domain = { DomainName = "WSL:Ubuntu" },
+  }
+  local pane22 = pane21:split {
+    args = { "zsh", "-c", "lazydocker; exec zsh" },
+    cwd = "/home/ubuntu",
+    domain = { DomainName = "WSL:Ubuntu" },
+    direction = "Bottom",
+    size = 0.5
+  }
+  local _ = pane21:split {
+    args = { "zsh", "-c", "btop" },
+    cwd = "/home/ubuntu",
+    domain = { DomainName = "WSL:Ubuntu" },
+    direction = "Right",
+    size = 0.75
+  }
+  local pane23 = pane22:split {
+    args = { "zsh", "-c", "tokei /home/ubuntu/code -t Dockerfile,HCL,Python,Shell,SQL,TOML,YAML,Markdown; exec zsh" },
+    cwd = "/home/ubuntu",
+    domain = { DomainName = "WSL:Ubuntu" },
+    direction = "Right",
+    size = 0.25
+  }
+  tab2:set_title("Dashboard")
+
+  -- Third tab: WSL Ubuntu in /home/ubuntu directory
+  local tab3, _, _ = window:spawn_tab { cwd = "/home/ubuntu", domain = { DomainName = "WSL:Ubuntu" } }
+  tab3:set_title("Ubuntu")
+
+  pane23:activate()
 
   mux.set_active_workspace "work"
 end)

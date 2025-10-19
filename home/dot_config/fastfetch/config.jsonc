@@ -180,6 +180,10 @@
       "keyIcon": ""
     },
     {
+      "type": "editor",
+      "keyIcon": ""
+    },
+    {
       "type": "de",
       "keyIcon": "",
       "slowVersionDetection": false
@@ -214,6 +218,10 @@
       "keyIcon": "",
       "temp": false,
       "showPeCoreCount": false
+    },
+    {
+      "type": "cpuusage",
+      "keyIcon": ""
     },
     {
       "type": "gpu",
@@ -267,8 +275,27 @@
       }
     },
     {
+      "type": "localip",
+      "keyIcon": "󰩟",
+      "showIpv4": true,
+      "showIpv6": false,
+      "showMac": false,
+      "showLoop": false,
+      "showPrefixLen": true,
+      "showMtu": false,
+      "showSpeed": false,
+      "showFlags": false,
+      "compact": false,
+      "defaultRouteOnly": true,
+      "showAllIps": false,
+      "namePrefix": ""
+    },
+    {
       "type": "poweradapter",
       "keyIcon": "󰚥"
+    },
+    {
+      "type": "weather"
     },
     "break",
     {

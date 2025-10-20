@@ -11,9 +11,9 @@ eval "$(pulumi gen-completion bash)"
 eval "$(terraform -install-autocomplete)"
 
 # Language - Python
-eval "$(poetry completions bash)"
 eval "$(register-python-argcomplete cz)"
 eval "$(register-python-argcomplete pipx)"
+eval "$(poetry completions bash)"
 eval "$(uv generate-shell-completion bash)"
 eval "$(uvx --generate-shell-completion bash)"
 source ${HOME}/.pyenv/completions/pyenv.bash
@@ -35,5 +35,7 @@ eval "$(procs --gen-completion-out bash)"
 eval "$(yq shell-completion bash)"
 
 # Version Control System (VCS)
-source /usr/share/bash-completion/completions/git
 eval "$(gitleaks completion bash)"
+eval "$(_GITLINT_COMPLETE=bash_source gitlint)"
+eval "$(COMPLETE=bash prek)"
+source /usr/share/bash-completion/completions/git

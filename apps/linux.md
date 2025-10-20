@@ -85,7 +85,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - Formulas
       - [commitizen](https://github.com/commitizen-tools/commitizen) - create committing rules for projects, auto bump versions, and auto changelog generation. `Python`
       - [gitleaks](https://github.com/gitleaks/gitleaks) - tool for detecting secrets like passwords, API keys, and tokens in git repos. `Go`
+      - [gitlint](https://github.com/jorisroovers/gitlint) - linting for your git commit messages. `Python`
       - [lazygit](https://github.com/jesseduffield/lazygit) - simple TUI for git commands. `Go`
+      - [prek](https://github.com/j178/prek) - pre-commit re-engineered. `Rust`
 - **Security**
   - [Bitwarden CLI](https://bitwarden.com/help/cli)
 - **Languages**

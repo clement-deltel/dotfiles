@@ -138,22 +138,6 @@ eza_packages:
 - eza # modern alternative to ls
 
 # ---------------------------------------------------------------------------- #
-#               ------- Git ------
-# ---------------------------------------------------------------------------- #
-git_packages:
-- git # gold standard version control system
-- git-filter-repo
-
-git_lfs_install_url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
-git_lfs_packages:
-- git-lfs # git extension for versioning large files
-
-git_formulas:
-- commitizen
-- gitleaks
-- lazygit
-
-# ---------------------------------------------------------------------------- #
 #               ------- Go ------
 # ---------------------------------------------------------------------------- #
 go_version: 1.25.1
@@ -324,6 +308,24 @@ rust_install_url: https://sh.rustup.rs
 terraform_dependencies:
 - gnupg                      #
 - software-properties-common #
+
+# ---------------------------------------------------------------------------- #
+#               ------- Version Control System (VCS) ------
+# ---------------------------------------------------------------------------- #
+git_packages:
+- git # gold standard version control system
+- git-filter-repo
+
+git_lfs_install_url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
+git_lfs_packages:
+- git-lfs # git extension for versioning large files
+
+git_formulas:
+- commitizen
+- gitleaks
+- gitlint
+- lazygit
+- prek
 
 # ---------------------------------------------------------------------------- #
 #               ------- WezTerm ------

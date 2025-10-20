@@ -87,6 +87,7 @@ eval "$(pulumi gen-completion zsh)"
 # Language - Python
 eval "$(register-python-argcomplete cz)"
 eval "$(register-python-argcomplete pipx)"
+eval "$(COMPLETE=zsh prek)"
 source ${HOME}/.pyenv/completions/pyenv.zsh
 
 # Orchestration
@@ -96,6 +97,7 @@ eval "$(trivy completion zsh)"
 
 # Version Control System (VCS)
 eval "$(gitleaks completion zsh)"
+eval "$(_GITLINT_COMPLETE=zsh_source gitlint)"
 
 # Tools
 eval "$(gonzo completion zsh)"

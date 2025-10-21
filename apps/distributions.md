@@ -26,6 +26,7 @@ Here is a list of Linux distributions that I tested, and new ones that could be 
 - [Fedora](https://fedoraproject.org)
 - [NixOS](https://nixos.org) - Source code available [here](https://github.com/NixOS/nixpkgs) `Nix`
 - [Omarchy](https://omarchy.org) - opinionated arch/hyprland setup. Source code available [here](https://github.com/basecamp/omarchy). `Shell`
+- [ZorinOS](https://zorin.com)
 
 ## Resources
 

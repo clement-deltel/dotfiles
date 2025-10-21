@@ -341,6 +341,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [Warp](https://github.com/warpdotdev/Warp) - modern terminal with AI built in so you and your team can build great software, faster. `Rust`
   - [WindTerm](https://github.com/kingToolbox/WindTerm) - professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal. `C`
 - **Text Editor**
+  - [helix](https://github.com/helix-editor/helix) - post-modern modal text editor. `Rust`
   - [lazy nvim](https://github.com/folke/lazy.nvim) - modern plugin manager for Neovim. `Lua`
   - [lazy vim](https://github.com/LazyVim/LazyVim) - neovim config for the lazy. `Lua`
   - [qsv](https://github.com/dathere/qsv) - blazing-fast data-wrangling toolkit. `Rust`
@@ -362,7 +363,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Version Control System (VCS)**
   - [better commits](https://github.com/Everduin94/better-commits) - CLI for creating better commits following the conventional commits specification. `JavaScript`
   - [cocommit](https://github.com/andrewromanenco/cocommit) - CLI that works with your HEAD commit and leverages an LLM of your choice to enhance commit quality. `Python`
-  - [commitlint](https://github.com/conventional-changelog/commitlint) - lint commit messages. `TypeScript`
+  - [conform](https://github.com/siderolabs/conform) - policy enforcement for your pipelines. `Go`
   - [delta](https://github.com/dandavison/delta) - syntax-highlighting pager for git, diff, grep, and blame output. `Rust`
   - [difftastic](https://difftastic.wilfred.me.uk)
   - [gh-dash](https://github.com/dlvhdr/gh-dash) - beautiful CLI dashboard for GitHub. `Go`
@@ -377,6 +378,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [gitflow](https://github.com/nvie/gitflow) - git extensions to provide high-level repository operations for Vincent Driessen's branching model. `Shell`
   - [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) - gitmoji interactive CLI tool for using emojis on commits. `JavaScript`
   - [husky](https://github.com/typicode/husky) - git hooks made easy. `JavaScript`
+  - [jujutsu](https://github.com/jj-vcs/jj) - git-compatible VCS that is both simple and powerful. `Rust`
   - [mergiraf](https://mergiraf.org)
   - [multi-gitter](https://github.com/lindell/multi-gitter) - update multiple repositories in with one command. `Go`
   - [opencommit](https://github.com/di-sukharev/opencommit) - generate commit messages by an LLM in 1 sec. `JavaScript`
@@ -413,6 +415,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [kubewall](https://github.com/kubewall/kubewall) - dashboard with multi-cluster management & AI integration. `TypeScript` `Go`
   - Network
     - [calico](https://github.com/projectcalico/calico) - cloud native networking and network security. `Go`
+    - [cilium](https://github.com/cilium/cilium) - eBPF-based networking, security, and observability. `Go` `C`
     - [flannel](https://github.com/flannel-io/flannel) - network fabric for containers. `Go`
     - [submariner](https://github.com/submariner-io/submariner) - networking component for interconnecting Pods and Services across clusters. `Go`
     - [weave](https://github.com/weaveworks/weave) - simple, resilient multi-host containers networking and more. `Go`

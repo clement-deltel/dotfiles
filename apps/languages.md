@@ -30,9 +30,11 @@ Here is a list of libraries and frameworks for different programming languages t
 - [maturin](https://github.com/PyO3/maturin) - build and publish crates with pyo3, cffi and uniffi bindings as well as rust binaries as python packages. `Rust`
 - [ratatui](https://github.com/ratatui/ratatui) -  crate for cooking up terminal user interfaces. `Rust`
 - [rust-clippy](https://github.com/rust-lang/rust-clippy) - bunch of lints to catch common mistakes and improve your Rust code. `Rust`
+- [tokio](https://github.com/tokio-rs/tokio) - runtime for writing reliable asynchronous applications. `Rust`
 
 ## TypeScript
 
+- [bun](https://github.com/oven-sh/bun) - JavaScript runtime, bundler, test runner, and package manager – all in one. `Zig` `C++`
 - [kibo](https://github.com/haydenbleasel/kibo) - custom registry of composable, accessible and extensible components designed for use with shadcn/ui. `TypeScript`
 - [opentui](https://github.com/sst/opentui) - library for building terminal user interfaces. `TypeScript` `Zig`
 - [turborepo](https://github.com/vercel/turborepo) - build system optimized for JavaScript and TypeScript. `Rust` `TypeScript`

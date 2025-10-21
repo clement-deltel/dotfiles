@@ -16,6 +16,7 @@
             // Git
             "donjayamanne.git-extension-pack",
             "elagil.pre-commit-helper",
+            "vivaxy.vscode-conventional-commits",
             // Go
             "golang.Go",
             "jinliming2.vscode-go-template",
@@ -147,6 +148,9 @@
             "wslconfig",
             "yubico"
         ],
+        // Extension - Conventional Commits
+        "conventionalCommits.gitmoji": true,
+        "conventionalCommits.showNewVersionNotes": false,
         // Extension - Git
         "git.allowForcePush": true,
         "git.autofetch": true,

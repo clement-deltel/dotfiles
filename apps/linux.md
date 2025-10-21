@@ -68,6 +68,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [tldr](https://github.com/tldr-pages/tlrc) - tldr client. `Rust`
       - [yq](https://github.com/mikefarah/yq) - command-line YAML, JSON, XML, CSV, TOML and properties processor. `Go`
   - [npm](https://github.com/npm/cli) - node package manager. `JavaScript`
+    - [commitlint](https://github.com/conventional-changelog/commitlint) - lint commit messages. `TypeScript`
     - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm) - auto generate READMEs for Helm Charts. `JavaScript`
 - **Shell**
   - [antidote](https://github.com/mattmc3/antidote) - the cure to slow zsh plugin management.
@@ -86,6 +87,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [commitizen](https://github.com/commitizen-tools/commitizen) - create committing rules for projects, auto bump versions, and auto changelog generation. `Python`
       - [gitleaks](https://github.com/gitleaks/gitleaks) - tool for detecting secrets like passwords, API keys, and tokens in git repos. `Go`
       - [gitlint](https://github.com/jorisroovers/gitlint) - linting for your git commit messages. `Python`
+      - [git-cliff](https://github.com/orhun/git-cliff) - highly customizable changelog generator that follows Conventional Commit specifications. `Rust`
       - [lazygit](https://github.com/jesseduffield/lazygit) - simple TUI for git commands. `Go`
       - [prek](https://github.com/j178/prek) - pre-commit re-engineered. `Rust`
 - **Security**

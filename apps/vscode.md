@@ -19,6 +19,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Colorize](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize) - help visualize css colors in files.
 - [Commit Message Editor](https://marketplace.visualstudio.com/items?itemName=adam-bender.commit-message-editor) - edit commit messages in a convenient way.
 - [Containers Tools](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-containers) - makes it easy to create, manage, and debug containerized applications.
+- [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) - conventional commits integration.
 - [Copy on Select](https://marketplace.visualstudio.com/items?itemName=dinhani.copy-on-select) - copy the selected text without having to hit Ctrl+C.
 - [Data Wrangler](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler) - data viewing, cleaning and preparation for tabular datasets.
 - [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) - open any folder or repository inside a Docker container.

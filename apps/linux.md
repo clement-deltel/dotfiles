@@ -276,22 +276,29 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [subtrace](https://github.com/subtrace/subtrace) - wireshark for Docker containers. `Go`
     - new Docker commands (require an account and/or subscription) - init, debug, compose watch, build cloud, scout.
   - Kubernetes
-    - [eksctl](https://github.com/eksctl-io/eksctl) - official CLI for Amazon EKS. `Go`
-    - [infra-flux](https://github.com/n3tuk/infra-flux) - Terraform and Flux-based repository for the deployment and management of core configuration of Kubernetes Clusters and the deployment of third-party utilities (such as external-dns and cert-manager). `HCL`
-    - [kftray](https://github.com/hcavarsan/kftray) - port-forward manager with TLS port forwards, traffic inspection, udp support, proxy connections through k8s clusters and state via local files or git repos. `Rust`
-    - [khi](https://github.com/GoogleCloudPlatform/khi) - transformative log viewer. `Go`
-    - [kubechecks](https://github.com/zapier/kubechecks) - check your changes before they hit the cluster. `Go`
-    - [kubeconform](https://github.com/yannh/kubeconform) - fast manifests validator, with support for custom resources. `Go`
-    - [kubectlai](https://github.com/GoogleCloudPlatform/kubectl-ai) - AI powered Kubernetes assistant. `Go`
-    - [kubespray](https://github.com/kubernetes-sigs/kubespray) - deploy a production ready cluster. `Go`
-    - [kubetest2](https://github.com/kubernetes-sigs/kubetest2) - framework for launching and running end-to-end tests. `Go`
-    - [kubevpn](https://github.com/kubenetworks/kubevpn) - cloud native dev environment that connects to Kubernetes cluster network. `Go`
-    - [nova](https://github.com/FairwindsOps/Nova) - find outdated or deprecated Helm charts running in your cluster. `Go`
-    - [polaris](https://github.com/FairwindsOps/polaris) - validation of best practices in your clusters. `Go`
-    - [skaffold](https://github.com/GoogleContainerTools/skaffold) - easy and repeatable Kubernetes development. `Go`
-    - [stash](https://github.com/stashed/stash) - backup your Kubernetes stateful applications. `Go`
-    - [tilt](https://github.com/tilt-dev/tilt) - define your dev environment as code. For microservice apps on Kubernetes. `Go` `TypeScript`
-    - [velero](https://github.com/vmware-tanzu/velero) - backup and migrate applications and their persistent volumes. `Go`
+    - Backup
+      - [stash](https://github.com/stashed/stash) - backup your Kubernetes stateful applications. `Go`
+      - [velero](https://github.com/vmware-tanzu/velero) - backup and migrate applications and their persistent volumes. `Go`
+    - Deployment
+      - [infra-flux](https://github.com/n3tuk/infra-flux) - Terraform and Flux-based repository for the deployment and management of core configuration of Kubernetes Clusters and the deployment of third-party utilities (such as external-dns and cert-manager). `HCL`
+      - [kops](https://github.com/kubernetes/kops) - Kubernetes operations (kOps) - production grade k8s installation, upgrades and management. `Go` `HCL`
+      - [kubespray](https://github.com/kubernetes-sigs/kubespray) - deploy a production ready cluster. `Jinja` `HCL`
+    - Development
+      - [skaffold](https://github.com/GoogleContainerTools/skaffold) - easy and repeatable Kubernetes development. `Go`
+      - [tilt](https://github.com/tilt-dev/tilt) - define your dev environment as code. For microservice apps on Kubernetes. `Go` `TypeScript`
+    - Remote Access
+      - [kftray](https://github.com/hcavarsan/kftray) - port-forward manager with TLS port forwards, traffic inspection, udp support, proxy connections through k8s clusters and state via local files or git repos. `Rust`
+      - [kubevpn](https://github.com/kubenetworks/kubevpn) - cloud native dev environment that connects to Kubernetes cluster network. `Go`
+    - Validation
+      - [kubeconform](https://github.com/yannh/kubeconform) - fast manifests validator, with support for custom resources. `Go`
+      - [polaris](https://github.com/FairwindsOps/polaris) - validation of best practices in your clusters. `Go`
+    - Other
+      - [eksctl](https://github.com/eksctl-io/eksctl) - official CLI for Amazon EKS. `Go`
+      - [khi](https://github.com/GoogleCloudPlatform/khi) - transformative log viewer. `Go`
+      - [kubechecks](https://github.com/zapier/kubechecks) - check your changes before they hit the cluster. `Go`
+      - [kubectlai](https://github.com/GoogleCloudPlatform/kubectl-ai) - AI powered Kubernetes assistant. `Go`
+      - [kubetest2](https://github.com/kubernetes-sigs/kubetest2) - framework for launching and running end-to-end tests. `Go`
+      - [nova](https://github.com/FairwindsOps/Nova) - find outdated or deprecated Helm charts running in your cluster. `Go`
   - Helm
     - [helmwave](https://github.com/helmwave/helmwave) - new wave for helm. `Go`
 - **Search**

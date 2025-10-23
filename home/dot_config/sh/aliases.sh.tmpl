@@ -57,6 +57,11 @@ alias bat='batcat'
 alias cat='batcat --paging=never'
 
 # ---------------------------------------------------------------------------- #
+#               ------- dua --------
+# ---------------------------------------------------------------------------- #
+alias dua='dua interactive'
+
+# ---------------------------------------------------------------------------- #
 #               ------- ls --------
 # ---------------------------------------------------------------------------- #
 
@@ -273,6 +278,8 @@ alias voff='pyenv deactivate'
 alias vrm=venv-delete-fn
 
 # uv
+alias uvcc='uv cache clean'
+alias uvcp='uv cache prune'
 alias uv-lspr='uv-list-package-registries.sh'
 
 {{- if eq .shell "bash" }}

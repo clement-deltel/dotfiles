@@ -53,6 +53,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [gonzo](https://github.com/control-theory/gonzo) - TUI log analysis tool. `Go`
       - [lnav](https://github.com/tstack/lnav) - log file navigator. `C/C++`
     - **Modern Replacements**
+      - [dua](https://github.com/Byron/dua-cli) - du, view disk space usage and delete unwanted data. `Rust`
       - [procs](https://github.com/dalance/procs) - [ps](https://linux.die.net/man/1/ps), with better sorting, tree support, and more. `Rust`
     - **Monitoring**
       - [btop](https://github.com/aristocratos/btop) - monitor of resources. `C/C++`
@@ -256,7 +257,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [zed](https://github.com/zed-industries/zed) - high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
 - **Modern Replacements**
   - [atuin](https://github.com/atuinsh/atuin) - history, magical shell history. `Rust`
-  - [dua](https://github.com/Byron/dua-cli) - du, view disk space usage and delete unwanted data. `Rust`
   - [dust](https://github.com/bootandy/dust) - du, a more intuitive version. `Rust`
   - [hwatch](https://github.com/blacknon/hwatch) - watch, records the differences in execution results and can check this differences at after. `Rust`
   - [somo](https://github.com/theopfr/somo) - netstat, human-friendly alternative for socket and port monitoring. `Rust`

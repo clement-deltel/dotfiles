@@ -1,0 +1,22 @@
+- name: Cron
+  hosts: all
+  gather_facts: false
+
+  tasks:
+  # sudo crontab -l
+  - name: Crontab configuration
+    tags: init
+    block:
+
+    - name: Daily cleanup job
+      ansible.builtin.cron:
+        name: "Clean caches (every day at 12PM): prek, pre-commit, uv, vscode"
+        minute: 0
+        hour: 12
+        job: "{{ item }}"
+        state: present
+      loop:
+        - prek cache gc
+        - pre-commit gc
+        - uv cache prune
+        - ~/scripts/clean_vscode-server.sh

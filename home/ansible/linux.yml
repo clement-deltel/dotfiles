@@ -65,3 +65,7 @@
 # System
 - name: NVIDIA
   import_playbook: system/nvidia.yml
+
+# Tools
+- name: Cron
+  import_playbook: tools/cron.yml

@@ -100,6 +100,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - Python
     - pip
       - [markitdown](https://github.com/microsoft/markitdown) - tool for converting files and office documents to Markdown.
+      - [pre-commit](https://github.com/pre-commit/pre-commit) - framework for managing and maintaining multi-language pre-commit hooks. `Python`
       - [Pygments](https://github.com/pygments/pygments) - generic syntax highlighter.
       - [whisper-live](https://github.com/collabora/WhisperLive) - nearly-live implementation of OpenAI's Whisper.
     - [pipx](https://github.com/pypa/pipx) - install and run applications in isolated environments.

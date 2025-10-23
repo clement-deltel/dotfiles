@@ -37,6 +37,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [ranger](https://github.com/ranger/ranger) - vim-inspired file manager for the console. `Python`
     - **Security**
       - [age](https://github.com/FiloSottile/age) - encryption tool with small explicit keys, no config options, and UNIX-style composability. `Go`
+    - **System**
+      - [nvtop](https://github.com/Syllo/nvtop) - GPU & Accelerator process monitoring. `C`
     - **Other**
       - [FIGlet](https://linux.die.net/man/6/figlet) - display large characters made up of ordinary screen characters.
       - [fmt](https://github.com/fmtlib/fmt) - modern formatting library. `C++`
@@ -49,6 +51,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [homebrew](https://github.com/Homebrew/brew) - the missing package manager for Linux. `Ruby`
     - **CI/CD**
       - [act](https://github.com/nektos/act) - run your GitHub Actions locally. `Go`
+    - **Directories & Files**
+      - [croc](https://github.com/schollz/croc) - easily and securely send things from one computer to another. `Go`
     - **Log Analysis**
       - [gonzo](https://github.com/control-theory/gonzo) - TUI log analysis tool. `Go`
       - [lnav](https://github.com/tstack/lnav) - log file navigator. `C/C++`
@@ -61,6 +65,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [gping](https://github.com/orf/gping) - TUI for ping. `Rust`
     - **Search**
       - [fzf](https://github.com/junegunn/fzf) - CLI fuzzy finder. `Go`
+      - [grex](https://github.com/pemistahl/grex) - command-line tool and library with Python bindings for generating regular expressions from user-provided test cases. `Rust`
     - **Software Development**
       - [ls-lint](https://github.com/loeffel-io/ls-lint) - directory and filename linter, bring some structure to the project filesystem. `Go`
       - [tokei](https://github.com/XAMPPRocky/tokei) - count your code, quickly. `Rust`
@@ -99,6 +104,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [nodejs](https://github.com/nodejs/node) - cross-platform, open-source JavaScript runtime built on Chrome's v8 JavaScript engine.
   - Python
     - pip
+      - [faker](https://github.com/joke2k/faker) -  generate fake data for you. `Python`
       - [markitdown](https://github.com/microsoft/markitdown) - tool for converting files and office documents to Markdown.
       - [pre-commit](https://github.com/pre-commit/pre-commit) - framework for managing and maintaining multi-language pre-commit hooks. `Python`
       - [Pygments](https://github.com/pygments/pygments) - generic syntax highlighter.
@@ -260,6 +266,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [atuin](https://github.com/atuinsh/atuin) - history, magical shell history. `Rust`
   - [dust](https://github.com/bootandy/dust) - du, a more intuitive version. `Rust`
   - [hwatch](https://github.com/blacknon/hwatch) - watch, records the differences in execution results and can check this differences at after. `Rust`
+  - [lolcat](https://github.com/busyloop/lolcat) - cat, rainbows and unicorns. `Ruby`
   - [somo](https://github.com/theopfr/somo) - netstat, human-friendly alternative for socket and port monitoring. `Rust`
 - **Monitoring**
   - [powertop](https://github.com/fenrus75/powertop) - diagnose issues with power consumption and power management. `C/C++`
@@ -359,15 +366,17 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Tools**
   - [asciinema](https://github.com/asciinema/asciinema) - terminal session recorder, streamer and player. `Rust`
   - [Clipboard](https://github.com/Slackadays/Clipboard) - smart clipboard manager.
-  - [cmatrix](https://github.com/abishekvashok/cmatrix) - terminal based "The Matrix" like implementation. `C`
   - [espanso](https://github.com/espanso/espanso) - cross-platform text expander. `Rust`
   - [exosphere](https://github.com/mrdaemon/exosphere) - CLI and TUI driven application that offers patch reporting for remote unix systems. `Python`
   - [glow](https://github.com/charmbracelet/glow) - render markdown on the terminal. `Go`
+  - [jrnl](https://github.com/jrnl-org/jrnl) - Collect your thoughts and notes without leaving the command line. `Python` `Gherkin`
   - [midnight commander](https://github.com/MidnightCommander/mc)
   - [mosh](https://github.com/mobile-shell/mosh) - mobile shell. `C++`
+  - [newsboat](https://github.com/newsboat/newsboat) - RSS/Atom feed reader for text terminals. `C++` `Rust`
   - [pmd](https://github.com/pmd/pmd) - extensible multi-language static code analyzer. `Java`
   - [simdjson](https://github.com/simdjson/simdjson) - parsing gigabytes of JSON per second. `C++`
   - [thefuck](https://github.com/nvbn/thefuck) - magnificent app which corrects your previous console command. `Python`
+  - [ttyd](https://github.com/tsl0922/ttyd) - share your terminal over the web. `C` `TypeScript`
   - [typst](https://github.com/typst/typst) - markup-based typesetting system that is powerful and easy to learn. `Rust`
   - [ut](https://github.com/ksdme/ut) - utility toolbox for developers. `Rust`
 - **Version Control System (VCS)**
@@ -393,6 +402,11 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [multi-gitter](https://github.com/lindell/multi-gitter) - update multiple repositories in with one command. `Go`
   - [opencommit](https://github.com/di-sukharev/opencommit) - generate commit messages by an LLM in 1 sec. `JavaScript`
   - [zizmor](https://github.com/zizmorcore/zizmor) - static analysis for GitHub Actions. `Rust`
+- **Visualization**
+  - [asciiquarium](https://github.com/cmatsuoka/asciiquarium) - enjoy the mysteries of the sea from the safety of your own terminal. `Perl`
+  - [cbonsai](https://github.com/mhzawadi/homebrew-cbonsai) - bonsai tree generator, written using ncurses. `C`
+  - [cmatrix](https://github.com/abishekvashok/cmatrix) - terminal based "The Matrix" like implementation. `C`
+  - [pipes](https://github.com/pipeseroni/pipes.sh) - animated pipes terminal screensaver. `Shell`
 - **Web**
   - [hey](https://github.com/rakyll/hey) - HTTP load generator, apachebench (ab) replacement. `Go`
   - [monolith](https://github.com/Y2Z/monolith) - CLI tool and library for saving complete web pages as a single HTML file. `Rust`

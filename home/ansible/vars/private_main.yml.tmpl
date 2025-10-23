@@ -40,6 +40,8 @@ apt_packages:
 - libfmt-dev
 - libpq-dev       # library to develop with PostgreSQL
 - portaudio19-dev # library required for PyAudio
+# System
+- nvtop
 # Other
 - figlet
 - magic-wormhole
@@ -185,6 +187,8 @@ homebrew_install_url: https://raw.githubusercontent.com/Homebrew/install/HEAD/in
 homebrew_formulas:
 # CI/CD
 - act
+# Directories & Files
+- croc
 # Log Analysis
 - gonzo
 - lnav
@@ -197,6 +201,7 @@ homebrew_formulas:
 - gping
 # Search
 - fzf
+- grex
 # Software Development
 - ls-lint
 - tokei
@@ -278,6 +283,7 @@ python_packages:
 pip_packages:
 - aiohttp  #
 - asyncer  #
+- faker
 - filetype #
 - gradio   #
 - markitdown

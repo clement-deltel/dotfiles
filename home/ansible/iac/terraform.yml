@@ -12,7 +12,7 @@
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ terraform_dependencies }}"
-      package_type: "dependencies"
+      package_type: dependencies
 
   # Repository
   - name: Repository
@@ -22,7 +22,7 @@
     vars:
       key_url: https://apt.releases.hashicorp.com/gpg
       key_output: /etc/apt/keyrings/hashicorp-archive-keyring.gpg
-      repository: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main
+      repository: "deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main"
 
   # Packages
   - name: Packages

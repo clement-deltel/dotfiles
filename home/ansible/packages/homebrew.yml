@@ -1,54 +1,34 @@
 - name: Homebrew
   hosts: all
-  gather_facts: true
+  gather_facts: false
   vars_files:
     - ../vars/main.yml
 
   tasks:
-  # -------------------------------------------------------------------------- #
-  #               ------- Dependencies ------
-  # -------------------------------------------------------------------------- #
-  - name: Dependencies
-    tags: [init, update]
-    ansible.builtin.include_tasks:
-      file: ../tasks/packages.yml
-    vars:
-      package_list: "{{ homebrew_dependencies }}"
-      package_type: "dependencies"
-
-  # -------------------------------------------------------------------------- #
-  #               ------- Homebrew ------
-  # -------------------------------------------------------------------------- #
   - name: Homebrew
     tags: [init, update]
-    become_user: "{{ ansible_user_id }}"
     block:
 
-    - name: Download install script
-      ansible.builtin.uri:
-        method: GET
+    # Dependencies
+    - name: Dependencies
+      ansible.builtin.include_tasks:
+        file: ../tasks/packages.yml
+      vars:
+        package_list: "{{ homebrew_dependencies }}"
+        package_type: dependencies
+
+    # Installation
+    # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    - name: Installation
+      ansible.builtin.include_tasks:
+        file: ../tasks/script.yml
+      vars:
         url: "{{ homebrew_install_url }}"
-        dest: "/tmp/homebrew_install.sh"
-        follow_redirects: safe
-        mode: 0700
+        cmd: /bin/bash -c /tmp/install.sh
 
-    - name: Run install script
-      ansible.builtin.command:
-        cmd: /bin/bash -c /tmp/homebrew_install.sh
-      register: install_result
-      changed_when: install_result.rc == 0
-
-    - name: Remove install script
-      ansible.builtin.file:
-        path: "/tmp/homebrew_install.sh"
-        state: absent
-
-  # -------------------------------------------------------------------------- #
-  #               ------- Formulas ------
-  # -------------------------------------------------------------------------- #
-  - name: Formulas
-    tags: [init, update]
-    ansible.builtin.include_tasks:
-      file: ../tasks/formulas.yml
-    vars:
-      formulas: "{{ homebrew_formulas }}"
+    # Formulas
+    - name: Formulas
+      ansible.builtin.include_tasks:
+        file: ../tasks/formulas.yml
+      vars:
+        formulas: "{{ homebrew_formulas }}"

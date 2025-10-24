@@ -13,7 +13,7 @@
     tags: [init, update]
     ansible.builtin.unarchive:
       src: "https://go.dev/dl/go{{ go_version }}.linux-amd64.tar.gz"
-      dest: "/usr/local"
+      dest: /usr/local
       remote_src: true
       mode: 0755
 

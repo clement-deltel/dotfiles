@@ -5,47 +5,20 @@
     - ../vars/main.yml
 
   tasks:
-  # -------------------------------------------------------------------------- #
-  #               ------- Installation ------
-  # -------------------------------------------------------------------------- #
-  - name: Pulumi
-    become_user: "{{ ansible_user_id }}"
+  # Installation
+  # curl -fsSL https://get.pulumi.com | sh
+  - name: Installation
     tags: [init, update]
-    block:
+    ansible.builtin.include_tasks:
+      file: ../tasks/script.yml
+    vars:
+      url: "{{ pulumi_install_url }}"
+      cmd: /bin/sh -c /tmp/install.sh
 
-    # curl -fsSL https://get.pulumi.com | sh
-    - name: Download install script
-      ansible.builtin.uri:
-        method: GET
-        url: "{{ pulumi_install_url }}"
-        dest: "/tmp/get.pulumi.com"
-        follow_redirects: safe
-        mode: 0700
-
-    - name: Install
-      ansible.builtin.command:
-        cmd: /bin/sh -c /tmp/get.pulumi.com
-      register: install_result
-      changed_when: install_result.rc == 0
-
-    - name: Remove install script
-      ansible.builtin.file:
-        path: "/tmp/get.pulumi.com"
-        state: absent
-
-    # ------------------------------------------------------------------------ #
-    #               ------- Version ------
-    # ------------------------------------------------------------------------ #
-    always:
-    - name: Confirm version
-      tags: [init, update]
-      ansible.builtin.command:
-        cmd: ~/.pulumi/bin/pulumi version
-      register: version
-      changed_when: false
-
-    - name: Show version
-      tags: [init, update]
-      when: version is defined
-      ansible.builtin.debug:
-        msg: "Installed version: {{ version.stdout }}"
+  # Version
+  - name: Version
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: ~/.pulumi/bin/pulumi version

@@ -1,0 +1,15 @@
+- name: Version
+  tags: [init, update]
+  block:
+
+  - name: Confirm version
+    ansible.builtin.command:
+      cmd: "{{ cmd }}"
+    register: version
+    changed_when: false
+
+  - name: Show version
+    when: version is defined
+    ansible.builtin.debug:
+      msg: "Installed version: {{ version.stdout }}"
+ 

@@ -1,0 +1,33 @@
+- name: Repository
+  become: true
+  tags: init
+  block:
+
+  - name: Create /etc/apt/keyrings directory
+    ansible.builtin.file:
+      path: /etc/apt/keyrings
+      state: directory
+      mode: 0755
+
+  # curl -fsSL {{ key_url }} | sudo gpg --dearmor --output {{ key_output }}
+  - name: Download GPG apt key
+    ansible.builtin.uri:
+      method: GET
+      url: "{{ key_url }}"
+      dest: /tmp/key.gpg
+      follow_redirects: safe
+      mode: 0644
+
+  - name: Import GPG key
+    ansible.builtin.command:
+      cmd: gpg --dearmor --output {{ key_output }} --yes /tmp/key.gpg
+
+  # echo "{{ repository }}" | sudo tee /etc/apt/sources.list.d/{{ repository_name }}.list > /dev/null
+  - name: Add apt repository
+    ansible.builtin.apt_repository:
+      repo: "{{ repository }}"
+
+  - name: Remove temporary GPG key
+    ansible.builtin.file:
+      path: /tmp/key.gpg
+      state: absent

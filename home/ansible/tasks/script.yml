@@ -1,0 +1,22 @@
+- name: Script
+  tags: [init, update]
+  block:
+
+  - name: Download script
+    ansible.builtin.uri:
+      method: GET
+      url: "{{ url }}"
+      dest: /tmp/install.sh
+      follow_redirects: safe
+      mode: 0700
+
+  - name: Run script
+    ansible.builtin.command:
+      cmd: "{{ cmd }}"
+    register: install_result
+    changed_when: install_result.rc == 0
+
+  - name: Remove script
+    ansible.builtin.file:
+      path: /tmp/install.sh
+      state: absent

@@ -1,13 +1,11 @@
 - name: NodeJS
   hosts: all
-  gather_facts: false
+  gather_facts: true
   vars_files:
     - ../vars/main.yml
 
   tasks:
-  # -------------------------------------------------------------------------- #
-  #               ------- Dependencies ------
-  # -------------------------------------------------------------------------- #
+  # Dependencies
   - name: Dependencies
     tags: [init, update]
     ansible.builtin.include_tasks:
@@ -16,45 +14,17 @@
       package_list: "{{ node_dependencies }}"
       package_type: "dependencies"
 
-  # -------------------------------------------------------------------------- #
-  #               ------- Repository ------
-  # -------------------------------------------------------------------------- #
+  # Repository
   - name: Repository
     tags: init
-    block:
+    ansible.builtin.include_tasks:
+      file: ../tasks/repository.yml
+    vars:
+      key_url: https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key
+      key_output: /etc/apt/keyrings/nodesource.gpg
+      repository: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_{{ node_major }}.x nodistro main
 
-    - name: Create /etc/apt/keyrings directory
-      ansible.builtin.file:
-        path: /etc/apt/keyrings
-        state: directory
-        mode: 0755
-
-    # curl https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor --output /etc/apt/keyrings/nodesource.gpg
-    - name: Download GPG apt key
-      ansible.builtin.uri:
-        method: GET
-        url: https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key
-        dest: /tmp/nodejs.gpg
-        follow_redirects: safe
-        mode: 0644
-
-    - name: Import GPG key
-      ansible.builtin.command:
-        cmd: gpg --dearmor --output /etc/apt/keyrings/nodesource.gpg --yes /tmp/nodejs.gpg
-
-    # echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_{{ node_major }}.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list > /dev/null
-    - name: Add apt repository
-      ansible.builtin.apt_repository:
-        repo: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_{{ node_major }}.x nodistro main
-
-    - name: Remove temporary GPG key
-      ansible.builtin.file:
-        path: /tmp/nodejs.gpg
-        state: absent
-
-  # -------------------------------------------------------------------------- #
-  #               ------- Packages ------
-  # -------------------------------------------------------------------------- #
+  # Packages
   - name: Packages
     tags: [init, update]
     ansible.builtin.include_tasks:
@@ -62,27 +32,15 @@
     vars:
       package_list: "{{ node_packages }}"
 
-  # -------------------------------------------------------------------------- #
-  #               ------- Version ------
-  # -------------------------------------------------------------------------- #
+  # Version
   - name: Version
     tags: [init, update]
-    block:
+    ansible.builtin.include_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: node --version
 
-    - name: Confirm version
-      ansible.builtin.command:
-        cmd: node --version
-      register: version
-      changed_when: false
-
-    - name: Show version
-      when: version is defined
-      ansible.builtin.debug:
-        msg: "Installed version: {{ version.stdout }}"
-
-  # -------------------------------------------------------------------------- #
-  #               ------- NPM Packages ------
-  # -------------------------------------------------------------------------- #
+  # NPM Packages
   - name: NPM Packages
     block:
 
@@ -93,16 +51,20 @@
 
     # sudo npm install
     - name: NPM - Install packages
+      become: true
       tags: init
       community.general.npm:
-        name: "{{ npm_packages | join(' ') }}"
+        name: "{{ item }}"
         global: true
         state: present
+      loop: "{{ npm_packages }}"
 
     # sudo npm update
     - name: NPM - Upgrade packages
+      become: true
       tags: update
       community.general.npm:
-        name: "{{ npm_packages | join(' ') }}"
+        name: "{{ item }}"
         global: true
         state: latest
+      loop: "{{ npm_packages }}"

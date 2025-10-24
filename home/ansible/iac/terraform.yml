@@ -5,9 +5,7 @@
     - ../vars/main.yml
 
   tasks:
-  # -------------------------------------------------------------------------- #
-  #               ------- Dependencies ------
-  # -------------------------------------------------------------------------- #
+  # Dependencies
   - name: Dependencies
     tags: [init, update]
     ansible.builtin.include_tasks:
@@ -16,66 +14,28 @@
       package_list: "{{ terraform_dependencies }}"
       package_type: "dependencies"
 
-  # -------------------------------------------------------------------------- #
-  #               ------- Repository ------
-  # -------------------------------------------------------------------------- #
+  # Repository
   - name: Repository
     tags: init
-    block:
+    ansible.builtin.include_tasks:
+      file: ../tasks/repository.yml
+    vars:
+      key_url: https://apt.releases.hashicorp.com/gpg
+      key_output: /etc/apt/keyrings/hashicorp-archive-keyring.gpg
+      repository: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main
 
-    - name: Create /etc/apt/keyrings directory
-      ansible.builtin.file:
-        path: /etc/apt/keyrings
-        state: directory
-        mode: 0755
-
-    # wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
-    - name: Download GPG apt key
-      ansible.builtin.uri:
-        method: GET
-        url: https://apt.releases.hashicorp.com/gpg
-        dest: /tmp/terraform.gpg
-        follow_redirects: safe
-        mode: 0644
-
-    - name: Import GPG key
-      ansible.builtin.command:
-        cmd: gpg --dearmor --output /etc/apt/keyrings/hashicorp-archive-keyring.gpg --yes /tmp/terraform.gpg
-
-    # echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list > /dev/null
-    - name: Add apt repository
-      ansible.builtin.apt_repository:
-        repo: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main
-
-    - name: Remove temporary GPG key
-      ansible.builtin.file:
-        path: /tmp/terraform.gpg
-        state: absent
-
-  # -------------------------------------------------------------------------- #
-  #               ------- Packages ------
-  # -------------------------------------------------------------------------- #
+  # Packages
   - name: Packages
     tags: [init, update]
     ansible.builtin.include_tasks:
       file: ../tasks/packages.yml
     vars:
-      package_list: "terraform"
+      package_list: terraform
 
-  # -------------------------------------------------------------------------- #
-  #               ------- Version ------
-  # -------------------------------------------------------------------------- #
+  # Version
   - name: Version
     tags: [init, update]
-    block:
-
-    - name: Confirm version
-      ansible.builtin.command:
-        cmd: terraform --version
-      register: version
-      changed_when: false
-
-    - name: Show version
-      when: version is defined
-      ansible.builtin.debug:
-        msg: "Installed version: {{ version.stdout }}"
+    ansible.builtin.include_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: terraform version

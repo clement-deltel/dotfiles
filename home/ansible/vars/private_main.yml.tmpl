@@ -23,30 +23,30 @@ apt_packages:
 - fping
 - ipcalc
 - mtr
-- net-tools #
+- net-tools                  # networking toolkit
 - termshark
 - trippy
-- tshark           #
-- wireshark-common # network protocol analyzer libraries
+- tshark                     # network traffic analyzer
+- wireshark-common           # network protocol analyzer libraries
 # Search
 - jq
 - ranger
 # Security
 - age
 # Software Development
-- build-essential #
-- cmake           #
-- git             # gold standard version control system
-- libfmt-dev
-- libpq-dev       # library to develop with PostgreSQL
-- portaudio19-dev # library required for PyAudio
+- build-essential            # informational list of build-essential packages
+- cmake                      # cross-platform, open-source make system
+- git
+- libfmt-dev                 # fast type-safe C++ formatting library
+- libpq-dev                  # library to develop with PostgreSQL
+- portaudio19-dev            # library required for PyAudio
 # System
 - nvtop
 # Other
 - figlet
 - magic-wormhole
-- moreutils # collection of the Unix tools that nobody thought to write long ago
-- patchelf  # utility to modify the dynamic linker and RPATH of ELF executables
+- moreutils                  # collection of the Unix tools that nobody thought to write long ago
+- patchelf                   # utility to modify the dynamic linker and RPATH of ELF executables
 - pdftk
 - pwgen
 - unp
@@ -54,16 +54,16 @@ apt_packages:
 - xclip
 # Dependencies
 - apache2-utils              # htpasswd utility
-- bash-completion            #
-- curl                       #
+- bash-completion            # programmable completion for the bash shell
+- curl                       # command line tool for transferring data with URL syntax
 - man-db                     # man pages
-- nfs-common                 #
-- ninja-build                #
-- software-properties-common #
-- ssh                        #
+- nfs-common                 # NFS support files common to client and server
+- ninja-build                # small build system closest in spirit to Make
+- software-properties-common # manage the repositories that you install software from
+- ssh                        # secure shell client and server
 - tzdata                     # timezone
-- unzip                      #
-- zip                        #
+- unzip                      # de-archiver for .zip files
+- zip                        # archiver for .zip files
 
 apt_repositories:
 - ppa:deadsnakes/ppa
@@ -73,9 +73,9 @@ apt_repositories:
 #               ------- AWS ------
 # ---------------------------------------------------------------------------- #
 aws_dependencies:
-- firefox   #
+- firefox   # web browser
 - xdg-utils # enable starting a browser to run aws sso login
-- zip       #
+- zip       # archiver for .zip files
 
 aws_profile: default
 aws_region: us-east-2
@@ -91,9 +91,9 @@ aws_sso_start_url: '{{ .aws_sso_start_url }}'
 #               ------- Bitwarden ------
 # ---------------------------------------------------------------------------- #
 bitwarden_dependencies:
-- curl #
+- curl          # command line tool for transferring data with URL syntax
 - jq
-- libsecret-1-0 #
+- libsecret-1-0 # secret store
 
 # ---------------------------------------------------------------------------- #
 #               ------- Docker ------
@@ -102,9 +102,9 @@ docker_gid: 1001
 docker_uid: 1001
 
 docker_dependencies:
-- ca-certificates #
-- curl            #
-- gnupg           #
+- ca-certificates # common CA certificates
+- curl            # command line tool for transferring data with URL syntax
+- gnupg           # GNU privacy guard
 docker_packages:
 - docker-ce
 - docker-ce-cli
@@ -137,9 +137,9 @@ docker_images:
 #               ------- Eza ------
 # ---------------------------------------------------------------------------- #
 eza_dependencies:
-- gpg #
+- gpg # GNU privacy guard
 eza_packages:
-- eza # modern alternative to ls
+- eza
 
 # ---------------------------------------------------------------------------- #
 #               ------- Go ------
@@ -150,11 +150,11 @@ go_version: 1.25.1
 #               ------- Google Cloud Platform ------
 # ---------------------------------------------------------------------------- #
 gcp_dependencies:
-- apt-transport-https #
-- ca-certificates     #
-- curl                #
-- firefox             #
-- gnupg               #
+- apt-transport-https # https support
+- ca-certificates     # common CA certificates
+- curl                # command line tool for transferring data with URL syntax
+- firefox             # web browser
+- gnupg               # GNU privacy guard
 - xdg-utils           # enable starting a browser to run gcloud init
 gcp_packages:
 - google-cloud-cli
@@ -179,11 +179,11 @@ helm_formulas:
 #               ------- Homebrew ------
 # ---------------------------------------------------------------------------- #
 homebrew_dependencies:
-- build-essential  #
-- curl             #
-- git              # gold standard version control system
-- language-pack-en #
-- locales          #
+- build-essential  # informational list of build-essential packages
+- curl             # command line tool for transferring data with URL syntax
+- git
+- language-pack-en # translation updates for language English
+- locales          # GNU C Library: National Language (locale) data
 homebrew_install_url: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 
 homebrew_formulas:
@@ -228,16 +228,16 @@ kubernetes_formulas:
 #               ------- NodeJS ------
 # ---------------------------------------------------------------------------- #
 node_dependencies:
-- build-essential #
-- ca-certificates #
-- curl            #
-- gnupg           #
+- build-essential # informational list of build-essential packages
+- ca-certificates # common CA certificates
+- curl            # command line tool for transferring data with URL syntax
+- gnupg           # GNU privacy guard
 node_major: 20
 node_packages:
 - nodejs
 
 npm_packages:
-- "@bitnami/readme-generator-for-helm" # auto generate READMEs for Helm Charts
+- "@bitnami/readme-generator-for-helm"
 - "@commitlint/cli"
 - "@commitlint/config-conventional"
 - "@commitlint/format"
@@ -249,8 +249,8 @@ npm_packages:
 # See https://www.nvidia.com/Download/index.aspx for more details.
 
 nvidia_packages:
-- cuda-toolkit-12-8        #
-- nvidia-container-toolkit #
+- cuda-toolkit-12-8        # NVIDIA CUDA development toolkit
+- nvidia-container-toolkit # NVIDIA container Toolkit
 # - nvidia-driver-570
 
 # ---------------------------------------------------------------------------- #
@@ -267,14 +267,14 @@ pulumi_install_url: https://get.pulumi.com
 #               ------- Python ------
 # ---------------------------------------------------------------------------- #
 python_dependencies:
-- gdal-bin    # executable to use GDAL with Python
-- libbz2-dev  # data compression library to develop with Python
-- libgdal-dev # library to use GDAL with Python
+- gdal-bin         # executable to use GDAL with Python
+- libbz2-dev       # data compression library to develop with Python
+- libgdal-dev      # library to use GDAL with Python
 - liblzma-dev
 
 python_packages:
 - python3
-- python3-docker # used by Ansible modules
+- python3-docker   # used by Ansible modules
 - python3-pip
 - python3-tk
 - python3-venv
@@ -283,29 +283,29 @@ python_packages:
 - python-is-python3
 
 pip_packages:
-- aiohttp  #
-- asyncer  #
+- aiohttp          # async http client/server framework
+- asyncer          # async and await, focused on developer experience
 - faker
-- filetype #
-- gradio   #
+- filetype         # infer file type and MIME type of any file/buffer
+- gradio           # library for easily interacting with trained machine learning models
 - markitdown
-- onnxruntime #
-- pillow      #
+- onnxruntime      # runtime accelerator for machine learning models
+- pillow           # imaging library
 - pre-commit
 - Pygments
-- rembg    #
-- watchdog #
+- rembg            # remove image background
+- watchdog         # filesystem events monitoring
 - whisper-live
 
 pyenv_dependencies:
-- build-essential  #
-- bzip2            #
-- libffi-dev       #
+- build-essential  # informational list of build-essential packages
+- bzip2            # high-quality block-sorting file compressor
+- libffi-dev       # foreign function interface library
 - libncursesw5-dev #
-- libreadline-dev  #
-- libsqlite3-dev   #
-- libssl-dev       #
-- zlib1g-dev       #
+- libreadline-dev  # GNU readline and history libraries
+- libsqlite3-dev   # SQLite 3 development files
+- libssl-dev       # secure sockets layer toolkit
+- zlib1g-dev       # compression library
 pyenv_install_url: https://pyenv.run
 pyenv_python_version: 3.11.13
 
@@ -320,14 +320,14 @@ rust_install_url: https://sh.rustup.rs
 #               ------- Terraform ------
 # ---------------------------------------------------------------------------- #
 terraform_dependencies:
-- gnupg                      #
-- software-properties-common #
+- gnupg                      # GNU privacy guard
+- software-properties-common # manage the repositories that you install software from
 
 # ---------------------------------------------------------------------------- #
 #               ------- Version Control System (VCS) ------
 # ---------------------------------------------------------------------------- #
 git_packages:
-- git # gold standard version control system
+- git
 - git-filter-repo
 
 git_lfs_install_url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
@@ -357,6 +357,6 @@ zoxide_install_url: https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/in
 #               ------- Zsh ------
 # ---------------------------------------------------------------------------- #
 zsh_dependencies:
-- curl #
-- git  # gold standard version control system
-- zsh  #
+- curl # command line tool for transferring data with URL syntax
+- git
+- zsh  # shell with lots of features

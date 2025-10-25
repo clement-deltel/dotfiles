@@ -43,9 +43,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [FIGlet](https://linux.die.net/man/6/figlet) - display large characters made up of ordinary screen characters.
       - [fmt](https://github.com/fmtlib/fmt) - modern formatting library. `C++`
       - [magic-wormhole](https://github.com/magic-wormhole/magic-wormhole) - get things from one computer to another, safely. `Python`
-      - [unp](https://github.com/mitsuhiko/unp) - wrapper around other shell tools to unpack archives easily.
       - [pdftk](https://www.pdflabs.com/tools/pdftk-server) - CLI for working with PDFs.
       - [pwgen](https://linux.die.net/man/1/pwgen) - random password generator.
+      - [unp](https://github.com/mitsuhiko/unp) - wrapper around other shell tools to unpack archives easily.
       - [vim](https://github.com/vim/vim) - text editor of choice.
       - [xclip](https://github.com/astrand/xclip) - CLI to the X11 clipboard. `C`
   - [homebrew](https://github.com/Homebrew/brew) - the missing package manager for Linux. `Ruby`
@@ -85,7 +85,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Terminal**
   - [WezTerm](https://github.com/wezterm/wezterm) - GPU-accelerated cross-platform terminal emulator and multiplexer. `Rust`
 - **Version Control System (VCS)**
-  - Git
+  - [Git](https://git-scm.com) - fast, scalable, distributed revision control system.
     - Packages
       - [git-filter-repo](https://github.com/newren/git-filter-repo) - quickly rewrite git repository history (filter-branch replacement). `Python`
       - [git-lfs](https://github.com/git-lfs/git-lfs) - git extension for versioning large files. `Go`

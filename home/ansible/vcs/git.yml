@@ -5,9 +5,7 @@
     - ../vars/main.yml
 
   tasks:
-  # -------------------------------------------------------------------------- #
-  #               ------- Packages ------
-  # -------------------------------------------------------------------------- #
+  # Packages
   - name: Packages
     tags: [init, update]
     ansible.builtin.include_tasks:
@@ -15,35 +13,25 @@
     vars:
       package_list: "{{ git_packages }}"
 
-  # -------------------------------------------------------------------------- #
-  #               ------- Repository ------
-  # -------------------------------------------------------------------------- #
-  - name: Repository
+  # Version
+  - name: Version
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: git version
+
+  # Git LFS - Repository
+  - name: Git LFS - Repository
+    become: true
     tags: init
-    block:
+    ansible.builtin.include_tasks:
+      file: ../tasks/script.yml
+    vars:
+      url: "{{ git_lfs_install_url }}"
+      cmd: /bin/sh -c /tmp/install.sh
 
-    - name: Download repository script
-      ansible.builtin.uri:
-        method: GET
-        url: "{{ git_lfs_install_url }}"
-        dest: "/tmp/script.deb.sh"
-        follow_redirects: safe
-        mode: 0700
-
-    - name: Run repository script
-      ansible.builtin.command:
-        cmd: /bin/bash -c /tmp/script.deb.sh
-      register: install_result
-      changed_when: install_result.rc == 0
-
-    - name: Remove repository script
-      ansible.builtin.file:
-        path: "/tmp/script.deb.sh"
-        state: absent
-
-  # -------------------------------------------------------------------------- #
-  #               ------- Packages - Git LFS ------
-  # -------------------------------------------------------------------------- #
+  # Git LFS - Packages
   - name: Git LFS - Packages
     tags: [init, update]
     ansible.builtin.include_tasks:
@@ -51,26 +39,15 @@
     vars:
       package_list: "{{ git_lfs_packages }}"
 
-    # ------------------------------------------------------------------------ #
-    #               ------- Version ------
-    # ------------------------------------------------------------------------ #
-    always:
-    - name: Confirm version
-      tags: [init, update]
-      ansible.builtin.command:
-        cmd: git-lfs version
-      register: version
-      changed_when: false
+  # Git LFS - Version
+  - name: Version
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: git-lfs version
 
-    - name: Show version
-      tags: [init, update]
-      when: version is defined
-      ansible.builtin.debug:
-        msg: "Installed version: {{ version.stdout }}"
-
-  # -------------------------------------------------------------------------- #
-  #               ------- Formulas ------
-  # -------------------------------------------------------------------------- #
+  # Formulas
   - name: Formulas
     tags: [init, update]
     ansible.builtin.include_tasks:

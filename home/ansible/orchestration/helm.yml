@@ -5,65 +5,40 @@
     - ../vars/main.yml
 
   tasks:
-  # -------------------------------------------------------------------------- #
-  #               ------- Installation ------
-  # -------------------------------------------------------------------------- #
-  - name: Helm
+  # Installation
+  # curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+  - name: Installation
     tags: [init, update]
-    block:
+    ansible.builtin.include_tasks:
+      file: ../tasks/script.yml
+    vars:
+      url: "{{ helm_install_url }}"
+      cmd: /bin/bash -c /tmp/install.sh
 
-    - name: Download install script
-      ansible.builtin.uri:
-        method: GET
-        url: "{{ helm_install_url }}"
-        dest: "/tmp/get_helm.sh"
-        follow_redirects: safe
-        mode: 0700
+  # Version
+  - name: Version
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: helm version
 
-    - name: Run install script
-      ansible.builtin.command:
-        cmd: /bin/bash -c /tmp/get_helm.sh
-      register: install_result
-      changed_when: install_result.rc == 0
-
-    - name: Remove install script
-      ansible.builtin.file:
-        path: "/tmp/get_helm.sh"
-        state: absent
-
-    # ------------------------------------------------------------------------ #
-    #               ------- Version ------
-    # ------------------------------------------------------------------------ #
-    always:
-    - name: Confirm version
-      tags: [init, update]
-      ansible.builtin.command:
-        cmd: helm version
-      register: version
-      changed_when: false
-
-    - name: Show version
-      tags: [init, update]
-      when: version is defined
-      ansible.builtin.debug:
-        msg: "Installed version: {{ version.stdout }}"
-
-  # -------------------------------------------------------------------------- #
-  #               ------- Plugins ------
-  # -------------------------------------------------------------------------- #
+  # Plugins
   - name: Plugins
     block:
 
     - name: Install plugins
       tags: init
-      ansible.builtin.command:
-        cmd: helm plugin install {{ item }}
+      kubernetes.core.helm_plugin:
+        plugin_path: "{{ item }}"
+        state: present
       loop: "{{ helm_plugin_urls }}"
 
     - name: Upgrade plugins
       tags: update
-      ansible.builtin.command:
-        cmd: helm plugin update {{ item }}
+      kubernetes.core.helm_plugin:
+        plugin_name: "{{ item }}"
+        state: latest
       loop: "{{ helm_plugin_names }}"
 
     always:
@@ -80,9 +55,7 @@
       ansible.builtin.debug:
         msg: "Installed plugins: {{ plugins_list.stdout }}"
 
-  # -------------------------------------------------------------------------- #
-  #               ------- Formulas ------
-  # -------------------------------------------------------------------------- #
+  # Formulas
   - name: Formulas
     tags: [init, update]
     ansible.builtin.include_tasks:

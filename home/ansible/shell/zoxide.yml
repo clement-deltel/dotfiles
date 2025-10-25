@@ -1,48 +1,24 @@
 - name: Zoxide
   hosts: all
-  gather_facts: true
+  gather_facts: false
   vars_files:
     - ../vars/main.yml
 
   tasks:
-  # -------------------------------------------------------------------------- #
-  #               ------- Installation ------
-  # -------------------------------------------------------------------------- #
-  - name: Zoxide
-    become_user: "{{ ansible_user_id }}"
+  # Installation
+  # curl -fsSL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+  - name: Installation
     tags: [init, update]
-    block:
+    ansible.builtin.include_tasks:
+      file: ../tasks/script.yml
+    vars:
+      url: "{{ pulumi_install_url }}"
+      cmd: /bin/sh -c /tmp/install.sh
 
-    - name: Download install script
-      ansible.builtin.uri:
-        method: GET
-        url: "{{ zoxide_install_url }}"
-        dest: "/tmp/zoxide_install.sh"
-        follow_redirects: safe
-        mode: 0700
-
-    - name: Run install script
-      ansible.builtin.command:
-        cmd: /bin/sh -c /tmp/zoxide_install.sh
-      register: install_result
-      changed_when: install_result.rc == 0
-
-    - name: Remove install script
-      ansible.builtin.file:
-        path: "/tmp/zoxide_install.sh"
-        state: absent
-
-    # ------------------------------------------------------------------------ #
-    #               ------- Version ------
-    # ------------------------------------------------------------------------ #
-    always:
-    - name: Confirm version
-      ansible.builtin.command:
-        cmd: ~/.local/bin/zoxide --version
-      register: version
-      changed_when: false
-
-    - name: Show version
-      when: version is defined
-      ansible.builtin.debug:
-        msg: "Installed version: {{ version.stdout }}"
+  # Version
+  - name: Version
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: ~/.local/bin/zoxide --version

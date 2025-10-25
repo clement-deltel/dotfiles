@@ -5,20 +5,16 @@
     - ../vars/main.yml
 
   tasks:
-  # -------------------------------------------------------------------------- #
-  #               ------- Dependencies ------
-  # -------------------------------------------------------------------------- #
+  # Dependencies
   - name: Dependencies
     tags: [init, update]
     ansible.builtin.include_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ bitwarden_dependencies }}"
-      package_type: "dependencies"
+      package_type: dependencies
 
-  # -------------------------------------------------------------------------- #
-  #               ------- Installation ------
-  # -------------------------------------------------------------------------- #
+  # Installation
   - name: Bitwarden CLI
     tags: [init, update]
     block:
@@ -54,6 +50,6 @@
     - name: Install
       ansible.builtin.unarchive:
         src: "https://github.com/bitwarden/clients/releases/download/cli-v{{ latest_version }}/bw-{{ ansible_system | lower }}-{{ latest_version }}.zip"
-        dest: "/usr/local/bin"
+        dest: /usr/local/bin
         remote_src: true
         mode: 0755

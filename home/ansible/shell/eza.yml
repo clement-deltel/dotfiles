@@ -5,56 +5,28 @@
     - ../vars/main.yml
 
   tasks:
-  # -------------------------------------------------------------------------- #
-  #               ------- Dependencies ------
-  # -------------------------------------------------------------------------- #
+  # Dependencies
   - name: Dependencies
     tags: [init, update]
     ansible.builtin.include_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ eza_dependencies }}"
-      package_type: "dependencies"
+      package_type: dependencies
 
-  # -------------------------------------------------------------------------- #
-  #               ------- Repository ------
-  # -------------------------------------------------------------------------- #
+  # Repository
+  # curl -fsSL https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor --output /etc/apt/keyrings/gierens.gpg
+  # echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/gierens.gpg] stable main" | sudo tee /etc/apt/sources.list.d/gierens.list > /dev/null
   - name: Repository
     tags: init
-    block:
+    ansible.builtin.include_tasks:
+      file: ../tasks/repository.yml
+    vars:
+      key_url: https://raw.githubusercontent.com/eza-community/eza/main/deb.asc
+      key_output: /etc/apt/keyrings/gierens.gpg
+      repository: "deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main"
 
-    - name: Create /etc/apt/keyrings directory
-      ansible.builtin.file:
-        path: /etc/apt/keyrings
-        state: directory
-        mode: 0755
-
-    # curl -fsSL https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor --output /etc/apt/keyrings/gierens.gpg
-    - name: Download GPG apt key
-      ansible.builtin.uri:
-        method: GET
-        url: https://raw.githubusercontent.com/eza-community/eza/main/deb.asc
-        dest: /tmp/deb.asc
-        follow_redirects: safe
-        mode: 0644
-
-    - name: Import GPG key
-      ansible.builtin.command:
-        cmd: gpg --dearmor --output /etc/apt/keyrings/gierens.gpg --yes /tmp/deb.asc
-
-    # echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/gierens.gpg] stable main" | sudo tee /etc/apt/sources.list.d/gierens.list > /dev/null
-    - name: Add apt repository
-      ansible.builtin.apt_repository:
-        repo: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main
-
-    - name: Remove temporary GPG key
-      ansible.builtin.file:
-        path: /tmp/deb.asc
-        state: absent
-
-  # -------------------------------------------------------------------------- #
-  #               ------- Packages ------
-  # -------------------------------------------------------------------------- #
+  # Packages
   - name: Packages
     tags: [init, update]
     ansible.builtin.include_tasks:
@@ -62,20 +34,10 @@
     vars:
       package_list: "{{ eza_packages }}"
 
-  # -------------------------------------------------------------------------- #
-  #               ------- Version ------
-  # -------------------------------------------------------------------------- #
+  # Version
   - name: Version
     tags: [init, update]
-    block:
-
-    - name: Confirm version
-      ansible.builtin.command:
-        cmd: eza --version
-      register: version
-      changed_when: false
-
-    - name: Show version
-      when: version is defined
-      ansible.builtin.debug:
-        msg: "Installed version: {{ version.stdout }}"
+    ansible.builtin.include_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: eza --version

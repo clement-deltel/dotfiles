@@ -5,44 +5,18 @@
     - ../vars/main.yml
 
   tasks:
-  # -------------------------------------------------------------------------- #
-  #               ------- Repository ------
-  # -------------------------------------------------------------------------- #
+  # Repository
+  # echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *" | sudo tee /etc/apt/sources.list.d/wezterm.list > /dev/null
   - name: Repository
     tags: init
-    block:
+    ansible.builtin.include_tasks:
+      file: ../tasks/repository.yml
+    vars:
+      key_url: https://apt.fury.io/wez/gpg.key
+      key_output: /etc/apt/keyrings/wezterm-fury.gpg
+      repository: "deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *"
 
-    - name: Create /etc/apt/keyrings directory
-      ansible.builtin.file:
-        path: /etc/apt/keyrings
-        state: directory
-        mode: 0755
-
-    - name: Download GPG apt key
-      ansible.builtin.uri:
-        method: GET
-        url: https://apt.fury.io/wez/gpg.key
-        dest: /tmp/wezterm.key
-        follow_redirects: safe
-        mode: 0644
-
-    - name: Import GPG key
-      ansible.builtin.command:
-        cmd: gpg --dearmor --output /etc/apt/keyrings/wezterm-fury.gpg --yes /tmp/wezterm.key
-
-    # echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *" | sudo tee /etc/apt/sources.list.d/wezterm.list > /dev/null
-    - name: Add apt repository
-      ansible.builtin.apt_repository:
-        repo: deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *
-
-    - name: Remove GPG temporary key
-      ansible.builtin.file:
-        path: /tmp/wezterm.key
-        state: absent
-
-  # -------------------------------------------------------------------------- #
-  #               ------- Packages ------
-  # -------------------------------------------------------------------------- #
+  # Packages
   - name: Packages
     tags: [init, update]
     ansible.builtin.include_tasks:

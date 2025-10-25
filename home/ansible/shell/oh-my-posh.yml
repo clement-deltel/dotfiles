@@ -1,48 +1,24 @@
 - name: Oh My Posh
   hosts: all
-  gather_facts: true
+  gather_facts: false
   vars_files:
     - ../vars/main.yml
 
   tasks:
-  # -------------------------------------------------------------------------- #
-  #               ------- Installation ------
-  # -------------------------------------------------------------------------- #
-  - name: Oh My Posh
-    become_user: "{{ ansible_user_id }}"
+  # Installation
+  # curl -s https://ohmyposh.dev/install.sh | bash -s
+  - name: Installation
     tags: [init, update]
-    block:
+    ansible.builtin.include_tasks:
+      file: ../tasks/script.yml
+    vars:
+      url: "{{ omp_install_url }}"
+      cmd: /bin/bash /tmp/install.sh -d ~/.local/bin
 
-    - name: Download install script
-      ansible.builtin.uri:
-        method: GET
-        url: "{{ omp_install_url }}"
-        dest: "/tmp/oh_my_posh_install.sh"
-        follow_redirects: safe
-        mode: 0700
-
-    - name: Run install script
-      ansible.builtin.command:
-        cmd: /bin/bash /tmp/oh_my_posh_install.sh -d ~/.local/bin
-      register: install_result
-      changed_when: install_result.rc == 0
-
-    - name: Remove install script
-      ansible.builtin.file:
-        path: "/tmp/oh_my_posh_install.sh"
-        state: absent
-
-    # ------------------------------------------------------------------------ #
-    #               ------- Version ------
-    # ------------------------------------------------------------------------ #
-    always:
-    - name: Confirm version
-      ansible.builtin.command:
-        cmd: ~/.local/bin/oh-my-posh version
-      register: version
-      changed_when: false
-
-    - name: Show version
-      when: version is defined
-      ansible.builtin.debug:
-        msg: "Installed version: {{ version.stdout }}"
+  # Version
+  - name: Version
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: ~/.local/bin/oh-my-posh version

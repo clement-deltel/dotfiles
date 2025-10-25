@@ -5,32 +5,25 @@
     - ../vars/main.yml
 
   tasks:
-  # -------------------------------------------------------------------------- #
-  #               ------- Dependencies ------
-  # -------------------------------------------------------------------------- #
+  # Dependencies
   - name: Dependencies
     tags: [init, update]
     ansible.builtin.include_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ zsh_dependencies }}"
-      package_type: "dependencies"
-      
-  # -------------------------------------------------------------------------- #
-  #               ------- Shell ------
-  # -------------------------------------------------------------------------- #
+      package_type: dependencies
+
+  # Shell
   - name: Set zsh as default shell
     tags: init
     ansible.builtin.user:
       name: "{{ ansible_user_id }}"
       shell: /bin/zsh
 
-  # -------------------------------------------------------------------------- #
-  #               ------- Antidote ------
-  # -------------------------------------------------------------------------- #
+  # Antidote
   # git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/antidote
   - name: Antidote
-    become_user: "{{ ansible_user_id }}"
     block:
 
     - name: Antidote - Install

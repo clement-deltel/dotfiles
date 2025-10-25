@@ -3,9 +3,7 @@
   gather_facts: false
 
   tasks:
-  # -------------------------------------------------------------------------- #
-  #               ------- Completions & Key Bindings ------
-  # -------------------------------------------------------------------------- #
+  # Completions & Key Bindings
   - name: Completions & Key Bindings
     tags: [init, update]
     block:
@@ -13,8 +11,8 @@
     - name: Download completion and key-bindings
       ansible.builtin.uri:
         method: GET
-        url: https://raw.githubusercontent.com/junegunn/fzf/refs/heads/master/shell/{{ item }}
-        dest: /usr/share/doc/fzf/examples/{{ item }}
+        url: "https://raw.githubusercontent.com/junegunn/fzf/refs/heads/master/shell/{{ item }}"
+        dest: "/usr/share/doc/fzf/examples/{{ item }}"
         follow_redirects: safe
       loop:
       - completion.bash

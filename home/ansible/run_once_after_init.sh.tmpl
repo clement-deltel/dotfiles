@@ -2,11 +2,11 @@
 
 echo "Install Ansible"
 echo
-{{- if (or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu")) }}
+{{ if (or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu")) -}}
 sudo apt update --yes && sudo apt install --yes software-properties-common
 sudo add-apt-repository --ppa ppa:ansible/ansible --yes
 sudo apt install --yes ansible
-{{- end }}
+{{ end -}}
 
 echo "Run Ansible Playbooks"
 echo

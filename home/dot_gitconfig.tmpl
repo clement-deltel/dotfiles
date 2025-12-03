@@ -35,13 +35,13 @@
 [init]
 	defaultBranch = main
 [merge]
-{{- if eq .chezmoi.osRelease.versionID "22.04" }}
+{{ if eq .chezmoi.osRelease.versionID "22.04" -}}
     # git < 2.35.0
     conflictstyle = diff3
-{{- else}}
+{{ else -}}
     # git >= 2.35.0
     conflictstyle = zdiff3
-{{- end }}
+{{ end -}}
 [push]
     autoSetupRemote = true
     default = current

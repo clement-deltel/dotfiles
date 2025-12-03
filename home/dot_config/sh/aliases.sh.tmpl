@@ -15,10 +15,10 @@ alias ..='cd ..'
 alias ...='cd ..; cd ..'
 alias ....='cd ..; cd ..; cd ..'
 
-{{- if eq .shell "bash" }}
+{{ if eq .shell "bash" -}}
 # cp
 alias cp='cp -i'
-{{- end }}
+{{ end -}}
 
 # du
 alias dus='du -sh * | sort -h'
@@ -36,13 +36,13 @@ alias muc='history | awk "{print $2}" | sort | uniq -c | sort -nr | head -10'
 # lsof - list open ports
 alias lsop='lsof -i -n -P | grep LISTEN'
 
-{{- if eq .shell "bash" }}
+{{ if eq .shell "bash" -}}
 # mv - prompt before overwrite
 alias mv='mv -i'
 
 # rm - prompt before every removal
 alias rm='rm -i'
-{{- end }}
+{{ end -}}
 
 # tree - nice alternative to 'ls'
 alias tree='tree -Csu'
@@ -65,7 +65,7 @@ alias dua='dua interactive'
 #               ------- ls --------
 # ---------------------------------------------------------------------------- #
 
-{{- if eq .shell "bash" }}
+{{ if eq .shell "bash" -}}
 # colorls
 if [ -x "$(command -v colorls)" ]; then
     alias ls='colorls --color=auto'
@@ -83,7 +83,7 @@ alias lah='ls -Ahl'
 alias lr='ls -lR'
 # ls - sort by date
 alias lrt='ls -ltr'
-{{- end }}
+{{ end -}}
 # ls - sort by size
 alias lk='ls -lSr'
 # ls - sort by extension
@@ -165,13 +165,13 @@ alias dsr=docker-stop-rm-fn
 alias dvrm=docker-volume-rm-fn
 alias dvrmd=docker-volume-rm-dangling-fn
 
-{{- if eq .shell "bash" }}
+{{ if eq .shell "bash" -}}
 alias dirm=docker-image-rm-fn
 alias dnls='docker network ls'
 alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias dvls='docker volume ls'
-{{- end }}
+{{ end -}}
 
 alias lzd='lazydocker'
 
@@ -235,9 +235,9 @@ alias krmfailed='kctl delete pods --field-selector=status.phase=Failed'
 alias krmp=kctl-delete-pod-fn
 alias krr=kctl-rollout-restart-deployment-fn
 
-{{- if eq .machine "pro" }}
+{{ if eq .machine "pro" -}}
 {{ .kube_aliases_extra }}
-{{- end }}
+{{ end -}}
 
 # ---------------------------------------------------------------------------- #
 #               ------- Oh My Posh ------
@@ -282,7 +282,7 @@ alias uvcc='uv cache clean'
 alias uvcp='uv cache prune'
 alias uv-lspr='uv-list-package-registries.sh'
 
-{{- if eq .shell "bash" }}
+{{ if eq .shell "bash" -}}
 # ---------------------------------------------------------------------------- #
 #               ------- Terraform ------
 # ---------------------------------------------------------------------------- #
@@ -311,7 +311,7 @@ alias cwo='code *.code-workspace'
 alias wsk='wezterm show-keys'
 alias wskl='wezterm show-keys --lua'
 
-{{- if eq .shell "zsh" }}
+{{ if eq .shell "zsh" -}}
 # ---------------------------------------------------------------------------- #
 #               ------- Zsh --------
 # ---------------------------------------------------------------------------- #
@@ -322,7 +322,7 @@ alias zs='zsh_stats'
 
 # chezmoi
 alias cmaz='chezmoi apply && source ~/.zshrc'
-{{- else}}
+{{ else -}}
 # ---------------------------------------------------------------------------- #
 #               ------- Bash --------
 # ---------------------------------------------------------------------------- #
@@ -332,4 +332,4 @@ alias cab='cat ~/.bashrc'
 
 # chezmoi
 alias cmab='chezmoi apply && source ~/.bashrc'
-{{- end }}
+{{ end }}

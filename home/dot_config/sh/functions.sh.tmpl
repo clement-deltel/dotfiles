@@ -186,9 +186,9 @@ function docker-volume-rm-dangling-fn {
   [[ -n ${VOLS} ]] && docker volume rm ${VOLS} || echo 'no dangling volumes.'
 }
 
-{{- if eq .shell "bash" }}
+{{ if eq .shell "bash" -}}
 function docker-image-rm-fn { docker image rm "$@"; }
-{{- end }}
+{{ end -}}
 
 # ---------------------------------------------------------------------------- #
 #               ------- Docker Compose ------
@@ -254,13 +254,13 @@ function venv-install-fn {
 
 }
 
-{{- if eq .shell "bash" }}
+{{ if eq .shell "bash" -}}
 # ---------------------------------------------------------------------------- #
 #               ------- Terraform ------
 # ---------------------------------------------------------------------------- #
 function terraform-fn { terraform "$@"; }
 function terraform-state-fn { terraform state "$@"; }
-{{- end }}
+{{ end -}}
 
 # ---------------------------------------------------------------------------- #
 #               ------- Visual Studio Code --------

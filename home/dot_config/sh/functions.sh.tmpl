@@ -248,10 +248,7 @@ function venv-install-fn {
   pyenv local "$2"
   if [[ $3 = "-r" ]]; then
     pip install -r requirements.txt
-  else
-    poetry install --no-root
   fi
-
 }
 
 {{ if eq .shell "bash" -}}

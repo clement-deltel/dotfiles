@@ -287,6 +287,7 @@ pip_packages:
 - asyncer          # async and await, focused on developer experience
 - faker
 - filetype         # infer file type and MIME type of any file/buffer
+- gitlint
 - gradio           # library for easily interacting with trained machine learning models
 - markitdown
 - onnxruntime      # runtime accelerator for machine learning models
@@ -296,6 +297,9 @@ pip_packages:
 - rembg            # remove image background
 - watchdog         # filesystem events monitoring
 - whisper-live
+
+pip_force_reinstall_packages:
+- argcomplete      # bash/zsh completion for Python scripts
 
 pyenv_dependencies:
 - build-essential  # informational list of build-essential packages
@@ -307,7 +311,7 @@ pyenv_dependencies:
 - libssl-dev       # secure sockets layer toolkit
 - zlib1g-dev       # compression library
 pyenv_install_url: https://pyenv.run
-pyenv_python_version: 3.11.13
+pyenv_python_version: 3.11.14
 
 uv_install_url: https://astral.sh/uv/install.sh
 
@@ -337,7 +341,6 @@ git_lfs_packages:
 git_formulas:
 - commitizen
 - gitleaks
-- gitlint
 - git-cliff
 - lazygit
 - prek

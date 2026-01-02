@@ -92,7 +92,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - Formulas
       - [commitizen](https://github.com/commitizen-tools/commitizen) - create committing rules for projects, auto bump versions, and auto changelog generation. `Python`
       - [gitleaks](https://github.com/gitleaks/gitleaks) - tool for detecting secrets like passwords, API keys, and tokens in git repos. `Go`
-      - [gitlint](https://github.com/jorisroovers/gitlint) - linting for your git commit messages. `Python`
       - [git-cliff](https://github.com/orhun/git-cliff) - highly customizable changelog generator that follows Conventional Commit specifications. `Rust`
       - [lazygit](https://github.com/jesseduffield/lazygit) - simple TUI for git commands. `Go`
       - [prek](https://github.com/j178/prek) - pre-commit re-engineered. `Rust`
@@ -105,6 +104,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - Python
     - pip
       - [faker](https://github.com/joke2k/faker) -  generate fake data for you. `Python`
+      - [gitlint](https://github.com/jorisroovers/gitlint) - linting for your git commit messages. `Python`
       - [markitdown](https://github.com/microsoft/markitdown) - tool for converting files and office documents to Markdown.
       - [pre-commit](https://github.com/pre-commit/pre-commit) - framework for managing and maintaining multi-language pre-commit hooks. `Python`
       - [Pygments](https://github.com/pygments/pygments) - generic syntax highlighter.

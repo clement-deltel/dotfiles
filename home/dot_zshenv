@@ -1,7 +1,9 @@
 #!/bin/zsh
 # .zshenv
 
-# User specific environment and startup programs
+# ---------------------------------------------------------------------------- #
+#               ------- User ------
+# ---------------------------------------------------------------------------- #
 export USER=$(whoami)
 export HOME=/home/${USER}
 export XDG_CONFIG_HOME=${HOME}/.config
@@ -11,14 +13,14 @@ export XDG_CONFIG_HOME=${HOME}/.config
 # ---------------------------------------------------------------------------- #
 export PATH=~/.local/bin:~/scripts:${PATH}
 
-export EDITOR='code --wait'
-export KUBE_EDITOR='vim'
-
 # Bat
 export BAT_THEME="Visual Studio Dark+"
 
 # Docker
 export DOCKER_CONTENT_TRUST=0
+
+# Git
+export EDITOR='code --wait'
 
 # Go
 export GO111MODULE=on
@@ -29,6 +31,9 @@ export PATH=/usr/local/go/bin:${GOPATH}/bin:${PATH}
 # Homebrew
 export PATH=/home/linuxbrew/.linuxbrew/bin:${PATH}
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Kubernetes
+export KUBE_EDITOR='vim'
 
 # NodeJS
 export PATH=${HOME}/node_modules/.bin:${PATH}

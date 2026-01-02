@@ -15,6 +15,7 @@ Here is a list of libraries and frameworks for different programming languages t
 - [bubbletea](https://github.com/charmbracelet/bubbletea) - powerful little TUI framework. `Go`
 - [fang](https://github.com/charmbracelet/fang) - CLI starter kit. `Go`
 - [golangci-lint](https://github.com/golangci/golangci-lint) - fast linters runner. `Go`
+- [gotests](https://github.com/cweill/gotests) - automatically generate test boilerplate from your source code. `Go`
 - [tview](https://github.com/rivo/tview) - terminal UI library with rich, interactive widgets. `Go`
 
 ## JavaScript
@@ -27,6 +28,7 @@ Here is a list of libraries and frameworks for different programming languages t
 
 ## Rust
 
+- [iced](https://github.com/iced-rs/iced) - cross-platform GUI library, inspired by Elm. `Rust`
 - [maturin](https://github.com/PyO3/maturin) - build and publish crates with pyo3, cffi and uniffi bindings as well as rust binaries as python packages. `Rust`
 - [ratatui](https://github.com/ratatui/ratatui) -  crate for cooking up terminal user interfaces. `Rust`
 - [rust-clippy](https://github.com/rust-lang/rust-clippy) - bunch of lints to catch common mistakes and improve your Rust code. `Rust`

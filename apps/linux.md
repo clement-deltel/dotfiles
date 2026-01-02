@@ -222,12 +222,12 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 ## Enhancements
 
+- **API**
+  - [hoppscotch](https://github.com/hoppscotch/hoppscotch) - API development ecosystem, offline, on-prem & cloud, web, desktop & CLI. `TypeScript`
+  - [yaak](https://github.com/mountain-loop/yaak) - desktop API client, organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC. `TypeScript` `Rust`
 - **Artificial Intelligence**
-  - [flux](https://github.com/black-forest-labs/flux) - official inference repo for FLUX.1 models. `Python`
   - [goose](https://github.com/block/goose) - extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM. `Rust` `TypeScript`
   - [mdream](https://github.com/harlan-zw/mdream) - convert any site to clean markdown & llm.txt. `TypeScript`
-  - [recall](https://github.com/joseairosa/recall) - redis-powered persistent memory for LLMs. `TypeScript` `JavaScript`
-  - [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) - stable diffusion web UI. `Python` `JavaScript`
 - **CI/CD**
   - [gh-signoff](https://github.com/basecamp/gh-signoff) -  GitHub CLI extension local CI, sign off on your own work. `Shell`
   - [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local) - Tired of pushing to test your .gitlab-ci.yml? `TypeScript`
@@ -244,6 +244,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [stress-ng](https://github.com/ColinIanKing/stress-ng) - stress test a computer system in various selectable ways. `C`
   - [s-tui](https://github.com/amanusk/s-tui) - terminal-based CPU stress and monitoring utility. `Python`
 - **Directories & Files**
+  - [alt-sendme](https://github.com/tonyantony300/alt-sendme) - send files and directories anywhere in the world without storing in cloud - any size, any format, no accounts, no restrictions. `TypeScript` `Rust`
   - [entr](https://github.com/eradman/entr) - run arbitrary commands when files change. `C`
   - [f2](https://github.com/ayoisaiah/f2) - cross-platform command-line tool for batch renaming files and directories quickly and safely. `Go`
   - [lstr](https://github.com/bgreenwell/lstr) - fast, minimalist directory tree viewer. `Rust`
@@ -331,18 +332,22 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [brush](https://github.com/reubeno/brush) - bash/POSIX-compatible shell. `Rust`
   - [murex](https://github.com/lmorg/murex) - smarter shell and scripting environment with advanced features designed for usability, safety and productivity. `Go`
 - **Software Development**
-  - [autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell. `TypeScript`
-  - [biome](https://github.com/biomejs/biome) - toolchain for web projects, aimed to provide functionalities to maintain them, offers formatter and linter, usable via CLI and LSP. `Rust`
-  - [cheat](https://github.com/cheat/cheat) - create and view interactive cheat sheets on the command-line. `Go`
-  - [devbox](https://github.com/jetify-com/devbox) - instant, easy, and predictable development environments. `Go`
-  - [epic-stack](https://github.com/epicweb-dev/epic-stack) - full stack app starter with the foundational things setup and configured for you. `TypeScript`
-  - [flox](https://github.com/flox/flox) - developer environments you can take with you. `Rust` `Shell`
-  - [jwt-cli](https://github.com/mike-engel/jwt-cli) - tool to decode and encode JWTs. `Rust`
-  - [mailpit](https://github.com/axllent/mailpit) - email and SMTP testing tool with API for developers. `Go`
-  - [nsenter](https://man7.org/linux/man-pages/man1/nsenter.1.html) - run program in different namespaces.
-  - [otelbin](https://github.com/dash0hq/otelbin) - web-based tool to facilitate OpenTelemetry collector configuration editing and verification. `TypeScript`
-  - [run](https://github.com/Esubaalew/run) - universal multi-language runner and smart REPL. `Rust`
-  - [unleash](https://github.com/Unleash/unleash) - feature management platform. `TypeScript`
+  - Observability
+    - [otelbin](https://github.com/dash0hq/otelbin) - web-based tool to facilitate OpenTelemetry collector configuration editing and verification. `TypeScript`
+    - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) - fast, cost-effective monitoring solution and time series database. `Go`
+  - Environments
+    - [devbox](https://github.com/jetify-com/devbox) - instant, easy, and predictable development environments. `Go`
+    - [flox](https://github.com/flox/flox) - developer environments you can take with you. `Rust` `Shell`
+  - Other
+    - [autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell. `TypeScript`
+    - [biome](https://github.com/biomejs/biome) - toolchain for web projects, aimed to provide functionalities to maintain them, offers formatter and linter, usable via CLI and LSP. `Rust`
+    - [cheat](https://github.com/cheat/cheat) - create and view interactive cheat sheets on the command-line. `Go`
+    - [epic-stack](https://github.com/epicweb-dev/epic-stack) - full stack app starter with the foundational things setup and configured for you. `TypeScript`
+    - [jwt-cli](https://github.com/mike-engel/jwt-cli) - tool to decode and encode JWTs. `Rust`
+    - [mailpit](https://github.com/axllent/mailpit) - email and SMTP testing tool with API for developers. `Go`
+    - [nsenter](https://man7.org/linux/man-pages/man1/nsenter.1.html) - run program in different namespaces.
+    - [run](https://github.com/Esubaalew/run) - universal multi-language runner and smart REPL. `Rust`
+    - [unleash](https://github.com/Unleash/unleash) - feature management platform. `TypeScript`
 - **System Info**
   - [glances](https://github.com/nicolargo/glances) - glances an eye on your system. `Python`
   - [nerdfetch](https://github.com/ThatOneCalculator/NerdFetch) - POSIX *nix fetch script using Nerd Fonts. `Shell`
@@ -369,6 +374,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [espanso](https://github.com/espanso/espanso) - cross-platform text expander. `Rust`
   - [exosphere](https://github.com/mrdaemon/exosphere) - CLI and TUI driven application that offers patch reporting for remote unix systems. `Python`
   - [glow](https://github.com/charmbracelet/glow) - render markdown on the terminal. `Go`
+  - [hl](https://github.com/pamburus/hl) - fast and powerful log viewer and processor that converts JSON logs or logfmt logs into a clear human-readable format. `Rust`
   - [jrnl](https://github.com/jrnl-org/jrnl) - Collect your thoughts and notes without leaving the command line. `Python` `Gherkin`
   - [midnight commander](https://github.com/MidnightCommander/mc)
   - [mosh](https://github.com/mobile-shell/mosh) - mobile shell. `C++`
@@ -388,6 +394,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [gh-dash](https://github.com/dlvhdr/gh-dash) - beautiful CLI dashboard for GitHub. `Go`
   - [gitbutler](https://github.com/gitbutlerapp/gitbutler) - GitButler version control client. `Rust`
   - [GitHub CLI](https://github.com/cli/cli) - GitHub’s official command line tool. `Go`
+  - [gitlogue](https://github.com/unhappychoice/gitlogue) - cinematic Git commit replay tool for the terminal, turning your Git history into a living, animated story. `Rust`
   - [gitu](https://github.com/altsem/gitu) - TUI git client inspired by Magit. `Rust`
   - [git-appraise](https://github.com/google/git-appraise) - distributed code review system for git repos. `Go`
   - [git-bug](https://github.com/git-bug/git-bug) - distributed, offline-first bug tracker embedded in git, with bridges. `Go`
@@ -402,6 +409,11 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [multi-gitter](https://github.com/lindell/multi-gitter) - update multiple repositories in with one command. `Go`
   - [opencommit](https://github.com/di-sukharev/opencommit) - generate commit messages by an LLM in 1 sec. `JavaScript`
   - [zizmor](https://github.com/zizmorcore/zizmor) - static analysis for GitHub Actions. `Rust`
+- **Virtualization**
+  - [lima](https://github.com/lima-vm/lima) - Linux virtual machines, with a focus on running containers. `Go` `Shell`
+  - [winapps](https://github.com/winapps-org/winapps) - run Windows apps in Linux as if they were a part of the native OS. `Shell` `PowerShell`
+  - [winboat](https://github.com/TibixDev/winboat) - run Windows apps on Linux with seamless integration. `TypeScript` `PowerShell`
+  - [windows](https://github.com/dockur/windows) - Windows inside a Docker container. `Shell`
 - **Visualization**
   - [asciiquarium](https://github.com/cmatsuoka/asciiquarium) - enjoy the mysteries of the sea from the safety of your own terminal. `Perl`
   - [cbonsai](https://github.com/mhzawadi/homebrew-cbonsai) - bonsai tree generator, written using ncurses. `C`
@@ -436,6 +448,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [aptakube](https://github.com/aptakube/aptakube) - modern, lightweight and multi-cluster GUI.
     - [freelens](https://github.com/freelensapp/freelens) - IDE for Kubernetes. `TypeScript`
     - [headlamp](https://github.com/kubernetes-sigs/headlamp) - web UI that is fully-featured, user-friendly and extensible. `TypeScript` `Go`
+    - [kite](https://github.com/zxh326/kite) - modern, lightweight dashboard. `TypeScript` `Go`
     - [kubewall](https://github.com/kubewall/kubewall) - dashboard with multi-cluster management & AI integration. `TypeScript` `Go`
   - Network
     - [calico](https://github.com/projectcalico/calico) - cloud native networking and network security. `Go`

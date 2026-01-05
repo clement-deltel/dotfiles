@@ -1,5 +1,10 @@
 #!/bin/bash
-# UV Lock File Parser - Extract package names and registries
+
+# ---------------------------------------------------------------------------- #
+#AUTHOR: Clement Deltel
+#DATE: 2025/06/04
+#DESCRIPTION: uv lock file parser, extract package names and registries.
+# ---------------------------------------------------------------------------- #
 
 set -euo pipefail
 

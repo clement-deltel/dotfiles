@@ -12,7 +12,7 @@
     ansible.builtin.include_tasks:
       file: ../tasks/script.yml
     vars:
-      url: "{{ pulumi_install_url }}"
+      url: "{{ zoxide_install_url }}"
       cmd: /bin/sh -c /tmp/install.sh
 
   # Version

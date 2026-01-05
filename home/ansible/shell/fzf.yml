@@ -5,8 +5,15 @@
   tasks:
   # Completions & Key Bindings
   - name: Completions & Key Bindings
+    become: true
     tags: [init, update]
     block:
+
+    - name: Create /usr/share/doc/fzf/examples directory
+      ansible.builtin.file:
+        path: /usr/share/doc/fzf/examples
+        state: directory
+        mode: 0755
 
     - name: Download completion and key-bindings
       ansible.builtin.uri:

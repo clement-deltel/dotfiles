@@ -11,6 +11,7 @@
       mode: 0700
 
   - name: Run script
+    become : "{{ become | default(false) }}"
     ansible.builtin.command:
       cmd: "{{ cmd }}"
     register: install_result

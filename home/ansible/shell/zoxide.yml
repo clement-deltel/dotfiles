@@ -12,6 +12,7 @@
     ansible.builtin.include_tasks:
       file: ../tasks/script.yml
     vars:
+      become: true
       url: "{{ zoxide_install_url }}"
       cmd: /bin/sh -c /tmp/install.sh
 

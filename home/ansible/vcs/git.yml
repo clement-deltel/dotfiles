@@ -27,6 +27,7 @@
     ansible.builtin.include_tasks:
       file: ../tasks/script.yml
     vars:
+      root: true
       url: "{{ git_lfs_install_url }}"
       cmd: /bin/sh -c /tmp/install.sh
 

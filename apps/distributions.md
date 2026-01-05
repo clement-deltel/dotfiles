@@ -35,8 +35,13 @@ Fedora:
 - [Bluefin](https://projectbluefin.io) - the next generation linux workstation, designed for reliability, performance, and sustainability. Source code available [here](https://github.com/ublue-os/bluefin). `Shell` `Just`
 - [Fedora](https://fedoraproject.org)
 
+Hackintosh:
+
+- [macOS-KVM](https://github.com/johncolby/macOS-KVM) - streamlined macOS QEMU KVM hackintosh configuration using OpenCore and libvirt. `Shell`
+
 Other:
 
+- [netboot.xyz](https://github.com/netbootxyz/netboot.xyz) - a network-based bootable operating system installer based on iPXE. `Jinja`
 - [NixOS](https://nixos.org) - Source code available [here](https://github.com/NixOS/nixpkgs) `Nix`
 
 ## Resources

@@ -233,6 +233,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local) - Tired of pushing to test your .gitlab-ci.yml? `TypeScript`
 - **Cloud**
   - [sourcerer](https://github.com/the-impact-craft/sourcerer) - CLI-based cloud storage explorer that provides a unified interface to view and manage files across multiple cloud providers. `Python`
+  - [taws](https://github.com/huseyinbabal/taws) - terminal-based AWS resource viewer and manager. `Rust`
 - **Database**
   - [tbls](https://github.com/k1LoW/tbls) - ci-friendly tool to document a database. `Go`
 - **Diagrams**
@@ -307,6 +308,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [kubechecks](https://github.com/zapier/kubechecks) - check your changes before they hit the cluster. `Go`
       - [kubectlai](https://github.com/GoogleCloudPlatform/kubectl-ai) - AI powered Kubernetes assistant. `Go`
       - [kubetest2](https://github.com/kubernetes-sigs/kubetest2) - framework for launching and running end-to-end tests. `Go`
+      - [kube-composer](https://github.com/same7ammar/kube-composer) - yaml builder with intuitive web interface and dynamic visualization. `TypeScript`
       - [nova](https://github.com/FairwindsOps/Nova) - find outdated or deprecated Helm charts running in your cluster. `Go`
   - Helm
     - [helmwave](https://github.com/helmwave/helmwave) - new wave for helm. `Go`
@@ -385,6 +387,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [ttyd](https://github.com/tsl0922/ttyd) - share your terminal over the web. `C` `TypeScript`
   - [typst](https://github.com/typst/typst) - markup-based typesetting system that is powerful and easy to learn. `Rust`
   - [ut](https://github.com/ksdme/ut) - utility toolbox for developers. `Rust`
+  - [witr](https://github.com/pranshuparmar/witr) - why is it running? `Go`
 - **Version Control System (VCS)**
   - [better commits](https://github.com/Everduin94/better-commits) - CLI for creating better commits following the conventional commits specification. `JavaScript`
   - [cocommit](https://github.com/andrewromanenco/cocommit) - CLI that works with your HEAD commit and leverages an LLM of your choice to enhance commit quality. `Python`
@@ -399,6 +402,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [git-appraise](https://github.com/google/git-appraise) - distributed code review system for git repos. `Go`
   - [git-bug](https://github.com/git-bug/git-bug) - distributed, offline-first bug tracker embedded in git, with bridges. `Go`
   - [git-plan](https://github.com/rorybyrne/git-plan) - a better workflow for git. `Python`
+  - [git-rewrite-commits](https://github.com/f/git-rewrite-commits) - AI-powered git commit message rewriter using Ollama or GPT. `TypeScript` `JavaScript`
   - [git-sim](https://github.com/initialcommit-com/git-sim) - visually simulate Git operations in your own repos with a single terminal command. `Python`
   - [git-xargs](https://github.com/gruntwork-io/git-xargs) - CLI for making updates across multiple Github repositories with a single command. `Go`
   - [gitflow](https://github.com/nvie/gitflow) - git extensions to provide high-level repository operations for Vincent Driessen's branching model. `Shell`
@@ -465,6 +469,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [zarf](https://github.com/zarf-dev/zarf) - airgap native packager manager for Kubernetes. `Go`
 - Monitoring
   - [Elasticsearch](https://github.com/elastic/elasticsearch) - distributed, RESTful search engine. `Java`
+- Postgres
+  - [pgdog](https://github.com/pgdogdev/pgdog) - horizontal scaling for PostgreSQL with automatic sharding. `Rust`
+  - [pgschema](https://github.com/pgschema/pgschema) - Terraform-style, declarative schema migration for Postgres. `Go`
 
 ## Deprecated
 

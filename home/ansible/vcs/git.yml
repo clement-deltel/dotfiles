@@ -23,7 +23,6 @@
 
   # Git LFS - Repository
   - name: Git LFS - Repository
-    become: true
     tags: init
     ansible.builtin.include_tasks:
       file: ../tasks/script.yml

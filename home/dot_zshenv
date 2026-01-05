@@ -11,7 +11,7 @@ export XDG_CONFIG_HOME=${HOME}/.config
 # ---------------------------------------------------------------------------- #
 #               ------- Environment ------
 # ---------------------------------------------------------------------------- #
-export PATH=~/.local/bin:~/scripts:${PATH}
+export PATH=~/.local/bin:~/scripts:~/scripts/bin:${PATH}
 
 # Bat
 export BAT_THEME="Visual Studio Dark+"

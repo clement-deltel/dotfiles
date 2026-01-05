@@ -14,7 +14,7 @@ ARG MACHINE=pro
 ARG IMAGE=ubuntu:22.04
 ARG ID=10001
 ARG USER=linux
-ARG TIMEZONE=America/New_York
+ARG TIMEZONE=Etc/GMT
 
 ARG BW_SERVER
 ARG BW_CLIENTID
@@ -22,8 +22,8 @@ ARG BW_CLIENTSECRET
 ARG BW_PASSWORD
 
 # https://github.com/opencontainers/image-spec/blob/main/annotations.md
-LABEL org.opencontainers.image.title="dotfiles-${IMAGE}"
-LABEL org.opencontainers.image.description="dotfiles-${IMAGE}"
+LABEL org.opencontainers.image.title="${IMAGE}-dotfiles"
+LABEL org.opencontainers.image.description="${IMAGE}-dotfiles"
 LABEL org.opencontainers.image.authors="Clement Deltel <38040315+clement-deltel@users.noreply.github.com>"
 
 # Persisted into the built image
@@ -31,18 +31,18 @@ ENV TZ=${TIMEZONE}
 
 # Install dependencies
 # hadolint ignore=DL3008
-RUN apt-get update -y && \
-    apt-get install --no-install-recommends -y curl sudo tzdata && \
-    apt-get clean autoclean && apt-get autoremove -y && rm -rf /var/lib/apt /var/lib/cache /var/lib/log
+RUN apt-get update --yes && \
+    apt-get install --no-install-recommends --yes curl sudo tzdata && \
+    apt-get clean autoclean && apt-get autoremove --yes && rm -rf /var/lib/apt /var/lib/cache /var/lib/log
 
 # Create group, user, and grant sudo permissions without password
 RUN groupadd --gid ${ID} ${USER} && \
     useradd --create-home --gid ${ID} --home /home/${USER} --shell /bin/bash --uid ${ID} ${USER} && \
-    usermod -aG sudo ${USER} && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && \
-# Remove setuid and setgid permissions to prevent privilege escalation
-# https://github.com/goodwithtech/dockle/blob/master/CHECKPOINT.md#cis-di-0008
+    usermod -a -G sudo ${USER} && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && \
+    # Remove setuid and setgid permissions to prevent privilege escalation
+    # https://github.com/goodwithtech/dockle/blob/master/CHECKPOINT.md#cis-di-0008
     chmod u-s /usr/bin/su /usr/bin/chsh /usr/bin/mount /usr/bin/chfn \
-              /usr/bin/umount /usr/bin/newgrp /usr/bin/passwd /usr/bin/gpasswd && \
+    /usr/bin/umount /usr/bin/newgrp /usr/bin/passwd /usr/bin/gpasswd && \
     chmod g-s /usr/bin/expiry /usr/sbin/unix_chkpwd /usr/bin/chage
 
 WORKDIR /home/${USER}

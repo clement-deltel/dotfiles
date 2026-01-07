@@ -131,7 +131,7 @@ config.keys = {
   { key = "k",          mods = "ALT",          action = act.AdjustPaneSize({ "Up", 10 }) },
   { key = "l",          mods = "ALT",          action = act.AdjustPaneSize({ "Right", 10 }) },
   { key = "m",          mods = "LEADER",       action = act.TogglePaneZoomState },
-  { key = "z",          mods = "CTRL",         action = act.TogglePaneZoomState },
+  { key = "z",          mods = "ALT",          action = act.TogglePaneZoomState },
   -- Font - size
   { key = "=",          mods = "CTRL",         action = act.IncreaseFontSize },
   { key = "-",          mods = "CTRL",         action = act.DecreaseFontSize },

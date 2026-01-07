@@ -48,6 +48,7 @@
         msg: "The latest Bitwarden CLI version is {{ latest_version }}"
 
     - name: Install
+      become: true
       ansible.builtin.unarchive:
         src: "https://github.com/bitwarden/clients/releases/download/cli-v{{ latest_version }}/bw-{{ ansible_system | lower }}-{{ latest_version }}.zip"
         dest: /usr/local/bin

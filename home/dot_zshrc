@@ -28,6 +28,43 @@ DISABLE_FZF_KEY_BINDINGS="false"
 eval "$(zoxide init zsh --cmd cd)"
 
 # ---------------------------------------------------------------------------- #
+#               ------- Zsh ------
+# ---------------------------------------------------------------------------- #
+
+# Clear screen, keep buffer
+clear-keep-buffer() {
+  zle clear-screen
+}
+zle -N clear-keep-buffer
+
+# Command line buffer editor
+autoload -Uz edit-command-line
+zle -N edit-command-line
+
+# Copy current command to clipboard
+copy-command() {
+  print -rn -- "$BUFFER" | wl-copy
+}
+zle -N copy-command
+
+# zsh move
+autoload -Uz zmv
+
+# ---------------------------------------------------------------------------- #
+#               ------- Zsh - Key Bindings ------
+# ---------------------------------------------------------------------------- #
+bindkey '^zx' clear-keep-buffer
+bindkey '^ze' edit-command-line
+bindkey '^zc' copy-command
+
+# Magic space
+bindkey ' ' magic-space
+
+# Hotkeys
+bindkey -s '^zgc' 'git commit -m ""\C-b'
+bindkey -s '^zgcv' 'git commit --no-verify -m ""\C-b'
+
+# ---------------------------------------------------------------------------- #
 #               ------- Alias-Finder ------
 # ---------------------------------------------------------------------------- #
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default

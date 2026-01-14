@@ -227,8 +227,13 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [hoppscotch](https://github.com/hoppscotch/hoppscotch) - API development ecosystem, offline, on-prem & cloud, web, desktop & CLI. `TypeScript`
   - [yaak](https://github.com/mountain-loop/yaak) - desktop API client, organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC. `TypeScript` `Rust`
 - **Artificial Intelligence**
+  - [dotprompt](https://github.com/google/dotprompt) - executable GenAI prompt templates. `Python` `Java` `Go`
   - [goose](https://github.com/block/goose) - extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM. `Rust` `TypeScript`
+  - [leon](https://github.com/leon-ai/leon) - open-source personal assistant. `TypeScript` `Python`
   - [mdream](https://github.com/harlan-zw/mdream) - convert any site to clean markdown & llm.txt. `TypeScript`
+  - [opencode](https://github.com/anomalyco/opencode) - open source coding agent. `TypeScript`
+  - [pdfGPT](https://github.com/bhaskatripathi/pdfGPT) - chat with the contents of your pdf file by using GPT capabilities. `Python`
+  - [private-gpt](https://github.com/zylon-ai/private-gpt) - interact with your documents using the power of GPT, 100% privately, no data leaks. `Python`
 - **CI/CD**
   - [gh-signoff](https://github.com/basecamp/gh-signoff) -  GitHub CLI extension local CI, sign off on your own work. `Shell`
   - [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local) - Tired of pushing to test your .gitlab-ci.yml? `TypeScript`
@@ -410,6 +415,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) - gitmoji interactive CLI tool for using emojis on commits. `JavaScript`
   - [husky](https://github.com/typicode/husky) - git hooks made easy. `JavaScript`
   - [jujutsu](https://github.com/jj-vcs/jj) - git-compatible VCS that is both simple and powerful. `Rust`
+  - [lefthook](https://github.com/evilmartians/lefthook) - fast and powerful git hooks manager for any type of projects. `Go`
   - [mergiraf](https://mergiraf.org)
   - [multi-gitter](https://github.com/lindell/multi-gitter) - update multiple repositories in with one command. `Go`
   - [opencommit](https://github.com/di-sukharev/opencommit) - generate commit messages by an LLM in 1 sec. `JavaScript`

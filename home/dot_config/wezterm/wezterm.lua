@@ -93,7 +93,7 @@ config.keys = {
   -- Configuration
   { key = "R",          mods = "CTRL|SHIFT",   action = act.ReloadConfiguration },
   -- Application
-  { key = "q",          mods = "CTRL",         action = act.QuitApplication },
+  { key = "q",          mods = "ALT",         action = act.QuitApplication },
   -- Window
   { key = "N",          mods = "CTRL|SHIFT",   action = act.SpawnWindow },
   -- Workspaces - activate
@@ -101,7 +101,7 @@ config.keys = {
   { key = "]",          mods = "CTRL",         action = act.SwitchWorkspaceRelative(1) },
   -- Tab - open & close
   { key = "t",          mods = "ALT",          action = act.SpawnTab "CurrentPaneDomain" },
-  { key = "w",          mods = "CTRL",         action = act.CloseCurrentTab { confirm = false } },
+  { key = "c",          mods = "ALT",         action = act.CloseCurrentTab { confirm = false } },
   -- Tab - activate
   { key = "Tab",        mods = "CTRL",         action = act.ActivateTabRelative(1) },
   { key = "Tab",        mods = "CTRL|SHIFT",   action = act.ActivateTabRelative(-1) },
@@ -144,8 +144,8 @@ config.keys = {
   -- Search
   { key = "f",          mods = "CTRL",         action = act.Search "CurrentSelectionOrEmptyString" },
   { key = "F",          mods = "CTRL|SHIFT",   action = act.Search "CurrentSelectionOrEmptyString" },
-  { key = "b",          mods = "CTRL",         action = act.ClearScrollback "ScrollbackOnly" },
-  { key = "B",          mods = "CTRL|SHIFT",   action = act.ClearScrollback "ScrollbackOnly" },
+  { key = "b",          mods = "ALT",         action = act.ClearScrollback "ScrollbackOnly" },
+  { key = "B",          mods = "ALT|SHIFT",   action = act.ClearScrollback "ScrollbackOnly" },
   -- Select
   { key = "phys:Space", mods = "CTRL|SHIFT",   action = act.QuickSelect },
   -- Scroll

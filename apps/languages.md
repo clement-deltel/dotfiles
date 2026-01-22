@@ -20,7 +20,7 @@ Here is a list of libraries and frameworks for different programming languages t
 
 ## JavaScript
 
-[npq](https://github.com/lirantal/npq) - safely install npm packages by auditing them pre-install stage. `JavaScript`
+- [npq](https://github.com/lirantal/npq) - safely install npm packages by auditing them pre-install stage. `JavaScript`
 
 ## Ruby
 
@@ -36,6 +36,7 @@ Here is a list of libraries and frameworks for different programming languages t
 
 ## TypeScript
 
+- [astro](https://github.com/withastro/astro) - web framework for content-driven websites. `TypeScript` `JavaScript`
 - [bun](https://github.com/oven-sh/bun) - JavaScript runtime, bundler, test runner, and package manager – all in one. `Zig` `C++`
 - [kibo](https://github.com/haydenbleasel/kibo) - custom registry of composable, accessible and extensible components designed for use with shadcn/ui. `TypeScript`
 - [opentui](https://github.com/sst/opentui) - library for building terminal user interfaces. `TypeScript` `Zig`

@@ -238,6 +238,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [gh-signoff](https://github.com/basecamp/gh-signoff) -  GitHub CLI extension local CI, sign off on your own work. `Shell`
   - [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local) - Tired of pushing to test your .gitlab-ci.yml? `TypeScript`
 - **Cloud**
+  - [localstack](https://github.com/localstack/localstack) - fully functional local AWS cloud stack, develop and test your cloud & serverless apps offline. `Python`
   - [sourcerer](https://github.com/the-impact-craft/sourcerer) - CLI-based cloud storage explorer that provides a unified interface to view and manage files across multiple cloud providers. `Python`
   - [taws](https://github.com/huseyinbabal/taws) - terminal-based AWS resource viewer and manager. `Rust`
 - **Database**
@@ -474,11 +475,18 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [kine](https://github.com/k3s-io/kine) - Run Kubernetes on mysql, postgres, sqlite, dqlite, not etcd. `Go`
     - [kubevirt](https://github.com/kubevirt/kubevirt) - Kubernetes virtualization API and runtime in order to define and manage virtual machines. `Go`
     - [zarf](https://github.com/zarf-dev/zarf) - airgap native packager manager for Kubernetes. `Go`
-- Monitoring
+- Observability
   - [Elasticsearch](https://github.com/elastic/elasticsearch) - distributed, RESTful search engine. `Java`
+  - [signoz](https://github.com/SigNoz/signoz) - open-source observability platform native to OpenTelemetry with logs, traces and metrics in a single application, alternative to DataDog, NewRelic, etc. `TypeScript` `Go`
 - Postgres
   - [pgdog](https://github.com/pgdogdev/pgdog) - horizontal scaling for PostgreSQL with automatic sharding. `Rust`
   - [pgschema](https://github.com/pgschema/pgschema) - Terraform-style, declarative schema migration for Postgres. `Go`
+- Service Level Objectives (SLOs)
+  - [OpenSLO](https://github.com/OpenSLO/OpenSLO) - open specification for defining and expressing service level objectives. `Shell` `JavaScript`
+  - [pyrra](https://github.com/pyrra-dev/pyrra) - making SLOs with Prometheus manageable, accessible, and easy to use for everyone! `Go` `TypeScript`
+  - [slo-generator](https://github.com/google/slo-generator) - compute SLIs, SLOs, error budgets and burn rates from supported backends, then exports an SLO report to supported targets. `Python`
+  - [sloth](https://github.com/slok/sloth) - easy and simple Prometheus SLO generator. `Go`
+
 
 ## Deprecated
 

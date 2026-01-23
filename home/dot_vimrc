@@ -1,8 +1,8 @@
 " .vimrc
 
-"=============================================================================="
-"               ------- General ------                                         "
-"=============================================================================="
+" ---------------------------------------------------------------------------- "
+"               ------- General ------
+" ---------------------------------------------------------------------------- "
 filetype on                 " enable filetype detection
 filetype indent on          " enable filetype-specific indenting
 filetype plugin on          " enable filetype-specific plugins
@@ -46,3 +46,8 @@ set colorcolumn=+1
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+" ---------------------------------------------------------------------------- "
+"               ------- fzf ------
+" ---------------------------------------------------------------------------- "
+set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf

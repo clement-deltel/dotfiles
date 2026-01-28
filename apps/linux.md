@@ -83,6 +83,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - zsh
   - [zoxide](https://github.com/ajeetdsouza/zoxide) - [cd](https://linux.die.net/man/1/cd), with recent directories,and more. `Rust`
 - **Terminal**
+  - [alacritty](https://github.com/alacritty/alacritty) - cross-platform, OpenGL terminal emulator. `Rust`
   - [WezTerm](https://github.com/wezterm/wezterm) - GPU-accelerated cross-platform terminal emulator and multiplexer. `Rust`
 - **Version Control System (VCS)**
   - [Git](https://git-scm.com) - fast, scalable, distributed revision control system.
@@ -367,7 +368,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [poe](https://github.com/nat-n/poethepoet) - task runner that works well with poetry or uv. `Python`
   - [task](https://github.com/go-task/task) -  task runner, simpler Make alternative. `Go`
 - **Terminal**
-  - [alacritty](https://github.com/alacritty/alacritty) - cross-platform, OpenGL terminal emulator. `Rust`
   - [rio](https://github.com/raphamorim/rio) - hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers. `Rust`
   - [Warp](https://github.com/warpdotdev/Warp) - modern terminal with AI built in so you and your team can build great software, faster. `Rust`
   - [WindTerm](https://github.com/kingToolbox/WindTerm) - professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal. `C`

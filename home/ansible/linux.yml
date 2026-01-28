@@ -21,6 +21,8 @@
   import_playbook: shell/zoxide.yml
 
 # Terminal
+- name: Alacritty
+  import_playbook: terminal/alacritty.yml
 - name: WezTerm
   import_playbook: terminal/wezterm.yml
 

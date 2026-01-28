@@ -1,4 +1,22 @@
 # ---------------------------------------------------------------------------- #
+#               ------- Alacritty ------
+# ---------------------------------------------------------------------------- #
+alacritty_dependencies:
+- cmake
+- g++
+- libfontconfig1-dev
+- libxcb-xfixes0-dev
+- libxkbcommon-dev
+- pkg-config
+- python3
+
+alacritty_repository:
+- ppa:aslatter/ppa
+
+alacritty_packages:
+- alacritty
+
+# ---------------------------------------------------------------------------- #
 #               ------- Ansible ------
 # ---------------------------------------------------------------------------- #
 deb_architecture: { "armv6l": "armhf", "armv7l": "armhf", "aarch64": "arm64", "x86_64": "amd64", "i386": "i386" }

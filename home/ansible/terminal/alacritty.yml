@@ -1,0 +1,39 @@
+- name: Alacritty
+  hosts: all
+  gather_facts: false
+  vars_files:
+    - ../vars/main.yml
+
+  tasks:
+  # Dependencies
+  - name: Dependencies
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ alacritty_dependencies }}"
+      package_type: dependencies
+
+  # Repository
+  - name: Repository
+    tags: init
+    block:
+
+    - name: Show repository
+      ansible.builtin.debug:
+        msg: "Repository: {{ alacritty_repository }}"
+
+    # add-apt-repository
+    - name: Add repository
+      become: true
+      ansible.builtin.apt_repository:
+        repo: "{{ item }}"
+      loop: "{{ alacritty_repository }}"
+
+  # Packages
+  - name: Packages
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "{{ alacritty_packages }}"

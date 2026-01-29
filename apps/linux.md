@@ -71,6 +71,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [tokei](https://github.com/XAMPPRocky/tokei) - count your code, quickly. `Rust`
       - [varlock](https://github.com/dmno-dev/varlock) - .env files built for sharing powered by @env-spec decorator comments. `TypeScript` `JavaScript`
     - **Other**
+      - [freeze](https://github.com/charmbracelet/freeze) - generate images of code and terminal output. `Go`
       - [tldr](https://github.com/tldr-pages/tlrc) - tldr client. `Rust`
       - [yq](https://github.com/mikefarah/yq) - command-line YAML, JSON, XML, CSV, TOML and properties processor. `Go`
   - [npm](https://github.com/npm/cli) - node package manager. `JavaScript`
@@ -94,7 +95,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [commitizen](https://github.com/commitizen-tools/commitizen) - create committing rules for projects, auto bump versions, and auto changelog generation. `Python`
       - [gitleaks](https://github.com/gitleaks/gitleaks) - tool for detecting secrets like passwords, API keys, and tokens in git repos. `Go`
       - [git-cliff](https://github.com/orhun/git-cliff) - highly customizable changelog generator that follows Conventional Commit specifications. `Rust`
+      - [git-quick-stats](https://github.com/git-quick-stats/git-quick-stats) - simple and efficient way to access various statistics in git repository. `Shell`
       - [lazygit](https://github.com/jesseduffield/lazygit) - simple TUI for git commands. `Go`
+      - [onefetch](https://github.com/o2sh/onefetch) - CLI git information tool. `Rust`
       - [prek](https://github.com/j178/prek) - pre-commit re-engineered. `Rust`
 - **Security**
   - [Bitwarden CLI](https://bitwarden.com/help/cli)

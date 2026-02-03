@@ -58,6 +58,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [lnav](https://github.com/tstack/lnav) - log file navigator. `C/C++`
     - **Modern Replacements**
       - [dua](https://github.com/Byron/dua-cli) - du, view disk space usage and delete unwanted data. `Rust`
+      - [just](https://github.com/casey/just) - just a command runner. `Rust`
       - [procs](https://github.com/dalance/procs) - [ps](https://linux.die.net/man/1/ps), with better sorting, tree support, and more. `Rust`
     - **Monitoring**
       - [btop](https://github.com/aristocratos/btop) - monitor of resources. `C/C++`
@@ -489,7 +490,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [pyrra](https://github.com/pyrra-dev/pyrra) - making SLOs with Prometheus manageable, accessible, and easy to use for everyone! `Go` `TypeScript`
   - [slo-generator](https://github.com/google/slo-generator) - compute SLIs, SLOs, error budgets and burn rates from supported backends, then exports an SLO report to supported targets. `Python`
   - [sloth](https://github.com/slok/sloth) - easy and simple Prometheus SLO generator. `Go`
-
 
 ## Deprecated
 

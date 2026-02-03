@@ -138,6 +138,7 @@ eval "$(_GITLINT_COMPLETE=zsh_source gitlint)"
 
 # Tools
 eval "$(gonzo completion zsh)"
+eval "$(just --completions zsh)"
 eval "$(yq shell-completion zsh)"
 
 # ---------------------------------------------------------------------------- #

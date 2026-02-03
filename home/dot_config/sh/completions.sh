@@ -30,6 +30,7 @@ eval "$(trivy completion bash)"
 # Tools
 eval "$(fzf --bash)"
 eval "$(gonzo completion bash)"
+eval "$(just --completions bash)"
 eval "$(procs --gen-completion-out bash)"
 # eval "$(rg --generate complete-bash)" # TODO: not working
 eval "$(yq shell-completion bash)"

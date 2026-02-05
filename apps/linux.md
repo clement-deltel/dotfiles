@@ -64,6 +64,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [btop](https://github.com/aristocratos/btop) - monitor of resources. `C/C++`
       - [fastfetch](https://github.com/fastfetch-cli/fastfetch) - feature-rich and performance oriented, neofetch like system information tool. `C`
       - [gping](https://github.com/orf/gping) - TUI for ping. `Rust`
+    - **Network**
+      - [whosthere](https://github.com/ramonvermeulen/whosthere) - local area network (LAN) discovery tool with a modern terminal user interface. `Go`
     - **Search**
       - [fzf](https://github.com/junegunn/fzf) - CLI fuzzy finder. `Go`
       - [grex](https://github.com/pemistahl/grex) - command-line tool and library with Python bindings for generating regular expressions from user-provided test cases. `Rust`
@@ -78,6 +80,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [npm](https://github.com/npm/cli) - node package manager. `JavaScript`
     - [commitlint](https://github.com/conventional-changelog/commitlint) - lint commit messages. `TypeScript`
     - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm) - auto generate READMEs for Helm Charts. `JavaScript`
+  - [zerobrew](https://github.com/lucasgelfond/zerobrew) - drop-in, 5-20x faster, experimental homebrew alternative. `Rust`
 - **Shell**
   - [antidote](https://github.com/mattmc3/antidote) - the cure to slow zsh plugin management.
   - [eza](https://github.com/eza-community/eza) - [ls](https://linux.die.net/man/1/ls), with icons, git integration, tree mode, and more. `Rust`

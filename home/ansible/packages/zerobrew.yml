@@ -1,0 +1,19 @@
+- name: Zerobrew
+  hosts: all
+  gather_facts: false
+  vars_files:
+    - ../vars/main.yml
+
+  tasks:
+  - name: Zerobrew
+    tags: [init, update]
+    block:
+
+    # Installation
+    # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lucasgelfond/zerobrew/main/install.sh)"
+    - name: Installation
+      ansible.builtin.include_tasks:
+        file: ../tasks/script.yml
+      vars:
+        url: "{{ zerobrew_install_url }}"
+        cmd: /bin/bash -c /tmp/install.sh

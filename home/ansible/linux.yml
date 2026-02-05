@@ -7,6 +7,8 @@
   import_playbook: packages/apt.yml
 - name: Homebrew
   import_playbook: packages/homebrew.yml
+- name: Zerobrew
+  import_playbook: packages/zerobrew.yml
 
 # Shell
 - name: Zsh

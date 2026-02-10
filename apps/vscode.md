@@ -92,7 +92,8 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 ## Enhancements
 
 - [edamagit](https://marketplace.visualstudio.com/items?itemName=kahole.magit) - magit for Visual Studio Code.
-- [JSON crack](https://marketplace.visualstudio.com/items?itemName=AykutSarac.jsoncrack-vscode) - Seamlessly visualize your JSON data instantly into graphs.
+- [GitLive](https://marketplace.visualstudio.com/items?itemName=TeamHub.teamhub) - accelerate your development team with preemptive merge conflict detection.
+- [JSON crack](https://marketplace.visualstudio.com/items?itemName=AykutSarac.jsoncrack-vscode) - seamlessly visualize your JSON data instantly into graphs.
 
 ## Deprecated
 

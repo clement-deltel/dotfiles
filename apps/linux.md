@@ -348,6 +348,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Shell**
   - [brush](https://github.com/reubeno/brush) - bash/POSIX-compatible shell. `Rust`
   - [murex](https://github.com/lmorg/murex) - smarter shell and scripting environment with advanced features designed for usability, safety and productivity. `Go`
+  - [starship](https://github.com/starship/starship) - minimal, blazing-fast, and infinitely customizable prompt for any shell. `Rust`
 - **Software Development**
   - Observability
     - [otelbin](https://github.com/dash0hq/otelbin) - web-based tool to facilitate OpenTelemetry collector configuration editing and verification. `TypeScript`
@@ -376,6 +377,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [task](https://github.com/go-task/task) -  task runner, simpler Make alternative. `Go`
 - **Terminal**
   - [rio](https://github.com/raphamorim/rio) - hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers. `Rust`
+  - [tabby](https://github.com/eugeny/tabby) - terminal for a more modern age. `TypeScript`
   - [Warp](https://github.com/warpdotdev/Warp) - modern terminal with AI built in so you and your team can build great software, faster. `Rust`
   - [WindTerm](https://github.com/kingToolbox/WindTerm) - professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal. `C`
 - **Text Editor**

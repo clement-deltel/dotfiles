@@ -376,6 +376,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [poe](https://github.com/nat-n/poethepoet) - task runner that works well with poetry or uv. `Python`
   - [task](https://github.com/go-task/task) -  task runner, simpler Make alternative. `Go`
 - **Terminal**
+  - [kitty](https://github.com/kovidgoyal/kitty) - cross-platform, fast, feature-rich, GPU based. `Python` `C` `Go`
   - [rio](https://github.com/raphamorim/rio) - hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers. `Rust`
   - [tabby](https://github.com/eugeny/tabby) - terminal for a more modern age. `TypeScript`
   - [Warp](https://github.com/warpdotdev/Warp) - modern terminal with AI built in so you and your team can build great software, faster. `Rust`
@@ -440,6 +441,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [cbonsai](https://github.com/mhzawadi/homebrew-cbonsai) - bonsai tree generator, written using ncurses. `C`
   - [cmatrix](https://github.com/abishekvashok/cmatrix) - terminal based "The Matrix" like implementation. `C`
   - [pipes](https://github.com/pipeseroni/pipes.sh) - animated pipes terminal screensaver. `Shell`
+  - [tty-clock](https://github.com/xorg62/tty-clock) - clock using lib ncurses. `C`
+  - [unimatrix](https://github.com/will8211/unimatrix) - simulate the display from "The Matrix" in terminal. `Python`
 - **Web**
   - [hey](https://github.com/rakyll/hey) - HTTP load generator, apachebench (ab) replacement. `Go`
   - [monolith](https://github.com/Y2Z/monolith) - CLI tool and library for saving complete web pages as a single HTML file. `Rust`

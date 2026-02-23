@@ -367,9 +367,11 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [run](https://github.com/Esubaalew/run) - universal multi-language runner and smart REPL. `Rust`
     - [unleash](https://github.com/Unleash/unleash) - feature management platform. `TypeScript`
 - **System Info**
+  - [cpufetch](https://github.com/Dr-Noob/cpufetch) - simple yet fancy CPU architecture fetching tool. `C`
   - [glances](https://github.com/nicolargo/glances) - glances an eye on your system. `Python`
   - [nerdfetch](https://github.com/ThatOneCalculator/NerdFetch) - POSIX *nix fetch script using Nerd Fonts. `Shell`
   - [macchina](https://github.com/Macchina-CLI/macchina) - system information frontend with an emphasis on performance. `Rust`
+  - [screenfetch](https://github.com/KittyKatt/screenFetch) - fetch system/theme information in terminal. `Shell`
 - **System Performance**
   - zRAM - linux kernel module to create a compressed block device in RAM.
 - **Tasks**

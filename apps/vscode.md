@@ -15,6 +15,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Auto Snippet](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.auto-snippet) - insert a snippet when opening an empty file.
 - [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring) - generates python docstrings automatically.
 - [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) - improve your code commenting by annotating with alert, informational, TODOs, and more.
+- [Code Snap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap) - take beautiful screenshots of your code.
 - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) - spelling checker for source code.
 - [Colorize](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize) - help visualize css colors in files.
 - [Commit Message Editor](https://marketplace.visualstudio.com/items?itemName=adam-bender.commit-message-editor) - edit commit messages in a convenient way.
@@ -167,7 +168,6 @@ Security:
 
 Screenshots:
 
-- [Code Snap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap) - take beautiful screenshots of your code.
 - [Polacode](https://marketplace.visualstudio.com/items?itemName=pnp.polacode) - polaroid for your code.
 
 Themes:

@@ -24,6 +24,10 @@ deb_architecture: { "armv6l": "armhf", "armv7l": "armhf", "aarch64": "arm64", "x
 # ---------------------------------------------------------------------------- #
 #               ------- APT ------
 # ---------------------------------------------------------------------------- #
+apt_repositories:
+- ppa:deadsnakes/ppa
+- ppa:fujiapple/trippy
+
 apt_packages:
 # Modern Replacements
 - bat
@@ -82,10 +86,6 @@ apt_packages:
 - tzdata                     # timezone
 - unzip                      # de-archiver for .zip files
 - zip                        # archiver for .zip files
-
-apt_repositories:
-- ppa:deadsnakes/ppa
-- ppa:fujiapple/trippy
 
 # ---------------------------------------------------------------------------- #
 #               ------- AWS ------

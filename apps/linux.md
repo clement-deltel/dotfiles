@@ -281,6 +281,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [zed](https://github.com/zed-industries/zed) - high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
 - **Modern Replacements**
   - [atuin](https://github.com/atuinsh/atuin) - history, magical shell history. `Rust`
+  - [cpx](https://github.com/11happy/cpx) - cp, reimagined. `Rust`
   - [dust](https://github.com/bootandy/dust) - du, a more intuitive version. `Rust`
   - [hwatch](https://github.com/blacknon/hwatch) - watch, records the differences in execution results and can check this differences at after. `Rust`
   - [lolcat](https://github.com/busyloop/lolcat) - cat, rainbows and unicorns. `Ruby`
@@ -356,6 +357,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - Environments
     - [devbox](https://github.com/jetify-com/devbox) - instant, easy, and predictable development environments. `Go`
     - [flox](https://github.com/flox/flox) - developer environments you can take with you. `Rust` `Shell`
+  - Network
+    - [ttyd](https://github.com/tsl0922/ttyd) - share your terminal over the web. `C` `TypeScript`
+    - [tunnelto](https://github.com/agrinman/tunnelto) - expose your local web server to the internet with a public URL. `Rust`
   - Other
     - [autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell. `TypeScript`
     - [biome](https://github.com/biomejs/biome) - toolchain for web projects, aimed to provide functionalities to maintain them, offers formatter and linter, usable via CLI and LSP. `Rust`
@@ -366,6 +370,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [nsenter](https://man7.org/linux/man-pages/man1/nsenter.1.html) - run program in different namespaces.
     - [run](https://github.com/Esubaalew/run) - universal multi-language runner and smart REPL. `Rust`
     - [unleash](https://github.com/Unleash/unleash) - feature management platform. `TypeScript`
+- **Speech Recognition**
+  - [buzz](https://github.com/chidiwilliams/buzz) - transcribes and translates audio offline on your personal computer, powered by OpenAI's Whisper. `Python`
+  - [moonshine](https://github.com/moonshine-ai/moonshine) - fast and accurate automatic speech recognition (ASR) for edge devices. `C`
 - **System Info**
   - [cpufetch](https://github.com/Dr-Noob/cpufetch) - simple yet fancy CPU architecture fetching tool. `C`
   - [glances](https://github.com/nicolargo/glances) - glances an eye on your system. `Python`
@@ -373,11 +380,13 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [macchina](https://github.com/Macchina-CLI/macchina) - system information frontend with an emphasis on performance. `Rust`
   - [screenfetch](https://github.com/KittyKatt/screenFetch) - fetch system/theme information in terminal. `Shell`
 - **System Performance**
+  - [auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq) - automatic CPU speed & power optimizer for Linux. `Python` `Shell`
   - zRAM - linux kernel module to create a compressed block device in RAM.
 - **Tasks**
   - [poe](https://github.com/nat-n/poethepoet) - task runner that works well with poetry or uv. `Python`
   - [task](https://github.com/go-task/task) -  task runner, simpler Make alternative. `Go`
 - **Terminal**
+  - [hyper](https://github.com/vercel/hyper) - terminal built on web technologies. `TypeScript`
   - [kitty](https://github.com/kovidgoyal/kitty) - cross-platform, fast, feature-rich, GPU based. `Python` `C` `Go`
   - [rio](https://github.com/raphamorim/rio) - hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers. `Rust`
   - [tabby](https://github.com/eugeny/tabby) - terminal for a more modern age. `TypeScript`
@@ -403,7 +412,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [pmd](https://github.com/pmd/pmd) - extensible multi-language static code analyzer. `Java`
   - [simdjson](https://github.com/simdjson/simdjson) - parsing gigabytes of JSON per second. `C++`
   - [thefuck](https://github.com/nvbn/thefuck) - magnificent app which corrects your previous console command. `Python`
-  - [ttyd](https://github.com/tsl0922/ttyd) - share your terminal over the web. `C` `TypeScript`
   - [typst](https://github.com/typst/typst) - markup-based typesetting system that is powerful and easy to learn. `Rust`
   - [ut](https://github.com/ksdme/ut) - utility toolbox for developers. `Rust`
   - [witr](https://github.com/pranshuparmar/witr) - why is it running? `Go`
@@ -434,6 +442,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [opencommit](https://github.com/di-sukharev/opencommit) - generate commit messages by an LLM in 1 sec. `JavaScript`
   - [zizmor](https://github.com/zizmorcore/zizmor) - static analysis for GitHub Actions. `Rust`
 - **Virtualization**
+  - [Docker-OSX](https://github.com/sickcodes/Docker-OSX) - near native OSX-KVM in Docker. `Shell` `Python`
   - [lima](https://github.com/lima-vm/lima) - Linux virtual machines, with a focus on running containers. `Go` `Shell`
   - [winapps](https://github.com/winapps-org/winapps) - run Windows apps in Linux as if they were a part of the native OS. `Shell` `PowerShell`
   - [winboat](https://github.com/TibixDev/winboat) - run Windows apps on Linux with seamless integration. `TypeScript` `PowerShell`
@@ -465,6 +474,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - Kafka
   - [ktea](https://github.com/jonas-grgt/ktea) - kafka TUI client. `Go`
 - Kubernetes
+  - Cost
+    - [opencost](https://github.com/opencost/opencost) - cost monitoring for workloads and cloud costs. `Go`
   - GitOps
     - [argo-cd](https://github.com/argoproj/argo-cd) - declarative continuous deployment for Kubernetes. `Go` `TypeScript`
     - [meshery](https://github.com/meshery/meshery) - cloud native manager. `JavaScript` `Go`

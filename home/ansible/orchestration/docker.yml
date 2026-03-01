@@ -83,24 +83,11 @@
 
   # Service
   - name: Service
-    become: true
-    block:
-
-    # sudo systemctl enable docker && sudo systemctl start docker
-    - name: Enable service
-      tags: init
-      ansible.builtin.systemd:
-        name: docker
-        enabled: true
-        state: started
-
-    # sudo systemctl restart docker
-    - name: Restart service
-      tags: update
-      ansible.builtin.systemd:
-        name: docker
-        enabled: true
-        state: restarted
+    tags: [init, update]
+    ansible.builtin.include_tasks:
+      file: ../tasks/service.yml
+    vars:
+      service: docker
 
   # Docker - Version
   - name: Docker - Version

@@ -1,0 +1,20 @@
+# Service
+- name: Service
+  become: true
+  block:
+
+  # sudo systemctl enable <service> && sudo systemctl start <service>
+  - name: "Enable and start {{ service }} service"
+    tags: init
+    ansible.builtin.systemd:
+      name: "{{ service }}"
+      enabled: true
+      state: started
+
+  # sudo systemctl restart <service>
+  - name: "Restart {{ service }} service"
+    tags: update
+    ansible.builtin.systemd:
+      name: "{{ service }}"
+      enabled: true
+      state: restarted

@@ -105,6 +105,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [prek](https://github.com/j178/prek) - pre-commit re-engineered. `Rust`
 - **Security**
   - [Bitwarden CLI](https://bitwarden.com/help/cli)
+  - [Doppler](https://github.com/DopplerHQ/cli)
 - **Languages**
   - [Go](https://go.dev)
   - JavaScript

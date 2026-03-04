@@ -35,6 +35,8 @@
 # Security
 - name: Bitwarden CLI
   import_playbook: security/bw.yml
+- name: Doppler CLI
+  import_playbook: security/doppler.yml
 
 # Languages
 - name: Go

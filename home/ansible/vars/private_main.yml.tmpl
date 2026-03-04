@@ -149,7 +149,17 @@ docker_images:
 - docker.io/library/quay.io/centos/centos:10
 - docker.io/library/rabbitmq:3.12.10-management
 - docker.io/library/redis:7.2.3
-- docker.io/library/ubuntu:22.04
+# ---------------------------------------------------------------------------- #
+#               ------- Doppler ------
+# ---------------------------------------------------------------------------- #
+doppler_dependencies:
+- apt-transport-https
+- ca-certificates     # common CA certificates
+- curl                # command line tool for transferring data with URL syntax
+- gnupg               # GNU privacy guard
+
+doppler_packages:
+- doppler
 
 # ---------------------------------------------------------------------------- #
 #               ------- Eza ------

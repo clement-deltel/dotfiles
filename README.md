@@ -1,6 +1,6 @@
 # dotfiles <!-- omit in toc -->
 
-Personal dotfiles managed with [chezmoi](https://www.chezmoi.io).
+Personal dotfiles managed with [chezmoi](https://www.chezmoi.io) and [doppler](https://www.doppler.com).
 
 ## Table of Contents <!-- omit in toc -->
 

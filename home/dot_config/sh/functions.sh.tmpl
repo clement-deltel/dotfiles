@@ -133,18 +133,17 @@ function bitwarden-open-fn {
 # ---------------------------------------------------------------------------- #
 function chezmoi-add-fn { chezmoi add "$1"; }
 function chezmoi-add-template-fn { chezmoi add --template "$1"; }
-function chezmoi-apply-bitwarden-fn {
-  bitwarden-create-session-fn
-  chezmoi apply --verbose
-  unset BW_SESSION
-}
 function chezmoi-edit-fn { chezmoi edit "$1"; }
 function chezmoi-fn { chezmoi "$@"; }
 function chezmoi-merge-fn { chezmoi merge "$1"; }
-function chezmoi-update-bitwarden-fn {
-  bitwarden-create-session-fn
-  chezmoi update --force --verbose
-  unset BW_SESSION
+
+function chezmoi-skip-script-run-once-fn {
+  SHA256=$(sha256sum ~/.local/share/chezmoi/home/ansible/run_once_after_init.sh.tmpl  | awk '{print $1}')
+  ENTRY_VALUE=$(printf '{\n  "type": "script",\n  "contentsSHA256": "%s"\n}\n' "${SHA256}")
+  SCRIPT_VALUE=$(printf '{\n  "name": "ansible/init.sh",\n  "runAt": "%s"\n}\n' "$(date +'%Y-%m-%dT%T.%NZ')")
+  chezmoi state delete-bucket --bucket=scriptState
+  chezmoi state set --bucket=entryState --key=/home/ubuntu/ansible/init.sh --value=${ENTRY_VALUE}
+  chezmoi state set --bucket=scriptState --key=${SHA256} --value=${SCRIPT_VALUE}
 }
 
 # ---------------------------------------------------------------------------- #
@@ -186,7 +185,7 @@ function docker-volume-rm-dangling-fn {
   [[ -n ${VOLS} ]] && docker volume rm ${VOLS} || echo 'no dangling volumes.'
 }
 
-{{ if eq .shell "bash" -}}
+{{ if eq (doppler "SHELL") "bash" -}}
 function docker-image-rm-fn { docker image rm "$@"; }
 {{ end -}}
 
@@ -195,6 +194,22 @@ function docker-image-rm-fn { docker image rm "$@"; }
 # ---------------------------------------------------------------------------- #
 function docker-compose-fn { docker compose "$@"; }
 function docker-compose-run-fn { docker compose run "$@"; }
+
+# ---------------------------------------------------------------------------- #
+#               ------- Doppler ------
+# ---------------------------------------------------------------------------- #
+doppler-scope-fn () {
+  perform_reset=$1
+  if [ "$perform_reset" = "reset" ]; then
+    unset D_SCOPE
+    unset DOPPLER_TOKEN
+  else
+    export D_SCOPE="$(find ~/code -maxdepth 2 | fzf)"
+    export DOPPLER_TOKEN=$(doppler --scope "$D_SCOPE" configure get token --plain)
+  fi
+}
+
+doppler-secret-get-fn () { doppler secrets get "$1"; }
 
 # ---------------------------------------------------------------------------- #
 #               ------- Git ------
@@ -251,7 +266,7 @@ function venv-install-fn {
   fi
 }
 
-{{ if eq .shell "bash" -}}
+{{ if eq (doppler "SHELL") "bash" -}}
 # ---------------------------------------------------------------------------- #
 #               ------- Terraform ------
 # ---------------------------------------------------------------------------- #

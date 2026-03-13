@@ -55,7 +55,7 @@ if ($isAdmin)
 # ---------------------------------------------------------------------------- #
 #               ------- Environment ------
 # ---------------------------------------------------------------------------- #
-$machine={{ .machine }}
+$machine={{ doppler "MACHINE" }}
 $user=$Env:UserName
 $Env:XDG_CONFIG_HOME="C:/Users/$user/.config"
 

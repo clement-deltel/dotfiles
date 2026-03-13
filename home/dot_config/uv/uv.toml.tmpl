@@ -29,7 +29,7 @@ url = "https://pypi.org/simple"
 
 [[index]]
 name = "azure-devops"
-url = "{{ .ado_url }}"
+url = "{{ doppler "AZURE_DEVOPS_INDEX_URL" }}"
 # Move to the end of the prioritized list, such that it is given the lowest priority when resolving packages
 # default = true
 # Use exclusively for the dependencies that select it explicitly via [tool.uv.sources]

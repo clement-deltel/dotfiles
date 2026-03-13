@@ -99,11 +99,11 @@ aws_profile: default
 aws_region: us-east-2
 aws_format: yaml
 
-aws_sso_account_id: '{{ .aws_sso_account_id }}'
+aws_sso_account_id: '{{ doppler "AWS_SSO_ACCOUNT_ID" }}'
 aws_sso_region: eu-central-1
 aws_sso_registration_scopes: 'sso:account:access'
 aws_sso_role_name: 'LocalAdminAccess'
-aws_sso_start_url: '{{ .aws_sso_start_url }}'
+aws_sso_start_url: '{{ doppler "AWS_SSO_START_URL" }}'
 
 # ---------------------------------------------------------------------------- #
 #               ------- Bitwarden ------

@@ -5,11 +5,11 @@ powershell/
 .wslconfig
 profile.ps1
 # Shell
-{{ if ne .shell "zsh" }}
+{{ if ne (doppler "SHELL") "zsh" }}
 .p10k.zsh
 .zshenv
 .zshrc
-{{ else if ne .shell "bash" }}
+{{ else if ne (doppler "SHELL") "bash" }}
 .config/sh/completions.sh
 .bash_profile
 .bashrc

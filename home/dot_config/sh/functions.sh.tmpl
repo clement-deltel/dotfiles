@@ -137,15 +137,6 @@ function chezmoi-edit-fn { chezmoi edit "$1"; }
 function chezmoi-fn { chezmoi "$@"; }
 function chezmoi-merge-fn { chezmoi merge "$1"; }
 
-function chezmoi-skip-script-run-once-fn {
-  SHA256=$(sha256sum ~/.local/share/chezmoi/home/ansible/run_once_after_init.sh.tmpl  | awk '{print $1}')
-  ENTRY_VALUE=$(printf '{\n  "type": "script",\n  "contentsSHA256": "%s"\n}\n' "${SHA256}")
-  SCRIPT_VALUE=$(printf '{\n  "name": "ansible/init.sh",\n  "runAt": "%s"\n}\n' "$(date +'%Y-%m-%dT%T.%NZ')")
-  chezmoi state delete-bucket --bucket=scriptState
-  chezmoi state set --bucket=entryState --key=/home/ubuntu/ansible/init.sh --value=${ENTRY_VALUE}
-  chezmoi state set --bucket=scriptState --key=${SHA256} --value=${SCRIPT_VALUE}
-}
-
 # ---------------------------------------------------------------------------- #
 #               ------- Docker ------
 # ---------------------------------------------------------------------------- #

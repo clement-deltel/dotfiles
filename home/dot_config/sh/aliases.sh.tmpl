@@ -161,7 +161,7 @@ alias bwsy='bw sync'
 #               ------- Chezmoi ------
 # ---------------------------------------------------------------------------- #
 alias cm=chezmoi-fn
-alias cma='chezmoi apply'
+alias cma='chezmoi apply --exclude=scripts'
 alias cmad=chezmoi-add-fn
 alias cmadt=chezmoi-add-template-fn
 alias cmcd='chezmoi cd'
@@ -172,8 +172,10 @@ alias cmed='chezmoi edit-config'
 alias cmi='chezmoi ignored'
 alias cmm=chezmoi-merge-fn
 alias cmo='code ~/.local/share/chezmoi/dotfiles.code-workspace'
+alias cms='chezmoi status'
+alias cmsd='chezmoi state data'
 alias cmtoml='chezmoi edit-config'
-alias cmu='chezmoi update --force'
+alias cmu='chezmoi update --exclude=scripts --force'
 
 # ---------------------------------------------------------------------------- #
 #               ------- Docker ------

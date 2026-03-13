@@ -57,6 +57,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [gonzo](https://github.com/control-theory/gonzo) - TUI log analysis tool. `Go`
       - [lnav](https://github.com/tstack/lnav) - log file navigator. `C/C++`
     - **Modern Replacements**
+      - [choose](https://github.com/theryangeary/choose) - human-friendly and fast alternative to cut (and sometimes awk). `Rust`
       - [dua](https://github.com/Byron/dua-cli) - du, view disk space usage and delete unwanted data. `Rust`
       - [just](https://github.com/casey/just) - just a command runner. `Rust`
       - [procs](https://github.com/dalance/procs) - [ps](https://linux.die.net/man/1/ps), with better sorting, tree support, and more. `Rust`
@@ -76,6 +77,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - **Other**
       - [freeze](https://github.com/charmbracelet/freeze) - generate images of code and terminal output. `Go`
       - [tldr](https://github.com/tldr-pages/tlrc) - tldr client. `Rust`
+      - [vhs](https://github.com/charmbracelet/vhs) - CLI home video recorder. `Go`
       - [yq](https://github.com/mikefarah/yq) - command-line YAML, JSON, XML, CSV, TOML and properties processor. `Go`
   - [npm](https://github.com/npm/cli) - node package manager. `JavaScript`
     - [commitlint](https://github.com/conventional-changelog/commitlint) - lint commit messages. `TypeScript`
@@ -286,6 +288,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [dust](https://github.com/bootandy/dust) - du, a more intuitive version. `Rust`
   - [hwatch](https://github.com/blacknon/hwatch) - watch, records the differences in execution results and can check this differences at after. `Rust`
   - [lolcat](https://github.com/busyloop/lolcat) - cat, rainbows and unicorns. `Ruby`
+  - [shell-safe-rm](https://github.com/kaelzhang/shell-safe-rm) - rm, replacement with nearly full functionalities and options of the rm command. `Shell` `JavaScript`
   - [somo](https://github.com/theopfr/somo) - netstat, human-friendly alternative for socket and port monitoring. `Rust`
 - **Monitoring**
   - [powertop](https://github.com/fenrus75/powertop) - diagnose issues with power consumption and power management. `C/C++`
@@ -404,7 +407,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [Clipboard](https://github.com/Slackadays/Clipboard) - smart clipboard manager.
   - [espanso](https://github.com/espanso/espanso) - cross-platform text expander. `Rust`
   - [exosphere](https://github.com/mrdaemon/exosphere) - CLI and TUI driven application that offers patch reporting for remote unix systems. `Python`
-  - [glow](https://github.com/charmbracelet/glow) - render markdown on the terminal. `Go`
   - [hl](https://github.com/pamburus/hl) - fast and powerful log viewer and processor that converts JSON logs or logfmt logs into a clear human-readable format. `Rust`
   - [jrnl](https://github.com/jrnl-org/jrnl) - Collect your thoughts and notes without leaving the command line. `Python` `Gherkin`
   - [midnight commander](https://github.com/MidnightCommander/mc)

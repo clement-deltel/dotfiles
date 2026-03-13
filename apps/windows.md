@@ -38,6 +38,7 @@ Common:
   - [WezTerm](https://community.chocolatey.org/packages/wezterm) - GPU-accelerated cross-platform terminal emulator and multiplexer.
 - **Software Tweaks**
   - [AutoHotkey (Portable)](https://community.chocolatey.org/packages/autohotkey) - macro-creation and automation software utility that allows users to automate repetitive tasks.
+  - [Lively](https://community.chocolatey.org/packages/lively) - turn video & GIF files, emulators, HTML, web address & shaders, games into desktop wallpapers.
   - [Nilesoft Shell](https://community.chocolatey.org/packages/nilesoft-shell) - context menu extender to integrate into Windows File Explorer.
   - [PowerToys](https://community.chocolatey.org/packages/powertoys) - set of utilities for power users to tune and streamline their Windows experience for greater productivity.
   - [QuickLook](https://community.chocolatey.org/packages/quicklook) - enables very quick preview of file by pressing Space key while highlighting it, without opening its associated application.

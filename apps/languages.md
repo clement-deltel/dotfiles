@@ -12,10 +12,13 @@ Here is a list of libraries and frameworks for different programming languages t
 
 ## Go
 
+- [bubbles](https://github.com/charmbracelet/bubbles) - TUI components for Bubble Tea. `Go`
 - [bubbletea](https://github.com/charmbracelet/bubbletea) - powerful little TUI framework. `Go`
 - [fang](https://github.com/charmbracelet/fang) - CLI starter kit. `Go`
+- [glow](https://github.com/charmbracelet/glow) - render markdown on the terminal. `Go`
 - [golangci-lint](https://github.com/golangci/golangci-lint) - fast linters runner. `Go`
 - [gotests](https://github.com/cweill/gotests) - automatically generate test boilerplate from your source code. `Go`
+- [gum](https://github.com/charmbracelet/gum) - tool for glamorous shell scripts. `Go`
 - [tview](https://github.com/rivo/tview) - terminal UI library with rich, interactive widgets. `Go`
 
 ## JavaScript
@@ -38,6 +41,7 @@ Here is a list of libraries and frameworks for different programming languages t
 
 - [astro](https://github.com/withastro/astro) - web framework for content-driven websites. `TypeScript` `JavaScript`
 - [bun](https://github.com/oven-sh/bun) - JavaScript runtime, bundler, test runner, and package manager – all in one. `Zig` `C++`
+- [electrobun](https://github.com/blackboardsh/electrobun) - build ultra fast, tiny, and cross-platform desktop apps. `TypeScript` `C++`
 - [kibo](https://github.com/haydenbleasel/kibo) - custom registry of composable, accessible and extensible components designed for use with shadcn/ui. `TypeScript`
 - [opentui](https://github.com/sst/opentui) - library for building terminal user interfaces. `TypeScript` `Zig`
 - [turborepo](https://github.com/vercel/turborepo) - build system optimized for JavaScript and TypeScript. `Rust` `TypeScript`

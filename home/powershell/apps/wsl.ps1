@@ -19,8 +19,8 @@
   Purpose/Change: Initial script development
 
 .EXAMPLE
-  ./wsl.ps1 init work
-  ./wsl.ps1 backup work
+  ./wsl.ps1 init pro
+  ./wsl.ps1 backup pro
 #>
 
 #------------------------------[Declarations]---------------------------
@@ -42,7 +42,7 @@ If( $tag -eq "init" )
   $gzipFilePath = "$tarFilePath.gz"
 
   # Download the file from AWS S3 bucket using AWS CLI
-  aws s3 cp s3://machine-$machine/$gzipFileName $gzipFilePath --profile personal
+  aws s3 cp s3://machine-$machine/$gzipFileName $gzipFilePath --profile perso
 
   # Decompress the gzip file
   & 7z e $gzipFilePath
@@ -70,7 +70,7 @@ Else If( $tag -eq "backup" )
   & 7z a -mx5 -tgzip $gzipFilePath $tarFilePath
 
   # Upload the file to AWS S3 bucket using AWS CLI
-  aws s3 cp $gzipFilePath s3://machine-$machine --profile personal
+  aws s3 cp $gzipFilePath s3://machine-$machine --profile perso
 
   # Clean up the local backup directory by removing the files
   Remove-Item $gzipFilePath

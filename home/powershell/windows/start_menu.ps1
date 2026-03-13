@@ -19,8 +19,8 @@
   Purpose/Change: Initial script development
 
 .EXAMPLE
-  ./start_menu.ps1 init work
-  ./start_menu.ps1 backup work
+  ./start_menu.ps1 init pro
+  ./start_menu.ps1 backup pro
 #>
 
 
@@ -35,7 +35,7 @@ $localBackupDirectory = "C:\Temp"
 If( $tag -eq "init" )
 {
   # Download the file from AWS S3 bucket using AWS CLI
-  aws s3 cp s3://machine-$machine/start_menu.json $localBackupDirectory\start_menu.json --profile personal
+  aws s3 cp s3://machine-$machine/start_menu.json $localBackupDirectory\start_menu.json --profile perso
 
   Import-StartLayout -LayoutPath $localBackupDirectory\start_menu.json
 
@@ -47,7 +47,7 @@ Else If( $tag -eq "backup" )
   Export-StartLayout -Path $localBackupDirectory\start_menu.json
 
   # Upload the file to AWS S3 bucket using AWS CLI
-  aws s3 cp $localBackupDirectory\start_menu.json s3://machine-$machine --profile personal
+  aws s3 cp $localBackupDirectory\start_menu.json s3://machine-$machine --profile perso
 
   # Clean up the local backup directory by removing the file
   Remove-Item $localBackupDirectory\start_menu.json

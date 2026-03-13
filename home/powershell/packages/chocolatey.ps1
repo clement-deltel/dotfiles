@@ -19,8 +19,8 @@
   Purpose/Change: Initial script development
 
 .EXAMPLE
-  ./packages/chocolatey.ps1 init work
-  ./packages/chocolatey.ps1 update work
+  ./packages/chocolatey.ps1 init pro
+  ./packages/chocolatey.ps1 update pro
 #>
 
 #------------------------------[Declarations]---------------------------

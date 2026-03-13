@@ -19,8 +19,8 @@
   Purpose/Change: Initial script development
 
 .EXAMPLE
-  ./packages/powershell.ps1 init work
-  ./packages/powershell.ps1 update work
+  ./packages/powershell.ps1 init pro
+  ./packages/powershell.ps1 update pro
 #>
 
 #------------------------------[Declarations]---------------------------

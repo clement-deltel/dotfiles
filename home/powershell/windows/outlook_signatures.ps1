@@ -19,8 +19,8 @@
   Purpose/Change: Initial script development
 
 .EXAMPLE
-  ./signatures.ps1 init work
-  ./signatures.ps1 backup work
+  ./signatures.ps1 init pro
+  ./signatures.ps1 backup pro
 #>
 
 
@@ -48,7 +48,7 @@ Else If( $tag -eq "backup" )
   & 7z a -r -tzip $zipFilePath $signaturesDirectory\*
 
   # Upload the zip file to AWS S3 bucket using AWS CLI
-  aws s3 cp $zipFilePath s3://machine-$machine --profile personal
+  aws s3 cp $zipFilePath s3://machine-$machine --profile perso
 
   # Clean up the local backup directory by removing the zip file
   Remove-Item $zipFilePath

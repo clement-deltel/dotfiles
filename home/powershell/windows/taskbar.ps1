@@ -17,8 +17,8 @@
   Purpose/Change: Initial script development
 
 .EXAMPLE
-  ./taskbar.ps1 init work
-  ./taskbak.ps1 backup work
+  ./taskbar.ps1 init pro
+  ./taskbak.ps1 backup pro
 #>
 
 

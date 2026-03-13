@@ -19,8 +19,8 @@
   Purpose/Change: Initial script development
 
 .EXAMPLE
-  ./packages/winget.ps1 init work
-  ./packages/winget.ps1 update work
+  ./packages/winget.ps1 init pro
+  ./packages/winget.ps1 update pro
 #>
 
 #------------------------------[Declarations]---------------------------
@@ -41,11 +41,11 @@ If( $tag -eq "init" )
   winget install --exact --id Microsoft.PowerShell --source winget
   winget install --exact --id Rainmeter.Rainmeter --interactive --override "/S /AUTOSTARTUP=1 /RESTART=1"
 
-  If( $machine -eq "personal" )
+  If( $machine -eq "perso" )
   {
     winget install --exact --id $netflixId --interactive --source msstore
   }
-  Else If( $machine -eq "work" )
+  Else If( $machine -eq "pro" )
   {
     winget install --exact --id Google.IAPDesktop --interactive
     winget install --exact --id Microsoft.Sysinternals --interactive
@@ -62,11 +62,11 @@ Else If( $tag -eq "update" )
   winget upgrade --exact --id Microsoft.PowerShell --source winget
   winget upgrade --exact --id Rainmeter.Rainmeter --interactive
 
-  If( $machine -eq "personal" )
+  If( $machine -eq "perso" )
   {
     winget upgrade --exact --id $netflixId --interactive --source msstore
   }
-  Else If( $machine -eq "work" )
+  Else If( $machine -eq "pro" )
   {
     winget upgrade --exact --id twpayne.chezmoi --interactive
 

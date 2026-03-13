@@ -39,11 +39,11 @@ windows/taskbar.ps1 init $machine
 windows/chrome.ps1 init $machine
 
 # Work-specific
-If( $machine -eq "work" )
+If( $machine -eq "pro" )
 {
   # Windows
-  windows/outlook_signatures.ps1 init work
+  windows/outlook_signatures.ps1 init pro
 
   # Apps
-  windows/wsl.ps1 init work
+  windows/wsl.ps1 init pro
 }

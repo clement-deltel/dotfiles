@@ -9,7 +9,8 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io) and [doppler](h
   - [2.1 Install](#21-install)
   - [2.2 Shell](#22-shell)
   - [2.3 Update](#23-update)
-  - [2.4 Test](#24-test)
+  - [2.4 Development](#24-development)
+  - [2.5 Test](#25-test)
   - [2.5 Containers](#25-containers)
 - [3. Microsoft Windows](#3-microsoft-windows)
   - [3.1 Install](#31-install)
@@ -19,12 +20,14 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io) and [doppler](h
 
 ## 1. Pre-requisites
 
-I store the below sensitive configuration in my Vaultwarden instance:
+I store the below secrets in Doppler:
 
-- **chezmoi toml configuration file**: notes of the item named "chezmoi"
-- **private ssh keys**: attachments of the item named "SSH Keys"
-- **kubeconfig file**: attachment "kubeconfig" of the item named "chezmoi"
-- **aws CLI configuration**: custom fields of the item with the id "223277e3-498b-4d3c-9c0b-fe80e0e83d7b"
+- AWS SSO account details
+- Azure DevOps account details
+- git user name and email
+- kubeconfig and some custom kubernetes aliases
+- SSH keys: RSA and ED25519
+- [wakapi](https://github.com/muety/wakapi) API key and URL
 
 I store the sensitive files for my Windows machine in an AWS S3 bucket.
 
@@ -35,17 +38,13 @@ I store the sensitive files for my Windows machine in an AWS S3 bucket.
 1. Export required environment variables:
 
 ```bash
-# Machine configuration. Options: pro, perso
-export MACHINE="pro"
-# Linux distribution family. Options: arch, debian, nixos, redhat
-export FAMILY="debian"
-# Update with your server address
-export BW_SERVER="https://bw.domain.com"
-# Fill the blanks with your API credentials and password
-export BW_CLIENTID=""
-export BW_CLIENTSECRET=""
-export BW_PASSWORD=''
 export GITHUB_USERNAME=clement-deltel
+# Machine configuration. Options: pro, perso
+export MACHINE=pro
+# Linux distribution family. Options: arch, debian, nixos, redhat
+export FAMILY=debian
+# Update with your Doppler CLI token
+export DOPPLER_TOKEN=""
 ```
 
 2. Install dependencies:
@@ -67,12 +66,10 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
 
 4. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.
 5. Ansible playbooks automatically install and configure these [apps](apps/linux.md#current).
-6. Clean sensitive information:
+6. Clear sensitive information:
 
 ```bash
-unset BW_CLIENTID
-unset BW_CLIENTSECRET
-unset BW_PASSWORD
+unset DOPPLER_TOKEN
 ```
 
 ### 2.2 Shell
@@ -102,56 +99,78 @@ Here are some useful Linux system commands:
 
 ### 2.3 Update
 
-Follow the steps below to refresh the configuration after an update on the repository:
-
-- Open Bitwarden session
-- Enter your Bitwarden password
-- Run chezmoi update
-- Close Bitwarden session
+Run the command below to refresh the configuration after an update on the repository:
 
 ```bash
-cmub
+chezmoi update
+# or the alias
+cmu
 ```
 
-### 2.4 Test
+### 2.4 Development
 
-Install Docker to test this setup. The following images have been tested so far:
-
-- **Debian-like Systems**
-  - ubuntu:22.04
-
-Then, build an image:
+1. Export required environment variables and build Docker image:
 
 ```bash
-# Machine configuration. Options: pro, perso
-export MACHINE="pro"
-# Set image parameters
-export FAMILY="debian"
-export IMAGE="ubuntu:22.04"
-# See all options and more details at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-export TIMEZONE="America/New_York"
-
-# Update with your server address
-export BW_SERVER="https://bw.domain.com"
-# Fill the blanks with your API credentials and password
-export BW_CLIENTID=""
-export BW_CLIENTSECRET=""
-export BW_PASSWORD=''
 export GITHUB_USERNAME=clement-deltel
+# Machine configuration. Options: pro, perso
+export MACHINE=pro
+# Set image parameters
+export FAMILY=debian
+export IMAGE=ubuntu:24.04
+# See all options and more details at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+export TIMEZONE=Etc/GMT
+
+# Update with your Doppler CLI token
+export DOPPLER_TOKEN=""
 
 # Docker build and then run
 # Use option --progress=plain to see steps in more details
-docker build --build-arg MACHINE --build-arg IMAGE --build-arg TIMEZONE --build-arg BW_SERVER --build-arg BW_CLIENTID --build-arg BW_CLIENTSECRET --build-arg BW_PASSWORD --build-arg GITHUB_USERNAME --tag dotfiles --file docker/linux/${FAMILY}/Dockerfile docker/linux/${FAMILY}/
+docker build --build-arg GITHUB_USERNAME --build-arg MACHINE --build-arg IMAGE --build-arg TIMEZONE --build-arg DOPPLER_TOKEN --file docker/linux/${FAMILY}/Dockerfile --tag ${IMAGE}-dotfiles-dev --target development docker/linux/${FAMILY}/
 
-unset BW_CLIENTID
-unset BW_CLIENTSECRET
-unset BW_PASSWORD
+unset DOPPLER_TOKEN
 ```
 
-And run a container:
+2. Run a container:
 
 ```bash
-docker run --interactive --name dotfiles --tty --rm dotfiles
+docker run --interactive --name dotfiles-dev --tty --rm --volume ~/.local/share/chezmoi:/home/linux/.local/share/chezmoi ${IMAGE}-dotfiles-dev
+```
+
+### 2.5 Test
+
+1. Install Docker to test this setup. The following images have been tested so far:
+
+- **Debian-like Systems**
+  - ubuntu:22.04
+  - ubuntu:24.04
+
+2. Export required environment variables and build Docker image:
+
+```bash
+export GITHUB_USERNAME=clement-deltel
+# Machine configuration. Options: pro, perso
+export MACHINE=pro
+# Set image parameters
+export FAMILY=debian
+export IMAGE=ubuntu:24.04
+# See all options and more details at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+export TIMEZONE=Etc/GMT
+
+# Update with your Doppler CLI token
+export DOPPLER_TOKEN=""
+
+# Docker build and then run
+# Use option --progress=plain to see steps in more details
+docker build --build-arg GITHUB_USERNAME --build-arg MACHINE --build-arg IMAGE --build-arg TIMEZONE --build-arg DOPPLER_TOKEN --file docker/linux/${FAMILY}/Dockerfile --tag ${IMAGE}-dotfiles --target production docker/linux/${FAMILY}/
+
+unset DOPPLER_TOKEN
+```
+
+3. Run a container:
+
+```bash
+docker run --interactive --name dotfiles --tty --rm ${IMAGE}-dotfiles
 ```
 
 To be tested:
@@ -190,16 +209,12 @@ Here is the list of containerized tools that I use:
 
 1. Export required environment variables:
 
-```bash
-# Machine configuration. Options: pro, perso
-$Env:MACHINE="pro"
-# Update with your server address
-$Env:BW_SERVER="https://bw.domain.com"
-# Fill the blanks with your API credentials and password
-$Env:BW_CLIENTID=""
-$Env:BW_CLIENTSECRET=""
-$Env:BW_PASSWORD=''
+```ps1
 $Env:GITHUB_USERNAME=clement-deltel
+# Machine configuration. Options: pro, perso
+$Env:MACHINE=pro
+# Update with your Doppler CLI token
+$Env:$DOPPLER_TOKEN=""
 ```
 
 2. Run installation script:
@@ -226,9 +241,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
 8. Clean sensitive information:
 
 ```powershell
-$Env:BW_CLIENTID=$null
-$Env:BW_CLIENTSECRET=$null
-$Env:BW_PASSWORD=$null
+$Env:DOPPLER_TOKEN=$null
 ```
 
 ### 3.2 Test
@@ -238,23 +251,17 @@ Install Docker to test this setup.
 Then, build an image:
 
 ```ps1
-# Machine configuration. Options: pro, perso
-$Env:MACHINE="pro"
-# Update with your server address
-$Env:BW_SERVER="https://bw.domain.com"
-# Fill the blanks with your API credentials and password
-$Env:BW_CLIENTID=""
-$Env:BW_CLIENTSECRET=""
-$Env:BW_PASSWORD=''
 $Env:GITHUB_USERNAME=clement-deltel
+# Machine configuration. Options: pro, perso
+$Env:MACHINE=pro
+# Update with your Doppler CLI token
+$Env:$DOPPLER_TOKEN=""
 
 # Docker build and then run
 # Use option --progress=plain to see steps in more details
-docker build --build-arg MACHINE --build-arg BW_SERVER --build-arg BW_CLIENTID --build-arg BW_CLIENTSECRET --build-arg BW_PASSWORD --build-arg GITHUB_USERNAME --file docker/microsoft/Dockerfile --tag dotfiles docker/microsoft/
+docker build --build-arg GITHUB_USERNAME --build-arg MACHINE --build-arg DOPPLER_TOKEN --file docker/microsoft/Dockerfile --tag dotfiles docker/microsoft/
 
-$Env:BW_CLIENTID=$null
-$Env:BW_CLIENTSECRET=$null
-$Env:BW_PASSWORD=$null
+$Env:DOPPLER_TOKEN=$null
 ```
 
 And run a container:

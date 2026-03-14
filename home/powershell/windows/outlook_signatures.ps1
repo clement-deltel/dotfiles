@@ -28,8 +28,7 @@
 $tag = args[0]
 $machine = args[1]
 
-$username = $Env:UserName
-$signaturesDirectory = "C:\Users\$username\AppData\Roaming\Microsoft\Signatures"
+$signaturesDirectory = "C:\Users\$Env:USERNAME\AppData\Roaming\Microsoft\Signatures"
 $localBackupDirectory = "C:\Temp"
 
 #------------------------------[Execution]------------------------------

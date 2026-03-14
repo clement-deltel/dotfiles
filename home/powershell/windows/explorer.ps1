@@ -28,8 +28,7 @@
 $tag = args[0]
 $machine = args[1]
 
-$username = $Env:UserName
-$quickAccessFile = "C:\Users\$username\AppData\Roaming\microsoft\windows\recent\automaticdestinations\f01b4d95cf55d32a.automaticDestinations-ms"
+$quickAccessFile = "C:\Users\$Env:USERNAME\AppData\Roaming\microsoft\windows\recent\automaticdestinations\f01b4d95cf55d32a.automaticDestinations-ms"
 $localBackupDirectory = "C:\Temp"
 
 #------------------------------[Execution]------------------------------

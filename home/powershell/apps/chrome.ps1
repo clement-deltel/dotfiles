@@ -27,8 +27,7 @@
 $tag = args[0]
 $machine = args[1]
 
-$username = $Env:UserName
-$chromeUserDataDirectory = "C:\Users\$username\AppData\Local\Google\Chrome"
+$chromeUserDataDirectory = "C:\Users\$Env:USERNAME\AppData\Local\Google\Chrome"
 $localBackupDirectory = "C:\Temp"
 
 #------------------------------[Execution]------------------------------

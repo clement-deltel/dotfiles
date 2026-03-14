@@ -18,39 +18,36 @@
   ./install.ps1
 #>
 
-#------------------------------[Declarations]---------------------------
-$username = $Env:UserName
-
 #------------------------------[Functions]------------------------------
 
 Function InstallChezmoi{
   winget install twpayne.chezmoi --interactive
 }
 
-Function InstallBitwarden{
-  winget install Bitwarden.CLI --interactive
+Function InstallDoppler{
+  scoop bucket add doppler https://github.com/DopplerHQ/scoop-doppler.git
+  scoop install doppler
 }
 
-Function ConfigureBitwarden{
-  bw config server $Env:BW_SERVER
-  bw login --apikey
+Function ConfigureDoppler{
+  doppler login --scope / --token $Env:DOPPLER_TOKEN
 
-  $BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
-  New-Item "C:\Users\$username\.config\chezmoi" -ItemType Directory -ErrorAction SilentlyContinue
-  bw get notes chezmoi-$Env:MACHINE > "C:\Users\$username\.config\chezmoi\chezmoi.toml"
-  bw lock
+  New-Item "C:\Users\$Env:USERNAME\.config\chezmoi" -ItemType Directory -ErrorAction SilentlyContinue
+  @"
+[doppler]
+project = "dotfiles"
+config = "prod_$Env:MACHINE"
+"@ | Out-File -FilePath "C:\Users\$Env:USERNAME\.config\chezmoi\chezmoi.toml" -Encoding utf8
 }
 
 Function Init{
-  $BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
   chezmoi init --apply $Env:GITHUB_USERNAME
-  bw lock
 }
 
 #------------------------------[Execution]------------------------------
 
 InstallChezmoi
-InstallBitwarden
-ConfigureBitwarden
+InstallDoppler
+ConfigureDoppler
 
 Init

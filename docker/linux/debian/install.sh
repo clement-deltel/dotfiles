@@ -6,17 +6,17 @@
 
 # ---------------------------------------------------------------------------- #
 #FUNCTION: install_dependencies
-#DESCRIPTION: Install pre-requisites on the system.
+#DESCRIPTION: Install pre-requisites.
 # ---------------------------------------------------------------------------- #
 function install_dependencies() {
-  echo "[INFO] Installing dependencies: curl, git, jq, libsecret-1-0, unzip..."
+  echo "[INFO] Installing dependencies: apt-transport-https, ca-certificates, curl, git, gnupg..."
   sudo apt update -y
-  sudo apt install -y curl git jq libsecret-1-0 unzip
+  sudo apt install -y apt-transport-https ca-certificates curl git gnupg
 }
 
 # ---------------------------------------------------------------------------- #
 #FUNCTION: install_chezmoi
-#DESCRIPTION: Install chezmoi on the system.
+#DESCRIPTION: Install chezmoi.
 # ---------------------------------------------------------------------------- #
 function install_chezmoi() {
   if [ ! "$(command -v chezmoi)" ]; then
@@ -36,37 +36,28 @@ function install_chezmoi() {
 }
 
 # ---------------------------------------------------------------------------- #
-#FUNCTION: install_bitwarden
-#DESCRIPTION: Install Bitwarden CLI on the system.
+#FUNCTION: install_doppler
+#DESCRIPTION: Install Doppler CLI.
 # ---------------------------------------------------------------------------- #
-function install_bitwarden() {
-  echo "[INFO] Getting Bitwarden CLI latest version..."
-  export BW_VERSION=$(curl -H "Accept: application/vnd.github+json" https://api.github.com/repos/bitwarden/clients/releases | jq -r 'sort_by(.published_at) | reverse | .[].name | select( index("CLI") )' | sed "s:.*CLI v::" | head -n 1)
-
-  echo "[INFO] Installing Bitwarden CLI ${BW_VERSION}..."
-  curl -L --remote-name "https://github.com/bitwarden/clients/releases/download/cli-v${BW_VERSION}/bw-linux-${BW_VERSION}.zip"
-  sudo unzip -d /usr/local/bin -o bw-linux-*.zip
-  sudo chmod +x /usr/local/bin/bw
-  echo "[INFO] Bitwarden CLI successfully installed"
-
-  rm -f bw-linux-*.zip
+function install_doppler() {
+  echo "[INFO] Installing Doppler CLI..."
+  curl -sLf --retry 3 --tlsv1.2 --proto "=https" 'https://packages.doppler.com/public/cli/gpg.DE2A7741A397C129.key' | sudo gpg --dearmor -o /usr/share/keyrings/doppler-archive-keyring.gpg
+  echo "deb [signed-by=/usr/share/keyrings/doppler-archive-keyring.gpg] https://packages.doppler.com/public/cli/deb/debian any-version main" | sudo tee /etc/apt/sources.list.d/doppler-cli.list
+  sudo apt update -y
+  sudo apt install -y doppler
+  echo "[INFO] Doppler CLI successfully installed"
 }
 
 # ---------------------------------------------------------------------------- #
-#FUNCTION: configure_bitwarden
-#DESCRIPTION: Configure Bitwarden API access and get chezmoi configuration file.
+#FUNCTION: configure_doppler
+#DESCRIPTION: Configure Doppler API access and build chezmoi configuration file.
 # ---------------------------------------------------------------------------- #
-configure_bitwarden() {
-  echo "[INFO] Configuring Bitwarden CLI..."
-  bw config server ${BW_SERVER}
-  bw login --apikey
-
-  echo "[INFO] Opening session to get chezmoi configuration file..."
-  export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
-  mkdir -p ~/.config/chezmoi
-  bw get notes chezmoi-${MACHINE} >~/.config/chezmoi/chezmoi.toml
-  bw lock
-  echo "[INFO] chezmoi configuration file successfully retrieved"
+configure_doppler() {
+  echo "[INFO] Configuring Doppler CLI..."
+  doppler login --scope / --token ${DOPPLER_TOKEN}
+  echo """[doppler]
+project = "dotfiles"
+config = "prod_${MACHINE}"""" > ~/.config/chezmoi/chezmoi.toml
 }
 
 # ---------------------------------------------------------------------------- #
@@ -74,13 +65,9 @@ configure_bitwarden() {
 #DESCRIPTION: Initialize chezmoi on the system.
 # ---------------------------------------------------------------------------- #
 init() {
-  export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
-
   echo "[INFO] Running chezmoi initialization..."
   exec "$chezmoi" init --apply ${GITHUB_USERNAME}
   echo "[INFO] chezmoi successfully initialized"
-
-  bw lock
 }
 
 # ---------------------------------------------------------------------------- #
@@ -91,8 +78,8 @@ function main() {
 
   install_dependencies
   install_chezmoi
-  install_bitwarden
-  configure_bitwarden
+  install_doppler
+  configure_doppler
 
   if [[ -z ${DISABLE_INIT} ]]; then
     init

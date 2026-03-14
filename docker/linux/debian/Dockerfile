@@ -1,7 +1,7 @@
 # Instructions creating a new layer: ADD, COPY, RUN
 
 # https://hub.docker.com/_/ubuntu
-ARG IMAGE="ubuntu:22.04"
+ARG IMAGE=ubuntu:22.04
 
 # ---------------------------------------------------------------------------- #
 #               ------- Base ------
@@ -16,10 +16,7 @@ ARG ID=10001
 ARG USER=linux
 ARG TIMEZONE=Etc/GMT
 
-ARG BW_SERVER
-ARG BW_CLIENTID
-ARG BW_CLIENTSECRET
-ARG BW_PASSWORD
+ARG DOPPLER_TOKEN
 
 # https://github.com/opencontainers/image-spec/blob/main/annotations.md
 LABEL org.opencontainers.image.title="${IMAGE}-dotfiles"

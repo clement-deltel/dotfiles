@@ -5,6 +5,7 @@ Here is a list of browser extensions that I am currently using, as well as tools
 ## Table of Contents <!-- omit in toc -->
 
 - [Current](#current)
+- [Enhancements](#enhancements)
 - [Deprecated](#deprecated)
 
 ## Current
@@ -30,6 +31,10 @@ Here is a list of browser extensions that I am currently using, as well as tools
 - **Other**
   - [Dark Reader](https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)
   - [Unhook - Remove YouTube Recommended & Shorts](https://chromewebstore.google.com/detail/unhook-remove-youtube-rec/khncfooichmfjbepaaaebmommgaepoid)
+
+## Enhancements
+
+- [Markdown Here](https://chromewebstore.google.com/detail/markdown-here/elifhakcjgalahccnjkneoccemfahfoa)
 
 ## Deprecated
 

@@ -245,10 +245,15 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [opencode](https://github.com/anomalyco/opencode) - open source coding agent. `TypeScript`
   - [pdfGPT](https://github.com/bhaskatripathi/pdfGPT) - chat with the contents of your pdf file by using GPT capabilities. `Python`
   - [private-gpt](https://github.com/zylon-ai/private-gpt) - interact with your documents using the power of GPT, 100% privately, no data leaks. `Python`
+- **Benchmarking**
+  - [hyperfine](https://github.com/sharkdp/hyperfine) - benchmarking CLI. `Rust`
+  - [stress-ng](https://github.com/ColinIanKing/stress-ng) - stress test a computer system in various selectable ways. `C`
+  - [s-tui](https://github.com/amanusk/s-tui) - terminal-based CPU stress and monitoring utility. `Python`
 - **CI/CD**
   - [gh-signoff](https://github.com/basecamp/gh-signoff) -  GitHub CLI extension local CI, sign off on your own work. `Shell`
   - [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local) - Tired of pushing to test your .gitlab-ci.yml? `TypeScript`
 - **Cloud**
+  - [aws-nuke](https://github.com/ekristen/aws-nuke) - remove all the resources from an AWS account. `Go`
   - [localstack](https://github.com/localstack/localstack) - fully functional local AWS cloud stack, develop and test your cloud & serverless apps offline. `Python`
   - [sourcerer](https://github.com/the-impact-craft/sourcerer) - CLI-based cloud storage explorer that provides a unified interface to view and manage files across multiple cloud providers. `Python`
   - [taws](https://github.com/huseyinbabal/taws) - terminal-based AWS resource viewer and manager. `Rust`
@@ -256,12 +261,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [tbls](https://github.com/k1LoW/tbls) - ci-friendly tool to document a database. `Go`
 - **Diagrams**
   - [d2](https://github.com/terrastruct/d2) - modern diagram scripting language that turns text to diagrams. `JavaScript`
-- **Dotfiles Management**
-  - [stow](https://www.gnu.org/software/stow/manual/stow.html) - symlink farm manager which takes distinct sets of software and/or data located in separate directories on the filesystem, and makes them all appear to be installed in a single directory tree.
-- **Benchmarking**
-  - [hyperfine](https://github.com/sharkdp/hyperfine) - benchmarking CLI. `Rust`
-  - [stress-ng](https://github.com/ColinIanKing/stress-ng) - stress test a computer system in various selectable ways. `C`
-  - [s-tui](https://github.com/amanusk/s-tui) - terminal-based CPU stress and monitoring utility. `Python`
 - **Directories & Files**
   - [alt-sendme](https://github.com/tonyantony300/alt-sendme) - send files and directories anywhere in the world without storing in cloud - any size, any format, no accounts, no restrictions. `TypeScript` `Rust`
   - [entr](https://github.com/eradman/entr) - run arbitrary commands when files change. `C`
@@ -270,6 +269,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [noxdir](https://github.com/crumbyte/noxdir) - terminal utility for visualizing file system usage. `Go`
   - [watchman](https://github.com/facebook/watchman) - watches files and records, or triggers actions, when they change. `C++` `Python`
   - [yazi](https://github.com/sxyazi/yazi) - terminal file manager based on async I/O. `Rust`
+- **Dotfiles Management**
+  - [stow](https://www.gnu.org/software/stow/manual/stow.html) - symlink farm manager which takes distinct sets of software and/or data located in separate directories on the filesystem, and makes them all appear to be installed in a single directory tree.
 - **Infrastructure-as-Code (IaC)**
   - [opentofu](https://github.com/opentofu/opentofu) -  declaratively manage your cloud infrastructure. `Go`
   - [puppet](https://github.com/puppetlabs/puppet) - server automation framework and application. `Ruby`
@@ -282,6 +283,11 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [void](https://github.com/voideditor/void) - open-source Cursor alternative. `TypeScript`
   - [windsurf](https://windsurf.com) - AI code editor.
   - [zed](https://github.com/zed-industries/zed) - high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
+- **Games**
+  - [clmystery](https://github.com/veltman/clmystery) - command-line murder mystery.
+- **KVM**
+  - [barrier](https://github.com/debauchee/barrier) - open-source KVM software. `C` `C++`
+  - [deskflow](https://github.com/deskflow/deskflow) - share a single keyboard and mouse between multiple computers. `C++`
 - **Modern Replacements**
   - [atuin](https://github.com/atuinsh/atuin) - history, magical shell history. `Rust`
   - [cpx](https://github.com/11happy/cpx) - cp, reimagined. `Rust`
@@ -402,6 +408,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [lazy vim](https://github.com/LazyVim/LazyVim) - neovim config for the lazy. `Lua`
   - [qsv](https://github.com/dathere/qsv) - blazing-fast data-wrangling toolkit. `Rust`
   - [xan](https://github.com/medialab/xan) - csv magician. `Rust`
+- **Tiling**
+  - [hyperland](https://github.com/hyprwm/Hyprland) - independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks. `C++`
+  - [niri](https://github.com/niri-wm/niri) - scrollable-tiling Wayland compositor. `Rust`
 - **Tools**
   - [asciinema](https://github.com/asciinema/asciinema) - terminal session recorder, streamer and player. `Rust`
   - [Clipboard](https://github.com/Slackadays/Clipboard) - smart clipboard manager.
@@ -431,6 +440,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [gitu](https://github.com/altsem/gitu) - TUI git client inspired by Magit. `Rust`
   - [git-appraise](https://github.com/google/git-appraise) - distributed code review system for git repos. `Go`
   - [git-bug](https://github.com/git-bug/git-bug) - distributed, offline-first bug tracker embedded in git, with bridges. `Go`
+  - [git-it-electron](https://github.com/jlord/git-it-electron) - desktop app for learning Git and GitHub. `Perl`
   - [git-plan](https://github.com/rorybyrne/git-plan) - a better workflow for git. `Python`
   - [git-rewrite-commits](https://github.com/f/git-rewrite-commits) - AI-powered git commit message rewriter using Ollama or GPT. `TypeScript` `JavaScript`
   - [git-sim](https://github.com/initialcommit-com/git-sim) - visually simulate Git operations in your own repos with a single terminal command. `Python`
@@ -461,6 +471,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [hey](https://github.com/rakyll/hey) - HTTP load generator, apachebench (ab) replacement. `Go`
   - [monolith](https://github.com/Y2Z/monolith) - CLI tool and library for saving complete web pages as a single HTML file. `Rust`
   - [oha](https://github.com/hatoo/oha) - HTTP load generator, with tui animation. `Rust`
+  - [second-order](https://github.com/mhmdiaa/second-order) - second-order subdomain takeover scanner. `Go`
 - **zsh**
   - [zap](https://github.com/zap-zsh/zap) - minimal plugin manager. `Shell`
   - [zinit](https://github.com/zdharma-continuum/zinit) - flexible and fast plugin manager. `Shell`
@@ -474,6 +485,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 - [dependabot-core](https://github.com/dependabot/dependabot-core) - dependabot's core logic for creating update PRs. `Ruby`
 - [renovate](https://github.com/renovatebot/renovate) - cross-platform dependency automation by mend.io. `TypeScript`
+- Infrastructure-as-Code
+  - [Terrakube](https://github.com/terrakube-io/terrakube) - open source IaC automation and collaboration software. `Java` `TypeScript`
 - Kafka
   - [ktea](https://github.com/jonas-grgt/ktea) - kafka TUI client. `Go`
 - Kubernetes

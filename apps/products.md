@@ -5,12 +5,18 @@ Here is a list of products that could be interesting to use to build an applicat
 ## Table of Contents <!-- omit in toc -->
 
 - [Deployment](#deployment)
+- [Finances](#finances)
 - [Notifications](#notifications)
 - [Payment](#payment)
 
 ## Deployment
 
+- [caprover](https://github.com/caprover/caprover) - scalable PaaS (automated Docker+nginx), aka Heroku on steroids. `TypeScript`
 - [dokploy](https://github.com/dokploy/dokploy) - open source alternative to Vercel, Netlify and Heroku. `TypeScript`
+
+## Finances
+
+- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) - financial transactions database designed for mission critical safety and performance. `Zig`
 
 ## Notifications
 

@@ -4,9 +4,14 @@ Here is a list of Linux distributions that I tested, and new ones that could be 
 
 ## Table of Contents <!-- omit in toc -->
 
+- [Utility](#utility)
 - [Tested](#tested)
 - [Not Tested](#not-tested)
 - [Resources](#resources)
+
+## Utility
+
+- [Ventoy](https://github.com/ventoy/Ventoy) - bootable USB solution. `C`
 
 ## Tested
 
@@ -43,6 +48,7 @@ Other:
 
 - [netboot.xyz](https://github.com/netbootxyz/netboot.xyz) - a network-based bootable operating system installer based on iPXE. `Jinja`
 - [NixOS](https://nixos.org) - Source code available [here](https://github.com/NixOS/nixpkgs) `Nix`
+- [NixOS-Anywhere](https://github.com/nix-community/nixos-anywhere) - install NixOS everywhere via SSH. `Shell` `HCL` `Nix`
 
 ## Resources
 

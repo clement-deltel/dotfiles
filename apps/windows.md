@@ -4,12 +4,17 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 ## Table of Contents <!-- omit in toc -->
 
+- [Activation](#activation)
 - [Current](#current)
   - [Chocolatey](#chocolatey)
   - [Winget](#winget)
   - [Manual Effort](#manual-effort)
 - [Enhancements](#enhancements)
 - [Deprecated](#deprecated)
+
+## Activation
+
+- [Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts) -  Windows and Office activator featuring HWID, Ohook, TSforge, and Online KMS activation methods, along with advanced troubleshooting. `Batchfile`
 
 ## Current
 
@@ -142,6 +147,7 @@ Pro:
   - **Media**
     - [MP3Tag](https://community.chocolatey.org/packages/mp3tag) - edit metadata of common audio formats.
     - [MusicBee](https://community.chocolatey.org/packages/musicbee)
+    - [Spicetify](https://community.chocolatey.org/packages/spicetify-cli) - command-line tool to customize Spotify client.
   - **Monitoring**
     - [CPU-Z](https://community.chocolatey.org/packages/cpu-z) - system profiler (system monitor) application that detects the central processing unit, RAM, motherboard chipset, and other hardware features.
     - [GPU-Z](https://community.chocolatey.org/packages/gpu-z) - utility designed to provide you with all information about your graphics card and GPU.

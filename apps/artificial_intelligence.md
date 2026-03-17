@@ -40,3 +40,5 @@ Here is a list of libraries and frameworks to use in the context of artificial i
   - [DeepSeek-RAG-Chatbot](https://github.com/SaiAkhil066/DeepSeek-RAG-Chatbot) - private deepSeek’s advanced RAG: boost Your RAG chatbot: hybrid retrieval (BM25 + FAISS) + neural reranking + hyde. `Python`
 - **Text-to-Speech**
   - [TTS](https://github.com/coqui-ai/TTS) - deep learning toolkit for Text-to-Speech, battle-tested in research and production. `Python`
+- **Use Cases**
+  - [RedditVideoMakerBot](https://github.com/elebumm/RedditVideoMakerBot) - create Reddit videos with just one command.

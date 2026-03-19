@@ -44,6 +44,10 @@ Hackintosh:
 
 - [macOS-KVM](https://github.com/johncolby/macOS-KVM) - streamlined macOS QEMU KVM hackintosh configuration using OpenCore and libvirt. `Shell`
 
+Kubernetes-oriented:
+
+- [Talos](https://github.com/siderolabs/talos) - modern Linux distribution built for Kubernetes. `Go`
+
 Other:
 
 - [netboot.xyz](https://github.com/netbootxyz/netboot.xyz) - a network-based bootable operating system installer based on iPXE. `Jinja`

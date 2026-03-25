@@ -348,8 +348,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Security**
   - [caracal](https://github.com/adgaultier/caracal) - make your programs stealthier. `Rust`
   - [codeql](https://github.com/github/codeql) - libraries and queries that power security researchers around the world. `CodeQL` `Kotlin`
-  - [google osv](https://github.com/google/osv.dev) - Open source vulnerability DB and triage service.
-  - [hashcat](https://github.com/hashcat/hashcat) - world's fastest and most advanced password recovery utility. `C`
   - [lynis](https://github.com/CISOfy/lynis) - cross-platform security auditing tool, assists with compliance testing (HIPAA/ISO27001/PCI DSS) and system hardening. `Shell`
   - [radare2](https://github.com/radareorg/radare2) - UNIX-like reverse engineering framework and command-line toolset. `C`
   - [sharpeye](https://github.com/sgInnora/sharpeye) - advanced Linux intrusion detection and threat hunting system. `Python`

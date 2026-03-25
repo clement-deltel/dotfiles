@@ -1,6 +1,6 @@
 # Artificial Intelligence <!-- omit in toc -->
 
-Here is a list of libraries and frameworks to use in the context of artificial intelligence development that could be interesting.
+Here is a list of libraries and frameworks that could be interesting to use in the context of artificial intelligence development.
 
 ## Table of Contents <!-- omit in toc -->
 

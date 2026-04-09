@@ -111,6 +111,18 @@
     lgo = log --graph --oneline --decorate
     lo = log --oneline --decorate
 
+    # The git commands I run before reading any code
+    # what changes the most
+    l1 = log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -20
+    # who built this
+    l2 = shortlog -sn --no-merges
+    # where do bugs cluster
+    l3 = log -i -E --grep="fix|bug|broken" --name-only --format='' | sort | uniq -c | sort -nr | head -20
+    # is this project accelerating or dying
+    l4 = log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c
+    # how often is the team firefighting
+    l5 = log --oneline --since="1 year ago" | grep -iE 'revert|hotfix|emergency|rollback'
+
     # remote
     rs = remote show
     rv = remote -v

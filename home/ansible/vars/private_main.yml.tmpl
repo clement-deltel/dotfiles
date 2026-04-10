@@ -27,6 +27,7 @@ deb_architecture: { "armv6l": "armhf", "armv7l": "armhf", "aarch64": "arm64", "x
 apt_repositories:
 - ppa:deadsnakes/ppa
 - ppa:fujiapple/trippy
+- ppa:qpdf/qpdf
 
 apt_packages:
 # Modern Replacements
@@ -50,6 +51,9 @@ apt_packages:
 - trippy
 - tshark                     # network traffic analyzer
 - wireshark-common           # network protocol analyzer libraries
+# PDF
+- pdftk
+- qpdf
 # Search
 - ack
 - jq
@@ -70,7 +74,6 @@ apt_packages:
 - magic-wormhole
 - moreutils                  # collection of the Unix tools that nobody thought to write long ago
 - patchelf                   # utility to modify the dynamic linker and RPATH of ELF executables
-- pdftk
 - pwgen
 - unp
 - vim

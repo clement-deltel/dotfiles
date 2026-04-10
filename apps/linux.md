@@ -32,6 +32,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [mtr](https://github.com/traviscross/mtr) - network diagnostic tool, combine ping and traceroute functionalities. `C/C++`
       - [termshark](https://github.com/gcla/termshark) - TUI for tshark, inspired by Wireshark. `Go`
       - [trippy](https://github.com/fujiapple852/trippy) - TUI network diagnostic tool. `Rust`
+    - **PDF**
+      - [pdftk](https://www.pdflabs.com/tools/pdftk-server) - CLI for working with PDFs.
+      - [qpdf](https://github.com/qpdf/qpdf) - content-preserving PDF document transformer. `C++`
     - **Search**
       - [ack](https://github.com/beyondgrep/ack3/) - grep-like search tool optimized for source code. `Perl`
       - [jq](https://github.com/jqlang/jq) - CLI JSON processor. `C/C++`
@@ -44,7 +47,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [FIGlet](https://linux.die.net/man/6/figlet) - display large characters made up of ordinary screen characters.
       - [fmt](https://github.com/fmtlib/fmt) - modern formatting library. `C++`
       - [magic-wormhole](https://github.com/magic-wormhole/magic-wormhole) - get things from one computer to another, safely. `Python`
-      - [pdftk](https://www.pdflabs.com/tools/pdftk-server) - CLI for working with PDFs.
       - [pwgen](https://linux.die.net/man/1/pwgen) - random password generator.
       - [unp](https://github.com/mitsuhiko/unp) - wrapper around other shell tools to unpack archives easily.
       - [vim](https://github.com/vim/vim) - text editor of choice.

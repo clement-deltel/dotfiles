@@ -36,7 +36,8 @@ alias env='clear && env | sort'
 alias grep='grep --color=auto'
 
 # history
-alias h='clear && history | tail -50'
+alias his='clear && history | tail -50'
+# 10 most used commands
 alias muc='history | awk "{print $2}" | sort | uniq -c | sort -nr | head -n 10'
 
 # lsof - list open ports

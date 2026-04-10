@@ -33,6 +33,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [termshark](https://github.com/gcla/termshark) - TUI for tshark, inspired by Wireshark. `Go`
       - [trippy](https://github.com/fujiapple852/trippy) - TUI network diagnostic tool. `Rust`
     - **Search**
+      - [ack](https://github.com/beyondgrep/ack3/) - grep-like search tool optimized for source code. `Perl`
       - [jq](https://github.com/jqlang/jq) - CLI JSON processor. `C/C++`
       - [ranger](https://github.com/ranger/ranger) - vim-inspired file manager for the console. `Python`
     - **Security**
@@ -86,6 +87,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Shell**
   - [antidote](https://github.com/mattmc3/antidote) - the cure to slow zsh plugin management.
   - [eza](https://github.com/eza-community/eza) - [ls](https://linux.die.net/man/1/ls), with icons, git integration, tree mode, and more. `Rust`
+  - [hhighlighter](https://github.com/paoloantinori/hhighlighter) - command line tool to highlight terms. `Shell`
   - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh) - the most customizable and low-latency cross platform/shell prompt renderer. `Go`
   - zsh
   - [zoxide](https://github.com/ajeetdsouza/zoxide) - [cd](https://linux.die.net/man/1/cd), with recent directories,and more. `Rust`

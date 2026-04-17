@@ -30,6 +30,10 @@ export PATH=/usr/local/go/bin:${GOPATH}/bin:${PATH}
 export PATH=/home/linuxbrew/.linuxbrew/bin:${PATH}
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# k9s
+export K9S_CONFIG_DIR='~/.config/k9s'
+export K9S_SKIN='stock'
+
 # Kubernetes
 export KUBE_EDITOR='vim'
 

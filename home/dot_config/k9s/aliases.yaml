@@ -1,0 +1,11 @@
+aliases:
+  cr: v1/clusterroles
+  crb: v1/clusterrolebindings
+  dep: v1/deployments
+  dp: v1/deployments
+  jo: v1/jobs
+  np: v1/networkpolicies
+  pp: v1/pods
+  rb: v1/rolebindings
+  ro: v1/roles
+  sec: v1/secrets

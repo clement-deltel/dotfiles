@@ -56,6 +56,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
       - [act](https://github.com/nektos/act) - run your GitHub Actions locally. `Go`
     - **Directories & Files**
       - [croc](https://github.com/schollz/croc) - easily and securely send things from one computer to another. `Go`
+      - [magika](https://github.com/google/magika) - fast and accurate AI powered file content types detection. `Python` `Rust`
     - **Log Analysis**
       - [gonzo](https://github.com/control-theory/gonzo) - TUI log analysis tool. `Go`
       - [lnav](https://github.com/tstack/lnav) - log file navigator. `C/C++`

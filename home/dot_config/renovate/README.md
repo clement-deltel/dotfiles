@@ -10,7 +10,7 @@
 
 ## Introduction
 
-Here are some guidelines on how to run Renovate locally
+Here are some guidelines on how to run Renovate locally.
 
 ## Configuration
 

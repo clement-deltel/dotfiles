@@ -188,6 +188,7 @@ alias di=docker-inspect-fn
 alias dim='docker images | (sed -u 1q; sort)'
 alias dip=docker-ip-fn
 alias dirmd=docker-image-rm-dangling-fn
+alias dit='echo -e "FROM alpine\nCOPY . /context\nRUN find /context -type f" | docker build --progress=plain --no-cache -f - .'
 alias dl=docker-logs-fn
 alias dnames=docker-names-fn
 alias dnrm=docker-network-rm-fn

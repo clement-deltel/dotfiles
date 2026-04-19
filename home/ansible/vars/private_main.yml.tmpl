@@ -90,6 +90,13 @@ apt_packages:
 - tzdata                     # timezone
 - unzip                      # de-archiver for .zip files
 - zip                        # archiver for .zip files
+{{- if eq (doppler "MACHINE") "perso" -}}
+# Phone Backup
+- ifuse
+- libimobiledevice6
+- libimobiledevice-utils
+- usbmuxd
+{{- end -}}
 
 # ---------------------------------------------------------------------------- #
 #               ------- AWS ------

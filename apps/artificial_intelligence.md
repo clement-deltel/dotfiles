@@ -20,6 +20,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
   - [Speech-to-Text](#speech-to-text)
   - [Text-to-Image](#text-to-image)
   - [Text-to-Speech](#text-to-speech)
+  - [Tokens](#tokens)
   - [Use Cases](#use-cases)
 
 ## Glossary
@@ -33,6 +34,8 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 ### Agents
 
 - [1code](https://github.com/21st-dev/1code) - orchestration layer for coding agents. `TypeScript`
+- [agent-browser](https://github.com/vercel-labs/agent-browser) - browser automation CLI for AI agents. `Rust` `TypeScript`
+- [agentscope](https://github.com/agentscope-ai/agentscope) - build and run agents you can see, understand and trust. `Python`
 - [agents.md](https://github.com/agentsmd/agents.md) - simple, open format for guiding coding agents. `TypeScript`
 - [beads](https://github.com/steveyegge/beads) - memory upgrade for your coding agent. `Go`
 - [browser-agent](https://github.com/magnitudedev/browser-agent) - vision-first browser agent. `TypeScript` `JavaScript`
@@ -85,11 +88,13 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [codemcp](https://github.com/ezyang/codemcp) - coding assistant MCP for Claude desktop. `Python`
 - [gitmcp](https://github.com/idosal/git-mcp) - free, open-source, remote MCP server for any GitHub project. `TypeScript`
 - [mcp](https://github.com/BrowserMCP/mcp) -  MCP server that allows AI applications to control your browser. `TypeScript`
+- [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) - MCP server to build n8n workflows. `TypeScript`
 
 ### OpenClaw
 
 - [aionui](https://github.com/iOfficeAI/AionUi) - local,open-source cowork app, and OpenClaw for Gemini CLI, Claude Code, Codex, OpenCode, Qwen Code, Goose CLI, Auggie, and more. `TypeScript` `Python`
 - [moltworker](https://github.com/cloudflare/moltworker) - run openclaw on Cloudflare Workers. `TypeScript` `Shell`
+- [nanoclaw](https://github.com/qwibitai/nanoclaw) - lightweight alternative that runs in containers for security, connects to messaging apps, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK. `TypeScript`
 - [nemoclaw](https://github.com/NVIDIA/NemoClaw) - NVIDIA plugin for secure installation of OpenClaw. `JavaScript` `TypeScript` `Shell`
 - [openclaw](https://github.com/openclaw/openclaw) - your own personal AI assistant, any OS, any platform. `TypeScript`
 
@@ -105,6 +110,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### Skills
 
+- [agent-skills](https://github.com/vercel-labs/agent-skills) - vercel's official collection of agent skills. `JavaScript` `Shell` `TypeScript`
 - [skills](https://github.com/anthropics/skills) - public repository for agent skills. `Python`
 - [skills](https://github.com/huggingface/skills) - give your agents the power of the Hugging Face ecosystem. `Python`
 - [superpowers](https://github.com/obra/superpowers) - agentic skills framework & software development methodology that works. `Shell` `JavaScript`
@@ -120,6 +126,10 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 ### Text-to-Speech
 
 - [TTS](https://github.com/coqui-ai/TTS) - deep learning toolkit for Text-to-Speech, battle-tested in research and production. `Python`
+
+### Tokens
+
+- [caveman](https://github.com/JuliusBrussee/caveman) - why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman. `Python` `JavaScript`
 
 ### Use Cases
 

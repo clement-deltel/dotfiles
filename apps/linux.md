@@ -240,6 +240,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 ## Enhancements
 
 - **API**
+  - [bruno](https://github.com/usebruno/bruno) - IDE for exploring and testing API. `JavaScript`
   - [hoppscotch](https://github.com/hoppscotch/hoppscotch) - API development ecosystem, offline, on-prem & cloud, web, desktop & CLI. `TypeScript`
   - [yaak](https://github.com/mountain-loop/yaak) - desktop API client, organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC. `TypeScript` `Rust`
 - **Artificial Intelligence**
@@ -371,6 +372,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [devbox](https://github.com/jetify-com/devbox) - instant, easy, and predictable development environments. `Go`
     - [flox](https://github.com/flox/flox) - developer environments you can take with you. `Rust` `Shell`
   - Network
+    - [portless](https://github.com/vercel-labs/portless) - replace port numbers with stable, named local URLs. `TypeScript` `JavaScript`
     - [ttyd](https://github.com/tsl0922/ttyd) - share your terminal over the web. `C` `TypeScript`
     - [tunnelto](https://github.com/agrinman/tunnelto) - expose your local web server to the internet with a public URL. `Rust`
   - Other
@@ -399,6 +401,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [poe](https://github.com/nat-n/poethepoet) - task runner that works well with poetry or uv. `Python`
   - [task](https://github.com/go-task/task) -  task runner, simpler Make alternative. `Go`
 - **Terminal**
+  - [ghostty](https://github.com/ghostty-org/ghostty) - fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration. `Zig` `Swift`
   - [hyper](https://github.com/vercel/hyper) - terminal built on web technologies. `TypeScript`
   - [kitty](https://github.com/kovidgoyal/kitty) - cross-platform, fast, feature-rich, GPU based. `Python` `C` `Go`
   - [rio](https://github.com/raphamorim/rio) - hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers. `Rust`

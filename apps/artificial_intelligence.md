@@ -10,9 +10,12 @@ Here is a list of libraries and frameworks that could be interesting to use in t
   - [App Builder](#app-builder)
   - [Claude Code](#claude-code)
   - [Diffusion](#diffusion)
+  - [Inference](#inference)
   - [Infrastructure](#infrastructure)
   - [LLM](#llm)
   - [MCP](#mcp)
+  - [Neural Networks](#neural-networks)
+  - [OCR](#ocr)
   - [OpenClaw](#openclaw)
   - [Prompt](#prompt)
   - [RAG](#rag)
@@ -51,6 +54,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [ralph](https://github.com/snarktank/ralph) - autonomous AI agent loop that runs repeatedly until all PRD items are complete. `TypeScript` `Shell`
 - [repoaudit](https://github.com/PurCL/RepoAudit) - autonomous LLM-agent for large-scale, repository-level code auditing. `Python`
 - [sim](https://github.com/simstudioai/sim) - build, deploy, and orchestrate AI agents, this is the central intelligence layer for your AI workforce. `TypeScript`
+- [stagehand](https://github.com/browserbase/stagehand) - SDK for browser agents. `TypeScript`
 - [vibe-kanban](https://github.com/BloopAI/vibe-kanban) - use kanban issues to plan work, and when you're ready create workspaces where coding agents can execute. `Rust` `TypeScript`
 - [web-ui](https://github.com/browser-use/web-ui) - AI agent in your browser. `Python`
 
@@ -61,15 +65,22 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 ### Claude Code
 
 - [claude-code](https://github.com/anthropics/claude-code) - agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands. `Shell` `Python` `TypeScript`
+- [claude-context](https://github.com/zilliztech/claude-context) - code search MCP, Make entire codebase the context for any coding agent. `TypeScript` `Python`
 - [claude-mem](https://github.com/thedotmack/claude-mem) - plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions. `TypeScript`
-- [opcode](https://github.com/winfunc/opcode) - GUI app and toolkit for Claude Code, create custom agents, manage interactive Claude Code sessions, run secure background agents, and more. `TypeScript` `Rust`
+- [oh-my-claude-code](https://github.com/Yeachan-Heo/oh-my-claudecode) - teams-first multi-agent orchestration. `TypeScript` `JavaScript`
+- [opcode](https://github.com/winfunc/opcode) - GUI app and toolkit, create custom agents, manage interactive sessions, run secure background agents, and more. `TypeScript` `Rust`
 
 ### Diffusion
 
 - [comfyui](https://github.com/Comfy-Org/ComfyUI) - powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. `Python`
 - [flux](https://github.com/black-forest-labs/flux) - official inference repo for FLUX.1 models. `Python`
+- [SimpleTuner](https://github.com/bghira/SimpleTuner) - fine-tuning kit geared toward image/video/audio diffusion models. `Python`
 - [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) - stable diffusion web UI. `Python` `JavaScript`
 - [stable-diffusion-webui-docker](https://github.com/AbdBarho/stable-diffusion-webui-docker) - docker setup for stable diffusion with user-friendly UI. `Shell`
+
+### Inference
+
+- [shimmy](https://github.com/Michael-A-Kuykendall/shimmy) - inference server, OpenAI-API compatible, GGUF + SafeTensors, hot model swap, auto-discovery, single binary. `Rust` `C`
 
 ### Infrastructure
 
@@ -78,10 +89,13 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 ### LLM
 
 - [anything-llm](https://github.com/Mintplex-Labs/anything-llm) - all-in-one desktop & docker AI application with built-in RAG, AI agents, no-code agent builder, MCP compatibility, and more. `JavaScript`
+- [context7](https://github.com/upstash/context7) - up-to-date code documentation for LLMs and AI code editors. `TypeScript`
 - [localai](https://github.com/mudler/LocalAI) - free & open source alternative to OpenAI, Claude and others. Drop-in replacement for OpenAI, running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. `Go`
+- [memori](https://github.com/MemoriLabs/Memori) - agent-native memory infrastructure, a LLM-agnostic layer that turns agent execution and conversation into structured, persistent state for production systems. `Python` `TypeScript`
 - [onyx](https://github.com/onyx-dot-app/onyx) - open source AI platform, AI chat with advanced features that works with every LLM. `Python`
 - [pathway](https://github.com/pathwaycom/pathway) - ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG. `Python`
 - [recall](https://github.com/joseairosa/recall) - redis-powered persistent memory for LLMs. `TypeScript` `JavaScript`
+- [repomix](https://github.com/yamadashy/repomix) - packs your entire repository into a single, AI-friendly file, perfect for when you need to feed your codebase to Large Language Models (LLMs) or other AI tools. `TypeScript`
 
 ### MCP
 
@@ -89,6 +103,14 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [gitmcp](https://github.com/idosal/git-mcp) - free, open-source, remote MCP server for any GitHub project. `TypeScript`
 - [mcp](https://github.com/BrowserMCP/mcp) -  MCP server that allows AI applications to control your browser. `TypeScript`
 - [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) - MCP server to build n8n workflows. `TypeScript`
+
+### Neural Networks
+
+- [pytorch](https://github.com/pytorch/pytorch) - tensors and dynamic neural networks with strong GPU acceleration. `Python` `C++`
+
+### OCR
+
+- [paddleOCR](https://github.com/PaddlePaddle/PaddleOCR) - Turn any PDF or image document into structured data for your AI, OCR toolkit that bridges the gap between images/PDFs and LLMs. `Python` `C++`
 
 ### OpenClaw
 
@@ -100,13 +122,15 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### Prompt
 
+- [prompt-eng-interactive-tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) - Anthropic's interactive prompt engineering tutorial.
 - [system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) - system prompts, internal tools & AI models.
 - [system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks) - collection of extracted system prompts from popular chatbots like ChatGPT, Claude & Gemini.
 
 ### RAG
 
-- [DeepSeek-RAG-Chatbot](https://github.com/SaiAkhil066/DeepSeek-RAG-Chatbot) - private deepSeek’s advanced RAG: boost Your RAG chatbot: hybrid retrieval (BM25 + FAISS) + neural reranking + hyde. `Python`
-- [PageIndex](https://github.com/VectifyAI/PageIndex) - document index for vectorless, reasoning-based RAG. `Python`
+- [DeepSeek-RAG-chatbot](https://github.com/SaiAkhil066/DeepSeek-RAG-Chatbot) - private deepSeek’s advanced RAG: boost Your RAG chatbot: hybrid retrieval (BM25 + FAISS) + neural reranking + hyde. `Python`
+- [pageindex](https://github.com/VectifyAI/PageIndex) - document index for vectorless, reasoning-based RAG. `Python`
+- [RAG-anything](https://github.com/HKUDS/RAG-Anything) - all-in-one RAG framework. `Python`
 
 ### Skills
 
@@ -125,11 +149,13 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### Text-to-Speech
 
-- [TTS](https://github.com/coqui-ai/TTS) - deep learning toolkit for Text-to-Speech, battle-tested in research and production. `Python`
+- [tts](https://github.com/coqui-ai/TTS) - deep learning toolkit for Text-to-Speech, battle-tested in research and production. `Python`
 
 ### Tokens
 
 - [caveman](https://github.com/JuliusBrussee/caveman) - why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman. `Python` `JavaScript`
+- [manifest](https://github.com/mnfst/manifest) - smart model routing for personal AI agents, cut costs up to 70%. `TypeScript`
+- [tokuin](https://github.com/nooscraft/tokuin) - estimates LLM tokens/costs and runs provider-aware load tests. `Rust` `Python`
 
 ### Use Cases
 

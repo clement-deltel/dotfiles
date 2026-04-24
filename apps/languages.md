@@ -14,11 +14,17 @@ Here is a list of libraries and frameworks for different programming languages t
 
 - [bubbles](https://github.com/charmbracelet/bubbles) - TUI components for Bubble Tea. `Go`
 - [bubbletea](https://github.com/charmbracelet/bubbletea) - powerful little TUI framework. `Go`
+- [chi](https://github.com/go-chi/chi) - lightweight, idiomatic and composable router for building Go HTTP services. `Go`
 - [fang](https://github.com/charmbracelet/fang) - CLI starter kit. `Go`
 - [glow](https://github.com/charmbracelet/glow) - render markdown on the terminal. `Go`
+- [go-jet](https://github.com/go-jet/jet) - type safe SQL builder with code generation and automatic query result data mapping. `Go`
 - [golangci-lint](https://github.com/golangci/golangci-lint) - fast linters runner. `Go`
+- [goreleaser](https://github.com/goreleaser/goreleaser) - release engineering, simplified. `Go`
+- [gorm](https://github.com/go-gorm/gorm) -  ORM library for Golang, aims to be developer friendly. `Go`
 - [gotests](https://github.com/cweill/gotests) - automatically generate test boilerplate from your source code. `Go`
 - [gum](https://github.com/charmbracelet/gum) - tool for glamorous shell scripts. `Go`
+- [sqlc](https://github.com/sqlc-dev/sqlc) - generate type-safe code from SQL. `Go`
+- [testify](https://github.com/stretchr/testify) - toolkit with common assertions and mocks that plays nicely with the standard library. `Go`
 - [tview](https://github.com/rivo/tview) - terminal UI library with rich, interactive widgets. `Go`
 
 ## JavaScript

@@ -261,6 +261,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Cloud**
   - [aws-nuke](https://github.com/ekristen/aws-nuke) - remove all the resources from an AWS account. `Go`
   - [localstack](https://github.com/localstack/localstack) - fully functional local AWS cloud stack, develop and test your cloud & serverless apps offline. `Python`
+  - [ministack](https://github.com/ministackorg/ministack) - open-source local AWS emulator, 40+ services, Terraform compatible, real databases. `Python`
   - [sourcerer](https://github.com/the-impact-craft/sourcerer) - CLI-based cloud storage explorer that provides a unified interface to view and manage files across multiple cloud providers. `Python`
   - [taws](https://github.com/huseyinbabal/taws) - terminal-based AWS resource viewer and manager. `Rust`
 - **Database**

@@ -131,6 +131,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [pyenv](https://github.com/pyenv/pyenv) - simple version management.
     - [uv](https://github.com/astral-sh/uv) - package and project manager. `Rust`
   - [Rust](https://rust-lang.org)
+    - cargo
+      - [pyscan](https://github.com/ohaswin/pyscan) - dependency vulnerability scanner. `Rust` `Shell`
 - **Orchestration**
   - Docker
     - Packages

@@ -6,6 +6,7 @@ Here is a list of libraries and frameworks for different programming languages t
 
 - [Go](#go)
 - [JavaScript](#javascript)
+- [Low-Code \& No-Code](#low-code--no-code)
 - [Ruby](#ruby)
 - [Rust](#rust)
 - [TypeScript](#typescript)
@@ -31,6 +32,10 @@ Here is a list of libraries and frameworks for different programming languages t
 
 - [npq](https://github.com/lirantal/npq) - safely install npm packages by auditing them pre-install stage. `JavaScript`
 - [octicons](https://github.com/primer/octicons) - scalable set of icons handcrafted by GitHub. `JavaScript`
+
+## Low-Code & No-Code
+
+- [appsmith](https://github.com/appsmithorg/appsmith) - platform to build admin panels, internal tools, and dashboards. `TypeScript`
 
 ## Ruby
 

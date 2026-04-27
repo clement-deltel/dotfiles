@@ -30,3 +30,30 @@
       file: ../tasks/version.yml
     vars:
       cmd: cargo --version
+
+  # Cargo Packages
+  - name: Cargo Packages
+    block:
+
+    - name: Cargo - Show packages
+      tags: [init, update]
+      ansible.builtin.debug:
+        msg: "Cargo packages: {{ rust_packages }}"
+
+    # sudo cargo install
+    - name: Cargo - Install packages
+      become: true
+      tags: init
+      community.general.cargo:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ rust_packages }}"
+
+    # sudo cargo update
+    - name: Cargo - Upgrade packages
+      become: true
+      tags: update
+      community.general.cargo:
+        name: "{{ item }}"
+        state: latest
+      loop: "{{ rust_packages }}"

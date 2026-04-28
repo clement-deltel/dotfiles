@@ -66,6 +66,13 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [Web](#web)
   - [zsh](#zsh)
 - [Production Applications](#production-applications)
+  - [Dependencies](#dependencies)
+  - [Infrastructure-as-Code (IaC)](#infrastructure-as-code-iac-2)
+  - [Kafka](#kafka)
+  - [Kubernetes](#kubernetes-2)
+  - [Observability](#observability)
+  - [Postgres](#postgres)
+  - [Service Level Objectives (SLOs)](#service-level-objectives-slos)
 - [Deprecated](#deprecated)
 
 ## Current
@@ -386,6 +393,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 ### Diagrams
 
 - [d2](https://github.com/terrastruct/d2) - modern diagram scripting language that turns text to diagrams. `JavaScript`
+- [FossFLOW](https://github.com/stan-smith/FossFLOW) - make beautiful isometric infrastructure diagrams. `TypeScript` `Python`
 
 ### Directories & Files
 
@@ -652,6 +660,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 ### Web
 
+- [browser](https://github.com/lightpanda-io/browser) - headless browser designed for AI and automation. `Zig`
 - [hey](https://github.com/rakyll/hey) - HTTP load generator, apachebench (ab) replacement. `Go`
 - [monolith](https://github.com/Y2Z/monolith) - CLI tool and library for saving complete web pages as a single HTML file. `Rust`
 - [oha](https://github.com/hatoo/oha) - HTTP load generator, with tui animation. `Rust`
@@ -669,50 +678,66 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 ## Production Applications
 
+### Dependencies
+
 - [dependabot-core](https://github.com/dependabot/dependabot-core) - dependabot's core logic for creating update PRs. `Ruby`
 - [renovate](https://github.com/renovatebot/renovate) - cross-platform dependency automation by mend.io. `TypeScript`
-- Infrastructure-as-Code
-  - [Terrakube](https://github.com/terrakube-io/terrakube) - open source IaC automation and collaboration software. `Java` `TypeScript`
-- Kafka
-  - [ktea](https://github.com/jonas-grgt/ktea) - kafka TUI client. `Go`
-- Kubernetes
-  - Cost
-    - [opencost](https://github.com/opencost/opencost) - cost monitoring for workloads and cloud costs. `Go`
-  - GitOps
-    - [argo-cd](https://github.com/argoproj/argo-cd) - declarative continuous deployment for Kubernetes. `Go` `TypeScript`
-    - [meshery](https://github.com/meshery/meshery) - cloud native manager. `JavaScript` `Go`
-    - [octopus](https://github.com/OctopusDeploy)
-    - [werf](https://github.com/werf/werf) - solution for implementing efficient and consistent software delivery to Kubernetes facilitating best practices. `Go`
-  - GUI
-    - [aptakube](https://github.com/aptakube/aptakube) - modern, lightweight and multi-cluster GUI.
-    - [freelens](https://github.com/freelensapp/freelens) - IDE for Kubernetes. `TypeScript`
-    - [headlamp](https://github.com/kubernetes-sigs/headlamp) - web UI that is fully-featured, user-friendly and extensible. `TypeScript` `Go`
-    - [kite](https://github.com/zxh326/kite) - modern, lightweight dashboard. `TypeScript` `Go`
-    - [kubewall](https://github.com/kubewall/kubewall) - dashboard with multi-cluster management & AI integration. `TypeScript` `Go`
-  - Network
-    - [calico](https://github.com/projectcalico/calico) - cloud native networking and network security. `Go`
-    - [cilium](https://github.com/cilium/cilium) - eBPF-based networking, security, and observability. `Go` `C`
-    - [flannel](https://github.com/flannel-io/flannel) - network fabric for containers. `Go`
-    - [submariner](https://github.com/submariner-io/submariner) - networking component for interconnecting Pods and Services across clusters. `Go`
-    - [weave](https://github.com/weaveworks/weave) - simple, resilient multi-host containers networking and more. `Go`
-  - Secrets
-    - [external-secrets](https://github.com/external-secrets/external-secrets) - read information from a third-party service like AWS Secrets Manager and automatically injects the values as Kubernetes Secrets. `Go`
-  - Other
-    - [k8s-dqlite](https://github.com/canonical/k8s-dqlite) - dqlite for Kubernetes. `Go`
-    - [kine](https://github.com/k3s-io/kine) - Run Kubernetes on mysql, postgres, sqlite, dqlite, not etcd. `Go`
-    - [kubevirt](https://github.com/kubevirt/kubevirt) - Kubernetes virtualization API and runtime in order to define and manage virtual machines. `Go`
-    - [zarf](https://github.com/zarf-dev/zarf) - airgap native packager manager for Kubernetes. `Go`
-- Observability
-  - [Elasticsearch](https://github.com/elastic/elasticsearch) - distributed, RESTful search engine. `Java`
-  - [signoz](https://github.com/SigNoz/signoz) - open-source observability platform native to OpenTelemetry with logs, traces and metrics in a single application, alternative to DataDog, NewRelic, etc. `TypeScript` `Go`
-- Postgres
-  - [pgdog](https://github.com/pgdogdev/pgdog) - horizontal scaling for PostgreSQL with automatic sharding. `Rust`
-  - [pgschema](https://github.com/pgschema/pgschema) - Terraform-style, declarative schema migration for Postgres. `Go`
-- Service Level Objectives (SLOs)
-  - [OpenSLO](https://github.com/OpenSLO/OpenSLO) - open specification for defining and expressing service level objectives. `Shell` `JavaScript`
-  - [pyrra](https://github.com/pyrra-dev/pyrra) - making SLOs with Prometheus manageable, accessible, and easy to use for everyone! `Go` `TypeScript`
-  - [slo-generator](https://github.com/google/slo-generator) - compute SLIs, SLOs, error budgets and burn rates from supported backends, then exports an SLO report to supported targets. `Python`
-  - [sloth](https://github.com/slok/sloth) - easy and simple Prometheus SLO generator. `Go`
+
+### Infrastructure-as-Code (IaC)
+
+- [Terrakube](https://github.com/terrakube-io/terrakube) - open source IaC automation and collaboration software. `Java` `TypeScript`
+
+### Kafka
+
+- [ktea](https://github.com/jonas-grgt/ktea) - kafka TUI client. `Go`
+
+### Kubernetes
+
+- Automation
+  - [k8s-cleaner](https://github.com/gianlucam76/k8s-cleaner) - controller that identifies unused or unhealthy resources, provides flexible scheduling, label filtering, Lua-based selection criteria, resource removal or update and notifications. `Go` `JavaScript`
+- Cost
+  - [opencost](https://github.com/opencost/opencost) - cost monitoring for workloads and cloud costs. `Go`
+- GitOps
+  - [argo-cd](https://github.com/argoproj/argo-cd) - declarative continuous deployment for Kubernetes. `Go` `TypeScript`
+  - [meshery](https://github.com/meshery/meshery) - cloud native manager. `JavaScript` `Go`
+  - [octopus](https://github.com/OctopusDeploy)
+  - [werf](https://github.com/werf/werf) - solution for implementing efficient and consistent software delivery to Kubernetes facilitating best practices. `Go`
+- GUI
+  - [aptakube](https://github.com/aptakube/aptakube) - modern, lightweight and multi-cluster GUI.
+  - [freelens](https://github.com/freelensapp/freelens) - IDE for Kubernetes. `TypeScript`
+  - [headlamp](https://github.com/kubernetes-sigs/headlamp) - web UI that is fully-featured, user-friendly and extensible. `TypeScript` `Go`
+  - [kite](https://github.com/zxh326/kite) - modern, lightweight dashboard. `TypeScript` `Go`
+  - [kubewall](https://github.com/kubewall/kubewall) - dashboard with multi-cluster management & AI integration. `TypeScript` `Go`
+- Network
+  - [calico](https://github.com/projectcalico/calico) - cloud native networking and network security. `Go`
+  - [cilium](https://github.com/cilium/cilium) - eBPF-based networking, security, and observability. `Go` `C`
+  - [flannel](https://github.com/flannel-io/flannel) - network fabric for containers. `Go`
+  - [submariner](https://github.com/submariner-io/submariner) - networking component for interconnecting Pods and Services across clusters. `Go`
+  - [weave](https://github.com/weaveworks/weave) - simple, resilient multi-host containers networking and more. `Go`
+- Secrets
+  - [external-secrets](https://github.com/external-secrets/external-secrets) - read information from a third-party service like AWS Secrets Manager and automatically injects the values as Kubernetes Secrets. `Go`
+- Other
+  - [k8s-dqlite](https://github.com/canonical/k8s-dqlite) - dqlite for Kubernetes. `Go`
+  - [kine](https://github.com/k3s-io/kine) - Run Kubernetes on mysql, postgres, sqlite, dqlite, not etcd. `Go`
+  - [kubevirt](https://github.com/kubevirt/kubevirt) - Kubernetes virtualization API and runtime in order to define and manage virtual machines. `Go`
+  - [zarf](https://github.com/zarf-dev/zarf) - airgap native packager manager for Kubernetes. `Go`
+
+### Observability
+
+- [Elasticsearch](https://github.com/elastic/elasticsearch) - distributed, RESTful search engine. `Java`
+- [signoz](https://github.com/SigNoz/signoz) - open-source observability platform native to OpenTelemetry with logs, traces and metrics in a single application, alternative to DataDog, NewRelic, etc. `TypeScript` `Go`
+
+### Postgres
+
+- [pgdog](https://github.com/pgdogdev/pgdog) - horizontal scaling for PostgreSQL with automatic sharding. `Rust`
+- [pgschema](https://github.com/pgschema/pgschema) - Terraform-style, declarative schema migration for Postgres. `Go`
+
+### Service Level Objectives (SLOs)
+
+- [OpenSLO](https://github.com/OpenSLO/OpenSLO) - open specification for defining and expressing service level objectives. `Shell` `JavaScript`
+- [pyrra](https://github.com/pyrra-dev/pyrra) - making SLOs with Prometheus manageable, accessible, and easy to use for everyone! `Go` `TypeScript`
+- [slo-generator](https://github.com/google/slo-generator) - compute SLIs, SLOs, error budgets and burn rates from supported backends, then exports an SLO report to supported targets. `Python`
+- [sloth](https://github.com/slok/sloth) - easy and simple Prometheus SLO generator. `Go`
 
 ## Deprecated
 

@@ -16,6 +16,8 @@ Here is a list of products that could be interesting to use to build an applicat
 
 ## Finances
 
+- [hummingbot](https://github.com/hummingbot/hummingbot) - create and deploy high-frequency crypto trading bots. `Python`
+- [nautilus-trader](https://github.com/nautechsystems/nautilus_trader) - trading engine with deterministic event-driven architecture. `Rust` `Python`
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) - financial transactions database designed for mission critical safety and performance. `Zig`
 
 ## Notifications

@@ -28,6 +28,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ## OSINT
 
+- [ghosttrack](https://github.com/HunxByts/GhostTrack) - track location or mobile number. `Python`
 - [holehe](https://github.com/megadose/holehe) - check if the mail is used on different sites like twitter, instagram and will retrieve information on sites with the forgotten password function. `Python`
 - [operative-framework](https://github.com/graniet/operative-framework) - investigation framework, you can interact with multiple targets, execute multiple modules, create links with target, export rapport to PDF file, add note to target or results, interact with RESTFul API, write your own modules. `Rust`
 - [robin](https://github.com/apurvsinghgautam/robin) - AI-powered dark web tool. `Python`
@@ -53,4 +54,5 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ## Web Application Security and Pentest (WASP)
 
+- [nikto](https://github.com/sullo/nikto) - web server scanner. `Perl`
 - [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) - list of useful payloads and bypass for Web Application Security and Pentest/CTF. `Python`

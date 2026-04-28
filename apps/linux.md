@@ -5,172 +5,275 @@ Here is a list of apps that I am currently using, that could be interesting and 
 ## Table of Contents <!-- omit in toc -->
 
 - [Current](#current)
+  - [Package Management](#package-management)
+    - [apt](#apt)
+    - [homebrew](#homebrew)
+    - [NPM](#npm)
+  - [Shell](#shell)
+  - [Terminal](#terminal)
+  - [Version Control System (VCS)](#version-control-system-vcs)
+  - [Security](#security)
+  - [Languages](#languages)
+    - [Go](#go)
+    - [JavaScript](#javascript)
+    - [Python](#python)
+    - [Rust](#rust)
+  - [Orchestration](#orchestration)
+    - [Docker](#docker)
+    - [Kubernetes](#kubernetes)
+    - [Helm](#helm)
+  - [Infrastructure-as-Code (IaC)](#infrastructure-as-code-iac)
+  - [Cloud](#cloud)
+  - [System](#system)
 - [Zsh Plugins](#zsh-plugins)
 - [Enhancements](#enhancements)
+  - [API](#api)
+  - [Artificial Intelligence](#artificial-intelligence)
+  - [Benchmarking](#benchmarking)
+  - [CI/CD](#cicd)
+  - [Cloud](#cloud-1)
+  - [Database](#database)
+  - [Diagrams](#diagrams)
+  - [Directories \& Files](#directories--files)
+  - [Dotfiles Management](#dotfiles-management)
+  - [Infrastructure-as-Code (IaC)](#infrastructure-as-code-iac-1)
+  - [Integrated Development Environment (IDE)](#integrated-development-environment-ide)
+  - [Games](#games)
+  - [KVM](#kvm)
+  - [Modern Replacements](#modern-replacements)
+  - [Monitoring](#monitoring)
+  - [Multiplexer](#multiplexer)
+  - [Orchestration](#orchestration-1)
+    - [Docker](#docker-1)
+    - [Kubernetes](#kubernetes-1)
+    - [Helm](#helm-1)
+  - [Search](#search)
+  - [Secrets](#secrets)
+  - [Security](#security-1)
+  - [Shell](#shell-1)
+  - [Software Development](#software-development)
+  - [Speech Recognition](#speech-recognition)
+  - [System Info](#system-info)
+  - [System Performance](#system-performance)
+  - [Tasks](#tasks)
+  - [Terminal](#terminal-1)
+  - [Text Editor](#text-editor)
+  - [Tiling](#tiling)
+  - [Tools](#tools)
+  - [Version Control System (VCS)](#version-control-system-vcs-1)
+  - [Virtualization](#virtualization)
+  - [Visualization](#visualization)
+  - [Web](#web)
+  - [zsh](#zsh)
 - [Production Applications](#production-applications)
 - [Deprecated](#deprecated)
 
 ## Current
 
-- **Package Management**
-  - apt
-    - **Modern Replacements**
-      - [bat](https://github.com/sharkdp/bat) - [cat](https://linux.die.net/man/1/cat), with syntax highlighting, git integration, and more. `Rust`
-      - [duf](https://github.com/muesli/duf) - [df](https://linux.die.net/man/1/df), disk usage/free utility. `Go`
-      - [fd](https://github.com/sharkdp/fd) - [find](https://linux.die.net/man/1/find), with colorized output, case insensitive & regex & skip hidden defaults, git integration and more. `Rust`
-      - [ncdu](https://dev.yorhel.nl/ncdu) - [du](https://linux.die.net/man/1/du), disk usage analyzer with a text-mode user interface.
-      - [ripgrep](https://github.com/BurntSushi/ripgrep) - [grep](https://linux.die.net/man/1/grep), with recursive & skip hidden defaults, git integration and more. `Rust`
-    - **Monitoring**
-      - [htop](https://github.com/htop-dev/htop) - interactive process viewer. `C/C++`
-      - [hwinfo](https://www.commandlinux.com/man-page/man8/hwinfo.8.html) - probe for hardware.
-      - [iotop](https://github.com/Tomas-M/iotop) - top utility for I/O. `C/C++`
-      - [progress](https://github.com/Xfennec/progress) - show progress for commands like cp, mv, dd, ... (formerly known as cv). `C/C++`
-    - **Network**
-      - [ethtool](https://linux.die.net/man/8/ethtool) - query and change settings such as speed, auto-negotiation and checksum offload.
-      - [fping](https://github.com/schweikert/fping) - high performance ping tool. `C`
-      - [ipcalc](https://gitlab.com/ipcalc/ipcalc) - IPv4/IPv6 tool, assisting in network calculations. `C/C++`
-      - [mtr](https://github.com/traviscross/mtr) - network diagnostic tool, combine ping and traceroute functionalities. `C/C++`
-      - [termshark](https://github.com/gcla/termshark) - TUI for tshark, inspired by Wireshark. `Go`
-      - [trippy](https://github.com/fujiapple852/trippy) - TUI network diagnostic tool. `Rust`
-    - **PDF**
-      - [pdftk](https://www.pdflabs.com/tools/pdftk-server) - CLI for working with PDFs.
-      - [qpdf](https://github.com/qpdf/qpdf) - content-preserving PDF document transformer. `C++`
-    - **Search**
-      - [ack](https://github.com/beyondgrep/ack3/) - grep-like search tool optimized for source code. `Perl`
-      - [jq](https://github.com/jqlang/jq) - CLI JSON processor. `C/C++`
-      - [ranger](https://github.com/ranger/ranger) - vim-inspired file manager for the console. `Python`
-    - **Security**
-      - [age](https://github.com/FiloSottile/age) - encryption tool with small explicit keys, no config options, and UNIX-style composability. `Go`
-    - **System**
-      - [nvtop](https://github.com/Syllo/nvtop) - GPU & Accelerator process monitoring. `C`
-    - **Other**
-      - [FIGlet](https://linux.die.net/man/6/figlet) - display large characters made up of ordinary screen characters.
-      - [fmt](https://github.com/fmtlib/fmt) - modern formatting library. `C++`
-      - [magic-wormhole](https://github.com/magic-wormhole/magic-wormhole) - get things from one computer to another, safely. `Python`
-      - [pwgen](https://linux.die.net/man/1/pwgen) - random password generator.
-      - [unp](https://github.com/mitsuhiko/unp) - wrapper around other shell tools to unpack archives easily.
-      - [vim](https://github.com/vim/vim) - text editor of choice.
-      - [xclip](https://github.com/astrand/xclip) - CLI to the X11 clipboard. `C`
-  - [homebrew](https://github.com/Homebrew/brew) - the missing package manager for Linux. `Ruby`
-    - **CI/CD**
-      - [act](https://github.com/nektos/act) - run your GitHub Actions locally. `Go`
-    - **Directories & Files**
-      - [croc](https://github.com/schollz/croc) - easily and securely send things from one computer to another. `Go`
-      - [magika](https://github.com/google/magika) - fast and accurate AI powered file content types detection. `Python` `Rust`
-    - **Log Analysis**
-      - [gonzo](https://github.com/control-theory/gonzo) - TUI log analysis tool. `Go`
-      - [lnav](https://github.com/tstack/lnav) - log file navigator. `C/C++`
-    - **Modern Replacements**
-      - [choose](https://github.com/theryangeary/choose) - human-friendly and fast alternative to cut (and sometimes awk). `Rust`
-      - [dua](https://github.com/Byron/dua-cli) - du, view disk space usage and delete unwanted data. `Rust`
-      - [just](https://github.com/casey/just) - just a command runner. `Rust`
-      - [procs](https://github.com/dalance/procs) - [ps](https://linux.die.net/man/1/ps), with better sorting, tree support, and more. `Rust`
-    - **Monitoring**
-      - [btop](https://github.com/aristocratos/btop) - monitor of resources. `C/C++`
-      - [fastfetch](https://github.com/fastfetch-cli/fastfetch) - feature-rich and performance oriented, neofetch like system information tool. `C`
-      - [gping](https://github.com/orf/gping) - TUI for ping. `Rust`
-    - **Network**
-      - [whosthere](https://github.com/ramonvermeulen/whosthere) - local area network (LAN) discovery tool with a modern terminal user interface. `Go`
-    - **Search**
-      - [fzf](https://github.com/junegunn/fzf) - CLI fuzzy finder. `Go`
-      - [grex](https://github.com/pemistahl/grex) - command-line tool and library with Python bindings for generating regular expressions from user-provided test cases. `Rust`
-    - **Software Development**
-      - [ls-lint](https://github.com/loeffel-io/ls-lint) - directory and filename linter, bring some structure to the project filesystem. `Go`
-      - [tokei](https://github.com/XAMPPRocky/tokei) - count your code, quickly. `Rust`
-      - [varlock](https://github.com/dmno-dev/varlock) - .env files built for sharing powered by @env-spec decorator comments. `TypeScript` `JavaScript`
-    - **Other**
-      - [freeze](https://github.com/charmbracelet/freeze) - generate images of code and terminal output. `Go`
-      - [tldr](https://github.com/tldr-pages/tlrc) - tldr client. `Rust`
-      - [vhs](https://github.com/charmbracelet/vhs) - CLI home video recorder. `Go`
-      - [yq](https://github.com/mikefarah/yq) - command-line YAML, JSON, XML, CSV, TOML and properties processor. `Go`
-  - [npm](https://github.com/npm/cli) - node package manager. `JavaScript`
-    - [commitlint](https://github.com/conventional-changelog/commitlint) - lint commit messages. `TypeScript`
-    - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm) - auto generate READMEs for Helm Charts. `JavaScript`
-  - [zerobrew](https://github.com/lucasgelfond/zerobrew) - drop-in, 5-20x faster, experimental homebrew alternative. `Rust`
-- **Shell**
-  - [antidote](https://github.com/mattmc3/antidote) - the cure to slow zsh plugin management.
-  - [eza](https://github.com/eza-community/eza) - [ls](https://linux.die.net/man/1/ls), with icons, git integration, tree mode, and more. `Rust`
-  - [hhighlighter](https://github.com/paoloantinori/hhighlighter) - command line tool to highlight terms. `Shell`
-  - [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh) - the most customizable and low-latency cross platform/shell prompt renderer. `Go`
-  - zsh
-  - [zoxide](https://github.com/ajeetdsouza/zoxide) - [cd](https://linux.die.net/man/1/cd), with recent directories,and more. `Rust`
-- **Terminal**
-  - [alacritty](https://github.com/alacritty/alacritty) - cross-platform, OpenGL terminal emulator. `Rust`
-  - [WezTerm](https://github.com/wezterm/wezterm) - GPU-accelerated cross-platform terminal emulator and multiplexer. `Rust`
-- **Version Control System (VCS)**
-  - [Git](https://git-scm.com) - fast, scalable, distributed revision control system.
-    - Packages
-      - [git-filter-repo](https://github.com/newren/git-filter-repo) - quickly rewrite git repository history (filter-branch replacement). `Python`
-      - [git-lfs](https://github.com/git-lfs/git-lfs) - git extension for versioning large files. `Go`
-    - Formulas
-      - [commitizen](https://github.com/commitizen-tools/commitizen) - create committing rules for projects, auto bump versions, and auto changelog generation. `Python`
-      - [gitleaks](https://github.com/gitleaks/gitleaks) - tool for detecting secrets like passwords, API keys, and tokens in git repos. `Go`
-      - [git-cliff](https://github.com/orhun/git-cliff) - highly customizable changelog generator that follows Conventional Commit specifications. `Rust`
-      - [git-quick-stats](https://github.com/git-quick-stats/git-quick-stats) - simple and efficient way to access various statistics in git repository. `Shell`
-      - [lazygit](https://github.com/jesseduffield/lazygit) - simple TUI for git commands. `Go`
-      - [onefetch](https://github.com/o2sh/onefetch) - CLI git information tool. `Rust`
-      - [prek](https://github.com/j178/prek) - pre-commit re-engineered. `Rust`
+### Package Management
+
+#### apt
+
+- **Modern Replacements**
+  - [bat](https://github.com/sharkdp/bat) - [cat](https://linux.die.net/man/1/cat), with syntax highlighting, git integration, and more. `Rust`
+  - [duf](https://github.com/muesli/duf) - [df](https://linux.die.net/man/1/df), disk usage/free utility. `Go`
+  - [fd](https://github.com/sharkdp/fd) - [find](https://linux.die.net/man/1/find), with colorized output, case insensitive & regex & skip hidden defaults, git integration and more. `Rust`
+  - [ncdu](https://dev.yorhel.nl/ncdu) - [du](https://linux.die.net/man/1/du), disk usage analyzer with a text-mode user interface.
+  - [ripgrep](https://github.com/BurntSushi/ripgrep) - [grep](https://linux.die.net/man/1/grep), with recursive & skip hidden defaults, git integration and more. `Rust`
+- **Monitoring**
+  - [htop](https://github.com/htop-dev/htop) - interactive process viewer. `C/C++`
+  - [hwinfo](https://www.commandlinux.com/man-page/man8/hwinfo.8.html) - probe for hardware.
+  - [iotop](https://github.com/Tomas-M/iotop) - top utility for I/O. `C/C++`
+  - [progress](https://github.com/Xfennec/progress) - show progress for commands like cp, mv, dd, ... (formerly known as cv). `C/C++`
+- **Network**
+  - [ethtool](https://linux.die.net/man/8/ethtool) - query and change settings such as speed, auto-negotiation and checksum offload.
+  - [fping](https://github.com/schweikert/fping) - high performance ping tool. `C`
+  - [ipcalc](https://gitlab.com/ipcalc/ipcalc) - IPv4/IPv6 tool, assisting in network calculations. `C/C++`
+  - [mtr](https://github.com/traviscross/mtr) - network diagnostic tool, combine ping and traceroute functionalities. `C/C++`
+  - [termshark](https://github.com/gcla/termshark) - TUI for tshark, inspired by Wireshark. `Go`
+  - [trippy](https://github.com/fujiapple852/trippy) - TUI network diagnostic tool. `Rust`
+- **PDF**
+  - [pdftk](https://www.pdflabs.com/tools/pdftk-server) - CLI for working with PDFs.
+  - [qpdf](https://github.com/qpdf/qpdf) - content-preserving PDF document transformer. `C++`
+- **Search**
+  - [ack](https://github.com/beyondgrep/ack3/) - grep-like search tool optimized for source code. `Perl`
+  - [jq](https://github.com/jqlang/jq) - CLI JSON processor. `C/C++`
+  - [ranger](https://github.com/ranger/ranger) - vim-inspired file manager for the console. `Python`
 - **Security**
-  - [Bitwarden CLI](https://bitwarden.com/help/cli)
-  - [Doppler](https://github.com/DopplerHQ/cli)
-- **Languages**
-  - [Go](https://go.dev)
-  - JavaScript
-    - [nodejs](https://github.com/nodejs/node) - cross-platform, open-source JavaScript runtime built on Chrome's v8 JavaScript engine.
-  - Python
-    - pip
-      - [faker](https://github.com/joke2k/faker) -  generate fake data for you. `Python`
-      - [gitlint](https://github.com/jorisroovers/gitlint) - linting for your git commit messages. `Python`
-      - [markitdown](https://github.com/microsoft/markitdown) - tool for converting files and office documents to Markdown.
-      - [pre-commit](https://github.com/pre-commit/pre-commit) - framework for managing and maintaining multi-language pre-commit hooks. `Python`
-      - [Pygments](https://github.com/pygments/pygments) - generic syntax highlighter.
-      - [whisper-live](https://github.com/collabora/WhisperLive) - nearly-live implementation of OpenAI's Whisper.
-    - [pipx](https://github.com/pypa/pipx) - install and run applications in isolated environments.
-      - [poetry](https://github.com/python-poetry/poetry) - packaging and dependency management made easy. `Python`
-      - [sqlit](https://github.com/Maxteabag/sqlit) - user friendly TUI for SQL databases, supports SQL server, MySQL, PostgreSQL, SQLite, Turso and more. `Python`
-    - [pyenv](https://github.com/pyenv/pyenv) - simple version management.
-    - [uv](https://github.com/astral-sh/uv) - package and project manager. `Rust`
-  - [Rust](https://rust-lang.org)
-    - cargo
-      - [pyscan](https://github.com/ohaswin/pyscan) - dependency vulnerability scanner. `Rust` `Shell`
-- **Orchestration**
-  - Docker
-    - Packages
-      - [docker](https://github.com/docker)
-      - [skopeo](https://github.com/containers/skopeo) - work with remote images registries - retrieving information, images, signing content. `Go`
-    - Formulas
-      - [dive](https://github.com/wagoodman/dive) - tool for exploring each layer in a docker image. `Go`
-      - [dockle](https://github.com/goodwithtech/dockle) - container image linter for security. `Go`
-      - [grype](https://github.com/anchore/grype) - vulnerability scanner for container images and filesystems. `Go`
-      - [hadolint](https://github.com/hadolint/hadolint) - Dockerfile linter, validate inline bash. `Haskell`
-      - [lazydocker](https://github.com/jesseduffield/lazydocker) - lazier way to manage everything Docker. `Go`
-      - [trivy](https://github.com/aquasecurity/trivy) - find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more. `Go`
-  - Kubernetes
-    - Packages
-      - [kubectl](https://github.com/kubernetes/kubectl) - command-line interface. `Go`
-    - Formulas
-      - [k9s](https://github.com/derailed/k9s) - CLI to manage your clusters in style. `Go`
-      - [kind](https://github.com/kubernetes-sigs/kind) - Kubernetes in Docker - local clusters for testing Kubernetes. `Go`
-      - [kubecolor](https://github.com/kubecolor/kubecolor) - colorize your kubectl output. `Go`
-      - [kubectx](https://github.com/ahmetb/kubectx) - faster way to switch between clusters and namespaces in kubectl. `Go`
-      - [kubetail](https://github.com/johanhaleby/kubetail) - tail logs from multiple pods at the same time. `Shell`
-      - [pinniped](https://github.com/vmware/pinniped) - secure way to log in to your Kubernetes clusters. `Go`
-      - [stern](https://github.com/stern/stern) - multi pod and container log tailing. `Go`
-  - Helm
-    - [helm](https://github.com/helm/helm) - Kubernetes package manager. `Go`
-    - [helmfile](https://github.com/helmfile/helmfile) - declaratively deploy your manifests, Kustomize configs, and Charts as Helm releases. `Go`
-    - [helm-secrets](https://github.com/jkroepke/helm-secrets) - help manage secrets with Git workflow and store them anywhere. `Shell`
-    - [Helm-unittest](https://github.com/helm-unittest/helm-unittest) - BDD styled unit test framework for Kubernetes Helm charts as a Helm plugin. `Go`
-- **Infrastructure-as-Code (IaC)**
-  - [Pulumi](https://github.com/pulumi/pulumi) - infrastructure-as-code in any programming language. `Go`
-  - [Terraform](https://github.com/hashicorp/terraform) - safely and predictably create, change, and improve infrastructure. `Go`
-- **Cloud**
-  - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-  - [GCP CLI](https://cloud.google.com/sdk/docs/install)
+  - [age](https://github.com/FiloSottile/age) - encryption tool with small explicit keys, no config options, and UNIX-style composability. `Go`
 - **System**
-  - NVIDIA
-    - [container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/index.html) - collection of libraries and utilities enabling users to build and run GPU-accelerated containers.
-    - [cuda-toolkit](https://docs.nvidia.com/cuda/index.html) - development environment for creating high performance GPU-accelerated applications.
+  - [nvtop](https://github.com/Syllo/nvtop) - GPU & Accelerator process monitoring. `C`
+- **Other**
+  - [FIGlet](https://linux.die.net/man/6/figlet) - display large characters made up of ordinary screen characters.
+  - [fmt](https://github.com/fmtlib/fmt) - modern formatting library. `C++`
+  - [magic-wormhole](https://github.com/magic-wormhole/magic-wormhole) - get things from one computer to another, safely. `Python`
+  - [pwgen](https://linux.die.net/man/1/pwgen) - random password generator.
+  - [unp](https://github.com/mitsuhiko/unp) - wrapper around other shell tools to unpack archives easily.
+  - [vim](https://github.com/vim/vim) - text editor of choice.
+  - [xclip](https://github.com/astrand/xclip) - CLI to the X11 clipboard. `C`
+
+#### homebrew
+
+[homebrew](https://github.com/Homebrew/brew) - the missing package manager for Linux. `Ruby`
+
+- **CI/CD**
+  - [act](https://github.com/nektos/act) - run your GitHub Actions locally. `Go`
+- **Directories & Files**
+  - [croc](https://github.com/schollz/croc) - easily and securely send things from one computer to another. `Go`
+  - [magika](https://github.com/google/magika) - fast and accurate AI powered file content types detection. `Python` `Rust`
+- **Log Analysis**
+  - [gonzo](https://github.com/control-theory/gonzo) - TUI log analysis tool. `Go`
+  - [lnav](https://github.com/tstack/lnav) - log file navigator. `C/C++`
+- **Modern Replacements**
+  - [choose](https://github.com/theryangeary/choose) - human-friendly and fast alternative to cut (and sometimes awk). `Rust`
+  - [dua](https://github.com/Byron/dua-cli) - du, view disk space usage and delete unwanted data. `Rust`
+  - [just](https://github.com/casey/just) - just a command runner. `Rust`
+  - [procs](https://github.com/dalance/procs) - [ps](https://linux.die.net/man/1/ps), with better sorting, tree support, and more. `Rust`
+- **Monitoring**
+  - [btop](https://github.com/aristocratos/btop) - monitor of resources. `C/C++`
+  - [fastfetch](https://github.com/fastfetch-cli/fastfetch) - feature-rich and performance oriented, neofetch like system information tool. `C`
+  - [gping](https://github.com/orf/gping) - TUI for ping. `Rust`
+- **Network**
+  - [whosthere](https://github.com/ramonvermeulen/whosthere) - local area network (LAN) discovery tool with a modern terminal user interface. `Go`
+- **Search**
+  - [fzf](https://github.com/junegunn/fzf) - CLI fuzzy finder. `Go`
+  - [grex](https://github.com/pemistahl/grex) - command-line tool and library with Python bindings for generating regular expressions from user-provided test cases. `Rust`
+- **Software Development**
+  - [ls-lint](https://github.com/loeffel-io/ls-lint) - directory and filename linter, bring some structure to the project filesystem. `Go`
+  - [tokei](https://github.com/XAMPPRocky/tokei) - count your code, quickly. `Rust`
+  - [varlock](https://github.com/dmno-dev/varlock) - .env files built for sharing powered by @env-spec decorator comments. `TypeScript` `JavaScript`
+- **Other**
+  - [freeze](https://github.com/charmbracelet/freeze) - generate images of code and terminal output. `Go`
+  - [tldr](https://github.com/tldr-pages/tlrc) - tldr client. `Rust`
+  - [vhs](https://github.com/charmbracelet/vhs) - CLI home video recorder. `Go`
+  - [yq](https://github.com/mikefarah/yq) - command-line YAML, JSON, XML, CSV, TOML and properties processor. `Go`
+
+[zerobrew](https://github.com/lucasgelfond/zerobrew) - drop-in, 5-20x faster, experimental homebrew alternative. `Rust`
+
+#### NPM
+
+[npm](https://github.com/npm/cli) - node package manager. `JavaScript`
+
+- [commitlint](https://github.com/conventional-changelog/commitlint) - lint commit messages. `TypeScript`
+- [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm) - auto generate READMEs for Helm Charts. `JavaScript`
+
+### Shell
+
+- [antidote](https://github.com/mattmc3/antidote) - the cure to slow zsh plugin management.
+- [eza](https://github.com/eza-community/eza) - [ls](https://linux.die.net/man/1/ls), with icons, git integration, tree mode, and more. `Rust`
+- [hhighlighter](https://github.com/paoloantinori/hhighlighter) - command line tool to highlight terms. `Shell`
+- [Oh My Posh](https://github.com/jandedobbeleer/oh-my-posh) - the most customizable and low-latency cross platform/shell prompt renderer. `Go`
+- zsh
+- [zoxide](https://github.com/ajeetdsouza/zoxide) - [cd](https://linux.die.net/man/1/cd), with recent directories,and more. `Rust`
+
+### Terminal
+
+- [alacritty](https://github.com/alacritty/alacritty) - cross-platform, OpenGL terminal emulator. `Rust`
+- [WezTerm](https://github.com/wezterm/wezterm) - GPU-accelerated cross-platform terminal emulator and multiplexer. `Rust`
+
+### Version Control System (VCS)
+
+[Git](https://git-scm.com) - fast, scalable, distributed revision control system.
+
+- Packages
+  - [git-filter-repo](https://github.com/newren/git-filter-repo) - quickly rewrite git repository history (filter-branch replacement). `Python`
+  - [git-lfs](https://github.com/git-lfs/git-lfs) - git extension for versioning large files. `Go`
+- Formulas
+  - [commitizen](https://github.com/commitizen-tools/commitizen) - create committing rules for projects, auto bump versions, and auto changelog generation. `Python`
+  - [gitleaks](https://github.com/gitleaks/gitleaks) - tool for detecting secrets like passwords, API keys, and tokens in git repos. `Go`
+  - [git-cliff](https://github.com/orhun/git-cliff) - highly customizable changelog generator that follows Conventional Commit specifications. `Rust`
+  - [git-quick-stats](https://github.com/git-quick-stats/git-quick-stats) - simple and efficient way to access various statistics in git repository. `Shell`
+  - [lazygit](https://github.com/jesseduffield/lazygit) - simple TUI for git commands. `Go`
+  - [onefetch](https://github.com/o2sh/onefetch) - CLI git information tool. `Rust`
+  - [prek](https://github.com/j178/prek) - pre-commit re-engineered. `Rust`
+
+### Security
+
+- [Bitwarden CLI](https://bitwarden.com/help/cli)
+- [Doppler](https://github.com/DopplerHQ/cli)
+
+### Languages
+
+#### Go
+
+[Go](https://go.dev)
+
+#### JavaScript
+
+[nodejs](https://github.com/nodejs/node) - cross-platform, open-source JavaScript runtime built on Chrome's v8 JavaScript engine.
+
+#### Python
+
+- pip
+  - [faker](https://github.com/joke2k/faker) -  generate fake data for you. `Python`
+  - [gitlint](https://github.com/jorisroovers/gitlint) - linting for your git commit messages. `Python`
+  - [markitdown](https://github.com/microsoft/markitdown) - tool for converting files and office documents to Markdown.
+  - [pre-commit](https://github.com/pre-commit/pre-commit) - framework for managing and maintaining multi-language pre-commit hooks. `Python`
+  - [Pygments](https://github.com/pygments/pygments) - generic syntax highlighter.
+  - [whisper-live](https://github.com/collabora/WhisperLive) - nearly-live implementation of OpenAI's Whisper.
+- [pipx](https://github.com/pypa/pipx) - install and run applications in isolated environments.
+  - [poetry](https://github.com/python-poetry/poetry) - packaging and dependency management made easy. `Python`
+  - [sqlit](https://github.com/Maxteabag/sqlit) - user friendly TUI for SQL databases, supports SQL server, MySQL, PostgreSQL, SQLite, Turso and more. `Python`
+- [pyenv](https://github.com/pyenv/pyenv) - simple version management.
+- [uv](https://github.com/astral-sh/uv) - package and project manager. `Rust`
+
+#### Rust
+
+[Rust](https://rust-lang.org)
+
+- cargo
+  - [pyscan](https://github.com/ohaswin/pyscan) - dependency vulnerability scanner. `Rust` `Shell`
+
+### Orchestration
+
+#### Docker
+
+- Packages
+  - [docker](https://github.com/docker)
+  - [skopeo](https://github.com/containers/skopeo) - work with remote images registries - retrieving information, images, signing content. `Go`
+- Formulas
+  - [dive](https://github.com/wagoodman/dive) - tool for exploring each layer in a docker image. `Go`
+  - [dockle](https://github.com/goodwithtech/dockle) - container image linter for security. `Go`
+  - [grype](https://github.com/anchore/grype) - vulnerability scanner for container images and filesystems. `Go`
+  - [hadolint](https://github.com/hadolint/hadolint) - Dockerfile linter, validate inline bash. `Haskell`
+  - [lazydocker](https://github.com/jesseduffield/lazydocker) - lazier way to manage everything Docker. `Go`
+  - [trivy](https://github.com/aquasecurity/trivy) - find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more. `Go`
+
+#### Kubernetes
+
+- Packages
+  - [kubectl](https://github.com/kubernetes/kubectl) - command-line interface. `Go`
+- Formulas
+  - [k9s](https://github.com/derailed/k9s) - CLI to manage your clusters in style. `Go`
+  - [kind](https://github.com/kubernetes-sigs/kind) - Kubernetes in Docker - local clusters for testing Kubernetes. `Go`
+  - [kubecolor](https://github.com/kubecolor/kubecolor) - colorize your kubectl output. `Go`
+  - [kubectx](https://github.com/ahmetb/kubectx) - faster way to switch between clusters and namespaces in kubectl. `Go`
+  - [kubetail](https://github.com/johanhaleby/kubetail) - tail logs from multiple pods at the same time. `Shell`
+  - [pinniped](https://github.com/vmware/pinniped) - secure way to log in to your Kubernetes clusters. `Go`
+  - [stern](https://github.com/stern/stern) - multi pod and container log tailing. `Go`
+
+#### Helm
+
+- [helm](https://github.com/helm/helm) - Kubernetes package manager. `Go`
+- [helmfile](https://github.com/helmfile/helmfile) - declaratively deploy your manifests, Kustomize configs, and Charts as Helm releases. `Go`
+- [helm-secrets](https://github.com/jkroepke/helm-secrets) - help manage secrets with Git workflow and store them anywhere. `Shell`
+- [Helm-unittest](https://github.com/helm-unittest/helm-unittest) - BDD styled unit test framework for Kubernetes Helm charts as a Helm plugin. `Go`
+
+### Infrastructure-as-Code (IaC)
+
+- [Pulumi](https://github.com/pulumi/pulumi) - infrastructure-as-code in any programming language. `Go`
+- [Terraform](https://github.com/hashicorp/terraform) - safely and predictably create, change, and improve infrastructure. `Go`
+
+### Cloud
+
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+- [GCP CLI](https://cloud.google.com/sdk/docs/install)
+
+### System
+
+- NVIDIA
+  - [container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/index.html) - collection of libraries and utilities enabling users to build and run GPU-accelerated containers.
+  - [cuda-toolkit](https://docs.nvidia.com/cuda/index.html) - development environment for creating high performance GPU-accelerated applications.
 
 ## Zsh Plugins
 
@@ -241,254 +344,328 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 ## Enhancements
 
-- **API**
-  - [bruno](https://github.com/usebruno/bruno) - IDE for exploring and testing API. `JavaScript`
-  - [hoppscotch](https://github.com/hoppscotch/hoppscotch) - API development ecosystem, offline, on-prem & cloud, web, desktop & CLI. `TypeScript`
-  - [yaak](https://github.com/mountain-loop/yaak) - desktop API client, organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC. `TypeScript` `Rust`
-- **Artificial Intelligence**
-  - [dotprompt](https://github.com/google/dotprompt) - executable GenAI prompt templates. `Python` `Java` `Go`
-  - [goose](https://github.com/block/goose) - extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM. `Rust` `TypeScript`
-  - [leon](https://github.com/leon-ai/leon) - open-source personal assistant. `TypeScript` `Python`
-  - [mdream](https://github.com/harlan-zw/mdream) - convert any site to clean markdown & llm.txt. `TypeScript`
-  - [opencode](https://github.com/anomalyco/opencode) - open source coding agent. `TypeScript`
-  - [pdfGPT](https://github.com/bhaskatripathi/pdfGPT) - chat with the contents of your pdf file by using GPT capabilities. `Python`
-  - [private-gpt](https://github.com/zylon-ai/private-gpt) - interact with your documents using the power of GPT, 100% privately, no data leaks. `Python`
-- **Benchmarking**
-  - [hyperfine](https://github.com/sharkdp/hyperfine) - benchmarking CLI. `Rust`
-  - [stress-ng](https://github.com/ColinIanKing/stress-ng) - stress test a computer system in various selectable ways. `C`
-  - [s-tui](https://github.com/amanusk/s-tui) - terminal-based CPU stress and monitoring utility. `Python`
-- **CI/CD**
-  - [gh-signoff](https://github.com/basecamp/gh-signoff) -  GitHub CLI extension local CI, sign off on your own work. `Shell`
-  - [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local) - Tired of pushing to test your .gitlab-ci.yml? `TypeScript`
-- **Cloud**
-  - [aws-nuke](https://github.com/ekristen/aws-nuke) - remove all the resources from an AWS account. `Go`
-  - [localstack](https://github.com/localstack/localstack) - fully functional local AWS cloud stack, develop and test your cloud & serverless apps offline. `Python`
-  - [ministack](https://github.com/ministackorg/ministack) - open-source local AWS emulator, 40+ services, Terraform compatible, real databases. `Python`
-  - [sourcerer](https://github.com/the-impact-craft/sourcerer) - CLI-based cloud storage explorer that provides a unified interface to view and manage files across multiple cloud providers. `Python`
-  - [taws](https://github.com/huseyinbabal/taws) - terminal-based AWS resource viewer and manager. `Rust`
-- **Database**
-  - [tbls](https://github.com/k1LoW/tbls) - ci-friendly tool to document a database. `Go`
-- **Diagrams**
-  - [d2](https://github.com/terrastruct/d2) - modern diagram scripting language that turns text to diagrams. `JavaScript`
-- **Directories & Files**
-  - [alt-sendme](https://github.com/tonyantony300/alt-sendme) - send files and directories anywhere in the world without storing in cloud - any size, any format, no accounts, no restrictions. `TypeScript` `Rust`
-  - [entr](https://github.com/eradman/entr) - run arbitrary commands when files change. `C`
-  - [f2](https://github.com/ayoisaiah/f2) - cross-platform command-line tool for batch renaming files and directories quickly and safely. `Go`
-  - [lstr](https://github.com/bgreenwell/lstr) - fast, minimalist directory tree viewer. `Rust`
-  - [noxdir](https://github.com/crumbyte/noxdir) - terminal utility for visualizing file system usage. `Go`
-  - [watchman](https://github.com/facebook/watchman) - watches files and records, or triggers actions, when they change. `C++` `Python`
-  - [yazi](https://github.com/sxyazi/yazi) - terminal file manager based on async I/O. `Rust`
-- **Dotfiles Management**
-  - [stow](https://www.gnu.org/software/stow/manual/stow.html) - symlink farm manager which takes distinct sets of software and/or data located in separate directories on the filesystem, and makes them all appear to be installed in a single directory tree.
-- **Infrastructure-as-Code (IaC)**
-  - [opentofu](https://github.com/opentofu/opentofu) -  declaratively manage your cloud infrastructure. `Go`
-  - [puppet](https://github.com/puppetlabs/puppet) - server automation framework and application. `Ruby`
-  - [sst](https://sst.dev) - build full-stack apps on your own infrastructure.
-  - [terragrunt](https://github.com/gruntwork-io/terragrunt) - flexible orchestration tool that allows IaC written in OpenTofu/Terraform to scale. `Go`
-  - [terrascan](https://github.com/tenable/terrascan) - detect compliance and security violations across IaC to mitigate risk before provisioning cloud native infrastructure. `Go`
-  - [tflint](https://github.com/terraform-linters/tflint) - pluggable Terraform linter. `Go`
-- **Integrated Development Environment (IDE)**
-  - [cursor](https://github.com/getcursor/cursor) - AI code editor.
-  - [void](https://github.com/voideditor/void) - open-source Cursor alternative. `TypeScript`
-  - [windsurf](https://windsurf.com) - AI code editor.
-  - [zed](https://github.com/zed-industries/zed) - high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
-- **Games**
-  - [clmystery](https://github.com/veltman/clmystery) - command-line murder mystery.
-- **KVM**
-  - [barrier](https://github.com/debauchee/barrier) - open-source KVM software. `C` `C++`
-  - [deskflow](https://github.com/deskflow/deskflow) - share a single keyboard and mouse between multiple computers. `C++`
-- **Modern Replacements**
-  - [atuin](https://github.com/atuinsh/atuin) - history, magical shell history. `Rust`
-  - [cpx](https://github.com/11happy/cpx) - cp, reimagined. `Rust`
-  - [dust](https://github.com/bootandy/dust) - du, a more intuitive version. `Rust`
-  - [hwatch](https://github.com/blacknon/hwatch) - watch, records the differences in execution results and can check this differences at after. `Rust`
-  - [lolcat](https://github.com/busyloop/lolcat) - cat, rainbows and unicorns. `Ruby`
-  - [shell-safe-rm](https://github.com/kaelzhang/shell-safe-rm) - rm, replacement with nearly full functionalities and options of the rm command. `Shell` `JavaScript`
-  - [somo](https://github.com/theopfr/somo) - netstat, human-friendly alternative for socket and port monitoring. `Rust`
-- **Monitoring**
-  - [powertop](https://github.com/fenrus75/powertop) - diagnose issues with power consumption and power management. `C/C++`
-  - [sampler](https://github.com/sqshq/sampler) - shell commands execution, visualization and alerting. `Go`
-- **Multiplexer**
-  - [tmux](https://github.com/tmux/tmux)
-  - [zellij](https://github.com/zellij-org/zellij)
-- **Orchestration**
-  - Docker
-    - [blafs](https://github.com/negativa-ai/BLAFS) - container debloating that removes bloat and improves performance. `Go` `C++`
-    - [clair](https://github.com/quay/clair) - vulnerability static analysis for containers. `Go`
-    - [copacetic](https://github.com/project-copacetic/copacetic) - CLI tool for directly patching container images. `Go`
-    - [docker bench](https://github.com/docker/docker-bench-security) - script that checks for dozens of common best-practices around deploying Docker containers in production.
-    - [harbor-guard](https://github.com/HarborGuard/HarborGuard) - image vulnerability scanning & patching platform with multi-tool integration. `TypeScript`
-    - [subtrace](https://github.com/subtrace/subtrace) - wireshark for Docker containers. `Go`
-    - new Docker commands (require an account and/or subscription) - init, debug, compose watch, build cloud, scout.
-  - Kubernetes
-    - Backup
-      - [stash](https://github.com/stashed/stash) - backup your Kubernetes stateful applications. `Go`
-      - [velero](https://github.com/vmware-tanzu/velero) - backup and migrate applications and their persistent volumes. `Go`
-    - Deployment
-      - [infra-flux](https://github.com/n3tuk/infra-flux) - Terraform and Flux-based repository for the deployment and management of core configuration of Kubernetes Clusters and the deployment of third-party utilities (such as external-dns and cert-manager). `HCL`
-      - [kops](https://github.com/kubernetes/kops) - Kubernetes operations (kOps) - production grade k8s installation, upgrades and management. `Go` `HCL`
-      - [kubespray](https://github.com/kubernetes-sigs/kubespray) - deploy a production ready cluster. `Jinja` `HCL`
-    - Development
-      - [skaffold](https://github.com/GoogleContainerTools/skaffold) - easy and repeatable Kubernetes development. `Go`
-      - [tilt](https://github.com/tilt-dev/tilt) - define your dev environment as code. For microservice apps on Kubernetes. `Go` `TypeScript`
-    - Remote Access
-      - [kftray](https://github.com/hcavarsan/kftray) - port-forward manager with TLS port forwards, traffic inspection, udp support, proxy connections through k8s clusters and state via local files or git repos. `Rust`
-      - [kubevpn](https://github.com/kubenetworks/kubevpn) - cloud native dev environment that connects to Kubernetes cluster network. `Go`
-    - Validation
-      - [kubeconform](https://github.com/yannh/kubeconform) - fast manifests validator, with support for custom resources. `Go`
-      - [polaris](https://github.com/FairwindsOps/polaris) - validation of best practices in your clusters. `Go`
-    - Other
-      - [eksctl](https://github.com/eksctl-io/eksctl) - official CLI for Amazon EKS. `Go`
-      - [khi](https://github.com/GoogleCloudPlatform/khi) - transformative log viewer. `Go`
-      - [kubechecks](https://github.com/zapier/kubechecks) - check your changes before they hit the cluster. `Go`
-      - [kubectlai](https://github.com/GoogleCloudPlatform/kubectl-ai) - AI powered Kubernetes assistant. `Go`
-      - [kubetest2](https://github.com/kubernetes-sigs/kubetest2) - framework for launching and running end-to-end tests. `Go`
-      - [kube-composer](https://github.com/same7ammar/kube-composer) - yaml builder with intuitive web interface and dynamic visualization. `TypeScript`
-      - [nova](https://github.com/FairwindsOps/Nova) - find outdated or deprecated Helm charts running in your cluster. `Go`
-  - Helm
-    - [helmwave](https://github.com/helmwave/helmwave) - new wave for helm. `Go`
-- **Search**
-  - [ag](https://github.com/ggreer/the_silver_searcher) - code-searching tool similar to ack, but faster. `C/C++`
-- **Secrets**
-  - [envilder](https://github.com/macalbert/envilder) - securely centralizes environment variables from AWS SSM. `TypeScript`
-  - [kingfisher](https://github.com/mongodb/kingfisher) - secret detection and live validation across files, git repos, GitHub, GitLab, Azure DevOps, BitBucket, Gitea, AWS S3, Docker images, Jira, Slack, and Confluence. `Rust`
-  - [sops](https://github.com/getsops/sops) - simple and flexible tool for managing secrets. `Go`
-  - [teller](https://github.com/tellerops/teller) - cloud native secrets management for developers - never leave your command line for secrets. `Rust`
-- **Security**
-  - [caracal](https://github.com/adgaultier/caracal) - make your programs stealthier. `Rust`
-  - [codeql](https://github.com/github/codeql) - libraries and queries that power security researchers around the world. `CodeQL` `Kotlin`
-  - [lynis](https://github.com/CISOfy/lynis) - cross-platform security auditing tool, assists with compliance testing (HIPAA/ISO27001/PCI DSS) and system hardening. `Shell`
-  - [radare2](https://github.com/radareorg/radare2) - UNIX-like reverse engineering framework and command-line toolset. `C`
-  - [sharpeye](https://github.com/sgInnora/sharpeye) - advanced Linux intrusion detection and threat hunting system. `Python`
-  - [syft](https://github.com/anchore/syft) - CLI tool and library for generating a Software Bill of Materials (SBOM) from container images and filesystems. `Go`
-  - [sysdig](https://github.com/draios/sysdig) - linux system exploration and troubleshooting tool with first class support for containers. `C++` `Lua`
-  - [vet](https://github.com/vet-run/vet) - CLI tool that acts as a safety net for the risky curl | bash pattern. `Shell`
-- **Shell**
-  - [brush](https://github.com/reubeno/brush) - bash/POSIX-compatible shell. `Rust`
-  - [murex](https://github.com/lmorg/murex) - smarter shell and scripting environment with advanced features designed for usability, safety and productivity. `Go`
-  - [starship](https://github.com/starship/starship) - minimal, blazing-fast, and infinitely customizable prompt for any shell. `Rust`
-- **Software Development**
-  - Observability
-    - [otelbin](https://github.com/dash0hq/otelbin) - web-based tool to facilitate OpenTelemetry collector configuration editing and verification. `TypeScript`
-    - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) - fast, cost-effective monitoring solution and time series database. `Go`
-  - Environments
-    - [devbox](https://github.com/jetify-com/devbox) - instant, easy, and predictable development environments. `Go`
-    - [flox](https://github.com/flox/flox) - developer environments you can take with you. `Rust` `Shell`
-  - Network
-    - [portless](https://github.com/vercel-labs/portless) - replace port numbers with stable, named local URLs. `TypeScript` `JavaScript`
-    - [ttyd](https://github.com/tsl0922/ttyd) - share your terminal over the web. `C` `TypeScript`
-    - [tunnelto](https://github.com/agrinman/tunnelto) - expose your local web server to the internet with a public URL. `Rust`
-  - Other
-    - [autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell. `TypeScript`
-    - [biome](https://github.com/biomejs/biome) - toolchain for web projects, aimed to provide functionalities to maintain them, offers formatter and linter, usable via CLI and LSP. `Rust`
-    - [cheat](https://github.com/cheat/cheat) - create and view interactive cheat sheets on the command-line. `Go`
-    - [epic-stack](https://github.com/epicweb-dev/epic-stack) - full stack app starter with the foundational things setup and configured for you. `TypeScript`
-    - [jwt-cli](https://github.com/mike-engel/jwt-cli) - tool to decode and encode JWTs. `Rust`
-    - [mailpit](https://github.com/axllent/mailpit) - email and SMTP testing tool with API for developers. `Go`
-    - [nsenter](https://man7.org/linux/man-pages/man1/nsenter.1.html) - run program in different namespaces.
-    - [run](https://github.com/Esubaalew/run) - universal multi-language runner and smart REPL. `Rust`
-    - [unleash](https://github.com/Unleash/unleash) - feature management platform. `TypeScript`
-- **Speech Recognition**
-  - [buzz](https://github.com/chidiwilliams/buzz) - transcribes and translates audio offline on your personal computer, powered by OpenAI's Whisper. `Python`
-  - [moonshine](https://github.com/moonshine-ai/moonshine) - fast and accurate automatic speech recognition (ASR) for edge devices. `C`
-- **System Info**
-  - [cpufetch](https://github.com/Dr-Noob/cpufetch) - simple yet fancy CPU architecture fetching tool. `C`
-  - [glances](https://github.com/nicolargo/glances) - glances an eye on your system. `Python`
-  - [nerdfetch](https://github.com/ThatOneCalculator/NerdFetch) - POSIX *nix fetch script using Nerd Fonts. `Shell`
-  - [macchina](https://github.com/Macchina-CLI/macchina) - system information frontend with an emphasis on performance. `Rust`
-  - [screenfetch](https://github.com/KittyKatt/screenFetch) - fetch system/theme information in terminal. `Shell`
-- **System Performance**
-  - [auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq) - automatic CPU speed & power optimizer for Linux. `Python` `Shell`
-  - zRAM - linux kernel module to create a compressed block device in RAM.
-- **Tasks**
-  - [poe](https://github.com/nat-n/poethepoet) - task runner that works well with poetry or uv. `Python`
-  - [task](https://github.com/go-task/task) -  task runner, simpler Make alternative. `Go`
-- **Terminal**
-  - [ghostty](https://github.com/ghostty-org/ghostty) - fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration. `Zig` `Swift`
-  - [hyper](https://github.com/vercel/hyper) - terminal built on web technologies. `TypeScript`
-  - [kitty](https://github.com/kovidgoyal/kitty) - cross-platform, fast, feature-rich, GPU based. `Python` `C` `Go`
-  - [rio](https://github.com/raphamorim/rio) - hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers. `Rust`
-  - [tabby](https://github.com/eugeny/tabby) - terminal for a more modern age. `TypeScript`
-  - [Warp](https://github.com/warpdotdev/Warp) - modern terminal with AI built in so you and your team can build great software, faster. `Rust`
-  - [WindTerm](https://github.com/kingToolbox/WindTerm) - professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal. `C`
-- **Text Editor**
-  - [helix](https://github.com/helix-editor/helix) - post-modern modal text editor. `Rust`
-  - [lazy nvim](https://github.com/folke/lazy.nvim) - modern plugin manager for Neovim. `Lua`
-  - [lazy vim](https://github.com/LazyVim/LazyVim) - neovim config for the lazy. `Lua`
-  - [qsv](https://github.com/dathere/qsv) - blazing-fast data-wrangling toolkit. `Rust`
-  - [xan](https://github.com/medialab/xan) - csv magician. `Rust`
-- **Tiling**
-  - [hyperland](https://github.com/hyprwm/Hyprland) - independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks. `C++`
-  - [niri](https://github.com/niri-wm/niri) - scrollable-tiling Wayland compositor. `Rust`
-- **Tools**
-  - [asciinema](https://github.com/asciinema/asciinema) - terminal session recorder, streamer and player. `Rust`
-  - [Clipboard](https://github.com/Slackadays/Clipboard) - smart clipboard manager.
-  - [espanso](https://github.com/espanso/espanso) - cross-platform text expander. `Rust`
-  - [exosphere](https://github.com/mrdaemon/exosphere) - CLI and TUI driven application that offers patch reporting for remote unix systems. `Python`
-  - [hl](https://github.com/pamburus/hl) - fast and powerful log viewer and processor that converts JSON logs or logfmt logs into a clear human-readable format. `Rust`
-  - [jrnl](https://github.com/jrnl-org/jrnl) - Collect your thoughts and notes without leaving the command line. `Python` `Gherkin`
-  - [midnight commander](https://github.com/MidnightCommander/mc)
-  - [mosh](https://github.com/mobile-shell/mosh) - mobile shell. `C++`
-  - [newsboat](https://github.com/newsboat/newsboat) - RSS/Atom feed reader for text terminals. `C++` `Rust`
-  - [pmd](https://github.com/pmd/pmd) - extensible multi-language static code analyzer. `Java`
-  - [simdjson](https://github.com/simdjson/simdjson) - parsing gigabytes of JSON per second. `C++`
-  - [thefuck](https://github.com/nvbn/thefuck) - magnificent app which corrects your previous console command. `Python`
-  - [typst](https://github.com/typst/typst) - markup-based typesetting system that is powerful and easy to learn. `Rust`
-  - [ut](https://github.com/ksdme/ut) - utility toolbox for developers. `Rust`
-  - [witr](https://github.com/pranshuparmar/witr) - why is it running? `Go`
-- **Version Control System (VCS)**
-  - [better commits](https://github.com/Everduin94/better-commits) - CLI for creating better commits following the conventional commits specification. `JavaScript`
-  - [cocommit](https://github.com/andrewromanenco/cocommit) - CLI that works with your HEAD commit and leverages an LLM of your choice to enhance commit quality. `Python`
-  - [conform](https://github.com/siderolabs/conform) - policy enforcement for your pipelines. `Go`
-  - [delta](https://github.com/dandavison/delta) - syntax-highlighting pager for git, diff, grep, and blame output. `Rust`
-  - [difftastic](https://difftastic.wilfred.me.uk)
-  - [gh-dash](https://github.com/dlvhdr/gh-dash) - beautiful CLI dashboard for GitHub. `Go`
-  - [gitbutler](https://github.com/gitbutlerapp/gitbutler) - GitButler version control client. `Rust`
-  - [GitHub CLI](https://github.com/cli/cli) - GitHub’s official command line tool. `Go`
-  - [gitlogue](https://github.com/unhappychoice/gitlogue) - cinematic Git commit replay tool for the terminal, turning your Git history into a living, animated story. `Rust`
-  - [gitu](https://github.com/altsem/gitu) - TUI git client inspired by Magit. `Rust`
-  - [git-appraise](https://github.com/google/git-appraise) - distributed code review system for git repos. `Go`
-  - [git-bug](https://github.com/git-bug/git-bug) - distributed, offline-first bug tracker embedded in git, with bridges. `Go`
-  - [git-it-electron](https://github.com/jlord/git-it-electron) - desktop app for learning Git and GitHub. `Perl`
-  - [git-plan](https://github.com/rorybyrne/git-plan) - a better workflow for git. `Python`
-  - [git-rewrite-commits](https://github.com/f/git-rewrite-commits) - AI-powered git commit message rewriter using Ollama or GPT. `TypeScript` `JavaScript`
-  - [git-sim](https://github.com/initialcommit-com/git-sim) - visually simulate Git operations in your own repos with a single terminal command. `Python`
-  - [git-xargs](https://github.com/gruntwork-io/git-xargs) - CLI for making updates across multiple Github repositories with a single command. `Go`
-  - [gitflow](https://github.com/nvie/gitflow) - git extensions to provide high-level repository operations for Vincent Driessen's branching model. `Shell`
-  - [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) - gitmoji interactive CLI tool for using emojis on commits. `JavaScript`
-  - [husky](https://github.com/typicode/husky) - git hooks made easy. `JavaScript`
-  - [jujutsu](https://github.com/jj-vcs/jj) - git-compatible VCS that is both simple and powerful. `Rust`
-  - [lefthook](https://github.com/evilmartians/lefthook) - fast and powerful git hooks manager for any type of projects. `Go`
-  - [mergiraf](https://mergiraf.org)
-  - [multi-gitter](https://github.com/lindell/multi-gitter) - update multiple repositories in with one command. `Go`
-  - [opencommit](https://github.com/di-sukharev/opencommit) - generate commit messages by an LLM in 1 sec. `JavaScript`
-  - [zizmor](https://github.com/zizmorcore/zizmor) - static analysis for GitHub Actions. `Rust`
-- **Virtualization**
-  - [Docker-OSX](https://github.com/sickcodes/Docker-OSX) - near native OSX-KVM in Docker. `Shell` `Python`
-  - [lima](https://github.com/lima-vm/lima) - Linux virtual machines, with a focus on running containers. `Go` `Shell`
-  - [winapps](https://github.com/winapps-org/winapps) - run Windows apps in Linux as if they were a part of the native OS. `Shell` `PowerShell`
-  - [winboat](https://github.com/TibixDev/winboat) - run Windows apps on Linux with seamless integration. `TypeScript` `PowerShell`
-  - [windows](https://github.com/dockur/windows) - Windows inside a Docker container. `Shell`
-- **Visualization**
-  - [asciiquarium](https://github.com/cmatsuoka/asciiquarium) - enjoy the mysteries of the sea from the safety of your own terminal. `Perl`
-  - [cbonsai](https://github.com/mhzawadi/homebrew-cbonsai) - bonsai tree generator, written using ncurses. `C`
-  - [cmatrix](https://github.com/abishekvashok/cmatrix) - terminal based "The Matrix" like implementation. `C`
-  - [pipes](https://github.com/pipeseroni/pipes.sh) - animated pipes terminal screensaver. `Shell`
-  - [tty-clock](https://github.com/xorg62/tty-clock) - clock using lib ncurses. `C`
-  - [unimatrix](https://github.com/will8211/unimatrix) - simulate the display from "The Matrix" in terminal. `Python`
-- **Web**
-  - [hey](https://github.com/rakyll/hey) - HTTP load generator, apachebench (ab) replacement. `Go`
-  - [monolith](https://github.com/Y2Z/monolith) - CLI tool and library for saving complete web pages as a single HTML file. `Rust`
-  - [oha](https://github.com/hatoo/oha) - HTTP load generator, with tui animation. `Rust`
-  - [second-order](https://github.com/mhmdiaa/second-order) - second-order subdomain takeover scanner. `Go`
-- **zsh**
-  - [zap](https://github.com/zap-zsh/zap) - minimal plugin manager. `Shell`
-  - [zinit](https://github.com/zdharma-continuum/zinit) - flexible and fast plugin manager. `Shell`
-  - [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete) - real-time type-ahead completion, asynchronous find-as-you-type autocompletion. `Shell`
-  - [zsh-auto-notify](https://github.com/MichaelAquilina/zsh-auto-notify)
-  - [zsh-bench](https://github.com/romkatv/zsh-bench) - benchmark for interactive zsh. `Shell`
-  - [zsh-fzf-history-search](https://github.com/joshskidmore/zsh-fzf-history-search)
-  - [zsh-snap](https://github.com/marlonrichert/zsh-snap) - tools for zsh dotfiles & plugins, plus git repos. `Shell`
+### API
+
+- [bruno](https://github.com/usebruno/bruno) - IDE for exploring and testing API. `JavaScript`
+- [hoppscotch](https://github.com/hoppscotch/hoppscotch) - API development ecosystem, offline, on-prem & cloud, web, desktop & CLI. `TypeScript`
+- [yaak](https://github.com/mountain-loop/yaak) - desktop API client, organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC. `TypeScript` `Rust`
+
+### Artificial Intelligence
+
+- [dotprompt](https://github.com/google/dotprompt) - executable GenAI prompt templates. `Python` `Java` `Go`
+- [goose](https://github.com/block/goose) - extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM. `Rust` `TypeScript`
+- [leon](https://github.com/leon-ai/leon) - open-source personal assistant. `TypeScript` `Python`
+- [mdream](https://github.com/harlan-zw/mdream) - convert any site to clean markdown & llm.txt. `TypeScript`
+- [opencode](https://github.com/anomalyco/opencode) - open source coding agent. `TypeScript`
+- [pdfGPT](https://github.com/bhaskatripathi/pdfGPT) - chat with the contents of your pdf file by using GPT capabilities. `Python`
+- [private-gpt](https://github.com/zylon-ai/private-gpt) - interact with your documents using the power of GPT, 100% privately, no data leaks. `Python`
+
+### Benchmarking
+
+- [hyperfine](https://github.com/sharkdp/hyperfine) - benchmarking CLI. `Rust`
+- [stress-ng](https://github.com/ColinIanKing/stress-ng) - stress test a computer system in various selectable ways. `C`
+- [s-tui](https://github.com/amanusk/s-tui) - terminal-based CPU stress and monitoring utility. `Python`
+
+### CI/CD
+
+- [gh-signoff](https://github.com/basecamp/gh-signoff) -  GitHub CLI extension local CI, sign off on your own work. `Shell`
+- [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local) - Tired of pushing to test your .gitlab-ci.yml? `TypeScript`
+
+### Cloud
+
+- [aws-nuke](https://github.com/ekristen/aws-nuke) - remove all the resources from an AWS account. `Go`
+- [localstack](https://github.com/localstack/localstack) - fully functional local AWS cloud stack, develop and test your cloud & serverless apps offline. `Python`
+- [ministack](https://github.com/ministackorg/ministack) - open-source local AWS emulator, 40+ services, Terraform compatible, real databases. `Python`
+- [sourcerer](https://github.com/the-impact-craft/sourcerer) - CLI-based cloud storage explorer that provides a unified interface to view and manage files across multiple cloud providers. `Python`
+- [taws](https://github.com/huseyinbabal/taws) - terminal-based AWS resource viewer and manager. `Rust`
+
+### Database
+
+- [tbls](https://github.com/k1LoW/tbls) - ci-friendly tool to document a database. `Go`
+
+### Diagrams
+
+- [d2](https://github.com/terrastruct/d2) - modern diagram scripting language that turns text to diagrams. `JavaScript`
+
+### Directories & Files
+
+- [alt-sendme](https://github.com/tonyantony300/alt-sendme) - send files and directories anywhere in the world without storing in cloud - any size, any format, no accounts, no restrictions. `TypeScript` `Rust`
+- [entr](https://github.com/eradman/entr) - run arbitrary commands when files change. `C`
+- [f2](https://github.com/ayoisaiah/f2) - cross-platform command-line tool for batch renaming files and directories quickly and safely. `Go`
+- [lstr](https://github.com/bgreenwell/lstr) - fast, minimalist directory tree viewer. `Rust`
+- [noxdir](https://github.com/crumbyte/noxdir) - terminal utility for visualizing file system usage. `Go`
+- [watchman](https://github.com/facebook/watchman) - watches files and records, or triggers actions, when they change. `C++` `Python`
+- [yazi](https://github.com/sxyazi/yazi) - terminal file manager based on async I/O. `Rust`
+
+### Dotfiles Management
+
+- [stow](https://www.gnu.org/software/stow/manual/stow.html) - symlink farm manager which takes distinct sets of software and/or data located in separate directories on the filesystem, and makes them all appear to be installed in a single directory tree.
+
+### Infrastructure-as-Code (IaC)
+
+- [opentofu](https://github.com/opentofu/opentofu) -  declaratively manage your cloud infrastructure. `Go`
+- [puppet](https://github.com/puppetlabs/puppet) - server automation framework and application. `Ruby`
+- [sst](https://sst.dev) - build full-stack apps on your own infrastructure.
+- [terragrunt](https://github.com/gruntwork-io/terragrunt) - flexible orchestration tool that allows IaC written in OpenTofu/Terraform to scale. `Go`
+- [terrascan](https://github.com/tenable/terrascan) - detect compliance and security violations across IaC to mitigate risk before provisioning cloud native infrastructure. `Go`
+- [tflint](https://github.com/terraform-linters/tflint) - pluggable Terraform linter. `Go`
+
+### Integrated Development Environment (IDE)
+
+- [cursor](https://github.com/getcursor/cursor) - AI code editor.
+- [void](https://github.com/voideditor/void) - open-source Cursor alternative. `TypeScript`
+- [windsurf](https://windsurf.com) - AI code editor.
+- [zed](https://github.com/zed-industries/zed) - high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
+
+### Games
+
+- [clmystery](https://github.com/veltman/clmystery) - command-line murder mystery.
+
+### KVM
+
+- [barrier](https://github.com/debauchee/barrier) - open-source KVM software. `C` `C++`
+- [deskflow](https://github.com/deskflow/deskflow) - share a single keyboard and mouse between multiple computers. `C++`
+
+### Modern Replacements
+
+- [atuin](https://github.com/atuinsh/atuin) - history, magical shell history. `Rust`
+- [cpx](https://github.com/11happy/cpx) - cp, reimagined. `Rust`
+- [dust](https://github.com/bootandy/dust) - du, a more intuitive version. `Rust`
+- [hwatch](https://github.com/blacknon/hwatch) - watch, records the differences in execution results and can check this differences at after. `Rust`
+- [lolcat](https://github.com/busyloop/lolcat) - cat, rainbows and unicorns. `Ruby`
+- [shell-safe-rm](https://github.com/kaelzhang/shell-safe-rm) - rm, replacement with nearly full functionalities and options of the rm command. `Shell` `JavaScript`
+- [somo](https://github.com/theopfr/somo) - netstat, human-friendly alternative for socket and port monitoring. `Rust`
+
+### Monitoring
+
+- [powertop](https://github.com/fenrus75/powertop) - diagnose issues with power consumption and power management. `C/C++`
+- [sampler](https://github.com/sqshq/sampler) - shell commands execution, visualization and alerting. `Go`
+
+### Multiplexer
+
+- [tmux](https://github.com/tmux/tmux)
+- [zellij](https://github.com/zellij-org/zellij)
+
+### Orchestration
+
+#### Docker
+
+- [blafs](https://github.com/negativa-ai/BLAFS) - container debloating that removes bloat and improves performance. `Go` `C++`
+- [clair](https://github.com/quay/clair) - vulnerability static analysis for containers. `Go`
+- [copacetic](https://github.com/project-copacetic/copacetic) - CLI tool for directly patching container images. `Go`
+- [docker bench](https://github.com/docker/docker-bench-security) - script that checks for dozens of common best-practices around deploying Docker containers in production.
+- [harbor-guard](https://github.com/HarborGuard/HarborGuard) - image vulnerability scanning & patching platform with multi-tool integration. `TypeScript`
+- [subtrace](https://github.com/subtrace/subtrace) - wireshark for Docker containers. `Go`
+- new Docker commands (require an account and/or subscription) - init, debug, compose watch, build cloud, scout.
+
+#### Kubernetes
+
+- Backup
+  - [stash](https://github.com/stashed/stash) - backup your Kubernetes stateful applications. `Go`
+  - [velero](https://github.com/vmware-tanzu/velero) - backup and migrate applications and their persistent volumes. `Go`
+- Deployment
+  - [infra-flux](https://github.com/n3tuk/infra-flux) - Terraform and Flux-based repository for the deployment and management of core configuration of Kubernetes Clusters and the deployment of third-party utilities (such as external-dns and cert-manager). `HCL`
+  - [kops](https://github.com/kubernetes/kops) - Kubernetes operations (kOps) - production grade k8s installation, upgrades and management. `Go` `HCL`
+  - [kubespray](https://github.com/kubernetes-sigs/kubespray) - deploy a production ready cluster. `Jinja` `HCL`
+- Development
+  - [skaffold](https://github.com/GoogleContainerTools/skaffold) - easy and repeatable Kubernetes development. `Go`
+  - [tilt](https://github.com/tilt-dev/tilt) - define your dev environment as code. For microservice apps on Kubernetes. `Go` `TypeScript`
+- Remote Access
+  - [kftray](https://github.com/hcavarsan/kftray) - port-forward manager with TLS port forwards, traffic inspection, udp support, proxy connections through k8s clusters and state via local files or git repos. `Rust`
+  - [kubevpn](https://github.com/kubenetworks/kubevpn) - cloud native dev environment that connects to Kubernetes cluster network. `Go`
+- Validation
+  - [kubeconform](https://github.com/yannh/kubeconform) - fast manifests validator, with support for custom resources. `Go`
+  - [polaris](https://github.com/FairwindsOps/polaris) - validation of best practices in your clusters. `Go`
+- Other
+  - [eksctl](https://github.com/eksctl-io/eksctl) - official CLI for Amazon EKS. `Go`
+  - [khi](https://github.com/GoogleCloudPlatform/khi) - transformative log viewer. `Go`
+  - [kubechecks](https://github.com/zapier/kubechecks) - check your changes before they hit the cluster. `Go`
+  - [kubectlai](https://github.com/GoogleCloudPlatform/kubectl-ai) - AI powered Kubernetes assistant. `Go`
+  - [kubetest2](https://github.com/kubernetes-sigs/kubetest2) - framework for launching and running end-to-end tests. `Go`
+  - [kube-composer](https://github.com/same7ammar/kube-composer) - yaml builder with intuitive web interface and dynamic visualization. `TypeScript`
+  - [nova](https://github.com/FairwindsOps/Nova) - find outdated or deprecated Helm charts running in your cluster. `Go`
+
+#### Helm
+
+- [helmwave](https://github.com/helmwave/helmwave) - new wave for helm. `Go`
+
+### Search
+
+- [ag](https://github.com/ggreer/the_silver_searcher) - code-searching tool similar to ack, but faster. `C/C++`
+
+### Secrets
+
+- [envilder](https://github.com/macalbert/envilder) - securely centralizes environment variables from AWS SSM. `TypeScript`
+- [kingfisher](https://github.com/mongodb/kingfisher) - secret detection and live validation across files, git repos, GitHub, GitLab, Azure DevOps, BitBucket, Gitea, AWS S3, Docker images, Jira, Slack, and Confluence. `Rust`
+- [sops](https://github.com/getsops/sops) - simple and flexible tool for managing secrets. `Go`
+- [teller](https://github.com/tellerops/teller) - cloud native secrets management for developers - never leave your command line for secrets. `Rust`
+
+### Security
+
+- [caracal](https://github.com/adgaultier/caracal) - make your programs stealthier. `Rust`
+- [codeql](https://github.com/github/codeql) - libraries and queries that power security researchers around the world. `CodeQL` `Kotlin`
+- [lynis](https://github.com/CISOfy/lynis) - cross-platform security auditing tool, assists with compliance testing (HIPAA/ISO27001/PCI DSS) and system hardening. `Shell`
+- [radare2](https://github.com/radareorg/radare2) - UNIX-like reverse engineering framework and command-line toolset. `C`
+- [sharpeye](https://github.com/sgInnora/sharpeye) - advanced Linux intrusion detection and threat hunting system. `Python`
+- [syft](https://github.com/anchore/syft) - CLI tool and library for generating a Software Bill of Materials (SBOM) from container images and filesystems. `Go`
+- [sysdig](https://github.com/draios/sysdig) - linux system exploration and troubleshooting tool with first class support for containers. `C++` `Lua`
+- [vet](https://github.com/vet-run/vet) - CLI tool that acts as a safety net for the risky curl | bash pattern. `Shell`
+
+### Shell
+
+- [brush](https://github.com/reubeno/brush) - bash/POSIX-compatible shell. `Rust`
+- [murex](https://github.com/lmorg/murex) - smarter shell and scripting environment with advanced features designed for usability, safety and productivity. `Go`
+- [starship](https://github.com/starship/starship) - minimal, blazing-fast, and infinitely customizable prompt for any shell. `Rust`
+
+### Software Development
+
+- Observability
+  - [otelbin](https://github.com/dash0hq/otelbin) - web-based tool to facilitate OpenTelemetry collector configuration editing and verification. `TypeScript`
+  - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) - fast, cost-effective monitoring solution and time series database. `Go`
+- Environments
+  - [devbox](https://github.com/jetify-com/devbox) - instant, easy, and predictable development environments. `Go`
+  - [flox](https://github.com/flox/flox) - developer environments you can take with you. `Rust` `Shell`
+- Network
+  - [portless](https://github.com/vercel-labs/portless) - replace port numbers with stable, named local URLs. `TypeScript` `JavaScript`
+  - [ttyd](https://github.com/tsl0922/ttyd) - share your terminal over the web. `C` `TypeScript`
+  - [tunnelto](https://github.com/agrinman/tunnelto) - expose your local web server to the internet with a public URL. `Rust`
+- Other
+  - [autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell. `TypeScript`
+  - [biome](https://github.com/biomejs/biome) - toolchain for web projects, aimed to provide functionalities to maintain them, offers formatter and linter, usable via CLI and LSP. `Rust`
+  - [cheat](https://github.com/cheat/cheat) - create and view interactive cheat sheets on the command-line. `Go`
+  - [epic-stack](https://github.com/epicweb-dev/epic-stack) - full stack app starter with the foundational things setup and configured for you. `TypeScript`
+  - [jwt-cli](https://github.com/mike-engel/jwt-cli) - tool to decode and encode JWTs. `Rust`
+  - [mailpit](https://github.com/axllent/mailpit) - email and SMTP testing tool with API for developers. `Go`
+  - [nsenter](https://man7.org/linux/man-pages/man1/nsenter.1.html) - run program in different namespaces.
+  - [run](https://github.com/Esubaalew/run) - universal multi-language runner and smart REPL. `Rust`
+  - [unleash](https://github.com/Unleash/unleash) - feature management platform. `TypeScript`
+
+### Speech Recognition
+
+- [buzz](https://github.com/chidiwilliams/buzz) - transcribes and translates audio offline on your personal computer, powered by OpenAI's Whisper. `Python`
+- [moonshine](https://github.com/moonshine-ai/moonshine) - fast and accurate automatic speech recognition (ASR) for edge devices. `C`
+
+### System Info
+
+- [cpufetch](https://github.com/Dr-Noob/cpufetch) - simple yet fancy CPU architecture fetching tool. `C`
+- [glances](https://github.com/nicolargo/glances) - glances an eye on your system. `Python`
+- [nerdfetch](https://github.com/ThatOneCalculator/NerdFetch) - POSIX *nix fetch script using Nerd Fonts. `Shell`
+- [macchina](https://github.com/Macchina-CLI/macchina) - system information frontend with an emphasis on performance. `Rust`
+- [screenfetch](https://github.com/KittyKatt/screenFetch) - fetch system/theme information in terminal. `Shell`
+
+### System Performance
+
+- [auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq) - automatic CPU speed & power optimizer for Linux. `Python` `Shell`
+- zRAM - linux kernel module to create a compressed block device in RAM.
+
+### Tasks
+
+- [poe](https://github.com/nat-n/poethepoet) - task runner that works well with poetry or uv. `Python`
+- [task](https://github.com/go-task/task) -  task runner, simpler Make alternative. `Go`
+
+### Terminal
+
+- [ghostty](https://github.com/ghostty-org/ghostty) - fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration. `Zig` `Swift`
+- [hyper](https://github.com/vercel/hyper) - terminal built on web technologies. `TypeScript`
+- [kitty](https://github.com/kovidgoyal/kitty) - cross-platform, fast, feature-rich, GPU based. `Python` `C` `Go`
+- [rio](https://github.com/raphamorim/rio) - hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers. `Rust`
+- [tabby](https://github.com/eugeny/tabby) - terminal for a more modern age. `TypeScript`
+- [Warp](https://github.com/warpdotdev/Warp) - modern terminal with AI built in so you and your team can build great software, faster. `Rust`
+- [WindTerm](https://github.com/kingToolbox/WindTerm) - professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal. `C`
+
+### Text Editor
+
+- [helix](https://github.com/helix-editor/helix) - post-modern modal text editor. `Rust`
+- [lazy nvim](https://github.com/folke/lazy.nvim) - modern plugin manager for Neovim. `Lua`
+- [lazy vim](https://github.com/LazyVim/LazyVim) - neovim config for the lazy. `Lua`
+- [qsv](https://github.com/dathere/qsv) - blazing-fast data-wrangling toolkit. `Rust`
+- [xan](https://github.com/medialab/xan) - csv magician. `Rust`
+
+### Tiling
+
+- [hyperland](https://github.com/hyprwm/Hyprland) - independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks. `C++`
+- [niri](https://github.com/niri-wm/niri) - scrollable-tiling Wayland compositor. `Rust`
+
+### Tools
+
+- [asciinema](https://github.com/asciinema/asciinema) - terminal session recorder, streamer and player. `Rust`
+- [Clipboard](https://github.com/Slackadays/Clipboard) - smart clipboard manager.
+- [espanso](https://github.com/espanso/espanso) - cross-platform text expander. `Rust`
+- [exosphere](https://github.com/mrdaemon/exosphere) - CLI and TUI driven application that offers patch reporting for remote unix systems. `Python`
+- [hl](https://github.com/pamburus/hl) - fast and powerful log viewer and processor that converts JSON logs or logfmt logs into a clear human-readable format. `Rust`
+- [jrnl](https://github.com/jrnl-org/jrnl) - Collect your thoughts and notes without leaving the command line. `Python` `Gherkin`
+- [midnight commander](https://github.com/MidnightCommander/mc)
+- [mosh](https://github.com/mobile-shell/mosh) - mobile shell. `C++`
+- [newsboat](https://github.com/newsboat/newsboat) - RSS/Atom feed reader for text terminals. `C++` `Rust`
+- [pmd](https://github.com/pmd/pmd) - extensible multi-language static code analyzer. `Java`
+- [simdjson](https://github.com/simdjson/simdjson) - parsing gigabytes of JSON per second. `C++`
+- [thefuck](https://github.com/nvbn/thefuck) - magnificent app which corrects your previous console command. `Python`
+- [typst](https://github.com/typst/typst) - markup-based typesetting system that is powerful and easy to learn. `Rust`
+- [ut](https://github.com/ksdme/ut) - utility toolbox for developers. `Rust`
+- [witr](https://github.com/pranshuparmar/witr) - why is it running? `Go`
+
+### Version Control System (VCS)
+
+- [better commits](https://github.com/Everduin94/better-commits) - CLI for creating better commits following the conventional commits specification. `JavaScript`
+- [cocommit](https://github.com/andrewromanenco/cocommit) - CLI that works with your HEAD commit and leverages an LLM of your choice to enhance commit quality. `Python`
+- [conform](https://github.com/siderolabs/conform) - policy enforcement for your pipelines. `Go`
+- [delta](https://github.com/dandavison/delta) - syntax-highlighting pager for git, diff, grep, and blame output. `Rust`
+- [difftastic](https://difftastic.wilfred.me.uk)
+- [gh-dash](https://github.com/dlvhdr/gh-dash) - beautiful CLI dashboard for GitHub. `Go`
+- [gitbutler](https://github.com/gitbutlerapp/gitbutler) - GitButler version control client. `Rust`
+- [GitHub CLI](https://github.com/cli/cli) - GitHub’s official command line tool. `Go`
+- [gitlogue](https://github.com/unhappychoice/gitlogue) - cinematic Git commit replay tool for the terminal, turning your Git history into a living, animated story. `Rust`
+- [gitu](https://github.com/altsem/gitu) - TUI git client inspired by Magit. `Rust`
+- [git-appraise](https://github.com/google/git-appraise) - distributed code review system for git repos. `Go`
+- [git-bug](https://github.com/git-bug/git-bug) - distributed, offline-first bug tracker embedded in git, with bridges. `Go`
+- [git-it-electron](https://github.com/jlord/git-it-electron) - desktop app for learning Git and GitHub. `Perl`
+- [git-plan](https://github.com/rorybyrne/git-plan) - a better workflow for git. `Python`
+- [git-rewrite-commits](https://github.com/f/git-rewrite-commits) - AI-powered git commit message rewriter using Ollama or GPT. `TypeScript` `JavaScript`
+- [git-sim](https://github.com/initialcommit-com/git-sim) - visually simulate Git operations in your own repos with a single terminal command. `Python`
+- [git-xargs](https://github.com/gruntwork-io/git-xargs) - CLI for making updates across multiple Github repositories with a single command. `Go`
+- [gitflow](https://github.com/nvie/gitflow) - git extensions to provide high-level repository operations for Vincent Driessen's branching model. `Shell`
+- [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) - gitmoji interactive CLI tool for using emojis on commits. `JavaScript`
+- [husky](https://github.com/typicode/husky) - git hooks made easy. `JavaScript`
+- [jujutsu](https://github.com/jj-vcs/jj) - git-compatible VCS that is both simple and powerful. `Rust`
+- [lefthook](https://github.com/evilmartians/lefthook) - fast and powerful git hooks manager for any type of projects. `Go`
+- [mergiraf](https://mergiraf.org)
+- [multi-gitter](https://github.com/lindell/multi-gitter) - update multiple repositories in with one command. `Go`
+- [opencommit](https://github.com/di-sukharev/opencommit) - generate commit messages by an LLM in 1 sec. `JavaScript`
+- [zizmor](https://github.com/zizmorcore/zizmor) - static analysis for GitHub Actions. `Rust`
+
+### Virtualization
+
+- [Docker-OSX](https://github.com/sickcodes/Docker-OSX) - near native OSX-KVM in Docker. `Shell` `Python`
+- [lima](https://github.com/lima-vm/lima) - Linux virtual machines, with a focus on running containers. `Go` `Shell`
+- [winapps](https://github.com/winapps-org/winapps) - run Windows apps in Linux as if they were a part of the native OS. `Shell` `PowerShell`
+- [winboat](https://github.com/TibixDev/winboat) - run Windows apps on Linux with seamless integration. `TypeScript` `PowerShell`
+- [windows](https://github.com/dockur/windows) - Windows inside a Docker container. `Shell`
+
+### Visualization
+
+- [asciiquarium](https://github.com/cmatsuoka/asciiquarium) - enjoy the mysteries of the sea from the safety of your own terminal. `Perl`
+- [cbonsai](https://github.com/mhzawadi/homebrew-cbonsai) - bonsai tree generator, written using ncurses. `C`
+- [cmatrix](https://github.com/abishekvashok/cmatrix) - terminal based "The Matrix" like implementation. `C`
+- [pipes](https://github.com/pipeseroni/pipes.sh) - animated pipes terminal screensaver. `Shell`
+- [tty-clock](https://github.com/xorg62/tty-clock) - clock using lib ncurses. `C`
+- [unimatrix](https://github.com/will8211/unimatrix) - simulate the display from "The Matrix" in terminal. `Python`
+
+### Web
+
+- [hey](https://github.com/rakyll/hey) - HTTP load generator, apachebench (ab) replacement. `Go`
+- [monolith](https://github.com/Y2Z/monolith) - CLI tool and library for saving complete web pages as a single HTML file. `Rust`
+- [oha](https://github.com/hatoo/oha) - HTTP load generator, with tui animation. `Rust`
+- [second-order](https://github.com/mhmdiaa/second-order) - second-order subdomain takeover scanner. `Go`
+
+### zsh
+
+- [zap](https://github.com/zap-zsh/zap) - minimal plugin manager. `Shell`
+- [zinit](https://github.com/zdharma-continuum/zinit) - flexible and fast plugin manager. `Shell`
+- [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete) - real-time type-ahead completion, asynchronous find-as-you-type autocompletion. `Shell`
+- [zsh-auto-notify](https://github.com/MichaelAquilina/zsh-auto-notify)
+- [zsh-bench](https://github.com/romkatv/zsh-bench) - benchmark for interactive zsh. `Shell`
+- [zsh-fzf-history-search](https://github.com/joshskidmore/zsh-fzf-history-search)
+- [zsh-snap](https://github.com/marlonrichert/zsh-snap) - tools for zsh dotfiles & plugins, plus git repos. `Shell`
 
 ## Production Applications
 

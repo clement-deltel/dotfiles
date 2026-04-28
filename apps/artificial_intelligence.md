@@ -5,7 +5,8 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 ## Table of Contents <!-- omit in toc -->
 
 - [Glossary](#glossary)
-- [List](#list)
+- [Current](#current)
+- [Enhancements](#enhancements)
   - [Agents](#agents)
   - [App Builder](#app-builder)
   - [Claude Code](#claude-code)
@@ -17,6 +18,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
   - [Neural Networks](#neural-networks)
   - [OCR](#ocr)
   - [OpenClaw](#openclaw)
+  - [Project Management](#project-management)
   - [Prompt](#prompt)
   - [RAG](#rag)
   - [Skills](#skills)
@@ -25,6 +27,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
   - [Text-to-Speech](#text-to-speech)
   - [Tokens](#tokens)
   - [Use Cases](#use-cases)
+- [Deprecated](#deprecated)
 
 ## Glossary
 
@@ -32,7 +35,9 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - *MCP*: Model Context Protocol.
 - *RAG*: Retrieval-Augmented Generation.
 
-## List
+## Current
+
+## Enhancements
 
 ### Agents
 
@@ -120,6 +125,10 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [nemoclaw](https://github.com/NVIDIA/NemoClaw) - NVIDIA plugin for secure installation of OpenClaw. `JavaScript` `TypeScript` `Shell`
 - [openclaw](https://github.com/openclaw/openclaw) - your own personal AI assistant, any OS, any platform. `TypeScript`
 
+### Project Management
+
+- [symphony](https://github.com/openai/symphony) - turn project work into isolated, autonomous implementation runs, allowing teams to manage work instead of supervising coding agents. `Elixir`
+
 ### Prompt
 
 - [prompt-eng-interactive-tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) - Anthropic's interactive prompt engineering tutorial.
@@ -161,3 +170,5 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [RedditVideoMakerBot](https://github.com/elebumm/RedditVideoMakerBot) - create Reddit videos with just one command.
 - [worldmonitor](https://github.com/koala73/worldmonitor) - real-time global intelligence dashboard, AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface. `TypeScript` `JavaScript`
+
+## Deprecated

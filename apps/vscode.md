@@ -7,6 +7,19 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Current](#current)
 - [Enhancements](#enhancements)
 - [Deprecated](#deprecated)
+  - [General](#general)
+- [API](#api)
+  - [Artificial Intelligence](#artificial-intelligence)
+  - [Cloud](#cloud)
+  - [Databases](#databases)
+  - [HTML](#html)
+  - [Languages](#languages)
+    - [Python](#python)
+  - [Navigation](#navigation)
+  - [Security](#security)
+  - [Screenshots](#screenshots)
+  - [Themes](#themes)
+  - [Version Control System (VCS)](#version-control-system-vcs)
 - [Resources](#resources)
 
 ## Current
@@ -92,20 +105,21 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 
 ## Enhancements
 
+- [dirac](https://marketplace.visualstudio.com/items?itemName=dirac-run.dirac) - reduce API costs by more than 50%, produce better and faster work.
 - [edamagit](https://marketplace.visualstudio.com/items?itemName=kahole.magit) - magit for Visual Studio Code.
 - [GitLive](https://marketplace.visualstudio.com/items?itemName=TeamHub.teamhub) - accelerate your development team with preemptive merge conflict detection.
 - [JSON crack](https://marketplace.visualstudio.com/items?itemName=AykutSarac.jsoncrack-vscode) - seamlessly visualize your JSON data instantly into graphs.
 
 ## Deprecated
 
+### General
+
 - [Ansible](https://marketplace.visualstudio.com/items?itemName=redhat.ansible) - ansible language support. **Reason**: not using.
-- [AWS Toolkit](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.aws-toolkit-vscode) - support for many AWS services.
 - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) - C/C++ IntelliSense, debugging, and code browsing.
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) - run code in many languages.
 - [Code Time](https://marketplace.visualstudio.com/items?itemName=softwaredotcom.swdc-vscode) - open source plugin that provides programming metrics. **Reason**: using WakaTime instead.
 - [Data Preview](https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.vscode-data-preview) - extension for importing, viewing, slicing, dicing,charting, & exporting, large JSON array/config, YAML, Apache Arrow, Avro, Parquet & Excel data files.
 - [Decompiler](https://marketplace.visualstudio.com/items?itemName=tintinweb.vscode-decompiler) - decompile the $h*! out of things.
-- [Diff & Merge](https://marketplace.visualstudio.com/items?itemName=moshfeu.diff-merge) - show diffs and merge.
 - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv): support for dotenv syntax.
 - [DotNET Install Tool](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime) - installs and manages different versions of the .NET SDK and Runtime.
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) - improve highlighting of errors, warnings and other language diagnostics.
@@ -116,12 +130,9 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - real-time collaborative development from the comfort of your favorite tools.
 - [Makefile Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools) - makefile support, C/C++ IntelliSense, build, debug/run. **Reason**: not needed after all.
 - [Multiple cursor case preserve](https://marketplace.visualstudio.com/items?itemName=Cardinal90.multi-cursor-case-preserve) - preserves case when editing with multiple cursors.
-- [pre-commit](https://marketplace.visualstudio.com/items?itemName=elagil.pre-commit-helper) - commands and helpers for executing pre-commit hooks. **Reason**: not using.
 - [VSColors](https://marketplace.visualstudio.com/items?itemName=kevscript.vscolors) - color format converter. Supports HEX(A), RGB(A) and HSL(A) formats. **Reason**: not using.
-- [Open API (Swagger) Editor](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi) - OpenAPI editing, validation and preview.
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) - plugin that autocompletes filenames.
 - [PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml) - rich PlantUML support.
-- [Postman](https://marketplace.visualstudio.com/items?itemName=Postman.postman-for-vscode) - streamline API development and testing.
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - code formatter using prettier.
 - [Puppet](https://marketplace.visualstudio.com/items?itemName=puppet.puppet-vscode) - full Puppet DSL intellisense, syntax highlighting, Puppet command support, Puppet node graphs, and much more.
 - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) - show TODO, FIXME, etc. comment tags in a tree view.
@@ -129,7 +140,12 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [vscode-faker](https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-faker) - generate fake data for name, address, lorem ipsum, commerce and much more.
 - [vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf) - display pdf file.
 
-Artificial Intelligence:
+## API
+
+- [Open API (Swagger) Editor](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi) - OpenAPI editing, validation and preview.
+- [Postman](https://marketplace.visualstudio.com/items?itemName=Postman.postman-for-vscode) - streamline API development and testing.
+
+### Artificial Intelligence
 
 - [CodeGPT: Chat & AI Agent](https://marketplace.visualstudio.com/items?itemName=DanielSanMedium.dscodegpt) - easily connect to top AI providers using their official APIs.
 - [Codium AI](https://marketplace.visualstudio.com/items?itemName=Codium.codium) - generative AI coding platform that offers busy developers a comprehensive AI code assistant for generating code, writing unit tests, and creating documentation.
@@ -138,39 +154,45 @@ Artificial Intelligence:
 - [Swimm Documentation](https://marketplace.visualstudio.com/items?itemName=Swimm.swimm) - AI chat and documentation.
 - [Tabnine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode) - AI code assistant that accelerates and simplifies software development while keeping your code private, secure, and compliant.
 
-Databases:
+### Cloud
+
+- [AWS Toolkit](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.aws-toolkit-vscode) - support for many AWS services.
+
+### Databases
 
 - [MongoDB for VS Code](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode) - connect to MongoDB and Atlas directly from environment, navigate your databases and collections, inspect your schema and use playgrounds to prototype queries and aggregations. **Reason**: using MongoDB Compass standalone instead.
 - [Oracle SQL Developer](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer) - end-to-end development tools for your SQL and PL/SQL applications. **Reason**: using DBeaver instead.
 
-HTML:
+### HTML
 
 - [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) - automatically add HTML/XML close tag.
 - [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag) - auto rename paired HTML/XML tag.
 
-Navigation:
+### Languages
 
-- [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks) - mark lines and jump to them.
-- [footsteps](https://marketplace.visualstudio.com/items?itemName=Wattenberger.footsteps) - highlight and navigate between your most recently edited chunks of code.
-
-Python:
+#### Python
 
 - [Bandit by PyCQA](https://marketplace.visualstudio.com/items?itemName=pycqa.bandit-pycqa) - static analysis security tool, developed and maintained by the original authors of Bandit.
 - [Flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8) - linting support for Python files using flake8. **Reason**: using ruff with flake8 support instead.
 - [Language-Cython](https://marketplace.visualstudio.com/items?itemName=guyskk.language-cython) - syntax highlighter for Cython.
 - [Pylint](https://marketplace.visualstudio.com/items?itemName=ms-python.pylint) - linting support for Python files. **Reason**: using uv with pylint support instead.
 
-Security:
+### Navigation
+
+- [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks) - mark lines and jump to them.
+- [footsteps](https://marketplace.visualstudio.com/items?itemName=Wattenberger.footsteps) - highlight and navigate between your most recently edited chunks of code.
+
+### Security
 
 - [Cloak](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak) - hides/shows your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.
 - [Snyk Security](https://marketplace.visualstudio.com/items?itemName=snyk-security.snyk-vulnerability-scanner) - easily find and fix issues in your code, open source dependencies, infrastructure as code configurations with fast and accurate scans.
 - [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode) - advanced linter to detect & fix coding issues locally in JS/TS, Python, Java, C#, C/C++, Go, PHP.
 
-Screenshots:
+### Screenshots
 
 - [Polacode](https://marketplace.visualstudio.com/items?itemName=pnp.polacode) - polaroid for your code.
 
-Themes:
+### Themes
 
 - [Atom One Dark Theme](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onedark) - one dark theme based on Atom.
 - [Aura Theme](https://marketplace.visualstudio.com/items?itemName=DaltonMenezes.aura-theme) - beautiful dark theme.
@@ -190,6 +212,11 @@ Themes:
 - [Tokyo Night](https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night) - clean theme that celebrates the lights of Downtown Tokyo at night.
 - [Vira Theme](https://marketplace.visualstudio.com/items?itemName=vira.vsc-vira-theme) - the new most epic theme.
 - [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons) - icons.
+
+### Version Control System (VCS)
+
+- [Diff & Merge](https://marketplace.visualstudio.com/items?itemName=moshfeu.diff-merge) - show diffs and merge.
+- [pre-commit](https://marketplace.visualstudio.com/items?itemName=elagil.pre-commit-helper) - commands and helpers for executing pre-commit hooks. **Reason**: not using.
 
 ## Resources
 

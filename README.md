@@ -7,12 +7,11 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io) and [doppler](h
 - [1. Pre-requisites](#1-pre-requisites)
 - [2. Linux](#2-linux)
   - [2.1 Install](#21-install)
-  - [2.2 Shell](#22-shell)
-  - [2.3 Update](#23-update)
-  - [2.4 Development](#24-development)
-  - [2.5 Test](#25-test)
-  - [2.6 To be Tested](#26-to-be-tested)
-  - [2.7 Images](#27-images)
+  - [2.2 Update](#22-update)
+  - [2.3 Development](#23-development)
+  - [2.4 Test](#24-test)
+  - [2.5 To be Tested](#25-to-be-tested)
+  - [2.6 Images](#26-images)
 - [3. Microsoft Windows](#3-microsoft-windows)
   - [3.1 Install](#31-install)
   - [3.2 Test](#32-test)
@@ -44,8 +43,9 @@ export GITHUB_USERNAME=clement-deltel
 export MACHINE=pro
 # Linux distribution family. Options: arch, debian, nixos, redhat
 export FAMILY=debian
-# Update with your Doppler CLI token
-export DOPPLER_TOKEN=""
+# Generate ephemeral Doppler CLI token
+DURATION=1h
+export DOPPLER_TOKEN=$(doppler configs tokens create dotfiles-install -p dotfiles -c prod_${MACHINE} --max-age ${DURATION} --plain)
 ```
 
 2. Install dependencies:
@@ -73,32 +73,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
 unset DOPPLER_TOKEN
 ```
 
-### 2.2 Shell
-
-Zsh is my default shell, for which I use [plugins](apps/linux.md#zsh-plugins).
-
-Here is my theme: robbyrussell
-
-Here are some useful Linux system commands:
-
-- **Built-ins**
-  - [dig](https://linux.die.net/man/1/dig) - DNS lookup utility.
-  - [lshw](https://linux.die.net/man/1/lshw) - list hardware.
-  - [lsof](https://linux.die.net/man/8/lsof) - list open files.
-  - [rsync](https://linux.die.net/man/1/rsync) - remote (and local) file-copying tool.
-  - [shred](https://linux.die.net/man/1/shred) - overwrite a file to hide its contents, and optionally delete it.
-  - [stat](https://linux.die.net/man/1/stat) - display file or file system status.
-  - [systemd-analyze](https://man7.org/linux/man-pages/man1/systemd-analyze.1.html) - analyze and debug system manager.
-  - [tcpdump](https://linux.die.net/man/8/tcpdump) - dump traffic on a network.
-  - [watch](https://linux.die.net/man/1/watch) - execute a program periodically, showing output fullscreen.
-- **More Utils**
-  - [errno](https://linux.die.net/man/3/errno) - number of last error.
-  - [ifdata](https://linux.die.net/man/1/ifdata) - get network interface info without parsing ifconfig output.
-  - [vidir](https://linux.die.net/man/1/vidir) - edit directory.
-  - [vipe](https://linux.die.net/man/1/vipe) - edit pipe.
-  - [zrun](https://linux.die.net/man/1/zrun) - automatically uncompress arguments to command.
-
-### 2.3 Update
+### 2.2 Update
 
 Run the command below to refresh the configuration after an update on the repository:
 
@@ -108,9 +83,9 @@ chezmoi update
 cmu
 ```
 
-### 2.4 Development
+### 2.3 Development
 
-1. Export required environment variables and build Docker image:
+1. Export required environment variables:
 
 ```bash
 export GITHUB_USERNAME=clement-deltel
@@ -122,9 +97,14 @@ export IMAGE=ubuntu:24.04
 # See all options and more details at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 export TIMEZONE=Etc/GMT
 
-# Update with your Doppler CLI token
-export DOPPLER_TOKEN=""
+# Generate ephemeral Doppler CLI token
+DURATION=1h
+export DOPPLER_TOKEN=$(doppler configs tokens create dotfiles-install -p dotfiles -c prod_${MACHINE} --max-age ${DURATION} --plain)
+```
 
+2. Build Docker image:
+
+```bash
 # Docker build and then run
 # Use option --progress=plain to see steps in more details
 docker build --build-arg GITHUB_USERNAME --build-arg MACHINE --build-arg IMAGE --build-arg TIMEZONE --build-arg DOPPLER_TOKEN --file docker/linux/${FAMILY}/Dockerfile --tag ${IMAGE}-dotfiles-dev --target development docker/linux/${FAMILY}/
@@ -132,13 +112,13 @@ docker build --build-arg GITHUB_USERNAME --build-arg MACHINE --build-arg IMAGE -
 unset DOPPLER_TOKEN
 ```
 
-2. Run a container:
+3. Run a container:
 
 ```bash
 docker run --interactive --name dotfiles-dev --tty --rm --volume ~/.local/share/chezmoi:/home/linux/.local/share/chezmoi ${IMAGE}-dotfiles-dev
 ```
 
-### 2.5 Test
+### 2.4 Test
 
 1. Install Docker to test this setup. The following images have been tested so far:
 
@@ -146,7 +126,7 @@ docker run --interactive --name dotfiles-dev --tty --rm --volume ~/.local/share/
   - ubuntu:22.04
   - ubuntu:24.04
 
-2. Export required environment variables and build Docker image:
+2. Export required environment variables:
 
 ```bash
 export GITHUB_USERNAME=clement-deltel
@@ -158,9 +138,14 @@ export IMAGE=ubuntu:24.04
 # See all options and more details at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 export TIMEZONE=Etc/GMT
 
-# Update with your Doppler CLI token
-export DOPPLER_TOKEN=""
+# Generate ephemeral Doppler CLI token
+DURATION=1h
+export DOPPLER_TOKEN=$(doppler configs tokens create dotfiles-install -p dotfiles -c prod_${MACHINE} --max-age ${DURATION} --plain)
+```
 
+3. Build Docker image:
+
+```bash
 # Docker build and then run
 # Use option --progress=plain to see steps in more details
 docker build --build-arg GITHUB_USERNAME --build-arg MACHINE --build-arg IMAGE --build-arg TIMEZONE --build-arg DOPPLER_TOKEN --file docker/linux/${FAMILY}/Dockerfile --tag ${IMAGE}-dotfiles --target production docker/linux/${FAMILY}/
@@ -168,13 +153,13 @@ docker build --build-arg GITHUB_USERNAME --build-arg MACHINE --build-arg IMAGE -
 unset DOPPLER_TOKEN
 ```
 
-3. Run a container:
+4. Run a container:
 
 ```bash
 docker run --interactive --name dotfiles --tty --rm ${IMAGE}-dotfiles
 ```
 
-### 2.6 To be Tested
+### 2.5 To be Tested
 
 1. The following images have not been tested so far:
 
@@ -190,13 +175,26 @@ docker run --interactive --name dotfiles --tty --rm ${IMAGE}-dotfiles
 - **NixOS**
   - nixos/nix:2.27.1
 
-2. Run a container:
+2. Export required environment variables:
 
 ```bash
-docker run --interactive --name dotfiles --tty --rm ${IMAGE} bash
+# Machine configuration. Options: pro, perso
+export MACHINE=pro
+# Set image parameters
+export IMAGE=ubuntu:26.04
+
+# Generate ephemeral Doppler CLI token
+DURATION=1h
+export DOPPLER_TOKEN=$(doppler configs tokens create dotfiles-install -p dotfiles -c prod_${MACHINE} --max-age ${DURATION} --plain)
 ```
 
-3. Update and install packages, set linux user:
+3. Run a container:
+
+```bash
+docker run --env GITHUB_USERNAME=clement-deltel --env MACHINE=${MACHINE} --env DOPPLER_TOKEN=${DOPPLER_TOKEN} --interactive --name dotfiles --tty --rm ${IMAGE} bash
+```
+
+4. Update and install packages, set linux user:
 
 ```bash
 apt update -y && apt install -y curl sudo
@@ -206,7 +204,7 @@ usermod -aG sudo linux && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 su - linux
 ```
 
-### 2.7 Images
+### 2.6 Images
 
 If needed, run this extra playbook to pull quite handy base images:
 

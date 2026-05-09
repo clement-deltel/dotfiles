@@ -25,7 +25,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [Infrastructure-as-Code (IaC)](#infrastructure-as-code-iac)
   - [Cloud](#cloud)
   - [System](#system)
-- [Zsh Plugins](#zsh-plugins)
+- [Shell](#shell-1)
+- [Plugins](#plugins)
 - [Enhancements](#enhancements)
   - [API](#api)
   - [Artificial Intelligence](#artificial-intelligence)
@@ -50,7 +51,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [Search](#search)
   - [Secrets](#secrets)
   - [Security](#security-1)
-  - [Shell](#shell-1)
+  - [Shell](#shell-2)
   - [Software Development](#software-development)
   - [Speech Recognition](#speech-recognition)
   - [System Info](#system-info)
@@ -282,7 +283,30 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/index.html) - collection of libraries and utilities enabling users to build and run GPU-accelerated containers.
   - [cuda-toolkit](https://docs.nvidia.com/cuda/index.html) - development environment for creating high performance GPU-accelerated applications.
 
-## Zsh Plugins
+## Shell
+
+Zsh is my default shell. Here is my theme: robbyrussell
+
+Here are some useful Linux system commands:
+
+- **Built-ins**
+  - [dig](https://linux.die.net/man/1/dig) - DNS lookup utility.
+  - [lshw](https://linux.die.net/man/1/lshw) - list hardware.
+  - [lsof](https://linux.die.net/man/8/lsof) - list open files.
+  - [rsync](https://linux.die.net/man/1/rsync) - remote (and local) file-copying tool.
+  - [shred](https://linux.die.net/man/1/shred) - overwrite a file to hide its contents, and optionally delete it.
+  - [stat](https://linux.die.net/man/1/stat) - display file or file system status.
+  - [systemd-analyze](https://man7.org/linux/man-pages/man1/systemd-analyze.1.html) - analyze and debug system manager.
+  - [tcpdump](https://linux.die.net/man/8/tcpdump) - dump traffic on a network.
+  - [watch](https://linux.die.net/man/1/watch) - execute a program periodically, showing output fullscreen.
+- **More Utils**
+  - [errno](https://linux.die.net/man/3/errno) - number of last error.
+  - [ifdata](https://linux.die.net/man/1/ifdata) - get network interface info without parsing ifconfig output.
+  - [vidir](https://linux.die.net/man/1/vidir) - edit directory.
+  - [vipe](https://linux.die.net/man/1/vipe) - edit pipe.
+  - [zrun](https://linux.die.net/man/1/zrun) - automatically uncompress arguments to command.
+
+## Plugins
 
 - **oh-my-zsh repository**
   - **Aliases**

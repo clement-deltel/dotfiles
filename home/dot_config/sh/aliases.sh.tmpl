@@ -233,6 +233,10 @@ alias dcub='docker compose up -d --build'
 # ---------------------------------------------------------------------------- #
 alias dp='doppler'
 alias dpc='doppler configure'
+alias dpca='doppler configure --all'
+alias dpcs='doppler configs'
+alias dpd='doppler me && doppler environments && doppler configs && doppler configure --all'
+alias dpe='doppler environments'
 alias dpgt='doppler configure get token --plain'
 alias dpl="doppler login --scope $(pwd)"
 alias dpm='doppler me'

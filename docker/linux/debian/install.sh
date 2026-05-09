@@ -54,7 +54,7 @@ function install_doppler() {
 # ---------------------------------------------------------------------------- #
 configure_doppler() {
   echo "[INFO] Configuring Doppler CLI..."
-  doppler login --scope / --token ${DOPPLER_TOKEN}
+  doppler configure set api-host=https://api.doppler.com dashboard-host=https://dashboard.doppler.com project=dotfiles config=prod_${MACHINE} token=${DOPPLER_TOKEN} --scope /
   echo """[doppler]
 project = "dotfiles"
 config = "prod_${MACHINE}"""" > ~/.config/chezmoi/chezmoi.toml

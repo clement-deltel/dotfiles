@@ -11,7 +11,6 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io) and [doppler](h
   - [2.3 Development](#23-development)
   - [2.4 Test](#24-test)
   - [2.5 To be Tested](#25-to-be-tested)
-  - [2.6 Images](#26-images)
 - [3. Microsoft Windows](#3-microsoft-windows)
   - [3.1 Install](#31-install)
   - [3.2 Test](#32-test)
@@ -71,6 +70,13 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
 
 ```bash
 unset DOPPLER_TOKEN
+```
+
+7. If needed, run this extra playbook to pull quite handy base images:
+
+```bash
+# Pull Docker images: archlinux, centos, debian, fedora, mongodb, nixos, postgis, postgres, rabbitmq, redis, ubuntu
+ansible-playbook --become --connection local --inventory "localhost," --tags init ~/ansible/orchestration/images.yml
 ```
 
 ### 2.2 Update
@@ -203,19 +209,6 @@ useradd --create-home --gid 10001 --home /home/linux --shell /bin/bash --uid 100
 usermod -aG sudo linux && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 su - linux
 ```
-
-### 2.6 Images
-
-If needed, run this extra playbook to pull quite handy base images:
-
-```bash
-# Pull Docker images: archlinux, centos, debian, fedora, mongodb, nixos, postgis, postgres, rabbitmq, redis, ubuntu
-ansible-playbook --become --connection local --inventory "localhost," --tags init ~/ansible/orchestration/images.yml
-```
-
-Here is the list of containerized tools that I use:
-
-- [Faster Whisper](https://github.com/SYSTRAN/faster-whisper) - faster whisper transcription with ctranslate2. I use more specifically the [image](https://github.com/linuxserver/docker-faster-whisper) provided by linuxserver.
 
 ## 3. Microsoft Windows
 

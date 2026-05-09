@@ -27,6 +27,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [System](#system)
 - [Shell](#shell-1)
 - [Plugins](#plugins)
+- [Containerized](#containerized)
 - [Enhancements](#enhancements)
   - [API](#api)
   - [Artificial Intelligence](#artificial-intelligence)
@@ -372,6 +373,10 @@ Here are some useful Linux system commands:
   - [zsh-completions](https://github.com/zsh-users/zsh-completions)
   - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+## Containerized
+
+- [Faster Whisper](https://github.com/SYSTRAN/faster-whisper) - faster whisper transcription with ctranslate2. I use more specifically the [image](https://github.com/linuxserver/docker-faster-whisper) provided by linuxserver.
 
 ## Enhancements
 

@@ -512,8 +512,10 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 - [caracal](https://github.com/adgaultier/caracal) - make your programs stealthier. `Rust`
 - [codeql](https://github.com/github/codeql) - libraries and queries that power security researchers around the world. `CodeQL` `Kotlin`
+- [hackingtool](https://github.com/Z4nzu/hackingtool) - all-in-one hacking tool for hackers. `Python`
 - [lynis](https://github.com/CISOfy/lynis) - cross-platform security auditing tool, assists with compliance testing (HIPAA/ISO27001/PCI DSS) and system hardening. `Shell`
 - [radare2](https://github.com/radareorg/radare2) - UNIX-like reverse engineering framework and command-line toolset. `C`
+- [shannon](https://github.com/KeygraphHQ/shannon) - autonomous, white-box AI pentester for web applications and APIs. `TypeScript`
 - [sharpeye](https://github.com/sgInnora/sharpeye) - advanced Linux intrusion detection and threat hunting system. `Python`
 - [syft](https://github.com/anchore/syft) - CLI tool and library for generating a Software Bill of Materials (SBOM) from container images and filesystems. `Go`
 - [sysdig](https://github.com/draios/sysdig) - linux system exploration and troubleshooting tool with first class support for containers. `C++` `Lua`
@@ -633,6 +635,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - [git-xargs](https://github.com/gruntwork-io/git-xargs) - CLI for making updates across multiple Github repositories with a single command. `Go`
 - [gitflow](https://github.com/nvie/gitflow) - git extensions to provide high-level repository operations for Vincent Driessen's branching model. `Shell`
 - [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) - gitmoji interactive CLI tool for using emojis on commits. `JavaScript`
+- [gitnexus](https://github.com/abhigyanpatwari/GitNexus) - client-side knowledge graph creator that runs entirely in your browser, drop in a GitHub repo or zip file, and get an interactive knowledge graph wit a built in graph RAG agent, perfect for code exploration. `TypeScript`
 - [husky](https://github.com/typicode/husky) - git hooks made easy. `JavaScript`
 - [jujutsu](https://github.com/jj-vcs/jj) - git-compatible VCS that is both simple and powerful. `Rust`
 - [lefthook](https://github.com/evilmartians/lefthook) - fast and powerful git hooks manager for any type of projects. `Go`
@@ -708,6 +711,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [headlamp](https://github.com/kubernetes-sigs/headlamp) - web UI that is fully-featured, user-friendly and extensible. `TypeScript` `Go`
   - [kite](https://github.com/zxh326/kite) - modern, lightweight dashboard. `TypeScript` `Go`
   - [kubewall](https://github.com/kubewall/kubewall) - dashboard with multi-cluster management & AI integration. `TypeScript` `Go`
+  - [lens](https://github.com/lensapp/lens) - the way the world runs Kubernetes.
 - Network
   - [calico](https://github.com/projectcalico/calico) - cloud native networking and network security. `Go`
   - [cilium](https://github.com/cilium/cilium) - eBPF-based networking, security, and observability. `Go` `C`

@@ -11,7 +11,8 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io) and [doppler](h
   - [2.3 Update](#23-update)
   - [2.4 Development](#24-development)
   - [2.5 Test](#25-test)
-  - [2.5 Containers](#25-containers)
+  - [2.6 To be Tested](#26-to-be-tested)
+  - [2.7 Images](#27-images)
 - [3. Microsoft Windows](#3-microsoft-windows)
   - [3.1 Install](#31-install)
   - [3.2 Test](#32-test)
@@ -173,24 +174,39 @@ unset DOPPLER_TOKEN
 docker run --interactive --name dotfiles --tty --rm ${IMAGE}-dotfiles
 ```
 
-To be tested:
+### 2.6 To be Tested
+
+1. The following images have not been tested so far:
 
 - **Debian-like Systems**
   - debian:12:10
-  - ubuntu:24.04
+  - ubuntu:26.04
 - **RedHat-like Systems**
   - quay.io/centos/centos:10
   - fedora:42
+  - redhat/ubi10:10.0
 - **ArchLinux**
   - archlinux:base-20250302.0.316047
 - **NixOS**
   - nixos/nix:2.27.1
 
+2. Run a container:
+
 ```bash
-docker run --interactive --name dotfiles --tty --rm <image> bash
+docker run --interactive --name dotfiles --tty --rm ${IMAGE} bash
 ```
 
-### 2.5 Containers
+3. Update and install packages, set linux user:
+
+```bash
+apt update -y && apt install -y curl sudo
+groupadd --gid 10001 linux
+useradd --create-home --gid 10001 --home /home/linux --shell /bin/bash --uid 10001 linux
+usermod -aG sudo linux && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+su - linux
+```
+
+### 2.7 Images
 
 If needed, run this extra playbook to pull quite handy base images:
 

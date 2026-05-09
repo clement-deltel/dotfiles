@@ -41,7 +41,8 @@ export GITHUB_USERNAME=clement-deltel
 # Machine configuration. Options: pro, perso
 export MACHINE=pro
 # Linux distribution family. Options: arch, debian, nixos, redhat
-export FAMILY=debian
+FAMILY=debian
+
 # Generate ephemeral Doppler CLI token
 DURATION=1h
 export DOPPLER_TOKEN=$(doppler configs tokens create dotfiles-install -p dotfiles -c prod_${MACHINE} --max-age ${DURATION} --plain)
@@ -98,7 +99,7 @@ export GITHUB_USERNAME=clement-deltel
 # Machine configuration. Options: pro, perso
 export MACHINE=pro
 # Set image parameters
-export FAMILY=debian
+FAMILY=debian
 export IMAGE=ubuntu:24.04
 # See all options and more details at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 export TIMEZONE=Etc/GMT
@@ -139,7 +140,7 @@ export GITHUB_USERNAME=clement-deltel
 # Machine configuration. Options: pro, perso
 export MACHINE=pro
 # Set image parameters
-export FAMILY=debian
+FAMILY=debian
 export IMAGE=ubuntu:24.04
 # See all options and more details at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 export TIMEZONE=Etc/GMT
@@ -187,7 +188,7 @@ docker run --interactive --name dotfiles --tty --rm ${IMAGE}-dotfiles
 # Machine configuration. Options: pro, perso
 export MACHINE=pro
 # Set image parameters
-export IMAGE=ubuntu:26.04
+IMAGE=ubuntu:26.04
 
 # Generate ephemeral Doppler CLI token
 DURATION=1h
@@ -197,7 +198,7 @@ export DOPPLER_TOKEN=$(doppler configs tokens create dotfiles-install -p dotfile
 3. Run a container:
 
 ```bash
-docker run --env GITHUB_USERNAME=clement-deltel --env MACHINE=${MACHINE} --env DOPPLER_TOKEN=${DOPPLER_TOKEN} --interactive --name dotfiles --tty --rm ${IMAGE} bash
+docker run --env GITHUB_USERNAME=clement-deltel --env MACHINE --env DOPPLER_TOKEN --interactive --name dotfiles --tty --rm ${IMAGE} bash
 ```
 
 4. Update and install packages, set linux user:

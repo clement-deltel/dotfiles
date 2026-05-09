@@ -28,13 +28,15 @@ I store the below secrets in Doppler:
 - SSH keys: RSA and ED25519
 - [wakapi](https://github.com/muety/wakapi) API key and URL
 
-I store the sensitive files for my Windows machine in an AWS S3 bucket.
+I store sensitive files for my Windows machine in an AWS S3 bucket. For more details, go to the [Microsoft Windows](#3-microsoft-windows) section.
 
 ## 2. Linux
 
 ### 2.1 Install
 
-1. Export required environment variables:
+1. Generate a Doppler service token valid for 30 minutes, following the official documentation available [here](https://docs.doppler.com/docs/service-tokens).
+
+2. Export required environment variables:
 
 ```bash
 export GITHUB_USERNAME=clement-deltel
@@ -43,12 +45,11 @@ export MACHINE=pro
 # Linux distribution family. Options: arch, debian, nixos, redhat
 FAMILY=debian
 
-# Generate ephemeral Doppler CLI token
-DURATION=1h
-export DOPPLER_TOKEN=$(doppler configs tokens create dotfiles-install -p dotfiles -c prod_${MACHINE} --max-age ${DURATION} --plain)
+# Set ephemeral Doppler service token
+export DOPPLER_TOKEN=''
 ```
 
-2. Install dependencies:
+3. Install dependencies:
 
 ```bash
 # Debian-like Systems
@@ -59,21 +60,22 @@ sudo yum update -y && sudo yum install -y curl
 # NixOS
 ```
 
-3. Run installation script:
+4. Run installation script:
 
 ```bash
 curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/heads/main/docker/linux/${FAMILY}/install.sh | bash
 ```
 
-4. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.
-5. Ansible playbooks automatically install and configure these [apps](apps/linux.md#current).
-6. Clear sensitive information:
+5. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.
+6. Ansible playbooks automatically install and configure these [apps](apps/linux.md#current).
+7. Clear service token and establish a proper connection:
 
 ```bash
 unset DOPPLER_TOKEN
+doppler login --scope /
 ```
 
-7. If needed, run this extra playbook to pull quite handy base images:
+8. If needed, run this extra playbook to pull quite handy base images:
 
 ```bash
 # Pull Docker images: archlinux, centos, debian, fedora, mongodb, nixos, postgis, postgres, rabbitmq, redis, ubuntu
@@ -104,8 +106,8 @@ export IMAGE=ubuntu:24.04
 # See all options and more details at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 export TIMEZONE=Etc/GMT
 
-# Generate ephemeral Doppler CLI token
-DURATION=1h
+# Generate ephemeral Doppler service token
+DURATION=30m
 export DOPPLER_TOKEN=$(doppler configs tokens create dotfiles-install -p dotfiles -c prod_${MACHINE} --max-age ${DURATION} --plain)
 ```
 
@@ -145,8 +147,8 @@ export IMAGE=ubuntu:24.04
 # See all options and more details at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 export TIMEZONE=Etc/GMT
 
-# Generate ephemeral Doppler CLI token
-DURATION=1h
+# Generate ephemeral Doppler service token
+DURATION=30m
 export DOPPLER_TOKEN=$(doppler configs tokens create dotfiles-install -p dotfiles -c prod_${MACHINE} --max-age ${DURATION} --plain)
 ```
 
@@ -190,8 +192,8 @@ export MACHINE=pro
 # Set image parameters
 IMAGE=ubuntu:26.04
 
-# Generate ephemeral Doppler CLI token
-DURATION=1h
+# Generate ephemeral Doppler service token
+DURATION=30m
 export DOPPLER_TOKEN=$(doppler configs tokens create dotfiles-install -p dotfiles -c prod_${MACHINE} --max-age ${DURATION} --plain)
 ```
 
@@ -208,36 +210,38 @@ apt update -y && apt install -y curl sudo
 groupadd --gid 10001 linux
 useradd --create-home --gid 10001 --home /home/linux --shell /bin/bash --uid 10001 linux
 usermod -aG sudo linux && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-su - linux
+su linux
 ```
 
 ## 3. Microsoft Windows
 
 ### 3.1 Install
 
-1. Export required environment variables:
+1. Generate a Doppler service token valid for 30 minutes, following the official documentation available [here](https://docs.doppler.com/docs/service-tokens).
+
+2. Export required environment variables:
 
 ```ps1
 $Env:GITHUB_USERNAME=clement-deltel
 # Machine configuration. Options: pro, perso
 $Env:MACHINE=pro
-# Update with your Doppler CLI token
+# Set ephemeral Doppler service token
 $Env:$DOPPLER_TOKEN=""
 ```
 
-2. Run installation script:
+3. Run installation script:
 
 ```ps1
 curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/main/docker/microsoft/install.sh | powershell
 ```
 
-3. After pulling and configuring the dotfiles, chezmoi run several powershell scripts, executing the steps below:
+4. After pulling and configuring the dotfiles, chezmoi run several powershell scripts, executing the steps below:
    - [Chocolatey](https://docs.chocolatey.org/en-us/)
    - [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
 
-4. Chocolatey install and configure these [apps](apps/windows.md#chocolatey).
-5. Winget install and configure these [apps](apps/windows.md#winget).
-6. chezmoi also restore some files from backups stored in AWS S3:
+5. Chocolatey install and configure these [apps](apps/windows.md#chocolatey).
+6. Winget install and configure these [apps](apps/windows.md#winget).
+7. chezmoi also restore some files from backups stored in AWS S3:
    - Google Chrome
    - Outlook Signatures
    - Windows Explorer - Quick Access
@@ -245,11 +249,12 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
    - Windows Subsystem for Linux (WSL)
    - Windows Taskbar
 
-7. Finally, install the [softwares](apps/windows.md#manual-effort) requiring manual effort.
-8. Clean sensitive information:
+8. Finally, install the [softwares](apps/windows.md#manual-effort) requiring manual effort.
+9. Clear service token and establish a proper connection:
 
 ```powershell
 $Env:DOPPLER_TOKEN=$null
+doppler login --scope C:\
 ```
 
 ### 3.2 Test

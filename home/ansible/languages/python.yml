@@ -110,11 +110,11 @@
     changed_when: upgrade_result.rc == 0
 
   # Install Python
-  # - name: pyenv - Install Python
-  #   tags: init
-  #   ansible.builtin.shell:
-  #     cmd: pyenv install {{ pyenv_python_version }}
-  #     executable: "{{ ansible_user_shell }}"
+  - name: pyenv - Install Python
+    tags: init
+    ansible.builtin.shell:
+      cmd: pyenv install {{ pyenv_python_version }}
+      executable: "{{ ansible_user_shell }}"
 
   # -------------------------------------------------------------------------- #
   #               ------- pipx ------

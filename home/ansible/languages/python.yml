@@ -9,8 +9,7 @@
   #               ------- Dependencies ------
   # -------------------------------------------------------------------------- #
   - name: Dependencies
-    tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ python_dependencies }}"
@@ -20,27 +19,27 @@
   #               ------- Packages ------
   # -------------------------------------------------------------------------- #
   - name: Packages
-    tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ python_packages }}"
 
   # -------------------------------------------------------------------------- #
-  #               ------- PyPI - Packages ------
+  #               ------- PyPI ------
   # -------------------------------------------------------------------------- #
+  - name: PyPI - Show packages
+    tags: [init, update]
+    ansible.builtin.debug:
+      msg: "PyPI packages: {{ pip_packages }}"
+
   - name: PyPI Packages
+    become: true
     block:
-
-    - name: PyPI - Show packages
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "PyPI packages: {{ pip_packages }}"
-
     # pip install
     - name: PyPI - Install packages
       tags: init
       ansible.builtin.pip:
+        # extra_args: "--break-system-packages"
         name: "{{ pip_packages }}"
         state: present
 
@@ -48,198 +47,156 @@
     - name: PyPI - Upgrade packages
       tags: update
       ansible.builtin.pip:
+        # extra_args: "--break-system-packages"
         name: "{{ pip_packages }}"
         state: latest
 
-    # paramiko
+    # pip install paramiko>3.5.1
     - name: PyPI - Install paramiko with minimum version
       tags: init
       ansible.builtin.pip:
+        # extra_args: "--break-system-packages"
         name: paramiko>3.5.1
         state: present
 
   # -------------------------------------------------------------------------- #
-  #               ------- Pyenv - Dependencies ------
+  #               ------- PyPI - Force Reinstall ------
   # -------------------------------------------------------------------------- #
-  - name: Pyenv - Dependencies
+  - name: PyPI - Show packages to reinstall
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.debug:
+      msg: "PyPI packages to reinstall: {{ pip_force_reinstall_packages }}"
+
+  - name: PyPI Reinstall Packages
+    become: true
+    block:
+
+    # pip install --force-reinstall
+    - name: PyPI - Force reinstall packages
+      tags: init
+      ansible.builtin.pip:
+        # extra_args: "--break-system-packages"
+        name: "{{ pip_force_reinstall_packages }}"
+        state: forcereinstall
+
+  # -------------------------------------------------------------------------- #
+  #               ------- pyenv ------
+  # -------------------------------------------------------------------------- #
+
+  # Dependencies
+  - name: pyenv - Dependencies
+    ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ pyenv_dependencies }}"
       package_type: "dependencies"
 
-  # -------------------------------------------------------------------------- #
-  #               ------- Pyenv - Install ------
-  # -------------------------------------------------------------------------- #
-  - name: pyenv - Install
-    become_user: "{{ ansible_user_id }}"
+  # Installation
+  # curl https://pyenv.run | bash
+  - name: pyenv - Installation
     tags: init
-    block:
+    ansible.builtin.import_tasks:
+      file: ../tasks/script.yml
+    vars:
+      url: "{{ pyenv_install_url }}"
+      cmd: /tmp/install.sh
 
-    # curl https://pyenv.run | bash
-    - name: pyenv - Download install script
-      ansible.builtin.uri:
-        method: GET
-        url: "{{ pyenv_install_url }}"
-        dest: "/tmp/pyenv.run"
-        follow_redirects: safe
-        mode: 0700
-
-    - name: pyenv - Run install script
-      ansible.builtin.shell:
-        cmd: "/tmp/pyenv.run"
-        executable: /usr/bin/zsh
-      register: install_result
-      changed_when: install_result.rc == 0
-
-    - name: pyenv - Remove install script
-      ansible.builtin.file:
-        path: "/tmp/pyenv.run"
-        state: absent
-
-  # -------------------------------------------------------------------------- #
-  #               ------- Pyenv - Upgrade ------
-  # -------------------------------------------------------------------------- #
+  # Upgrade
   - name: pyenv - Upgrade
-    become_user: "{{ ansible_user_id }}"
     tags: update
     ansible.builtin.command:
       cmd: pyenv update
     register: upgrade_result
     changed_when: upgrade_result.rc == 0
 
-  # -------------------------------------------------------------------------- #
-  #               ------- Pyenv - Install Python ------
-  # -------------------------------------------------------------------------- #
-  - name: Pyenv - Install Python
-    become_user: "{{ ansible_user_id }}"
-    tags: init
-    ansible.builtin.shell:
-      cmd: pyenv install {{ pyenv_python_version }}
-      executable: /usr/bin/zsh
+  # Install Python
+  # - name: pyenv - Install Python
+  #   tags: init
+  #   ansible.builtin.shell:
+  #     cmd: pyenv install {{ pyenv_python_version }}
+  #     executable: "{{ ansible_user_shell }}"
 
   # -------------------------------------------------------------------------- #
   #               ------- pipx ------
   # -------------------------------------------------------------------------- #
+
+  # Installation
   - name: pipx
-    block:
+    ansible.builtin.import_tasks:
+      file: ../tasks/packages.yml
+    vars:
+      package_list: "pipx"
 
-    # sudo apt update -y && sudo apt install -y pipx
-    - name: pipx - Install
-      tags: init
-      ansible.builtin.apt:
-        name: pipx
-        state: present
-        update_cache: true
-
-    # sudo apt update -y && sudo apt upgrade -y pipx
-    - name: pipx - Upgrade
-      tags: update
-      ansible.builtin.apt:
-        name: pipx
-        state: latest
-        update_cache: true
-
-    # Version
-    always:
-    - name: pipx - Confirm version
-      tags: [init, update]
-      ansible.builtin.command:
-        cmd: pipx --version
-      register: version
-      changed_when: false
-
-    - name: pipx - Show version
-      tags: [init, update]
-      when: version is defined
-      ansible.builtin.debug:
-        msg: "Installed version: {{ version.stdout }}"
+  # Version
+  - name: pipx - Version
+    tags: [init, update]
+    ansible.builtin.import_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: pipx --version
 
   # -------------------------------------------------------------------------- #
-  #               ------- Poetry ------
+  #               ------- Pipx - Packages ------
   # -------------------------------------------------------------------------- #
-  - name: Poetry
-    become_user: "{{ ansible_user_id }}"
-    block:
+  - name: Pipx - Show packages
+    tags: [init, update]
+    ansible.builtin.debug:
+      msg: "Pipx packages: {{ pipx_packages }}"
 
-    # pipx install poetry
-    - name: Poetry - Install
+  - name: Pipx Packages
+    block:
+    # pipx install
+    - name: Pipx - Install packages
       tags: init
       community.general.pipx:
-        name: poetry
+        name: "{{ item }}"
         state: present
+      loop: "{{ pipx_packages }}"
 
-    # pipx upgrade poetry
-    - name: Poetry - Upgrade
+    # pipx install --upgrade
+    - name: Pipx - Upgrade packages
       tags: update
       community.general.pipx:
-        name: poetry
+        name: "{{ item }}"
         state: latest
+      loop: "{{ pipx_packages }}"
 
-    # Version
-    always:
-    - name: Poetry - Confirm version
-      tags: [init, update]
-      ansible.builtin.command:
-        cmd: ~/.local/bin/poetry --version
-      register: version
-      changed_when: false
-
-    - name: Poetry - Show version
-      tags: [init, update]
-      when: version is defined
-      ansible.builtin.debug:
-        msg: "Installed version: {{ version.stdout }}"
+  # -------------------------------------------------------------------------- #
+  #               ------- poetry ------
+  # -------------------------------------------------------------------------- #
+  - name: poetry - Version
+    tags: [init, update]
+    ansible.builtin.import_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: ~/.local/bin/poetry --version
 
   # -------------------------------------------------------------------------- #
   #               ------- uv ------
   # -------------------------------------------------------------------------- #
-  - name: uv
-    block:
 
-    # curl -fsSL https://astral.sh/uv/install.sh | sh
-    - name: uv - Download install script
-      tags: init
-      ansible.builtin.uri:
-        method: GET
-        url: "{{ uv_install_url }}"
-        dest: "/tmp/uv_install.sh"
-        follow_redirects: safe
-        mode: 0700
+  # Installation
+  # curl -fsSL https://astral.sh/uv/install.sh | sh
+  - name: uv - Installation
+    tags: init
+    ansible.builtin.import_tasks:
+      file: ../tasks/script.yml
+    vars:
+      url: "{{ uv_install_url }}"
+      cmd: /bin/sh -c /tmp/install.sh
 
-    - name: uv - Install
-      tags: init
-      ansible.builtin.command:
-        cmd: /bin/sh -c /tmp/uv_install.sh
-      register: install_result
-      changed_when: install_result.rc == 0
+  # Upgrade
+  - name: uv - Upgrade
+    tags: update
+    ansible.builtin.command:
+      cmd: uv self update
+    register: upgrade_result
+    changed_when: upgrade_result.rc == 0
 
-    - name: uv - Remove install script
-      tags: init
-      ansible.builtin.file:
-        path: "/tmp/uv_install.sh"
-        state: absent
-
-    # Upgrade
-    - name: uv - Upgrade
-      tags: update
-      ansible.builtin.command:
-        cmd: uv self update
-      register: upgrade_result
-      changed_when: upgrade_result.rc == 0
-
-    # Version
-    always:
-    - name: uv - Confirm version
-      tags: [init, update]
-      ansible.builtin.command:
-        cmd: uv --version
-      register: version
-      changed_when: false
-
-    - name: uv - Show version
-      tags: [init, update]
-      when: version is defined
-      ansible.builtin.debug:
-        msg: "Installed version: {{ version.stdout }}"
+  # Version
+  - name: uv - Version
+    tags: [init, update]
+    ansible.builtin.import_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: uv --version

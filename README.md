@@ -124,8 +124,11 @@ unset DOPPLER_TOKEN
 3. Run a container:
 
 ```bash
-docker run --interactive --name dotfiles-dev --tty --rm --volume ~/.local/share/chezmoi:/home/linux/.local/share/chezmoi --workdir /home/linux/.local/share/chezmoi/home ${IMAGE}-dotfiles-dev
+docker run --interactive --name dotfiles-dev --tty --rm  ${IMAGE}-dotfiles-dev
+# --volume ~/.local/share/chezmoi:/home/linux/.local/share/chezmoi --workdir /home/linux/.local/share/chezmoi/home
 ```
+
+> **Note**: to troubleshoot individual playbooks, enable volume and workdir options, copy private_main.yml.tmpl to main.yml and remove go template blocks.
 
 ### 2.4 Test
 

@@ -18,7 +18,6 @@
 
   # Packages
   - name: Packages
-    tags: [init, update]
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:

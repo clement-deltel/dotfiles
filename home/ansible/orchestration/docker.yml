@@ -9,7 +9,7 @@
   - name: Users
     tags: init
     block:
-    
+
     # sudo groupadd -g 1001 docker
     - name: Create group
       ansible.builtin.group:
@@ -37,7 +37,6 @@
 
   # Dependencies
   - name: Dependencies
-    tags: [init, update]
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
@@ -58,7 +57,6 @@
 
   # Packages
   - name: Packages
-    tags: [init, update]
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
@@ -66,7 +64,6 @@
 
   # Formulas
   - name: Formulas
-    tags: [init, update]
     ansible.builtin.import_tasks:
       file: ../tasks/formulas.yml
     vars:

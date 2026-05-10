@@ -100,7 +100,6 @@
 
   # Formulas
   - name: Formulas
-    tags: [init, update]
     ansible.builtin.import_tasks:
       file: ../tasks/formulas.yml
     vars:

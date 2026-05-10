@@ -7,7 +7,6 @@
   tasks:
   # Packages
   - name: Packages
-    tags: [init, update]
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
@@ -33,7 +32,6 @@
 
   # Git LFS - Packages
   - name: Git LFS - Packages
-    tags: [init, update]
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
@@ -49,7 +47,6 @@
 
   # Formulas
   - name: Formulas
-    tags: [init, update]
     ansible.builtin.import_tasks:
       file: ../tasks/formulas.yml
     vars:

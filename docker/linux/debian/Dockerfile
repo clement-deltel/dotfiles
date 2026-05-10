@@ -10,18 +10,9 @@ FROM ${IMAGE} AS base
 
 # Not persisted into the built image
 ARG DEBIAN_FRONTEND=noninteractive
-ARG MACHINE=pro
-ARG IMAGE=ubuntu:22.04
 ARG ID=10001
 ARG USER=linux
 ARG TIMEZONE=Etc/GMT
-
-ARG DOPPLER_TOKEN
-
-# https://github.com/opencontainers/image-spec/blob/main/annotations.md
-LABEL org.opencontainers.image.title="${IMAGE}-dotfiles"
-LABEL org.opencontainers.image.description="${IMAGE}-dotfiles"
-LABEL org.opencontainers.image.authors="Clement Deltel <38040315+clement-deltel@users.noreply.github.com>"
 
 # Persisted into the built image
 ENV TZ=${TIMEZONE}
@@ -49,6 +40,19 @@ WORKDIR /home/${USER}
 # ---------------------------------------------------------------------------- #
 FROM base AS development
 
+# https://github.com/opencontainers/image-spec/blob/main/annotations.md
+LABEL org.opencontainers.image.title="dotfiles-dev"
+LABEL org.opencontainers.image.description="dotfiles-dev"
+LABEL org.opencontainers.image.authors="Clement Deltel <38040315+clement-deltel@users.noreply.github.com>"
+
+# Not persisted into the runtime image
+ARG DOPPLER_TOKEN
+ARG GITHUB_USERNAME=clement-deltel
+ARG MACHINE=pro
+ARG USER=linux
+
+# Persisted into the runtime image
+ENV GITHUB_USERNAME=${GITHUB_USERNAME}
 ENV DISABLE_INIT=true
 
 # Copy and run installation script
@@ -63,8 +67,16 @@ ENTRYPOINT ["/bin/bash"]
 # ---------------------------------------------------------------------------- #
 FROM base AS production
 
+# https://github.com/opencontainers/image-spec/blob/main/annotations.md
+LABEL org.opencontainers.image.title="dotfiles"
+LABEL org.opencontainers.image.description="dotfiles"
+LABEL org.opencontainers.image.authors="Clement Deltel <38040315+clement-deltel@users.noreply.github.com>"
+
+# Not persisted into the runtime image
+ARG DOPPLER_TOKEN
 ARG GITHUB_USERNAME=clement-deltel
-ENV GITHUB_USERNAME=${GITHUB_USERNAME}
+ARG MACHINE=pro
+ARG USER=linux
 
 # Copy and run installation script
 COPY --chown=${USER} ./install.sh ./install.sh

@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------------------- #
 #               ------- Windows ------
 # ---------------------------------------------------------------------------- #
-# https://www.gitignore.io/?templates=windows
+# https://www.toptal.com/developers/gitignore/?templates=windows
 
 # Windows thumbnail cache files
 Thumbs.db
@@ -32,7 +32,7 @@ $RECYCLE.BIN/
 # ---------------------------------------------------------------------------- #
 #               ------- Linux ------
 # ---------------------------------------------------------------------------- #
-# https://www.gitignore.io/?templates=linux
+# https://www.toptal.com/developers/gitignore/?templates=linux
 
 *~
 
@@ -51,7 +51,7 @@ $RECYCLE.BIN/
 # ---------------------------------------------------------------------------- #
 #               ------- Mac OS ------
 # ---------------------------------------------------------------------------- #
-# https://www.gitignore.io/?templates=macos
+# https://www.toptal.com/developers/gitignore/?templates=macos
 
 # General
 .DS_Store
@@ -89,6 +89,7 @@ Temporary Items
 # ---------------------------------------------------------------------------- #
 # https://www.toptal.com/developers/gitignore/?templates=visualstudiocode
 
+# General
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -107,10 +108,13 @@ Temporary Items
 .history
 .ionide
 
+# Visual Studio Code externally downloaded files
+*Zone.Identifier
+
 # ---------------------------------------------------------------------------- #
 #               ------- Python ------
 # ---------------------------------------------------------------------------- #
-# https://www.gitignore.io/?templates=python
+# https://www.toptal.com/developers/gitignore/?templates=python
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

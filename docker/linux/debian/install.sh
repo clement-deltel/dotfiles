@@ -20,8 +20,6 @@ function install_dependencies() {
 # ---------------------------------------------------------------------------- #
 function install_chezmoi() {
   if [ ! "$(command -v chezmoi)" ]; then
-    bin_dir="$HOME/.local/bin"
-    chezmoi="$bin_dir/chezmoi"
     if [ "$(command -v curl)" ]; then
       sh -c "$(curl -fLSs get.chezmoi.io)" -- -b "$bin_dir"
     elif [ "$(command -v wget)" ]; then
@@ -30,8 +28,6 @@ function install_chezmoi() {
       echo "You must have curl or wget installed to install chezmoi." >&2
       exit 1
     fi
-  else
-    chezmoi=chezmoi
   fi
 }
 
@@ -67,6 +63,12 @@ config = \"prod_${MACHINE}\"""" > ~/.config/chezmoi/chezmoi.toml
 # ---------------------------------------------------------------------------- #
 init() {
   echo "[INFO] Running chezmoi initialization..."
+  if [ ! "$(command -v chezmoi)" ]; then
+    bin_dir="$HOME/.local/bin"
+    chezmoi="$bin_dir/chezmoi"
+  else
+    chezmoi=chezmoi
+  fi
   exec "$chezmoi" init --apply ${GITHUB_USERNAME}
   echo "[INFO] chezmoi successfully initialized"
 }

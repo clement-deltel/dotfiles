@@ -43,7 +43,7 @@ export GITHUB_USERNAME=clement-deltel
 # Machine configuration. Options: pro, perso
 export MACHINE=pro
 # Linux distribution family. Options: arch, debian, nixos, redhat
-FAMILY=debian
+export FAMILY=debian
 
 # Set ephemeral Doppler service token
 export DOPPLER_TOKEN=''
@@ -101,7 +101,7 @@ export GITHUB_USERNAME=clement-deltel
 # Machine configuration. Options: pro, perso
 export MACHINE=pro
 # Set image parameters
-FAMILY=debian
+export FAMILY=debian
 export IMAGE=ubuntu:24.04
 # See all options and more details at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 export TIMEZONE=Etc/GMT

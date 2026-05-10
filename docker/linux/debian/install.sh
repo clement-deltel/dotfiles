@@ -21,9 +21,9 @@ function install_dependencies() {
 function install_chezmoi() {
   if [ ! "$(command -v chezmoi)" ]; then
     if [ "$(command -v curl)" ]; then
-      sh -c "$(curl -fLSs get.chezmoi.io)" -- -b "$bin_dir"
+      sh -c "$(curl -fLSs get.chezmoi.io)" -- -b "${BIN_DIR}"
     elif [ "$(command -v wget)" ]; then
-      sh -c "$(wget -qO- get.chezmoi.io)" -- -b "$bin_dir"
+      sh -c "$(wget -qO- get.chezmoi.io)" -- -b "${BIN_DIR}"
     else
       echo "You must have curl or wget installed to install chezmoi." >&2
       exit 1
@@ -64,8 +64,7 @@ config = \"prod_${MACHINE}\"""" > ~/.config/chezmoi/chezmoi.toml
 init() {
   echo "[INFO] Running chezmoi initialization..."
   if [ ! "$(command -v chezmoi)" ]; then
-    bin_dir="$HOME/.local/bin"
-    chezmoi="$bin_dir/chezmoi"
+    chezmoi="${BIN_DIR}/chezmoi"
   else
     chezmoi=chezmoi
   fi
@@ -78,6 +77,8 @@ init() {
 # ---------------------------------------------------------------------------- #
 function main() {
   set -e # -e: exit on error
+
+  BIN_DIR="$HOME/.local/bin"
 
   install_dependencies
   install_chezmoi

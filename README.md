@@ -124,7 +124,7 @@ unset DOPPLER_TOKEN
 3. Run a container:
 
 ```bash
-docker run --interactive --name dotfiles-dev --tty --rm --volume ~/.local/share/chezmoi:/home/linux/.local/share/chezmoi ${IMAGE}-dotfiles-dev
+docker run --interactive --name dotfiles-dev --tty --rm --volume ~/.local/share/chezmoi:/home/linux/.local/share/chezmoi --workdir /home/linux/.local/share/chezmoi/home ${IMAGE}-dotfiles-dev
 ```
 
 ### 2.4 Test

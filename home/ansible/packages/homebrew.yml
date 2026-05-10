@@ -26,6 +26,13 @@
         url: "{{ homebrew_install_url }}"
         cmd: /bin/bash -c /tmp/install.sh
 
+    # Taps
+    - name: Taps
+      ansible.builtin.include_tasks:
+        file: ../tasks/taps.yml
+      vars:
+        taps: "{{ homebrew_taps }}"
+
     # Formulas
     - name: Formulas
       ansible.builtin.include_tasks:

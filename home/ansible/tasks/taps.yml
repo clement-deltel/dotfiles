@@ -1,0 +1,11 @@
+- name: Show taps
+  tags: init
+  ansible.builtin.debug:
+    msg: "{{ taps }}"
+
+# brew tap
+- name: Install taps
+  tags: init
+  community.general.homebrew_tap:
+    name: "{{ taps }}"
+    state: present

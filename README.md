@@ -130,6 +130,12 @@ docker run --interactive --name dotfiles-dev --tty --rm  ${IMAGE}-dotfiles-dev
 
 > **Note**: to troubleshoot individual playbooks, enable volume and workdir options, copy private_main.yml.tmpl to main.yml and remove go template blocks.
 
+4. Run the chezmoi init command:
+
+```bash
+exec $HOME/.local/bin/chezmoi init --apply ${GITHUB_USERNAME}
+```
+
 ### 2.4 Test
 
 1. Install Docker to test this setup. The following images have been tested so far:

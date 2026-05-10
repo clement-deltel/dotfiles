@@ -8,7 +8,7 @@
   # Dependencies
   - name: Dependencies
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ eza_dependencies }}"
@@ -19,7 +19,7 @@
   # echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/gierens.gpg] stable main" | sudo tee /etc/apt/sources.list.d/gierens.list > /dev/null
   - name: Repository
     tags: init
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/repository.yml
     vars:
       key_url: https://raw.githubusercontent.com/eza-community/eza/main/deb.asc
@@ -29,7 +29,7 @@
   # Packages
   - name: Packages
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ eza_packages }}"
@@ -37,7 +37,7 @@
   # Version
   - name: Version
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/version.yml
     vars:
       cmd: eza --version

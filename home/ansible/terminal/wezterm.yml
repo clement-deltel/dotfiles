@@ -9,7 +9,7 @@
   # echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *" | sudo tee /etc/apt/sources.list.d/wezterm.list > /dev/null
   - name: Repository
     tags: init
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/repository.yml
     vars:
       key_url: https://apt.fury.io/wez/gpg.key
@@ -19,7 +19,7 @@
   # Packages
   - name: Packages
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ wezterm_packages }}"

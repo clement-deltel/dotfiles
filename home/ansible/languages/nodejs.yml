@@ -8,7 +8,7 @@
   # Dependencies
   - name: Dependencies
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ node_dependencies }}"
@@ -17,7 +17,7 @@
   # Repository
   - name: Repository
     tags: init
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/repository.yml
     vars:
       key_url: https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key
@@ -27,7 +27,7 @@
   # Packages
   - name: Packages
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ node_packages }}"
@@ -35,7 +35,7 @@
   # Version
   - name: Version
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/version.yml
     vars:
       cmd: node --version

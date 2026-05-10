@@ -11,7 +11,7 @@
   # -------------------------------------------------------------------------- #
   - name: Dependencies
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ aws_dependencies }}"

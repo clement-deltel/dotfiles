@@ -9,7 +9,7 @@
   # curl -s https://ohmyposh.dev/install.sh | bash -s
   - name: Installation
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/script.yml
     vars:
       url: "{{ omp_install_url }}"
@@ -18,7 +18,7 @@
   # Version
   - name: Version
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/version.yml
     vars:
       cmd: ~/.local/bin/oh-my-posh version

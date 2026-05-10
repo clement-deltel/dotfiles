@@ -9,7 +9,7 @@
   # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   - name: Installation
     tags: init
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/script.yml
     vars:
       url: "{{ rust_install_url }}"
@@ -18,7 +18,7 @@
   # rustc - Version
   - name: Version
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/version.yml
     vars:
       cmd: rustc --version
@@ -26,7 +26,7 @@
   # cargo - Version
   - name: cargo - Version
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/version.yml
     vars:
       cmd: cargo --version

@@ -11,7 +11,7 @@
   # -------------------------------------------------------------------------- #
   - name: Dependencies
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ gcp_dependencies }}"
@@ -58,7 +58,7 @@
   # -------------------------------------------------------------------------- #
   - name: Packages
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ gcp_packages }}"
@@ -69,7 +69,6 @@
   - name: Version
     tags: [init, update]
     block:
-
     - name: Confirm version
       ansible.builtin.command:
         cmd: gcloud --version

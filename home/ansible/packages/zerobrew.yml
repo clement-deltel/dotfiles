@@ -12,7 +12,7 @@
     # Installation
     # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lucasgelfond/zerobrew/main/install.sh)"
     - name: Installation
-      ansible.builtin.include_tasks:
+      ansible.builtin.import_tasks:
         file: ../tasks/script.yml
       vars:
         url: "{{ zerobrew_install_url }}"

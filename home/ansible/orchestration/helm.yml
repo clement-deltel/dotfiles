@@ -9,7 +9,7 @@
   # curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
   - name: Installation
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/script.yml
     vars:
       url: "{{ helm_install_url }}"
@@ -18,7 +18,7 @@
   # Version
   - name: Version
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/version.yml
     vars:
       cmd: helm version
@@ -58,7 +58,7 @@
   # Formulas
   - name: Formulas
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/formulas.yml
     vars:
       formulas: "{{ helm_formulas }}"

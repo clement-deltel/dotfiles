@@ -28,12 +28,11 @@
         follow_redirects: safe
         mode: 0700
 
-    - name : Update aliases
+    - name: Update aliases
       ansible.builtin.replace:
         path: "/home/{{ ansible_user_id }}/.kube/aliases.sh"
         regexp: kubectl
         replace: kctl
-
 
   # Kubernetes CLI
   - name: Kubernetes CLI
@@ -94,7 +93,7 @@
   # Version
   - name: Version
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/version.yml
     vars:
       cmd: kubectl version --client
@@ -102,7 +101,7 @@
   # Formulas
   - name: Formulas
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/formulas.yml
     vars:
       formulas: "{{ kubernetes_formulas }}"

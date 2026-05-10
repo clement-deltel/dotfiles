@@ -8,7 +8,7 @@
   # Packages
   - name: Packages
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ git_packages }}"
@@ -16,7 +16,7 @@
   # Version
   - name: Version
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/version.yml
     vars:
       cmd: git version
@@ -24,7 +24,7 @@
   # Git LFS - Repository
   - name: Git LFS - Repository
     tags: init
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/script.yml
     vars:
       root: true
@@ -34,7 +34,7 @@
   # Git LFS - Packages
   - name: Git LFS - Packages
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ git_lfs_packages }}"
@@ -42,7 +42,7 @@
   # Git LFS - Version
   - name: Version
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/version.yml
     vars:
       cmd: git-lfs version
@@ -50,7 +50,7 @@
   # Formulas
   - name: Formulas
     tags: [init, update]
-    ansible.builtin.include_tasks:
+    ansible.builtin.import_tasks:
       file: ../tasks/formulas.yml
     vars:
       formulas: "{{ git_formulas }}"

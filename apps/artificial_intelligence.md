@@ -66,6 +66,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [stagehand](https://github.com/browserbase/stagehand) - SDK for browser agents. `TypeScript`
 - [vibe-kanban](https://github.com/BloopAI/vibe-kanban) - use kanban issues to plan work, and when you're ready create workspaces where coding agents can execute. `Rust` `TypeScript`
 - [web-ui](https://github.com/browser-use/web-ui) - AI agent in your browser. `Python`
+- [zerostack](https://github.com/gi-dellav/zerostack) - minimalistic coding agent, optimized for memory footprint and performance. `Rust`
 
 ### App Builder
 
@@ -179,6 +180,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [caveman](https://github.com/JuliusBrussee/caveman) - why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman. `Python` `JavaScript`
 - [manifest](https://github.com/mnfst/manifest) - smart model routing for personal AI agents, cut costs up to 70%. `TypeScript`
+- [semble](https://github.com/MinishLab/semble) - fast and accurate code search for agents, uses ~98% fewer tokens than grep+read. `Python`
 - [tokuin](https://github.com/nooscraft/tokuin) - estimates LLM tokens/costs and runs provider-aware load tests. `Rust` `Python`
 
 ### Use Cases

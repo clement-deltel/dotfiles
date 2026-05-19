@@ -49,6 +49,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [Docker](#docker-1)
     - [Kubernetes](#kubernetes-1)
     - [Helm](#helm-1)
+  - [Remote Access](#remote-access)
   - [Search](#search)
   - [Secrets](#secrets)
   - [Security](#security-1)
@@ -388,6 +389,7 @@ Here are some useful Linux system commands:
 
 ### Artificial Intelligence
 
+- [codeburn](https://github.com/getagentseal/codeburn) - interactive TUI dashboard for Claude Code, Codex, and Cursor cost observability. `TypeScript` `Swift`
 - [dotprompt](https://github.com/google/dotprompt) - executable GenAI prompt templates. `Python` `Java` `Go`
 - [goose](https://github.com/block/goose) - extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM. `Rust` `TypeScript`
 - [leon](https://github.com/leon-ai/leon) - open-source personal assistant. `TypeScript` `Python`
@@ -525,6 +527,10 @@ Here are some useful Linux system commands:
 #### Helm
 
 - [helmwave](https://github.com/helmwave/helmwave) - new wave for helm. `Go`
+
+### Remote Access
+
+- [boring](https://github.com/alebeck/boring) - SSH tunnel manager. `Go`
 
 ### Search
 

@@ -247,6 +247,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [grype](https://github.com/anchore/grype) - vulnerability scanner for container images and filesystems. `Go`
   - [hadolint](https://github.com/hadolint/hadolint) - Dockerfile linter, validate inline bash. `Haskell`
   - [lazydocker](https://github.com/jesseduffield/lazydocker) - lazier way to manage everything Docker. `Go`
+  - [syft](https://github.com/anchore/syft) - CLI tool and library for generating a Software Bill of Materials from container images and filesystems. `Go`
   - [trivy](https://github.com/aquasecurity/trivy) - find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more. `Go`
 
 #### Kubernetes
@@ -613,6 +614,7 @@ Here are some useful Linux system commands:
 - [ghostty](https://github.com/ghostty-org/ghostty) - fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration. `Zig` `Swift`
 - [hyper](https://github.com/vercel/hyper) - terminal built on web technologies. `TypeScript`
 - [kitty](https://github.com/kovidgoyal/kitty) - cross-platform, fast, feature-rich, GPU based. `Python` `C` `Go`
+- [ratty](https://github.com/orhun/ratty) - GPU-rendered terminal emulator with inline 3D graphics. `Rust`
 - [rio](https://github.com/raphamorim/rio) - hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers. `Rust`
 - [tabby](https://github.com/eugeny/tabby) - terminal for a more modern age. `TypeScript`
 - [Warp](https://github.com/warpdotdev/Warp) - modern terminal with AI built in so you and your team can build great software, faster. `Rust`

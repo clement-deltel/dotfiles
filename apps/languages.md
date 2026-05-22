@@ -19,6 +19,7 @@ Here is a list of libraries and frameworks for different programming languages t
 - [fang](https://github.com/charmbracelet/fang) - CLI starter kit. `Go`
 - [glow](https://github.com/charmbracelet/glow) - render markdown on the terminal. `Go`
 - [go-jet](https://github.com/go-jet/jet) - type safe SQL builder with code generation and automatic query result data mapping. `Go`
+- [gofumpt](https://github.com/mvdan/gofumpt) - a stricter gofmt. `Go`
 - [golangci-lint](https://github.com/golangci/golangci-lint) - fast linters runner. `Go`
 - [goreleaser](https://github.com/goreleaser/goreleaser) - release engineering, simplified. `Go`
 - [gorm](https://github.com/go-gorm/gorm) -  ORM library for Golang, aims to be developer friendly. `Go`

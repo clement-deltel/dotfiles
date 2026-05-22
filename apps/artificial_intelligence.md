@@ -187,6 +187,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [qmd](https://github.com/tobi/qmd) - search engine for your docs, knowledge bases, meeting notes, whatever. `TypeScript` `Python`
 - [RedditVideoMakerBot](https://github.com/elebumm/RedditVideoMakerBot) - create Reddit videos with just one command.
+- [remove-ai-watermarks](https://github.com/wiltodelta/remove-ai-watermarks) - CLI and library for removing visible (Gemini) and invisible (SynthID, C2PA, EXIF) AI watermarks from images. `Python`
 - [worldmonitor](https://github.com/koala73/worldmonitor) - real-time global intelligence dashboard, AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface. `TypeScript` `JavaScript`
 
 ## Deprecated

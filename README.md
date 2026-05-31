@@ -67,7 +67,7 @@ curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/he
 ```
 
 5. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.
-6. Ansible playbooks automatically install and configure these [apps](apps/linux.md#current).
+6. Ansible playbooks automatically install and configure these [apps](docs/linux.md#current).
 7. Clear service token and establish a proper connection:
 
 ```bash
@@ -248,8 +248,8 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
    - [Chocolatey](https://docs.chocolatey.org/en-us/)
    - [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
 
-5. Chocolatey install and configure these [apps](apps/windows.md#chocolatey).
-6. Winget install and configure these [apps](apps/windows.md#winget).
+5. Chocolatey install and configure these [apps](docs/windows.md#chocolatey).
+6. Winget install and configure these [apps](docs/windows.md#winget).
 7. chezmoi also restore some files from backups stored in AWS S3:
    - Google Chrome
    - Outlook Signatures
@@ -258,7 +258,7 @@ curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/
    - Windows Subsystem for Linux (WSL)
    - Windows Taskbar
 
-8. Finally, install the [softwares](apps/windows.md#manual-effort) requiring manual effort.
+8. Finally, install the [softwares](docs/windows.md#manual-effort) requiring manual effort.
 9. Clear service token and establish a proper connection:
 
 ```powershell
@@ -300,6 +300,6 @@ docker run --interactive --name dotfiles --tty --rm mcr.microsoft.com/windows/na
 
 ## 4. Browser
 
-I am still figuring out a way to install these [extensions](apps/browser.md#current) programmatically.
+I am still figuring out a way to install these [extensions](docs/browser.md#current) programmatically.
 
 ## 5. Visual Studio Code

@@ -36,7 +36,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [Cloud](#cloud-1)
   - [Database](#database)
   - [Diagrams](#diagrams)
-  - [Directories \& Files](#directories--files)
+  - [Directories and Files](#directories-and-files)
   - [Dotfiles Management](#dotfiles-management)
   - [Infrastructure-as-Code (IaC)](#infrastructure-as-code-iac-1)
   - [Integrated Development Environment (IDE)](#integrated-development-environment-ide)
@@ -427,7 +427,7 @@ Here are some useful Linux system commands:
 - [d2](https://github.com/terrastruct/d2) - modern diagram scripting language that turns text to diagrams. `JavaScript`
 - [FossFLOW](https://github.com/stan-smith/FossFLOW) - make beautiful isometric infrastructure diagrams. `TypeScript` `Python`
 
-### Directories & Files
+### Directories and Files
 
 - [alt-sendme](https://github.com/tonyantony300/alt-sendme) - send files and directories anywhere in the world without storing in cloud - any size, any format, no accounts, no restrictions. `TypeScript` `Rust`
 - [entr](https://github.com/eradman/entr) - run arbitrary commands when files change. `C`

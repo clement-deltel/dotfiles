@@ -8,7 +8,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Enhancements](#enhancements)
 - [Deprecated](#deprecated)
   - [General](#general)
-- [API](#api)
+  - [API](#api)
   - [Artificial Intelligence](#artificial-intelligence)
   - [Cloud](#cloud)
   - [Databases](#databases)
@@ -140,7 +140,7 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [vscode-faker](https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-faker) - generate fake data for name, address, lorem ipsum, commerce and much more.
 - [vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf) - display pdf file.
 
-## API
+### API
 
 - [Open API (Swagger) Editor](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi) - OpenAPI editing, validation and preview.
 - [Postman](https://marketplace.visualstudio.com/items?itemName=Postman.postman-for-vscode) - streamline API development and testing.

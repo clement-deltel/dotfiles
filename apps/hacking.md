@@ -8,6 +8,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [DNS](#dns)
 - [Man in the Middle (MITM)](#man-in-the-middle-mitm)
 - [OSINT](#osint)
+- [Reverse Engineering](#reverse-engineering)
 - [SSH](#ssh)
 - [Steganography](#steganography)
 - [Tools](#tools)
@@ -33,6 +34,10 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [operative-framework](https://github.com/graniet/operative-framework) - investigation framework, you can interact with multiple targets, execute multiple modules, create links with target, export rapport to PDF file, add note to target or results, interact with RESTFul API, write your own modules. `Rust`
 - [robin](https://github.com/apurvsinghgautam/robin) - AI-powered dark web tool. `Python`
 
+## Reverse Engineering
+
+- [radare2](https://github.com/radareorg/radare2) - UNIX-like reverse engineering framework and command-line toolset. `C`
+
 ## SSH
 
 [ssh-snake](https://github.com/MegaManSec/SSH-Snake) - self-propagating, self-replicating, file-less script that automates the post-exploitation task of SSH private key and host discovery. `Shell` `Python`
@@ -43,6 +48,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ## Tools
 
+- [hackingtool](https://github.com/Z4nzu/hackingtool) - all-in-one hacking tool for hackers. `Python`
 - [ImHex](https://github.com/WerWolv/ImHex) - Hex editor for reverse engineers, programmers and people who value their retinas when working at 3 AM. `C++`
 - [unleashed-firmware](https://github.com/DarkFlippers/unleashed-firmware) - flipper zero unleashed firmware. `C`
 - [USBvalve](https://github.com/cecio/USBvalve) - expose USB activity on the fly. `C`

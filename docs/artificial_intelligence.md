@@ -35,6 +35,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
   - [Text-to-Image](#text-to-image)
   - [Text-to-Speech](#text-to-speech)
   - [Tokens](#tokens)
+  - [Transformers](#transformers)
   - [Watermark Removal](#watermark-removal)
   - [Use Cases](#use-cases)
 - [Deprecated](#deprecated)
@@ -60,6 +61,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [lobehub](https://github.com/lobehub/lobehub) - space for work and life — to find, build, and collaborate with agent teammates that grow with you. `TypeScript`
 - [mini-agi](https://github.com/muellerberndt/mini-agi) - simple general-purpose AI agent based on the OpenAI API. `Python`
 - [opencode](https://github.com/anomalyco/opencode) - open source coding agent. `TypeScript`
+- [paseo](https://github.com/getpaseo/paseo) - coding agents from your phone, desktop and CLI. `TypeScript`
 - [ralph](https://github.com/snarktank/ralph) - autonomous AI agent loop that runs repeatedly until all PRD items are complete. `TypeScript` `Shell`
 - [rowboat](https://github.com/rowboatlabs/rowboat) - open-source AI coworker, with memory. `TypeScript`
 
@@ -83,6 +85,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [1code](https://github.com/21st-dev/1code) - orchestration layer for coding agents. `TypeScript`
 - [crewai](https://github.com/crewAIInc/crewAI) - framework for orchestrating role-playing, autonomous AI agents. `Python`
 - [ruflo](https://github.com/ruvnet/ruflo) - deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems, feature self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration. `TypeScript` `JavaScript`
+- [sandcastle](https://github.com/mattpocock/sandcastle) - orchestrate sandboxed coding agents with sandcastle.run(). `TypeScript`
 - [sim](https://github.com/simstudioai/sim) - build, deploy, and orchestrate AI agents, this is the central intelligence layer for your AI workforce. `TypeScript`
 
 #### Research
@@ -175,6 +178,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### Prompt
 
+- [fabric](https://github.com/danielmiessler/Fabric) - open-source framework for augmenting humans using AI, provides a modular system for solving specific problems using a crowdsourced set of AI prompts that can be used anywhere. `Go` `Svelte`
 - [prompt-eng-interactive-tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) - Anthropic's interactive prompt engineering tutorial.
 - [system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) - system prompts, internal tools & AI models.
 - [system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks) - collection of extracted system prompts from popular chatbots like ChatGPT, Claude & Gemini.
@@ -217,9 +221,14 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 ### Tokens
 
 - [caveman](https://github.com/JuliusBrussee/caveman) - why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman. `Python` `JavaScript`
+- [headroom](https://github.com/chopratejas/headroom) - compress tool outputs, logs, files, and RAG chunks before they reach the LLM, 60-95% fewer tokens, same answers. `Python` `Rust`
 - [manifest](https://github.com/mnfst/manifest) - smart model routing for personal AI agents, cut costs up to 70%. `TypeScript`
 - [semble](https://github.com/MinishLab/semble) - fast and accurate code search for agents, uses ~98% fewer tokens than grep+read. `Python`
 - [tokuin](https://github.com/nooscraft/tokuin) - estimates LLM tokens/costs and runs provider-aware load tests. `Rust` `Python`
+
+### Transformers
+
+- [transformers](https://github.com/huggingface/transformers) - model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. `Python`
 
 ### Watermark Removal
 
@@ -231,6 +240,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [ai-captcha-bypass](https://github.com/aydinnyunus/ai-captcha-bypass) - AI captcha bypass. `Python`
 - [qmd](https://github.com/tobi/qmd) - search engine for your docs, knowledge bases, meeting notes, whatever. `TypeScript` `Python`
 - [RedditVideoMakerBot](https://github.com/elebumm/RedditVideoMakerBot) - create Reddit videos with just one command.
+- [surf](https://github.com/deta/surf) - personal AI notebooks, organize files & webpages and generate notes from them. `TypeScript` `Svelte`
 - [worldmonitor](https://github.com/koala73/worldmonitor) - real-time global intelligence dashboard, AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface. `TypeScript` `JavaScript`
 
 ## Deprecated

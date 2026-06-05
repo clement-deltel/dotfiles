@@ -394,6 +394,7 @@ Here are some useful Linux system commands:
 - [dotprompt](https://github.com/google/dotprompt) - executable GenAI prompt templates. `Python` `Java` `Go`
 - [goose](https://github.com/block/goose) - extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM. `Rust` `TypeScript`
 - [leon](https://github.com/leon-ai/leon) - open-source personal assistant. `TypeScript` `Python`
+- [logwhisperer](https://github.com/binary-knight/logwhisperer) - self-hosted, AI-powered log summarization tool. `Python` `Shell`
 - [mdream](https://github.com/harlan-zw/mdream) - convert any site to clean markdown & llm.txt. `TypeScript`
 - [opencode](https://github.com/anomalyco/opencode) - open source coding agent. `TypeScript`
 - [pdfGPT](https://github.com/bhaskatripathi/pdfGPT) - chat with the contents of your pdf file by using GPT capabilities. `Python`
@@ -452,6 +453,7 @@ Here are some useful Linux system commands:
 
 ### Integrated Development Environment (IDE)
 
+- [cate](https://github.com/0-AI-UG/cate) - infinite zoomable canvas for coding, editor, terminal, and browser panels in a spatial workspace. `TypeScript`
 - [cursor](https://github.com/getcursor/cursor) - AI code editor.
 - [void](https://github.com/voideditor/void) - open-source Cursor alternative. `TypeScript`
 - [windsurf](https://windsurf.com) - AI code editor.
@@ -608,6 +610,7 @@ Here are some useful Linux system commands:
 
 ### Terminal
 
+- [cmux](https://github.com/manaflow-ai/cmux) - ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents. `Swift`
 - [ghostty](https://github.com/ghostty-org/ghostty) - fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration. `Zig` `Swift`
 - [hyper](https://github.com/vercel/hyper) - terminal built on web technologies. `TypeScript`
 - [kitty](https://github.com/kovidgoyal/kitty) - cross-platform, fast, feature-rich, GPU based. `Python` `C` `Go`

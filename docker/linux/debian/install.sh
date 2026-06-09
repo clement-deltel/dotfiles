@@ -21,7 +21,7 @@ function install_dependencies() {
 function install_chezmoi() {
   if [ ! "$(command -v chezmoi)" ]; then
     if [ "$(command -v curl)" ]; then
-      sh -c "$(curl -fLSs get.chezmoi.io)" -- -b "${BIN_DIR}"
+      sh -c "$(curl -fsSL get.chezmoi.io)" -- -b "${BIN_DIR}"
     elif [ "$(command -v wget)" ]; then
       sh -c "$(wget -qO- get.chezmoi.io)" -- -b "${BIN_DIR}"
     else
@@ -37,7 +37,7 @@ function install_chezmoi() {
 # ---------------------------------------------------------------------------- #
 function install_doppler() {
   echo "[INFO] Installing Doppler CLI..."
-  curl -sLf --retry 3 --tlsv1.2 --proto "=https" 'https://packages.doppler.com/public/cli/gpg.DE2A7741A397C129.key' | sudo gpg --dearmor -o /usr/share/keyrings/doppler-archive-keyring.gpg
+  curl -fsSL --retry 3 --tlsv1.2 --proto "=https" 'https://packages.doppler.com/public/cli/gpg.DE2A7741A397C129.key' | sudo gpg --dearmor -o /usr/share/keyrings/doppler-archive-keyring.gpg
   echo "deb [signed-by=/usr/share/keyrings/doppler-archive-keyring.gpg] https://packages.doppler.com/public/cli/deb/debian any-version main" | sudo tee /etc/apt/sources.list.d/doppler-cli.list
   sudo apt update -y
   sudo apt install -y doppler

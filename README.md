@@ -63,7 +63,7 @@ sudo yum update -y && sudo yum install -y curl
 4. Run installation script:
 
 ```bash
-curl -fLSs https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/heads/main/docker/linux/${FAMILY}/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/${GITHUB_USERNAME}/dotfiles/refs/heads/main/docker/linux/${FAMILY}/install.sh | bash
 ```
 
 5. After pulling and configuring the dotfiles, chezmoi run a script installing ansible, and then running playbooks.
@@ -241,7 +241,7 @@ $Env:$DOPPLER_TOKEN=""
 3. Run installation script:
 
 ```ps1
-curl -fLSs https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/main/docker/microsoft/install.sh | powershell
+curl -fsSL https://raw.githubusercontent.com/clement-deltel/dotfiles/refs/heads/main/docker/microsoft/install.sh | powershell
 ```
 
 4. After pulling and configuring the dotfiles, chezmoi run several powershell scripts, executing the steps below:

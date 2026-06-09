@@ -75,3 +75,9 @@
 # Tools
 - name: Cron
   import_playbook: tools/cron.yml
+
+# Artificial Intelligence
+- name: Fabric
+  import_playbook: ai/fabric.yaml
+- name: Hermes
+  import_playbook: ai/hermes.yaml

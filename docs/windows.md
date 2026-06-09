@@ -251,8 +251,10 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 #### Media
 
+- [Audacity](https://community.chocolatey.org/packages/audacity) - recording and editing sounds.
 - [MP3Tag](https://community.chocolatey.org/packages/mp3tag) - edit metadata of common audio formats.
 - [MusicBee](https://community.chocolatey.org/packages/musicbee)
+- [OBS Studio](https://community.chocolatey.org/packages/obs-studio) - video recording and live streaming.
 - [Spicetify](https://community.chocolatey.org/packages/spicetify-cli) - command-line tool to customize Spotify client.
 
 #### Monitoring

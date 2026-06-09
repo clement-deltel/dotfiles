@@ -6,6 +6,9 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [Glossary](#glossary)
 - [Current](#current)
+  - [Augmented Human](#augmented-human)
+  - [Harness](#harness)
+  - [Prompt](#prompt)
 - [Enhancements](#enhancements)
   - [Agents](#agents)
     - [Browser](#browser)
@@ -16,7 +19,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
   - [Claude Code](#claude-code)
   - [Context](#context)
   - [Diffusion](#diffusion)
-  - [Harness](#harness)
+  - [Harness](#harness-1)
     - [OpenClaw](#openclaw)
   - [Inference](#inference)
   - [Infrastructure](#infrastructure)
@@ -26,7 +29,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
   - [Neural Networks](#neural-networks)
   - [OCR](#ocr)
   - [Project Management](#project-management)
-  - [Prompt](#prompt)
+  - [Prompt](#prompt-1)
   - [RAG](#rag)
   - [Scrapers](#scrapers)
   - [Skills](#skills)
@@ -49,6 +52,18 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ## Current
 
+### Augmented Human
+
+- [telos](https://github.com/danielmiessler/Telos) - open-sourced framework for creating Deep Context about things that matter to humans.
+
+### Harness
+
+- [hermes](https://github.com/NousResearch/hermes-agent) -  agent that grows with you. `Python` `TypeScript`
+
+### Prompt
+
+- [fabric](https://github.com/danielmiessler/Fabric) - open-source framework for augmenting humans using AI, provides a modular system for solving specific problems using a crowdsourced set of AI prompts that can be used anywhere. `Go` `Svelte`
+
 ## Enhancements
 
 ### Agents
@@ -57,6 +72,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [agentscope](https://github.com/agentscope-ai/agentscope) - build and run agents you can see, understand and trust. `Python`
 - [agents.md](https://github.com/agentsmd/agents.md) - simple, open format for guiding coding agents. `TypeScript`
 - [cua](https://github.com/trycua/cua) - infrastructure for computer-use agents. Sandboxes, SDKs, and benchmarks to train and evaluate AI agents that can control full desktops. `Python` `TypeScript`
+- [goose](https://github.com/block/goose) - extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM. `Rust` `TypeScript`
 - [kimi-cli](https://github.com/MoonshotAI/kimi-cli) - CLI agent. `Python` `TypeScript`
 - [lobehub](https://github.com/lobehub/lobehub) - space for work and life — to find, build, and collaborate with agent teammates that grow with you. `TypeScript`
 - [mini-agi](https://github.com/muellerberndt/mini-agi) - simple general-purpose AI agent based on the OpenAI API. `Python`
@@ -123,7 +139,9 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [archon](https://github.com/coleam00/Archon) - harness builder for AI coding, make AI coding deterministic and repeatable. `TypeScript`
 - [dify](https://github.com/langgenius/dify) - production-ready platform for agentic workflow development. `TypeScript` `Python`
 - [insforge](https://github.com/InsForge/InsForge) - all-in-one, open-source backend platform for agentic coding, gives your coding agent database, auth, storage, compute, hosting, and AI gateway to ship full-stack apps end-to-end. `TypeScript`
+- [leon](https://github.com/leon-ai/leon) - open-source personal assistant. `TypeScript` `Python`
 - [openclaw](https://github.com/openclaw/openclaw) - your own personal AI assistant, any OS, any platform. `TypeScript`
+- [personal-ai-infrastructure](https://github.com/danielmiessler/Personal_AI_Infrastructure) - agentic AI infrastructure for magnifying HUMAN capabilities. `TypeScript`
 
 #### OpenClaw
 
@@ -178,7 +196,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### Prompt
 
-- [fabric](https://github.com/danielmiessler/Fabric) - open-source framework for augmenting humans using AI, provides a modular system for solving specific problems using a crowdsourced set of AI prompts that can be used anywhere. `Go` `Svelte`
+- [dotprompt](https://github.com/google/dotprompt) - executable GenAI prompt templates. `Python` `Java` `Go`
 - [prompt-eng-interactive-tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) - Anthropic's interactive prompt engineering tutorial.
 - [system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) - system prompts, internal tools & AI models.
 - [system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks) - collection of extracted system prompts from popular chatbots like ChatGPT, Claude & Gemini.
@@ -238,6 +256,9 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 ### Use Cases
 
 - [ai-captcha-bypass](https://github.com/aydinnyunus/ai-captcha-bypass) - AI captcha bypass. `Python`
+- [open-code-review](https://github.com/alibaba/open-code-review) - hybrid architecture code review tool, deterministic pipelines + LLM Agent, precise line-level comments, built-in fine-tuned ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible. `Go` `TypeScript`
+- [pdfGPT](https://github.com/bhaskatripathi/pdfGPT) - chat with the contents of your pdf file by using GPT capabilities. `Python`
+- [private-gpt](https://github.com/zylon-ai/private-gpt) - interact with your documents using the power of GPT, 100% privately, no data leaks. `Python`
 - [qmd](https://github.com/tobi/qmd) - search engine for your docs, knowledge bases, meeting notes, whatever. `TypeScript` `Python`
 - [RedditVideoMakerBot](https://github.com/elebumm/RedditVideoMakerBot) - create Reddit videos with just one command.
 - [surf](https://github.com/deta/surf) - personal AI notebooks, organize files & webpages and generate notes from them. `TypeScript` `Svelte`

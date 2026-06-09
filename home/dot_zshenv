@@ -11,8 +11,8 @@ export XDG_CONFIG_HOME=${HOME}/.config
 # ---------------------------------------------------------------------------- #
 #               ------- Environment ------
 # ---------------------------------------------------------------------------- #
-export EDITOR='vim'
-export PATH=~/.local/bin:~/scripts:~/scripts/bin:${PATH}
+export EDITOR=vim
+export PATH=${HOME}/.local/bin:${HOME}/scripts:${HOME}/scripts/bin:${PATH}
 
 # Bat
 export BAT_THEME="Visual Studio Dark+"
@@ -22,7 +22,7 @@ export DOCKER_CONTENT_TRUST=0
 
 # Go
 export GO111MODULE=on
-export GOPATH=~/go
+export GOPATH=${HOME}/go
 export GOROOT=/usr/local/go
 export PATH=/usr/local/go/bin:${GOPATH}/bin:${PATH}
 
@@ -31,17 +31,17 @@ export PATH=/home/linuxbrew/.linuxbrew/bin:${PATH}
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # k9s
-export K9S_CONFIG_DIR='~/.config/k9s'
-export K9S_SKIN='stock'
+export K9S_CONFIG_DIR=${HOME}/.config/k9s
+export K9S_SKIN=stock
 
 # Kubernetes
-export KUBE_EDITOR='vim'
+export KUBE_EDITOR=vim
 
 # NodeJS
 export PATH=${HOME}/node_modules/.bin:${PATH}
 
 # Pulumi
-export PATH=~/.pulumi/bin:${PATH}
+export PATH=${HOME}/.pulumi/bin:${PATH}
 
 # pyenv
 export PYENV_ROOT=${HOME}/.pyenv

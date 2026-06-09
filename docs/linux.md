@@ -29,7 +29,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - [Plugins](#plugins)
 - [Containerized](#containerized)
 - [Enhancements](#enhancements)
-  - [API](#api)
   - [Artificial Intelligence](#artificial-intelligence)
   - [Benchmarking](#benchmarking)
   - [CI/CD](#cicd)
@@ -39,9 +38,9 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [Directories and Files](#directories-and-files)
   - [Dotfiles Management](#dotfiles-management)
   - [Infrastructure-as-Code (IaC)](#infrastructure-as-code-iac-1)
-  - [Integrated Development Environment (IDE)](#integrated-development-environment-ide)
   - [Games](#games)
   - [KVM](#kvm)
+  - [Media](#media)
   - [Modern Replacements](#modern-replacements)
   - [Monitoring](#monitoring)
   - [Multiplexer](#multiplexer)
@@ -149,6 +148,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [fzf](https://github.com/junegunn/fzf) - CLI fuzzy finder. `Go`
   - [grex](https://github.com/pemistahl/grex) - command-line tool and library with Python bindings for generating regular expressions from user-provided test cases. `Rust`
 - **Software Development**
+  - [jwt-cli](https://github.com/mike-engel/jwt-cli) - CLI tool to decode and encode JWTs. `Rust`
   - [ls-lint](https://github.com/loeffel-io/ls-lint) - directory and filename linter, bring some structure to the project filesystem. `Go`
   - [tokei](https://github.com/XAMPPRocky/tokei) - count your code, quickly. `Rust`
   - [varlock](https://github.com/dmno-dev/varlock) - .env files built for sharing powered by @env-spec decorator comments. `TypeScript` `JavaScript`
@@ -382,23 +382,11 @@ Here are some useful Linux system commands:
 
 ## Enhancements
 
-### API
-
-- [bruno](https://github.com/usebruno/bruno) - IDE for exploring and testing API. `JavaScript`
-- [hoppscotch](https://github.com/hoppscotch/hoppscotch) - API development ecosystem, offline, on-prem & cloud, web, desktop & CLI. `TypeScript`
-- [yaak](https://github.com/mountain-loop/yaak) - desktop API client, organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC. `TypeScript` `Rust`
-
 ### Artificial Intelligence
 
 - [codeburn](https://github.com/getagentseal/codeburn) - interactive TUI dashboard for Claude Code, Codex, and Cursor cost observability. `TypeScript` `Swift`
-- [dotprompt](https://github.com/google/dotprompt) - executable GenAI prompt templates. `Python` `Java` `Go`
-- [goose](https://github.com/block/goose) - extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM. `Rust` `TypeScript`
-- [leon](https://github.com/leon-ai/leon) - open-source personal assistant. `TypeScript` `Python`
 - [logwhisperer](https://github.com/binary-knight/logwhisperer) - self-hosted, AI-powered log summarization tool. `Python` `Shell`
 - [mdream](https://github.com/harlan-zw/mdream) - convert any site to clean markdown & llm.txt. `TypeScript`
-- [opencode](https://github.com/anomalyco/opencode) - open source coding agent. `TypeScript`
-- [pdfGPT](https://github.com/bhaskatripathi/pdfGPT) - chat with the contents of your pdf file by using GPT capabilities. `Python`
-- [private-gpt](https://github.com/zylon-ai/private-gpt) - interact with your documents using the power of GPT, 100% privately, no data leaks. `Python`
 
 ### Benchmarking
 
@@ -451,14 +439,6 @@ Here are some useful Linux system commands:
 - [terrascan](https://github.com/tenable/terrascan) - detect compliance and security violations across IaC to mitigate risk before provisioning cloud native infrastructure. `Go`
 - [tflint](https://github.com/terraform-linters/tflint) - pluggable Terraform linter. `Go`
 
-### Integrated Development Environment (IDE)
-
-- [cate](https://github.com/0-AI-UG/cate) - infinite zoomable canvas for coding, editor, terminal, and browser panels in a spatial workspace. `TypeScript`
-- [cursor](https://github.com/getcursor/cursor) - AI code editor.
-- [void](https://github.com/voideditor/void) - open-source Cursor alternative. `TypeScript`
-- [windsurf](https://windsurf.com) - AI code editor.
-- [zed](https://github.com/zed-industries/zed) - high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
-
 ### Games
 
 - [clmystery](https://github.com/veltman/clmystery) - command-line murder mystery.
@@ -467,6 +447,11 @@ Here are some useful Linux system commands:
 
 - [barrier](https://github.com/debauchee/barrier) - open-source KVM software. `C` `C++`
 - [deskflow](https://github.com/deskflow/deskflow) - share a single keyboard and mouse between multiple computers. `C++`
+
+### Media
+
+- [ardour](https://github.com/Ardour/ardour) - record, edit, and mix. `C++` `C`
+- [blanket](https://github.com/rafaelmardojai/blanket) - improve focus and increase your productivity by listening to different sounds. `Python`
 
 ### Modern Replacements
 
@@ -758,6 +743,7 @@ Here are some useful Linux system commands:
 - Secrets
   - [external-secrets](https://github.com/external-secrets/external-secrets) - read information from a third-party service like AWS Secrets Manager and automatically injects the values as Kubernetes Secrets. `Go`
 - Other
+  - [k6](https://github.com/grafana/k6) - modern load testing tool. `Go` `JavaScript`
   - [k8s-dqlite](https://github.com/canonical/k8s-dqlite) - dqlite for Kubernetes. `Go`
   - [kine](https://github.com/k3s-io/kine) - Run Kubernetes on mysql, postgres, sqlite, dqlite, not etcd. `Go`
   - [kubevirt](https://github.com/kubevirt/kubevirt) - Kubernetes virtualization API and runtime in order to define and manage virtual machines. `Go`

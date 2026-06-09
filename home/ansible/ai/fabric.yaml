@@ -1,0 +1,24 @@
+- name: Fabric
+  hosts: all
+  gather_facts: false
+  vars_files:
+    - ../vars/main.yml
+
+  tasks:
+  # Installation
+  # curl -fsSL https://raw.githubusercontent.com/danielmiessler/fabric/main/scripts/installer/install.sh | bash
+  - name: Installation
+    tags: [init, update]
+    ansible.builtin.import_tasks:
+      file: ../tasks/script.yml
+    vars:
+      url: "{{ fabric_install_url }}"
+      cmd: /bin/bash -c /tmp/install.sh
+
+  # Version
+  - name: Version
+    tags: [init, update]
+    ansible.builtin.import_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: fabric --version

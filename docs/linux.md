@@ -564,7 +564,6 @@ Here are some useful Linux system commands:
   - [biome](https://github.com/biomejs/biome) - toolchain for web projects, aimed to provide functionalities to maintain them, offers formatter and linter, usable via CLI and LSP. `Rust`
   - [cheat](https://github.com/cheat/cheat) - create and view interactive cheat sheets on the command-line. `Go`
   - [epic-stack](https://github.com/epicweb-dev/epic-stack) - full stack app starter with the foundational things setup and configured for you. `TypeScript`
-  - [jwt-cli](https://github.com/mike-engel/jwt-cli) - tool to decode and encode JWTs. `Rust`
   - [mailpit](https://github.com/axllent/mailpit) - email and SMTP testing tool with API for developers. `Go`
   - [nsenter](https://man7.org/linux/man-pages/man1/nsenter.1.html) - run program in different namespaces.
   - [run](https://github.com/Esubaalew/run) - universal multi-language runner and smart REPL. `Rust`
@@ -664,6 +663,7 @@ Here are some useful Linux system commands:
 - [mergiraf](https://mergiraf.org)
 - [multi-gitter](https://github.com/lindell/multi-gitter) - update multiple repositories in with one command. `Go`
 - [opencommit](https://github.com/di-sukharev/opencommit) - generate commit messages by an LLM in 1 sec. `JavaScript`
+- [sem](https://github.com/Ataraxy-Labs/sem) - semantic version control, entity-level diffs, blame, and impact analysis on top of git. `Rust`
 - [zizmor](https://github.com/zizmorcore/zizmor) - static analysis for GitHub Actions. `Rust`
 
 ### Virtualization

@@ -136,7 +136,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - **Modern Replacements**
   - [choose](https://github.com/theryangeary/choose) - human-friendly and fast alternative to cut (and sometimes awk). `Rust`
   - [dua](https://github.com/Byron/dua-cli) - du, view disk space usage and delete unwanted data. `Rust`
-  - [just](https://github.com/casey/just) - just a command runner. `Rust`
   - [procs](https://github.com/dalance/procs) - [ps](https://linux.die.net/man/1/ps), with better sorting, tree support, and more. `Rust`
 - **Monitoring**
   - [btop](https://github.com/aristocratos/btop) - monitor of resources. `C/C++`
@@ -232,6 +231,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 [Rust](https://rust-lang.org)
 
 - cargo
+  - [just](https://github.com/casey/just) - just a command runner. `Rust`
   - [pyscan](https://github.com/ohaswin/pyscan) - dependency vulnerability scanner. `Rust` `Shell`
 
 ### Orchestration

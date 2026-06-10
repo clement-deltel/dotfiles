@@ -165,6 +165,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [onyx](https://github.com/onyx-dot-app/onyx) - open source AI platform, AI chat with advanced features that works with every LLM. `Python`
 - [pathway](https://github.com/pathwaycom/pathway) - ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG. `Python`
 - [repomix](https://github.com/yamadashy/repomix) - packs your entire repository into a single, AI-friendly file, perfect for when you need to feed your codebase to Large Language Models (LLMs) or other AI tools. `TypeScript`
+- [whichllm](https://github.com/Andyyyy64/whichllm) - find the local LLM that actually runs and performs best on your hardware. `Python`
 
 ### MCP
 
@@ -178,6 +179,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [agentmemory](https://github.com/rohitg00/agentmemory) - persistent memory for AI coding agents based on real-world benchmarks. `TypeScript`
 - [beads](https://github.com/steveyegge/beads) - memory upgrade for your coding agent. `Go`
 - [memori](https://github.com/MemoriLabs/Memori) - agent-native memory infrastructure, a LLM-agnostic layer that turns agent execution and conversation into structured, persistent state for production systems. `Python` `TypeScript`
+- [mempalace](https://github.com/MemPalace/mempalace) - open-source AI memory system. `Python`
 - [recall](https://github.com/joseairosa/recall) - redis-powered persistent memory for LLMs. `TypeScript` `JavaScript`
 - [ruvector](https://github.com/ruvnet/RuVector) - high performance, real-time, self-learning AI, vector GNN, memory database. `Rust`
 

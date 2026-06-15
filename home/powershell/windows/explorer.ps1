@@ -25,8 +25,8 @@
 
 
 #------------------------------[Declarations]---------------------------
-$tag = args[0]
-$machine = args[1]
+$tag = $args[0]
+$machine = $args[1]
 
 $quickAccessFile = "C:\Users\$Env:USERNAME\AppData\Roaming\microsoft\windows\recent\automaticdestinations\f01b4d95cf55d32a.automaticDestinations-ms"
 $localBackupDirectory = "C:\Temp"

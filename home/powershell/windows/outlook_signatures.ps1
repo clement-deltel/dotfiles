@@ -25,8 +25,8 @@
 
 
 #------------------------------[Declarations]---------------------------
-$tag = args[0]
-$machine = args[1]
+$tag = $args[0]
+$machine = $args[1]
 
 $signaturesDirectory = "C:\Users\$Env:USERNAME\AppData\Roaming\Microsoft\Signatures"
 $localBackupDirectory = "C:\Temp"

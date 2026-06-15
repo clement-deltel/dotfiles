@@ -24,8 +24,8 @@
 #>
 
 #------------------------------[Declarations]---------------------------
-$tag = args[0]
-$machine = args[1]
+$tag = $args[0]
+$machine = $args[1]
 
 $chromeUserDataDirectory = "C:\Users\$Env:USERNAME\AppData\Local\Google\Chrome"
 $localBackupDirectory = "C:\Temp"

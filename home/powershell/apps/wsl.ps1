@@ -24,8 +24,8 @@
 #>
 
 #------------------------------[Declarations]---------------------------
-$tag = args[0]
-$machine = args[1]
+$tag = $args[0]
+$machine = $args[1]
 
 $distribution = "Ubuntu-22.04"
 $localBackupDirectory = "C:\Temp"

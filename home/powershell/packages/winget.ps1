@@ -24,8 +24,8 @@
 #>
 
 #------------------------------[Declarations]---------------------------
-$tag = args[0]
-$machine = args[1]
+$tag = $args[0]
+$machine = $args[1]
 
 $appleDevicesId = "9NP83LWLPZ9K"
 $netflixId = "9WZDNCRFJ3TJ"

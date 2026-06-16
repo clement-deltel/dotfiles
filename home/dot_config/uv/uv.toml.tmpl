@@ -1,8 +1,14 @@
 # uv Configuration File
 # https://docs.astral.sh/uv/reference/settings/#configuration
 
+# Default version specifier when adding a dependency
+add-bounds = "major"
 # Compile Python files to bytecode after installation
 compile-bytecode = true
+# Limit candidate packages to those that were uploaded prior to the given date
+exclude-newer = "1 week"
+# Limit candidate packages for specific packages to those that were uploaded prior to the given date
+exclude-newer-package = {}
 # Extra URLs of package indexes to use, in addition to --index-url
 # extra-index-url = ["https://download.pytorch.org/whl/cpu"]
 
@@ -10,6 +16,8 @@ compile-bytecode = true
 # Only use results from the first index that returns a match for a given package name
 index-strategy = "first-index"
 # Search for every package name across all indexes, exhausting the versions from the first index before moving on to the next
+# index-strategy = "unsafe-first-match"
+# Search for every package name across all indexes, preferring the "best" version found. If a package version is in multiple indexes, only look at the entry for the first index
 # index-strategy = "unsafe-best-match"
 
 # Whether to allow Python downloads.
@@ -19,7 +27,7 @@ python-install-mirror = "https://github.com/astral-sh/python-build-standalone/re
 # Whether to prefer using Python installations that are already present on the system, or those that are downloaded and installed by uv
 python-preference = "managed"
 # Enforce a requirement on the version of uv
-required-version = ">=0.11.2"
+required-version = ">=0.11.14"
 # Strategy to use when selecting between the different compatible versions for a given package requirement
 resolution = "highest"
 

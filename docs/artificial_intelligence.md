@@ -18,6 +18,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
   - [App Builder](#app-builder)
   - [Claude Code](#claude-code)
   - [Context](#context)
+  - [Cost](#cost)
   - [Diffusion](#diffusion)
   - [Harness](#harness-1)
     - [OpenClaw](#openclaw)
@@ -45,10 +46,11 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ## Glossary
 
-- *LLM*: Large Language Model.
-- *MCP*: Model Context Protocol.
+- *LLM*: Large Language Model
+- *LoRA*: Low-Rank Adaptation
+- *MCP*: Model Context Protocol
 - *OCR*: Optical Character Recognition
-- *RAG*: Retrieval-Augmented Generation.
+- *RAG*: Retrieval-Augmented Generation
 
 ## Current
 
@@ -90,6 +92,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 #### Coding
 
+- [codegraph](https://github.com/colbymchenry/codegraph) - pre-indexed code knowledge graph, auto syncs on code changes. `TypeScript`
 - [coder](https://github.com/coder/coder) - secure environments for developers and their agents. `Go` `TypeScript`
 - [entire-cli](https://github.com/entireio/cli) - hooks into your git workflow to capture AI agent sessions on every push, unifying your code with its context and reasoning. `Go`
 - [repoaudit](https://github.com/PurCL/RepoAudit) - autonomous LLM-agent for large-scale, repository-level code auditing. `Python`
@@ -125,6 +128,11 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [cocoindex](https://github.com/cocoindex-io/cocoindex) - incremental engine for long horizon agents. `Python` `Rust`
 - [context7](https://github.com/upstash/context7) - up-to-date code documentation for LLMs and AI code editors. `TypeScript`
+
+### Cost
+
+- [agentsview](https://github.com/kenn-io/agentsview) - local-first session intelligence and analytics for coding agents. `Go` `TypeScript`
+- [tokuin](https://github.com/nooscraft/tokuin) - estimates LLM tokens/costs and runs provider-aware load tests. `Rust` `Python`
 
 ### Diffusion
 
@@ -199,6 +207,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 ### Prompt
 
 - [dotprompt](https://github.com/google/dotprompt) - executable GenAI prompt templates. `Python` `Java` `Go`
+- [prompts.chat](https://github.com/f/prompts.chat) - share, discover, and collect prompts from the community.
 - [prompt-eng-interactive-tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) - Anthropic's interactive prompt engineering tutorial.
 - [system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) - system prompts, internal tools & AI models.
 - [system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks) - collection of extracted system prompts from popular chatbots like ChatGPT, Claude & Gemini.
@@ -216,9 +225,12 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### Skills
 
+- [agent-skills](https://github.com/addyosmani/agent-skills) - production-grade engineering skills for AI coding agents. `Shell` `JavaScript`
 - [agent-skills](https://github.com/vercel-labs/agent-skills) - vercel's official collection of agent skills. `JavaScript` `Shell` `TypeScript`
 - [skills](https://github.com/anthropics/skills) - public repository for agent skills. `Python`
 - [skills](https://github.com/huggingface/skills) - give your agents the power of the Hugging Face ecosystem. `Python`
+- [skills](https://github.com/mattpocock/skills) - skills for real engineers, straight from my .claude directory. `Shell`
+- [skillspectator](https://github.com/NVIDIA/SkillSpector) - security scanner for AI agent skills, detect vulnerabilities, malicious patterns, and security risks. `Python`
 - [superpowers](https://github.com/obra/superpowers) - agentic skills framework & software development methodology that works. `Shell` `JavaScript`
 
 ### Specifications
@@ -244,7 +256,6 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [headroom](https://github.com/chopratejas/headroom) - compress tool outputs, logs, files, and RAG chunks before they reach the LLM, 60-95% fewer tokens, same answers. `Python` `Rust`
 - [manifest](https://github.com/mnfst/manifest) - smart model routing for personal AI agents, cut costs up to 70%. `TypeScript`
 - [semble](https://github.com/MinishLab/semble) - fast and accurate code search for agents, uses ~98% fewer tokens than grep+read. `Python`
-- [tokuin](https://github.com/nooscraft/tokuin) - estimates LLM tokens/costs and runs provider-aware load tests. `Rust` `Python`
 
 ### Transformers
 

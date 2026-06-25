@@ -508,11 +508,18 @@ wezterm.on("gui-startup", function()
   }
   tab2:set_title("Dashboard")
 
-  -- Third tab: WSL Ubuntu in /home/ubuntu directory
-  local tab3, _, _ = window:spawn_tab { cwd = "/home/ubuntu", domain = { DomainName = "WSL:Ubuntu" } }
-  tab3:set_title("Ubuntu")
+  -- Third tab: Hermes Coworker agent
+  local tab3, _, _ = window:spawn_tab {
+    args = {"zsh", "-c", "coworker chat"},
+    cwd = "/home/ubuntu",
+    domain = { DomainName = "WSL:Ubuntu" } }
+  tab3:set_title("Hermes")
 
-  pane23:activate()
+  -- Fourth tab: WSL Ubuntu in /home/ubuntu directory
+  local tab4, _, _ = window:spawn_tab { cwd = "/home/ubuntu", domain = { DomainName = "WSL:Ubuntu" } }
+  tab4:set_title("Ubuntu")
+
+  tab4:activate()
 
   mux.set_active_workspace "work"
 end)

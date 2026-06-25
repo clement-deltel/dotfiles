@@ -113,6 +113,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### App Builder
 
+- [go-micro](https://github.com/micro/go-micro) - agent harness and service framework. `Go`
 - [gradio](https://github.com/gradio-app/gradio) - build and share delightful machine learning apps. `Python` `Svelte` `TypeScript`
 - [openharness](https://github.com/HKUDS/OpenHarness) - core lightweight agent infrastructure, tool-use, skills, memory, and multi-agent coordination. `Python`
 
@@ -177,6 +178,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### MCP
 
+- [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) - indexes codebases into a persistent knowledge graph, average repo in milliseconds, 158 languages, sub-ms queries, 99% fewer tokens, single static binary, zero dependencies. `C` `C++`
 - [codemcp](https://github.com/ezyang/codemcp) - coding assistant MCP for Claude desktop. `Python`
 - [gitmcp](https://github.com/idosal/git-mcp) - free, open-source, remote MCP server for any GitHub project. `TypeScript`
 - [mcp](https://github.com/BrowserMCP/mcp) -  MCP server that allows AI applications to control your browser. `TypeScript`
@@ -264,6 +266,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 ### Watermark Removal
 
 - [remove-ai-watermarks](https://github.com/wiltodelta/remove-ai-watermarks) - CLI and library for removing visible (Gemini) and invisible (SynthID, C2PA, EXIF) AI watermarks from images. `Python`
+- [gemini-watermark-remover](https://github.com/GargantuaX/gemini-watermark-remover) - high-performance, 100% client-side tool for removing Gemini AI image & video watermarks, using mathematically precise Reverse Alpha Blending. `JavaScript`
 - [GeminiWatermarkTool](https://github.com/allenk/GeminiWatermarkTool) - VEO / Gemini 3.5 Nano Banana Pro watermark maintenance tool. `C++`
 
 ### Use Cases

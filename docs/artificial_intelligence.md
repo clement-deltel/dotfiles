@@ -71,6 +71,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 ### Agents
 
 - [agent-desktop](https://github.com/lahfir/agent-desktop) - native desktop automation CLI for AI agents, control any application through OS accessibility trees with structured JSON output and deterministic element refs. `Rust`
+- [agent-reach](https://github.com/Panniantong/Agent-Reach) - give your AI agent eyes to see the entire internet. `Python`
 - [agentscope](https://github.com/agentscope-ai/agentscope) - build and run agents you can see, understand and trust. `Python`
 - [agents.md](https://github.com/agentsmd/agents.md) - simple, open format for guiding coding agents. `TypeScript`
 - [cua](https://github.com/trycua/cua) - infrastructure for computer-use agents. Sandboxes, SDKs, and benchmarks to train and evaluate AI agents that can control full desktops. `Python` `TypeScript`
@@ -79,6 +80,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [lobehub](https://github.com/lobehub/lobehub) - space for work and life — to find, build, and collaborate with agent teammates that grow with you. `TypeScript`
 - [mini-agi](https://github.com/muellerberndt/mini-agi) - simple general-purpose AI agent based on the OpenAI API. `Python`
 - [opencode](https://github.com/anomalyco/opencode) - open source coding agent. `TypeScript`
+- [orca](https://github.com/stablyai/orca) - ADE for working with a fleet of parallel agents. `TypeScript`
 - [paseo](https://github.com/getpaseo/paseo) - coding agents from your phone, desktop and CLI. `TypeScript`
 - [ralph](https://github.com/snarktank/ralph) - autonomous AI agent loop that runs repeatedly until all PRD items are complete. `TypeScript` `Shell`
 - [rowboat](https://github.com/rowboatlabs/rowboat) - open-source AI coworker, with memory. `TypeScript`
@@ -169,11 +171,13 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### LLM
 
+- [airllm](https://github.com/lyogavin/airllm) - 70B inference with single 4GB GPU. `Python`
 - [anything-llm](https://github.com/Mintplex-Labs/anything-llm) - all-in-one desktop & docker AI application with built-in RAG, AI agents, no-code agent builder, MCP compatibility, and more. `JavaScript`
 - [localai](https://github.com/mudler/LocalAI) - free & open source alternative to OpenAI, Claude and others. Drop-in replacement for OpenAI, running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. `Go`
 - [onyx](https://github.com/onyx-dot-app/onyx) - open source AI platform, AI chat with advanced features that works with every LLM. `Python`
 - [pathway](https://github.com/pathwaycom/pathway) - ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG. `Python`
 - [repomix](https://github.com/yamadashy/repomix) - packs your entire repository into a single, AI-friendly file, perfect for when you need to feed your codebase to Large Language Models (LLMs) or other AI tools. `TypeScript`
+- [unsloth](https://github.com/unslothai/unsloth) - web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally. `Python` `TypeScript`
 - [whichllm](https://github.com/Andyyyy64/whichllm) - find the local LLM that actually runs and performs best on your hardware. `Python`
 
 ### MCP
@@ -229,6 +233,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [agent-skills](https://github.com/addyosmani/agent-skills) - production-grade engineering skills for AI coding agents. `Shell` `JavaScript`
 - [agent-skills](https://github.com/vercel-labs/agent-skills) - vercel's official collection of agent skills. `JavaScript` `Shell` `TypeScript`
+- [pm-skills](https://github.com/phuryn/pm-skills) - 100+ agentic skills, commands, and plugins.
 - [skills](https://github.com/anthropics/skills) - public repository for agent skills. `Python`
 - [skills](https://github.com/huggingface/skills) - give your agents the power of the Hugging Face ecosystem. `Python`
 - [skills](https://github.com/mattpocock/skills) - skills for real engineers, straight from my .claude directory. `Shell`

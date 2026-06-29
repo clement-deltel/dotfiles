@@ -663,6 +663,7 @@ Here are some useful Linux system commands:
 - [lefthook](https://github.com/evilmartians/lefthook) - fast and powerful git hooks manager for any type of projects. `Go`
 - [mergiraf](https://mergiraf.org)
 - [multi-gitter](https://github.com/lindell/multi-gitter) - update multiple repositories in with one command. `Go`
+- [no-mistakes](https://github.com/kunchenguid/no-mistakes) - git push no-mistakes. `Go`
 - [opencommit](https://github.com/di-sukharev/opencommit) - generate commit messages by an LLM in 1 sec. `JavaScript`
 - [sem](https://github.com/Ataraxy-Labs/sem) - semantic version control, entity-level diffs, blame, and impact analysis on top of git. `Rust`
 - [zizmor](https://github.com/zizmorcore/zizmor) - static analysis for GitHub Actions. `Rust`
@@ -688,8 +689,10 @@ Here are some useful Linux system commands:
 
 - [browser](https://github.com/lightpanda-io/browser) - headless browser designed for AI and automation. `Zig`
 - [hey](https://github.com/rakyll/hey) - HTTP load generator, apachebench (ab) replacement. `Go`
+- [kage](https://github.com/tamnd/kage) - shadow any website for offline viewing, with the JavaScript stripped out. `Go`
 - [monolith](https://github.com/Y2Z/monolith) - CLI tool and library for saving complete web pages as a single HTML file. `Rust`
 - [oha](https://github.com/hatoo/oha) - HTTP load generator, with tui animation. `Rust`
+- [pake](https://github.com/tw93/Pake) - Turn any webpage into a desktop app with one command. `Rust`
 - [second-order](https://github.com/mhmdiaa/second-order) - second-order subdomain takeover scanner. `Go`
 
 ### zsh

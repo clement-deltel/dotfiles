@@ -15,6 +15,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
     - [Coding](#coding)
     - [Orchestration](#orchestration)
     - [Research](#research)
+    - [Terminal](#terminal)
   - [App Builder](#app-builder)
   - [Claude Code](#claude-code)
   - [Context](#context)
@@ -25,6 +26,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
   - [Inference](#inference)
   - [Infrastructure](#infrastructure)
   - [LLM](#llm)
+  - [Local](#local)
   - [MCP](#mcp)
   - [Memory](#memory)
   - [Neural Networks](#neural-networks)
@@ -74,10 +76,12 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [agent-reach](https://github.com/Panniantong/Agent-Reach) - give your AI agent eyes to see the entire internet. `Python`
 - [agentscope](https://github.com/agentscope-ai/agentscope) - build and run agents you can see, understand and trust. `Python`
 - [agents.md](https://github.com/agentsmd/agents.md) - simple, open format for guiding coding agents. `TypeScript`
+- [background-agents](https://github.com/ColeMurray/background-agents) - open-source background agents coding system. `TypeScript` `Python`
 - [cua](https://github.com/trycua/cua) - infrastructure for computer-use agents. Sandboxes, SDKs, and benchmarks to train and evaluate AI agents that can control full desktops. `Python` `TypeScript`
 - [goose](https://github.com/block/goose) - extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM. `Rust` `TypeScript`
 - [kimi-cli](https://github.com/MoonshotAI/kimi-cli) - CLI agent. `Python` `TypeScript`
 - [lobehub](https://github.com/lobehub/lobehub) - space for work and life — to find, build, and collaborate with agent teammates that grow with you. `TypeScript`
+- [mindwalk](https://github.com/cosmtrek/mindwalk) - visualization tool that replays coding-agent sessions on a 3D map of your codebase. `Go` `TypeScript`
 - [mini-agi](https://github.com/muellerberndt/mini-agi) - simple general-purpose AI agent based on the OpenAI API. `Python`
 - [opencode](https://github.com/anomalyco/opencode) - open source coding agent. `TypeScript`
 - [orca](https://github.com/stablyai/orca) - ADE for working with a fleet of parallel agents. `TypeScript`
@@ -105,6 +109,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [1code](https://github.com/21st-dev/1code) - orchestration layer for coding agents. `TypeScript`
 - [crewai](https://github.com/crewAIInc/crewAI) - framework for orchestrating role-playing, autonomous AI agents. `Python`
+- [gastown](https://github.com/gastownhall/gastown) - multi-agent workspace manager. `Go`
 - [ruflo](https://github.com/ruvnet/ruflo) - deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems, feature self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration. `TypeScript` `JavaScript`
 - [sandcastle](https://github.com/mattpocock/sandcastle) - orchestrate sandboxed coding agents with sandcastle.run(). `TypeScript`
 - [sim](https://github.com/simstudioai/sim) - build, deploy, and orchestrate AI agents, this is the central intelligence layer for your AI workforce. `TypeScript`
@@ -112,6 +117,10 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 #### Research
 
 - [mirothinker](https://github.com/MiroMindAI/MiroThinker) - deep research agent optimized for complex research and prediction tasks. `Python`
+
+#### Terminal
+
+- [herdr](https://github.com/ogulcancelik/herdr) - agent multiplexer that lives in your terminal. `Rust`
 
 ### App Builder
 
@@ -173,11 +182,15 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [airllm](https://github.com/lyogavin/airllm) - 70B inference with single 4GB GPU. `Python`
 - [anything-llm](https://github.com/Mintplex-Labs/anything-llm) - all-in-one desktop & docker AI application with built-in RAG, AI agents, no-code agent builder, MCP compatibility, and more. `JavaScript`
-- [localai](https://github.com/mudler/LocalAI) - free & open source alternative to OpenAI, Claude and others. Drop-in replacement for OpenAI, running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. `Go`
 - [onyx](https://github.com/onyx-dot-app/onyx) - open source AI platform, AI chat with advanced features that works with every LLM. `Python`
 - [pathway](https://github.com/pathwaycom/pathway) - ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG. `Python`
 - [repomix](https://github.com/yamadashy/repomix) - packs your entire repository into a single, AI-friendly file, perfect for when you need to feed your codebase to Large Language Models (LLMs) or other AI tools. `TypeScript`
 - [unsloth](https://github.com/unslothai/unsloth) - web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally. `Python` `TypeScript`
+
+### Local
+
+- [localai](https://github.com/mudler/LocalAI) - free & open source alternative to OpenAI, Claude and others. Drop-in replacement for OpenAI, running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. `Go`
+- [local-llm](https://github.com/jamesob/local-llm) - everything I know about running LLMs locally. `Shell`
 - [whichllm](https://github.com/Andyyyy64/whichllm) - find the local LLM that actually runs and performs best on your hardware. `Python`
 
 ### MCP
@@ -207,6 +220,8 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### Project Management
 
+- [planning-with-files](https://github.com/OthmanAdi/planning-with-files) - persistent file-based planning for AI coding agents and long-running agentic tasks, crash-proof markdown plans that survive context loss and /clear, plus a deterministic completion gate and multi-agent shared state on disk. `Python` `Shell` `Powershell`
+- [plannotator](https://github.com/backnotprop/plannotator) - annotate and review coding agent plans and code diffs visually, share with your team, send feedback to agents with one click. `TypeScript`
 - [symphony](https://github.com/openai/symphony) - turn project work into isolated, autonomous implementation runs, allowing teams to manage work instead of supervising coding agents. `Elixir`
 - [vibe-kanban](https://github.com/BloopAI/vibe-kanban) - use kanban issues to plan work, and when you're ready create workspaces where coding agents can execute. `Rust` `TypeScript`
 

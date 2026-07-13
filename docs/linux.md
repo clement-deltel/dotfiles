@@ -747,6 +747,7 @@ Here are some useful Linux system commands:
 - Secrets
   - [external-secrets](https://github.com/external-secrets/external-secrets) - read information from a third-party service like AWS Secrets Manager and automatically injects the values as Kubernetes Secrets. `Go`
 - Other
+  - [dragonfly](https://github.com/dragonflyoss/dragonfly) - delivers efficient, stable, and secure data distribution and acceleration powered by P2P technology, with an optional content‑addressable filesystem that accelerates OCI container launch. `Go`
   - [k6](https://github.com/grafana/k6) - modern load testing tool. `Go` `JavaScript`
   - [k8s-dqlite](https://github.com/canonical/k8s-dqlite) - dqlite for Kubernetes. `Go`
   - [kine](https://github.com/k3s-io/kine) - Run Kubernetes on mysql, postgres, sqlite, dqlite, not etcd. `Go`

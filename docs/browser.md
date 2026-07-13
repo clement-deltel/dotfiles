@@ -7,6 +7,7 @@ Here is a list of browser extensions that I am currently using, as well as tools
 - [Current](#current)
   - [Authentication](#authentication)
   - [Bookmarks](#bookmarks)
+  - [Media](#media)
   - [Meetings](#meetings)
   - [Privacy](#privacy)
   - [Shopping](#shopping)
@@ -20,6 +21,7 @@ Here is a list of browser extensions that I am currently using, as well as tools
   - [Privacy](#privacy-1)
   - [Software Development](#software-development-1)
   - [Google](#google)
+  - [Translate and Write](#translate-and-write-1)
   - [Other](#other-1)
 
 ## Current
@@ -32,13 +34,21 @@ Here is a list of browser extensions that I am currently using, as well as tools
 
 - [Raindrop.io: all-in-one bookmark manager](https://chromewebstore.google.com/detail/raindropio/ldgfbffkinooeloadekpmfoklnobpien)
 
+### Media
+
+- [Clipboard2File](https://chromewebstore.google.com/detail/clipboard2file-lite/anhgmildenngehahlcgnaakdenghaobi)
+- [SponsorBlock](https://chromewebstore.google.com/detail/sponsorblock-for-youtube/mnjggcdmjocbbbhaepdhchncahnbgone)
+- [Unhook - Remove YouTube Recommended & Shorts](https://chromewebstore.google.com/detail/unhook-remove-youtube-rec/khncfooichmfjbepaaaebmommgaepoid)
+
 ### Meetings
 
 - [Cisco Webex Content Sharing](https://chromewebstore.google.com/detail/cisco-webex-content-shari/ifbdadgbpalmagalacllfaflfakmfkac)
 
 ### Privacy
 
-- [ClearURLs](https://chromewebstore.google.com/detail/clearurls/lckanjgmijmafbedllaakclkaicjfmnk)
+- [Adnauseam](https://addons.mozilla.org/en-US/firefox/addon/adnauseam)
+- [Chameleon](https://addons.mozilla.org/en-US/firefox/addon/chameleon-ext)
+- [Consent-O-Matic](https://chromewebstore.google.com/detail/consent-o-matic/mdjildafknihdffpkfmmpnpoiajfjnjd)
 - [Ghostery Tracker & Ad Blocker - Privacy AdBlock](https://chromewebstore.google.com/detail/ghostery-tracker-ad-block/mlomiejdfkolichcflejclcbmpeaniij)
 - [uBlock Origin: finally an efficient blocker, easy on CPU and memory.](https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)
 
@@ -54,12 +64,12 @@ Here is a list of browser extensions that I am currently using, as well as tools
 ### Translate and Write
 
 - [Google Translate](https://chromewebstore.google.com/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb)
-- [Grammarly: AI Writing and Grammar Check App](https://chromewebstore.google.com/detail/grammarly-ai-writing-and/kbfnbcaeplbcioakkpcpgfkobkghlhen)
+- [Harper](https://chromewebstore.google.com/detail/private-grammar-checker-h/lodbfhdipoipcjmlebjbgmmgekckhpfb)
 
 ### Other
 
 - [Dark Reader](https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)
-- [Unhook - Remove YouTube Recommended & Shorts](https://chromewebstore.google.com/detail/unhook-remove-youtube-rec/khncfooichmfjbepaaaebmommgaepoid)
+- [Flagfox](https://addons.mozilla.org/en-US/firefox/addon/flagfox)
 
 ## Enhancements
 
@@ -82,6 +92,7 @@ Here is a list of browser extensions that I am currently using, as well as tools
 
 ### Privacy
 
+- [ClearURLs](https://chromewebstore.google.com/detail/clearurls/lckanjgmijmafbedllaakclkaicjfmnk)
 - [Disconnect](https://chromewebstore.google.com/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo) - disconnect tracker protection makes the web more private, secure, and faster.
 - [uBlacklist](https://chromewebstore.google.com/detail/ublacklist/pncfbmialoiaghdehhbnbhkkgmjanfhe) - blocks sites you specify from appearing in Google search results.
 
@@ -100,10 +111,14 @@ Here is a list of browser extensions that I am currently using, as well as tools
 - [Google Docs Offline](https://chromewebstore.google.com/detail/google-docs-offline/ghbmnnjooekpmoecnnnilnnbdlolhkhi)
 - [Google Translate](https://chromewebstore.google.com/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb)
 
+### Translate and Write
+
+- [DeepL Translate](https://chromewebstore.google.com/detail/deepl-translate/cofdbpoegempjloogbagkncekinflcnj) - translate while you read and write, the world’s most accurate translator.
+- [Grammarly: AI Writing and Grammar Check App](https://chromewebstore.google.com/detail/grammarly-ai-writing-and/kbfnbcaeplbcioakkpcpgfkobkghlhen)
+
 ### Other
 
 - [Better Viewer](https://chromewebstore.google.com/detail/betterviewer/llcpfkbjgkpmapiidpnohffjmmnhpmpb) - makes image viewing faster, easier, and more fun.
-- [DeepL Translate](https://chromewebstore.google.com/detail/deepl-translate/cofdbpoegempjloogbagkncekinflcnj) - translate while you read and write, the world’s most accurate translator.
 - [Link Redirect Trace](https://chromewebstore.google.com/detail/link-redirect-trace/nnpljppamoaalgkieeciijbcccohlpoh) - redirect path analyzer.
 - [The Marvelous Suspender](https://chromewebstore.google.com/detail/the-marvellous-suspender/noogafoofpebimajpfpamcfhoaifemoa) - make your computer run smoothly by suspending the tabs you aren't using.
 - [WhatFont](https://chromewebstore.google.com/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm) - identify fonts on web pages.

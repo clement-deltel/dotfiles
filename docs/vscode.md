@@ -74,7 +74,6 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Nix IDE](https://marketplace.visualstudio.com/items?itemName=jnoortheen.nix-ide) - nix language support - syntax highlighting, formatting, and error reporting.
 - [Open in GitHub, Bitbucket, Gitlab...](https://marketplace.visualstudio.com/items?itemName=ziyasal.vscode-open-in-github) - jump to a source code line in Github, Bitbucket, Gitlab, VisualStudio.com.
 - [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff) - compare (diff) text selections within a file, across files, or to the clipboard.
-- [Paste and Indent](https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-paste-and-indent) - paste some code with "correct" indentation.
 - [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock) - subtly change the workspace color of your workspace.
 - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) - easily switch between projects.
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) - performant, feature-rich language server.
@@ -98,7 +97,6 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Tasks Shell Input](https://marketplace.visualstudio.com/items?itemName=augustocdias.tasks-shell-input) - use shell commands as input for your tasks.
 - [ty](https://marketplace.visualstudio.com/items?itemName=astral-sh.ty) - support for the ty type checker and language server.
 - [vscode-base64](https://marketplace.visualstudio.com/items?itemName=adamhartford.vscode-base64) - base64 encode/decode the current selections.
-- [vscode-pets](https://marketplace.visualstudio.com/items?itemName=tonybaloney.vscode-pets) - pets for your Visual Studio Code.
 - [WakaTime](https://marketplace.visualstudio.com/items?itemName=vscode-wakatime): metrics, insights, and time tracking automatically generated from your programming activity.
 - [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) - open any folder in the Windows Subsystem for Linux (WSL).
 - [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) - yaml language support by Red Hat, with built-in Kubernetes syntax support.
@@ -130,15 +128,17 @@ Here is a list of Visual Studio Code extensions that I am currently using, that 
 - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - real-time collaborative development from the comfort of your favorite tools.
 - [Makefile Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools) - makefile support, C/C++ IntelliSense, build, debug/run. **Reason**: not needed after all.
 - [Multiple cursor case preserve](https://marketplace.visualstudio.com/items?itemName=Cardinal90.multi-cursor-case-preserve) - preserves case when editing with multiple cursors.
-- [VSColors](https://marketplace.visualstudio.com/items?itemName=kevscript.vscolors) - color format converter. Supports HEX(A), RGB(A) and HSL(A) formats. **Reason**: not using.
+- [Paste and Indent](https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-paste-and-indent) - paste some code with "correct" indentation.
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) - plugin that autocompletes filenames.
 - [PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml) - rich PlantUML support.
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - code formatter using prettier.
 - [Puppet](https://marketplace.visualstudio.com/items?itemName=puppet.puppet-vscode) - full Puppet DSL intellisense, syntax highlighting, Puppet command support, Puppet node graphs, and much more.
 - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) - show TODO, FIXME, etc. comment tags in a tree view.
+- [VSColors](https://marketplace.visualstudio.com/items?itemName=kevscript.vscolors) - color format converter. Supports HEX(A), RGB(A) and HSL(A) formats. **Reason**: not using.
 - [VS Code Counter](https://marketplace.visualstudio.com/items?itemName=uctakeoff.vscode-counter) - count lines of code in many programming languages.
 - [vscode-faker](https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-faker) - generate fake data for name, address, lorem ipsum, commerce and much more.
 - [vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf) - display pdf file.
+- [vscode-pets](https://marketplace.visualstudio.com/items?itemName=tonybaloney.vscode-pets) - pets for your Visual Studio Code.
 
 ### API
 

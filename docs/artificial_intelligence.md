@@ -23,6 +23,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
   - [Diffusion](#diffusion)
   - [Harness](#harness-1)
     - [OpenClaw](#openclaw)
+  - [Graph](#graph)
   - [Inference](#inference)
   - [Infrastructure](#infrastructure)
   - [LLM](#llm)
@@ -98,17 +99,17 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 #### Coding
 
-- [codegraph](https://github.com/colbymchenry/codegraph) - pre-indexed code knowledge graph, auto syncs on code changes. `TypeScript`
 - [coder](https://github.com/coder/coder) - secure environments for developers and their agents. `Go` `TypeScript`
 - [entire-cli](https://github.com/entireio/cli) - hooks into your git workflow to capture AI agent sessions on every push, unifying your code with its context and reasoning. `Go`
 - [repoaudit](https://github.com/PurCL/RepoAudit) - autonomous LLM-agent for large-scale, repository-level code auditing. `Python`
-- [understand-anything](https://github.com/Lum1104/Understand-Anything) -  turn any code into an interactive knowledge graph you can explore, search, and ask questions about. `TypeScript`
 - [zerostack](https://github.com/gi-dellav/zerostack) - minimalistic coding agent, optimized for memory footprint and performance. `Rust`
 
 #### Orchestration
 
 - [1code](https://github.com/21st-dev/1code) - orchestration layer for coding agents. `TypeScript`
+- [clawk](https://github.com/clawkwork/clawk) - disposable, network-restricted Linux VMs for AI coding agents. `Go`
 - [crewai](https://github.com/crewAIInc/crewAI) - framework for orchestrating role-playing, autonomous AI agents. `Python`
+- [cubesandbox](https://github.com/TencentCloud/CubeSandbox) - instant, concurrent, secure & lightweight sandbox for AI agents. `Rust` `Go` `C`
 - [gastown](https://github.com/gastownhall/gastown) - multi-agent workspace manager. `Go`
 - [ruflo](https://github.com/ruvnet/ruflo) - deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems, feature self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration. `TypeScript` `JavaScript`
 - [sandcastle](https://github.com/mattpocock/sandcastle) - orchestrate sandboxed coding agents with sandcastle.run(). `TypeScript`
@@ -133,6 +134,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [claude-code](https://github.com/anthropics/claude-code) - agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands. `Shell` `Python` `TypeScript`
 - [claude-context](https://github.com/zilliztech/claude-context) - code search MCP, Make entire codebase the context for any coding agent. `TypeScript` `Python`
 - [claude-mem](https://github.com/thedotmack/claude-mem) - plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions. `TypeScript`
+- [claude-video](https://github.com/bradautomates/claude-video) - give Claude the ability to watch any video, /watch downloads, extracts frames, transcribes, hands it all to Claude. `Python`
 - [oh-my-claude-code](https://github.com/Yeachan-Heo/oh-my-claudecode) - teams-first multi-agent orchestration. `TypeScript` `JavaScript`
 - [opcode](https://github.com/winfunc/opcode) - GUI app and toolkit, create custom agents, manage interactive sessions, run secure background agents, and more. `TypeScript` `Rust`
 
@@ -170,6 +172,13 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [nanoclaw](https://github.com/qwibitai/nanoclaw) - lightweight alternative that runs in containers for security, connects to messaging apps, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK. `TypeScript`
 - [nemoclaw](https://github.com/NVIDIA/NemoClaw) - NVIDIA plugin for secure installation of OpenClaw. `JavaScript` `TypeScript` `Shell`
 
+### Graph
+
+- [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) - indexes codebases into a persistent knowledge graph, average repo in milliseconds, 158 languages, sub-ms queries, 99% fewer tokens, single static binary, zero dependencies. `C` `C++`
+- [codegraph](https://github.com/colbymchenry/codegraph) - pre-indexed code knowledge graph, auto syncs on code changes. `TypeScript`
+- [graphify](https://github.com/Graphify-Labs/graphify) - turn any folder of code, SQL schemas, scripts, docs, papers, images, or videos into a queryable knowledge graph. `Python`
+- [understand-anything](https://github.com/Lum1104/Understand-Anything) -  turn any code into an interactive knowledge graph you can explore, search, and ask questions about. `TypeScript`
+
 ### Inference
 
 - [shimmy](https://github.com/Michael-A-Kuykendall/shimmy) - inference server, OpenAI-API compatible, GGUF + SafeTensors, hot model swap, auto-discovery, single binary. `Rust` `C`
@@ -182,6 +191,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [airllm](https://github.com/lyogavin/airllm) - 70B inference with single 4GB GPU. `Python`
 - [anything-llm](https://github.com/Mintplex-Labs/anything-llm) - all-in-one desktop & docker AI application with built-in RAG, AI agents, no-code agent builder, MCP compatibility, and more. `JavaScript`
+- [lmcache](https://github.com/LMCache/LMCache) - KV cache layer. `Python`
 - [onyx](https://github.com/onyx-dot-app/onyx) - open source AI platform, AI chat with advanced features that works with every LLM. `Python`
 - [pathway](https://github.com/pathwaycom/pathway) - ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG. `Python`
 - [repomix](https://github.com/yamadashy/repomix) - packs your entire repository into a single, AI-friendly file, perfect for when you need to feed your codebase to Large Language Models (LLMs) or other AI tools. `TypeScript`
@@ -195,7 +205,6 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### MCP
 
-- [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) - indexes codebases into a persistent knowledge graph, average repo in milliseconds, 158 languages, sub-ms queries, 99% fewer tokens, single static binary, zero dependencies. `C` `C++`
 - [codemcp](https://github.com/ezyang/codemcp) - coding assistant MCP for Claude desktop. `Python`
 - [gitmcp](https://github.com/idosal/git-mcp) - free, open-source, remote MCP server for any GitHub project. `TypeScript`
 - [mcp](https://github.com/BrowserMCP/mcp) -  MCP server that allows AI applications to control your browser. `TypeScript`
@@ -205,6 +214,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [agentmemory](https://github.com/rohitg00/agentmemory) - persistent memory for AI coding agents based on real-world benchmarks. `TypeScript`
 - [beads](https://github.com/steveyegge/beads) - memory upgrade for your coding agent. `Go`
+- [engram](https://github.com/Gentleman-Programming/engram) - persistent memory system, agent-agnostic Go binary with SQLite + FTS5, MCP server, HTTP API, CLI, and TUI. `Go`
 - [memori](https://github.com/MemoriLabs/Memori) - agent-native memory infrastructure, a LLM-agnostic layer that turns agent execution and conversation into structured, persistent state for production systems. `Python` `TypeScript`
 - [mempalace](https://github.com/MemPalace/mempalace) - open-source AI memory system. `Python`
 - [recall](https://github.com/joseairosa/recall) - redis-powered persistent memory for LLMs. `TypeScript` `JavaScript`
@@ -277,6 +287,8 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [caveman](https://github.com/JuliusBrussee/caveman) - why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman. `Python` `JavaScript`
 - [headroom](https://github.com/chopratejas/headroom) - compress tool outputs, logs, files, and RAG chunks before they reach the LLM, 60-95% fewer tokens, same answers. `Python` `Rust`
 - [manifest](https://github.com/mnfst/manifest) - smart model routing for personal AI agents, cut costs up to 70%. `TypeScript`
+- [ponytail](https://github.com/DietrichGebert/ponytail) - make the agent think like the laziest senior dev in the room. `JavaScript` `Python`
+- [pxpipe](https://github.com/teamchong/pxpipe) - cut token usage by rendering text context as images. `TypeScript`
 - [semble](https://github.com/MinishLab/semble) - fast and accurate code search for agents, uses ~98% fewer tokens than grep+read. `Python`
 
 ### Transformers
@@ -292,6 +304,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 ### Use Cases
 
 - [ai-captcha-bypass](https://github.com/aydinnyunus/ai-captcha-bypass) - AI captcha bypass. `Python`
+- [officeCLI](https://github.com/iOfficeAI/OfficeCLI) - suite purpose-built for AI agents to read, edit, and automate Word, Excel, and PowerPoint files. `C#`
 - [open-code-review](https://github.com/alibaba/open-code-review) - hybrid architecture code review tool, deterministic pipelines + LLM Agent, precise line-level comments, built-in fine-tuned ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible. `Go` `TypeScript`
 - [pdfGPT](https://github.com/bhaskatripathi/pdfGPT) - chat with the contents of your pdf file by using GPT capabilities. `Python`
 - [private-gpt](https://github.com/zylon-ai/private-gpt) - interact with your documents using the power of GPT, 100% privately, no data leaks. `Python`

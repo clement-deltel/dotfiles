@@ -506,6 +506,7 @@ Here are some useful Linux system commands:
 - Other
   - [eksctl](https://github.com/eksctl-io/eksctl) - official CLI for Amazon EKS. `Go`
   - [khi](https://github.com/GoogleCloudPlatform/khi) - transformative log viewer. `Go`
+  - [kpt](https://github.com/kptdev/kpt) - automate configuration editing. `Go`
   - [kubechecks](https://github.com/zapier/kubechecks) - check your changes before they hit the cluster. `Go`
   - [kubectlai](https://github.com/GoogleCloudPlatform/kubectl-ai) - AI powered Kubernetes assistant. `Go`
   - [kubetest2](https://github.com/kubernetes-sigs/kubetest2) - framework for launching and running end-to-end tests. `Go`
@@ -564,6 +565,7 @@ Here are some useful Linux system commands:
   - [autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell. `TypeScript`
   - [biome](https://github.com/biomejs/biome) - toolchain for web projects, aimed to provide functionalities to maintain them, offers formatter and linter, usable via CLI and LSP. `Rust`
   - [cheat](https://github.com/cheat/cheat) - create and view interactive cheat sheets on the command-line. `Go`
+  - [copybara](https://github.com/google/copybara) - tool for transforming and moving code between repositories. `Java`
   - [epic-stack](https://github.com/epicweb-dev/epic-stack) - full stack app starter with the foundational things setup and configured for you. `TypeScript`
   - [mailpit](https://github.com/axllent/mailpit) - email and SMTP testing tool with API for developers. `Go`
   - [nsenter](https://man7.org/linux/man-pages/man1/nsenter.1.html) - run program in different namespaces.

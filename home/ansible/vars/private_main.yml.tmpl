@@ -60,6 +60,11 @@ apt_packages:
 - ranger
 # Security
 - age
+- gnome-keyring              # GNOME keyring services (daemon and tools)
+- libsecret-1-0              # secret store
+- libsecret-1-dev            # secret store (development files)
+- libsecret-tools            # tool for storing and retrieving GObject passwords
+- seahorse                   # GNOME application for managing encryption keys
 # Software Development
 - build-essential            # informational list of build-essential packages
 - cmake                      # cross-platform, open-source make system
@@ -304,6 +309,7 @@ npm_packages:
 - "@commitlint/cli"
 - "@commitlint/config-conventional"
 - "@commitlint/format"
+- "@github/copilot"
 - "conventional-changelog-atom"
 - "renovate"
 

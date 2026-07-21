@@ -7,7 +7,7 @@
 # Add extension $1 to all files without any extension in the current directory
 function add-ext { find . -type f -not -name "*.*" -exec mv "{}" "{}"."$1" \;; }
 
-# Print only column x of output
+# Print only column $1 of output
 function col { awk -v col="$1" "{print $col}"; }
 
 # Create $2 copies of file $1
@@ -66,6 +66,20 @@ function ii {
   echo -e "\n${RED}Public IP Address:$NC"
   echo "$(curl -s ifconfig.me)"
   echo
+}
+
+# Update all packages and clean up
+function up {
+  sudo apt update --yes && sudo apt upgrade --yes
+  sudo apt autoremove --yes
+  sudo apt clean --yes
+  brew upgrade --yes
+  npm update --global
+  # Python
+  pyenv update
+  uv self update
+  # Artificial Intelligence
+  hermes update --yes
 }
 
 # Online cheatsheet

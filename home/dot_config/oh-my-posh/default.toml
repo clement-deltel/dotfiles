@@ -1,10 +1,21 @@
 # https://ohmyposh.dev/docs
 # https://www.nerdfonts.com
 
+async = false
 console_title_template = "{{ .Shell }} in {{ .Folder }}"
+enable_cursor_positioning = true
 final_space = false
-auto_upgrade = true
-version = 3
+shell_integration = true
+version = 4
+
+# ---------------------------------------------------------------------------- #
+#               ------- Upgrade --------
+# ---------------------------------------------------------------------------- #
+[upgrade]
+notice = false
+interval = "168h"
+auto = true
+source = "cdn"
 
 # ---------------------------------------------------------------------------- #
 #               ------- Color Palette --------

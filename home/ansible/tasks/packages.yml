@@ -7,7 +7,7 @@
   become: true
   block:
 
-  # sudo apt update -y && sudo apt install -y
+  # sudo apt update -y && sudo apt install -y <package>
   - name: "Install {{ package_type | default('packages') }}"
     tags: init
     ansible.builtin.apt:
@@ -15,7 +15,7 @@
       state: present
       update_cache: true
 
-  # sudo apt update -y && sudo apt upgrade -y
+  # sudo apt update -y && sudo apt upgrade -y <package>
   - name: "Upgrade {{ package_type | default('packages') }}"
     tags: update
     ansible.builtin.apt:
@@ -23,7 +23,7 @@
       state: latest
       update_cache: true
 
-  # sudo apt remove -y
+  # sudo apt remove -y <package>
   - name: "Remove {{ package_type | default('packages') }}"
     tags: [init, update]
     ansible.builtin.apt:

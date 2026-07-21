@@ -3,7 +3,7 @@
   ansible.builtin.debug:
     msg: "{{ taps }}"
 
-# brew tap
+# brew tap <tap>
 - name: Install taps
   tags: init
   community.general.homebrew_tap:

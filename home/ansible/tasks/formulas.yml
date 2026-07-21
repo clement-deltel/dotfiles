@@ -3,7 +3,7 @@
   ansible.builtin.debug:
     msg: "{{ formulas }}"
 
-# brew install
+# brew install <formula>
 - name: Install formulas
   tags: init
   community.general.homebrew:
@@ -11,7 +11,7 @@
     state: present
     update_homebrew: true
 
-# brew upgrade
+# brew upgrade <formula>
 - name: Upgrade formulas
   tags: update
   community.general.homebrew:

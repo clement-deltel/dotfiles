@@ -147,6 +147,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [fzf](https://github.com/junegunn/fzf) - CLI fuzzy finder. `Go`
   - [grex](https://github.com/pemistahl/grex) - command-line tool and library with Python bindings for generating regular expressions from user-provided test cases. `Rust`
 - **Software Development**
+  - [just](https://github.com/casey/just) - just a command runner. `Rust`
+  - [just-lsp](https://github.com/terror/just-lsp) - language server for just. `Rust` `TypeScript`
   - [jwt-cli](https://github.com/mike-engel/jwt-cli) - CLI tool to decode and encode JWTs. `Rust`
   - [ls-lint](https://github.com/loeffel-io/ls-lint) - directory and filename linter, bring some structure to the project filesystem. `Go`
   - [tokei](https://github.com/XAMPPRocky/tokei) - count your code, quickly. `Rust`
@@ -231,7 +233,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
 [Rust](https://rust-lang.org)
 
 - cargo
-  - [just](https://github.com/casey/just) - just a command runner. `Rust`
   - [pyscan](https://github.com/ohaswin/pyscan) - dependency vulnerability scanner. `Rust` `Shell`
 
 ### Orchestration
@@ -402,6 +403,7 @@ Here are some useful Linux system commands:
 ### Cloud
 
 - [aws-nuke](https://github.com/ekristen/aws-nuke) - remove all the resources from an AWS account. `Go`
+- [floci](https://github.com/floci-io/floci) - AWS local emulator. `Java`
 - [localstack](https://github.com/localstack/localstack) - fully functional local AWS cloud stack, develop and test your cloud & serverless apps offline. `Python`
 - [ministack](https://github.com/ministackorg/ministack) - open-source local AWS emulator, 40+ services, Terraform compatible, real databases. `Python`
 - [sourcerer](https://github.com/the-impact-craft/sourcerer) - CLI-based cloud storage explorer that provides a unified interface to view and manage files across multiple cloud providers. `Python`

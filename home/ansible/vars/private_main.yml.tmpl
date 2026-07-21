@@ -154,7 +154,7 @@ docker_packages:
 - skopeo
 docker_formulas:
 - dive
-- goodwithtech/r/dockle
+- dockle
 - grype
 - hadolint
 - lazydocker
@@ -245,6 +245,9 @@ homebrew_install_url: https://raw.githubusercontent.com/Homebrew/install/HEAD/in
 homebrew_taps:
 - anchore/syft
 - charmbracelet/tap
+- dmno-dev/tap
+- goodwithtech/r
+- terror/tap
 
 homebrew_formulas:
 # CI/CD
@@ -256,7 +259,7 @@ homebrew_formulas:
 - gonzo
 - lnav
 # Modern Replacements
-- choose
+- choose-rust
 - dua-cli
 - procs
 # Monitoring
@@ -269,12 +272,14 @@ homebrew_formulas:
 - fzf
 - grex
 # Software Development
+- just
+- just-lsp
 - jwt-cli
 - ls-lint
 - tokei
 - varlock
 # Other
-- charmbracelet/tap/freeze
+- freeze
 - tlrc
 - vhs
 - xz
@@ -395,7 +400,6 @@ uv_install_url: https://astral.sh/uv/install.sh
 rust_install_url: https://sh.rustup.rs
 
 rust_packages:
-- just
 - pyscan
 
 # ---------------------------------------------------------------------------- #

@@ -22,6 +22,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
   - [Cost](#cost)
   - [Diffusion](#diffusion)
   - [Harness](#harness-1)
+    - [Hermes](#hermes)
     - [OpenClaw](#openclaw)
   - [Graph](#graph)
   - [Inference](#inference)
@@ -84,7 +85,6 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [lobehub](https://github.com/lobehub/lobehub) - space for work and life — to find, build, and collaborate with agent teammates that grow with you. `TypeScript`
 - [mindwalk](https://github.com/cosmtrek/mindwalk) - visualization tool that replays coding-agent sessions on a 3D map of your codebase. `Go` `TypeScript`
 - [mini-agi](https://github.com/muellerberndt/mini-agi) - simple general-purpose AI agent based on the OpenAI API. `Python`
-- [opencode](https://github.com/anomalyco/opencode) - open source coding agent. `TypeScript`
 - [orca](https://github.com/stablyai/orca) - ADE for working with a fleet of parallel agents. `TypeScript`
 - [paseo](https://github.com/getpaseo/paseo) - coding agents from your phone, desktop and CLI. `TypeScript`
 - [ralph](https://github.com/snarktank/ralph) - autonomous AI agent loop that runs repeatedly until all PRD items are complete. `TypeScript` `Shell`
@@ -96,11 +96,15 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [browser-agent](https://github.com/magnitudedev/browser-agent) - vision-first browser agent. `TypeScript` `JavaScript`
 - [stagehand](https://github.com/browserbase/stagehand) - SDK for browser agents. `TypeScript`
 - [web-ui](https://github.com/browser-use/web-ui) - AI agent in your browser. `Python`
+- [wigolo](https://github.com/KnockOutEZ/wigolo) - go-to web for your AI coding agent, local-first search, fetch, crawl & research over MCP, no API keys, no cloud, $0/query. `TypeScript`
 
 #### Coding
 
 - [coder](https://github.com/coder/coder) - secure environments for developers and their agents. `Go` `TypeScript`
 - [entire-cli](https://github.com/entireio/cli) - hooks into your git workflow to capture AI agent sessions on every push, unifying your code with its context and reasoning. `Go`
+- [kimi-code](https://github.com/MoonshotAI/kimi-code) - starting point for next-gen agents. `TypeScript`
+- [opencode](https://github.com/anomalyco/opencode) - open source coding agent. `TypeScript`
+- [openinterpreter](https://github.com/openinterpreter/openinterpreter) - coding agent for low-cost models. `Rust`
 - [repoaudit](https://github.com/PurCL/RepoAudit) - autonomous LLM-agent for large-scale, repository-level code auditing. `Python`
 - [zerostack](https://github.com/gi-dellav/zerostack) - minimalistic coding agent, optimized for memory footprint and performance. `Rust`
 
@@ -111,6 +115,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [crewai](https://github.com/crewAIInc/crewAI) - framework for orchestrating role-playing, autonomous AI agents. `Python`
 - [cubesandbox](https://github.com/TencentCloud/CubeSandbox) - instant, concurrent, secure & lightweight sandbox for AI agents. `Rust` `Go` `C`
 - [gastown](https://github.com/gastownhall/gastown) - multi-agent workspace manager. `Go`
+- [openshell](https://github.com/NVIDIA/openshell) - safe and private runtime for autonomous AI agents. `Rust`
 - [ruflo](https://github.com/ruvnet/ruflo) - deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems, feature self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration. `TypeScript` `JavaScript`
 - [sandcastle](https://github.com/mattpocock/sandcastle) - orchestrate sandboxed coding agents with sandcastle.run(). `TypeScript`
 - [sim](https://github.com/simstudioai/sim) - build, deploy, and orchestrate AI agents, this is the central intelligence layer for your AI workforce. `TypeScript`
@@ -164,6 +169,11 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [leon](https://github.com/leon-ai/leon) - open-source personal assistant. `TypeScript` `Python`
 - [openclaw](https://github.com/openclaw/openclaw) - your own personal AI assistant, any OS, any platform. `TypeScript`
 - [personal-ai-infrastructure](https://github.com/danielmiessler/Personal_AI_Infrastructure) - agentic AI infrastructure for magnifying HUMAN capabilities. `TypeScript`
+
+#### Hermes
+
+- [hermes-studio](https://github.com/EKKOLearnAI/hermes-studio) - web dashboard for Hermes Agent, multi-platform AI chat, session management, scheduled jobs, usage analytics. `TypeScript`
+- [hermex](https://github.com/uzairansaruzi/hermex) - native iPhone app for Hermes agent. `Swift`
 
 #### OpenClaw
 
@@ -303,6 +313,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### Use Cases
 
+- [agent-device](github.com/callstack/agent-device) - CLI to control iOS and Android devices for AI agents. `TypeScript`
 - [ai-captcha-bypass](https://github.com/aydinnyunus/ai-captcha-bypass) - AI captcha bypass. `Python`
 - [officeCLI](https://github.com/iOfficeAI/OfficeCLI) - suite purpose-built for AI agents to read, edit, and automate Word, Excel, and PowerPoint files. `C#`
 - [open-code-review](https://github.com/alibaba/open-code-review) - hybrid architecture code review tool, deterministic pipelines + LLM Agent, precise line-level comments, built-in fine-tuned ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible. `Go` `TypeScript`

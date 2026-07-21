@@ -15,6 +15,14 @@
       url: "{{ rust_install_url }}"
       cmd: /bin/sh -c /tmp/install.sh -y
 
+  # Upgrade
+  - name: rustup - Upgrade
+    tags: update
+    ansible.builtin.command:
+      cmd: rustup update
+    register: upgrade_result
+    changed_when: upgrade_result.rc == 0
+
   # rustc - Version
   - name: Version
     tags: [init, update]

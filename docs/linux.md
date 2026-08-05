@@ -151,6 +151,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [just-lsp](https://github.com/terror/just-lsp) - language server for just. `Rust` `TypeScript`
   - [jwt-cli](https://github.com/mike-engel/jwt-cli) - CLI tool to decode and encode JWTs. `Rust`
   - [ls-lint](https://github.com/loeffel-io/ls-lint) - directory and filename linter, bring some structure to the project filesystem. `Go`
+  - [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) - fast, flexible, configuration-based command-line interface for linting files with the markdownlint library. `JavaScript`
   - [tokei](https://github.com/XAMPPRocky/tokei) - count your code, quickly. `Rust`
   - [varlock](https://github.com/dmno-dev/varlock) - .env files built for sharing powered by @env-spec decorator comments. `TypeScript` `JavaScript`
 - **Other**

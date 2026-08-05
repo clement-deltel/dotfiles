@@ -276,6 +276,7 @@ homebrew_formulas:
 - just-lsp
 - jwt-cli
 - ls-lint
+- markdownlint-cli2
 - tokei
 - varlock
 # Other
@@ -300,6 +301,8 @@ kubernetes_formulas:
 # ---------------------------------------------------------------------------- #
 #               ------- NodeJS ------
 # ---------------------------------------------------------------------------- #
+nvm_install_url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.6/install.sh
+
 node_dependencies:
 - build-essential # informational list of build-essential packages
 - ca-certificates # common CA certificates
@@ -371,7 +374,7 @@ pip_packages:
 - Pygments
 - rembg            # remove image background
 - watchdog         # filesystem events monitoring
-- whisper-live
+# - whisper-live
 
 pipx_packages:
 - poetry
@@ -390,7 +393,7 @@ pyenv_dependencies:
 - libssl-dev       # secure sockets layer toolkit
 - zlib1g-dev       # compression library
 pyenv_install_url: https://pyenv.run
-pyenv_python_version: 3.11.14
+pyenv_python_version: 3.11.15
 
 uv_install_url: https://astral.sh/uv/install.sh
 

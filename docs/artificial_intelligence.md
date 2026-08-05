@@ -64,7 +64,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### Harness
 
-- [hermes](https://github.com/NousResearch/hermes-agent) -  agent that grows with you. `Python` `TypeScript`
+- [hermes](https://github.com/NousResearch/hermes-agent) - agent that grows with you. `Python` `TypeScript`
 
 ### Prompt
 
@@ -85,6 +85,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [lobehub](https://github.com/lobehub/lobehub) - space for work and life — to find, build, and collaborate with agent teammates that grow with you. `TypeScript`
 - [mindwalk](https://github.com/cosmtrek/mindwalk) - visualization tool that replays coding-agent sessions on a 3D map of your codebase. `Go` `TypeScript`
 - [mini-agi](https://github.com/muellerberndt/mini-agi) - simple general-purpose AI agent based on the OpenAI API. `Python`
+- [onecli](https://github.com/onecli/onecli) - credential gateway with a built-in vault, give your AI agents access to services without exposing keys. `TypeScript` `Rust`
 - [orca](https://github.com/stablyai/orca) - ADE for working with a fleet of parallel agents. `TypeScript`
 - [paseo](https://github.com/getpaseo/paseo) - coding agents from your phone, desktop and CLI. `TypeScript`
 - [ralph](https://github.com/snarktank/ralph) - autonomous AI agent loop that runs repeatedly until all PRD items are complete. `TypeScript` `Shell`
@@ -139,6 +140,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [claude-code](https://github.com/anthropics/claude-code) - agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands. `Shell` `Python` `TypeScript`
 - [claude-context](https://github.com/zilliztech/claude-context) - code search MCP, Make entire codebase the context for any coding agent. `TypeScript` `Python`
 - [claude-mem](https://github.com/thedotmack/claude-mem) - plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions. `TypeScript`
+- [claude-thermos](https://github.com/izeigerman/claude-thermos) - keep Claude session warm. `Python`
 - [claude-video](https://github.com/bradautomates/claude-video) - give Claude the ability to watch any video, /watch downloads, extracts frames, transcribes, hands it all to Claude. `Python`
 - [oh-my-claude-code](https://github.com/Yeachan-Heo/oh-my-claudecode) - teams-first multi-agent orchestration. `TypeScript` `JavaScript`
 - [opcode](https://github.com/winfunc/opcode) - GUI app and toolkit, create custom agents, manage interactive sessions, run secure background agents, and more. `TypeScript` `Rust`
@@ -186,8 +188,10 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) - indexes codebases into a persistent knowledge graph, average repo in milliseconds, 158 languages, sub-ms queries, 99% fewer tokens, single static binary, zero dependencies. `C` `C++`
 - [codegraph](https://github.com/colbymchenry/codegraph) - pre-indexed code knowledge graph, auto syncs on code changes. `TypeScript`
+- [code-review-graph](https://github.com/tirth8205/code-review-graph) - local-first code intelligence graph for MCP and CLI, build a persistent codebase map so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows. `Python`
 - [graphify](https://github.com/Graphify-Labs/graphify) - turn any folder of code, SQL schemas, scripts, docs, papers, images, or videos into a queryable knowledge graph. `Python`
-- [understand-anything](https://github.com/Lum1104/Understand-Anything) -  turn any code into an interactive knowledge graph you can explore, search, and ask questions about. `TypeScript`
+- [likec4](https://github.com/likec4/likec4) - visualize, collaborate, and evolve the software architecture with always actual and live diagrams from code. `TypeScript`
+- [understand-anything](https://github.com/Lum1104/Understand-Anything) - turn any code into an interactive knowledge graph you can explore, search, and ask questions about. `TypeScript`
 
 ### Inference
 
@@ -209,6 +213,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### Local
 
+- [ds4](https://github.com/antirez/ds4) - DeepSeek 4 Flash and Pro local inference engine for Metal, CUDA and ROCm. `C` `Cuda` `Objective-C`
 - [localai](https://github.com/mudler/LocalAI) - free & open source alternative to OpenAI, Claude and others. Drop-in replacement for OpenAI, running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. `Go`
 - [local-llm](https://github.com/jamesob/local-llm) - everything I know about running LLMs locally. `Shell`
 - [whichllm](https://github.com/Andyyyy64/whichllm) - find the local LLM that actually runs and performs best on your hardware. `Python`
@@ -216,8 +221,9 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 ### MCP
 
 - [codemcp](https://github.com/ezyang/codemcp) - coding assistant MCP for Claude desktop. `Python`
+- [fastmcp](https://github.com/PrefectHQ/fastmcp) - fast, pythonic way to build MCP servers and clients. `Python`
 - [gitmcp](https://github.com/idosal/git-mcp) - free, open-source, remote MCP server for any GitHub project. `TypeScript`
-- [mcp](https://github.com/BrowserMCP/mcp) -  MCP server that allows AI applications to control your browser. `TypeScript`
+- [mcp](https://github.com/BrowserMCP/mcp) - MCP server that allows AI applications to control your browser. `TypeScript`
 - [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) - MCP server to build n8n workflows. `TypeScript`
 
 ### Memory
@@ -321,6 +327,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [private-gpt](https://github.com/zylon-ai/private-gpt) - interact with your documents using the power of GPT, 100% privately, no data leaks. `Python`
 - [qmd](https://github.com/tobi/qmd) - search engine for your docs, knowledge bases, meeting notes, whatever. `TypeScript` `Python`
 - [RedditVideoMakerBot](https://github.com/elebumm/RedditVideoMakerBot) - create Reddit videos with just one command.
+- [scroll-world](https://github.com/oso95/scroll-world) - skill that turn any brand into a scrollable 3D world. `JavaScript`
 - [surf](https://github.com/deta/surf) - personal AI notebooks, organize files & webpages and generate notes from them. `TypeScript` `Svelte`
 - [worldmonitor](https://github.com/koala73/worldmonitor) - real-time global intelligence dashboard, AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface. `TypeScript` `JavaScript`
 

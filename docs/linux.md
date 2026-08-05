@@ -216,7 +216,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 #### Python
 
 - pip
-  - [faker](https://github.com/joke2k/faker) -  generate fake data for you. `Python`
+  - [faker](https://github.com/joke2k/faker) - generate fake data for you. `Python`
   - [gitlint](https://github.com/jorisroovers/gitlint) - linting for your git commit messages. `Python`
   - [markitdown](https://github.com/microsoft/markitdown) - tool for converting files and office documents to Markdown.
   - [pre-commit](https://github.com/pre-commit/pre-commit) - framework for managing and maintaining multi-language pre-commit hooks. `Python`
@@ -397,7 +397,7 @@ Here are some useful Linux system commands:
 
 ### CI/CD
 
-- [gh-signoff](https://github.com/basecamp/gh-signoff) -  GitHub CLI extension local CI, sign off on your own work. `Shell`
+- [gh-signoff](https://github.com/basecamp/gh-signoff) - GitHub CLI extension local CI, sign off on your own work. `Shell`
 - [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local) - Tired of pushing to test your .gitlab-ci.yml? `TypeScript`
 
 ### Cloud
@@ -425,6 +425,7 @@ Here are some useful Linux system commands:
 - [f2](https://github.com/ayoisaiah/f2) - cross-platform command-line tool for batch renaming files and directories quickly and safely. `Go`
 - [lstr](https://github.com/bgreenwell/lstr) - fast, minimalist directory tree viewer. `Rust`
 - [noxdir](https://github.com/crumbyte/noxdir) - terminal utility for visualizing file system usage. `Go`
+- [superfile](https://github.com/yorukot/superfile) - pretty fancy and modern terminal file manager. `Go`
 - [watchman](https://github.com/facebook/watchman) - watches files and records, or triggers actions, when they change. `C++` `Python`
 - [yazi](https://github.com/sxyazi/yazi) - terminal file manager based on async I/O. `Rust`
 
@@ -434,7 +435,7 @@ Here are some useful Linux system commands:
 
 ### Infrastructure-as-Code (IaC)
 
-- [opentofu](https://github.com/opentofu/opentofu) -  declaratively manage your cloud infrastructure. `Go`
+- [opentofu](https://github.com/opentofu/opentofu) - declaratively manage your cloud infrastructure. `Go`
 - [puppet](https://github.com/puppetlabs/puppet) - server automation framework and application. `Ruby`
 - [sst](https://sst.dev) - build full-stack apps on your own infrastructure.
 - [terragrunt](https://github.com/gruntwork-io/terragrunt) - flexible orchestration tool that allows IaC written in OpenTofu/Terraform to scale. `Go`
@@ -563,6 +564,8 @@ Here are some useful Linux system commands:
   - [portless](https://github.com/vercel-labs/portless) - replace port numbers with stable, named local URLs. `TypeScript` `JavaScript`
   - [ttyd](https://github.com/tsl0922/ttyd) - share your terminal over the web. `C` `TypeScript`
   - [tunnelto](https://github.com/agrinman/tunnelto) - expose your local web server to the internet with a public URL. `Rust`
+- Security
+  - [semgrep](https://github.com/semgrep/semgrep) - static analysis for many languages, find bug variants with patterns that look like source code. `oCaml` `Python`
 - Other
   - [autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell. `TypeScript`
   - [biome](https://github.com/biomejs/biome) - toolchain for web projects, aimed to provide functionalities to maintain them, offers formatter and linter, usable via CLI and LSP. `Rust`
@@ -595,7 +598,7 @@ Here are some useful Linux system commands:
 ### Tasks
 
 - [poe](https://github.com/nat-n/poethepoet) - task runner that works well with poetry or uv. `Python`
-- [task](https://github.com/go-task/task) -  task runner, simpler Make alternative. `Go`
+- [task](https://github.com/go-task/task) - task runner, simpler Make alternative. `Go`
 
 ### Terminal
 

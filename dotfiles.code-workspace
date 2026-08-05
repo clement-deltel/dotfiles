@@ -37,17 +37,25 @@
         },
         "[markdown]": {
             "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
-            "editor.formatOnSave": true
         },
         // Editor
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
         "editor.guides.bracketPairs": "active",
         "editor.tabSize": 4,
         "editor.insertSpaces": true,
         // Files
         "files.eol": "\n",
-        "files.exclude": {
-            "**/.mypy_cache": true,
-        },
+        // "files.exclude": {
+        //     "**/control": true,
+        //     "**/__pycache__": true,
+        //     "**/*.py[cod]": true,
+        //     "**/.mypy_cache": true,
+        //     "**/.pyscn": true,
+        //     "**/.pytest_cache": true,
+        //     "**/.ruff_cache": true,
+        //     "**/.venv": true,
+        // },
         "files.insertFinalNewline": true,
         "files.trimFinalNewlines": true,
         "files.trimTrailingWhitespace": true,
@@ -167,12 +175,12 @@
         "git.allowForcePush": true,
         "git.autofetch": true,
         "git.autorefresh": true,
+        // "git.branchProtection": [
+        //     "main"
+        // ],
         "git.showPushSuccessNotification": true,
         // Extension - Markdownlint
-        "markdownlint.config": {
-            "MD029": false, // ordered-list-item-prefix
-            "MD059": false // link-text-should-be-descriptive
-        },
+        "markdownlint.configFile": ".markdownlint.yaml",
         //Workbench
     },
     "launch": {

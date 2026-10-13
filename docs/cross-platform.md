@@ -6,11 +6,12 @@ Here is a list of cross-platform apps that could be interesting and further enha
 
 - [Enhancements](#enhancements)
   - [API](#api)
-  - [Browsers](#browsers)
+  - [Browser](#browser)
+  - [Database](#database)
   - [Integrated Development Environment (IDE)](#integrated-development-environment-ide)
   - [Security](#security)
   - [Social](#social)
-  - [Tools](#tools)
+  - [Tool](#tool)
 
 ## Enhancements
 
@@ -20,10 +21,14 @@ Here is a list of cross-platform apps that could be interesting and further enha
 - [hoppscotch](https://github.com/hoppscotch/hoppscotch) - API development ecosystem, offline, on-prem & cloud, web, desktop & CLI. `TypeScript`
 - [yaak](https://github.com/mountain-loop/yaak) - desktop API client, organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC. `TypeScript` `Rust`
 
-### Browsers
+### Browser
 
 - [librewolf](https://codeberg.org/librewolf) - custom version of Firefox, focused on privacy, security and freedom.
 - [waterfox](https://github.com/BrowserWorks/waterfox)  -  privacy focused browser based on the popular open source browser with a red panda as a mascot. `JavaScript` `C++` `C`
+
+### Database
+
+- [dbx](https://github.com/t8y2/dbx) - database client for 100+ databases. `Rust` `TypeScript` `Vue`
 
 ### Integrated Development Environment (IDE)
 
@@ -41,6 +46,6 @@ Here is a list of cross-platform apps that could be interesting and further enha
 
 - [jitsi](https://github.com/jitsi/jitsi) - audio/video and chat communicator that supports protocols such as SIP, XMPP/Jabber, IRC and many other useful features. `Java`
 
-### Tools
+### Tool
 
 - [localsend](https://github.com/localsend/localsend) - open-source cross-platform alternative to AirDrop. `Dart` `Rust`

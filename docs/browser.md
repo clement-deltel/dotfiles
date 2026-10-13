@@ -9,6 +9,7 @@ Here is a list of browser extensions that I am currently using, as well as tools
   - [Bookmarks](#bookmarks)
   - [Media](#media)
   - [Meetings](#meetings)
+  - [Mobility](#mobility)
   - [Privacy](#privacy)
   - [Shopping](#shopping)
   - [Software Development](#software-development)
@@ -43,6 +44,12 @@ Here is a list of browser extensions that I am currently using, as well as tools
 ### Meetings
 
 - [Cisco Webex Content Sharing](https://chromewebstore.google.com/detail/cisco-webex-content-shari/ifbdadgbpalmagalacllfaflfakmfkac)
+
+### Mobility
+
+- [Legrooms+](https://chromewebstore.google.com/detail/legrooms+-for-google-flig/nhonfddkgankhjilponlbdccpabaaknp)
+- [Points Path](https://chromewebstore.google.com/detail/points-path-for-google-fl/kblbdlhoeakihpcaimpdjnfkjffnhhej)
+- [Seats.aero](https://chromewebstore.google.com/detail/seatsaero/oedchdidbnokclkbokgpilmeabomahlj)
 
 ### Privacy
 

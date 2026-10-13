@@ -20,7 +20,9 @@ Here is a list of libraries and frameworks that could be interesting to use in t
   - [Claude Code](#claude-code)
   - [Context](#context)
   - [Cost](#cost)
+  - [Desktop](#desktop)
   - [Diffusion](#diffusion)
+  - [Guardrails](#guardrails)
   - [Harness](#harness-1)
     - [Hermes](#hermes)
     - [OpenClaw](#openclaw)
@@ -37,6 +39,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
   - [Prompt](#prompt-1)
   - [RAG](#rag)
   - [Scrapers](#scrapers)
+  - [Security](#security)
   - [Skills](#skills)
   - [Specifications](#specifications)
   - [Speech-to-Text](#speech-to-text)
@@ -81,6 +84,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [background-agents](https://github.com/ColeMurray/background-agents) - open-source background agents coding system. `TypeScript` `Python`
 - [cua](https://github.com/trycua/cua) - infrastructure for computer-use agents. Sandboxes, SDKs, and benchmarks to train and evaluate AI agents that can control full desktops. `Python` `TypeScript`
 - [goose](https://github.com/block/goose) - extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM. `Rust` `TypeScript`
+- [impeccable](https://github.com/pbakaus/impeccable) - design language that makes your AI harness better at design. `JavaScript` `Rust`
 - [kimi-cli](https://github.com/MoonshotAI/kimi-cli) - CLI agent. `Python` `TypeScript`
 - [lobehub](https://github.com/lobehub/lobehub) - space for work and life — to find, build, and collaborate with agent teammates that grow with you. `TypeScript`
 - [mindwalk](https://github.com/cosmtrek/mindwalk) - visualization tool that replays coding-agent sessions on a 3D map of your codebase. `Go` `TypeScript`
@@ -88,6 +92,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [onecli](https://github.com/onecli/onecli) - credential gateway with a built-in vault, give your AI agents access to services without exposing keys. `TypeScript` `Rust`
 - [orca](https://github.com/stablyai/orca) - ADE for working with a fleet of parallel agents. `TypeScript`
 - [paseo](https://github.com/getpaseo/paseo) - coding agents from your phone, desktop and CLI. `TypeScript`
+- [prime-agent](https://github.com/PrimeIntellect-ai/prime-agent) - self-improving RLM agent for coding workflows and long-running autonomous tasks. `TypeScript`
 - [ralph](https://github.com/snarktank/ralph) - autonomous AI agent loop that runs repeatedly until all PRD items are complete. `TypeScript` `Shell`
 - [rowboat](https://github.com/rowboatlabs/rowboat) - open-source AI coworker, with memory. `TypeScript`
 
@@ -149,11 +154,18 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [cocoindex](https://github.com/cocoindex-io/cocoindex) - incremental engine for long horizon agents. `Python` `Rust`
 - [context7](https://github.com/upstash/context7) - up-to-date code documentation for LLMs and AI code editors. `TypeScript`
+- [context-mode](https://github.com/mksglu/context-mode) - context window optimization for AI coding agents. `TypeScript` `JavaScript`
+- [openviking](https://github.com/volcengine/OpenViking) - self-evolving context database for AI agents, unify agent memory, knowledge RAG and skills. `Python` `Rust` `TypeScript`
 
 ### Cost
 
 - [agentsview](https://github.com/kenn-io/agentsview) - local-first session intelligence and analytics for coding agents. `Go` `TypeScript`
 - [tokuin](https://github.com/nooscraft/tokuin) - estimates LLM tokens/costs and runs provider-aware load tests. `Rust` `Python`
+
+### Desktop
+
+- [officeCLI](https://github.com/iOfficeAI/OfficeCLI) - suite purpose-built for AI agents to read, edit, and automate Word, Excel, and PowerPoint files. `C#`
+- [openwork](https://github.com/different-ai/openwork) - open-source alternative to Claude Cowork (powered by opencode). `TypeScript` `JavaScript`
 
 ### Diffusion
 
@@ -163,6 +175,10 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) - stable diffusion web UI. `Python` `JavaScript`
 - [stable-diffusion-webui-docker](https://github.com/AbdBarho/stable-diffusion-webui-docker) - docker setup for stable diffusion with user-friendly UI. `Shell`
 
+### Guardrails
+
+- [OpenAPPA](https://github.com/archestra-ai/OpenAPPA) - deterministic guardrails that don't break agents. `Rust` `Python`
+
 ### Harness
 
 - [archon](https://github.com/coleam00/Archon) - harness builder for AI coding, make AI coding deterministic and repeatable. `TypeScript`
@@ -171,6 +187,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [leon](https://github.com/leon-ai/leon) - open-source personal assistant. `TypeScript` `Python`
 - [openclaw](https://github.com/openclaw/openclaw) - your own personal AI assistant, any OS, any platform. `TypeScript`
 - [personal-ai-infrastructure](https://github.com/danielmiessler/Personal_AI_Infrastructure) - agentic AI infrastructure for magnifying HUMAN capabilities. `TypeScript`
+- [t3code](https://github.com/pingdotgg/t3code) - enable control of the agents on your machine with a mobile, web or electron-based desktop app. `TypeScript`
 
 #### Hermes
 
@@ -213,6 +230,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 ### Local
 
+- [colibri](https://github.com/JustVugg/colibri) - Run frontier MoE models on personal hardware. `C` `Python`
 - [ds4](https://github.com/antirez/ds4) - DeepSeek 4 Flash and Pro local inference engine for Metal, CUDA and ROCm. `C` `Cuda` `Objective-C`
 - [localai](https://github.com/mudler/LocalAI) - free & open source alternative to OpenAI, Claude and others. Drop-in replacement for OpenAI, running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. `Go`
 - [local-llm](https://github.com/jamesob/local-llm) - everything I know about running LLMs locally. `Shell`
@@ -229,6 +247,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 ### Memory
 
 - [agentmemory](https://github.com/rohitg00/agentmemory) - persistent memory for AI coding agents based on real-world benchmarks. `TypeScript`
+- [ai-memory](https://github.com/akitaonrails/ai-memory) - long term memory to facilitate handoff between different agent vendors. `Rust`
 - [beads](https://github.com/steveyegge/beads) - memory upgrade for your coding agent. `Go`
 - [engram](https://github.com/Gentleman-Programming/engram) - persistent memory system, agent-agnostic Go binary with SQLite + FTS5, MCP server, HTTP API, CLI, and TUI. `Go`
 - [memori](https://github.com/MemoriLabs/Memori) - agent-native memory infrastructure, a LLM-agnostic layer that turns agent execution and conversation into structured, persistent state for production systems. `Python` `TypeScript`
@@ -263,18 +282,24 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [DeepSeek-RAG-chatbot](https://github.com/SaiAkhil066/DeepSeek-RAG-Chatbot) - private deepSeek’s advanced RAG: boost Your RAG chatbot: hybrid retrieval (BM25 + FAISS) + neural reranking + hyde. `Python`
 - [pageindex](https://github.com/VectifyAI/PageIndex) - document index for vectorless, reasoning-based RAG. `Python`
-- [RAG-anything](https://github.com/HKUDS/RAG-Anything) - all-in-one RAG framework. `Python`
+- [rag-anything](https://github.com/HKUDS/RAG-Anything) - all-in-one RAG framework. `Python`
 
 ### Scrapers
 
 - [crawl4ai](https://github.com/unclecode/crawl4ai) -  open-source LLM friendly web crawler & scraper. `Python`
 - [firecrawl](https://github.com/firecrawl/firecrawl) - API to search, scrape, and interact with the web at scale. `TypeScript` `Python`
 
+### Security
+
+- [ai-infra-guard](https://github.com/Tencent/AI-Infra-Guard) - full-stack AI red teaming platform securing AI ecosystems via agent scan, skills scan, MCP scan, AI infra scan and LLM jailbreak evaluation. `Python` `TypeScript`
+
 ### Skills
 
 - [agent-skills](https://github.com/addyosmani/agent-skills) - production-grade engineering skills for AI coding agents. `Shell` `JavaScript`
 - [agent-skills](https://github.com/vercel-labs/agent-skills) - vercel's official collection of agent skills. `JavaScript` `Shell` `TypeScript`
+- [claude-red](https://github.com/SnailSploit/Claude-Red) - curated library of offensive security skills. `Python`
 - [pm-skills](https://github.com/phuryn/pm-skills) - 100+ agentic skills, commands, and plugins.
+- [security-audit-skill](https://github.com/cloudflare/security-audit-skill) - multi-phase security audits with independently verified, machine-readable findings. `JavaScript`
 - [skills](https://github.com/anthropics/skills) - public repository for agent skills. `Python`
 - [skills](https://github.com/huggingface/skills) - give your agents the power of the Hugging Face ecosystem. `Python`
 - [skills](https://github.com/mattpocock/skills) - skills for real engineers, straight from my .claude directory. `Shell`
@@ -315,15 +340,16 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [remove-ai-watermarks](https://github.com/wiltodelta/remove-ai-watermarks) - CLI and library for removing visible (Gemini) and invisible (SynthID, C2PA, EXIF) AI watermarks from images. `Python`
 - [gemini-watermark-remover](https://github.com/GargantuaX/gemini-watermark-remover) - high-performance, 100% client-side tool for removing Gemini AI image & video watermarks, using mathematically precise Reverse Alpha Blending. `JavaScript`
-- [GeminiWatermarkTool](https://github.com/allenk/GeminiWatermarkTool) - VEO / Gemini 3.5 Nano Banana Pro watermark maintenance tool. `C++`
+- [geminiwatermarktool](https://github.com/allenk/GeminiWatermarkTool) - VEO / Gemini 3.5 Nano Banana Pro watermark maintenance tool. `C++`
 
 ### Use Cases
 
 - [agent-device](github.com/callstack/agent-device) - CLI to control iOS and Android devices for AI agents. `TypeScript`
 - [ai-captcha-bypass](https://github.com/aydinnyunus/ai-captcha-bypass) - AI captcha bypass. `Python`
-- [officeCLI](https://github.com/iOfficeAI/OfficeCLI) - suite purpose-built for AI agents to read, edit, and automate Word, Excel, and PowerPoint files. `C#`
+- [ai-job-search](https://github.com/MadsLorentzen/ai-job-search) - evaluate postings, tailor CVs, write cover letters, prep interviews. `TypeScript` `Python`
+- [meetily](https://github.com/Zackriya-Solutions/meetily) - AI meeting assistant with Parakeet/Whisper live transcription, speaker diarization, and Ollama summarization. `Rust` `TypeScript` `C++`
 - [open-code-review](https://github.com/alibaba/open-code-review) - hybrid architecture code review tool, deterministic pipelines + LLM Agent, precise line-level comments, built-in fine-tuned ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible. `Go` `TypeScript`
-- [pdfGPT](https://github.com/bhaskatripathi/pdfGPT) - chat with the contents of your pdf file by using GPT capabilities. `Python`
+- [pdfgpt](https://github.com/bhaskatripathi/pdfGPT) - chat with the contents of your pdf file by using GPT capabilities. `Python`
 - [private-gpt](https://github.com/zylon-ai/private-gpt) - interact with your documents using the power of GPT, 100% privately, no data leaks. `Python`
 - [qmd](https://github.com/tobi/qmd) - search engine for your docs, knowledge bases, meeting notes, whatever. `TypeScript` `Python`
 - [RedditVideoMakerBot](https://github.com/elebumm/RedditVideoMakerBot) - create Reddit videos with just one command.

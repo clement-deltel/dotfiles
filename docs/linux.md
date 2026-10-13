@@ -49,6 +49,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [Kubernetes](#kubernetes-1)
     - [Helm](#helm-1)
   - [Remote Access](#remote-access)
+  - [Reverse Engineering](#reverse-engineering)
   - [Search](#search)
   - [Secrets](#secrets)
   - [Security](#security-1)
@@ -169,6 +170,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 [npm](https://github.com/npm/cli) - node package manager. `JavaScript`
 
 - [commitlint](https://github.com/conventional-changelog/commitlint) - lint commit messages. `TypeScript`
+- [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) - generate changelogs and release notes from a project's commit messages and metadata. `TypeScript`
 - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm) - auto generate READMEs for Helm Charts. `JavaScript`
 
 ### Shell
@@ -337,7 +339,6 @@ Here are some useful Linux system commands:
       - [golang](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/golang)
     - JavaScript
       - [node](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/node)
-      - [npm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/npm)
     - Python
       - [pip](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pip)
       - [poetry](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/poetry)
@@ -414,6 +415,7 @@ Here are some useful Linux system commands:
 
 ### Database
 
+- [databasus](https://github.com/databasus/databasus) - postgresql backup tool with point-in-time-recovery and restore verification. `TypeScript` `Go`
 - [tbls](https://github.com/k1LoW/tbls) - ci-friendly tool to document a database. `Go`
 
 ### Diagrams
@@ -487,6 +489,7 @@ Here are some useful Linux system commands:
 - [clair](https://github.com/quay/clair) - vulnerability static analysis for containers. `Go`
 - [copacetic](https://github.com/project-copacetic/copacetic) - CLI tool for directly patching container images. `Go`
 - [docker bench](https://github.com/docker/docker-bench-security) - script that checks for dozens of common best-practices around deploying Docker containers in production.
+- [docker-compose-linter](https://github.com/zavoloklom/docker-compose-linter) - CLI tool for validating and enforcing best practices in compose files. `TypeScript`
 - [harbor-guard](https://github.com/HarborGuard/HarborGuard) - image vulnerability scanning & patching platform with multi-tool integration. `TypeScript`
 - [subtrace](https://github.com/subtrace/subtrace) - wireshark for Docker containers. `Go`
 - new Docker commands (require an account and/or subscription) - init, debug, compose watch, build cloud, scout.
@@ -528,6 +531,10 @@ Here are some useful Linux system commands:
 - [boring](https://github.com/alebeck/boring) - SSH tunnel manager. `Go`
 - [iroh](https://github.com/n0-computer/iroh) - IP addresses break, dial keys instead, modular networking stack. `Rust`
 
+### Reverse Engineering
+
+- [ghidra](https://github.com/NationalSecurityAgency/ghidra) - software reverse engineering (SRE) framework. `Java`
+
 ### Search
 
 - [ag](https://github.com/ggreer/the_silver_searcher) - code-searching tool similar to ack, but faster. `C/C++`
@@ -543,6 +550,7 @@ Here are some useful Linux system commands:
 
 - [caracal](https://github.com/adgaultier/caracal) - make your programs stealthier. `Rust`
 - [codeql](https://github.com/github/codeql) - libraries and queries that power security researchers around the world. `CodeQL` `Kotlin`
+- [hackingtool](https://github.com/Z4nzu/hackingtool) - all-in-one hacking tool for hackers. `Python`
 - [lynis](https://github.com/CISOfy/lynis) - cross-platform security auditing tool, assists with compliance testing (HIPAA/ISO27001/PCI DSS) and system hardening. `Shell`
 - [shannon](https://github.com/KeygraphHQ/shannon) - autonomous, white-box AI pentester for web applications and APIs. `TypeScript`
 - [sharpeye](https://github.com/sgInnora/sharpeye) - advanced Linux intrusion detection and threat hunting system. `Python`
@@ -752,6 +760,7 @@ Here are some useful Linux system commands:
   - [calico](https://github.com/projectcalico/calico) - cloud native networking and network security. `Go`
   - [cilium](https://github.com/cilium/cilium) - eBPF-based networking, security, and observability. `Go` `C`
   - [flannel](https://github.com/flannel-io/flannel) - network fabric for containers. `Go`
+  - [kube-vip](https://github.com/kube-vip/kube-vip) - control plane virtual IP and load-balancer. `Go`
   - [submariner](https://github.com/submariner-io/submariner) - networking component for interconnecting Pods and Services across clusters. `Go`
   - [weave](https://github.com/weaveworks/weave) - simple, resilient multi-host containers networking and more. `Go`
 - Secrets

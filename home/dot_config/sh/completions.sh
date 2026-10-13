@@ -24,6 +24,7 @@ eval "$(grype completion bash)"
 eval "$(helm completion bash)"
 eval "$(helmfile completion bash)"
 eval "$(kubectl completion bash)"
+eval "$(pinniped completion bash)"
 eval "$(stern --completion bash)"
 eval "$(trivy completion bash)"
 

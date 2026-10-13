@@ -9,3 +9,4 @@
   community.general.homebrew_tap:
     name: "{{ taps }}"
     state: present
+    trust: true

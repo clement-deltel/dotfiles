@@ -129,6 +129,7 @@ source ${HOME}/.pyenv/completions/pyenv.zsh
 
 # Orchestration
 eval "$(grype completion zsh)"
+eval "$(pinniped completion zsh)"
 eval "$(stern --completion zsh)"
 eval "$(trivy completion zsh)"
 

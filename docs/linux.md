@@ -125,6 +125,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 [homebrew](https://github.com/Homebrew/brew) - the missing package manager for Linux. `Ruby`
 
+- **Authentication**
+  - [pinniped](https://github.com/vmware/pinniped) - easy, secure way to log in to your Kubernetes clusters.
 - **CI/CD**
   - [act](https://github.com/nektos/act) - run your GitHub Actions locally. `Go`
 - **Directories & Files**

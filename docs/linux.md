@@ -145,6 +145,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [fastfetch](https://github.com/fastfetch-cli/fastfetch) - feature-rich and performance oriented, neofetch like system information tool. `C`
   - [gping](https://github.com/orf/gping) - TUI for ping. `Rust`
 - **Network**
+  - [netwatch](https://github.com/matthart1983/netwatch) - real-time network diagnostics in the terminal. `Rust`
   - [whosthere](https://github.com/ramonvermeulen/whosthere) - local area network (LAN) discovery tool with a modern terminal user interface. `Go`
 - **Search**
   - [fzf](https://github.com/junegunn/fzf) - CLI fuzzy finder. `Go`

@@ -323,4 +323,4 @@ function terraform-state-fn { terraform state "$@"; }
 #               ------- Visual Studio Code --------
 # ---------------------------------------------------------------------------- #
 function cd-open-fn { cd "$@"; code .; }
-function cd-open-workspace-fn { cd "$@"; code *.code-workspace; }
+function cd-open-workspace-fn { cd "$@"; code *.code-workspace || code .; }

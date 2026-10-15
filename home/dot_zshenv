@@ -38,7 +38,13 @@ export K9S_SKIN=stock
 export KUBE_EDITOR=vim
 
 # NodeJS
+export NODE_PATH="$(npm root --global)"
 export PATH=${HOME}/node_modules/.bin:${PATH}
+
+# Node Version Manager
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Pulumi
 export PATH=${HOME}/.pulumi/bin:${PATH}

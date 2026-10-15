@@ -5,6 +5,24 @@
     - ../vars/main.yml
 
   tasks:
+  # -------------------------------------------------------------------------- #
+  #               ------- NVM ------
+  # -------------------------------------------------------------------------- #
+
+  # Installation
+  # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash
+  - name: nvm - Installation
+    tags: init
+    ansible.builtin.import_tasks:
+      file: ../tasks/script.yml
+    vars:
+      url: "{{ nvm_install_url }}"
+      cmd: /tmp/install.sh
+
+  # -------------------------------------------------------------------------- #
+  #               ------- NodeJS ------
+  # -------------------------------------------------------------------------- #
+
   # Dependencies
   - name: Dependencies
     ansible.builtin.import_tasks:
@@ -37,6 +55,10 @@
       file: ../tasks/version.yml
     vars:
       cmd: node --version
+
+  # -------------------------------------------------------------------------- #
+  #               ------- NPM ------
+  # -------------------------------------------------------------------------- #
 
   # NPM Packages
   - name: NPM Packages

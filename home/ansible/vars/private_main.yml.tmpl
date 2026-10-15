@@ -291,28 +291,16 @@ homebrew_formulas:
 - yq
 
 # ---------------------------------------------------------------------------- #
-#               ------- Kubernetes ------
+#               ------- JavaScript ------
 # ---------------------------------------------------------------------------- #
-kubernetes_formulas:
-- k9s
-- kind
-- kubecolor
-- kubectx
-- kubetail
-- pinniped-cli
-- stern
-
-# ---------------------------------------------------------------------------- #
-#               ------- NodeJS ------
-# ---------------------------------------------------------------------------- #
-nvm_install_url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.6/install.sh
+nvm_install_url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh
 
 node_dependencies:
 - build-essential # informational list of build-essential packages
 - ca-certificates # common CA certificates
 - curl            # command line tool for transferring data with URL syntax
 - gnupg           # GNU privacy guard
-node_major: 20
+node_major: 24
 node_packages:
 - nodejs
 
@@ -324,6 +312,18 @@ npm_packages:
 - "@github/copilot"
 - "conventional-changelog-conventionalcommits@^9"
 - "renovate"
+
+# ---------------------------------------------------------------------------- #
+#               ------- Kubernetes ------
+# ---------------------------------------------------------------------------- #
+kubernetes_formulas:
+- k9s
+- kind
+- kubecolor
+- kubectx
+- kubetail
+- pinniped-cli
+- stern
 
 # ---------------------------------------------------------------------------- #
 #               ------- NVIDIA ------

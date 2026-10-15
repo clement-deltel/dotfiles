@@ -8,7 +8,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [Package Management](#package-management)
     - [apt](#apt)
     - [homebrew](#homebrew)
-    - [NPM](#npm)
   - [Shell](#shell)
   - [Terminal](#terminal)
   - [Version Control System (VCS)](#version-control-system-vcs)
@@ -166,14 +165,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 [zerobrew](https://github.com/lucasgelfond/zerobrew) - drop-in, 5-20x faster, experimental homebrew alternative. `Rust`
 
-#### NPM
-
-[npm](https://github.com/npm/cli) - node package manager. `JavaScript`
-
-- [commitlint](https://github.com/conventional-changelog/commitlint) - lint commit messages. `TypeScript`
-- [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) - generate changelogs and release notes from a project's commit messages and metadata. `TypeScript`
-- [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm) - auto generate READMEs for Helm Charts. `JavaScript`
-
 ### Shell
 
 - [antidote](https://github.com/mattmc3/antidote) - the cure to slow zsh plugin management.
@@ -217,7 +208,13 @@ Here is a list of apps that I am currently using, that could be interesting and 
 
 #### JavaScript
 
-[nodejs](https://github.com/nodejs/node) - cross-platform, open-source JavaScript runtime built on Chrome's v8 JavaScript engine.
+- [nodejs](https://github.com/nodejs/node) - cross-platform, open-source JavaScript runtime. `JavaScript` `C++`
+- [npm](https://github.com/npm/cli) - node package manager. `JavaScript`
+  - [commitlint](https://github.com/conventional-changelog/commitlint) - lint commit messages. `TypeScript`
+  - [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) - generate changelogs and release notes from a project's commit messages and metadata. `TypeScript`
+  - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm) - auto generate READMEs for Helm Charts. `JavaScript`
+  - [renovate](https://github.com/renovatebot/renovate) - cross-platform dependency automation by mend.io. `TypeScript`
+- [nvm](https://github.com/nvm-sh/nvm) - Node version manager, POSIX-compliant bash script to manage multiple active node.js versions. `Shell`
 
 #### Python
 
@@ -729,7 +726,6 @@ Here are some useful Linux system commands:
 ### Dependencies
 
 - [dependabot-core](https://github.com/dependabot/dependabot-core) - dependabot's core logic for creating update PRs. `Ruby`
-- [renovate](https://github.com/renovatebot/renovate) - cross-platform dependency automation by mend.io. `TypeScript`
 
 ### Infrastructure-as-Code (IaC)
 

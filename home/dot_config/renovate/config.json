@@ -21,7 +21,7 @@
   ],
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
-  "rangeStrategy": "bump",
+  "rangeStrategy": "auto",
   "vulnerabilityAlerts": {
     "enabled": true,
     "labels": ["security", "renovate"]

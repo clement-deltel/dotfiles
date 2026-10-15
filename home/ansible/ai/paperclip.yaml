@@ -1,0 +1,40 @@
+- name: PaperclipAI
+  hosts: all
+  gather_facts: false
+  vars_files:
+    - ../vars/main.yml
+
+  tasks:
+  # -------------------------------------------------------------------------- #
+  #               ------- Dependencies ------
+  # -------------------------------------------------------------------------- #
+  - name: Dependencies
+    ansible.builtin.import_tasks:
+      file: ../tasks/npm_packages.yml
+    vars:
+      package_list: "{{ paperclipai_dependencies }}"
+
+  # -------------------------------------------------------------------------- #
+  #               ------- Installation ------
+  # -------------------------------------------------------------------------- #
+  - name: Enable Corepack
+    ansible.builtin.command:
+      cmd: corepack enable
+
+  - name: Prepare PNPM
+    ansible.builtin.command:
+      cmd: corepack prepare pnpm@latest --activate
+
+  - name: Onboard PaperclipAI
+    ansible.builtin.command:
+      cmd: npx paperclipai onboard --yes
+
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
+  - name: Version
+    tags: [init, update]
+    ansible.builtin.import_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: paperclipai --version

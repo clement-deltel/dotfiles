@@ -1,0 +1,24 @@
+- name: Show NPM packages
+  tags: [init, update]
+  ansible.builtin.debug:
+    msg: "{{ package_list }}"
+
+# sudo npm install --global <package>
+- name: Install packages
+  become: true
+  tags: init
+  community.general.npm:
+    global: true
+    name: "{{ item }}"
+    state: present
+  loop: "{{ package_list }}"
+
+# sudo npm update --global <package>
+- name: Upgrade packages
+  become: true
+  tags: update
+  community.general.npm:
+    global: true
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ package_list }}"

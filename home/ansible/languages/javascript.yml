@@ -62,29 +62,7 @@
 
   # NPM Packages
   - name: NPM Packages
-    block:
-
-    - name: NPM - Show packages
-      tags: [init, update]
-      ansible.builtin.debug:
-        msg: "NPM packages: {{ npm_packages }}"
-
-    # sudo npm install
-    - name: NPM - Install packages
-      become: true
-      tags: init
-      community.general.npm:
-        name: "{{ item }}"
-        global: true
-        state: present
-      loop: "{{ npm_packages }}"
-
-    # sudo npm update
-    - name: NPM - Upgrade packages
-      become: true
-      tags: update
-      community.general.npm:
-        name: "{{ item }}"
-        global: true
-        state: latest
-      loop: "{{ npm_packages }}"
+    ansible.builtin.import_tasks:
+      file: ../tasks/npm_packages.yml
+    vars:
+      package_list: "{{ npm_packages }}"

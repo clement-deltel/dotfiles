@@ -5,7 +5,9 @@
     - ../vars/main.yml
 
   tasks:
-  # Dependencies
+  # -------------------------------------------------------------------------- #
+  #               ------- Dependencies ------
+  # -------------------------------------------------------------------------- #
   - name: Dependencies
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
@@ -13,7 +15,9 @@
       package_list: "{{ alacritty_dependencies }}"
       package_type: dependencies
 
-  # Repository
+  # -------------------------------------------------------------------------- #
+  #               ------- Repository ------
+  # -------------------------------------------------------------------------- #
   - name: Repository
     tags: init
     block:
@@ -29,7 +33,9 @@
         repo: "{{ item }}"
       loop: "{{ alacritty_repository }}"
 
-  # Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Packages
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml

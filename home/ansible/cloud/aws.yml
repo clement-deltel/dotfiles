@@ -68,15 +68,7 @@
   # -------------------------------------------------------------------------- #
   - name: Version
     tags: [init, update]
-    block:
-
-    - name: Confirm version
-      ansible.builtin.command:
-        cmd: aws --version
-      register: version
-      changed_when: false
-
-    - name: Show version
-      when: version is defined
-      ansible.builtin.debug:
-        msg: "Installed version: {{ version.stdout }}"
+    ansible.builtin.import_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: aws --version

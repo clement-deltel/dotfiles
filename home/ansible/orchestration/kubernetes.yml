@@ -5,7 +5,10 @@
     - ../vars/main.yml
 
   tasks:
-  # Aliases collection from https://github.com/ahmetb/kubectl-aliases
+  # -------------------------------------------------------------------------- #
+  #               ------- Aliases ------
+  # -------------------------------------------------------------------------- #
+  # Collection from https://github.com/ahmetb/kubectl-aliases
   - name: Aliases
     tags: [init, update]
     block:
@@ -34,7 +37,9 @@
         regexp: kubectl
         replace: kctl
 
-  # Kubernetes CLI
+  # -------------------------------------------------------------------------- #
+  #               ------- Kubernetes CLI ------
+  # -------------------------------------------------------------------------- #
   - name: Kubernetes CLI
     tags: [init, update]
     block:
@@ -90,7 +95,9 @@
         path: "{{ kubectl_install_tmp }}"
         state: absent
 
-  # Version
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
   - name: Version
     tags: [init, update]
     ansible.builtin.import_tasks:
@@ -98,7 +105,9 @@
     vars:
       cmd: kubectl version --client
 
-  # Formulas
+  # -------------------------------------------------------------------------- #
+  #               ------- Formulas ------
+  # -------------------------------------------------------------------------- #
   - name: Formulas
     ansible.builtin.import_tasks:
       file: ../tasks/formulas.yml

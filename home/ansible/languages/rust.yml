@@ -5,7 +5,9 @@
     - ../vars/main.yml
 
   tasks:
-  # Installation
+  # -------------------------------------------------------------------------- #
+  #               ------- Installation ------
+  # -------------------------------------------------------------------------- #
   # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   - name: Installation
     tags: init
@@ -15,7 +17,9 @@
       url: "{{ rust_install_url }}"
       cmd: /bin/sh -c /tmp/install.sh -y
 
-  # Upgrade
+  # -------------------------------------------------------------------------- #
+  #               ------- Upgrade ------
+  # -------------------------------------------------------------------------- #
   - name: rustup - Upgrade
     tags: update
     ansible.builtin.command:
@@ -23,15 +27,19 @@
     register: upgrade_result
     changed_when: upgrade_result.rc == 0
 
-  # rustc - Version
-  - name: Version
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
+
+  # rustc
+  - name: rustc - Version
     tags: [init, update]
     ansible.builtin.import_tasks:
       file: ../tasks/version.yml
     vars:
       cmd: rustc --version
 
-  # cargo - Version
+  # cargo
   - name: cargo - Version
     tags: [init, update]
     ansible.builtin.import_tasks:
@@ -39,7 +47,9 @@
     vars:
       cmd: cargo --version
 
-  # Cargo Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Cargo Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Cargo Packages
     block:
 

@@ -5,7 +5,9 @@
     - ../vars/main.yml
 
   tasks:
-  # Dependencies
+  # -------------------------------------------------------------------------- #
+  #               ------- Dependencies ------
+  # -------------------------------------------------------------------------- #
   - name: Dependencies
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
@@ -13,7 +15,9 @@
       package_list: "{{ terraform_dependencies }}"
       package_type: dependencies
 
-  # Repository
+  # -------------------------------------------------------------------------- #
+  #               ------- Repository ------
+  # -------------------------------------------------------------------------- #
   - name: Repository
     tags: init
     ansible.builtin.import_tasks:
@@ -23,14 +27,18 @@
       key_output: /etc/apt/keyrings/hashicorp-archive-keyring.gpg
       repository: "deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main"
 
-  # Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Packages
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: terraform
 
-  # Version
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
   - name: Version
     tags: [init, update]
     ansible.builtin.import_tasks:

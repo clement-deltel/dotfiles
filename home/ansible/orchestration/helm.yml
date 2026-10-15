@@ -5,7 +5,9 @@
     - ../vars/main.yml
 
   tasks:
-  # Installation
+  # -------------------------------------------------------------------------- #
+  #               ------- Installation ------
+  # -------------------------------------------------------------------------- #
   # curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
   - name: Installation
     tags: [init, update]
@@ -15,7 +17,9 @@
       url: "{{ helm_install_url }}"
       cmd: /bin/bash -c /tmp/install.sh
 
-  # Version
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
   - name: Version
     tags: [init, update]
     ansible.builtin.import_tasks:
@@ -23,7 +27,9 @@
     vars:
       cmd: helm version
 
-  # Plugins
+  # -------------------------------------------------------------------------- #
+  #               ------- Plugins ------
+  # -------------------------------------------------------------------------- #
   - name: Plugins
     block:
 
@@ -55,7 +61,9 @@
       ansible.builtin.debug:
         msg: "Installed plugins: {{ plugins_list.stdout }}"
 
-  # Formulas
+  # -------------------------------------------------------------------------- #
+  #               ------- Formulas ------
+  # -------------------------------------------------------------------------- #
   - name: Formulas
     ansible.builtin.import_tasks:
       file: ../tasks/formulas.yml

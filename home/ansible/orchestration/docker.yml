@@ -5,7 +5,9 @@
     - ../vars/main.yml
 
   tasks:
-  # Users
+  # -------------------------------------------------------------------------- #
+  #               ------- Users ------
+  # -------------------------------------------------------------------------- #
   - name: Users
     tags: init
     block:
@@ -35,7 +37,9 @@
         groups: docker
         append: true
 
-  # Dependencies
+  # -------------------------------------------------------------------------- #
+  #               ------- Dependencies ------
+  # -------------------------------------------------------------------------- #
   - name: Dependencies
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
@@ -43,7 +47,9 @@
       package_list: "{{ docker_dependencies }}"
       package_type: dependencies
 
-  # Repository
+  # -------------------------------------------------------------------------- #
+  #               ------- Repository ------
+  # -------------------------------------------------------------------------- #
   # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --output /etc/apt/keyrings/docker.gpg
   # echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   - name: Repository
@@ -55,21 +61,27 @@
       key_output: /etc/apt/keyrings/docker.gpg
       repository: "deb [arch={{ deb_architecture[ansible_architecture] }} signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/{{ ansible_system | lower }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
 
-  # Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Packages
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ docker_packages }}"
 
-  # Formulas
+  # -------------------------------------------------------------------------- #
+  #               ------- Formulas ------
+  # -------------------------------------------------------------------------- #
   - name: Formulas
     ansible.builtin.import_tasks:
       file: ../tasks/formulas.yml
     vars:
       formulas: "{{ docker_formulas }}"
 
-  # Daemon
+  # -------------------------------------------------------------------------- #
+  #               ------- Daemon ------
+  # -------------------------------------------------------------------------- #
   # - name: Daemon
   #   block:
 
@@ -78,7 +90,9 @@
   #       dest:
   #       content: |
 
-  # Service
+  # -------------------------------------------------------------------------- #
+  #               ------- Service ------
+  # -------------------------------------------------------------------------- #
   - name: Service
     tags: [init, update]
     ansible.builtin.import_tasks:
@@ -86,7 +100,11 @@
     vars:
       service: docker
 
-  # Docker - Version
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
+
+  # Docker
   - name: Docker - Version
     tags: [init, update]
     ansible.builtin.import_tasks:
@@ -94,7 +112,7 @@
     vars:
       cmd: docker --version
 
-  # Docker Compose - Version
+  # Docker Compose
   - name: Docker Compose - Version
     tags: [init, update]
     ansible.builtin.import_tasks:

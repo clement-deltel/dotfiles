@@ -5,7 +5,9 @@
     - ../vars/main.yml
 
   tasks:
-  # Dependencies
+  # -------------------------------------------------------------------------- #
+  #               ------- Dependencies ------
+  # -------------------------------------------------------------------------- #
   - name: Dependencies
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
@@ -13,7 +15,9 @@
       package_list: "{{ doppler_dependencies }}"
       package_type: dependencies
 
-  # Repository
+  # -------------------------------------------------------------------------- #
+  #               ------- Repository ------
+  # -------------------------------------------------------------------------- #
   # curl -fsSL --retry 3 --tlsv1.2 --proto "=https" 'https://packages.doppler.com/public/cli/gpg.DE2A7741A397C129.key' | sudo gpg --dearmor --output /usr/share/keyrings/doppler-archive-keyring.gpg
   # echo "deb [signed-by=/usr/share/keyrings/doppler-archive-keyring.gpg] https://packages.doppler.com/public/cli/deb/debian any-version main" | sudo tee /etc/apt/sources.list.d/doppler-cli.list > /dev/null
   - name: Repository
@@ -25,13 +29,18 @@
       key_output: /etc/apt/keyrings/doppler-archive-keyring.gpg
       repository: "deb [signed-by=/etc/apt/keyrings/doppler-archive-keyring.gpg] https://packages.doppler.com/public/cli/deb/debian any-version main"
 
-  # Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Packages
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ doppler_packages }}"
 
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
   - name: Version
     tags: [init, update]
     ansible.builtin.import_tasks:

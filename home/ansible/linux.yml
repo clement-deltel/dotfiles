@@ -81,3 +81,5 @@
   import_playbook: ai/fabric.yaml
 - name: Hermes
   import_playbook: ai/hermes.yaml
+- name: Paperclip
+  import_playbook: ai/paperclip.yaml

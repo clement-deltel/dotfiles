@@ -7,8 +7,9 @@
   tasks:
   - name: Homebrew
     block:
-
-    # Dependencies
+    # -------------------------------------------------------------------------- #
+    #               ------- Dependencies ------
+    # -------------------------------------------------------------------------- #
     - name: Dependencies
       ansible.builtin.import_tasks:
         file: ../tasks/packages.yml
@@ -16,7 +17,9 @@
         package_list: "{{ homebrew_dependencies }}"
         package_type: dependencies
 
-    # Installation
+    # -------------------------------------------------------------------------- #
+    #               ------- Installation ------
+    # -------------------------------------------------------------------------- #
     # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     - name: Installation
       ansible.builtin.import_tasks:
@@ -25,14 +28,18 @@
         url: "{{ homebrew_install_url }}"
         cmd: /bin/bash -c /tmp/install.sh
 
-    # Taps
+    # -------------------------------------------------------------------------- #
+    #               ------- Taps ------
+    # -------------------------------------------------------------------------- #
     - name: Taps
       ansible.builtin.import_tasks:
         file: ../tasks/taps.yml
       vars:
         taps: "{{ homebrew_taps }}"
 
-    # Formulas
+    # -------------------------------------------------------------------------- #
+    #               ------- Formulas ------
+    # -------------------------------------------------------------------------- #
     - name: Formulas
       ansible.builtin.import_tasks:
         file: ../tasks/formulas.yml

@@ -5,22 +5,18 @@
     - ../vars/main.yml
 
   tasks:
-  # Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Packages
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ git_packages }}"
 
-  # Version
-  - name: Version
-    tags: [init, update]
-    ansible.builtin.import_tasks:
-      file: ../tasks/version.yml
-    vars:
-      cmd: git version
-
-  # Git LFS - Repository
+  # -------------------------------------------------------------------------- #
+  #               ------- Git LFS - Repository ------
+  # -------------------------------------------------------------------------- #
   - name: Git LFS - Repository
     tags: init
     ansible.builtin.import_tasks:
@@ -30,14 +26,28 @@
       url: "{{ git_lfs_install_url }}"
       cmd: /bin/sh -c /tmp/install.sh
 
-  # Git LFS - Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Git LFS - Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Git LFS - Packages
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ git_lfs_packages }}"
 
-  # Git LFS - Version
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
+
+  # Git
+  - name: Version
+    tags: [init, update]
+    ansible.builtin.import_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: git version
+
+  # Git LFS
   - name: Version
     tags: [init, update]
     ansible.builtin.import_tasks:
@@ -45,7 +55,9 @@
     vars:
       cmd: git-lfs version
 
-  # Formulas
+  # -------------------------------------------------------------------------- #
+  #               ------- Formulas ------
+  # -------------------------------------------------------------------------- #
   - name: Formulas
     ansible.builtin.import_tasks:
       file: ../tasks/formulas.yml

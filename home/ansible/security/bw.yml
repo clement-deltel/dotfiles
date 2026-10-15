@@ -5,7 +5,9 @@
     - ../vars/main.yml
 
   tasks:
-  # Dependencies
+  # -------------------------------------------------------------------------- #
+  #               ------- Dependencies ------
+  # -------------------------------------------------------------------------- #
   - name: Dependencies
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
@@ -13,7 +15,9 @@
       package_list: "{{ bitwarden_dependencies }}"
       package_type: dependencies
 
-  # Installation
+  # -------------------------------------------------------------------------- #
+  #               ------- Installation ------
+  # -------------------------------------------------------------------------- #
   - name: Bitwarden CLI
     tags: [init, update]
     block:
@@ -53,3 +57,13 @@
         dest: /usr/local/bin
         remote_src: true
         mode: 0755
+
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
+  - name: Version
+    tags: [init, update]
+    ansible.builtin.import_tasks:
+      file: ../tasks/version.yml
+    vars:
+      cmd: bw --version

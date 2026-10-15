@@ -5,7 +5,9 @@
     - ../vars/main.yml
 
   tasks:
-  # Installation
+  # -------------------------------------------------------------------------- #
+  #               ------- Installation ------
+  # -------------------------------------------------------------------------- #
   # curl -fsSL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
   - name: Installation
     tags: [init, update]
@@ -16,7 +18,9 @@
       url: "{{ zoxide_install_url }}"
       cmd: /bin/sh -c /tmp/install.sh
 
-  # Version
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
   - name: Version
     tags: [init, update]
     ansible.builtin.import_tasks:

@@ -3,7 +3,9 @@
   gather_facts: false
 
   tasks:
-  # Completions & Key Bindings
+  # -------------------------------------------------------------------------- #
+  #               ------- Completions & Key Bindings ------
+  # -------------------------------------------------------------------------- #
   - name: Completions & Key Bindings
     become: true
     tags: [init, update]

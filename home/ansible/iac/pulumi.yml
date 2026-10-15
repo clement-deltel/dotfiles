@@ -5,7 +5,9 @@
     - ../vars/main.yml
 
   tasks:
-  # Installation
+  # -------------------------------------------------------------------------- #
+  #               ------- Installation ------
+  # -------------------------------------------------------------------------- #
   # curl -fsSL https://get.pulumi.com | sh
   - name: Installation
     tags: [init, update]
@@ -15,7 +17,9 @@
       url: "{{ pulumi_install_url }}"
       cmd: /bin/sh -c /tmp/install.sh
 
-  # Version
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
   - name: Version
     tags: [init, update]
     ansible.builtin.import_tasks:

@@ -5,7 +5,9 @@
     - ../vars/main.yml
 
   tasks:
-  # Repository - Container Toolkit
+  # -------------------------------------------------------------------------- #
+  #               ------- Repository - Container Toolkit ------
+  # -------------------------------------------------------------------------- #
   # wget -O- https://nvidia.github.io/libnvidia-container/gpgkey | gpg --dearmor | sudo tee /etc/apt/keyrings/nvidia-container-toolkit-keyring.gpg > /dev/null
   # echo "deb [signed-by=/etc/apt/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/deb/$(dpkg --print-architecture) /" | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list > /dev/null
   - name: Repository
@@ -17,7 +19,9 @@
       key_output: /etc/apt/keyrings/nvidia-container-toolkit-keyring.gpg
       repository: "deb [signed-by=/etc/apt/keyrings/nvidia-container-toolkit-keyring.gpg] https://nvidia.github.io/libnvidia-container/stable/deb/{{ deb_architecture[ansible_architecture] }} /"
 
-  # Repository - CUDA Toolkit
+  # -------------------------------------------------------------------------- #
+  #               ------- Repository - CUDA Toolkit ------
+  # -------------------------------------------------------------------------- #
   - name: Repository - CUDA Toolkit
     become: true
     tags: init
@@ -50,14 +54,18 @@
         mode: 0644
       when: keyring_file.files | length > 0
 
-  # Packages
+  # -------------------------------------------------------------------------- #
+  #               ------- Packages ------
+  # -------------------------------------------------------------------------- #
   - name: Packages
     ansible.builtin.import_tasks:
       file: ../tasks/packages.yml
     vars:
       package_list: "{{ nvidia_packages }}"
 
-  # Docker Configuration
+  # -------------------------------------------------------------------------- #
+  #               ------- Docker Configuration ------
+  # -------------------------------------------------------------------------- #
   - name: Docker Configuration
     tags: init
     block:

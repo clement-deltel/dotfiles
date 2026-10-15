@@ -8,8 +8,9 @@
   - name: Zerobrew
     tags: [init, update]
     block:
-
-    # Installation
+    # -------------------------------------------------------------------------- #
+    #               ------- Installation ------
+    # -------------------------------------------------------------------------- #
     # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lucasgelfond/zerobrew/main/install.sh)"
     - name: Installation
       ansible.builtin.import_tasks:

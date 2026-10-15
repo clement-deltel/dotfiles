@@ -5,7 +5,9 @@
     - ../vars/main.yml
 
   tasks:
-  # Installation
+  # -------------------------------------------------------------------------- #
+  #               ------- Installation ------
+  # -------------------------------------------------------------------------- #
   # curl -s https://ohmyposh.dev/install.sh | bash -s
   - name: Installation
     tags: [init, update]
@@ -15,7 +17,9 @@
       url: "{{ omp_install_url }}"
       cmd: /bin/bash /tmp/install.sh -d ~/.local/bin
 
-  # Version
+  # -------------------------------------------------------------------------- #
+  #               ------- Version ------
+  # -------------------------------------------------------------------------- #
   - name: Version
     tags: [init, update]
     ansible.builtin.import_tasks:

@@ -178,6 +178,7 @@ function docker-names-fn {
     docker inspect "$ID" | grep Name | head -1 | awk "{print $2}" | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
   done
 }
+function docker-network-inspect-fn { docker network inspect "$1"; }
 function docker-network-rm-fn { docker network rm "$1"; }
 function docker-pull-fn { docker pull "$1"; }
 function docker-rm-exited-fn { docker rm "$(docker ps --all -q -f status=exited)"; }
@@ -186,6 +187,7 @@ function docker-stop-rm-fn {
   docker stop "$1"
   docker rm "$1"
 }
+function docker-volume-inspect-fn { docker volume inspect "$1"; }
 function docker-volume-rm-fn { docker volume rm "$1"; }
 function docker-volume-rm-dangling-fn {
   VOLS=$(docker volume ls --filter 'dangling=true' -q)

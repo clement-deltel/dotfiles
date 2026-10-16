@@ -204,9 +204,11 @@ alias dvrmd=docker-volume-rm-dangling-fn
 
 {{ if eq (doppler "SHELL") "bash" -}}
 alias dirm=docker-image-rm-fn
+alias dni=docker-network-inspect-fn
 alias dnls='docker network ls'
 alias dps='docker ps'
 alias dpsa='docker ps -a'
+alias dvi=docker-volume-inspect-fn
 alias dvls='docker volume ls'
 {{ end -}}
 

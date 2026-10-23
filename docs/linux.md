@@ -89,6 +89,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [fd](https://github.com/sharkdp/fd) - [find](https://linux.die.net/man/1/find), with colorized output, case insensitive & regex & skip hidden defaults, git integration and more. `Rust`
   - [ncdu](https://dev.yorhel.nl/ncdu) - [du](https://linux.die.net/man/1/du), disk usage analyzer with a text-mode user interface.
   - [ripgrep](https://github.com/BurntSushi/ripgrep) - [grep](https://linux.die.net/man/1/grep), with recursive & skip hidden defaults, git integration and more. `Rust`
+- **Documents**
+  - [libreoffice](https://www.libreoffice.org)
 - **Monitoring**
   - [htop](https://github.com/htop-dev/htop) - interactive process viewer. `C/C++`
   - [hwinfo](https://www.commandlinux.com/man-page/man8/hwinfo.8.html) - probe for hardware.
@@ -212,6 +214,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - [npm](https://github.com/npm/cli) - node package manager. `JavaScript`
   - [commitlint](https://github.com/conventional-changelog/commitlint) - lint commit messages. `TypeScript`
   - [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) - generate changelogs and release notes from a project's commit messages and metadata. `TypeScript`
+  - [mermaid-cli](https://github.com/mermaid-js/mermaid-cli) - take a mermaid definition file as input and generates an SVG/PNG/PDF file as output. `JavaScript`
   - [readme-generator-for-helm](https://github.com/bitnami/readme-generator-for-helm) - auto generate READMEs for Helm Charts. `JavaScript`
   - [renovate](https://github.com/renovatebot/renovate) - cross-platform dependency automation by mend.io. `TypeScript`
 - [nvm](https://github.com/nvm-sh/nvm) - Node version manager, POSIX-compliant bash script to manage multiple active node.js versions. `Shell`

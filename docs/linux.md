@@ -43,6 +43,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [Modern Replacements](#modern-replacements)
   - [Monitoring](#monitoring)
   - [Multiplexer](#multiplexer)
+  - [Network](#network)
   - [Orchestration](#orchestration-1)
     - [Docker](#docker-1)
     - [Kubernetes](#kubernetes-1)
@@ -91,6 +92,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [ripgrep](https://github.com/BurntSushi/ripgrep) - [grep](https://linux.die.net/man/1/grep), with recursive & skip hidden defaults, git integration and more. `Rust`
 - **Documents**
   - [libreoffice](https://www.libreoffice.org)
+  - [tesseract-ocr](https://github.com/tesseract-ocr/tesseract) - open source OCR engine. `C++`
 - **Monitoring**
   - [htop](https://github.com/htop-dev/htop) - interactive process viewer. `C/C++`
   - [hwinfo](https://www.commandlinux.com/man-page/man8/hwinfo.8.html) - probe for hardware.
@@ -481,6 +483,10 @@ Here are some useful Linux system commands:
 
 - [tmux](https://github.com/tmux/tmux)
 - [zellij](https://github.com/zellij-org/zellij)
+
+### Network
+
+- [ipinfo-cli](https://github.com/ipinfo/cli) -  CLI for the IPinfo API (IP geolocation and other types of IP data). `Go`
 
 ### Orchestration
 

@@ -226,14 +226,14 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - pip
   - [faker](https://github.com/joke2k/faker) - generate fake data for you. `Python`
   - [gitlint](https://github.com/jorisroovers/gitlint) - linting for your git commit messages. `Python`
-  - [markitdown](https://github.com/microsoft/markitdown) - tool for converting files and office documents to Markdown.
+  - [markitdown](https://github.com/microsoft/markitdown) - tool for converting files and office documents to Markdown. `Python`
   - [pre-commit](https://github.com/pre-commit/pre-commit) - framework for managing and maintaining multi-language pre-commit hooks. `Python`
-  - [Pygments](https://github.com/pygments/pygments) - generic syntax highlighter.
-  - [whisper-live](https://github.com/collabora/WhisperLive) - nearly-live implementation of OpenAI's Whisper.
-- [pipx](https://github.com/pypa/pipx) - install and run applications in isolated environments.
+  - [Pygments](https://github.com/pygments/pygments) - generic syntax highlighter. `Python`
+  - [whisper-live](https://github.com/collabora/WhisperLive) - nearly-live implementation of OpenAI's Whisper. `Python`
+- [pipx](https://github.com/pypa/pipx) - install and run applications in isolated environments. `Python`
   - [poetry](https://github.com/python-poetry/poetry) - packaging and dependency management made easy. `Python`
   - [sqlit](https://github.com/Maxteabag/sqlit) - user friendly TUI for SQL databases, supports SQL server, MySQL, PostgreSQL, SQLite, Turso and more. `Python`
-- [pyenv](https://github.com/pyenv/pyenv) - simple version management.
+- [pyenv](https://github.com/pyenv/pyenv) - simple version management. `Shell`
 - [uv](https://github.com/astral-sh/uv) - package and project manager. `Rust`
 
 #### Rust

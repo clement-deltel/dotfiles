@@ -85,6 +85,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
 ##### Media
 
 - [Flameshot](https://community.chocolatey.org/packages/flameshot) - screenshot software.
+- [Handy](https://community.chocolatey.org/packages/handy) - free, open source, and extensible speech-to-text application that works completely offline.
 - [iTunes](https://community.chocolatey.org/packages/iTunes) - organize and enjoy the music, movies, and TV shows you already have and shop for the ones you want to get.
 
 ##### Remote Access

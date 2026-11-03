@@ -41,8 +41,17 @@ function tailc { tail -f "$1" | batcat -l log --paging=never; }
 # Host Info
 
 # IP addresses
-function my-ip {
-  MY_IP=$(/sbin/ifconfig eth0 | awk '/inet/ { print $2 }' | sed -e s/addr://)
+
+# IP addresses
+function local-ip {
+  export LOCAL_IP=$(/sbin/ifconfig eth0 | awk '/inet/ { print $2 }' | sed -e s/addr://)
+  echo ${LOCAL_IP}
+}
+
+# Alternative public IP URL: ifconfig.me
+function public-ip {
+  export PUBLIC_IP=$(curl -s ipinfo.io/ip)
+  echo ${PUBLIC_IP}
 }
 
 # Full summary
@@ -60,28 +69,41 @@ function ii {
   uptime
   echo -e "\n${RED}Memory stats:$NC"
   free
-  my-ip 2>&-
+  local-ip 2>&-
   echo -e "\n${RED}Local IP Address:$NC"
-  echo "${MY_IP:-"Not connected"}"
+  echo "${LOCAL_IP:-"Not connected"}"
+  public-ip 2>&-
   echo -e "\n${RED}Public IP Address:$NC"
-  echo "$(curl -s ifconfig.me)"
+  echo "${PUBLIC_IP:-"Not connected"}"
   echo
 }
 
-# Update all packages and clean up
+# Update all packages
 function up {
   sudo apt update --yes && sudo apt upgrade --yes
-  sudo apt autoremove --yes
-  sudo apt clean --yes
   brew upgrade --yes
+  # JavaScript
   npm update --global
   # Python
   pyenv update
   uv self update
   # Rust
   rustup update
+  rustup self update
   # Artificial Intelligence
   hermes update --yes
+}
+
+# Clean up
+function cl {
+  sudo apt autoremove --yes
+  sudo apt clean --yes
+  brew cleanup
+  # JavaScript
+  npm cache verify
+  # Python
+  prek cache clean
+  uv cache prune
 }
 
 # Online cheatsheet

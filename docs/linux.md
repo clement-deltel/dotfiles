@@ -92,6 +92,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [ripgrep](https://github.com/BurntSushi/ripgrep) - [grep](https://linux.die.net/man/1/grep), with recursive & skip hidden defaults, git integration and more. `Rust`
 - **Documents**
   - [libreoffice](https://www.libreoffice.org)
+  - [pandoc](https://github.com/jgm/pandoc) - universal markup converter. `Haskell`
   - [tesseract-ocr](https://github.com/tesseract-ocr/tesseract) - open source OCR engine. `C++`
 - **Monitoring**
   - [htop](https://github.com/htop-dev/htop) - interactive process viewer. `C/C++`

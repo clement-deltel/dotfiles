@@ -180,6 +180,26 @@ function chezmoi-merge-fn { chezmoi merge "$1"; }
 # ---------------------------------------------------------------------------- #
 function docker-exec-fn { docker exec -it "$1" "${2:-bash}"; }
 function docker-fn { docker "$@"; }
+function docker-image-dupes-fn() {
+  docker-image-repositories-fn | awk 'NR==1 { print; next }
+              { c[$2]++; l[NR]=$0; r[NR]=$2 }
+              END { for (i=2; i<=NR; i++) if (c[r[i]] > 1) print l[i] }'
+}
+function docker-image-repositories-fn() {
+  {
+    printf 'IMAGE ID\tREPOSITORY\tTAG\tSIZE\tCREATED\tCONTAINERS\n'
+    docker images --format '{{.ID}}\t{{.Repository}}\t{{.Tag}}\t{{.Size}}\t{{.CreatedSince}}\t{{.Containers}}' \
+    | awk -F'\t' '
+        $2 != "<none>" {
+          r = $2
+          n = split(r, p, "/")
+          if (n == 1) r = "docker.io/library/" r
+          else if (p[1] !~ /[.:]/ && p[1] != "localhost") r = "docker.io/" r
+          print $1 "\t" r "\t" $3 "\t" $4 "\t" $5 "\t" $6
+        }' \
+    | sort -s -t$'\t' -k2,2
+  } | column -t -s$'\t'
+}
 function docker-image-rm-dangling-fn {
   IMAGES=$(docker images --filter 'dangling=true' -q --no-trunc)
   [[ -n ${IMAGES} ]] && docker rmi ${IMAGES} || echo 'no dangling images.'
@@ -200,16 +220,11 @@ function docker-names-fn {
     docker inspect "$ID" | grep Name | head -1 | awk "{print $2}" | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
   done
 }
-function docker-network-inspect-fn { docker network inspect "$1"; }
 function docker-network-rm-fn { docker network rm "$1"; }
 function docker-pull-fn { docker pull "$1"; }
 function docker-rm-exited-fn { docker rm "$(docker ps --all -q -f status=exited)"; }
 function docker-run-fn { docker run -it "$1" "$2"; }
-function docker-stop-rm-fn {
-  docker stop "$1"
-  docker rm "$1"
-}
-function docker-volume-inspect-fn { docker volume inspect "$1"; }
+function docker-stop-rm-fn { docker stop "$1";  docker rm "$1"; }
 function docker-volume-rm-fn { docker volume rm "$1"; }
 function docker-volume-rm-dangling-fn {
   VOLS=$(docker volume ls --filter 'dangling=true' -q)
@@ -218,6 +233,8 @@ function docker-volume-rm-dangling-fn {
 
 {{ if eq (doppler "SHELL") "bash" -}}
 function docker-image-rm-fn { docker image rm "$@"; }
+function docker-network-inspect-fn { docker network inspect "$1"; }
+function docker-volume-inspect-fn { docker volume inspect "$1"; }
 {{ end -}}
 
 # ---------------------------------------------------------------------------- #

@@ -268,6 +268,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [k9s](https://github.com/derailed/k9s) - CLI to manage your clusters in style. `Go`
   - [kind](https://github.com/kubernetes-sigs/kind) - Kubernetes in Docker - local clusters for testing Kubernetes. `Go`
   - [kubecolor](https://github.com/kubecolor/kubecolor) - colorize your kubectl output. `Go`
+  - [kubeconform](https://github.com/yannh/kubeconform) - Kubernetes manifests validator, with support for custom resources. `Go`
   - [kubectx](https://github.com/ahmetb/kubectx) - faster way to switch between clusters and namespaces in kubectl. `Go`
   - [kubetail](https://github.com/johanhaleby/kubetail) - tail logs from multiple pods at the same time. `Shell`
   - [pinniped](https://github.com/vmware/pinniped) - secure way to log in to your Kubernetes clusters. `Go`

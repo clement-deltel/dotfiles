@@ -272,6 +272,8 @@ Here is a list of apps that I am currently using, that could be interesting and 
   - [kubectx](https://github.com/ahmetb/kubectx) - faster way to switch between clusters and namespaces in kubectl. `Go`
   - [kubetail](https://github.com/johanhaleby/kubetail) - tail logs from multiple pods at the same time. `Shell`
   - [pinniped](https://github.com/vmware/pinniped) - secure way to log in to your Kubernetes clusters. `Go`
+  - [popeye](https://github.com/derailed/popeye) - Kubernetes cluster resource sanitizer. `Go`
+  - [sofka](https://github.com/nklmilojevic/sofka) - Kubernetes TUI, built on kube-rs and ratatui, async-first from the ground up. `Rust`
   - [stern](https://github.com/stern/stern) - multi pod and container log tailing. `Go`
 
 #### Helm

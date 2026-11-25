@@ -150,6 +150,7 @@
             "rustup",
             "scrollback",
             "shellenv",
+            "sofka",
             "sourcepath",
             "statefulset",
             "steganography",

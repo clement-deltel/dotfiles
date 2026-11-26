@@ -15,7 +15,6 @@ Here is a list of libraries and frameworks that could be interesting to use in t
     - [Coding](#coding)
     - [Orchestration](#orchestration)
     - [Research](#research)
-    - [Terminal](#terminal)
   - [App Builder](#app-builder)
   - [Claude Code](#claude-code)
   - [Context](#context)
@@ -130,10 +129,6 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [mirothinker](https://github.com/MiroMindAI/MiroThinker) - deep research agent optimized for complex research and prediction tasks. `Python`
 
-#### Terminal
-
-- [herdr](https://github.com/ogulcancelik/herdr) - agent multiplexer that lives in your terminal. `Rust`
-
 ### App Builder
 
 - [go-micro](https://github.com/micro/go-micro) - agent harness and service framework. `Go`
@@ -183,6 +178,7 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 
 - [archon](https://github.com/coleam00/Archon) - harness builder for AI coding, make AI coding deterministic and repeatable. `TypeScript`
 - [dify](https://github.com/langgenius/dify) - production-ready platform for agentic workflow development. `TypeScript` `Python`
+- [herdr](https://github.com/herdrdev/herdr) -  runtime your coding agents live on. `Rust`
 - [insforge](https://github.com/InsForge/InsForge) - all-in-one, open-source backend platform for agentic coding, gives your coding agent database, auth, storage, compute, hosting, and AI gateway to ship full-stack apps end-to-end. `TypeScript`
 - [leon](https://github.com/leon-ai/leon) - open-source personal assistant. `TypeScript` `Python`
 - [openclaw](https://github.com/openclaw/openclaw) - your own personal AI assistant, any OS, any platform. `TypeScript`
@@ -347,6 +343,8 @@ Here is a list of libraries and frameworks that could be interesting to use in t
 - [agent-device](github.com/callstack/agent-device) - CLI to control iOS and Android devices for AI agents. `TypeScript`
 - [ai-captcha-bypass](https://github.com/aydinnyunus/ai-captcha-bypass) - AI captcha bypass. `Python`
 - [ai-job-search](https://github.com/MadsLorentzen/ai-job-search) - evaluate postings, tailor CVs, write cover letters, prep interviews. `TypeScript` `Python`
+- [bend](https://github.com/bendlang/bend) - fast language that blocks AI mistakes via proof. `TypeScript` `C`
+- [last30days-skill](https://github.com/mvanhorn/last30days-skill) - research any topic across Reddit, X, YouTube, HN, Polymarket, and the web, then synthesizes a grounded summary. `Python`
 - [meetily](https://github.com/Zackriya-Solutions/meetily) - AI meeting assistant with Parakeet/Whisper live transcription, speaker diarization, and Ollama summarization. `Rust` `TypeScript` `C++`
 - [open-code-review](https://github.com/alibaba/open-code-review) - hybrid architecture code review tool, deterministic pipelines + LLM Agent, precise line-level comments, built-in fine-tuned ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible. `Go` `TypeScript`
 - [pdfgpt](https://github.com/bhaskatripathi/pdfGPT) - chat with the contents of your pdf file by using GPT capabilities. `Python`

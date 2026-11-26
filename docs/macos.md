@@ -17,5 +17,6 @@ Here is a list of apps that I am currently using, that could be interesting and 
 - [Mole](https://github.com/tw93/Mole) - deep clean and optimize your Mac. `Shell`
 - [rift](https://github.com/acsandmann/rift) - tiling window manager. `Rust`
 - [sps](https://github.com/alexykn/sps) - package manager. `Rust`
+- [vorssaint-utils](https://github.com/vorssaint/vorssaint-utils) - menu bar toolkit. `Swift`
 
 ## Deprecated

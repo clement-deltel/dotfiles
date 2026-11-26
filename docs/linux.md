@@ -491,6 +491,7 @@ Here are some useful Linux system commands:
 ### Network
 
 - [ipinfo-cli](https://github.com/ipinfo/cli) -  CLI for the IPinfo API (IP geolocation and other types of IP data). `Go`
+- [sniffnet](https://github.com/GyulyVGC/sniffnet) - comfortably monitor your network traffic. `Rust`
 
 ### Orchestration
 
@@ -502,6 +503,7 @@ Here are some useful Linux system commands:
 - [docker bench](https://github.com/docker/docker-bench-security) - script that checks for dozens of common best-practices around deploying Docker containers in production.
 - [docker-compose-linter](https://github.com/zavoloklom/docker-compose-linter) - CLI tool for validating and enforcing best practices in compose files. `TypeScript`
 - [harbor-guard](https://github.com/HarborGuard/HarborGuard) - image vulnerability scanning & patching platform with multi-tool integration. `TypeScript`
+- [kiri](https://github.com/libracoder/kiri) - container runtime for macOS, Windows and Linux with free Ngrok alternative. `Rust`
 - [subtrace](https://github.com/subtrace/subtrace) - wireshark for Docker containers. `Go`
 - new Docker commands (require an account and/or subscription) - init, debug, compose watch, build cloud, scout.
 

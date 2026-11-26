@@ -56,6 +56,7 @@ Here is a list of apps that I am currently using, that could be interesting and 
     - [Hardware Tweaks](#hardware-tweaks-1)
     - [Monitoring](#monitoring-1)
     - [Package Management](#package-management)
+    - [Performance](#performance)
     - [Security](#security-1)
     - [Tools](#tools-3)
     - [Other](#other-1)
@@ -317,6 +318,10 @@ Here is a list of apps that I am currently using, that could be interesting and 
 #### Package Management
 
 - [UniGetUI](https://github.com/marticliment/UniGetUI) - unified graphical interface for package managers.
+
+#### Performance
+
+- [optimizerDuck](https://github.com/itsfatduck/optimizerDuck) - optimization tool for performance, privacy, and simplicity. `C#`
 
 #### Security
 
